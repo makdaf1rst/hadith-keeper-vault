@@ -58,9 +58,11 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
   const english = showExactSource
     ? hadith.english_source
     : text(hadith.english_display, hadith.english_source);
-  const extra = showExactSource
+  const full = showExactSource
     ? hadith.full_source_content
     : text(hadith.full_display_content, hadith.full_source_content);
+  const extra = remainder(full, [arabic, english]);
+
 
   const whole = [arabic, english, extra].filter(Boolean).join("\n\n");
 
