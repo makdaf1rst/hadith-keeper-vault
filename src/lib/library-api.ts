@@ -1,7 +1,17 @@
 import { supabase } from "@/integrations/supabase/client";
 import { containsArabic, normalizeArabic, normalizeEnglish } from "@/lib/normalize";
 
-export type Book = {
+export type Intro = {
+  intro_ar_source: string | null;
+  intro_ar_display: string | null;
+  intro_en_source: string | null;
+  intro_en_display: string | null;
+};
+
+const INTRO_COLUMNS =
+  "intro_ar_source, intro_ar_display, intro_en_source, intro_en_display";
+
+export type Book = Intro & {
   id: string;
   book_number: number;
   title_ar: string | null;
@@ -9,7 +19,7 @@ export type Book = {
   sort_order: number;
 };
 
-export type Collection = {
+export type Collection = Intro & {
   id: string;
   book_id: string;
   title_ar: string | null;
@@ -17,7 +27,7 @@ export type Collection = {
   sort_order: number;
 };
 
-export type Chapter = {
+export type Chapter = Intro & {
   id: string;
   book_id: string;
   collection_id: string | null;
@@ -52,7 +62,7 @@ export type HadithFull = {
 export async function fetchBooks(): Promise<Book[]> {
   const { data, error } = await supabase
     .from("books")
-    .select("id, book_number, title_ar, title_en, sort_order")
+    .select(`id, book_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
     .order("sort_order", { ascending: true })
     .order("book_number", { ascending: true });
   if (error) throw error;
@@ -62,7 +72,7 @@ export async function fetchBooks(): Promise<Book[]> {
 export async function fetchBookByNumber(bookNumber: number): Promise<Book | null> {
   const { data, error } = await supabase
     .from("books")
-    .select("id, book_number, title_ar, title_en, sort_order")
+    .select(`id, book_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
     .eq("book_number", bookNumber)
     .maybeSingle();
   if (error) throw error;
@@ -72,7 +82,7 @@ export async function fetchBookByNumber(bookNumber: number): Promise<Book | null
 export async function fetchCollections(bookId: string): Promise<Collection[]> {
   const { data, error } = await supabase
     .from("collections")
-    .select("id, book_id, title_ar, title_en, sort_order")
+    .select(`id, book_id, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
     .eq("book_id", bookId)
     .order("sort_order", { ascending: true });
   if (error) throw error;
@@ -82,7 +92,7 @@ export async function fetchCollections(bookId: string): Promise<Collection[]> {
 export async function fetchChapters(bookId: string): Promise<Chapter[]> {
   const { data, error } = await supabase
     .from("chapters")
-    .select("id, book_id, collection_id, chapter_number, title_ar, title_en, sort_order")
+    .select(`id, book_id, collection_id, chapter_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
     .eq("book_id", bookId)
     .order("sort_order", { ascending: true });
   if (error) throw error;
@@ -116,21 +126,21 @@ export async function fetchHadithContext(hadith: HadithFull) {
     hadith.book_id
       ? supabase
           .from("books")
-          .select("id, book_number, title_ar, title_en, sort_order")
+          .select(`id, book_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
           .eq("id", hadith.book_id)
           .maybeSingle()
       : Promise.resolve({ data: null, error: null }),
     hadith.collection_id
       ? supabase
           .from("collections")
-          .select("id, book_id, title_ar, title_en, sort_order")
+          .select(`id, book_id, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
           .eq("id", hadith.collection_id)
           .maybeSingle()
       : Promise.resolve({ data: null, error: null }),
     hadith.chapter_id
       ? supabase
           .from("chapters")
-          .select("id, book_id, collection_id, chapter_number, title_ar, title_en, sort_order")
+          .select(`id, book_id, collection_id, chapter_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
           .eq("id", hadith.chapter_id)
           .maybeSingle()
       : Promise.resolve({ data: null, error: null }),
