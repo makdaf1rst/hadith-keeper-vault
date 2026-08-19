@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 
+import { IntroText } from "@/components/library/IntroText";
 import { HadithView } from "@/components/library/HadithView";
 import { Button } from "@/components/ui/button";
 import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours } from "@/lib/library-api";
@@ -87,7 +88,10 @@ function HadithPage() {
           </div>
         ) : null}
         {hadith.data ? (
-          <HadithView hadith={hadith.data} context={context.data} />
+          <div className="space-y-4">
+            <IntroText intro={context.data?.chapter} label="Chapter introduction" />
+            <HadithView hadith={hadith.data} context={context.data} />
+          </div>
         ) : null}
       </main>
     </div>
