@@ -7,9 +7,12 @@ import { toArabicIndicDigits } from "@/lib/normalize";
 
 type Props = {
   hadith: HadithFull;
-  context?: { book: Book | null; collection: Collection | null; chapter: Chapter | null };
-  showExactSource?: boolean;
+  context?:
+    | { book: Book | null; collection: Collection | null; chapter: Chapter | null }
+    | undefined;
+  showExactSource?: boolean | undefined;
 };
+
 
 function text(display: string | null, source: string | null) {
   const value = display ?? source;
