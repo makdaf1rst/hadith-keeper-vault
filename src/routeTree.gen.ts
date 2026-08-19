@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BookNumberRouteImport } from './routes/book.$number'
 import { Route as HadithNumberRouteImport } from './routes/hadith.$number'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookNumberRoute = BookNumberRouteImport.update({
@@ -31,30 +37,34 @@ const HadithNumberRoute = HadithNumberRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/book/$number' | '/hadith/$number'
+  fullPaths: '/' | '/auth' | '/book/$number' | '/hadith/$number'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/book/$number' | '/hadith/$number'
-  id: '__root__' | '/' | '/book/$number' | '/hadith/$number'
+  to: '/' | '/auth' | '/book/$number' | '/hadith/$number'
+  id: '__root__' | '/' | '/auth' | '/book/$number' | '/hadith/$number'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
   BookNumberRoute: typeof BookNumberRoute
   HadithNumberRoute: typeof HadithNumberRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book/$number': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
   BookNumberRoute: BookNumberRoute,
   HadithNumberRoute: HadithNumberRoute,
 }
