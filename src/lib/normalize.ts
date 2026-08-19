@@ -37,5 +37,6 @@ export function containsArabic(input: string): boolean {
 const ARABIC_INDIC = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
 
 export function toArabicIndicDigits(value: number | string): string {
-  return String(value).replace(/\d/g, (d) => ARABIC_INDIC[Number(d)]);
+  return String(value).replace(/\d/g, (d) => ARABIC_INDIC[Number(d)] ?? d);
 }
+
