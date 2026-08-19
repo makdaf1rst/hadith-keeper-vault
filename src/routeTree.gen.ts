@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HadithNumberRouteImport } from './routes/hadith.$number'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HadithNumberRoute = HadithNumberRouteImport.update({
+  id: '/hadith/$number',
+  path: '/hadith/$number',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/hadith/$number'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/hadith/$number'
+  id: '__root__' | '/' | '/hadith/$number'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HadithNumberRoute: typeof HadithNumberRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hadith/$number': {
+      id: '/hadith/$number'
+      path: '/hadith/$number'
+      fullPath: '/hadith/$number'
+      preLoaderRoute: typeof HadithNumberRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HadithNumberRoute: HadithNumberRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
