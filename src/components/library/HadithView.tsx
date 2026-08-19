@@ -19,6 +19,25 @@ function text(display: string | null, source: string | null) {
   return value && value.trim().length > 0 ? value : null;
 }
 
+/**
+ * The stored "full" record begins with the Arabic and English texts and then continues
+ * with grading, references and commentary. Strip the parts that are already rendered
+ * above so nothing is shown twice, while keeping any remaining material in full.
+ */
+function remainder(full: string | null, parts: (string | null)[]) {
+  if (!full) return null;
+  let rest = full;
+  for (const part of parts) {
+    if (!part) continue;
+    const at = rest.indexOf(part.trim());
+    if (at !== -1) {
+      rest = (rest.slice(0, at) + "\n" + rest.slice(at + part.trim().length)).trim();
+    }
+  }
+  return rest.trim().length > 0 ? rest.trim() : null;
+}
+
+
 async function copy(value: string | null, label: string) {
   if (!value) {
     toast.error(`No ${label} text stored for this hadith.`);
@@ -39,11 +58,13 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
   const english = showExactSource
     ? hadith.english_source
     : text(hadith.english_display, hadith.english_source);
-  const extra = showExactSource
+  const full = showExactSource
     ? hadith.full_source_content
     : text(hadith.full_display_content, hadith.full_source_content);
+  const extra = remainder(full, [arabic, english]);
 
-  const whole = [arabic, english, extra].filter(Boolean).join("\n\n");
+
+  const whole = full ?? [arabic, english, extra].filter(Boolean).join("\n\n");
 
   return (
     <article className="rounded-lg border border-border bg-card shadow-sm">

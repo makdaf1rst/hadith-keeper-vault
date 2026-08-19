@@ -8,8 +8,11 @@ import {
   fetchChapterHadiths,
   fetchChapters,
   fetchCollections,
+  type Book as BookRow,
   type Chapter,
+  type Collection,
 } from "@/lib/library-api";
+import { IntroText } from "@/components/library/IntroText";
 import { toArabicIndicDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
@@ -104,7 +107,12 @@ function ChapterNode({ chapter }: { chapter: Chapter }) {
           }
         />
       </Toggle>
-      {open ? <HadithList chapterId={chapter.id} /> : null}
+      {open ? (
+        <>
+          <IntroText intro={chapter} className="mx-2 my-2" label="Chapter introduction" />
+          <HadithList chapterId={chapter.id} />
+        </>
+      ) : null}
     </li>
   );
 }
@@ -112,7 +120,7 @@ function ChapterNode({ chapter }: { chapter: Chapter }) {
 function BookNode({
   book,
 }: {
-  book: { id: string; book_number: number; title_ar: string | null; title_en: string | null };
+  book: BookRow;
 }) {
   const [open, setOpen] = useState(false);
   const collections = useQuery({
@@ -140,6 +148,7 @@ function BookNode({
       </Toggle>
       {open ? (
         <div className="pl-4">
+          <IntroText intro={book} className="mx-2 my-2" label="Book introduction" />
           {collections.isLoading || chapters.isLoading ? (
             <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>
           ) : null}
@@ -176,7 +185,7 @@ function CollectionNode({
   collection,
   chapters,
 }: {
-  collection: { id: string; title_ar: string | null; title_en: string | null };
+  collection: Collection;
   chapters: Chapter[];
 }) {
   const [open, setOpen] = useState(false);
@@ -186,6 +195,8 @@ function CollectionNode({
         <Title ar={collection.title_ar} en={collection.title_en} />
       </Toggle>
       {open ? (
+        <>
+        <IntroText intro={collection} className="mx-2 my-2" label="Collection introduction" />
         <ul className="space-y-0.5 pl-4">
           {chapters.length ? (
             chapters.map((chapter) => <ChapterNode key={chapter.id} chapter={chapter} />)
@@ -193,6 +204,7 @@ function CollectionNode({
             <li className="px-2 py-1 text-xs text-muted-foreground">No chapters yet.</li>
           )}
         </ul>
+        </>
       ) : null}
     </li>
   );

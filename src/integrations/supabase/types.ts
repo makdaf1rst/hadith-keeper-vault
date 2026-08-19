@@ -19,6 +19,10 @@ export type Database = {
           book_number: number
           created_at: string
           id: string
+          intro_ar_display: string | null
+          intro_ar_source: string | null
+          intro_en_display: string | null
+          intro_en_source: string | null
           sort_order: number
           source_document_id: string | null
           title_ar: string | null
@@ -31,6 +35,10 @@ export type Database = {
           book_number: number
           created_at?: string
           id?: string
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
           sort_order?: number
           source_document_id?: string | null
           title_ar?: string | null
@@ -43,6 +51,10 @@ export type Database = {
           book_number?: number
           created_at?: string
           id?: string
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
           sort_order?: number
           source_document_id?: string | null
           title_ar?: string | null
@@ -68,6 +80,10 @@ export type Database = {
           collection_id: string | null
           created_at: string
           id: string
+          intro_ar_display: string | null
+          intro_ar_source: string | null
+          intro_en_display: string | null
+          intro_en_source: string | null
           sort_order: number
           source_document_id: string | null
           title_ar: string | null
@@ -82,6 +98,10 @@ export type Database = {
           collection_id?: string | null
           created_at?: string
           id?: string
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
           sort_order?: number
           source_document_id?: string | null
           title_ar?: string | null
@@ -96,6 +116,10 @@ export type Database = {
           collection_id?: string | null
           created_at?: string
           id?: string
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
           sort_order?: number
           source_document_id?: string | null
           title_ar?: string | null
@@ -133,6 +157,10 @@ export type Database = {
           book_id: string
           created_at: string
           id: string
+          intro_ar_display: string | null
+          intro_ar_source: string | null
+          intro_en_display: string | null
+          intro_en_source: string | null
           sort_order: number
           source_document_id: string | null
           title_ar: string | null
@@ -145,6 +173,10 @@ export type Database = {
           book_id: string
           created_at?: string
           id?: string
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
           sort_order?: number
           source_document_id?: string | null
           title_ar?: string | null
@@ -157,6 +189,10 @@ export type Database = {
           book_id?: string
           created_at?: string
           id?: string
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
           sort_order?: number
           source_document_id?: string | null
           title_ar?: string | null
