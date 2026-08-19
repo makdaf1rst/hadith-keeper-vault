@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookNumberRouteImport } from './routes/book.$number'
 import { Route as HadithNumberRouteImport } from './routes/hadith.$number'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookNumberRoute = BookNumberRouteImport.update({
+  id: '/book/$number',
+  path: '/book/$number',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HadithNumberRoute = HadithNumberRouteImport.update({
@@ -25,27 +31,31 @@ const HadithNumberRoute = HadithNumberRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/hadith/$number'
+  fullPaths: '/' | '/book/$number' | '/hadith/$number'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/hadith/$number'
-  id: '__root__' | '/' | '/hadith/$number'
+  to: '/' | '/book/$number' | '/hadith/$number'
+  id: '__root__' | '/' | '/book/$number' | '/hadith/$number'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookNumberRoute: typeof BookNumberRoute
   HadithNumberRoute: typeof HadithNumberRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book/$number': {
+      id: '/book/$number'
+      path: '/book/$number'
+      fullPath: '/book/$number'
+      preLoaderRoute: typeof BookNumberRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hadith/$number': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookNumberRoute: BookNumberRoute,
   HadithNumberRoute: HadithNumberRoute,
 }
 export const routeTree = rootRouteImport
