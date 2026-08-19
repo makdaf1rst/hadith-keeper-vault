@@ -64,7 +64,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
   const extra = remainder(full, [arabic, english]);
 
 
-  const whole = [arabic, english, extra].filter(Boolean).join("\n\n");
+  const whole = full ?? [arabic, english, extra].filter(Boolean).join("\n\n");
 
   return (
     <article className="rounded-lg border border-border bg-card shadow-sm">
