@@ -108,9 +108,10 @@ function BreadcrumbLine({
   en,
 }: {
   label: string;
-  ar?: string | null;
-  en?: string | null;
+  ar?: string | null | undefined;
+  en?: string | null | undefined;
 }) {
+
   if (!ar && !en) return null;
   return (
     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-0.5">
