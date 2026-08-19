@@ -156,5 +156,36 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-serif);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
   }
 }
+
+/* Scholarly text rendering. Never clamp or truncate hadith content. */
+@utility arabic-text {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+  font-size: 1.55rem;
+  line-height: 2.35;
+  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: pre-wrap;
+}
+
+@utility english-text {
+  direction: ltr;
+  text-align: left;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
