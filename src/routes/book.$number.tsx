@@ -94,6 +94,29 @@ function BookPage() {
                 </ul>
               </section>
             ))}
+
+            {(chapters.data ?? []).some((chapter) => !chapter.collection_id) ? (
+              <section className="rounded-lg border border-border bg-card p-5">
+                <h2 className="text-lg font-semibold">Chapters</h2>
+                <ul className="mt-3 space-y-2">
+                  {(chapters.data ?? [])
+                    .filter((chapter) => !chapter.collection_id)
+                    .map((chapter) => (
+                      <li key={chapter.id} className="border-l-2 border-border pl-3">
+                        <p className="text-sm font-medium">
+                          {chapter.chapter_number ? `Chapter ${chapter.chapter_number}` : "Chapter"}
+                          {chapter.title_en ? ` — ${chapter.title_en}` : ""}
+                        </p>
+                        {chapter.title_ar ? (
+                          <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p>
+                        ) : null}
+                        <IntroText intro={chapter} className="mt-2" label="Chapter introduction" />
+                      </li>
+                    ))}
+                </ul>
+              </section>
+            ) : null}
+
           </>
         ) : null}
       </main>
