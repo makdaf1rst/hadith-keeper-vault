@@ -14,6 +14,174 @@ export type Database = {
   }
   public: {
     Tables: {
+      backup_vol1_chapters_20260824: {
+        Row: {
+          book_id: string | null
+          chapter_number: number | null
+          collection_id: string | null
+          created_at: string | null
+          id: string | null
+          intro_ar_display: string | null
+          intro_ar_source: string | null
+          intro_en_display: string | null
+          intro_en_source: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          title_ar: string | null
+          title_ar_is_translated: boolean | null
+          title_en: string | null
+          title_en_is_translated: boolean | null
+          updated_at: string | null
+        }
+        Insert: {
+          book_id?: string | null
+          chapter_number?: number | null
+          collection_id?: string | null
+          created_at?: string | null
+          id?: string | null
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          title_ar?: string | null
+          title_ar_is_translated?: boolean | null
+          title_en?: string | null
+          title_en_is_translated?: boolean | null
+          updated_at?: string | null
+        }
+        Update: {
+          book_id?: string | null
+          chapter_number?: number | null
+          collection_id?: string | null
+          created_at?: string | null
+          id?: string | null
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          title_ar?: string | null
+          title_ar_is_translated?: boolean | null
+          title_en?: string | null
+          title_en_is_translated?: boolean | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_vol1_collections_20260824: {
+        Row: {
+          book_id: string | null
+          created_at: string | null
+          id: string | null
+          intro_ar_display: string | null
+          intro_ar_source: string | null
+          intro_en_display: string | null
+          intro_en_source: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          title_ar: string | null
+          title_ar_is_translated: boolean | null
+          title_en: string | null
+          title_en_is_translated: boolean | null
+          updated_at: string | null
+        }
+        Insert: {
+          book_id?: string | null
+          created_at?: string | null
+          id?: string | null
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          title_ar?: string | null
+          title_ar_is_translated?: boolean | null
+          title_en?: string | null
+          title_en_is_translated?: boolean | null
+          updated_at?: string | null
+        }
+        Update: {
+          book_id?: string | null
+          created_at?: string | null
+          id?: string | null
+          intro_ar_display?: string | null
+          intro_ar_source?: string | null
+          intro_en_display?: string | null
+          intro_en_source?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          title_ar?: string | null
+          title_ar_is_translated?: boolean | null
+          title_en?: string | null
+          title_en_is_translated?: boolean | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_vol1_hadiths_20260824: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       books: {
         Row: {
           book_number: number
@@ -476,6 +644,75 @@ export type Database = {
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
+        }
+        Relationships: []
+      }
+      vol1_corrected_stage_20260824: {
+        Row: {
+          arabic: string
+          book_seq: number
+          chapter_seq: number
+          collection_seq: number | null
+          english: string
+          hadith_number: number
+        }
+        Insert: {
+          arabic: string
+          book_seq: number
+          chapter_seq: number
+          collection_seq?: number | null
+          english: string
+          hadith_number: number
+        }
+        Update: {
+          arabic?: string
+          book_seq?: number
+          chapter_seq?: number
+          collection_seq?: number | null
+          english?: string
+          hadith_number?: number
+        }
+        Relationships: []
+      }
+      vol1_hierarchy_stage_20260824: {
+        Row: {
+          book_seq: number
+          chapter_seq: number
+          collection_seq: number
+          entity_id: string
+          entity_number: number | null
+          intro_ar: string | null
+          intro_en: string | null
+          kind: string
+          sort_order: number | null
+          title_ar: string | null
+          title_en: string | null
+        }
+        Insert: {
+          book_seq: number
+          chapter_seq: number
+          collection_seq: number
+          entity_id: string
+          entity_number?: number | null
+          intro_ar?: string | null
+          intro_en?: string | null
+          kind: string
+          sort_order?: number | null
+          title_ar?: string | null
+          title_en?: string | null
+        }
+        Update: {
+          book_seq?: number
+          chapter_seq?: number
+          collection_seq?: number
+          entity_id?: string
+          entity_number?: number | null
+          intro_ar?: string | null
+          intro_en?: string | null
+          kind?: string
+          sort_order?: number | null
+          title_ar?: string | null
+          title_en?: string | null
         }
         Relationships: []
       }
