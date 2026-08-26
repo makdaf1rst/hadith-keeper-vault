@@ -659,21 +659,6 @@ export type Database = {
           },
         ]
       }
-      tmp_block_1874_1923_payload: {
-        Row: {
-          data: string
-          seq: number
-        }
-        Insert: {
-          data: string
-          seq: number
-        }
-        Update: {
-          data?: string
-          seq?: number
-        }
-        Relationships: []
-      }
       tmp_hadith_qc_1460_1509: {
         Row: {
           book_number: number
