@@ -659,7 +659,7 @@ export type Database = {
           },
         ]
       }
-      tmp_block_1824_1873_payload: {
+      tmp_block_1874_1923_payload: {
         Row: {
           data: string
           seq: number
