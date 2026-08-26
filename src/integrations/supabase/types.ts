@@ -442,6 +442,39 @@ export type Database = {
           },
         ]
       }
+      hadith_stage_1560_1609: {
+        Row: {
+          arabic_text: string | null
+          book_number: number
+          chapter_number: number
+          english_text: string | null
+          full_text: string
+          hadith_number: number
+          search_ar: string | null
+          search_en: string | null
+        }
+        Insert: {
+          arabic_text?: string | null
+          book_number: number
+          chapter_number: number
+          english_text?: string | null
+          full_text: string
+          hadith_number: number
+          search_ar?: string | null
+          search_en?: string | null
+        }
+        Update: {
+          arabic_text?: string | null
+          book_number?: number
+          chapter_number?: number
+          english_text?: string | null
+          full_text?: string
+          hadith_number?: number
+          search_ar?: string | null
+          search_en?: string | null
+        }
+        Relationships: []
+      }
       hadiths: {
         Row: {
           arabic_display: string | null
@@ -626,6 +659,42 @@ export type Database = {
           },
         ]
       }
+      tmp_block_1824_1873_payload: {
+        Row: {
+          data: string
+          seq: number
+        }
+        Insert: {
+          data: string
+          seq: number
+        }
+        Update: {
+          data?: string
+          seq?: number
+        }
+        Relationships: []
+      }
+      tmp_hadith_qc_1460_1509: {
+        Row: {
+          book_number: number
+          chapter_number: number
+          fullc: string
+          hadith_number: number
+        }
+        Insert: {
+          book_number: number
+          chapter_number: number
+          fullc: string
+          hadith_number: number
+        }
+        Update: {
+          book_number?: number
+          chapter_number?: number
+          fullc?: string
+          hadith_number?: number
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -716,6 +785,21 @@ export type Database = {
         }
         Relationships: []
       }
+      vol1_import_chunks_20260825: {
+        Row: {
+          data: string
+          seq: number
+        }
+        Insert: {
+          data: string
+          seq: number
+        }
+        Update: {
+          data?: string
+          seq?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -728,6 +812,8 @@ export type Database = {
         }
         Returns: boolean
       }
+      normalize_ar_app: { Args: { input: string }; Returns: string }
+      normalize_en_app: { Args: { input: string }; Returns: string }
     }
     Enums: {
       app_role: "admin" | "user"
