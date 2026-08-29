@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.15"
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
@@ -123,6 +123,66 @@ export type Database = {
         Relationships: []
       }
       backup_vol1_hadiths_20260824: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_vol2_3907_3956_20260827: {
         Row: {
           arabic_display: string | null
           arabic_source: string | null
@@ -658,6 +718,36 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      tmp_block_1924_1973_payload: {
+        Row: {
+          data: string
+          seq: number
+        }
+        Insert: {
+          data: string
+          seq: number
+        }
+        Update: {
+          data?: string
+          seq?: number
+        }
+        Relationships: []
+      }
+      tmp_block_1974_2023_payload: {
+        Row: {
+          data: string
+          seq: number
+        }
+        Insert: {
+          data: string
+          seq: number
+        }
+        Update: {
+          data?: string
+          seq?: number
+        }
+        Relationships: []
       }
       tmp_hadith_qc_1460_1509: {
         Row: {
