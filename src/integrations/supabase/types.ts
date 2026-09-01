@@ -719,6 +719,33 @@ export type Database = {
           },
         ]
       }
+      import_staging_paragraphs: {
+        Row: {
+          created_at: string
+          id: number
+          paragraph_order: number
+          paragraph_style: string | null
+          paragraph_text: string
+          source_filename: string
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          paragraph_order: number
+          paragraph_style?: string | null
+          paragraph_text: string
+          source_filename: string
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          paragraph_order?: number
+          paragraph_style?: string | null
+          paragraph_text?: string
+          source_filename?: string
+        }
+        Relationships: []
+      }
       qc_b26_stage: {
         Row: {
           b64: string
@@ -814,6 +841,24 @@ export type Database = {
           chunk?: string
           hadith_number?: number
           lang?: string
+          seq?: number
+        }
+        Relationships: []
+      }
+      qc_repair_payload: {
+        Row: {
+          chunk: string
+          expected_md5: string
+          seq: number
+        }
+        Insert: {
+          chunk: string
+          expected_md5: string
+          seq: number
+        }
+        Update: {
+          chunk?: string
+          expected_md5?: string
           seq?: number
         }
         Relationships: []
