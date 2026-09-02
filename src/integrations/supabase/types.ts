@@ -624,6 +624,27 @@ export type Database = {
           },
         ]
       }
+      import_agent_source_chunks: {
+        Row: {
+          batch_key: string
+          chunk_order: number
+          created_at: string
+          source_text: string
+        }
+        Insert: {
+          batch_key: string
+          chunk_order: number
+          created_at?: string
+          source_text: string
+        }
+        Update: {
+          batch_key?: string
+          chunk_order?: number
+          created_at?: string
+          source_text?: string
+        }
+        Relationships: []
+      }
       import_documents: {
         Row: {
           book_count: number | null
