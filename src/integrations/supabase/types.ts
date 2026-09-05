@@ -14,6 +14,435 @@ export type Database = {
   }
   public: {
     Tables: {
+      _final_qc_expected_hashes: {
+        Row: {
+          ar_hash: string
+          ar_len: number
+          en_hash: string
+          en_len: number
+          hadith_number: number
+        }
+        Insert: {
+          ar_hash: string
+          ar_len: number
+          en_hash: string
+          en_len: number
+          hadith_number: number
+        }
+        Update: {
+          ar_hash?: string
+          ar_len?: number
+          en_hash?: string
+          en_len?: number
+          hadith_number?: number
+        }
+        Relationships: []
+      }
+      _import_payload_chunks: {
+        Row: {
+          payload: string | null
+          seq: number
+        }
+        Insert: {
+          payload?: string | null
+          seq: number
+        }
+        Update: {
+          payload?: string | null
+          seq?: number
+        }
+        Relationships: []
+      }
+      backup_9489_9513_pre_restore_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_9539_9563_pre_repair_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_9707_arabic_cleanup_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_9707_arabic_cleanup_20260902_v2: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_batch_9514_9538_pre_repair_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_hadith_lang_fields_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          english_display: string | null
+          english_source: string | null
+          hadith_number: number | null
+          id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_repair_9464_9488_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       backup_vol1_chapters_20260824: {
         Row: {
           book_id: string | null
@@ -238,6 +667,162 @@ export type Database = {
           search_en_normalized?: string | null
           sort_order?: number | null
           source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_vol4_9414_9438_pre_restore_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_vol4_9564_9588_pre_final_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      backup_vol4_9577_9660_pre_restore_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
           updated_at?: string | null
         }
         Relationships: []
@@ -624,6 +1209,27 @@ export type Database = {
           },
         ]
       }
+      import_agent_source_chunks: {
+        Row: {
+          batch_key: string
+          chunk_order: number
+          created_at: string
+          source_text: string
+        }
+        Insert: {
+          batch_key: string
+          chunk_order: number
+          created_at?: string
+          source_text: string
+        }
+        Update: {
+          batch_key?: string
+          chunk_order?: number
+          created_at?: string
+          source_text?: string
+        }
+        Relationships: []
+      }
       import_documents: {
         Row: {
           book_count: number | null
@@ -791,6 +1397,24 @@ export type Database = {
         }
         Relationships: []
       }
+      qc_hex_restore_vol4: {
+        Row: {
+          field: string
+          hextext: string
+          ord: number
+        }
+        Insert: {
+          field: string
+          hextext: string
+          ord: number
+        }
+        Update: {
+          field?: string
+          hextext?: string
+          ord?: number
+        }
+        Relationships: []
+      }
       qc_long_stage: {
         Row: {
           chunk: string
@@ -941,6 +1565,102 @@ export type Database = {
           batch_key?: string
           part_no?: number
           payload?: string
+        }
+        Relationships: []
+      }
+      restore_9364_9576_backup_20260902: {
+        Row: {
+          arabic_display: string | null
+          arabic_source: string | null
+          book_id: string | null
+          chapter_id: string | null
+          collection_id: string | null
+          created_at: string | null
+          english_display: string | null
+          english_source: string | null
+          full_display_content: string | null
+          full_source_content: string | null
+          hadith_number: number | null
+          id: string | null
+          search_ar_normalized: string | null
+          search_en_normalized: string | null
+          sort_order: number | null
+          source_document_id: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arabic_display?: string | null
+          arabic_source?: string | null
+          book_id?: string | null
+          chapter_id?: string | null
+          collection_id?: string | null
+          created_at?: string | null
+          english_display?: string | null
+          english_source?: string | null
+          full_display_content?: string | null
+          full_source_content?: string | null
+          hadith_number?: number | null
+          id?: string | null
+          search_ar_normalized?: string | null
+          search_en_normalized?: string | null
+          sort_order?: number | null
+          source_document_id?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      restore_json_chunks_9364_9576: {
+        Row: {
+          chunk: string
+          ord: number
+        }
+        Insert: {
+          chunk: string
+          ord: number
+        }
+        Update: {
+          chunk?: string
+          ord?: number
+        }
+        Relationships: []
+      }
+      restore_payload_9364_9576: {
+        Row: {
+          ar: string
+          en: string
+          fullc: string
+          hadith_number: number
+        }
+        Insert: {
+          ar: string
+          en: string
+          fullc: string
+          hadith_number: number
+        }
+        Update: {
+          ar?: string
+          en?: string
+          fullc?: string
+          hadith_number?: number
         }
         Relationships: []
       }
@@ -1237,13 +1957,42 @@ export type Database = {
       _load_master_expected: { Args: { payload: Json }; Returns: number }
       _load_master_struct: { Args: { payload: Json }; Returns: number }
       _master_fix: { Args: { payload: Json }; Returns: number }
+      _qc_restore_vol4: {
+        Args: { p_payload: Json; p_token: string }
+        Returns: number
+      }
       _qc_search_load_patch: { Args: { payload: Json }; Returns: number }
+      _tmp_import_exact_hadith: { Args: { payload: string }; Returns: number }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
           _user_id: string
         }
         Returns: boolean
+      }
+      import_hadith_exact_b64: {
+        Args: {
+          p_ar_b64: string
+          p_book: string
+          p_ch: number
+          p_coll_sort: number
+          p_en_b64: string
+          p_hn: number
+          p_src: string
+        }
+        Returns: undefined
+      }
+      import_hadith_exact_text: {
+        Args: {
+          p_ar: string
+          p_book: string
+          p_ch: number
+          p_coll_sort: number
+          p_en: string
+          p_hn: number
+          p_src: string
+        }
+        Returns: undefined
       }
       normalize_ar_app: { Args: { input: string }; Returns: string }
       normalize_en_app: { Args: { input: string }; Returns: string }
@@ -1305,6 +2054,18 @@ export type Database = {
         }
         Returns: undefined
       }
+      replace_hadith_ar_b64: {
+        Args: { p_ar_b64: string; p_hn: number }
+        Returns: undefined
+      }
+      replace_hadith_exact_b64: {
+        Args: { p_ar_b64: string; p_en_b64: string; p_hn: number }
+        Returns: undefined
+      }
+      replace_hadith_exact_hex: {
+        Args: { p_ar_hex: string; p_en_hex: string; p_hn: number }
+        Returns: undefined
+      }
     }
     Enums: {
       app_role: "admin" | "user"
@@ -1323,12 +2084,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1352,11 +2113,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1377,11 +2138,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1402,11 +2163,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1419,11 +2180,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
