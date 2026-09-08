@@ -53,6 +53,159 @@ export type Database = {
         }
         Relationships: []
       }
+      _vol5_b376_patch: {
+        Row: {
+          ar_b: string
+          en_b: string
+          id: number
+        }
+        Insert: {
+          ar_b?: string
+          en_b?: string
+          id: number
+        }
+        Update: {
+          ar_b?: string
+          en_b?: string
+          id?: number
+        }
+        Relationships: []
+      }
+      _vol5_bab6_sync_stage: {
+        Row: {
+          ar: string
+          en: string
+          id: number
+        }
+        Insert: {
+          ar?: string
+          en?: string
+          id: number
+        }
+        Update: {
+          ar?: string
+          en?: string
+          id?: number
+        }
+        Relationships: []
+      }
+      _vol5_fresh_struct_hashes: {
+        Row: {
+          expected_h: string | null
+          k: string
+        }
+        Insert: {
+          expected_h?: string | null
+          k: string
+        }
+        Update: {
+          expected_h?: string | null
+          k?: string
+        }
+        Relationships: []
+      }
+      _vol5_payload_stage: {
+        Row: {
+          chunk: string
+          kind: string
+          seq: number
+        }
+        Insert: {
+          chunk: string
+          kind: string
+          seq: number
+        }
+        Update: {
+          chunk?: string
+          kind?: string
+          seq?: number
+        }
+        Relationships: []
+      }
+      _vol5_qc_struct_expected: {
+        Row: {
+          expected_h: string
+          k: string
+        }
+        Insert: {
+          expected_h: string
+          k: string
+        }
+        Update: {
+          expected_h?: string
+          k?: string
+        }
+        Relationships: []
+      }
+      _vol5_struct_expected: {
+        Row: {
+          h: string | null
+          k: string
+        }
+        Insert: {
+          h?: string | null
+          k: string
+        }
+        Update: {
+          h?: string | null
+          k?: string
+        }
+        Relationships: []
+      }
+      _vol5_text_stage: {
+        Row: {
+          chunk: string
+          kind: string
+          seq: number
+        }
+        Insert: {
+          chunk: string
+          kind: string
+          seq: number
+        }
+        Update: {
+          chunk?: string
+          kind?: string
+          seq?: number
+        }
+        Relationships: []
+      }
+      _vol5_whole_qc_expected: {
+        Row: {
+          expected_h: string | null
+          hadith_number: number
+        }
+        Insert: {
+          expected_h?: string | null
+          hadith_number: number
+        }
+        Update: {
+          expected_h?: string | null
+          hadith_number?: number
+        }
+        Relationships: []
+      }
+      _wholepass1_struct_expected: {
+        Row: {
+          chapter_number: number | null
+          expected_hash: string
+          kind: string
+          surah_no: number
+        }
+        Insert: {
+          chapter_number?: number | null
+          expected_hash: string
+          kind: string
+          surah_no: number
+        }
+        Update: {
+          chapter_number?: number | null
+          expected_hash?: string
+          kind?: string
+          surah_no?: number
+        }
+        Relationships: []
+      }
       backup_9489_9513_pre_restore_20260902: {
         Row: {
           arabic_display: string | null
@@ -1664,6 +1817,99 @@ export type Database = {
         }
         Relationships: []
       }
+      tmp_b18_recover: {
+        Row: {
+          ar: string | null
+          ch: number | null
+          en: string | null
+          n: number
+          so: number | null
+        }
+        Insert: {
+          ar?: string | null
+          ch?: number | null
+          en?: string | null
+          n: number
+          so?: number | null
+        }
+        Update: {
+          ar?: string | null
+          ch?: number | null
+          en?: string | null
+          n?: number
+          so?: number | null
+        }
+        Relationships: []
+      }
+      tmp_b21_hadith_payload: {
+        Row: {
+          chunk: string
+          seq: number
+        }
+        Insert: {
+          chunk: string
+          seq: number
+        }
+        Update: {
+          chunk?: string
+          seq?: number
+        }
+        Relationships: []
+      }
+      tmp_batch17_double: {
+        Row: {
+          hadith_number: number
+          payload: string
+        }
+        Insert: {
+          hadith_number: number
+          payload: string
+        }
+        Update: {
+          hadith_number?: number
+          payload?: string
+        }
+        Relationships: []
+      }
+      tmp_batch17_fields: {
+        Row: {
+          ar2: string
+          chapter_id: string
+          en2: string
+          hadith_number: number
+          sort_order: number
+        }
+        Insert: {
+          ar2: string
+          chapter_id: string
+          en2: string
+          hadith_number: number
+          sort_order: number
+        }
+        Update: {
+          ar2?: string
+          chapter_id?: string
+          en2?: string
+          hadith_number?: number
+          sort_order?: number
+        }
+        Relationships: []
+      }
+      tmp_batch17_payload: {
+        Row: {
+          chunk: string
+          seq: number
+        }
+        Insert: {
+          chunk: string
+          seq: number
+        }
+        Update: {
+          chunk?: string
+          seq?: number
+        }
+        Relationships: []
+      }
       tmp_block_1924_1973_payload: {
         Row: {
           data: string
@@ -1691,6 +1937,30 @@ export type Database = {
         Update: {
           data?: string
           seq?: number
+        }
+        Relationships: []
+      }
+      tmp_final_kitab60_13794_13826: {
+        Row: {
+          chapter_id: string
+          collection_id: string
+          hadith_number: number
+          mixed_content: string
+          sort_order: number
+        }
+        Insert: {
+          chapter_id: string
+          collection_id: string
+          hadith_number: number
+          mixed_content: string
+          sort_order: number
+        }
+        Update: {
+          chapter_id?: string
+          collection_id?: string
+          hadith_number?: number
+          mixed_content?: string
+          sort_order?: number
         }
         Relationships: []
       }
@@ -1963,6 +2233,109 @@ export type Database = {
       }
       _qc_search_load_patch: { Args: { payload: Json }; Returns: number }
       _tmp_import_exact_hadith: { Args: { payload: string }; Returns: number }
+      _vol5_batch_hadith_json: { Args: { payload: Json }; Returns: number }
+      _vol5_batch_struct_json: { Args: { payload: Json }; Returns: number }
+      _vol5_collection_upsert: {
+        Args: {
+          p_ar_b64: string
+          p_en_b64: string
+          p_iar_b64: string
+          p_ien_b64: string
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_collection_upsert_text: {
+        Args: {
+          p_ar: string
+          p_en: string
+          p_iar: string
+          p_ien: string
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_hadith_upsert: {
+        Args: {
+          p_ar_b64: string
+          p_ch: number
+          p_en_b64: string
+          p_num: number
+          p_sort: number
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_hadith_upsert_stage: {
+        Args: {
+          p_ar_kind: string
+          p_ch: number
+          p_en_kind: string
+          p_num: number
+          p_sort: number
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_hadith_upsert_text: {
+        Args: {
+          p_ar: string
+          p_ch: number
+          p_en: string
+          p_num: number
+          p_sort: number
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_hadith_upsert_text_stage: {
+        Args: {
+          p_ar_kind: string
+          p_ch: number
+          p_en_kind: string
+          p_num: number
+          p_sort: number
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_struct_upsert: {
+        Args: {
+          p_ar_b64: string
+          p_ch: number
+          p_en_b64: string
+          p_iar_b64: string
+          p_ien_b64: string
+          p_sort: number
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_struct_upsert_stage: {
+        Args: {
+          p_ar: string
+          p_ch: number
+          p_en: string
+          p_iar_kind: string
+          p_ien_kind: string
+          p_sort: number
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_struct_upsert_text: {
+        Args: {
+          p_ar: string
+          p_ch: number
+          p_en: string
+          p_iar: string
+          p_ien: string
+          p_sort: number
+          p_surah: number
+        }
+        Returns: string
+      }
+      _vol5_whole_struct_sync: { Args: { payload: Json }; Returns: number }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
