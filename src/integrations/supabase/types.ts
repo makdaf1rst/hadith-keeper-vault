@@ -14,6 +14,66 @@ export type Database = {
   }
   public: {
     Tables: {
+      _batch14788_payload_stage: {
+        Row: {
+          chunk_order: number
+          payload: string
+        }
+        Insert: {
+          chunk_order: number
+          payload: string
+        }
+        Update: {
+          chunk_order?: number
+          payload?: string
+        }
+        Relationships: []
+      }
+      _batch42_stage: {
+        Row: {
+          chunk_order: number
+          data: string
+        }
+        Insert: {
+          chunk_order: number
+          data: string
+        }
+        Update: {
+          chunk_order?: number
+          data?: string
+        }
+        Relationships: []
+      }
+      _batch46_payload_stage: {
+        Row: {
+          chunk: string
+          chunk_order: number
+        }
+        Insert: {
+          chunk: string
+          chunk_order: number
+        }
+        Update: {
+          chunk?: string
+          chunk_order?: number
+        }
+        Relationships: []
+      }
+      _batch46_payload_stage2: {
+        Row: {
+          chunk: string
+          chunk_order: number
+        }
+        Insert: {
+          chunk: string
+          chunk_order: number
+        }
+        Update: {
+          chunk?: string
+          chunk_order?: number
+        }
+        Relationships: []
+      }
       _final_qc_expected_hashes: {
         Row: {
           ar_hash: string
@@ -1907,6 +1967,36 @@ export type Database = {
         Update: {
           chunk?: string
           seq?: number
+        }
+        Relationships: []
+      }
+      tmp_batch41_payload: {
+        Row: {
+          chunk: string
+          chunk_order: number
+        }
+        Insert: {
+          chunk: string
+          chunk_order: number
+        }
+        Update: {
+          chunk?: string
+          chunk_order?: number
+        }
+        Relationships: []
+      }
+      tmp_batch43_payload: {
+        Row: {
+          chunk: string
+          chunk_order: number
+        }
+        Insert: {
+          chunk: string
+          chunk_order: number
+        }
+        Update: {
+          chunk?: string
+          chunk_order?: number
         }
         Relationships: []
       }
