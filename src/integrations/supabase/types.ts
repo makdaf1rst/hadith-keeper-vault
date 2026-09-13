@@ -245,6 +245,24 @@ export type Database = {
         }
         Relationships: []
       }
+      _vol6_transfer_stage: {
+        Row: {
+          batch: string
+          piece: string
+          seq: number
+        }
+        Insert: {
+          batch: string
+          piece: string
+          seq: number
+        }
+        Update: {
+          batch?: string
+          piece?: string
+          seq?: number
+        }
+        Relationships: []
+      }
       _wholepass1_struct_expected: {
         Row: {
           chapter_number: number | null
@@ -2284,6 +2302,8 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      _b10_people_load: { Args: { payload: Json }; Returns: number }
+      _b10_people_struct: { Args: { payload: Json }; Returns: number }
       _b13_load: { Args: { payload: Json }; Returns: number }
       _b14_load: { Args: { payload: Json }; Returns: number }
       _b15_load: { Args: { payload: Json }; Returns: number }
@@ -2426,6 +2446,38 @@ export type Database = {
         Returns: string
       }
       _vol5_whole_struct_sync: { Args: { payload: Json }; Returns: number }
+      _vol6_batch_hadith: { Args: { payload: Json }; Returns: number }
+      _vol6_batch_hadith_json: { Args: { payload: Json }; Returns: number }
+      _vol6_batch_hadith_raw: { Args: { payload: Json }; Returns: number }
+      _vol6_batch_load: { Args: { payload: Json }; Returns: number }
+      _vol6_batch_struct: { Args: { payload: Json }; Returns: number }
+      _vol6_batch_struct_json: { Args: { payload: Json }; Returns: number }
+      _vol6_batch_struct_raw: { Args: { payload: Json }; Returns: number }
+      _vol6_current_load: { Args: { payload: Json }; Returns: number }
+      _vol6_hadith_b64: { Args: { payload: Json }; Returns: number }
+      _vol6_hadith_batch: { Args: { payload: Json }; Returns: number }
+      _vol6_hadith_upsert:
+        | { Args: { payload: Json }; Returns: number }
+        | { Args: { p_coll_sort: number; payload: Json }; Returns: number }
+      _vol6_load_batch: { Args: { payload: Json }; Returns: number }
+      _vol6_people_load: { Args: { payload: Json }; Returns: number }
+      _vol6_struct_b64: { Args: { payload: Json }; Returns: number }
+      _vol6_struct_batch: { Args: { payload: Json }; Returns: number }
+      _vol6_struct_upsert:
+        | { Args: { payload: Json }; Returns: number }
+        | { Args: { p_coll_sort: number; payload: Json }; Returns: number }
+      _vol6_upsert_chapter_text: {
+        Args: {
+          p_ar: string
+          p_ch: number
+          p_coll_sort: number
+          p_en: string
+          p_iar: string
+          p_ien: string
+          p_sort: number
+        }
+        Returns: undefined
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
