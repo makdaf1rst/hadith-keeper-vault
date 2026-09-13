@@ -19,6 +19,7 @@ import {
   searchHadiths,
   searchHeadings,
 } from "@/lib/library-api";
+import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { normalizeEnglish, toArabicIndicDigits } from "@/lib/normalize";
 
 const ALL = "__all__";
@@ -142,7 +143,7 @@ export function SearchPanel() {
             <SelectItem value={ALL}>All books</SelectItem>
             {(books.data ?? []).map((book) => (
               <SelectItem key={book.id} value={book.id}>
-                {book.title_en ?? book.title_ar ?? `Book ${book.book_number}`}
+                {formatBookTitle(book.book_number, book.title_en ?? book.title_ar)}
               </SelectItem>
             ))}
           </SelectContent>
@@ -178,7 +179,10 @@ export function SearchPanel() {
             <SelectItem value={ALL}>All chapters</SelectItem>
             {(chapters.data ?? []).map((chapter) => (
               <SelectItem key={chapter.id} value={chapter.id}>
-                {chapter.title_en ?? chapter.title_ar ?? `Chapter ${chapter.chapter_number ?? ""}`}
+                {formatChapterTitle(
+                  chapter.chapter_number,
+                  chapter.title_en ?? chapter.title_ar,
+                ) || "Chapter"}
               </SelectItem>
             ))}
           </SelectContent>
@@ -238,10 +242,14 @@ export function SearchPanel() {
                     params={{ number: String(hit.bookNumber) }}
                     className="text-primary underline-offset-4 hover:underline"
                   >
-                    {hit.title_en ?? hit.title_ar}
+                    {formatBookTitle(hit.bookNumber, hit.title_en ?? hit.title_ar)}
                   </Link>
                 ) : (
-                  <span>{hit.title_en ?? hit.title_ar}</span>
+                  <span>
+                    {hit.kind === "chapter"
+                      ? formatChapterTitle(hit.chapterNumber, hit.title_en ?? hit.title_ar)
+                      : hit.title_en ?? hit.title_ar}
+                  </span>
                 )}
                 {hit.title_ar && hit.title_en ? (
                   <span className="arabic-text text-base! leading-normal! text-muted-foreground">
@@ -278,7 +286,7 @@ export function SearchPanel() {
                   <span className="font-semibold text-primary">Hadith {result.hadith_number}</span>
                   {book ? (
                     <span className="text-xs text-muted-foreground">
-                      {book.title_en ?? book.title_ar ?? `Book ${book.book_number}`}
+                      {formatBookTitle(book.book_number, book.title_en ?? book.title_ar)}
                     </span>
                   ) : null}
                 </div>

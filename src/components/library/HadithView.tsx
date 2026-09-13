@@ -2,6 +2,7 @@ import { Copy } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
 import { toArabicIndicDigits } from "@/lib/normalize";
 
@@ -92,7 +93,15 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
 
       {context ? (
         <div className="border-b border-border px-4 py-3 text-sm text-muted-foreground sm:px-6">
-          <BreadcrumbLine label="Book" ar={context.book?.title_ar} en={context.book?.title_en} />
+          <BreadcrumbLine
+            label="Book"
+            ar={context.book?.title_ar}
+            en={
+              context.book
+                ? formatBookTitle(context.book.book_number, context.book.title_en)
+                : null
+            }
+          />
           <BreadcrumbLine
             label="Collection"
             ar={context.collection?.title_ar}
@@ -101,7 +110,11 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
           <BreadcrumbLine
             label="Chapter"
             ar={context.chapter?.title_ar}
-            en={context.chapter?.title_en}
+            en={
+              context.chapter
+                ? formatChapterTitle(context.chapter.chapter_number, context.chapter.title_en)
+                : null
+            }
           />
         </div>
       ) : null}
