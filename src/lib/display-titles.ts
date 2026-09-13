@@ -32,9 +32,8 @@ export function cleanNumberedTitle(
 
   // Chapter titles commonly retain a redundant "Chapter:" after their number.
   if (kind === "chapter") {
-    clean = hadLabeledNumber
-      ? clean.replace(/^chapter\b/i, "").replace(/^\s*(?::|[-–—])?\s*/, "")
-      : clean.replace(/^chapter\s*(?::|[-–—])\s*/i, "");
+    clean = clean.replace(/^chapter\s*(?::|[-–—])\s*/i, "");
+    if (hadLabeledNumber) clean = clean.replace(/^chapter\s+/i, "");
   } else {
     clean = clean.replace(/^book\s*(?::|[-–—])\s*/i, "");
   }
