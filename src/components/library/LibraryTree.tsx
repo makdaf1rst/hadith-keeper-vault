@@ -13,6 +13,7 @@ import {
   type Collection,
 } from "@/lib/library-api";
 import { IntroText } from "@/components/library/IntroText";
+import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { toArabicIndicDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
@@ -96,15 +97,7 @@ function ChapterNode({ chapter }: { chapter: Chapter }) {
       <Toggle open={open} onClick={() => setOpen((v) => !v)}>
         <Title
           ar={chapter.title_ar}
-          en={
-            chapter.title_en
-              ? chapter.chapter_number
-                ? `Chapter ${chapter.chapter_number} — ${chapter.title_en}`
-                : chapter.title_en
-              : chapter.chapter_number
-                ? `Chapter ${chapter.chapter_number}`
-                : null
-          }
+          en={formatChapterTitle(chapter.chapter_number, chapter.title_en) || null}
         />
       </Toggle>
       {open ? (
@@ -141,9 +134,7 @@ function BookNode({
       <Toggle open={open} onClick={() => setOpen((v) => !v)} className="items-center">
         <Title
           ar={book.title_ar}
-          en={
-            book.title_en ? `Book ${book.book_number} — ${book.title_en}` : `Book ${book.book_number}`
-          }
+          en={formatBookTitle(book.book_number, book.title_en)}
         />
       </Toggle>
       {open ? (

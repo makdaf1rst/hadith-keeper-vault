@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { IntroText } from "@/components/library/IntroText";
+import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { fetchBookByNumber, fetchChapters, fetchCollections } from "@/lib/library-api";
 
 export const Route = createFileRoute("/book/$number")({
@@ -62,8 +63,7 @@ function BookPage() {
           <>
             <div>
               <h1 className="text-2xl font-semibold text-foreground">
-                Book {book.data.book_number}
-                {book.data.title_en ? ` — ${book.data.title_en}` : ""}
+                {formatBookTitle(book.data.book_number, book.data.title_en)}
               </h1>
               {book.data.title_ar ? <p className="arabic-text">{book.data.title_ar}</p> : null}
               <IntroText intro={book.data} className="mt-4" label="Book introduction" />
@@ -82,8 +82,7 @@ function BookPage() {
                     .map((chapter) => (
                       <li key={chapter.id} className="border-l-2 border-border pl-3">
                         <p className="text-sm font-medium">
-                          {chapter.chapter_number ? `Chapter ${chapter.chapter_number}` : "Chapter"}
-                          {chapter.title_en ? ` — ${chapter.title_en}` : ""}
+                          {formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter"}
                         </p>
                         {chapter.title_ar ? (
                           <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p>
@@ -104,8 +103,7 @@ function BookPage() {
                     .map((chapter) => (
                       <li key={chapter.id} className="border-l-2 border-border pl-3">
                         <p className="text-sm font-medium">
-                          {chapter.chapter_number ? `Chapter ${chapter.chapter_number}` : "Chapter"}
-                          {chapter.title_en ? ` — ${chapter.title_en}` : ""}
+                          {formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter"}
                         </p>
                         {chapter.title_ar ? (
                           <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p>

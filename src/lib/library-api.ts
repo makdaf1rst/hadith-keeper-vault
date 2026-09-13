@@ -239,6 +239,7 @@ export type HeadingHit = {
   kind: "book" | "collection" | "chapter";
   id: string;
   bookNumber?: number;
+  chapterNumber?: number | null;
   title_ar: string | null;
   title_en: string | null;
 };
@@ -261,7 +262,7 @@ export async function searchHeadings(query: string): Promise<HeadingHit[]> {
       .limit(20),
     supabase
       .from("chapters")
-      .select("id, title_ar, title_en")
+      .select("id, chapter_number, title_ar, title_en")
       .or(`title_ar.ilike.${pattern},title_en.ilike.${pattern}`)
       .limit(20),
   ]);
@@ -278,7 +279,13 @@ export async function searchHeadings(query: string): Promise<HeadingHit[]> {
   for (const c of collections.data ?? [])
     hits.push({ kind: "collection", id: c.id, title_ar: c.title_ar, title_en: c.title_en });
   for (const c of chapters.data ?? [])
-    hits.push({ kind: "chapter", id: c.id, title_ar: c.title_ar, title_en: c.title_en });
+    hits.push({
+      kind: "chapter",
+      id: c.id,
+      chapterNumber: c.chapter_number,
+      title_ar: c.title_ar,
+      title_en: c.title_en,
+    });
   return hits;
 }
 
