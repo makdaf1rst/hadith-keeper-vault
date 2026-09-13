@@ -16,8 +16,13 @@ export function cleanNumberedTitle(
   const label = kind === "book" ? String.raw`(?:the\s+)?book` : "chapter";
 
   // Handles labels carrying simple or compound numbers: "Chapter 1-1 — ...".
+  const labeledNumber = new RegExp(
+    String.raw`^${label}\s+(?:no\.?\s*)?\d+(?:\s*[-–—./]\s*\d+)*${SEPARATOR}?`,
+    "i",
+  );
+  const hadLabeledNumber = labeledNumber.test(clean);
   clean = clean.replace(
-    new RegExp(String.raw`^${label}\s+(?:no\.?\s*)?\d+(?:\s*[-–—./]\s*\d+)*${SEPARATOR}?`, "i"),
+    labeledNumber,
     "",
   );
 
@@ -26,7 +31,9 @@ export function cleanNumberedTitle(
 
   // Chapter titles commonly retain a redundant "Chapter:" after their number.
   if (kind === "chapter") {
-    clean = clean.replace(/^chapter\s*(?::|[-–—])?\s+/i, "");
+    clean = hadLabeledNumber
+      ? clean.replace(/^chapter\s*(?::|[-–—])?\s+/i, "")
+      : clean.replace(/^chapter\s*(?::|[-–—])\s*/i, "");
   } else {
     clean = clean.replace(/^book\s*(?::|[-–—])\s*/i, "");
   }
