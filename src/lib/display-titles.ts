@@ -21,7 +21,7 @@ export function cleanNumberedTitle(
     String.raw`^${label}\s+(?:no\.?\s*)?\d+(?:\s*[-–—./]\s*\d+)*(?:${TRAILING_SEPARATOR})?`,
     "i",
   );
-  const hadLabeledNumber = labeledNumber.test(clean);
+  const hadLabeledNumber = new RegExp(String.raw`^${label}\s+(?:no\.?\s*)?\d`, "i").test(clean);
   clean = clean.replace(
     labeledNumber,
     "",
