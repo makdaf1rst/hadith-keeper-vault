@@ -1,6 +1,7 @@
 type NumberedTitleKind = "book" | "chapter";
 
 const SEPARATOR = String.raw`\s*(?:[-–—.:]|\|)\s*`;
+const TRAILING_SEPARATOR = String.raw`\s*(?:[–—.:|]|-(?!\s*\d))\s*`;
 
 /**
  * Removes only an obvious, leading display label or number. Stored titles are
@@ -17,7 +18,7 @@ export function cleanNumberedTitle(
 
   // Handles labels carrying simple or compound numbers: "Chapter 1-1 — ...".
   const labeledNumber = new RegExp(
-    String.raw`^${label}\s+(?:no\.?\s*)?\d+(?:\s*[-–—./]\s*\d+)*${SEPARATOR}?`,
+    String.raw`^${label}\s+(?:no\.?\s*)?\d+(?:\s*[-–—./]\s*\d+)*(?:${TRAILING_SEPARATOR})?`,
     "i",
   );
   const hadLabeledNumber = labeledNumber.test(clean);
