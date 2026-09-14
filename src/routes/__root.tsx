@@ -79,16 +79,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jāmiʿ al-Kāmil Hadith Library" },
+      {
+        title:
+          "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+      },
       {
         name: "description",
         content:
-          "A bilingual Arabic-English digital hadith library: 66 Books, 16,546 numbered hadiths, fully searchable.",
+          "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh, by Ḍiyāʾ al-Raḥmān al-Aʿẓamī — a bilingual Arabic–English digital hadith library of 66 Books and 16,546 numbered hadiths, fully searchable.",
       },
-      { property: "og:title", content: "Jāmiʿ al-Kāmil Hadith Library" },
+      {
+        property: "og:title",
+        content:
+          "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+      },
       {
         property: "og:description",
-        content: "Bilingual Arabic-English hadith library with complete, unabridged texts.",
+        content:
+          "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh — a bilingual Arabic–English hadith library by Ḍiyāʾ al-Raḥmān al-Aʿẓamī.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
