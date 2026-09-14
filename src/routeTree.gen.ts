@@ -11,7 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AnnouncementsRouteImport } from './routes/announcements'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as SendGiftRouteImport } from './routes/send-gift'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as BookNumberRouteImport } from './routes/book.$number'
 import { Route as HadithNumberRouteImport } from './routes/hadith.$number'
@@ -25,9 +28,24 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnnouncementsRoute = AnnouncementsRouteImport.update({
+  id: '/announcements',
+  path: '/announcements',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SendGiftRoute = SendGiftRouteImport.update({
+  id: '/send-gift',
+  path: '/send-gift',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -48,14 +66,20 @@ const HadithNumberRoute = HadithNumberRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/announcements': typeof AnnouncementsRoute
   '/auth': typeof AuthRoute
+  '/projects': typeof ProjectsRoute
+  '/send-gift': typeof SendGiftRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/announcements': typeof AnnouncementsRoute
   '/auth': typeof AuthRoute
+  '/projects': typeof ProjectsRoute
+  '/send-gift': typeof SendGiftRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
@@ -64,21 +88,43 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/announcements': typeof AnnouncementsRoute
   '/auth': typeof AuthRoute
+  '/projects': typeof ProjectsRoute
+  '/send-gift': typeof SendGiftRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/book/$number': typeof BookNumberRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/admin' | '/book/$number' | '/hadith/$number'
+  fullPaths:
+    | '/'
+    | '/announcements'
+    | '/auth'
+    | '/projects'
+    | '/send-gift'
+    | '/admin'
+    | '/book/$number'
+    | '/hadith/$number'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/admin' | '/book/$number' | '/hadith/$number'
+  to:
+    | '/'
+    | '/announcements'
+    | '/auth'
+    | '/projects'
+    | '/send-gift'
+    | '/admin'
+    | '/book/$number'
+    | '/hadith/$number'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/announcements'
     | '/auth'
+    | '/projects'
+    | '/send-gift'
     | '/_authenticated/admin'
     | '/book/$number'
     | '/hadith/$number'
@@ -87,7 +133,10 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AnnouncementsRoute: typeof AnnouncementsRoute
   AuthRoute: typeof AuthRoute
+  ProjectsRoute: typeof ProjectsRoute
+  SendGiftRoute: typeof SendGiftRoute
   BookNumberRoute: typeof BookNumberRoute
   HadithNumberRoute: typeof HadithNumberRoute
 }
@@ -108,11 +157,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/announcements': {
+      id: '/announcements'
+      path: '/announcements'
+      fullPath: '/announcements'
+      preLoaderRoute: typeof AnnouncementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/send-gift': {
+      id: '/send-gift'
+      path: '/send-gift'
+      fullPath: '/send-gift'
+      preLoaderRoute: typeof SendGiftRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -153,7 +223,10 @@ const AuthenticatedRouteRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AnnouncementsRoute: AnnouncementsRoute,
   AuthRoute: AuthRoute,
+  ProjectsRoute: ProjectsRoute,
+  SendGiftRoute: SendGiftRoute,
   BookNumberRoute: BookNumberRoute,
   HadithNumberRoute: HadithNumberRoute,
 }
