@@ -10,16 +10,16 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Administrator sign in — Jāmiʿ al-Kāmil Hadith Library" },
+      { title: "Administrator sign in — Al-Jāmiʿ al-Kāmil" },
       {
         name: "description",
         content:
-          "Sign in to the Jāmiʿ al-Kāmil administrator area to import source documents and review validation reports.",
+          "Sign in to the Al-Jāmiʿ al-Kāmil administrator area to import source documents and review validation reports.",
       },
-      { property: "og:title", content: "Administrator sign in — Jāmiʿ al-Kāmil" },
+      { property: "og:title", content: "Administrator sign in — Al-Jāmiʿ al-Kāmil" },
       {
         property: "og:description",
-        content: "Restricted sign-in for the Jāmiʿ al-Kāmil Hadith Library administrator.",
+        content: "Restricted sign-in for the Al-Jāmiʿ al-Kāmil administrator area.",
       },
     ],
   }),
