@@ -9,17 +9,24 @@ import { fetchLibraryStats } from "@/lib/library-api";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Jāmiʿ al-Kāmil Hadith Library — Bilingual Arabic & English" },
+      {
+        title:
+          "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+      },
       {
         name: "description",
         content:
-          "Browse and search Jāmiʿ al-Kāmil: 66 Books and 16,546 numbered hadiths with complete Arabic text, English translation, references, grades and commentary.",
+          "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh, by Ḍiyāʾ al-Raḥmān al-Aʿẓamī. Browse and search 66 Books and 16,546 numbered hadiths with complete Arabic text, English translation, references, grades and commentary.",
       },
-      { property: "og:title", content: "Jāmiʿ al-Kāmil Hadith Library" },
+      {
+        property: "og:title",
+        content:
+          "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+      },
       {
         property: "og:description",
         content:
-          "A scholarly bilingual hadith library — collapsible Books, Collections, Chapters and full, unabridged hadith texts.",
+          "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh — a scholarly bilingual Arabic–English hadith library by Ḍiyāʾ al-Raḥmān al-Aʿẓamī.",
       },
     ],
   }),
@@ -34,14 +41,21 @@ function Index() {
       <header className="border-b border-border bg-parchment">
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <Library className="size-6 text-primary" aria-hidden />
-              <div>
-                <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-                  Jāmiʿ al-Kāmil Hadith Library
+            <div className="flex items-start gap-3">
+              <Library className="mt-1 size-6 shrink-0 text-primary" aria-hidden />
+              <div className="min-w-0">
+                <h1 className="arabic-text text-2xl! font-semibold leading-tight! text-foreground">
+                  الجامع الكامل في الحديث الصحيح الشامل المرتب على أبواب الفقه
                 </h1>
-                <p className="arabic-text text-2xl! leading-tight! text-muted-foreground">
-                  جامع الكامل
+                <p className="english-text mt-1 text-base font-medium text-foreground">
+                  The Complete Comprehensive Collection of Authentic Hadith,
+                  Arranged According to the Chapters of Fiqh
+                </p>
+                <p className="arabic-text mt-2 text-lg! leading-snug! text-muted-foreground">
+                  ضياء الرحمن الأعظمي
+                </p>
+                <p className="english-text text-sm text-muted-foreground">
+                  Ḍiyāʾ al-Raḥmān al-Aʿẓamī
                 </p>
               </div>
             </div>
