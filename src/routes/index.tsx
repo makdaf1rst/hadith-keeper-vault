@@ -1,9 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, Library } from "lucide-react";
+import { Bell, BookOpen, EllipsisVertical, FolderKanban, Gift, Library } from "lucide-react";
 
 import { LibraryTree } from "@/components/library/LibraryTree";
 import { SearchPanel } from "@/components/library/SearchPanel";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { fetchLibraryStats } from "@/lib/library-api";
 
 export const Route = createFileRoute("/")({
@@ -28,6 +35,8 @@ export const Route = createFileRoute("/")({
         content:
           "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh — a scholarly bilingual Arabic–English hadith library by Ḍiyāʾ al-Raḥmān al-Aʿẓamī.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -59,12 +68,48 @@ function Index() {
                 </p>
               </div>
             </div>
-            <Link
-              to="/admin"
-              className="text-sm text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
-            >
-              Admin
-            </Link>
+            <div className="flex shrink-0 items-center gap-1">
+              <Link
+                to="/admin"
+                className="px-2 py-1 text-sm text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
+              >
+                Admin
+              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="size-8 text-muted-foreground hover:text-foreground"
+                    aria-label="Open library menu"
+                    title="Library menu"
+                  >
+                    <EllipsisVertical aria-hidden />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-44 bg-parchment">
+                  <DropdownMenuItem asChild>
+                    <Link to="/announcements" className="cursor-pointer">
+                      <Bell aria-hidden />
+                      Announcements
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/projects" className="cursor-pointer">
+                      <FolderKanban aria-hidden />
+                      Other Projects
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/send-gift" className="cursor-pointer">
+                      <Gift aria-hidden />
+                      Send Gift
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
           <p className="mt-2 text-sm text-muted-foreground">
             {stats.data
