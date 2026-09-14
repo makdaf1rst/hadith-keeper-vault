@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Centralize display-only Kitāb and Bāb label formatting.
-- [ ] Apply it across every frontend book/chapter display.
-- [ ] Verify representative early and later records on desktop and mobile.
-- [ ] Confirm no database writes or schema changes were made.
+- [ ] Add the home-only corner menu without disturbing the library branding.
+- [ ] Add Announcements, Other Projects, and Send Gift placeholder pages.
+- [ ] Verify menu accessibility, navigation, and home-only visibility on desktop and mobile.
+- [ ] Confirm no database or library behavior changes were made.

@@ -1,19 +1,18 @@
-# Global Kitāb and Bāb display formatting
+# Home corner menu and placeholder pages
 
 ## Scope
-- Add shared presentation helpers for book and chapter labels.
-- Use database number fields as the single visible numeric prefix.
-- Remove only obvious redundant prefixes from the start of English titles at render time.
-- Apply the helpers to the library tree, book pages, search filters/results, heading matches, and hadith breadcrumbs.
-- Leave collection labels, Arabic text, hadith numbering, stored content, relationships, and database rows unchanged.
+- Add a compact, keyboard-accessible menu beside the existing Admin link on the home header only.
+- Link the menu to Announcements, Other Projects, and Send Gift.
+- Preserve the existing four-line Arabic/English title and author presentation.
+- Add three minimal destination pages with clear titles and a return link to the library.
+- Leave all library data, search, authentication, administration, numbering, and hierarchy behavior unchanged.
 
-## Display behavior
-- Books render as `N. Title`.
-- Chapters render as `N. Title`.
-- Prefix cleanup handles repeated forms such as `1 —`, `1.`, `Book 1-1`, `Chapter 1-1`, and leading `Book:`/`Chapter:` labels without stripping meaningful title words elsewhere.
-- Missing English titles fall back safely without manufacturing duplicate labels.
+## Technical details
+- Use the existing Button and Dropdown Menu components with TanStack Router links.
+- Add `/announcements`, `/projects`, and `/send-gift` route files, each with unique page metadata.
+- Keep the Send Gift page informational only, with no payment or donation behavior.
 
 ## Verification
-- Add focused formatter tests covering clean titles, duplicated prefixes, compound numbering, and titles without redundant prefixes.
-- Inspect Book 1 / Chapter 1 and representative later records in the live app at desktop and mobile widths.
-- Confirm visible labels contain no duplicated `Book N-N` or `Chapter N-N` patterns.
+- Check the menu opens by pointer and keyboard on desktop and mobile widths.
+- Follow all three links and confirm each destination returns cleanly to the home library.
+- Confirm the corner menu is absent from all three destination pages.
