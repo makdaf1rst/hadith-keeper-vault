@@ -9,8 +9,8 @@ import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours } from "@/lib/
 
 export const Route = createFileRoute("/hadith/$number")({
   head: ({ params }) => {
-    const title = `Hadith ${params.number} — Jāmiʿ al-Kāmil Hadith Library`;
-    const description = `Read hadith number ${params.number} of Jāmiʿ al-Kāmil in full: complete Arabic text, English translation, references, grading and commentary.`;
+    const title = `Hadith ${params.number} — Al-Jāmiʿ al-Kāmil`;
+    const description = `Read hadith number ${params.number} of Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil in full: complete Arabic text, English translation, references, grading and commentary.`;
     return {
       meta: [
         { title },

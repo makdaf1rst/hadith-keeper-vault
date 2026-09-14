@@ -8,8 +8,8 @@ import { fetchBookByNumber, fetchChapters, fetchCollections } from "@/lib/librar
 
 export const Route = createFileRoute("/book/$number")({
   head: ({ params }) => {
-    const title = `Book ${params.number} — Jāmiʿ al-Kāmil Hadith Library`;
-    const description = `Collections and chapters of Book ${params.number} of Jāmiʿ al-Kāmil, with complete Arabic and English headings.`;
+    const title = `Book ${params.number} — Al-Jāmiʿ al-Kāmil`;
+    const description = `Collections and chapters of Book ${params.number} of Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil, with complete Arabic and English headings.`;
     return {
       meta: [
         { title },
