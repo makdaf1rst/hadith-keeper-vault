@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { IntroText } from "@/components/library/IntroText";
+import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { fetchBookByNumber, fetchChapters, fetchCollections } from "@/lib/library-api";
 
