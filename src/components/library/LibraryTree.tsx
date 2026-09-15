@@ -13,6 +13,7 @@ import {
   type Collection,
 } from "@/lib/library-api";
 import { IntroText } from "@/components/library/IntroText";
+import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { toArabicIndicDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
@@ -139,6 +140,13 @@ function BookNode({
       </Toggle>
       {open ? (
         <div className="pl-4">
+          <div className="mx-2 my-2 flex flex-wrap items-center gap-2">
+            <KitabDownloadMenu
+              book={book}
+              collections={collections.data ?? []}
+              chapters={chapters.data ?? []}
+            />
+          </div>
           <IntroText intro={book} className="mx-2 my-2" label="Book introduction" />
           {collections.isLoading || chapters.isLoading ? (
             <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>
