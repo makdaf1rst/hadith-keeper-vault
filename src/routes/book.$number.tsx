@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { IntroText } from "@/components/library/IntroText";
+import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { fetchBookByNumber, fetchChapters, fetchCollections } from "@/lib/library-api";
 
@@ -62,9 +63,16 @@ function BookPage() {
         {book.data ? (
           <>
             <div>
-              <h1 className="text-2xl font-semibold text-foreground">
-                {formatBookTitle(book.data.book_number, book.data.title_en)}
-              </h1>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <h1 className="text-2xl font-semibold text-foreground">
+                  {formatBookTitle(book.data.book_number, book.data.title_en)}
+                </h1>
+                <KitabDownloadMenu
+                  book={book.data}
+                  collections={collections.data ?? []}
+                  chapters={chapters.data ?? []}
+                />
+              </div>
               {book.data.title_ar ? <p className="arabic-text">{book.data.title_ar}</p> : null}
               <IntroText intro={book.data} className="mt-4" label="Book introduction" />
             </div>

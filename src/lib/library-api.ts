@@ -109,6 +109,29 @@ export async function fetchChapterHadiths(chapterId: string): Promise<HadithStub
   return data ?? [];
 }
 
+const HADITH_FULL_COLUMNS =
+  "id, hadith_number, book_id, collection_id, chapter_id, arabic_source, arabic_display, english_source, english_display, full_source_content, full_display_content, sort_order, source_document_id";
+
+/** Every hadith of one book, paged so large Kitābs load completely. */
+export async function fetchBookHadiths(bookId: string): Promise<HadithFull[]> {
+  const pageSize = 500;
+  const all: HadithFull[] = [];
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from("hadiths")
+      .select(HADITH_FULL_COLUMNS)
+      .eq("book_id", bookId)
+      .order("sort_order", { ascending: true })
+      .order("hadith_number", { ascending: true })
+      .range(from, from + pageSize - 1);
+    if (error) throw error;
+    const rows = data ?? [];
+    all.push(...rows);
+    if (rows.length < pageSize) break;
+  }
+  return all;
+}
+
 export async function fetchHadithByNumber(hadithNumber: number): Promise<HadithFull | null> {
   const { data, error } = await supabase
     .from("hadiths")
