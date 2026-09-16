@@ -43,8 +43,18 @@ export function KitabDownloadMenu({ book, collections, chapters }: Props) {
       const hadiths = await fetchBookHadiths(book.id);
       const model = buildKitabExport(book, collections, chapters, hadiths);
       if (kind === "docx") {
-        await downloadKitabDocx(model, kitabFileName(book, "docx"));
-        toast.success("Word file downloaded.", { id: notice });
+        const outcome = await downloadKitabDocx(model, kitabFileName(book, "docx"));
+        if (outcome === "shared") {
+          toast.success("Word file ready — choose “Save to Files”.", { id: notice });
+        } else if (outcome === "opened") {
+          toast.success("Word file opened — use your browser’s share or save option.", {
+            id: notice,
+          });
+        } else if (outcome === "cancelled") {
+          toast.info("Download cancelled.", { id: notice });
+        } else {
+          toast.success("Download started.", { id: notice });
+        }
       } else {
         await downloadKitabPdf(model);
         toast.success("Choose “Save as PDF” in the print window.", { id: notice });
