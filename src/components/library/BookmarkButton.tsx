@@ -24,7 +24,12 @@ export function BookmarkButton({ number, bookTitle, collectionTitle, chapterTitl
       aria-pressed={saved}
       aria-label={saved ? `Remove hadith ${number} from bookmarks` : `Bookmark hadith ${number}`}
       onClick={() => {
-        const added = toggle({ number, bookTitle, collectionTitle, chapterTitle });
+        const added = toggle({
+          number,
+          bookTitle: bookTitle ?? null,
+          collectionTitle: collectionTitle ?? null,
+          chapterTitle: chapterTitle ?? null,
+        });
         toast.success(added ? `Hadith ${number} bookmarked.` : `Bookmark removed.`);
       }}
     >
