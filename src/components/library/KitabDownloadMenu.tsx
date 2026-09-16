@@ -59,7 +59,12 @@ export function KitabDownloadMenu({ book, collections, chapters }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" disabled={busy !== null} aria-label="Download this Kitāb">
+        <Button
+          variant="outline"
+          disabled={busy !== null}
+          aria-label="Download this Kitāb"
+          className="h-10 w-full justify-center sm:w-auto"
+        >
           {busy ? <Loader2 className="animate-spin" /> : <Download />}
           {busy ? "Preparing…" : "Download"}
         </Button>

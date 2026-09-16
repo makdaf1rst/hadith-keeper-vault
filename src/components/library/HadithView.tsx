@@ -1,6 +1,7 @@
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
 
+import { BookmarkButton } from "@/components/library/BookmarkButton";
 import { Button } from "@/components/ui/button";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
@@ -79,6 +80,20 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
           </span>
         </div>
         <div className="flex flex-wrap gap-2">
+          <BookmarkButton
+            number={hadith.hadith_number}
+            bookTitle={
+              context?.book
+                ? formatBookTitle(context.book.book_number, context.book.title_en)
+                : null
+            }
+            collectionTitle={context?.collection?.title_en ?? null}
+            chapterTitle={
+              context?.chapter
+                ? formatChapterTitle(context.chapter.chapter_number, context.chapter.title_en)
+                : null
+            }
+          />
           <Button variant="outline" size="sm" onClick={() => copy(arabic, "Arabic")}>
             <Copy /> Arabic
           </Button>
