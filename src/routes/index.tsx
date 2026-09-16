@@ -1,6 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Bell, BookOpen, EllipsisVertical, FolderKanban, Gift, Library } from "lucide-react";
+import {
+  Bell,
+  Bookmark as BookmarkIcon,
+  BookOpen,
+  EllipsisVertical,
+  FolderKanban,
+  Gift,
+  Library,
+} from "lucide-react";
 
 import { LibraryTree } from "@/components/library/LibraryTree";
 import { SearchPanel } from "@/components/library/SearchPanel";
@@ -89,6 +97,12 @@ function Index() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-44 bg-parchment">
+                  <DropdownMenuItem asChild>
+                    <Link to="/bookmarks" className="cursor-pointer">
+                      <BookmarkIcon aria-hidden />
+                      Bookmarks
+                    </Link>
+                  </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/announcements" className="cursor-pointer">
                       <Bell aria-hidden />

@@ -91,6 +91,32 @@ function HadithPage() {
           <div className="space-y-4">
             <IntroText intro={context.data?.chapter} label="Chapter introduction" />
             <HadithView hadith={hadith.data} context={context.data} />
+            <nav
+              aria-label="Hadith navigation"
+              className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between"
+            >
+              {neighbours.data?.previous ? (
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+                  <Link
+                    to="/hadith/$number"
+                    params={{ number: String(neighbours.data.previous) }}
+                  >
+                    <ChevronLeft /> Previous hadith {neighbours.data.previous}
+                  </Link>
+                </Button>
+              ) : (
+                <span className="hidden sm:block" />
+              )}
+              {neighbours.data?.next ? (
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+                  <Link to="/hadith/$number" params={{ number: String(neighbours.data.next) }}>
+                    Next hadith {neighbours.data.next} <ChevronRight />
+                  </Link>
+                </Button>
+              ) : (
+                <span className="hidden sm:block" />
+              )}
+            </nav>
           </div>
         ) : null}
       </main>
