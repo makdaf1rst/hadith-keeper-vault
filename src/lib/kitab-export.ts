@@ -301,18 +301,64 @@ export async function downloadKitabDocx(model: KitabExport, fileName: string) {
   });
 
   const blob = await Packer.toBlob(doc);
-  triggerDownload(blob, fileName);
+  return deliverFile(blob, fileName);
 }
 
-function triggerDownload(blob: Blob, fileName: string) {
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = fileName;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 5000);
+const DOCX_TYPE = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+
+/** What actually happened, so the UI can tell the truth instead of assuming. */
+export type DeliveryOutcome = "shared" | "downloaded" | "opened" | "cancelled";
+
+function isAppleMobile() {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent;
+  return /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+}
+
+function supportsAnchorDownload() {
+  if (typeof document === "undefined") return false;
+  return "download" in document.createElement("a");
+}
+
+export async function deliverFile(blob: Blob, fileName: string): Promise<DeliveryOutcome> {
+  const file = new File([blob], fileName, { type: blob.type || DOCX_TYPE });
+
+  // iOS Safari ignores anchor downloads for blobs; the Share sheet ("Save to Files")
+  // is the only supported hand-off there.
+  const canShare =
+    typeof navigator !== "undefined" &&
+    typeof navigator.share === "function" &&
+    typeof navigator.canShare === "function" &&
+    navigator.canShare({ files: [file] });
+
+  if (canShare && (isAppleMobile() || !supportsAnchorDownload())) {
+    try {
+      await navigator.share({ files: [file], title: fileName });
+      return "shared";
+    } catch (error) {
+      if ((error as DOMException)?.name === "AbortError") return "cancelled";
+      // fall through to the download/open path below
+    }
+  }
+
+  const url = URL.createObjectURL(file);
+  try {
+    if (supportsAnchorDownload()) {
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileName;
+      link.rel = "noopener";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      return "downloaded";
+    }
+    const opened = window.open(url, "_blank");
+    if (opened) return "opened";
+    throw new Error("The browser blocked the file hand-off.");
+  } finally {
+    setTimeout(() => URL.revokeObjectURL(url), 60_000);
+  }
 }
 
 /* ------------------------------- PDF ------------------------------- */
