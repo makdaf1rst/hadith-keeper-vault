@@ -5,7 +5,14 @@ import { ArrowLeft } from "lucide-react";
 import { IntroText } from "@/components/library/IntroText";
 import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
-import { fetchBookByNumber, fetchChapters, fetchCollections } from "@/lib/library-api";
+import {
+  fetchBookByNumber,
+  fetchChapterHadiths,
+  fetchChapters,
+  fetchCollections,
+  type Chapter,
+} from "@/lib/library-api";
+import { toArabicIndicDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/book/$number")({
   head: ({ params }) => {
@@ -22,6 +29,53 @@ export const Route = createFileRoute("/book/$number")({
   },
   component: BookPage,
 });
+
+function ChapterHadiths({ chapter }: { chapter: Chapter }) {
+  const hadiths = useQuery({
+    queryKey: ["chapter-hadiths", chapter.id],
+    queryFn: () => fetchChapterHadiths(chapter.id),
+  });
+
+  if (hadiths.isLoading) {
+    return <p className="mt-2 text-xs text-muted-foreground">Loading hadiths…</p>;
+  }
+
+  if (!hadiths.data?.length) {
+    return <p className="mt-2 text-xs text-muted-foreground">No numbered hadiths in this chapter.</p>;
+  }
+
+  return (
+    <ul className="mt-3 flex flex-wrap gap-2">
+      {hadiths.data.map((hadith) => (
+        <li key={hadith.id}>
+          <Link
+            to="/hadith/$number"
+            params={{ number: String(hadith.hadith_number) }}
+            className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1 text-sm transition-colors hover:border-primary hover:text-primary"
+          >
+            {hadith.hadith_number}
+            <span className="arabic-text text-sm! leading-none! text-muted-foreground">
+              {toArabicIndicDigits(hadith.hadith_number)}
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ChapterBlock({ chapter }: { chapter: Chapter }) {
+  return (
+    <li className="border-l-2 border-border pl-3">
+      <p className="text-sm font-medium">
+        {formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter"}
+      </p>
+      {chapter.title_ar ? <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p> : null}
+      <IntroText intro={chapter} className="mt-2" label="Chapter introduction" />
+      <ChapterHadiths chapter={chapter} />
+    </li>
+  );
+}
 
 function BookPage() {
   const { number } = Route.useParams();
@@ -80,24 +134,12 @@ function BookPage() {
             {(collections.data ?? []).map((collection) => (
               <section key={collection.id} className="rounded-lg border border-border bg-card p-5">
                 <h2 className="text-lg font-semibold">{collection.title_en ?? "Collection"}</h2>
-                {collection.title_ar ? (
-                  <p className="arabic-text">{collection.title_ar}</p>
-                ) : null}
+                {collection.title_ar ? <p className="arabic-text">{collection.title_ar}</p> : null}
                 <IntroText intro={collection} className="mt-3" label="Collection introduction" />
-                <ul className="mt-3 space-y-2">
+                <ul className="mt-3 space-y-3">
                   {(chapters.data ?? [])
                     .filter((chapter) => chapter.collection_id === collection.id)
-                    .map((chapter) => (
-                      <li key={chapter.id} className="border-l-2 border-border pl-3">
-                        <p className="text-sm font-medium">
-                          {formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter"}
-                        </p>
-                        {chapter.title_ar ? (
-                          <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p>
-                        ) : null}
-                        <IntroText intro={chapter} className="mt-2" label="Chapter introduction" />
-                      </li>
-                    ))}
+                    .map((chapter) => <ChapterBlock key={chapter.id} chapter={chapter} />)}
                 </ul>
               </section>
             ))}
@@ -105,24 +147,13 @@ function BookPage() {
             {(chapters.data ?? []).some((chapter) => !chapter.collection_id) ? (
               <section className="rounded-lg border border-border bg-card p-5">
                 <h2 className="text-lg font-semibold">Chapters</h2>
-                <ul className="mt-3 space-y-2">
+                <ul className="mt-3 space-y-3">
                   {(chapters.data ?? [])
                     .filter((chapter) => !chapter.collection_id)
-                    .map((chapter) => (
-                      <li key={chapter.id} className="border-l-2 border-border pl-3">
-                        <p className="text-sm font-medium">
-                          {formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter"}
-                        </p>
-                        {chapter.title_ar ? (
-                          <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p>
-                        ) : null}
-                        <IntroText intro={chapter} className="mt-2" label="Chapter introduction" />
-                      </li>
-                    ))}
+                    .map((chapter) => <ChapterBlock key={chapter.id} chapter={chapter} />)}
                 </ul>
               </section>
             ) : null}
-
           </>
         ) : null}
       </main>
