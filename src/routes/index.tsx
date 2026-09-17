@@ -6,7 +6,6 @@ import {
   BookOpen,
   EllipsisVertical,
   FolderKanban,
-  Library,
   Mail,
 } from "lucide-react";
 
@@ -56,25 +55,26 @@ function Index() {
       <header className="border-b border-border bg-parchment">
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-start gap-3">
-              <Library className="mt-1 size-6 shrink-0 text-primary" aria-hidden />
-              <div className="min-w-0">
-                <h1 className="arabic-text text-2xl! font-semibold leading-tight! text-foreground">
+            <div className="flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-1 sm:flex-row sm:gap-8">
+              <img
+                src="/jami-al-kamil-logo.png"
+                alt="Al-Jami al-Kamil — الجامع الكامل"
+                className="h-20 w-auto shrink-0 sm:h-24"
+              />
+              <div className="min-w-0 flex-1 text-center">
+                <h1 className="arabic-text text-center! text-2xl! font-semibold leading-tight! text-foreground">
                   الجامع الكامل في الحديث الصحيح الشامل المرتب على أبواب الفقه
                 </h1>
                 <p className="english-text mt-1 text-base font-medium text-foreground">
                   The Complete Comprehensive Collection of Authentic Hadith, Arranged According to
                   the Chapters of Fiqh
                 </p>
-                <p className="arabic-text mt-2 text-lg! leading-snug! text-muted-foreground">
+                <p className="arabic-text mt-2 text-center! text-lg! leading-snug! text-muted-foreground">
                   ضياء الرحمن الأعظمي
-                </p>
-                <p className="english-text text-sm text-muted-foreground">
-                  Ḍiyāʾ al-Raḥmān al-Aʿẓamī
                 </p>
               </div>
             </div>
-            <div className="flex shrink-0 items-center gap-1">
+            <div className="ml-auto flex shrink-0 items-center gap-1">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -117,11 +117,6 @@ function Index() {
               </DropdownMenu>
             </div>
           </div>
-          <p className="mt-2 text-sm text-muted-foreground">
-            {stats.data
-              ? `${stats.data.books} Books · ${stats.data.hadiths} hadiths imported of 16,546`
-              : "Bilingual Arabic–English collection"}
-          </p>
         </div>
       </header>
 
@@ -137,7 +132,17 @@ function Index() {
           </aside>
 
           <section className="rounded-lg border border-border bg-card p-6">
-            <h2 className="text-lg font-semibold text-foreground">About this library</h2>
+            <div className="border-b border-border pb-4">
+              <p className="english-text text-base font-medium text-foreground">
+                Ḍiyāʾ al-Raḥmān al-Aʿẓamī
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {stats.data
+                  ? `${stats.data.books} Books · ${stats.data.hadiths} hadiths imported of 16,546`
+                  : "Bilingual Arabic–English collection"}
+              </p>
+            </div>
+            <h2 className="mt-4 text-lg font-semibold text-foreground">About this library</h2>
             <div className="english-text mt-3 space-y-4 leading-7 text-muted-foreground">
               <p>
                 Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī (ضياء الرحمن الأعظمي) was a distinguished scholar of Ḥadīth and a professor at the Islamic University of Madinah. Among his greatest scholarly achievements is <em>Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil al-Murattab ʿalā Abwāb al-Fiqh</em>, a monumental effort to gather the reliable Sunnah of the Messenger of Allah ﷺ into one comprehensive and systematically arranged collection.
