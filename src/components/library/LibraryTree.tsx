@@ -4,6 +4,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 import {
+  fetchBookHadiths,
   fetchBooks,
   fetchChapterHadiths,
   fetchChapters,
@@ -11,6 +12,7 @@ import {
   type Book as BookRow,
   type Chapter,
   type Collection,
+  type HadithStub,
 } from "@/lib/library-api";
 import { IntroText } from "@/components/library/IntroText";
 import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
@@ -70,19 +72,10 @@ function Toggle({
   );
 }
 
-function HadithList({ chapterId }: { chapterId: string }) {
-  const { data, isLoading } = useQuery({
-    queryKey: ["chapter-hadiths", chapterId],
-    queryFn: () => fetchChapterHadiths(chapterId),
-  });
-
-  if (isLoading) return <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>;
-  if (!data?.length)
-    return <p className="px-2 py-1 text-xs text-muted-foreground">No hadiths imported yet.</p>;
-
+function HadithChips({ hadiths }: { hadiths: HadithStub[] }) {
   return (
     <ul className="flex flex-wrap gap-1.5 px-2 py-2">
-      {data.map((h) => (
+      {hadiths.map((h) => (
         <li key={h.id}>
           <Link
             to="/hadith/$number"
@@ -94,6 +87,67 @@ function HadithList({ chapterId }: { chapterId: string }) {
               {toArabicIndicDigits(h.hadith_number)}
             </span>
           </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function HadithList({ chapterId }: { chapterId: string }) {
+  const { data, isLoading } = useQuery({
+    queryKey: ["chapter-hadiths", chapterId],
+    queryFn: () => fetchChapterHadiths(chapterId),
+  });
+
+  if (isLoading) return <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>;
+  if (!data?.length)
+    return <p className="px-2 py-1 text-xs text-muted-foreground">No hadiths imported yet.</p>;
+
+  return <HadithChips hadiths={data} />;
+}
+
+/**
+ * Hadiths of a book that has no collections or chapters. Their chapter_id
+ * values are orphans, so they are grouped by chapter_id into neutral
+ * "Section N" labels (ordered by each group's first hadith number); a book
+ * whose hadiths all share one orphan id renders as a flat list.
+ */
+function BookHadiths({ bookId }: { bookId: string }) {
+  const { data, isLoading } = useQuery({
+    queryKey: ["book-hadiths", bookId],
+    queryFn: () => fetchBookHadiths(bookId),
+  });
+
+  if (isLoading) return <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>;
+  if (!data?.length)
+    return (
+      <p className="px-2 py-1 text-xs text-muted-foreground">
+        Nothing imported under this book yet.
+      </p>
+    );
+
+  const byChapter = new Map<string, HadithStub[]>();
+  for (const h of data) {
+    const key = h.chapter_id ?? "";
+    const group = byChapter.get(key);
+    const stub = { id: h.id, hadith_number: h.hadith_number, chapter_id: h.chapter_id };
+    if (group) group.push(stub);
+    else byChapter.set(key, [stub]);
+  }
+  const sections = [...byChapter.values()]
+    .map((group) => group.sort((a, b) => a.hadith_number - b.hadith_number))
+    .sort((a, b) => a[0]!.hadith_number - b[0]!.hadith_number);
+
+  if (sections.length === 1) return <HadithChips hadiths={sections[0]!} />;
+
+  return (
+    <ul className="space-y-0.5">
+      {sections.map((section, i) => (
+        <li key={section[0]!.id} className="border-l border-border pl-2">
+          <p className="px-2 py-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+            Section {i + 1}
+          </p>
+          <HadithChips hadiths={section} />
         </li>
       ))}
     </ul>
@@ -122,10 +176,13 @@ function ChapterNode({ chapter }: { chapter: Chapter }) {
 
 function BookNode({
   book,
+  open,
+  onToggle,
 }: {
   book: BookRow;
+  open: boolean;
+  onToggle: () => void;
 }) {
-  const [open, setOpen] = useState(false);
   const collections = useQuery({
     queryKey: ["collections", book.id],
     queryFn: () => fetchCollections(book.id),
@@ -138,10 +195,12 @@ function BookNode({
   });
 
   const loose = (chapters.data ?? []).filter((c) => !c.collection_id);
+  const headingsLoaded = !collections.isLoading && !chapters.isLoading;
+  const noHeadings = headingsLoaded && !(collections.data ?? []).length && !loose.length;
 
   return (
     <li className="rounded-md">
-      <Toggle open={open} onClick={() => setOpen((v) => !v)} className="items-center">
+      <Toggle open={open} onClick={onToggle} className="items-center">
         <Title
           ar={formatArabicBookTitle(book.book_number, book.title_ar)}
           en={formatBookTitle(book.book_number, book.title_en)}
@@ -156,46 +215,26 @@ function BookNode({
               chapters={chapters.data ?? []}
             />
           </div>
-          <IntroText intro={book} className="mx-2 my-2" label="Book introduction" />
-          {collections.isLoading || chapters.isLoading ? (
+          {headingsLoaded ? null : (
             <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>
-          ) : null}
+          )}
           <ul className="space-y-0.5">
             {(collections.data ?? []).map((collection) => {
               const own = (chapters.data ?? []).filter((c) => c.collection_id === collection.id);
-              return (
-                <CollectionNode
-                  key={collection.id}
-                  collection={collection}
-                  chapters={own}
-                />
-              );
+              return <CollectionNode key={collection.id} collection={collection} chapters={own} />;
             })}
             {loose.map((chapter) => (
               <ChapterNode key={chapter.id} chapter={chapter} />
             ))}
           </ul>
-          {!collections.isLoading &&
-          !chapters.isLoading &&
-          !(collections.data ?? []).length &&
-          !loose.length ? (
-            <p className="px-2 py-1 text-xs text-muted-foreground">
-              Nothing imported under this book yet.
-            </p>
-          ) : null}
+          {noHeadings ? <BookHadiths bookId={book.id} /> : null}
         </div>
       ) : null}
     </li>
   );
 }
 
-function CollectionNode({
-  collection,
-  chapters,
-}: {
-  collection: Collection;
-  chapters: Chapter[];
-}) {
+function CollectionNode({ collection, chapters }: { collection: Collection; chapters: Chapter[] }) {
   const [open, setOpen] = useState(false);
   return (
     <li className="border-l border-border pl-2">
@@ -204,21 +243,27 @@ function CollectionNode({
       </Toggle>
       {open ? (
         <>
-        <IntroText intro={collection} className="mx-2 my-2" label="Collection introduction" />
-        <ul className="space-y-0.5 pl-4">
-          {chapters.length ? (
-            chapters.map((chapter) => <ChapterNode key={chapter.id} chapter={chapter} />)
-          ) : (
-            <li className="px-2 py-1 text-xs text-muted-foreground">No chapters yet.</li>
-          )}
-        </ul>
+          <IntroText intro={collection} className="mx-2 my-2" label="Collection introduction" />
+          <ul className="space-y-0.5 pl-4">
+            {chapters.length ? (
+              chapters.map((chapter) => <ChapterNode key={chapter.id} chapter={chapter} />)
+            ) : (
+              <li className="px-2 py-1 text-xs text-muted-foreground">No chapters yet.</li>
+            )}
+          </ul>
         </>
       ) : null}
     </li>
   );
 }
 
-export function LibraryTree() {
+export function LibraryTree({
+  selectedBookId,
+  onSelectBook,
+}: {
+  selectedBookId: string | null;
+  onSelectBook: (book: BookRow | null) => void;
+}) {
   const { data, isLoading, error } = useQuery({ queryKey: ["books"], queryFn: fetchBooks });
 
   if (isLoading) return <p className="px-2 py-3 text-sm text-muted-foreground">Loading books…</p>;
@@ -235,7 +280,12 @@ export function LibraryTree() {
   return (
     <ul className="space-y-0.5">
       {data.map((book) => (
-        <BookNode key={book.id} book={book} />
+        <BookNode
+          key={book.id}
+          book={book}
+          open={book.id === selectedBookId}
+          onToggle={() => onSelectBook(book.id === selectedBookId ? null : book)}
+        />
       ))}
     </ul>
   );

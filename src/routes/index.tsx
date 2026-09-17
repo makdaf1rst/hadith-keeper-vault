@@ -8,7 +8,9 @@ import {
   FolderKanban,
   Mail,
 } from "lucide-react";
+import { useState } from "react";
 
+import { IntroText } from "@/components/library/IntroText";
 import { LibraryTree } from "@/components/library/LibraryTree";
 import { SearchPanel } from "@/components/library/SearchPanel";
 import { Button } from "@/components/ui/button";
@@ -18,7 +20,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { fetchLibraryStats } from "@/lib/library-api";
+import { formatBookTitle } from "@/lib/display-titles";
+import { fetchLibraryStats, type Book } from "@/lib/library-api";
+import { toArabicIndicDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -47,8 +51,19 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+function hasIntro(book: Book | null): book is Book {
+  if (!book) return false;
+  return [
+    book.intro_ar_display,
+    book.intro_ar_source,
+    book.intro_en_display,
+    book.intro_en_source,
+  ].some((value) => value && value.trim().length > 0);
+}
+
 function Index() {
   const stats = useQuery({ queryKey: ["library-stats"], queryFn: fetchLibraryStats });
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
   return (
     <div className="min-h-screen bg-background">
@@ -128,7 +143,7 @@ function Index() {
             <h2 className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold tracking-wide text-sidebar-foreground uppercase">
               <BookOpen className="size-4" aria-hidden /> Contents
             </h2>
-            <LibraryTree />
+            <LibraryTree selectedBookId={selectedBook?.id ?? null} onSelectBook={setSelectedBook} />
           </aside>
 
           <section className="rounded-lg border border-border bg-card p-6">
@@ -142,21 +157,57 @@ function Index() {
                   : "Bilingual Arabic–English collection"}
               </p>
             </div>
-            <h2 className="mt-4 text-lg font-semibold text-foreground">About this library</h2>
-            <div className="english-text mt-3 space-y-4 leading-7 text-muted-foreground">
-              <p>
-                Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī (ضياء الرحمن الأعظمي) was a distinguished scholar of Ḥadīth and a professor at the Islamic University of Madinah. Among his greatest scholarly achievements is <em>Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil al-Murattab ʿalā Abwāb al-Fiqh</em>, a monumental effort to gather the reliable Sunnah of the Messenger of Allah ﷺ into one comprehensive and systematically arranged collection.
-              </p>
-              <p>
-                In preparing this work, Shaykh al-Aʿẓamī drew upon more than 200 books of Ḥadīth and surveyed a vast body of narrations that he estimated at approximately 60,000 distinct hadith texts after repetitions were removed. Through extensive research, comparison, verification, and grading, he compiled 16,546 numbered narrations in the final collection. One of the defining features of the work is its focus on accepted narrations — Ṣaḥīḥ (Authentic) and Ḥasan (Good) hadiths — arranged according to the books and chapters of Islamic jurisprudence.
-              </p>
-              <p>
-                This English translation is a humble effort to make this great work more accessible to English-speaking readers and to contribute, in whatever small measure we can, to the preservation and spread of the Sunnah of the Messenger of Allah ﷺ.
-              </p>
-              <p>
-                We ask Allah to overlook our mistakes and shortcomings, place sincerity and benefit in this effort, reward Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī abundantly for his service to the Sunnah, and accept this deed from us solely for His sake. Āmīn.
-              </p>
-            </div>
+            {hasIntro(selectedBook) ? (
+              <>
+                <h2 className="mt-4 text-lg font-semibold text-foreground">
+                  {formatBookTitle(selectedBook.book_number, selectedBook.title_en)}
+                </h2>
+                {selectedBook.title_ar ? (
+                  <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
+                    {toArabicIndicDigits(selectedBook.book_number)}. {selectedBook.title_ar}
+                  </p>
+                ) : null}
+                <IntroText intro={selectedBook} className="mt-3" label="Book introduction" />
+              </>
+            ) : (
+              <>
+                <h2 className="mt-4 text-lg font-semibold text-foreground">About this library</h2>
+                <div className="english-text mt-3 space-y-4 leading-7 text-muted-foreground">
+                  <p>
+                    Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī (ضياء الرحمن الأعظمي) was a distinguished
+                    scholar of Ḥadīth and a professor at the Islamic University of Madinah. Among
+                    his greatest scholarly achievements is{" "}
+                    <em>
+                      Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil al-Murattab ʿalā Abwāb
+                      al-Fiqh
+                    </em>
+                    , a monumental effort to gather the reliable Sunnah of the Messenger of Allah ﷺ
+                    into one comprehensive and systematically arranged collection.
+                  </p>
+                  <p>
+                    In preparing this work, Shaykh al-Aʿẓamī drew upon more than 200 books of Ḥadīth
+                    and surveyed a vast body of narrations that he estimated at approximately 60,000
+                    distinct hadith texts after repetitions were removed. Through extensive
+                    research, comparison, verification, and grading, he compiled 16,546 numbered
+                    narrations in the final collection. One of the defining features of the work is
+                    its focus on accepted narrations — Ṣaḥīḥ (Authentic) and Ḥasan (Good) hadiths —
+                    arranged according to the books and chapters of Islamic jurisprudence.
+                  </p>
+                  <p>
+                    This English translation is a humble effort to make this great work more
+                    accessible to English-speaking readers and to contribute, in whatever small
+                    measure we can, to the preservation and spread of the Sunnah of the Messenger of
+                    Allah ﷺ.
+                  </p>
+                  <p>
+                    We ask Allah to overlook our mistakes and shortcomings, place sincerity and
+                    benefit in this effort, reward Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī abundantly for
+                    his service to the Sunnah, and accept this deed from us solely for His sake.
+                    Āmīn.
+                  </p>
+                </div>
+              </>
+            )}
           </section>
         </div>
       </main>
