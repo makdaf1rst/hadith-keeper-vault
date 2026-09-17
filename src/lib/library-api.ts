@@ -216,46 +216,100 @@ export type SearchResult = {
   english_display: string | null;
 };
 
+const SEARCH_COLUMNS =
+  "id, hadith_number, book_id, collection_id, chapter_id, arabic_display, english_display";
+
 function escapeForOr(value: string) {
-  return value.replace(/[%,()]/g, " ").trim();
+  return value.replace(/[%,()]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function getSearchTokens(value: string, isArabic: boolean) {
+  const minimumLength = isArabic ? 2 : 3;
+  return [...new Set(value.split(/\s+/).filter((token) => token.length >= minimumLength))];
+}
+
+function scoreCandidate(result: SearchResult, tokens: string[], isArabic: boolean) {
+  const text = isArabic
+    ? normalizeArabic(result.arabic_display ?? "")
+    : normalizeEnglish(result.english_display ?? "");
+  if (!text || tokens.length === 0) return 0;
+  const matched = tokens.reduce((count, token) => count + (text.includes(token) ? 1 : 0), 0);
+  return matched / tokens.length;
 }
 
 export async function searchHadiths(filters: SearchFilters): Promise<SearchResult[]> {
   const raw = filters.query.trim();
   if (!raw) return [];
 
-  let request = supabase
-    .from("hadiths")
-    .select(
-      "id, hadith_number, book_id, collection_id, chapter_id, arabic_display, english_display",
-    )
-    .order("hadith_number", { ascending: true })
-    .limit(200);
-
-  if (filters.bookId) request = request.eq("book_id", filters.bookId);
-  if (filters.collectionId) request = request.eq("collection_id", filters.collectionId);
-  if (filters.chapterId) request = request.eq("chapter_id", filters.chapterId);
-
   const language = filters.language ?? "all";
+  const queryIsArabic = containsArabic(raw);
+  const searchArabic = language !== "en" && (queryIsArabic || language === "ar");
+  const searchEnglish = language !== "ar" && (!queryIsArabic || language === "en");
   const arTerm = escapeForOr(normalizeArabic(raw));
   const enTerm = escapeForOr(normalizeEnglish(raw));
 
-  const clauses: string[] = [];
-  if (arTerm && language !== "en" && containsArabic(raw)) {
-    clauses.push(`search_ar_normalized.ilike.%${arTerm}%`);
-  }
-  if (enTerm && language !== "ar" && !containsArabic(raw)) {
-    clauses.push(`search_en_normalized.ilike.%${enTerm}%`);
-  }
-  if (clauses.length === 0) {
-    if (arTerm && language !== "en") clauses.push(`search_ar_normalized.ilike.%${arTerm}%`);
-    if (enTerm && language !== "ar") clauses.push(`search_en_normalized.ilike.%${enTerm}%`);
-  }
-  if (clauses.length === 0) return [];
+  const buildRequest = () => {
+    let request = supabase
+      .from("hadiths")
+      .select(SEARCH_COLUMNS)
+      .order("hadith_number", { ascending: true })
+      .limit(200);
 
-  const { data, error } = await request.or(clauses.join(","));
-  if (error) throw error;
-  return data ?? [];
+    if (filters.bookId) request = request.eq("book_id", filters.bookId);
+    if (filters.collectionId) request = request.eq("collection_id", filters.collectionId);
+    if (filters.chapterId) request = request.eq("chapter_id", filters.chapterId);
+    return request;
+  };
+
+  // First try the complete normalized phrase. This keeps short/exact searches fast.
+  const phraseClauses: string[] = [];
+  if (searchArabic && arTerm) phraseClauses.push(`search_ar_normalized.ilike.%${arTerm}%`);
+  if (searchEnglish && enTerm) phraseClauses.push(`search_en_normalized.ilike.%${enTerm}%`);
+
+  if (phraseClauses.length > 0) {
+    const { data, error } = await buildRequest().or(phraseClauses.join(","));
+    if (error) throw error;
+    if (data?.length) return data;
+  }
+
+  // A copied sentence can differ from the stored search index only in punctuation,
+  // apostrophe spacing, tashkil, or a small wording correction. Fall back to strong
+  // word anchors, then rank candidates against the CURRENT displayed hadith text.
+  const isArabic = searchArabic && (!searchEnglish || queryIsArabic);
+  const normalized = isArabic ? arTerm : enTerm;
+  const allTokens = getSearchTokens(normalized, isArabic);
+  if (allTokens.length === 0) return [];
+
+  const anchorTokens = [...allTokens]
+    .sort((a, b) => b.length - a.length)
+    .slice(0, Math.min(3, allTokens.length));
+
+  let fallback = buildRequest();
+  const field = isArabic ? "search_ar_normalized" : "search_en_normalized";
+  for (const token of anchorTokens) {
+    fallback = fallback.ilike(field, `%${escapeForOr(token)}%`);
+  }
+
+  let { data: fallbackData, error: fallbackError } = await fallback;
+  if (fallbackError) throw fallbackError;
+
+  // If three anchors were too restrictive because an index is stale, retry with
+  // the single strongest token and let client-side scoring identify the best rows.
+  if ((!fallbackData || fallbackData.length === 0) && anchorTokens.length > 1) {
+    const retry = buildRequest().ilike(field, `%${escapeForOr(anchorTokens[0])}%`);
+    const retryResult = await retry;
+    if (retryResult.error) throw retryResult.error;
+    fallbackData = retryResult.data;
+  }
+
+  const scored = (fallbackData ?? [])
+    .map((result) => ({ result, score: scoreCandidate(result, allTokens, isArabic) }))
+    .filter(({ score }) => score >= (allTokens.length <= 3 ? 1 : 0.6))
+    .sort((a, b) => b.score - a.score || a.result.hadith_number - b.result.hadith_number)
+    .slice(0, 200)
+    .map(({ result }) => result);
+
+  return scored;
 }
 
 export type HeadingHit = {
