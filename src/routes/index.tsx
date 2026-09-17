@@ -179,6 +179,9 @@ function Index() {
                 <p className="arabic-text mt-2 text-center! text-lg! leading-snug! text-muted-foreground">
                   ضياء الرحمن الأعظمي
                 </p>
+                <p className="english-text mt-1 text-center text-sm font-medium text-muted-foreground">
+                  Ḍiyāʾ al-Raḥmān al-Aʿẓamī
+                </p>
               </div>
             </div>
             <div className="ml-auto flex shrink-0 items-center gap-1">
@@ -240,10 +243,7 @@ function Index() {
 
           <section className="rounded-lg border border-border bg-card p-6">
             <div className="border-b border-border pb-4">
-              <p className="english-text text-base font-medium text-foreground">
-                Ḍiyāʾ al-Raḥmān al-Aʿẓamī
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground">
                 {stats.data
                   ? `${stats.data.books} Books · ${stats.data.hadiths} hadiths imported of 16,546`
                   : "Bilingual Arabic–English collection"}
