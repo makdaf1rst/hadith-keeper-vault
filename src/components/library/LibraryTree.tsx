@@ -215,6 +215,7 @@ function BookNode({
               chapters={chapters.data ?? []}
             />
           </div>
+          <IntroText intro={book} className="mx-2 my-2" label="Book introduction" />
           {headingsLoaded ? null : (
             <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>
           )}
