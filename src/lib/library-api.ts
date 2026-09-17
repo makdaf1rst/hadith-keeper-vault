@@ -85,7 +85,7 @@ type StatsFile = {
  */
 const fetchContent = createIsomorphicFn()
   .client(async (path: string): Promise<unknown> => {
-    const response = await fetch(`/content/${path}`);
+    const response = await fetch(`/content/${path}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`Failed to load /content/${path}: ${response.status}`);
     return response.json();
   })
@@ -93,7 +93,7 @@ const fetchContent = createIsomorphicFn()
     try {
       const { getRequestUrl } = await import("@tanstack/react-start/server");
       const url = new URL(`/content/${path}`, getRequestUrl().origin);
-      const response = await fetch(url);
+      const response = await fetch(url, { cache: "no-store" });
       if (!response.ok) throw new Error(`Failed to load ${url}: ${response.status}`);
       return response.json();
     } catch {
@@ -187,17 +187,23 @@ export async function fetchBookByNumber(bookNumber: number): Promise<Book | null
   return books.find((b) => b.book_number === bookNumber) ?? null;
 }
 
+async function refreshBookChapters(bookNumber: number): Promise<BookChaptersFile> {
+  const fresh = fetchContent(`book-${bookNumber}/chapters.json`) as Promise<BookChaptersFile>;
+  bookChaptersCache.set(bookNumber, fresh);
+  return fresh;
+}
+
 export async function fetchCollections(bookId: string): Promise<Collection[]> {
   const bookNumber = await bookNumberForId(bookId);
   if (bookNumber === null) return [];
-  const file = await loadBookChapters(bookNumber);
+  const file = await refreshBookChapters(bookNumber);
   return file.collections;
 }
 
 export async function fetchChapters(bookId: string): Promise<Chapter[]> {
   const bookNumber = await bookNumberForId(bookId);
   if (bookNumber === null) return [];
-  const file = await loadBookChapters(bookNumber);
+  const file = await refreshBookChapters(bookNumber);
   return file.chapters;
 }
 
