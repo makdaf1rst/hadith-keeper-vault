@@ -1058,6 +1058,36 @@ export type Database = {
         }
         Relationships: []
       }
+      bookmarks: {
+        Row: {
+          book_title: string | null
+          chapter_title: string | null
+          collection_title: string | null
+          created_at: string
+          hadith_number: number
+          id: string
+          user_id: string
+        }
+        Insert: {
+          book_title?: string | null
+          chapter_title?: string | null
+          collection_title?: string | null
+          created_at?: string
+          hadith_number: number
+          id?: string
+          user_id: string
+        }
+        Update: {
+          book_title?: string | null
+          chapter_title?: string | null
+          collection_title?: string | null
+          created_at?: string
+          hadith_number?: number
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       books: {
         Row: {
           book_number: number
