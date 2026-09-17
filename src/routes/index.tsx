@@ -25,8 +25,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+        title: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
       },
       {
         name: "description",
@@ -35,8 +34,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content:
-          "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+        content: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
       },
       {
         property: "og:description",
@@ -65,8 +63,8 @@ function Index() {
                   الجامع الكامل في الحديث الصحيح الشامل المرتب على أبواب الفقه
                 </h1>
                 <p className="english-text mt-1 text-base font-medium text-foreground">
-                  The Complete Comprehensive Collection of Authentic Hadith,
-                  Arranged According to the Chapters of Fiqh
+                  The Complete Comprehensive Collection of Authentic Hadith, Arranged According to
+                  the Chapters of Fiqh
                 </p>
                 <p className="arabic-text mt-2 text-lg! leading-snug! text-muted-foreground">
                   ضياء الرحمن الأعظمي
@@ -77,12 +75,6 @@ function Index() {
               </div>
             </div>
             <div className="flex shrink-0 items-center gap-1">
-              <Link
-                to="/admin"
-                className="px-2 py-1 text-sm text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
-              >
-                Admin
-              </Link>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button

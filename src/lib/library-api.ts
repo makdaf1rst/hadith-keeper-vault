@@ -1,4 +1,5 @@
-import { supabase } from "@/integrations/supabase/client";
+import { createIsomorphicFn } from "@tanstack/react-start";
+
 import { containsArabic, normalizeArabic, normalizeEnglish } from "@/lib/normalize";
 
 export type Intro = {
@@ -7,9 +8,6 @@ export type Intro = {
   intro_en_source: string | null;
   intro_en_display: string | null;
 };
-
-const INTRO_COLUMNS =
-  "intro_ar_source, intro_ar_display, intro_en_source, intro_en_display";
 
 export type Book = Intro & {
   id: string;
@@ -59,143 +57,204 @@ export type HadithFull = {
   source_document_id: string | null;
 };
 
+type BookChaptersFile = {
+  collections: Collection[];
+  chapters: Chapter[];
+};
+
+type HadithIndexEntry = { n: number; b: number };
+
+type StatsFile = {
+  books: number;
+  hadiths: number;
+  chapters: number;
+  collections: number;
+  documents: number;
+};
+
+/**
+ * Static content loading.
+ *
+ * In the browser, files under public/content/ are fetched as `/content/...`.
+ * During SSR there is no base URL for a relative fetch, so the request origin
+ * is taken from TanStack Start's request context; if no request is in scope
+ * (e.g. a server function outside a handler) the file is read from disk.
+ * createIsomorphicFn keeps the server branch (and its server-only imports)
+ * out of the client bundle. Note: all current callers run through react-query
+ * on the client, so the SSR path is a safety net, not the hot path.
+ */
+const fetchContent = createIsomorphicFn()
+  .client(async (path: string): Promise<unknown> => {
+    const response = await fetch(`/content/${path}`);
+    if (!response.ok) throw new Error(`Failed to load /content/${path}: ${response.status}`);
+    return response.json();
+  })
+  .server(async (path: string): Promise<unknown> => {
+    try {
+      const { getRequestUrl } = await import("@tanstack/react-start/server");
+      const url = new URL(`/content/${path}`, getRequestUrl().origin);
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Failed to load ${url}: ${response.status}`);
+      return response.json();
+    } catch {
+      const { readFile } = await import("node:fs/promises");
+      const { join } = await import("node:path");
+      const text = await readFile(join(process.cwd(), "public", "content", path), "utf8");
+      return JSON.parse(text);
+    }
+  });
+
+const booksCache = { current: null as Promise<Book[]> | null };
+const statsCache = { current: null as Promise<StatsFile> | null };
+const hadithIndexCache = { current: null as Promise<HadithIndexEntry[]> | null };
+const bookChaptersCache = new Map<number, Promise<BookChaptersFile>>();
+const bookHadithsCache = new Map<number, Promise<HadithFull[]>>();
+
+function loadBooks(): Promise<Book[]> {
+  booksCache.current ??= fetchContent("books.json") as Promise<Book[]>;
+  return booksCache.current;
+}
+
+function loadStats(): Promise<StatsFile> {
+  statsCache.current ??= fetchContent("stats.json") as Promise<StatsFile>;
+  return statsCache.current;
+}
+
+function loadHadithIndex(): Promise<HadithIndexEntry[]> {
+  hadithIndexCache.current ??= fetchContent("hadith-index.json") as Promise<HadithIndexEntry[]>;
+  return hadithIndexCache.current;
+}
+
+function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
+  let cached = bookChaptersCache.get(bookNumber);
+  if (!cached) {
+    cached = fetchContent(`book-${bookNumber}/chapters.json`) as Promise<BookChaptersFile>;
+    bookChaptersCache.set(bookNumber, cached);
+  }
+  return cached;
+}
+
+/** Every hadith of one book, from its static per-book file. */
+function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
+  let cached = bookHadithsCache.get(bookNumber);
+  if (!cached) {
+    cached = fetchContent(`book-${bookNumber}/hadiths.json`) as Promise<HadithFull[]>;
+    bookHadithsCache.set(bookNumber, cached);
+  }
+  return cached;
+}
+
+async function bookNumberForId(bookId: string): Promise<number | null> {
+  const books = await loadBooks();
+  return books.find((b) => b.id === bookId)?.book_number ?? null;
+}
+
+/**
+ * Finds the book_number whose chapters file contains the given chapter or
+ * collection id. Checks already-cached books first, then walks the remaining
+ * per-book chapter files (they are small) until the id resolves.
+ */
+async function bookNumberForHeadingId(id: string): Promise<number | null> {
+  const matches = (file: BookChaptersFile) =>
+    file.chapters.some((c) => c.id === id) || file.collections.some((c) => c.id === id);
+
+  for (const [bookNumber, cached] of bookChaptersCache) {
+    try {
+      if (matches(await cached)) return bookNumber;
+    } catch {
+      // ignore unreadable cached file, keep scanning
+    }
+  }
+
+  const books = await loadBooks();
+  for (const book of books) {
+    if (bookChaptersCache.has(book.book_number)) continue;
+    try {
+      if (matches(await loadBookChapters(book.book_number))) return book.book_number;
+    } catch {
+      // book has no chapters file yet, keep scanning
+    }
+  }
+  return null;
+}
+
 export async function fetchBooks(): Promise<Book[]> {
-  const { data, error } = await supabase
-    .from("books")
-    .select(`id, book_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
-    .order("sort_order", { ascending: true })
-    .order("book_number", { ascending: true });
-  if (error) throw error;
-  return data ?? [];
+  return loadBooks();
 }
 
 export async function fetchBookByNumber(bookNumber: number): Promise<Book | null> {
-  const { data, error } = await supabase
-    .from("books")
-    .select(`id, book_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
-    .eq("book_number", bookNumber)
-    .maybeSingle();
-  if (error) throw error;
-  return data;
+  const books = await loadBooks();
+  return books.find((b) => b.book_number === bookNumber) ?? null;
 }
 
 export async function fetchCollections(bookId: string): Promise<Collection[]> {
-  const { data, error } = await supabase
-    .from("collections")
-    .select(`id, book_id, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
-    .eq("book_id", bookId)
-    .order("sort_order", { ascending: true });
-  if (error) throw error;
-  return data ?? [];
+  const bookNumber = await bookNumberForId(bookId);
+  if (bookNumber === null) return [];
+  const file = await loadBookChapters(bookNumber);
+  return file.collections;
 }
 
 export async function fetchChapters(bookId: string): Promise<Chapter[]> {
-  const { data, error } = await supabase
-    .from("chapters")
-    .select(`id, book_id, collection_id, chapter_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
-    .eq("book_id", bookId)
-    .order("sort_order", { ascending: true });
-  if (error) throw error;
-  return data ?? [];
+  const bookNumber = await bookNumberForId(bookId);
+  if (bookNumber === null) return [];
+  const file = await loadBookChapters(bookNumber);
+  return file.chapters;
 }
 
 export async function fetchChapterHadiths(chapterId: string): Promise<HadithStub[]> {
-  const { data, error } = await supabase
-    .from("hadiths")
-    .select("id, hadith_number, chapter_id")
-    .eq("chapter_id", chapterId)
-    .order("hadith_number", { ascending: true });
-  if (error) throw error;
-  return data ?? [];
+  const bookNumber = await bookNumberForHeadingId(chapterId);
+  if (bookNumber === null) return [];
+  const hadiths = await loadBookHadiths(bookNumber);
+  return hadiths
+    .filter((h) => h.chapter_id === chapterId)
+    .map((h) => ({ id: h.id, hadith_number: h.hadith_number, chapter_id: h.chapter_id }))
+    .sort((a, b) => a.hadith_number - b.hadith_number);
 }
 
-const HADITH_FULL_COLUMNS =
-  "id, hadith_number, book_id, collection_id, chapter_id, arabic_source, arabic_display, english_source, english_display, full_source_content, full_display_content, sort_order, source_document_id";
-
-/** Every hadith of one book, paged so large Kitābs load completely. */
 export async function fetchBookHadiths(bookId: string): Promise<HadithFull[]> {
-  const pageSize = 500;
-  const all: HadithFull[] = [];
-  for (let from = 0; ; from += pageSize) {
-    const { data, error } = await supabase
-      .from("hadiths")
-      .select(HADITH_FULL_COLUMNS)
-      .eq("book_id", bookId)
-      .order("sort_order", { ascending: true })
-      .order("hadith_number", { ascending: true })
-      .range(from, from + pageSize - 1);
-    if (error) throw error;
-    const rows = data ?? [];
-    all.push(...rows);
-    if (rows.length < pageSize) break;
-  }
-  return all;
+  const bookNumber = await bookNumberForId(bookId);
+  if (bookNumber === null) return [];
+  return loadBookHadiths(bookNumber);
 }
 
 export async function fetchHadithByNumber(hadithNumber: number): Promise<HadithFull | null> {
-  const { data, error } = await supabase
-    .from("hadiths")
-    .select(
-      "id, hadith_number, book_id, collection_id, chapter_id, arabic_source, arabic_display, english_source, english_display, full_source_content, full_display_content, sort_order, source_document_id",
-    )
-    .eq("hadith_number", hadithNumber)
-    .maybeSingle();
-  if (error) throw error;
-  return data;
+  const index = await loadHadithIndex();
+  const entry = index.find((e) => e.n === hadithNumber);
+  if (!entry) return null;
+  const hadiths = await loadBookHadiths(entry.b);
+  return hadiths.find((h) => h.hadith_number === hadithNumber) ?? null;
 }
 
 export async function fetchHadithContext(hadith: HadithFull) {
-  const [book, collection, chapter] = await Promise.all([
-    hadith.book_id
-      ? supabase
-          .from("books")
-          .select(`id, book_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
-          .eq("id", hadith.book_id)
-          .maybeSingle()
-      : Promise.resolve({ data: null, error: null }),
-    hadith.collection_id
-      ? supabase
-          .from("collections")
-          .select(`id, book_id, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
-          .eq("id", hadith.collection_id)
-          .maybeSingle()
-      : Promise.resolve({ data: null, error: null }),
-    hadith.chapter_id
-      ? supabase
-          .from("chapters")
-          .select(`id, book_id, collection_id, chapter_number, title_ar, title_en, sort_order, ${INTRO_COLUMNS}`)
-          .eq("id", hadith.chapter_id)
-          .maybeSingle()
-      : Promise.resolve({ data: null, error: null }),
-  ]);
-  return {
-    book: (book.data as Book | null) ?? null,
-    collection: (collection.data as Collection | null) ?? null,
-    chapter: (chapter.data as Chapter | null) ?? null,
-  };
+  const books = await loadBooks();
+  const book = hadith.book_id ? (books.find((b) => b.id === hadith.book_id) ?? null) : null;
+
+  let collection: Collection | null = null;
+  let chapter: Chapter | null = null;
+  if (book && (hadith.collection_id || hadith.chapter_id)) {
+    const file = await loadBookChapters(book.book_number);
+    collection = hadith.collection_id
+      ? (file.collections.find((c) => c.id === hadith.collection_id) ?? null)
+      : null;
+    chapter = hadith.chapter_id
+      ? (file.chapters.find((c) => c.id === hadith.chapter_id) ?? null)
+      : null;
+  }
+  return { book, collection, chapter };
 }
 
 export async function fetchNeighbours(hadithNumber: number) {
-  const [prev, next] = await Promise.all([
-    supabase
-      .from("hadiths")
-      .select("hadith_number")
-      .lt("hadith_number", hadithNumber)
-      .order("hadith_number", { ascending: false })
-      .limit(1)
-      .maybeSingle(),
-    supabase
-      .from("hadiths")
-      .select("hadith_number")
-      .gt("hadith_number", hadithNumber)
-      .order("hadith_number", { ascending: true })
-      .limit(1)
-      .maybeSingle(),
-  ]);
-  return {
-    previous: prev.data?.hadith_number ?? null,
-    next: next.data?.hadith_number ?? null,
-  };
+  const index = await loadHadithIndex();
+  let previous: number | null = null;
+  let next: number | null = null;
+  for (const entry of index) {
+    if (entry.n < hadithNumber) previous = entry.n;
+    if (entry.n > hadithNumber) {
+      next = entry.n;
+      break;
+    }
+  }
+  return { previous, next };
 }
 
 export type SearchFilters = {
@@ -216,100 +275,160 @@ export type SearchResult = {
   english_display: string | null;
 };
 
-const SEARCH_COLUMNS =
-  "id, hadith_number, book_id, collection_id, chapter_id, arabic_display, english_display";
+type PagefindResult = { data: () => Promise<{ url: string; meta: Record<string, string> }> };
+type PagefindApi = {
+  init: () => Promise<void>;
+  search: (
+    term: string,
+    options?: { filters?: Record<string, string[]> },
+  ) => Promise<{ results: PagefindResult[] }>;
+};
 
-function escapeForOr(value: string) {
-  return value.replace(/[%,()]/g, " ").replace(/\s+/g, " ").trim();
-}
+/**
+ * Loads the static pagefind index built by scripts/build-search-index.mjs.
+ * Browser-only and resolved at runtime (the file is generated post-build, so
+ * it must stay out of the Vite bundle). Resolves to null during SSR and in
+ * dev, where /pagefind/ does not exist — callers then fall back to the
+ * legacy cached-book search below.
+ */
+const pagefindCache = { current: null as Promise<PagefindApi | null> | null };
 
-function getSearchTokens(value: string, isArabic: boolean) {
-  const minimumLength = isArabic ? 2 : 3;
-  return [...new Set(value.split(/\s+/).filter((token) => token.length >= minimumLength))];
-}
-
-function scoreCandidate(result: SearchResult, tokens: string[], isArabic: boolean) {
-  const text = isArabic
-    ? normalizeArabic(result.arabic_display ?? "")
-    : normalizeEnglish(result.english_display ?? "");
-  if (!text || tokens.length === 0) return 0;
-  const matched = tokens.reduce((count, token) => count + (text.includes(token) ? 1 : 0), 0);
-  return matched / tokens.length;
+function loadPagefind(): Promise<PagefindApi | null> {
+  pagefindCache.current ??= (async () => {
+    if (typeof window === "undefined") return null;
+    try {
+      const pagefindPath = "/pagefind/pagefind.js";
+      const pagefind = (await import(/* @vite-ignore */ pagefindPath)) as PagefindApi;
+      await pagefind.init();
+      return pagefind;
+    } catch {
+      return null;
+    }
+  })();
+  return pagefindCache.current;
 }
 
 export async function searchHadiths(filters: SearchFilters): Promise<SearchResult[]> {
+  if (!filters.query.trim()) return [];
+  return pagefindSearchHadiths(filters);
+}
+
+/**
+ * Full-text search over the static pagefind index. Each hadith is indexed as
+ * two records (lang filter "ar" / "en") holding the display text plus the
+ * folded search_*_normalized columns, so the query is run through the same
+ * normalization before searching. Arabic and English records for the same
+ * hadith share one result here (deduped by hadith_number).
+ */
+async function pagefindSearchHadiths(filters: SearchFilters): Promise<SearchResult[]> {
+  const raw = filters.query.trim();
+  const pagefind = await loadPagefind();
+  if (!pagefind) return legacySearchHadiths(filters);
+
+  const normalized = containsArabic(raw) ? normalizeArabic(raw) : normalizeEnglish(raw);
+  const term = normalized || raw;
+
+  const pfFilters: Record<string, string[]> = { kind: ["hadith"] };
+  if (filters.bookId) pfFilters["book"] = [filters.bookId];
+  if (filters.collectionId) pfFilters["collection"] = [filters.collectionId];
+  if (filters.chapterId) pfFilters["chapter"] = [filters.chapterId];
+  const language = filters.language ?? "all";
+  if (language !== "all") pfFilters["lang"] = [language];
+
+  const { results } = await pagefind.search(term, { filters: pfFilters });
+
+  const seen = new Set<number>();
+  const out: SearchResult[] = [];
+  for (const result of results) {
+    const { meta } = await result.data();
+    const hadithNumber = Number(meta["hadith_number"]);
+    if (!hadithNumber || seen.has(hadithNumber)) continue;
+    seen.add(hadithNumber);
+    const hadith = await fetchHadithByNumber(hadithNumber);
+    if (!hadith) continue;
+    out.push({
+      id: hadith.id,
+      hadith_number: hadith.hadith_number,
+      book_id: hadith.book_id,
+      collection_id: hadith.collection_id,
+      chapter_id: hadith.chapter_id,
+      arabic_display: hadith.arabic_display,
+      english_display: hadith.english_display,
+    });
+    if (out.length >= 200) break;
+  }
+  out.sort((a, b) => a.hadith_number - b.hadith_number);
+  return out;
+}
+
+/**
+ * Legacy fallback used when the pagefind index is unavailable (vite dev, SSR).
+ * With no book filter, only books whose hadith files are already cached in
+ * this session are searched — usually none — so an unfiltered global text
+ * search returns no results in dev. Set a book filter to search a whole book.
+ */
+async function legacySearchHadiths(filters: SearchFilters): Promise<SearchResult[]> {
   const raw = filters.query.trim();
   if (!raw) return [];
 
+  let bookNumbers: number[];
+  if (filters.bookId) {
+    const bookNumber = await bookNumberForId(filters.bookId);
+    bookNumbers = bookNumber === null ? [] : [bookNumber];
+  } else if (filters.chapterId || filters.collectionId) {
+    const bookNumber = await bookNumberForHeadingId((filters.chapterId ?? filters.collectionId)!);
+    bookNumbers = bookNumber === null ? [] : [bookNumber];
+  } else {
+    bookNumbers = [...bookHadithsCache.keys()];
+  }
+
   const language = filters.language ?? "all";
-  const queryIsArabic = containsArabic(raw);
-  const searchArabic = language !== "en" && (queryIsArabic || language === "ar");
-  const searchEnglish = language !== "ar" && (!queryIsArabic || language === "en");
-  const arTerm = escapeForOr(normalizeArabic(raw));
-  const enTerm = escapeForOr(normalizeEnglish(raw));
+  const arTerm = normalizeArabic(raw);
+  const enTerm = normalizeEnglish(raw);
 
-  const buildRequest = () => {
-    let request = supabase
-      .from("hadiths")
-      .select(SEARCH_COLUMNS)
-      .order("hadith_number", { ascending: true })
-      .limit(200);
+  const searchAr = language !== "en" && (containsArabic(raw) || !enTerm) && !!arTerm;
+  const searchEn = language !== "ar" && (!containsArabic(raw) || !arTerm) && !!enTerm;
+  if (!searchAr && !searchEn) return [];
 
-    if (filters.bookId) request = request.eq("book_id", filters.bookId);
-    if (filters.collectionId) request = request.eq("collection_id", filters.collectionId);
-    if (filters.chapterId) request = request.eq("chapter_id", filters.chapterId);
-    return request;
-  };
+  const results: SearchResult[] = [];
+  for (const bookNumber of bookNumbers) {
+    const hadiths = await loadBookHadiths(bookNumber);
+    for (const h of hadiths) {
+      if (filters.collectionId && h.collection_id !== filters.collectionId) continue;
+      if (filters.chapterId && h.chapter_id !== filters.chapterId) continue;
 
-  // First try the complete normalized phrase. This keeps short/exact searches fast.
-  const phraseClauses: string[] = [];
-  if (searchArabic && arTerm) phraseClauses.push(`search_ar_normalized.ilike.%${arTerm}%`);
-  if (searchEnglish && enTerm) phraseClauses.push(`search_en_normalized.ilike.%${enTerm}%`);
+      let matched = false;
+      if (searchAr) {
+        const haystack = normalizeArabic(
+          `${h.arabic_display ?? ""} ${h.full_source_content ?? ""}`,
+        );
+        matched = haystack.includes(arTerm);
+      }
+      if (!matched && searchEn) {
+        const haystack = normalizeEnglish(
+          `${h.english_display ?? ""} ${h.full_display_content ?? ""}`,
+        );
+        matched = haystack.includes(enTerm);
+      }
+      if (!matched) continue;
 
-  if (phraseClauses.length > 0) {
-    const { data, error } = await buildRequest().or(phraseClauses.join(","));
-    if (error) throw error;
-    if (data?.length) return data;
+      results.push({
+        id: h.id,
+        hadith_number: h.hadith_number,
+        book_id: h.book_id,
+        collection_id: h.collection_id,
+        chapter_id: h.chapter_id,
+        arabic_display: h.arabic_display,
+        english_display: h.english_display,
+      });
+      if (results.length >= 200) {
+        results.sort((a, b) => a.hadith_number - b.hadith_number);
+        return results;
+      }
+    }
   }
-
-  // A copied sentence can differ from the stored search index only in punctuation,
-  // apostrophe spacing, tashkil, or a small wording correction. Fall back to strong
-  // word anchors, then rank candidates against the CURRENT displayed hadith text.
-  const isArabic = searchArabic && (!searchEnglish || queryIsArabic);
-  const normalized = isArabic ? arTerm : enTerm;
-  const allTokens = getSearchTokens(normalized, isArabic);
-  if (allTokens.length === 0) return [];
-
-  const anchorTokens = [...allTokens]
-    .sort((a, b) => b.length - a.length)
-    .slice(0, Math.min(3, allTokens.length));
-
-  let fallback = buildRequest();
-  const field = isArabic ? "search_ar_normalized" : "search_en_normalized";
-  for (const token of anchorTokens) {
-    fallback = fallback.ilike(field, `%${escapeForOr(token)}%`);
-  }
-
-  let { data: fallbackData, error: fallbackError } = await fallback;
-  if (fallbackError) throw fallbackError;
-
-  // If three anchors were too restrictive because an index is stale, retry with
-  // the single strongest token and let client-side scoring identify the best rows.
-  if ((!fallbackData || fallbackData.length === 0) && anchorTokens.length > 1) {
-    const retry = buildRequest().ilike(field, `%${escapeForOr(anchorTokens[0] ?? "")}%`);
-    const retryResult = await retry;
-    if (retryResult.error) throw retryResult.error;
-    fallbackData = retryResult.data;
-  }
-
-  const scored = (fallbackData ?? [])
-    .map((result) => ({ result, score: scoreCandidate(result, allTokens, isArabic) }))
-    .filter(({ score }) => score >= (allTokens.length <= 3 ? 1 : 0.6))
-    .sort((a, b) => b.score - a.score || a.result.hadith_number - b.result.hadith_number)
-    .slice(0, 200)
-    .map(({ result }) => result);
-
-  return scored;
+  results.sort((a, b) => a.hadith_number - b.hadith_number);
+  return results;
 }
 
 export type HeadingHit = {
@@ -321,60 +440,128 @@ export type HeadingHit = {
   title_en: string | null;
 };
 
-export async function searchHeadings(query: string): Promise<HeadingHit[]> {
+function titleMatches(title: string | null, term: string): boolean {
+  return title ? title.toLowerCase().includes(term) : false;
+}
+
+/**
+ * Heading search over the pagefind index. Every book, collection and chapter
+ * title (raw + normalized) is indexed with a shared "heading" value on the
+ * kind filter (pagefind ANDs multiple query values on one filter, so the
+ * shared tag is how all three kinds are covered by a single query), keeping
+ * heading hits separate from hadith text hits.
+ */
+async function pagefindSearchHeadings(query: string): Promise<HeadingHit[]> {
   const raw = query.trim();
-  if (raw.length < 2) return [];
-  const term = escapeForOr(raw);
-  const pattern = `%${term}%`;
-  const [books, collections, chapters] = await Promise.all([
-    supabase
-      .from("books")
-      .select("id, book_number, title_ar, title_en")
-      .or(`title_ar.ilike.${pattern},title_en.ilike.${pattern}`)
-      .limit(20),
-    supabase
-      .from("collections")
-      .select("id, title_ar, title_en")
-      .or(`title_ar.ilike.${pattern},title_en.ilike.${pattern}`)
-      .limit(20),
-    supabase
-      .from("chapters")
-      .select("id, chapter_number, title_ar, title_en")
-      .or(`title_ar.ilike.${pattern},title_en.ilike.${pattern}`)
-      .limit(20),
-  ]);
+  const pagefind = await loadPagefind();
+  if (!pagefind) return legacySearchHeadings(query);
+
+  const normalized = containsArabic(raw) ? normalizeArabic(raw) : normalizeEnglish(raw);
+  const term = normalized || raw;
+
+  const { results } = await pagefind.search(term, {
+    filters: { kind: ["heading"] },
+  });
 
   const hits: HeadingHit[] = [];
-  for (const b of books.data ?? [])
+  const counts = { book: 0, collection: 0, chapter: 0 };
+  for (const result of results) {
+    const { meta } = await result.data();
+    const kind = meta["kind"] as HeadingHit["kind"];
+    const id = meta["id"];
+    if ((kind !== "book" && kind !== "collection" && kind !== "chapter") || !id) continue;
+    if (counts[kind] >= 20) continue;
+    counts[kind] += 1;
+    const bookNumber = meta["book_number"];
+    const chapterNumber = meta["chapter_number"];
     hits.push({
-      kind: "book",
-      id: b.id,
-      bookNumber: b.book_number,
-      title_ar: b.title_ar,
-      title_en: b.title_en,
+      kind,
+      id,
+      ...(bookNumber ? { bookNumber: Number(bookNumber) } : {}),
+      ...(kind === "chapter"
+        ? { chapterNumber: chapterNumber != null ? Number(chapterNumber) : null }
+        : {}),
+      title_ar: meta["title_ar"] ?? null,
+      title_en: meta["title_en"] ?? null,
     });
-  for (const c of collections.data ?? [])
-    hits.push({ kind: "collection", id: c.id, title_ar: c.title_ar, title_en: c.title_en });
-  for (const c of chapters.data ?? [])
-    hits.push({
-      kind: "chapter",
-      id: c.id,
-      chapterNumber: c.chapter_number,
-      title_ar: c.title_ar,
-      title_en: c.title_en,
-    });
+    if (counts.book >= 20 && counts.collection >= 20 && counts.chapter >= 20) break;
+  }
+  return hits;
+}
+
+export async function searchHeadings(query: string): Promise<HeadingHit[]> {
+  if (query.trim().length < 2) return [];
+  return pagefindSearchHeadings(query);
+}
+
+/**
+ * Legacy heading-search fallback for when the pagefind index is unavailable
+ * (vite dev, SSR). Book titles always match; collection and chapter titles
+ * only match within books whose chapters file is already cached in this
+ * session (loading all 66 files per keystroke is too heavy).
+ */
+async function legacySearchHeadings(query: string): Promise<HeadingHit[]> {
+  const raw = query.trim();
+  const term = raw.toLowerCase();
+
+  const hits: HeadingHit[] = [];
+  const books = await loadBooks();
+  for (const b of books) {
+    if (titleMatches(b.title_ar, term) || titleMatches(b.title_en, term)) {
+      hits.push({
+        kind: "book",
+        id: b.id,
+        bookNumber: b.book_number,
+        title_ar: b.title_ar,
+        title_en: b.title_en,
+      });
+      if (hits.filter((h) => h.kind === "book").length >= 20) break;
+    }
+  }
+
+  let collectionCount = 0;
+  let chapterCount = 0;
+  for (const cached of bookChaptersCache.values()) {
+    if (collectionCount >= 20 && chapterCount >= 20) break;
+    let file: BookChaptersFile;
+    try {
+      file = await cached;
+    } catch {
+      continue;
+    }
+    if (collectionCount < 20) {
+      for (const c of file.collections) {
+        if (titleMatches(c.title_ar, term) || titleMatches(c.title_en, term)) {
+          hits.push({ kind: "collection", id: c.id, title_ar: c.title_ar, title_en: c.title_en });
+          collectionCount += 1;
+          if (collectionCount >= 20) break;
+        }
+      }
+    }
+    if (chapterCount < 20) {
+      for (const c of file.chapters) {
+        if (titleMatches(c.title_ar, term) || titleMatches(c.title_en, term)) {
+          hits.push({
+            kind: "chapter",
+            id: c.id,
+            chapterNumber: c.chapter_number,
+            title_ar: c.title_ar,
+            title_en: c.title_en,
+          });
+          chapterCount += 1;
+          if (chapterCount >= 20) break;
+        }
+      }
+    }
+  }
   return hits;
 }
 
 export async function fetchLibraryStats() {
-  const [books, hadiths, documents] = await Promise.all([
-    supabase.from("books").select("*", { count: "exact", head: true }),
-    supabase.from("hadiths").select("*", { count: "exact", head: true }),
-    supabase.from("import_documents").select("*", { count: "exact", head: true }),
-  ]);
+  const stats = await loadStats();
   return {
-    books: books.count ?? 0,
-    hadiths: hadiths.count ?? 0,
-    documents: documents.count ?? 0,
+    books: stats.books,
+    hadiths: stats.hadiths,
+    documents: stats.documents,
   };
 }
