@@ -1,7 +1,8 @@
+import { getBookIntroDisplayOverride } from "@/lib/book-intro-overrides";
 import type { Intro } from "@/lib/library-api";
 
 type Props = {
-  intro: Partial<Intro> | null | undefined;
+  intro: (Partial<Intro> & { book_number?: number | null }) | null | undefined;
   label?: string;
   className?: string;
 };
@@ -17,8 +18,9 @@ function pick(display: string | null | undefined, source: string | null | undefi
  * Always complete — never clamped or truncated.
  */
 export function IntroText({ intro, label = "Introduction", className }: Props) {
-  const ar = pick(intro?.intro_ar_display, intro?.intro_ar_source);
-  const en = pick(intro?.intro_en_display, intro?.intro_en_source);
+  const override = getBookIntroDisplayOverride(intro?.book_number);
+  const ar = override?.intro_ar_display ?? pick(intro?.intro_ar_display, intro?.intro_ar_source);
+  const en = override?.intro_en_display ?? pick(intro?.intro_en_display, intro?.intro_en_source);
   if (!ar && !en) return null;
 
   return (
