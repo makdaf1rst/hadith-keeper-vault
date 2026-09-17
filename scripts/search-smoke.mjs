@@ -1,11 +1,13 @@
 // In-process search harness for a built pagefind index.
 // Usage: node scripts/search-smoke.mjs [indexDir]
 // Patches global fetch so pagefind.js can load its file:// fragments in Node.
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "node:path";
 
-const indexDir = path.resolve(process.argv[2] ?? path.join(".output", "public", "pagefind"));
+const defaultIndex = ["dist/pagefind", ".output/public/pagefind"].find((d) => existsSync(d));
+const indexDir = path.resolve(process.argv[2] ?? defaultIndex ?? ".output/public/pagefind");
 
 const realFetch = globalThis.fetch;
 globalThis.fetch = async (input, init) => {

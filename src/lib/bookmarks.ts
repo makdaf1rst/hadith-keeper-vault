@@ -1,4 +1,7 @@
-import { useCallback, useSyncExternalStore } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+
+import { supabase } from "@/integrations/supabase/client";
+import { useSession } from "@/lib/session";
 
 export type Bookmark = {
   number: number;
@@ -8,83 +11,98 @@ export type Bookmark = {
   savedAt: number;
 };
 
-const KEY = "jamikamil.bookmarks.v1";
+type Row = {
+  hadith_number: number;
+  book_title: string | null;
+  collection_title: string | null;
+  chapter_title: string | null;
+  created_at: string;
+};
 
-const listeners = new Set<() => void>();
-let cache: Bookmark[] | null = null;
-let cacheRaw: string | null = null;
-
-function read(): Bookmark[] {
-  if (typeof window === "undefined") return [];
-  let raw: string | null = null;
-  try {
-    raw = window.localStorage.getItem(KEY);
-  } catch {
-    return [];
-  }
-  if (cache && raw === cacheRaw) return cache;
-  let parsed: Bookmark[] = [];
-  try {
-    const value = raw ? JSON.parse(raw) : [];
-    if (Array.isArray(value)) {
-      parsed = value.filter((b) => b && Number.isFinite(Number(b.number)));
-    }
-  } catch {
-    parsed = [];
-  }
-  cacheRaw = raw;
-  cache = parsed;
-  return parsed;
-}
-
-function write(next: Bookmark[]) {
-  try {
-    window.localStorage.setItem(KEY, JSON.stringify(next));
-  } catch {
-    /* storage unavailable — bookmarks simply do not persist */
-  }
-  cacheRaw = null;
-  cache = null;
-  for (const listener of listeners) listener();
-}
-
-function subscribe(listener: () => void) {
-  listeners.add(listener);
-  const onStorage = (event: StorageEvent) => {
-    if (event.key === KEY || event.key === null) listener();
-  };
-  window.addEventListener("storage", onStorage);
-  return () => {
-    listeners.delete(listener);
-    window.removeEventListener("storage", onStorage);
+function toBookmark(row: Row): Bookmark {
+  return {
+    number: row.hadith_number,
+    bookTitle: row.book_title,
+    collectionTitle: row.collection_title,
+    chapterTitle: row.chapter_title,
+    savedAt: new Date(row.created_at).getTime(),
   };
 }
 
 const EMPTY: Bookmark[] = [];
 
-/** Reader-owned bookmarks kept in this browser only. Never touches the database. */
+/**
+ * Account-backed bookmarks stored in the database against the signed-in reader.
+ * Never touches hadith records.
+ */
 export function useBookmarks() {
-  const list = useSyncExternalStore(
-    subscribe,
-    read,
-    () => EMPTY,
-  );
+  const { user, signedIn, loading: sessionLoading } = useSession();
+  const queryClient = useQueryClient();
+  const userId = user?.id ?? null;
+  const queryKey = ["bookmarks", userId] as const;
 
-  const toggle = useCallback((entry: Omit<Bookmark, "savedAt">) => {
-    const current = read();
-    const exists = current.some((b) => b.number === entry.number);
-    const next = exists
-      ? current.filter((b) => b.number !== entry.number)
-      : [{ ...entry, savedAt: Date.now() }, ...current];
-    write(next);
-    return !exists;
-  }, []);
+  const list = useQuery({
+    queryKey,
+    enabled: !!userId,
+    queryFn: async (): Promise<Bookmark[]> => {
+      const { data, error } = await supabase
+        .from("bookmarks")
+        .select("hadith_number, book_title, collection_title, chapter_title, created_at")
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return (data ?? []).map((row) => toBookmark(row as Row));
+    },
+  });
 
-  const remove = useCallback((number: number) => {
-    write(read().filter((b) => b.number !== number));
-  }, []);
+  const bookmarks = list.data ?? EMPTY;
 
-  const has = useCallback((number: number) => list.some((b) => b.number === number), [list]);
+  const toggleMutation = useMutation({
+    mutationFn: async (entry: Omit<Bookmark, "savedAt">) => {
+      if (!userId) throw new Error("Sign in to save bookmarks.");
+      const exists = bookmarks.some((b) => b.number === entry.number);
+      if (exists) {
+        const { error } = await supabase
+          .from("bookmarks")
+          .delete()
+          .eq("user_id", userId)
+          .eq("hadith_number", entry.number);
+        if (error) throw error;
+        return false;
+      }
+      const { error } = await supabase.from("bookmarks").insert({
+        user_id: userId,
+        hadith_number: entry.number,
+        book_title: entry.bookTitle ?? null,
+        collection_title: entry.collectionTitle ?? null,
+        chapter_title: entry.chapterTitle ?? null,
+      });
+      if (error) throw error;
+      return true;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey }),
+  });
 
-  return { bookmarks: list, toggle, remove, has };
+  const removeMutation = useMutation({
+    mutationFn: async (number: number) => {
+      if (!userId) throw new Error("Sign in to manage bookmarks.");
+      const { error } = await supabase
+        .from("bookmarks")
+        .delete()
+        .eq("user_id", userId)
+        .eq("hadith_number", number);
+      if (error) throw error;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey }),
+  });
+
+  return {
+    bookmarks,
+    signedIn,
+    sessionLoading,
+    isLoading: !!userId && list.isLoading,
+    pending: toggleMutation.isPending || removeMutation.isPending,
+    has: (number: number) => bookmarks.some((b) => b.number === number),
+    toggle: (entry: Omit<Bookmark, "savedAt">) => toggleMutation.mutateAsync(entry),
+    remove: (number: number) => removeMutation.mutateAsync(number),
+  };
 }

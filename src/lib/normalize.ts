@@ -16,6 +16,8 @@ export function normalizeArabic(input: string): string {
     .replace(/\u0624/g, "\u0648") // waw hamza -> waw
     .replace(/\u0626/g, "\u064A") // ya hamza -> ya
     .replace(/[\u0621]/g, "")
+    // Ignore punctuation/symbols for matching while leaving stored/displayed Arabic untouched.
+    .replace(/[\p{P}\p{S}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -25,8 +27,10 @@ export function normalizeEnglish(input: string): string {
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "") // strip Latin diacritics (Bukhārī -> Bukhari)
     .toLowerCase()
-    .replace(/[\u2018\u2019\u02bb\u02bc'`´]/g, "")
+    // Treat apostrophe-like marks as separators so copied text aligns with the stored search index.
+    .replace(/[\u2018\u2019\u02bb\u02bc'`´]/g, " ")
     .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
@@ -39,4 +43,3 @@ const ARABIC_INDIC = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"
 export function toArabicIndicDigits(value: number | string): string {
   return String(value).replace(/\d/g, (d) => ARABIC_INDIC[Number(d)] ?? d);
 }
-

@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnnouncementsRouteImport } from './routes/announcements'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SendGiftRouteImport } from './routes/send-gift'
 import { Route as BookNumberRouteImport } from './routes/book.$number'
@@ -27,9 +29,19 @@ const AnnouncementsRoute = AnnouncementsRouteImport.update({
   path: '/announcements',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BookmarksRoute = BookmarksRouteImport.update({
   id: '/bookmarks',
   path: '/bookmarks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -56,7 +68,9 @@ const HadithNumberRoute = HadithNumberRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/announcements': typeof AnnouncementsRoute
+  '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
+  '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
@@ -65,7 +79,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/announcements': typeof AnnouncementsRoute
+  '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
+  '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
@@ -75,7 +91,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/announcements': typeof AnnouncementsRoute
+  '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
+  '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
@@ -86,7 +104,9 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/announcements'
+    | '/auth'
     | '/bookmarks'
+    | '/contact'
     | '/projects'
     | '/send-gift'
     | '/book/$number'
@@ -95,7 +115,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/announcements'
+    | '/auth'
     | '/bookmarks'
+    | '/contact'
     | '/projects'
     | '/send-gift'
     | '/book/$number'
@@ -104,7 +126,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/announcements'
+    | '/auth'
     | '/bookmarks'
+    | '/contact'
     | '/projects'
     | '/send-gift'
     | '/book/$number'
@@ -114,7 +138,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnnouncementsRoute: typeof AnnouncementsRoute
+  AuthRoute: typeof AuthRoute
   BookmarksRoute: typeof BookmarksRoute
+  ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
   SendGiftRoute: typeof SendGiftRoute
   BookNumberRoute: typeof BookNumberRoute
@@ -137,11 +163,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnnouncementsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/bookmarks': {
       id: '/bookmarks'
       path: '/bookmarks'
       fullPath: '/bookmarks'
       preLoaderRoute: typeof BookmarksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -178,7 +218,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnnouncementsRoute: AnnouncementsRoute,
+  AuthRoute: AuthRoute,
   BookmarksRoute: BookmarksRoute,
+  ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
   SendGiftRoute: SendGiftRoute,
   BookNumberRoute: BookNumberRoute,

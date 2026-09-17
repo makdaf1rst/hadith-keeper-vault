@@ -18,6 +18,15 @@ import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { toArabicIndicDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
+function formatArabicBookTitle(number: number, title: string | null) {
+  if (!title) return null;
+  const clean = title
+    .trim()
+    .replace(/^[0-9٠-٩]+\s*(?:[-–—.:|])\s*/, "")
+    .trim();
+  return `${toArabicIndicDigits(number)}. ${clean}`;
+}
+
 function Title({ ar, en }: { ar: string | null; en: string | null }) {
   return (
     <span className="flex min-w-0 flex-1 flex-col gap-0.5 text-left">
@@ -134,7 +143,7 @@ function BookNode({
     <li className="rounded-md">
       <Toggle open={open} onClick={() => setOpen((v) => !v)} className="items-center">
         <Title
-          ar={book.title_ar}
+          ar={formatArabicBookTitle(book.book_number, book.title_ar)}
           en={formatBookTitle(book.book_number, book.title_en)}
         />
       </Toggle>

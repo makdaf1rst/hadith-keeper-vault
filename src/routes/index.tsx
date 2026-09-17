@@ -6,8 +6,8 @@ import {
   BookOpen,
   EllipsisVertical,
   FolderKanban,
-  Gift,
   Library,
+  Mail,
 } from "lucide-react";
 
 import { LibraryTree } from "@/components/library/LibraryTree";
@@ -108,9 +108,9 @@ function Index() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/send-gift" className="cursor-pointer">
-                      <Gift aria-hidden />
-                      Send Gift
+                    <Link to="/contact" className="cursor-pointer">
+                      <Mail aria-hidden />
+                      Contact
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -138,18 +138,20 @@ function Index() {
 
           <section className="rounded-lg border border-border bg-card p-6">
             <h2 className="text-lg font-semibold text-foreground">About this library</h2>
-            <p className="mt-3 english-text text-muted-foreground">
-              Every hadith in this library is stored exactly as it appears in the source documents.
-              Nothing is summarised, shortened, or truncated: the Arabic text, the English
-              translation, the Qurʾanic verses, references, gradings and commentary are all
-              preserved in full and in their original order. Search previews are the only shortened
-              text in the app, and opening any result always shows the complete entry.
-            </p>
-            <p className="mt-4 english-text text-muted-foreground">
-              Use the contents panel to open a Book, then its Collections, Chapters, and hadiths.
-              Hadith numbering is global across the whole collection, from 1 to 16,546, and every
-              hadith has a permanent link of the form <code>/hadith/&lt;number&gt;</code>.
-            </p>
+            <div className="english-text mt-3 space-y-4 leading-7 text-muted-foreground">
+              <p>
+                Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī (ضياء الرحمن الأعظمي) was a distinguished scholar of Ḥadīth and a professor at the Islamic University of Madinah. Among his greatest scholarly achievements is <em>Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil al-Murattab ʿalā Abwāb al-Fiqh</em>, a monumental effort to gather the reliable Sunnah of the Messenger of Allah ﷺ into one comprehensive and systematically arranged collection.
+              </p>
+              <p>
+                In preparing this work, Shaykh al-Aʿẓamī drew upon more than 200 books of Ḥadīth and surveyed a vast body of narrations that he estimated at approximately 60,000 distinct hadith texts after repetitions were removed. Through extensive research, comparison, verification, and grading, he compiled 16,546 numbered narrations in the final collection. One of the defining features of the work is its focus on accepted narrations — Ṣaḥīḥ (Authentic) and Ḥasan (Good) hadiths — arranged according to the books and chapters of Islamic jurisprudence.
+              </p>
+              <p>
+                This English translation is a humble effort to make this great work more accessible to English-speaking readers and to contribute, in whatever small measure we can, to the preservation and spread of the Sunnah of the Messenger of Allah ﷺ.
+              </p>
+              <p>
+                We ask Allah to overlook our mistakes and shortcomings, place sincerity and benefit in this effort, reward Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī abundantly for his service to the Sunnah, and accept this deed from us solely for His sake. Āmīn.
+              </p>
+            </div>
           </section>
         </div>
       </main>
