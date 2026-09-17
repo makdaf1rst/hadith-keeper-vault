@@ -296,7 +296,7 @@ export async function searchHadiths(filters: SearchFilters): Promise<SearchResul
   // If three anchors were too restrictive because an index is stale, retry with
   // the single strongest token and let client-side scoring identify the best rows.
   if ((!fallbackData || fallbackData.length === 0) && anchorTokens.length > 1) {
-    const retry = buildRequest().ilike(field, `%${escapeForOr(anchorTokens[0])}%`);
+    const retry = buildRequest().ilike(field, `%${escapeForOr(anchorTokens[0] ?? "")}%`);
     const retryResult = await retry;
     if (retryResult.error) throw retryResult.error;
     fallbackData = retryResult.data;
