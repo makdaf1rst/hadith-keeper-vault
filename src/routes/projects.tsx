@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -72,6 +72,15 @@ function ProjectsPage() {
             </p>
           </section>
         ))}
+      </div>
+
+      <div className="mt-8">
+        <Link
+          to="/"
+          className="inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          ← Back to the Library
+        </Link>
       </div>
     </main>
   );
