@@ -1,0 +1,281 @@
+#!/usr/bin/env node
+/**
+ * Builds the static full-text search index (pagefind) into the site output.
+ *
+ * Inputs (all inside the repo, so Netlify builds work with no external data):
+ *   search-source.json: [{n, ar, en}] — the search_ar_normalized /
+ *     search_en_normalized columns, slimmed down to hadith_number + text.
+ *   public/content/books.json, book-<n>/chapters.json, book-<n>/hadiths.json
+ *     for the hadith rows and book / collection / chapter heading records.
+ *
+ * Output: <site-output>/pagefind/ (OUTPUT_DIR env var, default .output/public).
+ * Runs as the postbuild step, after `vite build` has produced .output/public.
+ *
+ * Index design (verified against pagefind 1.5):
+ *   - One unified index, all records language "en". Pagefind builds one index
+ *     per language and only ever searches the index matching the page
+ *     language, so splitting ar/en into real language indexes would break the
+ *     unified search box. The tokenizer is unicode/whitespace based, so Arabic
+ *     text indexes and searches fine under the "en" index (no Arabic stemming,
+ *     which the normalized columns already compensate for).
+ *   - Two records per hadith (lang filter "ar" / "en") so the UI language
+ *     filter maps to a pagefind filter. Distinct URLs are required: records
+ *     sharing a URL are deduped by the indexer. The Arabic record lives at
+ *     /hadith/<n>#ar; the app navigates by hadith_number meta, never by URL.
+ *   - One record per book/collection/chapter heading (kind filter), so
+ *     searchHeadings keeps working. Chapter/collection URLs point at their
+ *     book route with a fragment, since no dedicated routes exist.
+ */
+import { readFile, readdir } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import * as pagefind from "pagefind";
+
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const contentDir = path.join(repoRoot, "public", "content");
+const outputDir = path.resolve(process.env.OUTPUT_DIR ?? path.join(repoRoot, ".output", "public"));
+
+// Keep these in sync with src/lib/normalize.ts.
+const ARABIC_DIACRITICS = /[ؐ-ًؚ-ٰٟۖ-ۭ]/g;
+const TATWEEL = /ـ/g;
+
+function normalizeArabic(input) {
+  return input
+    .replace(ARABIC_DIACRITICS, "")
+    .replace(TATWEEL, "")
+    .replace(/[آأإٱٲٳ]/g, "ا") // alif variants -> alif
+    .replace(/ى/g, "ي") // alif maqsura -> ya
+    .replace(/ة/g, "ه") // ta marbuta -> ha
+    .replace(/ؤ/g, "و") // waw hamza -> waw
+    .replace(/ئ/g, "ي") // ya hamza -> ya
+    .replace(/[ء]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normalizeEnglish(input) {
+  return input
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "") // strip Latin diacritics (Bukhārī -> Bukhari)
+    .toLowerCase()
+    .replace(/[‘’ʻʼ'`´]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+async function readJson(file) {
+  return JSON.parse(await readFile(file, "utf8"));
+}
+
+const startedAt = Date.now();
+
+// Slimmed-down search columns, committed to the repo so builds need no export.
+const searchSource = await readJson(path.join(repoRoot, "search-source.json"));
+const searchByNumber = new Map(searchSource.map((s) => [s.n, s]));
+
+// Hadith rows come from the generated per-book content files.
+const books = await readJson(path.join(contentDir, "books.json"));
+const bookById = new Map(books.map((b) => [b.id, b]));
+
+const hadiths = [];
+for (const b of books) {
+  const file = path.join(contentDir, `book-${b.book_number}`, "hadiths.json");
+  const rows = await readJson(file);
+  for (const r of rows) {
+    const s = searchByNumber.get(r.hadith_number);
+    hadiths.push({
+      ...r,
+      search_ar_normalized: s?.ar ?? "",
+      search_en_normalized: s?.en ?? "",
+    });
+  }
+}
+hadiths.sort((a, b) => a.hadith_number - b.hadith_number);
+if (hadiths.length !== searchSource.length) {
+  console.warn(
+    `WARNING: ${hadiths.length} hadiths in content files vs ${searchSource.length} in search-source.json`,
+  );
+}
+
+const { index, errors } = await pagefind.createIndex({});
+if (errors.length || !index) {
+  console.error("pagefind createIndex failed:", errors);
+  process.exit(1);
+}
+
+let recordCount = 0;
+let failed = 0;
+
+async function add(record) {
+  const res = await index.addCustomRecord(record);
+  if (res.errors.length) {
+    failed += 1;
+    if (failed <= 5) console.error("record failed:", record.url, res.errors);
+  } else {
+    recordCount += 1;
+  }
+}
+
+// The pagefind service accepts records one call at a time; small batches keep
+// the pipeline full without unbounded concurrency.
+const BATCH = 250;
+let pending = [];
+async function queue(record) {
+  pending.push(record);
+  if (pending.length >= BATCH) {
+    const batch = pending;
+    pending = [];
+    await Promise.all(batch.map(add));
+  }
+}
+async function flush() {
+  if (pending.length) {
+    const batch = pending;
+    pending = [];
+    await Promise.all(batch.map(add));
+  }
+}
+
+function hadithFilters(h, book) {
+  const filters = { kind: ["hadith"] };
+  if (book) filters.book = [String(book.book_number), book.id];
+  if (h.collection_id) filters.collection = [h.collection_id];
+  if (h.chapter_id) filters.chapter = [h.chapter_id];
+  return filters;
+}
+
+function hadithMeta(h, book) {
+  const meta = {
+    title: `Hadith ${h.hadith_number}`,
+    kind: "hadith",
+    hadith_number: String(h.hadith_number),
+  };
+  if (book) {
+    meta.book_number = String(book.book_number);
+    meta.book_id = book.id;
+    if (book.title_en) meta.book_title_en = book.title_en;
+    if (book.title_ar) meta.book_title_ar = book.title_ar;
+  }
+  if (h.collection_id) meta.collection_id = h.collection_id;
+  if (h.chapter_id) meta.chapter_id = h.chapter_id;
+  return meta;
+}
+
+for (const h of hadiths) {
+  const book = h.book_id ? bookById.get(h.book_id) : null;
+  const base = { meta: hadithMeta(h, book), filters: hadithFilters(h, book), language: "en" };
+
+  const arContent = [h.arabic_display, h.search_ar_normalized].filter(Boolean).join("\n");
+  if (arContent.trim()) {
+    await queue({
+      ...base,
+      url: `/hadith/${h.hadith_number}#ar`,
+      content: arContent,
+      filters: { ...base.filters, lang: ["ar"] },
+    });
+  }
+
+  const enContent = [h.english_display, h.search_en_normalized].filter(Boolean).join("\n");
+  if (enContent.trim()) {
+    await queue({
+      ...base,
+      url: `/hadith/${h.hadith_number}`,
+      content: enContent,
+      filters: { ...base.filters, lang: ["en"] },
+    });
+  }
+}
+
+function headingContent(titleAr, titleEn) {
+  return [
+    titleAr,
+    titleEn,
+    titleAr ? normalizeArabic(titleAr) : "",
+    titleEn ? normalizeEnglish(titleEn) : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+function headingMeta(kind, entry, book, extra = {}) {
+  return {
+    title: entry.title_en ?? entry.title_ar ?? kind,
+    kind,
+    id: entry.id,
+    ...(book ? { book_number: String(book.book_number) } : {}),
+    ...(entry.title_ar ? { title_ar: entry.title_ar } : {}),
+    ...(entry.title_en ? { title_en: entry.title_en } : {}),
+    ...extra,
+  };
+}
+
+for (const book of books) {
+  await queue({
+    url: `/book/${book.book_number}`,
+    content: headingContent(book.title_ar, book.title_en),
+    meta: headingMeta("book", book, book),
+    filters: { kind: ["heading", "book"], book: [String(book.book_number), book.id] },
+    language: "en",
+  });
+
+  let file;
+  try {
+    file = await readJson(path.join(contentDir, `book-${book.book_number}`, "chapters.json"));
+  } catch {
+    continue;
+  }
+  const bookFilter = [String(book.book_number), book.id];
+  for (const c of file.collections) {
+    await queue({
+      url: `/book/${book.book_number}#collection-${c.id}`,
+      content: headingContent(c.title_ar, c.title_en),
+      meta: headingMeta("collection", c, book),
+      filters: { kind: ["heading", "collection"], book: bookFilter },
+      language: "en",
+    });
+  }
+  for (const c of file.chapters) {
+    await queue({
+      url: `/book/${book.book_number}#chapter-${c.id}`,
+      content: headingContent(c.title_ar, c.title_en),
+      meta: headingMeta("chapter", c, book, {
+        ...(c.chapter_number != null ? { chapter_number: String(c.chapter_number) } : {}),
+      }),
+      filters: {
+        kind: ["heading", "chapter"],
+        book: bookFilter,
+        ...(c.collection_id ? { collection: [c.collection_id] } : {}),
+      },
+      language: "en",
+    });
+  }
+}
+
+await flush();
+if (failed > 0) {
+  console.error(`${failed} records failed to index`);
+  process.exit(1);
+}
+
+const written = await index.writeFiles({ outputPath: path.join(outputDir, "pagefind") });
+if (written.errors.length) {
+  console.error("pagefind writeFiles failed:", written.errors);
+  process.exit(1);
+}
+await pagefind.close();
+
+// Report output size.
+async function dirSize(dir) {
+  let total = 0;
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) total += await dirSize(full);
+    else total += (await readFile(full)).byteLength;
+  }
+  return total;
+}
+const bytes = await dirSize(written.outputPath);
+const seconds = ((Date.now() - startedAt) / 1000).toFixed(1);
+console.log(
+  `pagefind index: ${recordCount} records, ${(bytes / 1024 / 1024).toFixed(1)} MB, ${seconds}s -> ${written.outputPath}`,
+);

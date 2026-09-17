@@ -1,1 +1,0 @@
-DROP TABLE IF EXISTS public.tmp_block_1874_1923_payload;
