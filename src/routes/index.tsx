@@ -6,8 +6,8 @@ import {
   BookOpen,
   EllipsisVertical,
   FolderKanban,
-  Gift,
   Library,
+  Mail,
 } from "lucide-react";
 
 import { LibraryTree } from "@/components/library/LibraryTree";
@@ -116,9 +116,9 @@ function Index() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/send-gift" className="cursor-pointer">
-                      <Gift aria-hidden />
-                      Send Gift
+                    <Link to="/contact" className="cursor-pointer">
+                      <Mail aria-hidden />
+                      Contact
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
