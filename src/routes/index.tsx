@@ -20,8 +20,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { formatBookTitle } from "@/lib/display-titles";
-import { fetchLibraryStats, type Book } from "@/lib/library-api";
+import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
+import {
+  fetchChapterHadiths,
+  fetchChapters,
+  fetchLibraryStats,
+  type Book,
+  type Chapter,
+} from "@/lib/library-api";
 import { toArabicIndicDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/")({
@@ -59,6 +65,92 @@ function hasIntro(book: Book | null): book is Book {
     book.intro_en_display,
     book.intro_en_source,
   ].some((value) => value && value.trim().length > 0);
+}
+
+
+function SelectedChapter({ chapter }: { chapter: Chapter }) {
+  const hadiths = useQuery({
+    queryKey: ["selected-book-chapter-hadiths", chapter.id],
+    queryFn: () => fetchChapterHadiths(chapter.id),
+  });
+
+  return (
+    <li className="rounded-md border border-border bg-background p-3">
+      <p className="text-sm font-semibold text-foreground">
+        {formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter"}
+      </p>
+      {chapter.title_ar ? (
+        <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
+          {chapter.title_ar}
+        </p>
+      ) : null}
+      <IntroText intro={chapter} className="mt-2" label="Chapter introduction" />
+      {hadiths.isLoading ? (
+        <p className="mt-2 text-xs text-muted-foreground">Loading hadiths…</p>
+      ) : hadiths.data?.length ? (
+        <ul className="mt-3 flex flex-wrap gap-2">
+          {hadiths.data.map((hadith) => (
+            <li key={hadith.id}>
+              <Link
+                to="/hadith/$number"
+                params={{ number: String(hadith.hadith_number) }}
+                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-sm transition-colors hover:border-primary hover:text-primary"
+              >
+                {hadith.hadith_number}
+                <span className="arabic-text text-sm! leading-none! text-muted-foreground">
+                  {toArabicIndicDigits(hadith.hadith_number)}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-2 text-xs text-muted-foreground">No numbered hadiths in this Bāb.</p>
+      )}
+    </li>
+  );
+}
+
+function SelectedBookContents({ book }: { book: Book }) {
+  const chapters = useQuery({
+    queryKey: ["selected-book-chapters", book.id, "v2"],
+    queryFn: () => fetchChapters(book.id),
+    refetchOnMount: "always",
+    refetchOnWindowFocus: true,
+  });
+
+  return (
+    <>
+      <h2 className="mt-4 text-lg font-semibold text-foreground">
+        {formatBookTitle(book.book_number, book.title_en)}
+      </h2>
+      {book.title_ar ? (
+        <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
+          {toArabicIndicDigits(book.book_number)}. {book.title_ar}
+        </p>
+      ) : null}
+      {hasIntro(book) ? <IntroText intro={book} className="mt-3" label="Book introduction" /> : null}
+
+      <div className="mt-5 border-t border-border pt-4">
+        <h3 className="text-base font-semibold text-foreground">
+          Bābs {chapters.data ? `(${chapters.data.length})` : ""}
+        </h3>
+        {chapters.isLoading ? (
+          <p className="mt-3 text-sm text-muted-foreground">Loading Bābs…</p>
+        ) : chapters.data?.length ? (
+          <ul className="mt-3 space-y-3">
+            {chapters.data
+              .filter((chapter) => !chapter.collection_id)
+              .map((chapter) => (
+                <SelectedChapter key={chapter.id} chapter={chapter} />
+              ))}
+          </ul>
+        ) : (
+          <p className="mt-3 text-sm text-muted-foreground">No Bābs are stored for this book yet.</p>
+        )}
+      </div>
+    </>
+  );
 }
 
 function Index() {
@@ -157,18 +249,8 @@ function Index() {
                   : "Bilingual Arabic–English collection"}
               </p>
             </div>
-            {hasIntro(selectedBook) ? (
-              <>
-                <h2 className="mt-4 text-lg font-semibold text-foreground">
-                  {formatBookTitle(selectedBook.book_number, selectedBook.title_en)}
-                </h2>
-                {selectedBook.title_ar ? (
-                  <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
-                    {toArabicIndicDigits(selectedBook.book_number)}. {selectedBook.title_ar}
-                  </p>
-                ) : null}
-                <IntroText intro={selectedBook} className="mt-3" label="Book introduction" />
-              </>
+            {selectedBook ? (
+              <SelectedBookContents book={selectedBook} />
             ) : (
               <>
                 <h2 className="mt-4 text-lg font-semibold text-foreground">About this library</h2>
