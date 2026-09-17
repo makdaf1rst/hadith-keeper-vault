@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Netlify SSR via functions. The static-only alternatives were tried and
+  // rejected: nitro's static presets have no SSR entry (breaks the vite build),
+  // and TanStack Start's spa-mode prerender expects an ssr build layout that
+  // the nitro vite plugin in this stack does not produce.
+  nitro: { preset: "netlify" },
 });

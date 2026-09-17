@@ -1,0 +1,13 @@
+# Netlify deploy config. Overrides any settings in the Netlify UI.
+#
+# Build: vite + nitro (netlify preset) produces static assets in dist/ plus an
+# SSR function in .netlify/functions-internal/server/ (auto-detected by
+# Netlify; its inline config routes /* to the function with preferStatic, so
+# no redirect rules are needed here). The postbuild script then adds the
+# pagefind search index to dist/pagefind/.
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

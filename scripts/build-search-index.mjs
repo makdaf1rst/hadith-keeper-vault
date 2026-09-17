@@ -8,8 +8,10 @@
  *   public/content/books.json, book-<n>/chapters.json, book-<n>/hadiths.json
  *     for the hadith rows and book / collection / chapter heading records.
  *
- * Output: <site-output>/pagefind/ (OUTPUT_DIR env var, default .output/public).
- * Runs as the postbuild step, after `vite build` has produced .output/public.
+ * Output: <site-output>/pagefind/ — OUTPUT_DIR env var, else auto-detected:
+ *   dist/ (netlify-static preset) or .output/public/ (default nitro output),
+ *   whichever the preceding `vite build` produced.
+ * Runs as the postbuild step, after `vite build`.
  *
  * Index design (verified against pagefind 1.5):
  *   - One unified index, all records language "en". Pagefind builds one index
@@ -26,6 +28,7 @@
  *     searchHeadings keeps working. Chapter/collection URLs point at their
  *     book route with a fragment, since no dedicated routes exist.
  */
+import { existsSync } from "node:fs";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -33,7 +36,12 @@ import * as pagefind from "pagefind";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const contentDir = path.join(repoRoot, "public", "content");
-const outputDir = path.resolve(process.env.OUTPUT_DIR ?? path.join(repoRoot, ".output", "public"));
+const defaultOutput = [".output/public", "dist"].find((d) =>
+  existsSync(path.join(repoRoot, d)),
+);
+const outputDir = path.resolve(
+  process.env.OUTPUT_DIR ?? path.join(repoRoot, defaultOutput ?? ".output/public"),
+);
 
 // Keep these in sync with src/lib/normalize.ts.
 const ARABIC_DIACRITICS = /[ؐ-ًؚ-ٰٟۖ-ۭ]/g;
