@@ -16,7 +16,7 @@ import {
 } from "@/lib/library-api";
 import { IntroText } from "@/components/library/IntroText";
 import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
-import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
+import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import { toArabicIndicDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
@@ -221,7 +221,7 @@ function BookNode({
           )}
           <ul className="space-y-0.5">
             {(collections.data ?? []).map((collection) => {
-              const own = (chapters.data ?? []).filter((c) => c.collection_id === collection.id);
+              const own = orderCollectionChapters((chapters.data ?? []).filter((c) => c.collection_id === collection.id));
               return <CollectionNode key={collection.id} collection={collection} chapters={own} />;
             })}
             {loose.map((chapter) => (
