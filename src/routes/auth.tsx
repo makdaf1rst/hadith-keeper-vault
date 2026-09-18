@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -40,14 +40,54 @@ export const Route = createFileRoute("/auth")({
 function AuthPage() {
   const navigate = useNavigate();
   const search = Route.useSearch();
-  const [mode, setMode] = useState<"signin" | "signup">(search.mode ?? "signin");
+  const [mode, setMode] = useState<"signin" | "signup" | "reset" | "update">(
+    search.mode ?? "signin",
+  );
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pending, setPending] = useState(false);
 
+  // Recovery links land back on /auth with the token in the URL hash; the
+  // client picks it up and fires PASSWORD_RECOVERY, which switches the form
+  // to setting a new password.
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "PASSWORD_RECOVERY") setMode("update");
+    });
+    return () => subscription.unsubscribe();
+  }, []);
+
   async function onSubmit(event: React.FormEvent) {
     event.preventDefault();
     setPending(true);
+
+    if (mode === "reset") {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/auth`,
+      });
+      setPending(false);
+      if (error) {
+        toast.error(error.message);
+        return;
+      }
+      toast.success("Check your email for a password reset link.");
+      setMode("signin");
+      return;
+    }
+
+    if (mode === "update") {
+      const { error } = await supabase.auth.updateUser({ password });
+      setPending(false);
+      if (error) {
+        toast.error(error.message);
+        return;
+      }
+      toast.success("Password updated.");
+      navigate({ to: search.redirect ?? "/bookmarks" });
+      return;
+    }
 
     if (mode === "signup") {
       const { data, error } = await supabase.auth.signUp({
@@ -88,55 +128,95 @@ function AuthPage() {
         >
           <div>
             <h1 className="text-xl font-semibold">
-              {mode === "signup" ? "Create an account" : "Sign in"}
+              {mode === "signup"
+                ? "Create an account"
+                : mode === "reset"
+                  ? "Reset your password"
+                  : mode === "update"
+                    ? "Set a new password"
+                    : "Sign in"}
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
               The library is free to read without an account. Sign in only to save bookmarks
               across your devices.
             </p>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              autoComplete="email"
-              required
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              type="password"
-              autoComplete={mode === "signup" ? "new-password" : "current-password"}
-              required
-              minLength={6}
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-          </div>
+          {mode !== "update" ? (
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                autoComplete="email"
+                required
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
+          ) : null}
+          {mode !== "reset" ? (
+            <div className="space-y-2">
+              <Label htmlFor="password">
+                {mode === "update" ? "New password" : "Password"}
+              </Label>
+              <Input
+                id="password"
+                type="password"
+                autoComplete={
+                  mode === "signup" || mode === "update" ? "new-password" : "current-password"
+                }
+                required
+                minLength={6}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </div>
+          ) : null}
           <Button type="submit" className="w-full" disabled={pending}>
             {pending
-              ? mode === "signup"
-                ? "Creating account…"
-                : "Signing in…"
+              ? "Working…"
               : mode === "signup"
                 ? "Create account"
-                : "Sign in"}
+                : mode === "reset"
+                  ? "Send reset link"
+                  : mode === "update"
+                    ? "Update password"
+                    : "Sign in"}
           </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            className="w-full"
-            onClick={() => setMode(mode === "signup" ? "signin" : "signup")}
-          >
-            {mode === "signup"
-              ? "Already have an account? Sign in"
-              : "New here? Create an account"}
-          </Button>
+          {mode === "signin" || mode === "signup" ? (
+            <>
+              <Button
+                type="button"
+                variant="ghost"
+                className="w-full"
+                onClick={() => setMode(mode === "signup" ? "signin" : "signup")}
+              >
+                {mode === "signup"
+                  ? "Already have an account? Sign in"
+                  : "New here? Create an account"}
+              </Button>
+              {mode === "signin" ? (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  className="w-full"
+                  onClick={() => setMode("reset")}
+                >
+                  Forgot password?
+                </Button>
+              ) : null}
+            </>
+          ) : null}
+          {mode === "reset" ? (
+            <Button
+              type="button"
+              variant="ghost"
+              className="w-full"
+              onClick={() => setMode("signin")}
+            >
+              Back to sign in
+            </Button>
+          ) : null}
         </form>
         <Button asChild variant="outline" className="w-full">
           <Link to="/">
