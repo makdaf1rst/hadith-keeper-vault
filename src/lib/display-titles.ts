@@ -61,3 +61,27 @@ export function formatChapterTitle(
 ) {
   return formatNumberedTitle(number, title, "chapter");
 }
+
+export function orderCollectionChapters<
+  T extends { chapter_number: number | null; sort_order: number; id: string }
+>(chapters: T[]): T[] {
+  if (chapters.length < 2) return [...chapters];
+
+  const numbers = chapters.map((chapter) => chapter.chapter_number);
+  const canUseChapterNumbers =
+    numbers.every((number): number is number => number != null) &&
+    new Set(numbers).size === numbers.length;
+
+  if (canUseChapterNumbers) {
+    return [...chapters].sort(
+      (a, b) =>
+        (a.chapter_number! - b.chapter_number!) ||
+        (a.sort_order - b.sort_order) ||
+        a.id.localeCompare(b.id),
+    );
+  }
+
+  return [...chapters].sort(
+    (a, b) => (a.sort_order - b.sort_order) || a.id.localeCompare(b.id),
+  );
+}
