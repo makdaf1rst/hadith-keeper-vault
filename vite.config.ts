@@ -24,6 +24,13 @@ export default defineConfig({
       // Cloudflare's asset layer; only non-asset requests hit the worker.
       wrangler: {
         name: "jami-al-kamil",
+        // Custom domains are declared here (not just in the dashboard) because
+        // `wrangler deploy` removes routes that are not in the config, which
+        // would detach the domain on the next CI deploy.
+        routes: [
+          { pattern: "jami-al-kamil.com", custom_domain: true },
+          { pattern: "www.jami-al-kamil.com", custom_domain: true },
+        ],
       },
     },
   },
