@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
-import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
+import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import {
   fetchBookByNumber,
   fetchChapterHadiths,
@@ -137,9 +137,9 @@ function BookPage() {
                 {collection.title_ar ? <p className="arabic-text">{collection.title_ar}</p> : null}
                 <IntroText intro={collection} className="mt-3" label="Collection introduction" />
                 <ul className="mt-3 space-y-3">
-                  {(chapters.data ?? [])
-                    .filter((chapter) => chapter.collection_id === collection.id)
-                    .map((chapter) => <ChapterBlock key={chapter.id} chapter={chapter} />)}
+                  {orderCollectionChapters(
+                    (chapters.data ?? []).filter((chapter) => chapter.collection_id === collection.id),
+                  ).map((chapter) => <ChapterBlock key={chapter.id} chapter={chapter} />)}
                 </ul>
               </section>
             ))}

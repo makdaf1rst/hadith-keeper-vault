@@ -1,4 +1,4 @@
-import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
+import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import type { Book, Chapter, Collection, HadithFull, Intro } from "@/lib/library-api";
 
 /**
@@ -106,7 +106,7 @@ export function buildKitabExport(
     blocks.push({ kind: "collection", en: collection.title_en, ar: collection.title_ar });
     const intro = introBlock(collection, "Majmūʿ introduction");
     if (intro) blocks.push(intro);
-    const own = byOrder(chapters.filter((c) => c.collection_id === collection.id));
+    const own = orderCollectionChapters(chapters.filter((c) => c.collection_id === collection.id));
     for (const chapter of own) pushChapter(chapter);
     for (const h of hadithOrder(
       hadiths.filter((x) => x.collection_id === collection.id && !x.chapter_id),
