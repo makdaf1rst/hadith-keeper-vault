@@ -12,9 +12,19 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Netlify SSR via functions. The static-only alternatives were tried and
-  // rejected: nitro's static presets have no SSR entry (breaks the vite build),
-  // and TanStack Start's spa-mode prerender expects an ssr build layout that
-  // the nitro vite plugin in this stack does not produce.
-  nitro: { preset: "netlify" },
+  // Cloudflare Workers SSR (module worker + static assets). The static-only
+  // alternatives were tried and rejected: nitro's static presets have no SSR
+  // entry (breaks the vite build), and TanStack Start's spa-mode prerender
+  // expects an ssr build layout that the nitro vite plugin in this stack does
+  // not produce.
+  nitro: {
+    preset: "cloudflare-module",
+    cloudflare: {
+      // Static assets (content/, pagefind/, assets/) are served by
+      // Cloudflare's asset layer; only non-asset requests hit the worker.
+      wrangler: {
+        name: "jami-al-kamil",
+      },
+    },
+  },
 });
