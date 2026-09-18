@@ -179,7 +179,8 @@ async function bookNumberForHeadingId(id: string): Promise<number | null> {
 }
 
 export async function fetchBooks(): Promise<Book[]> {
-  return loadBooks();
+  const books = await loadBooks();
+  return [...books].sort((a, b) => a.book_number - b.book_number);
 }
 
 export async function fetchBookByNumber(bookNumber: number): Promise<Book | null> {
