@@ -7,10 +7,12 @@ import {
   EllipsisVertical,
   FolderKanban,
   Mail,
+  Settings,
 } from "lucide-react";
 import { useState } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
+import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
 import { LibraryTree } from "@/components/library/LibraryTree";
 import { SearchPanel } from "@/components/library/SearchPanel";
 import { Button } from "@/components/ui/button";
@@ -28,6 +30,7 @@ import {
   type Book,
   type Chapter,
 } from "@/lib/library-api";
+import { useInterfaceText } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/")({
@@ -156,6 +159,8 @@ function SelectedBookContents({ book }: { book: Book }) {
 function Index() {
   const stats = useQuery({ queryKey: ["library-stats"], queryFn: fetchLibraryStats });
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [languageSettingsOpen, setLanguageSettingsOpen] = useState(false);
+  const t = useInterfaceText();
 
   return (
     <div className="min-h-screen bg-background">
@@ -222,6 +227,13 @@ function Index() {
                       <Mail aria-hidden />
                       Contact
                     </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer"
+                    onSelect={() => setLanguageSettingsOpen(true)}
+                  >
+                    <Settings aria-hidden />
+                    {t.settings}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -293,6 +305,10 @@ function Index() {
           </section>
         </div>
       </main>
+      <LanguageSettingsDialog
+        open={languageSettingsOpen}
+        onOpenChange={setLanguageSettingsOpen}
+      />
     </div>
   );
 }
