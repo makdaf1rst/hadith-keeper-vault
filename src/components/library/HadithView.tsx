@@ -121,8 +121,8 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
           >
             <Copy /> {contentLanguage === "bn" ? t.bengali : t.english}
           </Button>
-          <Button variant="outline" size="sm" onClick={() => copy(whole, "Full entry")}>
-            <Copy /> Full entry
+          <Button variant="outline" size="sm" onClick={() => copy(whole, t.fullEntry)}>
+            <Copy /> {t.fullEntry}
           </Button>
         </div>
       </header>
@@ -169,7 +169,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             </div>
           ) : (
             <div className="rounded-md border border-dashed border-border bg-muted/30 px-4 py-3 text-sm text-muted-foreground">
-              এই হাদিসের বাংলা অনুবাদ এখনো যোগ করা হয়নি।
+              {t.noBengaliTranslation}
             </div>
           )
         ) : english ? (
