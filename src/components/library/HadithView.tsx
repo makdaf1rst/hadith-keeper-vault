@@ -1,10 +1,13 @@
+import { useQuery } from "@tanstack/react-query";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
 
 import { BookmarkButton } from "@/components/library/BookmarkButton";
 import { Button } from "@/components/ui/button";
+import { fetchBengaliTranslation } from "@/lib/bengali-translations";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
+import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
 
 type Props = {
@@ -54,6 +57,14 @@ async function copy(value: string | null, label: string) {
 }
 
 export function HadithView({ hadith, context, showExactSource = false }: Props) {
+  const { contentLanguage } = useLanguage();
+  const t = useInterfaceText();
+  const bengali = useQuery({
+    queryKey: ["bengali-hadith", hadith.hadith_number],
+    queryFn: () => fetchBengaliTranslation(hadith.hadith_number),
+    enabled: contentLanguage === "bn",
+  });
+
   const arabic = showExactSource
     ? hadith.arabic_source
     : text(hadith.arabic_display, hadith.arabic_source);
@@ -64,16 +75,20 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
     ? hadith.full_source_content
     : text(hadith.full_display_content, hadith.full_source_content);
   const extra = remainder(full, [arabic, english]);
+  const selectedTranslation =
+    contentLanguage === "bn" ? (bengali.data?.text ?? null) : english;
 
-
-  const whole = full ?? [arabic, english, extra].filter(Boolean).join("\n\n");
+  const whole =
+    contentLanguage === "bn"
+      ? [arabic, selectedTranslation, extra].filter(Boolean).join("\n\n")
+      : full ?? [arabic, english, extra].filter(Boolean).join("\n\n");
 
   return (
     <article className="rounded-lg border border-border bg-card shadow-sm">
       <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-parchment px-4 py-3 sm:px-6">
         <div className="flex items-baseline gap-3">
           <span className="text-lg font-semibold tracking-tight text-primary">
-            Hadith {hadith.hadith_number}
+            {t.hadith} {hadith.hadith_number}
           </span>
           <span className="arabic-text text-xl! leading-none! text-muted-foreground">
             {toArabicIndicDigits(hadith.hadith_number)}
@@ -94,11 +109,17 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
                 : null
             }
           />
-          <Button variant="outline" size="sm" onClick={() => copy(arabic, "Arabic")}>
-            <Copy /> Arabic
+          <Button variant="outline" size="sm" onClick={() => copy(arabic, t.arabic)}>
+            <Copy /> {t.arabic}
           </Button>
-          <Button variant="outline" size="sm" onClick={() => copy(english, "English")}>
-            <Copy /> English
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() =>
+              copy(selectedTranslation, contentLanguage === "bn" ? t.bengali : t.english)
+            }
+          >
+            <Copy /> {contentLanguage === "bn" ? t.bengali : t.english}
           </Button>
           <Button variant="outline" size="sm" onClick={() => copy(whole, "Full entry")}>
             <Copy /> Full entry
@@ -136,15 +157,31 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
 
       <div className="space-y-6 px-4 py-6 sm:px-6">
         {arabic ? <p className="arabic-text text-foreground">{arabic}</p> : null}
-        {arabic && english ? <hr className="border-border" /> : null}
-        {english ? <div className="english-text text-foreground">{english}</div> : null}
+        {arabic && (selectedTranslation || contentLanguage === "bn") ? (
+          <hr className="border-border" />
+        ) : null}
+        {contentLanguage === "bn" ? (
+          bengali.isLoading ? (
+            <p className="text-sm text-muted-foreground">{t.loading}</p>
+          ) : selectedTranslation ? (
+            <div lang="bn" className="text-foreground leading-8">
+              {selectedTranslation}
+            </div>
+          ) : (
+            <div className="rounded-md border border-dashed border-border bg-muted/30 px-4 py-3 text-sm text-muted-foreground">
+              এই হাদিসের বাংলা অনুবাদ এখনো যোগ করা হয়নি।
+            </div>
+          )
+        ) : english ? (
+          <div className="english-text text-foreground">{english}</div>
+        ) : null}
         {extra ? (
           <>
             <hr className="border-border" />
             <div className="english-text text-foreground">{extra}</div>
           </>
         ) : null}
-        {!arabic && !english && !extra ? (
+        {!arabic && !selectedTranslation && !english && !extra ? (
           <p className="text-sm text-destructive">
             No content is stored for this hadith number yet.
           </p>
