@@ -1,11 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Settings } from "lucide-react";
+import { useState } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
+import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
 import { HadithView } from "@/components/library/HadithView";
 import { Button } from "@/components/ui/button";
 import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours } from "@/lib/library-api";
+import { useInterfaceText } from "@/lib/language";
 
 export const Route = createFileRoute("/hadith/$number")({
   head: ({ params }) => {
@@ -25,6 +28,8 @@ export const Route = createFileRoute("/hadith/$number")({
 
 function HadithPage() {
   const { number } = Route.useParams();
+  const t = useInterfaceText();
+  const [languageSettingsOpen, setLanguageSettingsOpen] = useState(false);
   const hadithNumber = Number(number);
 
   const hadith = useQuery({
@@ -53,9 +58,19 @@ function HadithPage() {
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
           >
-            <ArrowLeft className="size-4" /> Library
+            <ArrowLeft className="size-4" /> {t.library}
           </Link>
           <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              onClick={() => setLanguageSettingsOpen(true)}
+              aria-label={t.settings}
+              title={t.settings}
+            >
+              <Settings className="size-4" />
+            </Button>
             {neighbours.data?.previous ? (
               <Button asChild variant="outline" size="sm">
                 <Link to="/hadith/$number" params={{ number: String(neighbours.data.previous) }}>
@@ -75,24 +90,24 @@ function HadithPage() {
       </header>
 
       <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
-        {hadith.isLoading ? <p className="text-muted-foreground">Loading hadith…</p> : null}
+        {hadith.isLoading ? <p className="text-muted-foreground">{t.loadingHadith}</p> : null}
         {hadith.error ? (
-          <p className="text-destructive">This hadith could not be loaded.</p>
+          <p className="text-destructive">{t.hadithLoadFailed}</p>
         ) : null}
         {!hadith.isLoading && !hadith.data ? (
           <div className="rounded-lg border border-border bg-card p-6">
-            <h1 className="text-lg font-semibold">Hadith {number} has not been imported yet</h1>
+            <h1 className="text-lg font-semibold">{t.hadith} {number} {t.hadithNotImported}</h1>
             <p className="mt-2 text-sm text-muted-foreground">
-              Hadith numbers run from 1 to 16,546. This number is not yet present in the library.
+              {t.hadithNumberRange}
             </p>
           </div>
         ) : null}
         {hadith.data ? (
           <div className="space-y-4">
-            <IntroText intro={context.data?.chapter} label="Chapter introduction" />
+            <IntroText intro={context.data?.chapter} label={t.chapterIntroduction} />
             <HadithView hadith={hadith.data} context={context.data} />
             <nav
-              aria-label="Hadith navigation"
+              aria-label={t.hadithNavigation}
               className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between"
             >
               {neighbours.data?.previous ? (
@@ -101,7 +116,7 @@ function HadithPage() {
                     to="/hadith/$number"
                     params={{ number: String(neighbours.data.previous) }}
                   >
-                    <ChevronLeft /> Previous hadith {neighbours.data.previous}
+                    <ChevronLeft /> {t.previousHadith} {neighbours.data.previous}
                   </Link>
                 </Button>
               ) : (
@@ -110,7 +125,7 @@ function HadithPage() {
               {neighbours.data?.next ? (
                 <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
                   <Link to="/hadith/$number" params={{ number: String(neighbours.data.next) }}>
-                    Next hadith {neighbours.data.next} <ChevronRight />
+                    {t.nextHadith} {neighbours.data.next} <ChevronRight />
                   </Link>
                 </Button>
               ) : (
@@ -120,6 +135,10 @@ function HadithPage() {
           </div>
         ) : null}
       </main>
+      <LanguageSettingsDialog
+        open={languageSettingsOpen}
+        onOpenChange={setLanguageSettingsOpen}
+      />
     </div>
   );
 }
