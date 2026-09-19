@@ -7,10 +7,12 @@ import {
   EllipsisVertical,
   FolderKanban,
   Mail,
+  Settings,
 } from "lucide-react";
 import { useState } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
+import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
 import { LibraryTree } from "@/components/library/LibraryTree";
 import { SearchPanel } from "@/components/library/SearchPanel";
 import { Button } from "@/components/ui/button";
@@ -28,6 +30,7 @@ import {
   type Book,
   type Chapter,
 } from "@/lib/library-api";
+import { useInterfaceText } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/")({
@@ -69,6 +72,7 @@ function hasIntro(book: Book | null): book is Book {
 
 
 function SelectedChapter({ chapter }: { chapter: Chapter }) {
+  const t = useInterfaceText();
   const hadiths = useQuery({
     queryKey: ["selected-book-chapter-hadiths", chapter.id],
     queryFn: () => fetchChapterHadiths(chapter.id),
@@ -77,16 +81,16 @@ function SelectedChapter({ chapter }: { chapter: Chapter }) {
   return (
     <li className="rounded-md border border-border bg-background p-3">
       <p className="text-sm font-semibold text-foreground">
-        {formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter"}
+        {formatChapterTitle(chapter.chapter_number, chapter.title_en) || t.chapter}
       </p>
       {chapter.title_ar ? (
         <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
           {chapter.title_ar}
         </p>
       ) : null}
-      <IntroText intro={chapter} className="mt-2" label="Chapter introduction" />
+      <IntroText intro={chapter} className="mt-2" label={t.chapterIntroduction} />
       {hadiths.isLoading ? (
-        <p className="mt-2 text-xs text-muted-foreground">Loading hadiths…</p>
+        <p className="mt-2 text-xs text-muted-foreground">{t.loadingHadiths}</p>
       ) : hadiths.data?.length ? (
         <ul className="mt-3 flex flex-wrap gap-2">
           {hadiths.data.map((hadith) => (
@@ -105,13 +109,14 @@ function SelectedChapter({ chapter }: { chapter: Chapter }) {
           ))}
         </ul>
       ) : (
-        <p className="mt-2 text-xs text-muted-foreground">No numbered hadiths in this Bāb.</p>
+        <p className="mt-2 text-xs text-muted-foreground">{t.noNumberedHadiths}</p>
       )}
     </li>
   );
 }
 
 function SelectedBookContents({ book }: { book: Book }) {
+  const t = useInterfaceText();
   const chapters = useQuery({
     queryKey: ["selected-book-chapters", book.id, "v2"],
     queryFn: () => fetchChapters(book.id),
@@ -129,14 +134,14 @@ function SelectedBookContents({ book }: { book: Book }) {
           {toArabicIndicDigits(book.book_number)}. {book.title_ar}
         </p>
       ) : null}
-      {hasIntro(book) ? <IntroText intro={book} className="mt-3" label="Book introduction" /> : null}
+      {hasIntro(book) ? <IntroText intro={book} className="mt-3" label={t.bookIntroduction} /> : null}
 
       <div className="mt-5 border-t border-border pt-4">
         <h3 className="text-base font-semibold text-foreground">
-          Bābs {chapters.data ? `(${chapters.data.length})` : ""}
+          {t.babs} {chapters.data ? `(${chapters.data.length})` : ""}
         </h3>
         {chapters.isLoading ? (
-          <p className="mt-3 text-sm text-muted-foreground">Loading Bābs…</p>
+          <p className="mt-3 text-sm text-muted-foreground">{t.loading}</p>
         ) : chapters.data?.length ? (
           <ul className="mt-3 space-y-3">
             {chapters.data
@@ -146,7 +151,7 @@ function SelectedBookContents({ book }: { book: Book }) {
               ))}
           </ul>
         ) : (
-          <p className="mt-3 text-sm text-muted-foreground">No Bābs are stored for this book yet.</p>
+          <p className="mt-3 text-sm text-muted-foreground">{t.noChaptersYet}</p>
         )}
       </div>
     </>
@@ -156,6 +161,8 @@ function SelectedBookContents({ book }: { book: Book }) {
 function Index() {
   const stats = useQuery({ queryKey: ["library-stats"], queryFn: fetchLibraryStats });
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [languageSettingsOpen, setLanguageSettingsOpen] = useState(false);
+  const t = useInterfaceText();
 
   return (
     <div className="min-h-screen bg-background">
@@ -202,26 +209,33 @@ function Index() {
                   <DropdownMenuItem asChild>
                     <Link to="/bookmarks" className="cursor-pointer">
                       <BookmarkIcon aria-hidden />
-                      Bookmarks
+                      {t.bookmarks}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/announcements" className="cursor-pointer">
                       <Bell aria-hidden />
-                      Announcements
+                      {t.announcements}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/projects" className="cursor-pointer">
                       <FolderKanban aria-hidden />
-                      Other Projects
+                      {t.otherProjects}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/contact" className="cursor-pointer">
                       <Mail aria-hidden />
-                      Contact
+                      {t.contact}
                     </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer"
+                    onSelect={() => setLanguageSettingsOpen(true)}
+                  >
+                    <Settings aria-hidden />
+                    {t.settings}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -236,7 +250,7 @@ function Index() {
         <div className="mt-8 grid gap-6 lg:grid-cols-[22rem_1fr]">
           <aside className="rounded-lg border border-border bg-sidebar p-3">
             <h2 className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold tracking-wide text-sidebar-foreground uppercase">
-              <BookOpen className="size-4" aria-hidden /> Contents
+              <BookOpen className="size-4" aria-hidden /> {t.contents}
             </h2>
             <LibraryTree selectedBookId={selectedBook?.id ?? null} onSelectBook={setSelectedBook} />
           </aside>
@@ -245,8 +259,8 @@ function Index() {
             <div className="border-b border-border pb-4">
               <p className="text-sm text-muted-foreground">
                 {stats.data
-                  ? `${stats.data.books} Books · ${stats.data.hadiths} hadiths imported of 16,546`
-                  : "Bilingual Arabic–English collection"}
+                  ? `${stats.data.books} ${t.booksLabel} · ${stats.data.hadiths} ${t.importedStats}`
+                  : t.bilingualCollection}
               </p>
             </div>
             {selectedBook ? (
@@ -293,6 +307,10 @@ function Index() {
           </section>
         </div>
       </main>
+      <LanguageSettingsDialog
+        open={languageSettingsOpen}
+        onOpenChange={setLanguageSettingsOpen}
+      />
     </div>
   );
 }

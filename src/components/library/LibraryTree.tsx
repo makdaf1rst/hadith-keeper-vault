@@ -17,6 +17,7 @@ import {
 import { IntroText } from "@/components/library/IntroText";
 import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
+import { useInterfaceText } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
@@ -94,14 +95,15 @@ function HadithChips({ hadiths }: { hadiths: HadithStub[] }) {
 }
 
 function HadithList({ chapterId }: { chapterId: string }) {
+  const t = useInterfaceText();
   const { data, isLoading } = useQuery({
     queryKey: ["chapter-hadiths", chapterId],
     queryFn: () => fetchChapterHadiths(chapterId),
   });
 
-  if (isLoading) return <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>;
+  if (isLoading) return <p className="px-2 py-1 text-xs text-muted-foreground">{t.loading}</p>;
   if (!data?.length)
-    return <p className="px-2 py-1 text-xs text-muted-foreground">No hadiths imported yet.</p>;
+    return <p className="px-2 py-1 text-xs text-muted-foreground">{t.noHadithsImported}</p>;
 
   return <HadithChips hadiths={data} />;
 }
@@ -113,16 +115,17 @@ function HadithList({ chapterId }: { chapterId: string }) {
  * whose hadiths all share one orphan id renders as a flat list.
  */
 function BookHadiths({ bookId }: { bookId: string }) {
+  const t = useInterfaceText();
   const { data, isLoading } = useQuery({
     queryKey: ["book-hadiths", bookId],
     queryFn: () => fetchBookHadiths(bookId),
   });
 
-  if (isLoading) return <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>;
+  if (isLoading) return <p className="px-2 py-1 text-xs text-muted-foreground">{t.loading}</p>;
   if (!data?.length)
     return (
       <p className="px-2 py-1 text-xs text-muted-foreground">
-        Nothing imported under this book yet.
+        {t.nothingInBook}
       </p>
     );
 
@@ -145,7 +148,7 @@ function BookHadiths({ bookId }: { bookId: string }) {
       {sections.map((section, i) => (
         <li key={section[0]!.id} className="border-l border-border pl-2">
           <p className="px-2 py-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            Section {i + 1}
+            {t.section} {i + 1}
           </p>
           <HadithChips hadiths={section} />
         </li>
@@ -155,6 +158,7 @@ function BookHadiths({ bookId }: { bookId: string }) {
 }
 
 function ChapterNode({ chapter }: { chapter: Chapter }) {
+  const t = useInterfaceText();
   const [open, setOpen] = useState(false);
   return (
     <li className="border-l border-border pl-2">
@@ -166,7 +170,7 @@ function ChapterNode({ chapter }: { chapter: Chapter }) {
       </Toggle>
       {open ? (
         <>
-          <IntroText intro={chapter} className="mx-2 my-2" label="Chapter introduction" />
+          <IntroText intro={chapter} className="mx-2 my-2" label={t.chapterIntroduction} />
           <HadithList chapterId={chapter.id} />
         </>
       ) : null}
@@ -183,6 +187,7 @@ function BookNode({
   open: boolean;
   onToggle: () => void;
 }) {
+  const t = useInterfaceText();
   const collections = useQuery({
     queryKey: ["collections", book.id],
     queryFn: () => fetchCollections(book.id),
@@ -215,9 +220,9 @@ function BookNode({
               chapters={chapters.data ?? []}
             />
           </div>
-          <IntroText intro={book} className="mx-2 my-2" label="Book introduction" />
+          <IntroText intro={book} className="mx-2 my-2" label={t.bookIntroduction} />
           {headingsLoaded ? null : (
-            <p className="px-2 py-1 text-xs text-muted-foreground">Loading…</p>
+            <p className="px-2 py-1 text-xs text-muted-foreground">{t.loading}</p>
           )}
           <ul className="space-y-0.5">
             {(collections.data ?? []).map((collection) => {
@@ -236,6 +241,7 @@ function BookNode({
 }
 
 function CollectionNode({ collection, chapters }: { collection: Collection; chapters: Chapter[] }) {
+  const t = useInterfaceText();
   const [open, setOpen] = useState(false);
   return (
     <li className="border-l border-border pl-2">
@@ -244,12 +250,12 @@ function CollectionNode({ collection, chapters }: { collection: Collection; chap
       </Toggle>
       {open ? (
         <>
-          <IntroText intro={collection} className="mx-2 my-2" label="Collection introduction" />
+          <IntroText intro={collection} className="mx-2 my-2" label={t.collectionIntroduction} />
           <ul className="space-y-0.5 pl-4">
             {chapters.length ? (
               chapters.map((chapter) => <ChapterNode key={chapter.id} chapter={chapter} />)
             ) : (
-              <li className="px-2 py-1 text-xs text-muted-foreground">No chapters yet.</li>
+              <li className="px-2 py-1 text-xs text-muted-foreground">{t.noChaptersYet}</li>
             )}
           </ul>
         </>
@@ -265,11 +271,12 @@ export function LibraryTree({
   selectedBookId: string | null;
   onSelectBook: (book: BookRow | null) => void;
 }) {
+  const t = useInterfaceText();
   const { data, isLoading, error } = useQuery({ queryKey: ["books"], queryFn: fetchBooks });
 
-  if (isLoading) return <p className="px-2 py-3 text-sm text-muted-foreground">Loading books…</p>;
+  if (isLoading) return <p className="px-2 py-3 text-sm text-muted-foreground">{t.loadingBooks}</p>;
   if (error)
-    return <p className="px-2 py-3 text-sm text-destructive">The library could not be loaded.</p>;
+    return <p className="px-2 py-3 text-sm text-destructive">{t.libraryLoadFailed}</p>;
   if (!data?.length)
     return (
       <p className="px-2 py-3 text-sm text-muted-foreground">

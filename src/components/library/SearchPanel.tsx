@@ -20,6 +20,7 @@ import {
   searchHeadings,
 } from "@/lib/library-api";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
+import { useInterfaceText } from "@/lib/language";
 import { normalizeEnglish, toArabicIndicDigits } from "@/lib/normalize";
 
 const ALL = "__all__";
@@ -39,6 +40,7 @@ function preview(value: string | null, term: string) {
 
 export function SearchPanel() {
   const navigate = useNavigate();
+  const t = useInterfaceText();
   const [input, setInput] = useState("");
   const [query, setQuery] = useState("");
   const [bookId, setBookId] = useState<string>(ALL);
@@ -104,13 +106,13 @@ export function SearchPanel() {
           <Input
             value={input}
             onChange={(event) => setInput(event.target.value)}
-            placeholder="Search Arabic, English, a hadith number, or a heading…"
-            aria-label="Search the hadith library"
+            placeholder={t.searchPlaceholder}
+            aria-label={t.searchAria}
             className="h-11 bg-card pl-9 text-base"
           />
         </div>
         <Button type="submit" className="h-11 px-6">
-          Search
+          {t.search}
         </Button>
         {query ? (
           <Button
@@ -122,7 +124,7 @@ export function SearchPanel() {
               setQuery("");
             }}
           >
-            <X /> Clear
+            <X /> {t.clear}
           </Button>
         ) : null}
       </form>
@@ -137,10 +139,10 @@ export function SearchPanel() {
           }}
         >
           <SelectTrigger className="w-56 bg-card">
-            <SelectValue placeholder="All books" />
+            <SelectValue placeholder={t.allBooks} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value={ALL}>All books</SelectItem>
+            <SelectItem value={ALL}>{t.allBooks}</SelectItem>
             {(books.data ?? []).map((book) => (
               <SelectItem key={book.id} value={book.id}>
                 {formatBookTitle(book.book_number, book.title_en ?? book.title_ar)}
@@ -155,10 +157,10 @@ export function SearchPanel() {
           disabled={bookId === ALL || !(collections.data ?? []).length}
         >
           <SelectTrigger className="w-56 bg-card">
-            <SelectValue placeholder="All collections" />
+            <SelectValue placeholder={t.allCollections} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value={ALL}>All collections</SelectItem>
+            <SelectItem value={ALL}>{t.allCollections}</SelectItem>
             {(collections.data ?? []).map((collection) => (
               <SelectItem key={collection.id} value={collection.id}>
                 {collection.title_en ?? collection.title_ar ?? "Untitled collection"}
@@ -173,10 +175,10 @@ export function SearchPanel() {
           disabled={bookId === ALL || !(chapters.data ?? []).length}
         >
           <SelectTrigger className="w-56 bg-card">
-            <SelectValue placeholder="All chapters" />
+            <SelectValue placeholder={t.allChapters} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value={ALL}>All chapters</SelectItem>
+            <SelectItem value={ALL}>{t.allChapters}</SelectItem>
             {(chapters.data ?? []).map((chapter) => (
               <SelectItem key={chapter.id} value={chapter.id}>
                 {formatChapterTitle(
@@ -193,9 +195,9 @@ export function SearchPanel() {
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All languages</SelectItem>
-            <SelectItem value="ar">Arabic</SelectItem>
-            <SelectItem value="en">English</SelectItem>
+            <SelectItem value="all">{t.allLanguages}</SelectItem>
+            <SelectItem value="ar">{t.arabic}</SelectItem>
+            <SelectItem value="en">{t.english}</SelectItem>
           </SelectContent>
         </Select>
 
@@ -210,7 +212,7 @@ export function SearchPanel() {
               setLanguage("all");
             }}
           >
-            <X /> Clear filters
+            <X /> {t.clearFilters}
           </Button>
         ) : null}
       </div>
@@ -222,7 +224,7 @@ export function SearchPanel() {
             onClick={() => navigate({ to: "/hadith/$number", params: { number: String(numeric) } })}
             className="font-medium text-primary underline-offset-4 hover:underline"
           >
-            Go directly to Hadith {numeric} ({toArabicIndicDigits(numeric)})
+            {t.goToHadith} {numeric} ({toArabicIndicDigits(numeric)})
           </button>
         </div>
       ) : null}
@@ -230,7 +232,7 @@ export function SearchPanel() {
       {query && headings.data?.length ? (
         <div className="rounded-md border border-border bg-card px-4 py-3">
           <h3 className="mb-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            Matching headings
+            {t.matchingHeadings}
           </h3>
           <ul className="space-y-1 text-sm">
             {headings.data.map((hit) => (
@@ -264,13 +266,13 @@ export function SearchPanel() {
 
       {query ? (
         <div className="space-y-3">
-          {results.isLoading ? <p className="text-sm text-muted-foreground">Searching…</p> : null}
+          {results.isLoading ? <p className="text-sm text-muted-foreground">{t.searching}</p> : null}
           {results.error ? (
-            <p className="text-sm text-destructive">The search could not be completed.</p>
+            <p className="text-sm text-destructive">{t.searchFailed}</p>
           ) : null}
           {results.data && results.data.length === 0 && !results.isLoading ? (
             <p className="text-sm text-muted-foreground">
-              No hadith text matched this search.
+              {t.noSearchMatch}
             </p>
           ) : null}
           {results.data?.map((result) => {
@@ -283,7 +285,7 @@ export function SearchPanel() {
                 className="block rounded-md border border-border bg-card px-4 py-3 transition-colors hover:border-primary"
               >
                 <div className="flex flex-wrap items-baseline gap-2">
-                  <span className="font-semibold text-primary">Hadith {result.hadith_number}</span>
+                  <span className="font-semibold text-primary">{t.hadith} {result.hadith_number}</span>
                   {book ? (
                     <span className="text-xs text-muted-foreground">
                       {formatBookTitle(book.book_number, book.title_en ?? book.title_ar)}
@@ -301,7 +303,7 @@ export function SearchPanel() {
                   </p>
                 ) : null}
                 <span className="mt-2 inline-block text-xs text-muted-foreground italic">
-                  Preview only — open to read the complete hadith.
+                  {t.previewOnly}
                 </span>
               </Link>
             );
