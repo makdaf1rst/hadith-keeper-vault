@@ -17,7 +17,8 @@ import {
 import { IntroText } from "@/components/library/IntroText";
 import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
-import { useInterfaceText } from "@/lib/language";
+import { useInterfaceText, useLanguage } from "@/lib/language";
+import { fetchBengaliChapterTranslation } from "@/lib/bengali-translations";
 import { toArabicIndicDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
@@ -157,20 +158,39 @@ function BookHadiths({ bookId }: { bookId: string }) {
   );
 }
 
-function ChapterNode({ chapter }: { chapter: Chapter }) {
+function ChapterNode({ chapter, bookNumber }: { chapter: Chapter; bookNumber: number }) {
   const t = useInterfaceText();
+  const { contentLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
+  const bengali = useQuery({
+    queryKey: ["bengali-chapter", bookNumber, chapter.id],
+    queryFn: () => fetchBengaliChapterTranslation(bookNumber, chapter.id),
+    enabled: contentLanguage === "bn",
+  });
+  const bn = contentLanguage === "bn" ? bengali.data : null;
   return (
     <li className="border-l border-border pl-2">
       <Toggle open={open} onClick={() => setOpen((v) => !v)}>
         <Title
           ar={chapter.title_ar}
-          en={formatChapterTitle(chapter.chapter_number, chapter.title_en) || null}
+          en={bn?.title ?? (formatChapterTitle(chapter.chapter_number, chapter.title_en) || null)}
         />
       </Toggle>
       {open ? (
         <>
-          <IntroText intro={chapter} className="mx-2 my-2" label={t.chapterIntroduction} />
+          <IntroText
+            intro={
+              bn
+                ? {
+                    ...chapter,
+                    intro_en_source: bn.intro,
+                    intro_en_display: bn.intro,
+                  }
+                : chapter
+            }
+            className="mx-2 my-2"
+            label={t.chapterIntroduction}
+          />
           <HadithList chapterId={chapter.id} />
         </>
       ) : null}
@@ -227,10 +247,17 @@ function BookNode({
           <ul className="space-y-0.5">
             {(collections.data ?? []).map((collection) => {
               const own = orderCollectionChapters((chapters.data ?? []).filter((c) => c.collection_id === collection.id));
-              return <CollectionNode key={collection.id} collection={collection} chapters={own} />;
+              return (
+                <CollectionNode
+                  key={collection.id}
+                  collection={collection}
+                  chapters={own}
+                  bookNumber={book.book_number}
+                />
+              );
             })}
             {loose.map((chapter) => (
-              <ChapterNode key={chapter.id} chapter={chapter} />
+              <ChapterNode key={chapter.id} chapter={chapter} bookNumber={book.book_number} />
             ))}
           </ul>
           {noHeadings ? <BookHadiths bookId={book.id} /> : null}
@@ -240,7 +267,15 @@ function BookNode({
   );
 }
 
-function CollectionNode({ collection, chapters }: { collection: Collection; chapters: Chapter[] }) {
+function CollectionNode({
+  collection,
+  chapters,
+  bookNumber,
+}: {
+  collection: Collection;
+  chapters: Chapter[];
+  bookNumber: number;
+}) {
   const t = useInterfaceText();
   const [open, setOpen] = useState(false);
   return (
@@ -253,7 +288,9 @@ function CollectionNode({ collection, chapters }: { collection: Collection; chap
           <IntroText intro={collection} className="mx-2 my-2" label={t.collectionIntroduction} />
           <ul className="space-y-0.5 pl-4">
             {chapters.length ? (
-              chapters.map((chapter) => <ChapterNode key={chapter.id} chapter={chapter} />)
+              chapters.map((chapter) => (
+                <ChapterNode key={chapter.id} chapter={chapter} bookNumber={bookNumber} />
+              ))
             ) : (
               <li className="px-2 py-1 text-xs text-muted-foreground">{t.noChaptersYet}</li>
             )}
