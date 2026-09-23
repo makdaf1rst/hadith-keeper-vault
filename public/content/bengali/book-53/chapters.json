@@ -1,0 +1,330 @@
+{
+  "collections": [
+    {
+      "id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "sort_order": 1,
+      "title_bn": "১ — মাসসমূহের ফযীলত সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "sort_order": 2,
+      "title_bn": "২ — দিন ও রাতের ফযীলত সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1d1d537c-9601-412f-93c9-19a94fc414de",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "sort_order": 3,
+      "title_bn": "৩ — বিশেষ সময়সমূহের ফযীলত সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "8be1e6d2-a957-469a-b5c6-570d67be132e",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "1d1d537c-9601-412f-93c9-19a94fc414de",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: জুমুʿআর দিনের বিশেষ সময়টির ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ef1fc23e-e29f-4c80-bf60-17de766e4b36",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: ʿআরাফাহ দিবসের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "51a9b206-d9d7-4af3-9ce8-3026a3b633cf",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: পবিত্র মাসসমূহ",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই আল্লাহর নিকট মাসের সংখ্যা বারোটি—যেদিন তিনি আসমান ও জমিন সৃষ্টি করেছেন সেদিন থেকেই আল্লাহর কিতাবে তা নির্ধারিত। এর মধ্যে চারটি পবিত্র। এটাই সুপ্রতিষ্ঠিত দ্বীন। অতএব এ মাসগুলোতে তোমরা নিজেদের প্রতি জুলুম করো না।”\n[সূরা আল-তাওবাহ ৯:৩৬]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই আল্লাহর নিকট মাসের সংখ্যা বারোটি—যেদিন তিনি আসমান ও জমিন সৃষ্টি করেছেন সেদিন থেকেই আল্লাহর কিতাবে তা নির্ধারিত। এর মধ্যে চারটি পবিত্র। এটাই সুপ্রতিষ্ঠিত দ্বীন। অতএব এ মাসগুলোতে তোমরা নিজেদের প্রতি জুলুম করো না।”\n[সূরা আল-তাওবাহ ৯:৩৬]"
+    },
+    {
+      "id": "ff5be92e-7074-47a2-8891-19c671594934",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: ʿআরাফাহ দিবসে সাওম পালনের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5e2652d9-ed3d-4558-94d0-a7104d6de53a",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "1d1d537c-9601-412f-93c9-19a94fc414de",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: রাতের শেষ তৃতীয়াংশের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5235ef3d-f2ca-4501-b15a-96b75bb7cab8",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: রজব মাস সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f3866d4e-79a8-4c7d-b3ba-d4cf7e3647f4",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "1d1d537c-9601-412f-93c9-19a94fc414de",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: আযান ও ইকামতের মধ্যবর্তী সময়ের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1f16d03b-339c-4aaa-b8a0-e803218711d0",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: সোমবার সাওম পালনের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "86126e07-6d8f-4cce-bd54-cf3e42f9dd7c",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: জাহিলিয়্যাতের যুগের মানুষের রজব মাসকে সম্মান করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a4cb6fa2-a817-4659-aefc-01c0e3e17e2d",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: সোমবার ও বৃহস্পতিবার আমলসমূহ মহান ও মহিমান্বিত আল্লাহর নিকট পেশ করা হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e61c7dd0-523b-4a9a-a9e6-33c647189d89",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: শাʿবান মাস সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "51e6b44c-8321-4eda-9b7b-7718cd1deba6",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "1d1d537c-9601-412f-93c9-19a94fc414de",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: কুরআন তিলাওয়াতের সময় প্রশান্তি ও রহমতের ফেরেশতাদের অবতরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c6ebc5b2-03f4-436c-9d37-6144a10971f6",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: সোমবার ও বৃহস্পতিবার জান্নাতের দরজাসমূহ খুলে দেওয়া হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ab50c113-47ab-448c-a3b8-7c1be68d03bb",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: রমযান মাসের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "23f8e011-d797-4c67-a286-c01f3e690e93",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: রমযান মাসের সাওমের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "46ad2dee-913a-4790-93c0-30d6d57abcb7",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: কুরবানির দিনই হজ্জে আকবারের দিন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ae04dcaf-1458-417a-b4a8-4723d6c91929",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: রমযানের পর শাওয়ালের ছয় দিন সাওম পালনের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "86f253ad-2c50-4784-aa6d-23b6d5cfac34",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: ʿআশূরা দিবসের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b5756dba-b5b3-4295-90e0-dacc50b9b7d8",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: শনিবার ও রবিবার সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "185748a7-bb43-430f-aa06-c568a8d59f30",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e07a650a-11fd-4879-9af9-188d08dd673b",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: আল্লাহর মাস আল-মুহাররমে সাওম পালনের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2ec1f1c5-f09b-40c7-a91e-43a5d7583ce4",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: আইয়ামে বীয সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fd2d023a-5337-4cf3-b5fd-3288d0fc6f8a",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: ʿআরাফাহ দিবস, কুরবানির দিন ও তাশরীকের দিনসমূহ মুসলিমদের ঈদের দিন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ac61c2d3-2ff1-4632-87c8-7cd740d77a4e",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: যুল-হিজ্জাহর প্রথম দশ দিনের ফযীলত",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“শপথ ভোরের, এবং দশ রাতের, এবং জোড় ও বিজোড়ের।”\n[সূরা আল-ফাজর ৮৯:১–৩]\nমহান আল্লাহ আরও বলেছেন:\n“যাতে তারা নিজেদের কল্যাণ প্রত্যক্ষ করে এবং নির্দিষ্ট দিনগুলোতে আল্লাহর নাম স্মরণ করে সেই গবাদিপশুর ওপর যা তিনি তাদের রিযিক হিসেবে দিয়েছেন। অতএব তোমরা তা থেকে খাও এবং দুর্দশাগ্রস্ত দরিদ্রকে খাওয়াও।”\n[সূরা আল-হজ্জ ২২:২৮]\nসূরা আল-বাকারায় আল্লাহ বলেছেন:\n“গণনাকৃত দিনগুলোতে আল্লাহকে স্মরণ করো। যে দুই দিনের মধ্যে তাড়াতাড়ি ফিরে আসে তার কোনো পাপ নেই, আর যে বিলম্ব করে তারও কোনো পাপ নেই—তার জন্য যে আল্লাহকে ভয় করে। আল্লাহকে ভয় করো এবং জেনে রাখো, তোমাদের তাঁরই কাছে সমবেত করা হবে।”\n[সূরা আল-বাকারাহ ২:২০৩]\nআলিমদের মধ্যে প্রসিদ্ধ মত হলো, ‘নির্দিষ্ট দিনগুলো’ এবং ‘গণনাকৃত দিনগুলো’ চার দিনকে অন্তর্ভুক্ত করে: কুরবানির দিন এবং তার পরের তিন দিন, যা তাশরীকের দিনসমূহ।\nএটি ইবন ʿউমরের মত ছিল, যেমন ইবন আবী হাতিম তাঁর তাফসীরে সহীহ সনদে বর্ণনা করেছেন।\nইবন জারীর আল-তাবারীও তাঁর তাফসীরে একাধিক সূত্রে ইবন ʿআব্বাস থেকে একই মত বর্ণনা করেছেন।\nআল-বুখারী ‘দুই ঈদের কিতাব’-এ তাশরীকের দিনগুলোতে আমলের ফযীলত উল্লেখ করেছেন। তিনি ইবন ʿআব্বাস থেকে আরও বর্ণনা করেছেন যে ‘নির্দিষ্ট দিনগুলো’ হলো যুল-হিজ্জাহর প্রথম দশ দিন।\nআল-বুখারী আরও উল্লেখ করেছেন যে ইবন ʿউমর ও আবু হুরাইরাহ এই দশ দিনে বাজারে গিয়ে তাকবীর বলতেন এবং লোকেরা তাঁদের তাকবীরের সঙ্গে তাকবীর বলত। মুহাম্মাদ ইবন ʿআলীও নফল সালাতের পর তাকবীর বলতেন।\nআরও বিস্তারিত জানতে ‘দুই ঈদের কিতাব’ দেখুন।",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“শপথ ভোরের, এবং দশ রাতের, এবং জোড় ও বিজোড়ের।”\n[সূরা আল-ফাজর ৮৯:১–৩]\nমহান আল্লাহ আরও বলেছেন:\n“যাতে তারা নিজেদের কল্যাণ প্রত্যক্ষ করে এবং নির্দিষ্ট দিনগুলোতে আল্লাহর নাম স্মরণ করে সেই গবাদিপশুর ওপর যা তিনি তাদের রিযিক হিসেবে দিয়েছেন। অতএব তোমরা তা থেকে খাও এবং দুর্দশাগ্রস্ত দরিদ্রকে খাওয়াও।”\n[সূরা আল-হজ্জ ২২:২৮]\nসূরা আল-বাকারায় আল্লাহ বলেছেন:\n“গণনাকৃত দিনগুলোতে আল্লাহকে স্মরণ করো। যে দুই দিনের মধ্যে তাড়াতাড়ি ফিরে আসে তার কোনো পাপ নেই, আর যে বিলম্ব করে তারও কোনো পাপ নেই—তার জন্য যে আল্লাহকে ভয় করে। আল্লাহকে ভয় করো এবং জেনে রাখো, তোমাদের তাঁরই কাছে সমবেত করা হবে।”\n[সূরা আল-বাকারাহ ২:২০৩]\nআলিমদের মধ্যে প্রসিদ্ধ মত হলো, ‘নির্দিষ্ট দিনগুলো’ এবং ‘গণনাকৃত দিনগুলো’ চার দিনকে অন্তর্ভুক্ত করে: কুরবানির দিন এবং তার পরের তিন দিন, যা তাশরীকের দিনসমূহ।\nএটি ইবন ʿউমরের মত ছিল, যেমন ইবন আবী হাতিম তাঁর তাফসীরে সহীহ সনদে বর্ণনা করেছেন।\nইবন জারীর আল-তাবারীও তাঁর তাফসীরে একাধিক সূত্রে ইবন ʿআব্বাস থেকে একই মত বর্ণনা করেছেন।\nআল-বুখারী ‘দুই ঈদের কিতাব’-এ তাশরীকের দিনগুলোতে আমলের ফযীলত উল্লেখ করেছেন। তিনি ইবন ʿআব্বাস থেকে আরও বর্ণনা করেছেন যে ‘নির্দিষ্ট দিনগুলো’ হলো যুল-হিজ্জাহর প্রথম দশ দিন।\nআল-বুখারী আরও উল্লেখ করেছেন যে ইবন ʿউমর ও আবু হুরাইরাহ এই দশ দিনে বাজারে গিয়ে তাকবীর বলতেন এবং লোকেরা তাঁদের তাকবীরের সঙ্গে তাকবীর বলত। মুহাম্মাদ ইবন ʿআলীও নফল সালাতের পর তাকবীর বলতেন।\nআরও বিস্তারিত জানতে ‘দুই ঈদের কিতাব’ দেখুন।"
+    },
+    {
+      "id": "c844d647-2831-4762-ac99-ffc9f685ba34",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: জুমুʿআর দিনের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f088898c-d625-4b5a-ab59-cc9bbe9d8c32",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: জুমুʿআর সালাতে আগেভাগে যাওয়ার ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c1c71eca-bd4d-4858-b507-c585e6c199bb",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: জুমুʿআর সালাতের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2ad0eedd-b4fd-4df4-86e7-fab6c6d7609f",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: জুমুʿআর দিনে নবী ﷺ-এর প্রতি অধিক পরিমাণে দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "91663606-3799-4527-8019-91a5f6ae9e6f",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: জুমুʿআর সালাতে হেঁটে যাওয়ার সওয়াব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c79de45f-8022-4b6c-a3a1-e9174323f6bb",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: যে ব্যক্তি জুমুʿআর দিন অথবা জুমুʿআর রাতে ইন্তিকাল করে, তাকে কবরের পরীক্ষার থেকে রক্ষা করা হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6d5c856a-ea66-4664-8933-584d8e12afda",
+      "book_id": "030c8aa0-cce1-49f6-bcce-7c59cb3d4fdb",
+      "collection_id": "e061fed0-8e10-4b7f-a50c-2d09467716a2",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: লাইলাতুল কদরের ফযীলত",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই আমরা এটি কদরের রাতে নাযিল করেছি। আর কীভাবে তুমি জানবে কদরের রাত কী? কদরের রাত এক হাজার মাসের চেয়েও উত্তম। সে রাতে ফেরেশতারা ও রূহ তাদের রবের অনুমতিক্রমে প্রত্যেক নির্দেশ নিয়ে অবতরণ করে। তা শান্তিময়—ফজরের উদয় হওয়া পর্যন্ত।”\n[সূরা আল-কদর ৯৭:১–৫]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই আমরা এটি কদরের রাতে নাযিল করেছি। আর কীভাবে তুমি জানবে কদরের রাত কী? কদরের রাত এক হাজার মাসের চেয়েও উত্তম। সে রাতে ফেরেশতারা ও রূহ তাদের রবের অনুমতিক্রমে প্রত্যেক নির্দেশ নিয়ে অবতরণ করে। তা শান্তিময়—ফজরের উদয় হওয়া পর্যন্ত।”\n[সূরা আল-কদর ৯৭:১–৫]"
+    }
+  ]
+}
