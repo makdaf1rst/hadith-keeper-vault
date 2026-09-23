@@ -1,0 +1,474 @@
+{
+  "collections": [
+    {
+      "id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "sort_order": 1,
+      "title_bn": "১ — চিকিৎসা সম্পর্কে বর্ণিত বিষয়সমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "f344263e-ffdd-4311-92d7-a06261281422",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: মহান আল্লাহই আরোগ্যদাতা",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“আল্লাহ যদি তোমাকে কোনো কষ্টে স্পর্শ করেন, তবে তিনি ছাড়া তা দূর করার কেউ নেই। আর যদি তিনি তোমার কল্যাণ চান, তবে তাঁর অনুগ্রহ প্রতিহত করার কেউ নেই। তিনি তাঁর বান্দাদের মধ্যে যাকে ইচ্ছা তা দান করেন। আর তিনিই পরম ক্ষমাশীল, পরম দয়ালু।”\n[সূরা ইউনুস ১০:১০৭]\nমহান আল্লাহ ইবরাহীমের কথা বর্ণনা করে আরও বলেছেন:\n“আর আমি যখন অসুস্থ হই, তখন তিনিই আমাকে আরোগ্য দান করেন।”\n[সূরা আশ-শু‘আরা ২৬:৮০]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“আল্লাহ যদি তোমাকে কোনো কষ্টে স্পর্শ করেন, তবে তিনি ছাড়া তা দূর করার কেউ নেই। আর যদি তিনি তোমার কল্যাণ চান, তবে তাঁর অনুগ্রহ প্রতিহত করার কেউ নেই। তিনি তাঁর বান্দাদের মধ্যে যাকে ইচ্ছা তা দান করেন। আর তিনিই পরম ক্ষমাশীল, পরম দয়ালু।”\n[সূরা ইউনুস ১০:১০৭]\nমহান আল্লাহ ইবরাহীমের কথা বর্ণনা করে আরও বলেছেন:\n“আর আমি যখন অসুস্থ হই, তখন তিনিই আমাকে আরোগ্য দান করেন।”\n[সূরা আশ-শু‘আরা ২৬:৮০]"
+    },
+    {
+      "id": "fbd57890-94ae-4464-be77-29f7d84e094a",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: সুস্থতার নিয়ামত সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c299bddc-3872-42f7-8258-292f2b6cdeab",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: চিকিৎসা গ্রহণ ও রুকইয়াহ চাওয়া আল্লাহর তাকদীরেরই অংশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ada29878-1477-46b6-8362-8c7ba30b2db9",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: আল্লাহ এমন কোনো রোগ নাযিল করেননি যার চিকিৎসাও নাযিল করেননি; অতএব হে আল্লাহর বান্দারা, চিকিৎসা গ্রহণ করো",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1662c8ff-e7ad-461c-b4a5-e4c65215835f",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: হারাম বস্তু দ্বারা চিকিৎসা গ্রহণ নিষিদ্ধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c35eae6e-e9f9-4642-a01d-a1532a9706ae",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: অসুস্থতার সময় খাদ্যসংযম সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a32d76e2-cbad-41f5-b7e2-faddfebd9547",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: তিনটি বিষয়ে আরোগ্য রয়েছে—হিজামা, মধু ও দাগ দিয়ে চিকিৎসা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "85f9b252-3c0d-4ec2-8a47-0eb9a4965558",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: হিজামার মাধ্যমে চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4163c671-7aa3-4a01-ac45-8cb91130105b",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: মাইগ্রেন ও মাথাব্যথার জন্য হিজামা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "de3f2aeb-0057-4e60-bdb6-266420b26d5c",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: রক্তের প্রবাহ তীব্র হলে হিজামা করা মুস্তাহাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "582074cf-e17f-421c-b654-248253a13428",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: হিজামার স্থান ও সময় সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3f837205-4695-475f-89ab-a8ec41c8727c",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: হিজামাকারীকে পারিশ্রমিক দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "84288d8d-ce9c-4ee4-ae97-53d48e995957",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: দাগ দিয়ে চিকিৎসা অপছন্দনীয় হওয়া সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4b511b10-e962-4324-8912-28cccaf87d10",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: দাগ দিয়ে চিকিৎসা বৈধ হওয়া সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9b21dfc8-5b77-492c-bee6-be58ab8d9fe2",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: নাকে ওষুধ প্রয়োগ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c6c87946-94d7-4e4d-bc6c-51fa20a7817f",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: মুখের পাশ দিয়ে ওষুধ প্রয়োগ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6c21b8cc-2eb5-41b6-a88a-1b085d05e24e",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: মধু দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“তাদের উদর থেকে বিভিন্ন রঙের পানীয় বের হয়, যাতে মানুষের জন্য আরোগ্য রয়েছে। নিশ্চয়ই এতে চিন্তাশীল মানুষের জন্য একটি নিদর্শন রয়েছে।”\n[সূরা আন-নাহল ১৬:৬৯]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“তাদের উদর থেকে বিভিন্ন রঙের পানীয় বের হয়, যাতে মানুষের জন্য আরোগ্য রয়েছে। নিশ্চয়ই এতে চিন্তাশীল মানুষের জন্য একটি নিদর্শন রয়েছে।”\n[সূরা আন-নাহল ১৬:৬৯]"
+    },
+    {
+      "id": "223dcccb-08d7-4e72-ab30-17e89570a22a",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: সানা ও সানূত সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a78187ce-0caa-43e2-bd7f-b31f48c5de2b",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: কালোজিরা দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8721f647-16b4-43f7-9933-63a7b6c0c45b",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: কুস্তুল হিন্দী দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3a302692-19f8-4e21-a777-5f5ba3058431",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: যুরাইরাহ দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d6d95397-0721-411a-aaa0-849f7bd4ad6d",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "২২ — অধ্যায়: উটের প্রস্রাব ও দুধ দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b67b73d3-5390-410a-a0f2-3a1adefa5727",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "২৩ — অধ্যায়: গরুর দুধ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "16639331-59a0-45ff-981a-112b7f872ab6",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "২৪ — অধ্যায়: আজওয়া খেজুর দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4de541b7-6f71-45ce-9028-d9f6aa9da5d4",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "২৫ — অধ্যায়: আজওয়া খেজুর জান্নাত থেকে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dce964c1-3049-4939-8b77-56bae4b259f8",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "২৬ — অধ্যায়: মদিনার খেজুর দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8a61fa25-5476-4704-b3aa-6c70684a82ab",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "২৭ — অধ্যায়: বারানী খেজুর সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9997d6db-d302-4d5e-972a-77e742db7371",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "২৮ — অধ্যায়: যমযমের পানি দ্বারা চিকিৎসা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "50f668de-efc9-42c6-812f-46595e8b3fc2",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "২৯ — অধ্যায়: ট্রাফল দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4cc5f117-5354-42f0-85b2-0a4f24acca02",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "৩০ — অধ্যায়: ইসমিদ ও সুরমা দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e745b33d-2cc8-4331-aedb-b8378f4f9676",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "৩১ — অধ্যায়: প্রত্যেক চোখে কতবার সুরমা লাগানো হবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a4d2bfc5-23ee-4b0d-ae44-2e6d45939cb2",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "৩২ — অধ্যায়: তালবীনাহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d3eaa210-8ebd-40b4-86f8-07171af397d3",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "৩৩ — অধ্যায়: পানি দিয়ে জ্বর ঠান্ডা করা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "09586cc2-ba37-4777-ac4d-b364b299f446",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "৩৪ — অধ্যায়: ক্ষতের চিকিৎসা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "82b1d181-808e-48ef-8505-5f8849779e28",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "৩৫ — অধ্যায়: ব্যথার জন্য মালিশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "595f5610-3b2e-4425-bd94-3d7b0da62583",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "৩৬ — অধ্যায়: প্লেগ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6feb2004-6d8e-49fc-ba37-713a52200540",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "৩৭ — অধ্যায়: যে ব্যক্তি প্লেগে ধৈর্য ধারণ করে তার প্রতিদান",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f384e7fd-e694-4817-89e9-e2cdff7142e0",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "৩৮ — অধ্যায়: প্লেগে মৃত্যুবরণকারীর ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7c0c48fa-0eee-4916-8709-cd333d0a71cc",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "৩৯ — অধ্যায়: স্বতন্ত্র সংক্রমণ, অশুভ লক্ষণ, হামাহ, সফর, নক্ষত্রের প্রতি বৃষ্টি আরোপ বা গূল—কোনোটিরই স্বাধীন প্রভাব নেই",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a6a96269-21ea-49ee-bbc9-b271b7c68179",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "৪০ — অধ্যায়: কুমন্ত্রণা এড়াতে সুস্থ ব্যক্তির অসুস্থ ব্যক্তির সঙ্গে মেলামেশা এড়ানো উচিত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b69efcc2-fb73-4b63-a99a-afca69e931ed",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "৪১ — অধ্যায়: কুষ্ঠরোগে আক্রান্ত ব্যক্তির কাছ থেকে দূরে সরে থাকা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2a0bef3a-c4d9-4c54-b993-3a91b3e16d21",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 42,
+      "sort_order": 42,
+      "title_bn": "৪২ — অধ্যায়: প্রয়োজন হলে পুরুষ নারীকে এবং নারী পুরুষকে চিকিৎসা করতে পারে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "757f7f15-4ea6-44dc-9d95-3f30068ded89",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 43,
+      "sort_order": 43,
+      "title_bn": "৪৩ — অধ্যায়: মেহেদি দ্বারা চিকিৎসা গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7383e5fd-cd6a-4fee-b9db-573b24e99c5e",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 44,
+      "sort_order": 44,
+      "title_bn": "৪৪ — অধ্যায়: সায়াটিকার চিকিৎসা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "76081d3d-9cca-4203-8273-a18baa007b44",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 45,
+      "sort_order": 45,
+      "title_bn": "৪৫ — অধ্যায়: কোনো পাত্রে মাছি পড়লে করণীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8d8228e7-0a3b-4caf-947d-007487ba75ac",
+      "book_id": "215444a4-cfc7-4935-8410-c00a7b94ec8c",
+      "collection_id": "b3dae78e-77d2-45c4-ba37-97e31bb72481",
+      "chapter_number": 46,
+      "sort_order": 46,
+      "title_bn": "৪৬ — অধ্যায়: বান্দা অসুস্থ হলে সুস্থ অবস্থায় যে আমল করত তার সওয়াব তার জন্য লেখা হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
