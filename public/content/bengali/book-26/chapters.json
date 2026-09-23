@@ -1,0 +1,45 @@
+{
+  "collections": [],
+  "chapters": [
+    {
+      "id": "7a9a4227-ddd6-49a0-ac10-b1ead6676b6d",
+      "book_id": "ddf0f5a8-ec03-4088-bd2d-34857ed827a3",
+      "collection_id": null,
+      "chapter_number": 1,
+      "sort_order": 152,
+      "title_bn": "১ — অধ্যায়: খুলার বৈধতা",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “তবে যদি তোমরা আশঙ্কা কর যে তারা আল্লাহর সীমারেখা বজায় রাখতে পারবে না, তাহলে স্ত্রী যে বিনিময়ে নিজেকে মুক্ত করে নেয়, তাতে তাদের কারও ওপর কোনো দোষ নেই।” [সূরা আল-বাকারা: ২২৯]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “তবে যদি তোমরা আশঙ্কা কর যে তারা আল্লাহর সীমারেখা বজায় রাখতে পারবে না, তাহলে স্ত্রী যে বিনিময়ে নিজেকে মুক্ত করে নেয়, তাতে তাদের কারও ওপর কোনো দোষ নেই।” [সূরা আল-বাকারা: ২২৯]"
+    },
+    {
+      "id": "d2344af7-c2e0-47dd-8d0c-4ffdb49c01ea",
+      "book_id": "ddf0f5a8-ec03-4088-bd2d-34857ed827a3",
+      "collection_id": null,
+      "chapter_number": 2,
+      "sort_order": 153,
+      "title_bn": "২ — অধ্যায়: নারীর জন্য খুলা চাওয়া অপছন্দনীয় হওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1d53e996-e83a-4c3e-834c-2c009417432d",
+      "book_id": "ddf0f5a8-ec03-4088-bd2d-34857ed827a3",
+      "collection_id": null,
+      "chapter_number": 3,
+      "sort_order": 154,
+      "title_bn": "৩ — অধ্যায়: স্বামী তাকে যা দিয়েছে তার চেয়ে বেশি গ্রহণ করতে পারবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a43fd805-5a49-42f8-b7bd-ec936296b31e",
+      "book_id": "ddf0f5a8-ec03-4088-bd2d-34857ed827a3",
+      "collection_id": null,
+      "chapter_number": 4,
+      "sort_order": 155,
+      "title_bn": "৪ — অধ্যায়: খুলা গ্রহণকারী নারীর ইদ্দত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
