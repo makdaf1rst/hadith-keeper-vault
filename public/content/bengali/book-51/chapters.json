@@ -1,0 +1,55 @@
+{
+  "collections": [],
+  "chapters": [
+    {
+      "id": "cd5f0cba-1e7b-40aa-8fd2-3323964d32e9",
+      "book_id": "b3519e41-dc7b-424e-8b84-10384e3b4bc5",
+      "collection_id": null,
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: হিজাজবাসীদের ফযীলত সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1e76aafd-f641-449d-aec8-b948070318ce",
+      "book_id": "b3519e41-dc7b-424e-8b84-10384e3b4bc5",
+      "collection_id": null,
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: ইয়ামানবাসীদের ফযীলত সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "84840790-7275-43b3-9937-524480ed6c50",
+      "book_id": "b3519e41-dc7b-424e-8b84-10384e3b4bc5",
+      "collection_id": null,
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: উমানের অধিবাসীদের সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "39821710-2397-4fc2-8604-b545b34d1e35",
+      "book_id": "b3519e41-dc7b-424e-8b84-10384e3b4bc5",
+      "collection_id": null,
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: মিসরের অধিবাসীদের সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d6d5e58a-d9f5-4a74-98a9-f068a0085cff",
+      "book_id": "b3519e41-dc7b-424e-8b84-10384e3b4bc5",
+      "collection_id": null,
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: নাসীবীনের জিনদের প্রতিনিধিদল সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
