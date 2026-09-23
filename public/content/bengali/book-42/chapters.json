@@ -1,0 +1,465 @@
+{
+  "collections": [],
+  "chapters": [
+    {
+      "id": "e467042b-5ac2-4b15-9ba9-69850398a65a",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: যে মুসলিমদের বিষয়সমূহের দায়িত্ব গ্রহণ করে এবং তাদের মধ্যে ন্যায়বিচার করে তার ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c153ffb3-102a-408e-9766-09588859eb70",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: প্রজাদের প্রতি কোমল আচরণের উৎসাহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8131f0f6-d407-4cd1-b55c-95c76b7d56fc",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: মানুষের সামর্থ্যের মধ্যে থাকা বিষয়ে নেতার দৃঢ় নির্দেশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "aee744b7-b98f-44d7-9a88-a5122b9d5bd0",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: প্রজাদের জন্য সহজ করার ব্যাপারে নিজ গভর্নর ও কর্মচারীদের প্রতি নেতার নির্দেশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a58a1327-dfda-468d-8d23-31d9fc21d647",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: তত্ত্বাবধায়কের অধীনস্থদের প্রতি দায়িত্ব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "926eaf46-943b-428c-b7b1-b88481e354ab",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: প্রজাদের বিষয়সমূহের প্রতি যত্নবান হতে নেতাকে উৎসাহ দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "22d62170-b64c-4cf7-98f8-03d210f9eafd",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: শাসক গভর্নর ও কর্মচারীদের ভাতা নির্ধারণ করবেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "62b6a5d0-1af3-47c0-8d8d-2c1b9fc63c06",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: নেতৃত্ব চাওয়া ও তার প্রতি আগ্রহী হওয়ার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3a63afa-f71f-4240-ac04-4bfca3d5219c",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: নেতা একটি ঢাল, যার পেছনে যুদ্ধ করা হয় এবং যার মাধ্যমে সুরক্ষা চাওয়া হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1f02ce01-5e94-46ed-af0e-303820074be1",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: উত্তম নেতাদের বৈশিষ্ট্য সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “যাদের আমরা পৃথিবীতে প্রতিষ্ঠিত করলে তারা সালাত কায়েম করে, সদকা দেয়, সৎকাজের নির্দেশ দেয় এবং অসৎকাজ থেকে নিষেধ করে। আর সকল বিষয়ের পরিণাম আল্লাহরই অধীন।” [সূরা আল-হজ: ৪১]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “যাদের আমরা পৃথিবীতে প্রতিষ্ঠিত করলে তারা সালাত কায়েম করে, সদকা দেয়, সৎকাজের নির্দেশ দেয় এবং অসৎকাজ থেকে নিষেধ করে। আর সকল বিষয়ের পরিণাম আল্লাহরই অধীন।” [সূরা আল-হজ: ৪১]"
+    },
+    {
+      "id": "489f8beb-4b37-44fe-bdc4-992dd58d0d32",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: কর্তৃপক্ষকে সম্মান করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "aa9639c4-8b87-47b8-b319-30b813079886",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: আল্লাহর অবাধ্যতা ছাড়া অন্য বিষয়ে কর্তৃত্বশীলদের আনুগত্য করা ওয়াজিব",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “হে ঈমানদারগণ, আল্লাহর আনুগত্য করো, রাসূলের আনুগত্য করো এবং তোমাদের মধ্যে যারা কর্তৃত্বশীল তাদেরও।” [সূরা আন-নিসা: ৫৯]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “হে ঈমানদারগণ, আল্লাহর আনুগত্য করো, রাসূলের আনুগত্য করো এবং তোমাদের মধ্যে যারা কর্তৃত্বশীল তাদেরও।” [সূরা আন-নিসা: ৫৯]"
+    },
+    {
+      "id": "2aced823-389a-46bf-b7a1-15c50b83fcc5",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: নেতার জুলুম ও নিজের স্বার্থকে প্রাধান্য দেওয়া শ্রবণ ও আনুগত্যের অন্তরায় নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "df278c0c-1782-43b1-9d1c-5a89857ee8f0",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: নেতার কাছে একাধিকবার বাইআত করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6e6456ed-e072-41ad-bec0-1fff9677362e",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: নারীদের বাইআত সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “হে নবী, ঈমানদার নারীরা যখন আপনার কাছে এসে এই মর্মে বাইআত করে যে, তারা আল্লাহর সঙ্গে কোনো কিছুকে শরীক করবে না, চুরি করবে না, ব্যভিচার করবে না, নিজেদের সন্তানদের হত্যা করবে না, নিজেদের হাত ও পায়ের মাঝখানে রচিত কোনো অপবাদ আনবে না এবং সৎকাজে আপনার অবাধ্যতা করবে না, তখন তাদের বাইআত গ্রহণ করুন এবং তাদের জন্য আল্লাহর কাছে ক্ষমা চান। নিশ্চয়ই আল্লাহ ক্ষমাশীল, পরম দয়ালু।” [সূরা আল-মুমতাহানাহ: ১২]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “হে নবী, ঈমানদার নারীরা যখন আপনার কাছে এসে এই মর্মে বাইআত করে যে, তারা আল্লাহর সঙ্গে কোনো কিছুকে শরীক করবে না, চুরি করবে না, ব্যভিচার করবে না, নিজেদের সন্তানদের হত্যা করবে না, নিজেদের হাত ও পায়ের মাঝখানে রচিত কোনো অপবাদ আনবে না এবং সৎকাজে আপনার অবাধ্যতা করবে না, তখন তাদের বাইআত গ্রহণ করুন এবং তাদের জন্য আল্লাহর কাছে ক্ষমা চান। নিশ্চয়ই আল্লাহ ক্ষমাশীল, পরম দয়ালু।” [সূরা আল-মুমতাহানাহ: ১২]"
+    },
+    {
+      "id": "56bade4c-9bc2-4d1d-8f29-0e829b490d77",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: দাসের বাইআত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4503e786-92b3-4a4d-85aa-41592d59e240",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: রোগে আক্রান্ত ব্যক্তির বাইআত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f399fa59-9034-4e14-a0d0-4dd20c44801c",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: শিশুর বাইআত বৈধ নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4533da95-54a9-4387-8bb0-6d51320bcf31",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: প্রথম নেতার বাইআত পূর্ণ করা এবং একই ভূখণ্ডে একাধিক নেতার কাছে বাইআত না করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0433bd62-1589-4d5f-acdc-ffebb7f5ee99",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: যে দুনিয়াবি লাভ ছাড়া বাইআত পূর্ণ করে না তার পাপ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2a5e4f29-992a-4d64-9c90-b1be270f17ec",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: বাইআত ভঙ্গ করার ব্যাপারে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "410ed70c-5e89-4785-a5c5-afda784848c2",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "২২ — অধ্যায়: যে নিজের ওপর বাইআতের অঙ্গীকার না থাকা অবস্থায় মারা যায় তার পাপ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "eeaeea55-8992-439c-8404-5da89a0b4381",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "২৩ — অধ্যায়: শাসকের সামনে অতিরিক্ত প্রশংসা করা এবং তাঁর অনুপস্থিতিতে সমালোচনা করা মাকরূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "83f95e2f-8c6f-4363-aac5-570e3635da06",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "২৪ — অধ্যায়: নির্বোধদের নেতৃত্ব এবং তাদের জুলুমে সাহায্য করার ব্যাপারে সতর্কবাণী সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7ddcafd9-1184-4673-af0e-c9b6b36ca09a",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "২৫ — অধ্যায়: মুসলিমদের জামাআত ও তাদের নেতার সঙ্গে থাকা ওয়াজিব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "deb4f7e4-653d-40e6-8014-89c56ca6bf7e",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "২৬ — অধ্যায়: কোমলতা, প্রজ্ঞা ও উপদেশের মাধ্যমে শাসককে নসিহত করা",
+      "intro_bn_source": "মহান আল্লাহ মূসা ও হারূনকে ফিরআউনের কাছে পাঠিয়ে বলেছেন: “তোমরা দুজন ফিরআউনের কাছে যাও। নিশ্চয়ই সে সীমালঙ্ঘন করেছে। আর তার সঙ্গে কোমল ভাষায় কথা বলো, হয়তো সে উপদেশ গ্রহণ করবে অথবা ভয় করবে।” [সূরা ত্বা-হা: ৪৩–৪৪]",
+      "intro_bn_display": "মহান আল্লাহ মূসা ও হারূনকে ফিরআউনের কাছে পাঠিয়ে বলেছেন: “তোমরা দুজন ফিরআউনের কাছে যাও। নিশ্চয়ই সে সীমালঙ্ঘন করেছে। আর তার সঙ্গে কোমল ভাষায় কথা বলো, হয়তো সে উপদেশ গ্রহণ করবে অথবা ভয় করবে।” [সূরা ত্বা-হা: ৪৩–৪৪]"
+    },
+    {
+      "id": "1a89b06c-61ab-45f6-8015-5b307fd3e809",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "২৭ — অধ্যায়: যে নেতা ও মুসলিমদের জামাআতের বিরুদ্ধে বিদ্রোহ করে তাকে হত্যা করার নির্দেশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e4cb3616-f480-4952-89ce-332a809cd774",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "২৮ — অধ্যায়: খারিজিদের বিরুদ্ধে যুদ্ধ করা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2f0cec58-a5c8-4230-9c52-79fdeaf99088",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "২৯ — অধ্যায়: কুরাইশের খিলাফত সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ac2f1c27-7026-405e-a1bc-d3c53c05c983",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "৩০ — অধ্যায়: নবুওয়াতের আদর্শে খিলাফত ত্রিশ বছর",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "250eafa5-7f3d-4822-95ab-05c91fea1bc5",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "৩১ — অধ্যায়: উত্তরসূরি নিয়োগের নির্দিষ্ট কোনো পদ্ধতি নেই",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "31e54de2-d4a9-4ce6-b4a4-1317f02e06cd",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "৩২ — অধ্যায়: নবী ﷺ-এর পরে খিলাফতের জন্য মিথ্যাবাদী মুসাইলিমাহর আবেদন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "13e75931-ed1a-411b-9aff-b691fe937b26",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "৩৩ — অধ্যায়: সৎ উপদেষ্টা গ্রহণের প্রতি উৎসাহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "05dc64ae-2a74-4c7f-8c55-1de1abac1be1",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "৩৪ — অধ্যায়: মন্ত্রী নিয়োগ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6e8d5db7-e3b5-44c0-8293-dd11498bb140",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "৩৫ — অধ্যায়: কোনো কাজে নিযুক্ত হয়ে তা থেকে কিছু চুরি করা ব্যক্তির পাপ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2713824e-e105-4333-a451-dc6c7b629db2",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "৩৬ — অধ্যায়: নিযুক্ত কর্মচারীর জন্য নেতার নির্দেশের বিরোধিতা করা জায়েয নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c0338667-993e-438e-9491-ab347ec9b0e9",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "৩৭ — অধ্যায়: নিযুক্ত কর্মচারীদের দেওয়া উপহার সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fa437601-8ec8-497f-af3e-6549e85eb987",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "৩৮ — অধ্যায়: নিযুক্ত কর্মচারীদের পারিশ্রমিক সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a324dd0f-9a96-489e-9cc8-645f2fa39aaa",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "৩৯ — অধ্যায়: প্রহরী নিয়োগ করা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b9ed7525-ed00-4e4b-aa55-027a816da2cd",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "৪০ — অধ্যায়: জুলুমের জন্য প্রহরীদের কর্তৃত্ব ব্যবহার করার নিন্দা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8db81545-3f9c-466c-84bc-d1da88dbb198",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "৪১ — অধ্যায়: রাজা ও শাসকদের কাছে পাঠানো চিঠি ও লিখিত বার্তায় সিলমোহর লাগানো",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dafc70e3-c08b-43a3-ad9f-c6742cbf2883",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 42,
+      "sort_order": 42,
+      "title_bn": "৪২ — অধ্যায়: মুক্ত দাসদের অঞ্চলসমূহের গভর্নর ও সেনাবাহিনীর অধিনায়ক নিয়োগ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fbd0bdcd-a29f-4782-a3d3-ebfdddd4a4c2",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 43,
+      "sort_order": 43,
+      "title_bn": "৪৩ — অধ্যায়: প্রতিনিধি নিয়োগ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "79df9bfb-f4a7-41c0-a297-2e24f31feed3",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 44,
+      "sort_order": 44,
+      "title_bn": "৪৪ — অধ্যায়: নেতার বিশ্বস্ত অনুবাদক নিয়োগ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8f12245e-3a4d-4265-90a0-b25b2663e5a3",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 45,
+      "sort_order": 45,
+      "title_bn": "৪৫ — অধ্যায়: নেতার বিশ্বস্ত ও বুদ্ধিমান লেখক নিয়োগ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d69c224e-18ba-47fd-b881-2a491352930d",
+      "book_id": "2b828c24-5cb3-4c7f-b50d-25765382502a",
+      "collection_id": null,
+      "chapter_number": 46,
+      "sort_order": 46,
+      "title_bn": "৪৬ — অধ্যায়: নেতার নিজ কর্মচারীদের জবাবদিহি করানো",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
