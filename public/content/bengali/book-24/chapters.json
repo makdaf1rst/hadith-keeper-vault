@@ -36,7 +36,7 @@
       "id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "book_id": "bc5e248c-9aa6-466a-addb-b0174d680134",
       "sort_order": 5,
-      "title_bn": null,
+      "title_bn": "৫ — মোহর সম্পর্কে বর্ণিত বিষয়ের সমষ্টিগত অধ্যায়সমূহ",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -44,7 +44,7 @@
       "id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "book_id": "bc5e248c-9aa6-466a-addb-b0174d680134",
       "sort_order": 6,
-      "title_bn": null,
+      "title_bn": "৬ — বিবাহের ওয়ালিমা সম্পর্কে বর্ণিত বিষয়ের সমষ্টিগত অধ্যায়সমূহ",
       "intro_bn_source": null,
       "intro_bn_display": null
     }
@@ -1156,9 +1156,9 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 1,
       "sort_order": 111,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "১ — অধ্যায়: মোহর ওয়াজিব হওয়া, এর কোনো নির্দিষ্ট সর্বোচ্চ বা সর্বনিম্ন সীমা না থাকা এবং কুরআন শিক্ষা দেওয়াকে মোহর করা বৈধ",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “নারীদের তাদের মোহর সন্তুষ্টচিত্তে দিয়ে দাও।” [সূরা আন-নিসা ৪:৪]\n\nআর তিনি বলেছেন: “আর যদি তোমরা এক স্ত্রীর স্থলে অন্য স্ত্রী গ্রহণ করতে চাও এবং তাদের একজনকে বিপুল সম্পদ দিয়েও থাকো, তবে তা থেকে কিছুই ফিরিয়ে নিও না।” [সূরা আন-নিসা ৪:২০]\n\nআর তিনি বলেছেন: “আর যদি তোমরা তাদের স্পর্শ করার আগে তালাক দাও, অথচ তাদের জন্য মোহর নির্ধারণ করে থাকো, তবে নির্ধারিত মোহরের অর্ধেক প্রাপ্য।” [সূরা আল-বাকারা ২:২৩৭]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “নারীদের তাদের মোহর সন্তুষ্টচিত্তে দিয়ে দাও।” [সূরা আন-নিসা ৪:৪]\n\nআর তিনি বলেছেন: “আর যদি তোমরা এক স্ত্রীর স্থলে অন্য স্ত্রী গ্রহণ করতে চাও এবং তাদের একজনকে বিপুল সম্পদ দিয়েও থাকো, তবে তা থেকে কিছুই ফিরিয়ে নিও না।” [সূরা আন-নিসা ৪:২০]\n\nআর তিনি বলেছেন: “আর যদি তোমরা তাদের স্পর্শ করার আগে তালাক দাও, অথচ তাদের জন্য মোহর নির্ধারণ করে থাকো, তবে নির্ধারিত মোহরের অর্ধেক প্রাপ্য।” [সূরা আল-বাকারা ২:২৩৭]"
     },
     {
       "id": "89f7b644-442f-4622-94f1-a09ec6c43ef1",
@@ -1166,7 +1166,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 2,
       "sort_order": 112,
-      "title_bn": null,
+      "title_bn": "২ — অধ্যায়: মোহরের ক্ষেত্রে মধ্যপন্থা অবলম্বন করা মুস্তাহাব",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1176,7 +1176,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 3,
       "sort_order": 113,
-      "title_bn": null,
+      "title_bn": "৩ — অধ্যায়: দাসমুক্তিকে মোহর করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1186,7 +1186,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 4,
       "sort_order": 114,
-      "title_bn": null,
+      "title_bn": "৪ — অধ্যায়: যে দাসীকে মুক্ত করে পরে তাকে বিবাহ করে, তার ফযীলত",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1196,7 +1196,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 5,
       "sort_order": 115,
-      "title_bn": null,
+      "title_bn": "৫ — অধ্যায়: মুকাতাব দাসীর মুক্তিমূল্যের বকেয়াকে মোহর করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1206,7 +1206,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 6,
       "sort_order": 116,
-      "title_bn": null,
+      "title_bn": "৬ — অধ্যায়: সবচেয়ে বরকতময় বিবাহ হলো যার ব্যয় সর্বনিম্ন",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1216,7 +1216,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 7,
       "sort_order": 117,
-      "title_bn": null,
+      "title_bn": "৭ — অধ্যায়: মোহরে বাড়াবাড়ির নিষেধাজ্ঞা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1226,7 +1226,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 8,
       "sort_order": 118,
-      "title_bn": null,
+      "title_bn": "৮ — অধ্যায়: মোহরের পরিমাণ উল্লেখ না করেও বিবাহচুক্তি বৈধ",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1236,7 +1236,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 9,
       "sort_order": 119,
-      "title_bn": null,
+      "title_bn": "৯ — অধ্যায়: যে মোহর নির্ধারণ না করে বিবাহ করেছে, তারপর মারা গেছে",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1246,7 +1246,7 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 10,
       "sort_order": 120,
-      "title_bn": null,
+      "title_bn": "১০ — অধ্যায়: অভিভাবক নিজেই তাকে বিবাহ করতে চাইলে মোহরের ক্ষেত্রে ন্যায়বিচার করতে হবে",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1256,9 +1256,9 @@
       "collection_id": "6bbc0de5-be3f-4afa-9a9b-17f7c60756b9",
       "chapter_number": 11,
       "sort_order": 121,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "১১ — অধ্যায়: স্বামী স্ত্রীর পর্দা সরিয়ে তার দিকে তাকালে মোহর ওয়াজিব হয়ে যায়—এ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": "মুহাম্মাদ ইবন আবদুর রহমান ইবন সাওবান থেকে বর্ণিত যে, রাসূলুল্লাহ ﷺ বলেছেন:\n\n“যে ব্যক্তি কোনো নারীর পর্দা সরিয়ে তার দিকে তাকায়, তার ওপর মোহর ওয়াজিব হয়ে যায়—সে তার সঙ্গে দাম্পত্য জীবন শুরু করুক বা না করুক।”\n\nআদ-দারাকুতনী (৩/৩০৭) বর্ণনা করেছেন।\n\nআল-বাইহাকী (৭/২৫৬) বলেছেন: “এ বর্ণনাটি বিচ্ছিন্ন, এবং এর কিছু বর্ণনাকারী দলিল হিসেবে নির্ভরযোগ্য নন।”\n\nলেখক বলেছেন: খুলাফায়ে রাশিদীন ফয়সালা দিয়েছেন যে, কোনো ব্যক্তি দরজা বন্ধ করে পর্দা নামিয়ে দিলে মোহর ওয়াজিব হয়ে যায়; আরেক বর্ণনায় ইদ্দতও ওয়াজিব হয়ে যায়।\n\nআবদুর রাযযাক (১০৮৭৫), সাঈদ ইবন মানসূর (১/২০২) এবং আল-বাইহাকী (৭/২৫৫) বর্ণনা করেছেন।\n\nআল-বাইহাকী বলেছেন: “এটি মুরসাল। যুরারাহ তাঁদের সাক্ষাৎ পাননি। তবে আমরা উমর ও আলী রাদিয়াল্লাহু আনহুমা থেকে সংযুক্ত সনদেও এটি বর্ণনা করেছি।”\n\nমালিক কিতাব আন-নিকাহ (১২)-এ এবং আল-বাইহাকী (৭/২৫৫) উমর ইবন আল-খাত্তাব রাদিয়াল্লাহু আনহু থেকে বর্ণনা করেছেন, তিনি এমন নারীর ব্যাপারে ফয়সালা দিয়েছিলেন যে, বিবাহের পর পর্দা নামিয়ে দেওয়া হলে মোহর ওয়াজিব হয়ে যায়।\n\nএর সনদ সহীহ।\n\nআলী ইবন আবী তালিব রাদিয়াল্লাহু আনহু থেকেও বর্ণিত, তিনি বলেছেন: “সে দরজা বন্ধ করে পর্দা নামিয়ে দিলে মোহর ওয়াজিব হয়ে যায়।”",
+      "intro_bn_display": "মুহাম্মাদ ইবন আবদুর রহমান ইবন সাওবান থেকে বর্ণিত যে, রাসূলুল্লাহ ﷺ বলেছেন:\n\n“যে ব্যক্তি কোনো নারীর পর্দা সরিয়ে তার দিকে তাকায়, তার ওপর মোহর ওয়াজিব হয়ে যায়—সে তার সঙ্গে দাম্পত্য জীবন শুরু করুক বা না করুক।”\n\nআদ-দারাকুতনী (৩/৩০৭) বর্ণনা করেছেন।\n\nআল-বাইহাকী (৭/২৫৬) বলেছেন: “এ বর্ণনাটি বিচ্ছিন্ন, এবং এর কিছু বর্ণনাকারী দলিল হিসেবে নির্ভরযোগ্য নন।”\n\nলেখক বলেছেন: খুলাফায়ে রাশিদীন ফয়সালা দিয়েছেন যে, কোনো ব্যক্তি দরজা বন্ধ করে পর্দা নামিয়ে দিলে মোহর ওয়াজিব হয়ে যায়; আরেক বর্ণনায় ইদ্দতও ওয়াজিব হয়ে যায়।\n\nআবদুর রাযযাক (১০৮৭৫), সাঈদ ইবন মানসূর (১/২০২) এবং আল-বাইহাকী (৭/২৫৫) বর্ণনা করেছেন।\n\nআল-বাইহাকী বলেছেন: “এটি মুরসাল। যুরারাহ তাঁদের সাক্ষাৎ পাননি। তবে আমরা উমর ও আলী রাদিয়াল্লাহু আনহুমা থেকে সংযুক্ত সনদেও এটি বর্ণনা করেছি।”\n\nমালিক কিতাব আন-নিকাহ (১২)-এ এবং আল-বাইহাকী (৭/২৫৫) উমর ইবন আল-খাত্তাব রাদিয়াল্লাহু আনহু থেকে বর্ণনা করেছেন, তিনি এমন নারীর ব্যাপারে ফয়সালা দিয়েছিলেন যে, বিবাহের পর পর্দা নামিয়ে দেওয়া হলে মোহর ওয়াজিব হয়ে যায়।\n\nএর সনদ সহীহ।\n\nআলী ইবন আবী তালিব রাদিয়াল্লাহু আনহু থেকেও বর্ণিত, তিনি বলেছেন: “সে দরজা বন্ধ করে পর্দা নামিয়ে দিলে মোহর ওয়াজিব হয়ে যায়।”"
     },
     {
       "id": "3e829a43-5fa8-44e3-8592-fe535e8897e0",
@@ -1266,7 +1266,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 1,
       "sort_order": 122,
-      "title_bn": null,
+      "title_bn": "১ — অধ্যায়: একটি ছাগল দিয়ে ওয়ালিমা করা সম্পর্কে যা বর্ণিত হয়েছে",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1276,7 +1276,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 2,
       "sort_order": 123,
-      "title_bn": null,
+      "title_bn": "২ — অধ্যায়: যে একটি ছাগলের চেয়েও কম দিয়ে ওয়ালিমা করেছে",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1286,7 +1286,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 3,
       "sort_order": 124,
-      "title_bn": null,
+      "title_bn": "৩ — অধ্যায়: ওয়ালিমা এক দিনের বেশি চলা সম্পর্কে যা বর্ণিত হয়েছে",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1296,7 +1296,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 4,
       "sort_order": 125,
-      "title_bn": null,
+      "title_bn": "৪ — অধ্যায়: ওয়ালিমা আয়োজনে পারস্পরিক সহযোগিতা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1306,7 +1306,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 5,
       "sort_order": 126,
-      "title_bn": null,
+      "title_bn": "৫ — অধ্যায়: ওয়ালিমার সময়",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1316,7 +1316,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 6,
       "sort_order": 127,
-      "title_bn": null,
+      "title_bn": "৬ — অধ্যায়: ওয়ালিমার দাওয়াত গ্রহণ করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1326,7 +1326,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 7,
       "sort_order": 128,
-      "title_bn": null,
+      "title_bn": "৭ — অধ্যায়: রোজাদার হলেও ওয়ালিমার দাওয়াতে সাড়া দেওয়া",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1336,7 +1336,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 8,
       "sort_order": 129,
-      "title_bn": null,
+      "title_bn": "৮ — অধ্যায়: সবচেয়ে নিকৃষ্ট খাবার সেই ওয়ালিমার খাবার, যেখানে ধনীদের ডাকা হয় আর দরিদ্রদের বাদ দেওয়া হয়",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1346,7 +1346,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 9,
       "sort_order": 130,
-      "title_bn": null,
+      "title_bn": "৯ — অধ্যায়: ওয়ালিমায় নারী ও শিশুদের আমন্ত্রণ করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1356,7 +1356,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 10,
       "sort_order": 131,
-      "title_bn": null,
+      "title_bn": "১০ — অধ্যায়: যে আমন্ত্রণ ছাড়া ওয়ালিমায় আসে",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1366,7 +1366,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 11,
       "sort_order": 132,
-      "title_bn": null,
+      "title_bn": "১১ — অধ্যায়: প্রয়োজনে নববধূর আমন্ত্রিত অতিথিদের পরিবেশন করা সম্পর্কে যা বর্ণিত হয়েছে",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1376,7 +1376,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 12,
       "sort_order": 133,
-      "title_bn": null,
+      "title_bn": "১২ — অধ্যায়: যে ওয়ালিমায় গুনাহের কাজ থাকে, সেখানে উপস্থিত হওয়া থেকে বিরত থাকা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1386,7 +1386,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 13,
       "sort_order": 134,
-      "title_bn": null,
+      "title_bn": "১৩ — অধ্যায়: বিবাহ প্রকাশ করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1396,7 +1396,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 14,
       "sort_order": 135,
-      "title_bn": null,
+      "title_bn": "১৪ — অধ্যায়: বিবাহযাত্রায় বৈধ আনন্দ ও দফ বাজানো মুস্তাহাব",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1406,7 +1406,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 15,
       "sort_order": 136,
-      "title_bn": null,
+      "title_bn": "১৫ — অধ্যায়: যেসব নারীর স্বামী অনুপস্থিত, তাদের কাছে প্রবেশ করা অপছন্দনীয়—এ সম্পর্কে যা বর্ণিত হয়েছে",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1416,7 +1416,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 16,
       "sort_order": 137,
-      "title_bn": null,
+      "title_bn": "১৬ — অধ্যায়: যার মাধ্যমে একজন পুরুষকে সম্মান করার সর্বাধিক অধিকার রয়েছে, সে তার কন্যা বা বোন",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1426,7 +1426,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 17,
       "sort_order": 138,
-      "title_bn": null,
+      "title_bn": "১৭ — অধ্যায়: একজন পিতার তার কন্যার বিবাহের সামগ্রী প্রস্তুত করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1436,7 +1436,7 @@
       "collection_id": "f97df19a-e994-45ca-b0fe-4a678079ed19",
       "chapter_number": 18,
       "sort_order": 139,
-      "title_bn": null,
+      "title_bn": "১৮ — অধ্যায়: দাম্পত্য জীবন শুরু করার সময় নববধূর জন্য কার্পেট ও অনুরূপ সামগ্রী ব্যবহার",
       "intro_bn_source": null,
       "intro_bn_display": null
     }
