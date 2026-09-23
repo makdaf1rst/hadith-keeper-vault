@@ -1,0 +1,35 @@
+{
+  "collections": [],
+  "chapters": [
+    {
+      "id": "ca73404c-14d4-42c0-8d4b-9a75e54cf7df",
+      "book_id": "ef8ae79b-42b2-4e81-8da6-abe4c3e9c1c3",
+      "collection_id": null,
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: মৃত প্রাণীর চামড়া পাকা করার পর তা ব্যবহার করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e19c9105-bb6d-488d-afe4-707b243c0d36",
+      "book_id": "ef8ae79b-42b2-4e81-8da6-abe4c3e9c1c3",
+      "collection_id": null,
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: হিংস্র পশুর চামড়ার নিষেধাজ্ঞা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1e07043c-8af0-477f-a2ac-cfb690b59a31",
+      "book_id": "ef8ae79b-42b2-4e81-8da6-abe4c3e9c1c3",
+      "collection_id": null,
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: মুশরিকদের পাত্র ও পানির মশক ব্যবহার করার বৈধতা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
