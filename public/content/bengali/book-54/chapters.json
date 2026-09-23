@@ -1,0 +1,2132 @@
+{
+  "collections": [
+    {
+      "id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 1,
+      "title_bn": "১ — যিকর সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 2,
+      "title_bn": "২ — নির্বাচিত নবী ﷺ-এর প্রতি দরূদ প্রেরণ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "92d671ed-77a1-4e15-9b43-640df6d26cf2",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 3,
+      "title_bn": "৩ — দুʿআর ফযীলত সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 4,
+      "title_bn": "৪ — দুʿআর আদব সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 5,
+      "title_bn": "৫ — দুʿআর বিধান সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d0ca534b-668d-4ebb-a758-1d389a5cb813",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 6,
+      "title_bn": "৬ — দুʿআয় শরঈ ওসীলার মাধ্যমে আল্লাহর নৈকট্য অন্বেষণ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“হে ঈমানদারগণ, আল্লাহকে ভয় করো, তাঁর নৈকট্যের উপায় অন্বেষণ করো এবং তাঁর পথে সংগ্রাম করো, যাতে তোমরা সফল হতে পারো।”\n[সূরা আল-মায়িদাহ ৫:৩৫]\nআর মহান আল্লাহ বলেছেন:\n“তারা যাদের ডাকে, তারাও নিজেদের রবের নৈকট্যের উপায় অন্বেষণ করে—তাদের মধ্যে কে অধিক নিকটবর্তী হতে পারে তা কামনা করে। তারা তাঁর রহমতের আশা করে এবং তাঁর শাস্তিকে ভয় করে। নিশ্চয়ই তোমার রবের শাস্তি ভয় করার মতো।”\n[সূরা আল-ইসরাʾ ১৭:৫৭]\n‘আল-ওসীলাহ’ অর্থ আল্লাহর নৈকট্য অর্জনের উপায়।",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“হে ঈমানদারগণ, আল্লাহকে ভয় করো, তাঁর নৈকট্যের উপায় অন্বেষণ করো এবং তাঁর পথে সংগ্রাম করো, যাতে তোমরা সফল হতে পারো।”\n[সূরা আল-মায়িদাহ ৫:৩৫]\nআর মহান আল্লাহ বলেছেন:\n“তারা যাদের ডাকে, তারাও নিজেদের রবের নৈকট্যের উপায় অন্বেষণ করে—তাদের মধ্যে কে অধিক নিকটবর্তী হতে পারে তা কামনা করে। তারা তাঁর রহমতের আশা করে এবং তাঁর শাস্তিকে ভয় করে। নিশ্চয়ই তোমার রবের শাস্তি ভয় করার মতো।”\n[সূরা আল-ইসরাʾ ১৭:৫৭]\n‘আল-ওসীলাহ’ অর্থ আল্লাহর নৈকট্য অর্জনের উপায়।"
+    },
+    {
+      "id": "a86faaa4-9d1b-4269-ac4e-510515dc9a34",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 7,
+      "title_bn": "৭ — পবিত্রতার দুʿআসমূহ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 8,
+      "title_bn": "৮ — আযান, সালাত ও সংশ্লিষ্ট বিষয়ের দুʿআসমূহ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 9,
+      "title_bn": "৯ — অসুস্থতা, জানাযা ও সংশ্লিষ্ট বিষয়ের দুʿআসমূহ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 10,
+      "title_bn": "১০ — যাকাত, সাওম, হজ্জ, যবেহ, শিকার ও লেনদেনসংক্রান্ত দুʿআসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a7c1097a-02bf-4e95-b0e1-6264727146bc",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 11,
+      "title_bn": "১১ — জিহাদের দুʿআসমূহ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "27646cfe-a46f-4afc-95f4-7c61bb282668",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 12,
+      "title_bn": "১২ — বিবাহ ও সংশ্লিষ্ট বিষয়ের দুʿআসমূহ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 13,
+      "title_bn": "১৩ — খাওয়া, পান করা ও পোশাকের দুʿআসমূহ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 14,
+      "title_bn": "১৪ — আরোহণ ও সফরের দুʿআসমূহ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8f6ce82c-5703-4c4d-868c-5d862e5e40ec",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 15,
+      "title_bn": "১৫ — সকাল ও সন্ধ্যার আমলসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 16,
+      "title_bn": "১৬ — বিভিন্ন উপলক্ষের দুʿআসমূহ সম্পর্কে বর্ণিত সংবাদসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b5c45627-8453-4757-9db4-c8a03d98bf22",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "sort_order": 17,
+      "title_bn": "১৭ — جامع ও সাধারণ দুʿআসমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "cbb7a9ac-1dc9-433c-9b15-cc5e17674634",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "27646cfe-a46f-4afc-95f4-7c61bb282668",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c4ccc373-a81e-4f01-b345-e1d3d4e3c317",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "79ab3343-ba5c-4e03-b9fd-aa355cb539d4",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d7166077-980e-4229-895d-1c90ca9b2903",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a7c1097a-02bf-4e95-b0e1-6264727146bc",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1da76f0f-7162-4a4f-a376-84937458722c",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "eb275311-771f-4dde-a760-c8b4a95262ce",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2c1040e2-f678-46ed-9e20-bbede9cfe205",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3ef29c25-a889-47f5-b824-61ef349b2b3a",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: আল্লাহর যিকরের ফযীলত সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“তোমরা আমাকে স্মরণ করো, আমিও তোমাদের স্মরণ করব। আমার প্রতি কৃতজ্ঞ হও এবং অকৃতজ্ঞ হয়ো না।”\n[সূরা আল-বাকারাহ ২:১৫২]\nআর মহান আল্লাহ বলেছেন:\n“যেসব পুরুষ আল্লাহকে অধিক স্মরণ করে এবং যেসব নারী তাঁকে স্মরণ করে—আল্লাহ তাদের জন্য ক্ষমা ও মহাপুরস্কার প্রস্তুত রেখেছেন।”\n[সূরা আল-আহযাব ৩৩:৩৫]\nআর মহান আল্লাহ বলেছেন:\n“হে ঈমানদারগণ, আল্লাহকে অধিক পরিমাণে স্মরণ করো।”\n[সূরা আল-আহযাব ৩৩:৪১]\nআর মহান আল্লাহ বলেছেন:\n“তোমার রবকে নিজের অন্তরে বিনয় ও ভয়ের সঙ্গে, উচ্চস্বরে নয়—সকাল ও সন্ধ্যায় স্মরণ করো এবং গাফিলদের অন্তর্ভুক্ত হয়ো না।”\n[সূরা আল-আʿরাফ ৭:২০৫]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“তোমরা আমাকে স্মরণ করো, আমিও তোমাদের স্মরণ করব। আমার প্রতি কৃতজ্ঞ হও এবং অকৃতজ্ঞ হয়ো না।”\n[সূরা আল-বাকারাহ ২:১৫২]\nআর মহান আল্লাহ বলেছেন:\n“যেসব পুরুষ আল্লাহকে অধিক স্মরণ করে এবং যেসব নারী তাঁকে স্মরণ করে—আল্লাহ তাদের জন্য ক্ষমা ও মহাপুরস্কার প্রস্তুত রেখেছেন।”\n[সূরা আল-আহযাব ৩৩:৩৫]\nআর মহান আল্লাহ বলেছেন:\n“হে ঈমানদারগণ, আল্লাহকে অধিক পরিমাণে স্মরণ করো।”\n[সূরা আল-আহযাব ৩৩:৪১]\nআর মহান আল্লাহ বলেছেন:\n“তোমার রবকে নিজের অন্তরে বিনয় ও ভয়ের সঙ্গে, উচ্চস্বরে নয়—সকাল ও সন্ধ্যায় স্মরণ করো এবং গাফিলদের অন্তর্ভুক্ত হয়ো না।”\n[সূরা আল-আʿরাফ ৭:২০৫]"
+    },
+    {
+      "id": "2ee14dc0-ccef-49b2-b612-52d394533937",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "92d671ed-77a1-4e15-9b43-640df6d26cf2",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: দুʿাই ইবাদত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8459f13e-572f-44a0-b268-c026ff3e5b67",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: দুʿার আগে ওযু করা মুস্তাহাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "222e650a-c9ab-4968-8f6c-9964fdceccec",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: দুʿায় দৃঢ়তা রাখা এবং ‘আপনি চাইলে আমাকে দিন’ না বলা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "20b2ca4c-38aa-4bbe-aa9a-abc7bde5799f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a86faaa4-9d1b-4269-ac4e-510515dc9a34",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2517f474-df12-4b1f-84e8-69f1e2612f98",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7a1303eb-b9b6-4d7a-8965-8eeb885f9744",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8f6ce82c-5703-4c4d-868c-5d862e5e40ec",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5062af48-d3dc-4f9c-9033-c0effd14841d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "d0ca534b-668d-4ebb-a758-1d389a5cb813",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: আল্লাহর সুন্দরতম নাম ও মহান গুণাবলির মাধ্যমে দুʿায় তাঁর নৈকট্য অন্বেষণ",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“সুন্দরতম নামসমূহ আল্লাহরই; অতএব তোমরা সেসব নাম দ্বারা তাঁকে ডাকো।”\n[সূরা আল-আʿরাফ ৭:১৮০]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“সুন্দরতম নামসমূহ আল্লাহরই; অতএব তোমরা সেসব নাম দ্বারা তাঁকে ডাকো।”\n[সূরা আল-আʿরাফ ৭:১৮০]"
+    },
+    {
+      "id": "0eaab710-ec07-4a05-a0d2-dee90b5e46c9",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: নবী ﷺ-এর প্রতি দরূদ প্রেরণের ফযীলত",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই আল্লাহ ও তাঁর ফেরেশতারা নবীর প্রতি দরূদ প্রেরণ করেন। হে ঈমানদারগণ, তোমরাও তাঁর প্রতি দরূদ ও পূর্ণ সালাম প্রেরণ করো।”\n[সূরা আল-আহযাব ৩৩:৫৬]\nসুফইয়ান আল-সাওরী এবং আরও কয়েকজন আলিম বলেছেন:\n“রবের দরূদ অর্থ রহমত, আর ফেরেশতাদের দরূদ অর্থ ক্ষমা প্রার্থনা।”\nআল-তিরমিযী আবু হুরাইরাহর হাদীস (৪৮৫)-এর পরে এ কথা উল্লেখ করেছেন, যা সামনে আসছে।\nআল-বুখারীও হাদীস ৪৭৯৭-এর আগে অধ্যায়ের শিরোনামে আবু আল-ʿআলিয়াহ থেকে উল্লেখ করেছেন:\n“নবীর প্রতি আল্লাহর দরূদ অর্থ ফেরেশতাদের সামনে তাঁর প্রশংসা করা, আর ফেরেশতাদের দরূদ অর্থ তাদের দুʿআ।”",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই আল্লাহ ও তাঁর ফেরেশতারা নবীর প্রতি দরূদ প্রেরণ করেন। হে ঈমানদারগণ, তোমরাও তাঁর প্রতি দরূদ ও পূর্ণ সালাম প্রেরণ করো।”\n[সূরা আল-আহযাব ৩৩:৫৬]\nসুফইয়ান আল-সাওরী এবং আরও কয়েকজন আলিম বলেছেন:\n“রবের দরূদ অর্থ রহমত, আর ফেরেশতাদের দরূদ অর্থ ক্ষমা প্রার্থনা।”\nআল-তিরমিযী আবু হুরাইরাহর হাদীস (৪৮৫)-এর পরে এ কথা উল্লেখ করেছেন, যা সামনে আসছে।\nআল-বুখারীও হাদীস ৪৭৯৭-এর আগে অধ্যায়ের শিরোনামে আবু আল-ʿআলিয়াহ থেকে উল্লেখ করেছেন:\n“নবীর প্রতি আল্লাহর দরূদ অর্থ ফেরেশতাদের সামনে তাঁর প্রশংসা করা, আর ফেরেশতাদের দরূদ অর্থ তাদের দুʿআ।”"
+    },
+    {
+      "id": "236ac64f-070a-4285-914e-e0f0baa04234",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "b5c45627-8453-4757-9db4-c8a03d98bf22",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f8a81c63-2fad-45a9-a342-bdeb4498732b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "b5c45627-8453-4757-9db4-c8a03d98bf22",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7e9586b2-979b-4bae-89c1-14fa668e579f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "d0ca534b-668d-4ebb-a758-1d389a5cb813",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: সৎকর্মের মাধ্যমে আল্লাহর নৈকট্য অন্বেষণ",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“হে আমাদের রব, আমরা একজন আহ্বানকারীকে ঈমানের দিকে আহ্বান করতে শুনেছি—‘তোমরা তোমাদের রবের প্রতি ঈমান আনো’; তাই আমরা ঈমান এনেছি। হে আমাদের রব, আমাদের পাপ ক্ষমা করুন, আমাদের মন্দকর্মগুলো মুছে দিন এবং সৎকর্মশীলদের সঙ্গে আমাদের মৃত্যু দিন।”\n[সূরা আলে ʿইমরান ৩:১৯৩]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“হে আমাদের রব, আমরা একজন আহ্বানকারীকে ঈমানের দিকে আহ্বান করতে শুনেছি—‘তোমরা তোমাদের রবের প্রতি ঈমান আনো’; তাই আমরা ঈমান এনেছি। হে আমাদের রব, আমাদের পাপ ক্ষমা করুন, আমাদের মন্দকর্মগুলো মুছে দিন এবং সৎকর্মশীলদের সঙ্গে আমাদের মৃত্যু দিন।”\n[সূরা আলে ʿইমরান ৩:১৯৩]"
+    },
+    {
+      "id": "37e0c00b-d4a0-4953-a808-ea3d4ca41781",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "388d7d59-04bb-40f6-be5a-6bd882c0a597",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a86faaa4-9d1b-4269-ac4e-510515dc9a34",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cba3a3c7-0e7c-4d07-85fa-18bfb14a3fcf",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: যার অন্তর গাফিল, আল্লাহ সেই বান্দার দুʿা কবুল করেন না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6c3599f6-bcb4-44a6-92c5-0c7cdc38843b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: দুʿার সময় কিবলামুখী হওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "322b5b83-110f-48b8-a722-1e9a7d2eafe2",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "92d671ed-77a1-4e15-9b43-640df6d26cf2",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: দুʿা আল্লাহর কাছে সর্বাধিক সম্মানিত বিষয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dae7ca0a-5f0d-45fa-bcbd-6e5110276921",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: ফেরেশতারা নবী ﷺ-এর কাছে দরূদ ও সালাম পৌঁছে দেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ee62d730-1634-4711-bb03-7107ff806d35",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: যিকরের মজলিসসমূহের ফযীলত সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9ac5ff1c-d2c3-4dc0-90ed-dc6927dded44",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6838a180-539e-46f6-8d8c-5eac533de338",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8f6ce82c-5703-4c4d-868c-5d862e5e40ec",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c7ccfc85-1fd3-47c0-ba1b-fbc9f9feb7e4",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a7c1097a-02bf-4e95-b0e1-6264727146bc",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "471cf90f-ec72-4031-ba61-10fbbda9c477",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f2ea26d4-6b08-4735-b26d-6fe40e2c3b68",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e31a1b25-54a5-4277-b461-09033a868476",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b82cd5b9-f299-4307-a13b-c1390cabf00c",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "27646cfe-a46f-4afc-95f4-7c61bb282668",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f2b65410-8ea8-4ea2-a32a-282700831e67",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "200eae72-1bba-476b-a22c-1f90d313c5fc",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3ed81a4a-1ea4-48ce-bbc2-660252032328",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6e97b38f-ca7c-43de-91a7-883e18d44ad4",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "61607f0f-a38e-4516-ab90-a57635e178c8",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "27646cfe-a46f-4afc-95f4-7c61bb282668",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "75b79db8-5618-4e58-ac87-9d3c7fbe85eb",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ab431015-84f0-4280-9dcb-3b183d1274e1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8f6ce82c-5703-4c4d-868c-5d862e5e40ec",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1838b649-9ca8-4d03-88bb-dbce37a89c0a",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a6e1fc45-5a8d-44f1-9593-2211e9cc4126",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a7c1097a-02bf-4e95-b0e1-6264727146bc",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "743b7fea-636a-41e7-a085-e95c647b2a06",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: দুʿার সময় হাত উত্তোলন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "52eff8b1-60ed-4b8b-ac2a-f76fe832234e",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: মুসলিম তার দুʿায় আল্লাহর কাছে সর্বোচ্চ ফিরদাউস চাইবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7dbd7ece-76ec-4961-a69f-7401a3011abc",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "d0ca534b-668d-4ebb-a758-1d389a5cb813",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: জীবিত সৎ ব্যক্তির দুʿার মাধ্যমে আল্লাহর নৈকট্য অন্বেষণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d31f7d19-eeee-4e55-b762-bf52ece4b62e",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a86faaa4-9d1b-4269-ac4e-510515dc9a34",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a63c199d-ef69-477b-a785-7b429bd47035",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bc06553f-52d6-4628-a14a-e21e9c29df35",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "b5c45627-8453-4757-9db4-c8a03d98bf22",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e90b7d8f-ceec-4c79-8200-b603836012a0",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: নবী ﷺ-এর প্রতি দরূদ প্রেরণের বর্ণিত পদ্ধতিসমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "08587d96-2562-4fa2-8cdc-6d2665501227",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: কোনো মজলিসে বসে ব্যক্তি কী বলবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f97a3c8c-6b8a-48a2-b59c-b613a5e1657a",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "92d671ed-77a1-4e15-9b43-640df6d26cf2",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: আল্লাহ তাঁর বান্দা তাঁর সম্পর্কে যেমন ধারণা করে তেমনই এবং তিনি তার দুʿা কবুল করেন",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“আমার বান্দারা যখন তোমার কাছে আমার সম্পর্কে জিজ্ঞেস করে, তখন নিশ্চয়ই আমি নিকটবর্তী। আহ্বানকারী যখন আমাকে ডাকে, আমি তার দুʿার জবাব দিই। অতএব তারা যেন আমার আহ্বানে সাড়া দেয় এবং আমার প্রতি ঈমান আনে, যাতে তারা সঠিক পথ পায়।”\n[সূরা আল-বাকারাহ ২:১৮৬]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“আমার বান্দারা যখন তোমার কাছে আমার সম্পর্কে জিজ্ঞেস করে, তখন নিশ্চয়ই আমি নিকটবর্তী। আহ্বানকারী যখন আমাকে ডাকে, আমি তার দুʿার জবাব দিই। অতএব তারা যেন আমার আহ্বানে সাড়া দেয় এবং আমার প্রতি ঈমান আনে, যাতে তারা সঠিক পথ পায়।”\n[সূরা আল-বাকারাহ ২:১৮৬]"
+    },
+    {
+      "id": "ff7bf54b-898c-40bb-961e-4003c0d7d990",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "810bea2f-13fd-42b2-974e-89f4f850d326",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8f6ce82c-5703-4c4d-868c-5d862e5e40ec",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3eb4efd6-002f-4f26-86ee-18d56d520040",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a7c1097a-02bf-4e95-b0e1-6264727146bc",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c7b54be2-005a-4750-babf-93c253bfaa4b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "27646cfe-a46f-4afc-95f4-7c61bb282668",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "606ff7c0-1824-4b07-b488-392b1f4c6666",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9418e9d9-96a1-4892-9c86-e4b767b25fad",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "55eac5cf-29b8-4ee2-b3e8-9e0ae5596e29",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1e535e8a-ed8d-4e06-b890-ad7566ef7f16",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f08daa94-8828-466c-83e8-8502e2ad7109",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "92d671ed-77a1-4e15-9b43-640df6d26cf2",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: আল্লাহর কাছে চাওয়া তিনি ভালোবাসেন এবং তাঁর কাছে না চাইলে তিনি রাগান্বিত হন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "71c9b442-8c2c-45b6-98f6-1f4dd13cbcd4",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: যে মজলিসে আল্লাহকে স্মরণ করা হয়নি সেখান থেকে উঠে যাওয়ার অপছন্দনীয়তা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ff6b9cba-fa5c-4ce0-8ddc-3851aad28848",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: বৃষ্টির দুʿার সময় হাত উঁচু করে তোলা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "302b081f-fb5d-4532-9fd5-cda9902a881e",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: আল্লাহর কাছে ʿআফিয়াহ চাইতে উৎসাহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b493140b-f102-4a69-ba6a-6c058b014b12",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: মুসলিমের জন্য নবী ﷺ-এর প্রতি অধিক পরিমাণে দরূদ প্রেরণ করা মুস্তাহাব",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই আল্লাহ ও তাঁর ফেরেশতারা নবীর প্রতি দরূদ প্রেরণ করেন। হে ঈমানদারগণ, তোমরাও তাঁর প্রতি দরূদ ও পূর্ণ সালাম প্রেরণ করো।”\n[সূরা আল-আহযাব ৩৩:৫৬]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই আল্লাহ ও তাঁর ফেরেশতারা নবীর প্রতি দরূদ প্রেরণ করেন। হে ঈমানদারগণ, তোমরাও তাঁর প্রতি দরূদ ও পূর্ণ সালাম প্রেরণ করো।”\n[সূরা আল-আহযাব ৩৩:৫৬]"
+    },
+    {
+      "id": "2eb9d078-1933-4724-b94a-1bab2555458c",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a86faaa4-9d1b-4269-ac4e-510515dc9a34",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bf2a0542-32fc-4cb6-ae49-5a9d1602f70f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "945afdd1-b2b4-4b8d-8c91-b983e1f1b6b5",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: যখনই নবী ﷺ-এর নাম উল্লেখ করা হয়, তাঁর প্রতি দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a223e35d-565d-48c1-bc9e-93a069a982ae",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: মজলিস থেকে উঠার সময় ব্যক্তি কী বলবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e9ce6649-4509-4de7-b189-3e5a170ec70c",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: হাতের তালু উপরের দিকে রেখে আল্লাহর কাছে দুʿা করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "56921a6e-3510-4d5b-a1b6-8d26fdecae1f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: দুʿায় সীমালঙ্ঘনের অপছন্দনীয়তা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9c160246-5b0a-4577-add2-62cdaf9412eb",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f6f934e8-5963-4fcf-9317-52918c388fc9",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "227a09dd-4188-43ae-bbbb-701e38a9aa28",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "00bfd37e-c3ff-4fbd-a3e8-65fb8dc316bd",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8f6ce82c-5703-4c4d-868c-5d862e5e40ec",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e04649d6-7f7d-41c2-945b-ec0f64189f11",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8b6ab176-1177-4f29-b17a-ae9f4c623a1a",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "a7c1097a-02bf-4e95-b0e1-6264727146bc",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ea8ad41c-259d-43bd-ac0c-638ce552d826",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5b19e9cc-fe2c-4f05-b896-c39e3f3cf9b3",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "93ca8ade-f1e3-4302-8866-a8833a8db6b1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cdd8049f-002f-40bb-a913-04628599bdab",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "869e5785-3a14-45c7-9b81-2663bd1630cc",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "af840687-657b-4861-8854-e8b5c91f1ad3",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e148e4ba-975c-40e7-b531-5e2d4d8adafe",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6c807251-283e-47ce-9d5c-6df579f2612f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: সর্বদা আল্লাহকে স্মরণ করার ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4d07e442-bc9b-48a7-ac5f-ae790a569f3a",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "239a4a6c-2dd5-4ef1-9a1f-d55538316ccc",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: দুʿায় রবের বিস্তৃত রহমতকে সংকুচিত করার অপছন্দনীয়তা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "954d32ea-8928-48ae-b25f-5473e52d1680",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: বৃষ্টির দুʿার সময় হাতের পিঠ আকাশের দিকে রাখা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b8196f92-80b1-4a5a-a462-574e01ab0d10",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: মুয়াযযিনের জবাব দেওয়ার পর নবী ﷺ-এর প্রতি দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3868887a-3b93-4fc7-b1a3-5c93ced4295e",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b4e8a745-ab59-4b33-863d-06d8c6a001c1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2b0511ab-857f-49de-a3d4-bd035453f547",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cca5d612-03f3-4634-9bab-614adf7a1b3b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "07885083-78dc-4d6d-8288-8abdd57587fb",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e60e05c7-0c1e-4ccb-9b9e-febf691ba643",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: দুʿআর সময় নবী ﷺ-এর প্রতি দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "df2258a5-efcc-4f69-bad8-93e93ee3d5c2",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: উপদেশের মাধ্যমে অন্তর কোমল হওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "888a5253-7a88-4242-bc6d-601511a23f56",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: দুʿার পর মুখ মুছে নেওয়া সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": "এই অধ্যায়ে সহীহভাবে কিছুই প্রতিষ্ঠিত হয়নি।\nʿআবদুল্লাহ ইবন ʿআব্বাস থেকে বর্ণিত যে রাসূলুল্লাহ ﷺ বলেছেন:\n“দেয়াল ঢেকে রেখো না। যে ব্যক্তি তার ভাইয়ের অনুমতি ছাড়া তার লেখা দেখে, সে যেন আগুনের দিকে তাকায়। তোমরা হাতের তালু দিয়ে আল্লাহর কাছে চাও এবং হাতের পিঠ দিয়ে চেয়ো না; আর শেষ করলে সেগুলো দিয়ে তোমাদের মুখ মুছে নাও।”\nএটি আবু দাউদ (১৪৮৫), আল-বাইহাকী আল-সুনান আল-কুবরা (২/২১২) এবং আল-দাʿওয়াত আল-কাবীর (৩০৯)-এ বর্ণনা করেছেন।\nএটি দুর্বল।\nআবু দাউদ হাদীসটির পরে বলেছেন:\n“এই হাদীস মুহাম্মাদ ইবন কাʿব থেকে একাধিক সূত্রে বর্ণিত হয়েছে, সবগুলোই দুর্বল। এই সূত্রটি সেগুলোর মধ্যে সর্বোত্তম, তবুও এটি দুর্বল।”\nইবন মাজাহ (১১৮১) এবং আল-হাকিম (১/৫৩৬) আরও কয়েকটি অত্যন্ত দুর্বল সূত্রে এটি বর্ণনা করেছেন।\nআল-বাগাওয়ী শারহ আল-সুন্নাহ (১৩৯৯)-এ বলেছেন: “দুর্বল।”\nতদ্রূপ আল-সায়িব ইবন ইয়াযীদ তাঁর পিতা থেকে বর্ণনা করেছেন:\n“নবী ﷺ যখন দুʿা করতেন ও হাত তুলতেন, তখন হাত দিয়ে তাঁর মুখ মুছতেন।”\nএটিও সহীহ নয়।\nআবু দাউদ (১৪৯২) ও আহমাদ (১৭৯৪৩) বর্ণনা করেছেন।\nএর সনদ দুর্বল।\nতদ্রূপ ʿউমর ইবন আল-খাত্তাব থেকে বর্ণিত:\n“রাসূলুল্লাহ ﷺ দুʿায় হাত তুললে মুখ মুছা পর্যন্ত তা নামাতেন না।”\nএটিও সহীহ নয়।\nআল-তিরমিযী (৩৩৮৬) এবং আল-হাকিম (১/৫৩৬) বর্ণনা করেছেন।\nআল-তিরমিযী বলেছেন:\n“এটি গারীব হাদীস। আমরা এটিকে হাম্মাদ ইবন ʿঈসার বর্ণনা ছাড়া জানি না; তিনিই এককভাবে এটি বর্ণনা করেছেন।”\nএর সনদ অত্যন্ত দুর্বল।\nসারকথা, এই অধ্যায়ে সহীহভাবে কিছুই প্রতিষ্ঠিত হয়নি।",
+      "intro_bn_display": "এই অধ্যায়ে সহীহভাবে কিছুই প্রতিষ্ঠিত হয়নি।\nʿআবদুল্লাহ ইবন ʿআব্বাস থেকে বর্ণিত যে রাসূলুল্লাহ ﷺ বলেছেন:\n“দেয়াল ঢেকে রেখো না। যে ব্যক্তি তার ভাইয়ের অনুমতি ছাড়া তার লেখা দেখে, সে যেন আগুনের দিকে তাকায়। তোমরা হাতের তালু দিয়ে আল্লাহর কাছে চাও এবং হাতের পিঠ দিয়ে চেয়ো না; আর শেষ করলে সেগুলো দিয়ে তোমাদের মুখ মুছে নাও।”\nএটি আবু দাউদ (১৪৮৫), আল-বাইহাকী আল-সুনান আল-কুবরা (২/২১২) এবং আল-দাʿওয়াত আল-কাবীর (৩০৯)-এ বর্ণনা করেছেন।\nএটি দুর্বল।\nআবু দাউদ হাদীসটির পরে বলেছেন:\n“এই হাদীস মুহাম্মাদ ইবন কাʿব থেকে একাধিক সূত্রে বর্ণিত হয়েছে, সবগুলোই দুর্বল। এই সূত্রটি সেগুলোর মধ্যে সর্বোত্তম, তবুও এটি দুর্বল।”\nইবন মাজাহ (১১৮১) এবং আল-হাকিম (১/৫৩৬) আরও কয়েকটি অত্যন্ত দুর্বল সূত্রে এটি বর্ণনা করেছেন।\nআল-বাগাওয়ী শারহ আল-সুন্নাহ (১৩৯৯)-এ বলেছেন: “দুর্বল।”\nতদ্রূপ আল-সায়িব ইবন ইয়াযীদ তাঁর পিতা থেকে বর্ণনা করেছেন:\n“নবী ﷺ যখন দুʿা করতেন ও হাত তুলতেন, তখন হাত দিয়ে তাঁর মুখ মুছতেন।”\nএটিও সহীহ নয়।\nআবু দাউদ (১৪৯২) ও আহমাদ (১৭৯৪৩) বর্ণনা করেছেন।\nএর সনদ দুর্বল।\nতদ্রূপ ʿউমর ইবন আল-খাত্তাব থেকে বর্ণিত:\n“রাসূলুল্লাহ ﷺ দুʿায় হাত তুললে মুখ মুছা পর্যন্ত তা নামাতেন না।”\nএটিও সহীহ নয়।\nআল-তিরমিযী (৩৩৮৬) এবং আল-হাকিম (১/৫৩৬) বর্ণনা করেছেন।\nআল-তিরমিযী বলেছেন:\n“এটি গারীব হাদীস। আমরা এটিকে হাম্মাদ ইবন ʿঈসার বর্ণনা ছাড়া জানি না; তিনিই এককভাবে এটি বর্ণনা করেছেন।”\nএর সনদ অত্যন্ত দুর্বল।\nসারকথা, এই অধ্যায়ে সহীহভাবে কিছুই প্রতিষ্ঠিত হয়নি।"
+    },
+    {
+      "id": "811aa1dc-574d-468b-9079-416812ff3f26",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3c8f9665-b78a-4996-8d70-d8334f719e06",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: দুʿায় কৃত্রিম ছন্দময় গদ্যের নিন্দা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3e6d681a-1258-4402-a673-196c4252fd80",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: দুʿার আদবের মধ্যে হলো মহান ও মহিমান্বিত আল্লাহর প্রশংসা করা, তারপর নবী ﷺ-এর প্রতি দরূদ প্রেরণ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4b5ccc06-1a21-457f-98e9-cbd51da098b7",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: পবিত্রতা ছাড়া অবস্থায় আল্লাহকে স্মরণ করার অপছন্দনীয়তা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fbc39178-ba61-434d-9671-331427f70275",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: জানাযার সালাতে দ্বিতীয় তাকবীরের পর নবী ﷺ-এর প্রতি দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4b29e13d-72ed-414a-89f7-56b4c7c4a2f5",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d35a3678-1528-4880-8903-64058fc1c701",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: মুসলিমের দুʿা কবুল হয় যতক্ষণ সে অধৈর্য না হয়, পাপের জন্য দুʿা না করে বা আত্মীয়তার সম্পর্ক ছিন্ন করার দুʿা না করে",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“আমার বান্দারা যখন তোমার কাছে আমার সম্পর্কে জিজ্ঞেস করে, তখন নিশ্চয়ই আমি নিকটবর্তী। আহ্বানকারী যখন আমাকে ডাকে, আমি তার দুʿার জবাব দিই। অতএব তারা যেন আমার আহ্বানে সাড়া দেয় এবং আমার প্রতি ঈমান আনে, যাতে তারা সঠিক পথ পায়।”\n[সূরা আল-বাকারাহ ২:১৮৬]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“আমার বান্দারা যখন তোমার কাছে আমার সম্পর্কে জিজ্ঞেস করে, তখন নিশ্চয়ই আমি নিকটবর্তী। আহ্বানকারী যখন আমাকে ডাকে, আমি তার দুʿার জবাব দিই। অতএব তারা যেন আমার আহ্বানে সাড়া দেয় এবং আমার প্রতি ঈমান আনে, যাতে তারা সঠিক পথ পায়।”\n[সূরা আল-বাকারাহ ২:১৮৬]"
+    },
+    {
+      "id": "38fd688b-5618-48e3-be45-09f42367f77d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "79f14d8d-72ad-4368-85de-9a214a230146",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "af346174-0351-4b21-8eee-d141ec9e181c",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0f965834-d7b2-4f59-aa34-fe4a542301b2",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "750348b8-03a8-40e9-8816-6126a13740a1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1565437b-7eaf-425b-9c62-655663b4cab1",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cf575f00-6fa4-4619-9aae-3211839b2ab7",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9040682c-e4e4-46a5-9bce-8c98ce9c9843",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d3c72451-5dc1-4a0e-a639-13516ba47d74",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6b77c8a3-6063-4184-81d3-a2dfe362562b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "06302f7d-b574-4b48-be2b-8248a9c19671",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: স্বচ্ছলতার সময় দুʿা করা বিপদের সময় দুʿা কবুল হওয়ার কারণসমূহের একটি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fec1dabc-5117-49b8-ab07-12a0fa1d777b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: দুʿার সময় কণ্ঠস্বর মধ্যম রাখা",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“তোমরা বিনীতভাবে ও গোপনে তোমাদের রবকে ডাকো। নিশ্চয়ই তিনি সীমালঙ্ঘনকারীদের ভালোবাসেন না।”\n[সূরা আল-আʿরাফ ৭:৫৫]\nআর মহান আল্লাহ বলেছেন:\n“তোমার সালাতে অতিরিক্ত উচ্চস্বরে বলো না এবং একেবারে নিচুও করো না; বরং এ দুয়ের মাঝামাঝি পথ অবলম্বন করো।”\n[সূরা আল-ইসরাʾ ১৭:১১০]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“তোমরা বিনীতভাবে ও গোপনে তোমাদের রবকে ডাকো। নিশ্চয়ই তিনি সীমালঙ্ঘনকারীদের ভালোবাসেন না।”\n[সূরা আল-আʿরাফ ৭:৫৫]\nআর মহান আল্লাহ বলেছেন:\n“তোমার সালাতে অতিরিক্ত উচ্চস্বরে বলো না এবং একেবারে নিচুও করো না; বরং এ দুয়ের মাঝামাঝি পথ অবলম্বন করো।”\n[সূরা আল-ইসরাʾ ১৭:১১০]"
+    },
+    {
+      "id": "f9f7972a-85b1-4db4-a6a0-5ae635026409",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: কুনূতের শেষে নবী ﷺ-এর প্রতি দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ebbf426a-be12-4be3-970b-de134f4c29c6",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: ফজরের সালাত থেকে সূর্যোদয় পর্যন্ত এবং ʿআসরের সালাত থেকে সূর্যাস্ত পর্যন্ত আল্লাহকে স্মরণ করার ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2f15e853-7ccd-43b0-bbf5-82ecda3572a9",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "79ff595d-b6fc-4fcb-be19-ff0dcafa45c4",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "1042df0d-eb47-4649-9f72-08f78fbc304c",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0be82d56-e836-478b-8952-7d9c68235220",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3f87f843-e4ed-4eb5-9265-ed379e5a7e20",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "866276a9-18ff-42df-9a79-811124b766a1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4162f0f6-7e00-4183-ab1d-26beea8e224f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: দুʿা তিনবার পুনরাবৃত্তি করা মুস্তাহাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7046b61f-e575-4b45-95bf-0edc4679d7df",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: মুমিন প্রত্যেক অবস্থায় আল্লাহর প্রশংসা করে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f6cd9a39-b458-493e-a4b4-e3c4e9f43c95",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0e41ca89-8e93-44ad-b73f-f683a9acfc7f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: মসজিদে প্রবেশ ও বের হওয়ার সময় নবী ﷺ-এর প্রতি দরূদ ও সালাম প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9cd5e1fa-bef9-4cc4-9c58-2c13677ea4f2",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: যেসব সময় ও অবস্থায় দুʿা কবুলের আশা করা হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f515cd5d-31ab-45e1-af94-1c1c74737e8d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ae0407aa-f93b-4a7d-836b-a29cef26ddc6",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: যাদের দুʿা কবুল হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dce72aba-3e8d-4a06-9b0d-163bce73355d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: আল্লাহর সুন্দরতম নামসমূহ দ্বারা তাঁকে ডাকা",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“সুন্দরতম নামসমূহ আল্লাহরই; অতএব তোমরা সেসব নাম দ্বারা তাঁকে ডাকো। আর যারা তাঁর নামসমূহের ব্যাপারে বিকৃতি করে তাদের ছেড়ে দাও; তারা যা করত তার প্রতিফল তাদের দেওয়া হবে।”\n[সূরা আল-আʿরাফ ৭:১৮০]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“সুন্দরতম নামসমূহ আল্লাহরই; অতএব তোমরা সেসব নাম দ্বারা তাঁকে ডাকো। আর যারা তাঁর নামসমূহের ব্যাপারে বিকৃতি করে তাদের ছেড়ে দাও; তারা যা করত তার প্রতিফল তাদের দেওয়া হবে।”\n[সূরা আল-আʿরাফ ৭:১৮০]"
+    },
+    {
+      "id": "a4825e17-fe96-4ff2-b586-ec6e6ec6905d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: লোকেরা সমবেত হয়ে বিচ্ছিন্ন হওয়ার আগে নবী ﷺ-এর প্রতি দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7ccdbc4e-92ec-447c-a32e-e20e981c3c85",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: আল্লাহর কাছে সর্বাধিক প্রিয় চারটি বাক্য: সুবহানাল্লাহ, আলহামদুলিল্লাহ, লা ইলাহা ইল্লাল্লাহ এবং আল্লাহু আকবার",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b6da3364-3203-4905-80ca-b0ebff7e671f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "67dda5f6-d77b-4458-ab84-9f9f6a9b38b6",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4931ac13-cbb0-4bb7-93dc-e5d665364bc1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "22d9bfa7-c24d-4b30-aa12-5e6f534c6c8e",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1a9fb868-7793-4ddc-aa88-7dfacf83984b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "be657c1b-9d29-4175-a287-c724c0de64c1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c4c2c0a8-9aae-4fb5-a39a-e31b98793375",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: জুমুʿআর দিনে নবী ﷺ-এর প্রতি অধিক দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1ce7d41e-3125-4c0a-8ae7-fc8a0b970c3e",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: দুʿায় ‘হে মহিমা ও সম্মানের অধিকারী’ বেশি বেশি বলা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ed61aa28-9cf8-4b51-817c-37d2ada7e200",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: মযলূমের দুʿা থেকে সতর্ক থাকা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0a9c2c26-c9c1-4ce7-812b-599c73938449",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3f999eb4-072d-402b-8295-5e46e4679fd0",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: আল্লাহর একত্ব ঘোষণা, তাঁর তাসবীহ, তাহমীদ ও তাকবীরের সাধারণ ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e06c3298-8b91-4382-8c41-bfd02c443f49",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "13de7f39-912a-4703-a216-e491a9835b11",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4a2ed6bc-7837-40fb-b5b7-81e672cecee1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "85074b90-c952-4a1b-b784-3a930bcdbf8e",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ded78bc8-47cb-467e-97f2-07602bf77bb7",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: দুশ্চিন্তা ও কষ্টের সময় এবং ক্ষমা প্রার্থনার সময় নবী ﷺ-এর প্রতি দরূদ প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7289eb9b-acf8-4b8e-9874-e0a9a70ff4fd",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: দুʿাকারী নিজের জন্য দুʿা দিয়ে শুরু করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8ea6b9f0-2f52-4867-93fd-bc864edf3336",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: যাদের দুʿা কবুল হয় না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4df38db0-8042-4bf5-9143-e74adc3fdfff",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "efdf63b9-1f9f-4154-a493-f4e057af2610",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: ‘লা হাওলা ওয়ালা কুওয়াতা ইল্লা বিল্লাহ’ বলার ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "18df3893-5d36-4fd1-81f5-71030c40f09c",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "8a3d4263-4731-4d0a-a3b1-0638148ccb9b",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: ডান হাতে তাসবীহ গণনা করার সুপারিশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5c6ffb45-d5e7-41b9-accb-8133d6fb305a",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "c4bbc2e5-b37e-47f3-a400-eef5580cef3f",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: নবী ﷺ ছাড়া অন্য কারও জন্য দরূদ প্রার্থনা সম্পর্কে বর্ণিত বিষয়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9f2dbe1c-8fee-4d3d-89de-d9ee1cfed068",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "acb47cd9-08ac-4194-9dff-d86ebd6266e8",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: দুʿায় আল্লাহর একত্ব স্বীকারের সময় শাহাদাত আঙুল দিয়ে ইশারা করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "35a734dd-c9a4-4db1-b5eb-0fe7ea82b6fd",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: কারও অনুপস্থিতিতে তার জন্য দুʿা করার ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "06d06c8e-a8da-464a-a166-b038c120f1da",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e22c7ebd-1da2-4d17-b84f-7505d7c31169",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "af3477b0-2589-4a33-befc-9518075ab152",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "25389f15-de4a-414b-a79c-468d3286f0f3",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e2d66a08-258d-453f-8bbf-8bba4d0a25b0",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "40f1d917-e3b6-4721-bf4c-81919e551aa1",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "63f66e42-6a0e-4423-b6b7-35c369b6abc6",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: সন্তানের দুʿার মাধ্যমে জান্নাতে মর্যাদা বৃদ্ধি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cab4d0d3-6759-4264-813c-a1e3b9b92531",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "703927ae-eeba-44f0-a25d-d9e98d8769bb",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7fa25f67-49a0-4c6b-a6d1-676ba695bd58",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1ea69163-4577-4cfc-b554-fb44756c566e",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: সম্পদ ও সন্তান বৃদ্ধি পাওয়ার জন্য দুʿা করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b7f28750-35a0-466a-b92d-9740efbfcafa",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: নিজের, সন্তানদের বা সম্পদের বিরুদ্ধে দুʿা করার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d1ab561f-548d-4996-b098-bfc5610c904b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f2553f58-f215-462d-97b6-04816e09f7ce",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5db3e85a-f520-4f88-adda-28a3b1fb9f0b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4ae69e9f-d4e1-4de3-8380-3e73c211f85b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "17aa1415-d419-4ed4-aaf3-0e003fef1618",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "51901a89-9752-4f5c-955f-dd761544e5a0",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "453d2194-74ed-4071-b406-f031c303ead6",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6a05c0c4-1c55-461f-a932-d1d13016a639",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: দুনিয়াতেই শাস্তি দ্রুত চাওয়ার দুʿার অপছন্দনীয়তা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a1d772a2-ecb5-4e34-b6f9-1910782d86fd",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c2ac21d2-fb87-4a97-83e4-e5446990e055",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fddc05eb-ee96-487a-b3a4-c69414b6804f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: মৃত্যুর জন্য দুʿা করার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8b503bb8-1a30-4863-b7ff-a25fb9bcd4a4",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: মুশরিকদের হিদায়াতের জন্য দুʿা করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "85ff2018-ab64-4f56-85c1-e775b0dbf372",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ac072a64-9192-4288-aa43-824431a9c367",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1a03fbf9-452f-4883-aebf-1e79d75732fb",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7bfbb3fc-ae66-4cda-b503-b4ac93e341da",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "aec1d789-b060-447c-bf60-f8fc0f6ef7d8",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: নবী ﷺ-এর তাঁর জাতির জন্য ক্ষমার দুʿা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3ebc9d42-509d-4e8a-b9e3-0bc22c133569",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "58fb1829-04a9-46f7-914b-462f37be9e13",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f4a4fc37-a902-4854-b89d-3d741509754b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "২২ — অধ্যায়: মুশরিক ও জালিম কাফিরদের বিরুদ্ধে দুʿা করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a8fb81af-85ac-46b0-b874-296a36eee07c",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d6966b54-c1c4-4b14-9244-56bf1d5fa5bb",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "f849b48c-78d7-4288-87cc-30b364d979a4",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "২৩ — অধ্যায়: অধিক পরিমাণে দুʿা করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2b3d4514-d679-43d9-9f1f-6b12a7fca72d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "185dddc5-9bf1-4e03-a379-36691d092f79",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9f48c200-cb54-43bd-87fd-182f84ce429b",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f4491735-943b-43ec-9fc1-0577377d050d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "40cfaf42-1e36-4824-86e8-9a922eaaa6d7",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2b2f35a3-e150-428d-bfcc-d786cf07820f",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1ae0c0cc-25f5-4593-831e-49df617e35f5",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a9cb49fd-969a-4832-b2b8-5c72058d2ade",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "66de046f-98d6-40ad-8732-af51b96a9492",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a1dd8638-40e9-417d-9377-7ecfddc3a0e7",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d9ba9a8a-3223-41b2-b63f-0b23a74f2903",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d6620649-846a-43a1-a1e0-39a564c9b21d",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "063afc85-63b7-420a-8fe1-df12e7d5be69",
+      "book_id": "bf001070-8496-4cdc-9d5c-f1700423cc80",
+      "collection_id": "54d1e3ba-6799-4368-a6f7-57585ef2443d",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
