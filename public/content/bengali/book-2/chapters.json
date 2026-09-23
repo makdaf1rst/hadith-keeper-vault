@@ -1,0 +1,3692 @@
+{
+  "collections": [
+    {
+      "id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 1,
+      "title_bn": "১ — ঈমানের বৈশিষ্ট্যসমূহ সম্পর্কিত অধ্যায়সমূহের সংকলন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 6,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 7,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 8,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 10,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 11,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "sort_order": 12,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "7085632e-d9e5-417b-88dc-8c97cbccbaee",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c0a75d8a-09ad-4799-9f90-d43d96ea9f1b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c9c79ec4-9af0-44ee-a5c3-61990fd5cebc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 1,
+      "sort_order": 13,
+      "title_bn": "১ — অধ্যায়: ঈমান, ইসলাম ও ইহসান সম্পর্কে জিবরীলের প্রশ্নসমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9d2fd95d-2359-46fd-817e-65f5caed7f05",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d2458ef4-8491-46ef-a497-7fdf1c7fdc4e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 2,
+      "sort_order": 14,
+      "title_bn": "২ — অধ্যায়: ইসলামের স্তম্ভসমূহ সম্পর্কে প্রশ্ন করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "19d16b49-9b8e-4be5-82d2-05722cf6e939",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 3,
+      "sort_order": 15,
+      "title_bn": "৩ — অধ্যায়: ঈমানের শাখাসমূহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a8660195-19fb-42e0-86ea-ac11aef1e7c4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 4,
+      "sort_order": 16,
+      "title_bn": "৪ — অধ্যায়: ঈমানের পূর্ণতা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2bdee306-28f1-4fdb-95c8-4f8ced3185c7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 5,
+      "sort_order": 17,
+      "title_bn": "৫ — অধ্যায়: অবাধ্যতার কাজের কারণে পূর্ণ ঈমানের হ্রাস",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3f0c44c8-71f9-486a-b358-63b6b65723cf",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 6,
+      "sort_order": 18,
+      "title_bn": "৬ — অধ্যায়: আনুগত্যের কাজে ঘাটতির কারণে ঈমানের হ্রাসের ব্যাখ্যা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "98ca04da-1118-45f3-819b-af422b62624e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 7,
+      "sort_order": 19,
+      "title_bn": "৭ — অধ্যায়: ঈমানের বৃদ্ধি ও হ্রাস",
+      "intro_bn_source": "আল্লাহ সর্বোচ্চ বলেছেন:\n“এতে তাদের ঈমান ও আত্মসমর্পণই কেবল বৃদ্ধি পেয়েছিল।”\n[সূরা আল-আহযাব ৩৩:২২]\nআর তিনি, যাঁর স্মরণ মহিমান্বিত, বলেছেন:\n“যাতে যারা ঈমান এনেছে তাদের ঈমান বৃদ্ধি পায়।”\n[সূরা আল-মুদ্দাসসির ৭৪:৩১]\nআর তিনি, বরকতময় ও সর্বোচ্চ, বলেছেন:\n“আর যারা ঈমান এনেছে, এটি তাদের ঈমান বৃদ্ধি করে।”\n[সূরা আত-তাওবাহ ৯:১২৪]\nআর তিনি বলেছেন:\n“অতএব তাদের ভয় করো; আর তা তাদের ঈমান বৃদ্ধি করেছিল।”\n[আলে ইমরান ৩:১৭৩]\nআর তিনি বলেছেন:\n“যাতে তারা তাদের ঈমানের সঙ্গে আরও ঈমান বৃদ্ধি করতে পারে।”\n[সূরা আল-ফাতহ ৪৮:৪]",
+      "intro_bn_display": "আল্লাহ সর্বোচ্চ বলেছেন:\n“এতে তাদের ঈমান ও আত্মসমর্পণই কেবল বৃদ্ধি পেয়েছিল।”\n[সূরা আল-আহযাব ৩৩:২২]\nআর তিনি, যাঁর স্মরণ মহিমান্বিত, বলেছেন:\n“যাতে যারা ঈমান এনেছে তাদের ঈমান বৃদ্ধি পায়।”\n[সূরা আল-মুদ্দাসসির ৭৪:৩১]\nআর তিনি, বরকতময় ও সর্বোচ্চ, বলেছেন:\n“আর যারা ঈমান এনেছে, এটি তাদের ঈমান বৃদ্ধি করে।”\n[সূরা আত-তাওবাহ ৯:১২৪]\nআর তিনি বলেছেন:\n“অতএব তাদের ভয় করো; আর তা তাদের ঈমান বৃদ্ধি করেছিল।”\n[আলে ইমরান ৩:১৭৩]\nআর তিনি বলেছেন:\n“যাতে তারা তাদের ঈমানের সঙ্গে আরও ঈমান বৃদ্ধি করতে পারে।”\n[সূরা আল-ফাতহ ৪৮:৪]"
+    },
+    {
+      "id": "c48d87b2-7473-460b-b0bb-366086089c50",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 8,
+      "sort_order": 20,
+      "title_bn": "৮ — অধ্যায়: যেসব সমন্বিত আমলের মাধ্যমে একজন মুসলিম জান্নাতে প্রবেশ করে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4dba95bc-49fa-42c2-8d7d-814403b5fd08",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 9,
+      "sort_order": 21,
+      "title_bn": "৯ — অধ্যায়: ইসলাম যদি প্রকৃত না হয়, তবে আখিরাতে তা উপকার করবে না",
+      "intro_bn_source": "আল্লাহ সর্বোচ্চ বলেছেন:\n“বেদুইনরা বলে, ‘আমরা ঈমান এনেছি।’ বলুন: ‘তোমরা এখনও ঈমান আননি; বরং বলো, “আমরা আত্মসমর্পণ করেছি।”’”\n[সূরা আল-হুজুরাত ৪৯:১৪]\nকিন্তু ইসলাম যখন বাস্তবিক অর্থে সত্য ও প্রকৃত হয়, তখন তা তাঁর এই বাণীর সঙ্গে সামঞ্জস্যপূর্ণ—যাঁর স্মরণ মহিমান্বিত:\n“নিশ্চয়ই আল্লাহর কাছে দীন হলো ইসলাম।”\n[আলে ইমরান ৩:১৯]",
+      "intro_bn_display": "আল্লাহ সর্বোচ্চ বলেছেন:\n“বেদুইনরা বলে, ‘আমরা ঈমান এনেছি।’ বলুন: ‘তোমরা এখনও ঈমান আননি; বরং বলো, “আমরা আত্মসমর্পণ করেছি।”’”\n[সূরা আল-হুজুরাত ৪৯:১৪]\nকিন্তু ইসলাম যখন বাস্তবিক অর্থে সত্য ও প্রকৃত হয়, তখন তা তাঁর এই বাণীর সঙ্গে সামঞ্জস্যপূর্ণ—যাঁর স্মরণ মহিমান্বিত:\n“নিশ্চয়ই আল্লাহর কাছে দীন হলো ইসলাম।”\n[আলে ইমরান ৩:১৯]"
+    },
+    {
+      "id": "5479d18d-05c4-4226-95de-837a3affb275",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 10,
+      "sort_order": 22,
+      "title_bn": "১০ — অধ্যায়: যে ব্যক্তি তাওহীদের ওপর মৃত্যুবরণ করবে সে জান্নাতে প্রবেশ করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c54c3477-97ef-4be7-9a77-a2b600e0a487",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 11,
+      "sort_order": 23,
+      "title_bn": "১১ — অধ্যায়: কিছু অন্তর থেকে আমানতদারিতা ও ঈমান উঠিয়ে নেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d0c5e18c-e183-4841-bda3-c8a75081d90a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 12,
+      "sort_order": 24,
+      "title_bn": "১২ — অধ্যায়: মুমিন ছাড়া কেউ জান্নাতে প্রবেশ করবে না, এবং আল্লাহ কখনো পাপী ব্যক্তির মাধ্যমেও এই দীনকে সাহায্য করেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "af750724-9d90-4a6b-90b2-4802d0565af7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 13,
+      "sort_order": 25,
+      "title_bn": "১৩ — অধ্যায়: আল্লাহ কাফিরদের জন্য জান্নাত হারাম করেছেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8a5bb86a-ef95-4c92-b18a-5e577b2e4daa",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 14,
+      "sort_order": 26,
+      "title_bn": "১৪ — অধ্যায়: অহংকার সম্পর্কে সতর্কতা এবং তা পূর্ণ ঈমানের পরিপন্থী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1a04b3b2-a7e4-48e1-8b97-d35e53c7df8f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 15,
+      "sort_order": 27,
+      "title_bn": "১৫ — অধ্যায়: আল্লাহর রহমত ছাড়া কেউ জান্নাতে প্রবেশ করবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5e5298e5-0b29-4768-b0e5-3abb7efddb54",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 16,
+      "sort_order": 28,
+      "title_bn": "১৬ — অধ্যায়: প্রতিবেশীকে কষ্ট দেওয়া সম্পর্কে সতর্কতা এবং তা পূর্ণ ঈমানের পরিপন্থী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ade09d16-6f3b-4c37-b146-eea597f77482",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 17,
+      "sort_order": 29,
+      "title_bn": "১৭ — অধ্যায়: ঈমানের মাধুর্য ও স্বাদ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e04526ec-4f3f-4de3-969d-1f11062d813c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 18,
+      "sort_order": 30,
+      "title_bn": "১৮ — অধ্যায়: রাসূলকে ভালোবাসা ঈমানের অংশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b3e37fd5-4585-4cb0-9e1b-078516d676f0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 19,
+      "sort_order": 31,
+      "title_bn": "১৯ — অধ্যায়: যে আল্লাহ ও তাঁর রাসূলকে ভালোবাসে, সে জান্নাতে তাঁদের সঙ্গে থাকবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "780d6d6e-c18b-4fad-a0d0-49fcf7fb4c56",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 20,
+      "sort_order": 32,
+      "title_bn": "২০ — অধ্যায়: ঈমানের বৈশিষ্ট্যের অন্তর্ভুক্ত হলো—নিজের জন্য যা ভালোবাসে, ভাইয়ের জন্যও তা ভালোবাসা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ee894e4c-f8b2-4010-9783-471b821ffb64",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 21,
+      "sort_order": 33,
+      "title_bn": "২১ — অধ্যায়: মেহমানকে সম্মান করা পূর্ণ ঈমানের অংশ—এ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7c1424ab-31df-4fac-a4fd-b4052dc4be3e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 22,
+      "sort_order": 34,
+      "title_bn": "২২ — অধ্যায়: মন্দ কাজ নিষেধ করা পূর্ণ ঈমানের অংশ—এর ব্যাখ্যা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dce533ff-6d4e-48b4-b40e-33566c82259b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 23,
+      "sort_order": 35,
+      "title_bn": "২৩ — অধ্যায়: আনসারদের ভালোবাসা পূর্ণ ঈমানের অংশ—এ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9ac539e7-faf4-47da-92d7-3da9817dfd53",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 24,
+      "sort_order": 36,
+      "title_bn": "২৪ — অধ্যায়: লজ্জাশীলতা ঈমানের অংশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8f2d6ef8-fc85-4cc9-96da-9535fe375e19",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 25,
+      "sort_order": 37,
+      "title_bn": "২৫ — অধ্যায়: মুমিনদের প্রতি আনুগত্য ও বিশ্বস্ততা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ac7987f8-d97e-4724-a324-2375bcc05df7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 26,
+      "sort_order": 38,
+      "title_bn": "২৬ — অধ্যায়: ফিতনা থেকে দূরে সরে যাওয়া পূর্ণ ঈমানের অংশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "756d2821-efea-477c-8624-9f91facb26e2",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 27,
+      "sort_order": 39,
+      "title_bn": "২৭ — অধ্যায়: ক্ষতির আশঙ্কাকারীর জন্য নিজের ঈমান গোপন রাখার বৈধতা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b7a2e78a-f4f6-4640-bc65-1222e49f2d8f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 28,
+      "sort_order": 40,
+      "title_bn": "২৮ — অধ্যায়: নিজের ঈমান সম্পর্কে কথা বলার সময় ব্যতিক্রম যুক্ত করা",
+      "intro_bn_source": "আল-আওযাঈ (রহিমাহুল্লাহ) বলেছেন:\nআল্লাহ সর্বোচ্চ বলেছেন:\n“আল্লাহ চাইলে তোমরা অবশ্যই নিরাপদ অবস্থায় আল-মাসজিদুল হারামে প্রবেশ করবে।”\n[সূরা আল-ফাতহ ৪৮:২৭]\nআল্লাহ আগে থেকেই জানতেন যে তারা সেখানে প্রবেশ করবে, তবুও তিনি বলেছেন:\n“আল্লাহ চাইলে।”",
+      "intro_bn_display": "আল-আওযাঈ (রহিমাহুল্লাহ) বলেছেন:\nআল্লাহ সর্বোচ্চ বলেছেন:\n“আল্লাহ চাইলে তোমরা অবশ্যই নিরাপদ অবস্থায় আল-মাসজিদুল হারামে প্রবেশ করবে।”\n[সূরা আল-ফাতহ ৪৮:২৭]\nআল্লাহ আগে থেকেই জানতেন যে তারা সেখানে প্রবেশ করবে, তবুও তিনি বলেছেন:\n“আল্লাহ চাইলে।”"
+    },
+    {
+      "id": "f5fe9826-ad20-43c7-baac-9bde9a16061a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 29,
+      "sort_order": 41,
+      "title_bn": "২৯ — অধ্যায়: পবিত্রতা ঈমানের অর্ধেক",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "71711160-7791-4888-842c-1db76447f046",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 30,
+      "sort_order": 42,
+      "title_bn": "৩০ — অধ্যায়: যে আল্লাহর প্রতি ঈমান আনে এবং তারপর অবিচল থাকে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "80d7f9c0-7fd6-4dfe-9c87-5e9e9821775b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 31,
+      "sort_order": 43,
+      "title_bn": "৩১ — অধ্যায়: ঈমানদারদের বিভিন্ন স্তর",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5ac22928-fad2-42d9-9355-dc1dddc3853a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 32,
+      "sort_order": 44,
+      "title_bn": "৩২ — অধ্যায়: ঈমানের ক্ষেত্রে ইয়ামানবাসীদের মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "eb445642-663e-4be3-a24f-49b3bb130eb7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 33,
+      "sort_order": 45,
+      "title_bn": "৩৩ — অধ্যায়: ঈমান হিজাজবাসীদের মধ্যে—এ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9111a1b8-6d17-4ef5-8998-a302550959c4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 34,
+      "sort_order": 46,
+      "title_bn": "৩৪ — অধ্যায়: একজন ব্যক্তির উত্তমভাবে ইসলাম পালন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "02afefeb-8a63-4899-9e9d-0211eea29030",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 35,
+      "sort_order": 47,
+      "title_bn": "৩৫ — অধ্যায়: আন্তরিক নসীহত দীনের স্তম্ভ ও ভিত্তি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0fe9c86e-7ab1-41c5-b5f1-2f494b26f837",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 36,
+      "sort_order": 48,
+      "title_bn": "৩৬ — অধ্যায়: মৃত্যুপথযাত্রীর ইসলাম গ্রহণ চূড়ান্ত মৃত্যুযন্ত্রণা শুরু না হওয়া পর্যন্ত বৈধ—এর প্রমাণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "58c0ecf1-0e8c-4a92-a4f8-8e8e6415cf3e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 37,
+      "sort_order": 49,
+      "title_bn": "৩৭ — অধ্যায়: ঈমানের আনন্দ অন্তরে প্রবেশ করলে কেউ তা নিয়ে অসন্তুষ্ট হয় না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "27942579-81fd-43c7-bd96-cdcfe3c2f84b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 38,
+      "sort_order": 50,
+      "title_bn": "৩৮ — অধ্যায়: এই দীনের বৈশিষ্ট্যের অন্তর্ভুক্ত হলো—এটি সহজ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "635af842-0b3f-4d1f-b2d5-54449186af4a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 39,
+      "sort_order": 51,
+      "title_bn": "৩৯ — অধ্যায়: আল্লাহ সুবহানাহু ওয়া তা‘আলা কোনো প্রাণকে তার সামর্থ্যের বাইরে দায়িত্ব দেন না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3c48bae5-e755-410f-b0b0-bce111732c85",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 40,
+      "sort_order": 52,
+      "title_bn": "৪০ — অধ্যায়: ভয় ও আশার সঙ্গে আল্লাহ সম্পর্কে সুধারণা রাখা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9c7bc703-bcbb-4055-a347-2162d1d0e59f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 41,
+      "sort_order": 53,
+      "title_bn": "৪১ — অধ্যায়: ভয় ও তাকওয়া সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a6cf6f3a-d7ca-431c-9c04-578390515fad",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 42,
+      "sort_order": 54,
+      "title_bn": "৪২ — অধ্যায়: আল্লাহর রহমত তাঁর শাস্তির চেয়ে অধিক বিস্তৃত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8b0d51a2-2382-47a7-94c8-648d00a38085",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 43,
+      "sort_order": 55,
+      "title_bn": "৪৩ — অধ্যায়: দীনের ব্যাপারে কোনো জবরদস্তি নেই",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a22ff2be-99be-4e87-8527-b1099d7ecff6",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 44,
+      "sort_order": 56,
+      "title_bn": "৪৪ — অধ্যায়: আল্লাহর বাণী, “মুমিনদের দুই দল পরস্পর যুদ্ধ করলে তাদের মধ্যে মীমাংসা করে দাও”—এবং তিনি তাদের মুমিন বলে অভিহিত করেছেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "374f75bc-5390-45ef-b88b-4007efa5858b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 45,
+      "sort_order": 57,
+      "title_bn": "৪৫ — অধ্যায়: মুসলিমকে গালি দেওয়া পাপাচার এবং তার সঙ্গে যুদ্ধ করা কুফর",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a21d2d13-c191-4796-9907-f8e1b37fbc44",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 46,
+      "sort_order": 58,
+      "title_bn": "৪৬ — অধ্যায়: নবী ﷺ-এর বাণী, “আমার পরে তোমরা কাফির হয়ে ফিরে যেয়ো না”—এর অর্থের ব্যাখ্যা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "67c1e1ab-1d2c-442e-8116-6aafa1501a26",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 47,
+      "sort_order": 59,
+      "title_bn": "৪৭ — অধ্যায়: “আমরা অমুক নক্ষত্রের কারণে বৃষ্টি পেয়েছি” বলা ব্যক্তির ক্ষেত্রে কুফর শব্দ প্রয়োগের ব্যাখ্যা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c04b2c33-9148-48d1-8bd3-42ae4935fd29",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 48,
+      "sort_order": 60,
+      "title_bn": "৪৮ — অধ্যায়: বংশে আঘাত করা ও মৃতের জন্য বিলাপ করার ক্ষেত্রে কুফর শব্দ প্রয়োগ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "202cf196-3dbe-4b6a-803c-1cb350300aaa",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 49,
+      "sort_order": 61,
+      "title_bn": "৪৯ — অধ্যায়: ইসলাম পূর্বের সবকিছু মুছে দেয়—এ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "724b4004-1c32-491d-baa8-950ca5e984eb",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 50,
+      "sort_order": 62,
+      "title_bn": "৫০ — অধ্যায়: যে ব্যক্তি কুফরের অবস্থায় সৎকর্ম করেছে এবং পরে ইসলাম গ্রহণ করেছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9b769fc3-7891-4681-bb4f-ae84f79d56b3",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 51,
+      "sort_order": 63,
+      "title_bn": "৫১ — অধ্যায়: যে ঈমান আনে না, সৎকর্ম তার উপকার করবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "41956a8c-de78-428f-86d4-11e59884f912",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 52,
+      "sort_order": 64,
+      "title_bn": "৫২ — অধ্যায়: ইসলাম অপরিচিত অবস্থায় শুরু হয়েছিল এবং আবার অপরিচিত অবস্থায় ফিরে আসবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2c4bb457-9841-4d24-b3fd-46c4a51a085d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 53,
+      "sort_order": 65,
+      "title_bn": "৫৩ — অধ্যায়: প্রমাণসমূহ প্রকাশ পাওয়ার মাধ্যমে অন্তরের প্রশান্তি বৃদ্ধি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b69e62df-f1e1-46c1-ab86-cafb768f6faf",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 54,
+      "sort_order": 66,
+      "title_bn": "৫৪ — অধ্যায়: যে সময়ে ঈমান আর গ্রহণ করা হবে না—তার ব্যাখ্যা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "847620b9-8884-49e6-a2e5-bf6f9c94924a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 55,
+      "sort_order": 67,
+      "title_bn": "৫৫ — অধ্যায়: গুনাহ জাহিলিয়াতের পথসমূহের অন্তর্ভুক্ত; শিরক ছাড়া শুধু গুনাহ করার কারণে কেউ কাফির হয় না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "98247849-3afd-4b45-ad97-54ebf0ae948c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 56,
+      "sort_order": 68,
+      "title_bn": "৫৬ — অধ্যায়: মুমিন এমন বৃক্ষের মতো যা সর্বদা ফল দেয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ad827ac7-6749-47e0-8cdb-451e833e010d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 57,
+      "sort_order": 69,
+      "title_bn": "৫৭ — অধ্যায়: কোনো কাফির “আল্লাহ ছাড়া কোনো সত্য উপাস্য নেই” বলার পর তাকে হত্যা করা নিষিদ্ধ, যদিও সে মুসলিমদের গুরুতর ক্ষতি করে থাকে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8ddbb001-bb77-491b-afa2-e50a2c0c9675",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 58,
+      "sort_order": 70,
+      "title_bn": "৫৮ — অধ্যায়: কোনো মুসলিমকে কাফির ঘোষণা করার ব্যাপারে সতর্কতা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b673c9d3-434e-4b40-bd71-aa6dfe3184f8",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 59,
+      "sort_order": 71,
+      "title_bn": "৫৯ — অধ্যায়: জেনেশুনে নিজের পিতাকে অস্বীকারকারী ব্যক্তির ঈমানের অবস্থার ব্যাখ্যা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "742ef5db-05af-42b0-b052-74b333ec2f25",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 60,
+      "sort_order": 72,
+      "title_bn": "৬০ — অধ্যায়: পলাতক দাসের ক্ষেত্রে কুফর শব্দ প্রয়োগ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a531b7d8-d8ce-47f2-be80-c45ae0270268",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "d4b1dc84-d325-477e-ba84-9f5d49bba171",
+      "chapter_number": 61,
+      "sort_order": 73,
+      "title_bn": "৬১ — অধ্যায়: গণকতা ও গণকদের কাছে যাওয়া নিষিদ্ধ—এ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "05576a0c-3183-4ca2-9f41-061b00d09c53",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 1,
+      "sort_order": 74,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "70bd728e-236d-4fb7-8dae-6fff5872d86d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 2,
+      "sort_order": 75,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "38a6d235-38eb-4bb6-9573-c9c79c4555ab",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 3,
+      "sort_order": 76,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2d50076e-9054-4afc-8360-cd365d8c85db",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 4,
+      "sort_order": 77,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8e531328-73f4-4318-a20c-5c898355dea7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 5,
+      "sort_order": 78,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "535c5cba-f935-4b8b-b7ce-8c45627d62ed",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 6,
+      "sort_order": 79,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ff117eea-e359-41f4-b232-13d9f102eef7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 7,
+      "sort_order": 80,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bb1a819f-7c7c-448a-85e3-0ae5bdc27f55",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 8,
+      "sort_order": 81,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "628cc41b-7647-4e9c-9ce2-5a898daac962",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 9,
+      "sort_order": 82,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c23acb4d-7155-46b7-b9b2-5f35983447ad",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 10,
+      "sort_order": 83,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2ff0502f-e9b3-47fa-913c-b3d3ab2e24cb",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 11,
+      "sort_order": 85,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7f0c4253-ddcf-4053-bb8f-6a34c17f8792",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 12,
+      "sort_order": 86,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "86dcabb5-b04c-4100-a3eb-b70b1a07227a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 13,
+      "sort_order": 87,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a7eacab8-ac03-48cc-9163-7cba69fb8284",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 14,
+      "sort_order": 88,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "69b4eea6-2f9b-444d-9b7c-8cd55323afb4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 15,
+      "sort_order": 89,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "10abdb3f-d95e-437c-8a7a-78fd921195ee",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 16,
+      "sort_order": 90,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a2f7825a-03b8-4d91-b81e-1a96f6debe35",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 17,
+      "sort_order": 91,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f09433be-e099-4c5f-a5aa-22a30f2005ae",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 18,
+      "sort_order": 92,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d58a5008-18ed-4909-94c0-40dc0c952127",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 19,
+      "sort_order": 95,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "77aa0621-1c43-4f3a-acb9-a29afa226c35",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 20,
+      "sort_order": 96,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3e7c41ca-d27a-43cc-8be4-3e0d58c56b9c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 21,
+      "sort_order": 97,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "11111111-0000-4000-8000-000000000023",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 23,
+      "sort_order": 98,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "51e63060-d1d0-4ffa-901f-caa8f26c2f94",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 22,
+      "sort_order": 98,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e9000f8d-d83c-4284-9c6b-e586ffcfc43b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 24,
+      "sort_order": 100,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e5c4fb8a-dfa5-466c-a9d3-b5edb53ce99c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 25,
+      "sort_order": 101,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b99c3864-876e-46ed-8c8e-b7cce9b8a020",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 26,
+      "sort_order": 102,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f35c886e-e7a5-431e-9f51-362cc022c9da",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 27,
+      "sort_order": 103,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7518158f-126a-40b3-ac62-1c1f79c7ba8e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 28,
+      "sort_order": 104,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7197efb5-cefd-46b6-a63f-b8ee72d5f1a0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 29,
+      "sort_order": 105,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ea8f5f84-c989-4d5a-9b4a-226932727715",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 30,
+      "sort_order": 106,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2aa2fe1d-a673-4e40-850e-1115bee9194c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 31,
+      "sort_order": 107,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "102a687c-3d8b-478d-b780-3d7c79a20a89",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 32,
+      "sort_order": 108,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "45b7077b-b7c7-41c7-8b07-f5d6658ae941",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 33,
+      "sort_order": 109,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0b71de2f-3607-421c-a460-995a3290fdaa",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 34,
+      "sort_order": 110,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0614ba82-b9fb-4e4d-9f19-48e0ae36524d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 35,
+      "sort_order": 111,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6c506e37-cc13-41b7-bb7b-114ae1063225",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 36,
+      "sort_order": 112,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b8d8f4aa-cb9f-4293-ace0-ef542bc23170",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 37,
+      "sort_order": 113,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a0e90174-b7dd-4b77-bb9e-57446fe52eb7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 38,
+      "sort_order": 114,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3b5d8223-cc10-4693-a9cd-b0da926c72b4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 39,
+      "sort_order": 115,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b24b18de-12a8-4ee6-a594-5c7608d446d0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 40,
+      "sort_order": 116,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c29601ce-1e96-493a-bc14-cd8a66977c2f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 41,
+      "sort_order": 117,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "330eaffe-b08d-4e3d-8cb9-4b1be48a130c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 42,
+      "sort_order": 118,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d9fd224f-6625-4ab9-80ff-8e942e50c8a7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 43,
+      "sort_order": 119,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "50c3a388-19b2-41c5-94d5-7cbf227d0f7d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 44,
+      "sort_order": 120,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e6f8c73e-9ee7-4749-9a15-a87c08e3e428",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 45,
+      "sort_order": 121,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a69a309e-bd29-4991-85c3-13810fb0e29e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 46,
+      "sort_order": 122,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fc10a0d6-36b7-4418-917d-a92c47d77f4e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 47,
+      "sort_order": 123,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "34146e24-0fd9-4255-97ee-3e8fac161d93",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 48,
+      "sort_order": 124,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4c9b8d51-0bdb-47b8-bc81-c9d6ff8a4ebc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 49,
+      "sort_order": 125,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c5bc1ef9-6aee-4b55-a17d-b7ab8e51e330",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 50,
+      "sort_order": 126,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7e22adb0-6179-48d8-8cf3-35a14c85463d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 51,
+      "sort_order": 127,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "595b060e-feab-40fd-afbf-178e4e12dedc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 52,
+      "sort_order": 128,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e6aecd8b-39aa-42f1-9583-2d1d58abc18e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 53,
+      "sort_order": 129,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "72608775-26f8-465f-9d6e-748433638088",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 54,
+      "sort_order": 130,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5fb70a8b-2791-4bc6-8adf-147a90c9ff72",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 55,
+      "sort_order": 131,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9535f027-88db-4786-926d-db30e0aa304a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "170d8a49-63f5-4896-92f3-72bdc04d0637",
+      "chapter_number": 56,
+      "sort_order": 132,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9d063a35-230f-4b6a-8064-b37c172094d1",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 1,
+      "sort_order": 133,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ee344add-1d51-433f-965f-dd1255e87303",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 2,
+      "sort_order": 134,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "52eda773-50a5-4381-ad98-d6f95f801923",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 3,
+      "sort_order": 135,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8e3818fb-4a2a-439c-b979-3750bc42a2f9",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 4,
+      "sort_order": 136,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fb3f5118-dda1-49de-9f51-9b779e4ae72a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 5,
+      "sort_order": 137,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "93c93509-dd81-451d-ba8c-684ce3748f57",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 6,
+      "sort_order": 138,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8a12843d-97cf-4861-852c-e654b784b441",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 7,
+      "sort_order": 139,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6f05fa05-059d-46ae-af4e-18609f5659d6",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 8,
+      "sort_order": 140,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "47bcc890-6be2-48cf-b925-475d11da53fd",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 9,
+      "sort_order": 141,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "69fabde0-2c85-40d5-b3aa-5201aada30cd",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 10,
+      "sort_order": 142,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6e56ead8-10d5-4a7c-8b12-d40d40d24787",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 11,
+      "sort_order": 143,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "62ac072f-59c9-4f1f-82c2-bf49d1849642",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "0d131465-f642-4d2a-866c-ed7633ca090d",
+      "chapter_number": 12,
+      "sort_order": 144,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "78fc3df3-0c52-4e62-b965-8574de861032",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 1,
+      "sort_order": 145,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "28ce014f-4cf6-46b7-b2d8-a60760c83681",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 2,
+      "sort_order": 146,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4d61708c-dfba-4f91-a498-821ed73b296e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 3,
+      "sort_order": 147,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "27bfd6cd-466c-4fd4-8498-7ed2accd6ee8",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 4,
+      "sort_order": 148,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "674d7825-dadc-4488-8498-cf9ae6e1cdb9",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 5,
+      "sort_order": 149,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "96c99ed9-2621-4860-bfee-cb97dd543d09",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 6,
+      "sort_order": 150,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4bb36ed9-bf3d-412f-b372-21dcc3d84a82",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 7,
+      "sort_order": 151,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "db2db4af-bb03-45b2-831e-68987851d144",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 8,
+      "sort_order": 152,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "64316d14-c558-4395-abc5-379f047d673e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 9,
+      "sort_order": 153,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7b41f044-b156-4d97-adc3-7ce21d08bf1e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 10,
+      "sort_order": 154,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "78fec678-8e68-49fd-95f7-ca76cd45fd5c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 11,
+      "sort_order": 155,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b8496526-20c2-48b9-a2bf-a7e2b99ee19d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 12,
+      "sort_order": 156,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a96dde82-1047-4498-bcd6-415b01e6b8c7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 13,
+      "sort_order": 157,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f6867366-5624-4d53-8c57-3ab60908e284",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 14,
+      "sort_order": 158,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "890c6062-f366-479d-a761-b6761a12ed38",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 15,
+      "sort_order": 159,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a6eeacb0-da30-456d-9749-21a4832a9495",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 16,
+      "sort_order": 160,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "23a873fc-b495-43e8-9861-601b191b23a8",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 17,
+      "sort_order": 161,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ba31a4a2-4b6c-4461-ae14-4f4df444a18d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 18,
+      "sort_order": 162,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4fe4fd59-ea6d-43f6-afe0-4b5ca029ed59",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 19,
+      "sort_order": 163,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d3ad0969-d11b-4b95-9350-26269f23aaf8",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 20,
+      "sort_order": 164,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f3ecaed1-aec6-493c-8399-ac4bd80f45dd",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 21,
+      "sort_order": 165,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "54be2483-ab9d-4919-a9c8-89cbc44127e0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 22,
+      "sort_order": 166,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "16822980-8464-43af-98b9-88819699afd7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 23,
+      "sort_order": 167,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b1358e32-8431-43b3-9cb6-ff5f57a25c9d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 24,
+      "sort_order": 168,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ab69405f-a8e3-4094-be2d-bb5d2d86ce0b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 25,
+      "sort_order": 169,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a58f1f67-9043-4760-a425-59006236a30f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 26,
+      "sort_order": 170,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8acfc5a1-77b9-46df-89b1-b1a96d605e9a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 27,
+      "sort_order": 171,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a4b5143c-9028-42a7-b431-67a8a0773626",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 28,
+      "sort_order": 172,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cce4de3f-272f-43ba-83a1-4b3007808427",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 29,
+      "sort_order": 173,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "58f04548-6eae-487c-82aa-65c332cc82e0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 30,
+      "sort_order": 174,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0dacc7c9-ded3-471e-9fae-bfd0be8752c5",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 31,
+      "sort_order": 175,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3647b43f-3f77-4874-b942-8147e6a0b441",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 32,
+      "sort_order": 176,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "de2b6e3c-a3f7-4a0b-ad42-f08631dece49",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 33,
+      "sort_order": 177,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bd16f1e0-d184-4a66-8b5c-e89f4bb9ff83",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 34,
+      "sort_order": 178,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7a0018a5-bf0e-443a-aeab-ac860efbb4d3",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 35,
+      "sort_order": 179,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0ba5c8ac-96ec-429f-9cc5-03b9573e38ed",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 36,
+      "sort_order": 180,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fece7177-3839-46fe-baf0-5104d947df26",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 37,
+      "sort_order": 181,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "46e0e949-414b-489a-ac72-ca276ad6862f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 38,
+      "sort_order": 182,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "da27cb17-f07f-4ec4-ad62-ad9e6e3e5098",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 39,
+      "sort_order": 183,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1fee7783-bd25-4beb-83f7-1ac48a001b2b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 40,
+      "sort_order": 184,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "78f72e9d-f77e-43d1-b815-99d5fa00bd62",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 41,
+      "sort_order": 186,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1050ae76-27fe-4bb0-8c0e-51497523f482",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 42,
+      "sort_order": 187,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "84123e59-fba5-414c-ac1f-aa17f8d4e515",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 43,
+      "sort_order": 188,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b4b2cd6b-07e5-4312-abce-b201221f83f5",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 44,
+      "sort_order": 189,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "faf5b846-8871-4206-ba32-3d0a14392585",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 45,
+      "sort_order": 190,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8ff4e98a-5a06-42a6-b22d-ba4d99ab3010",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 46,
+      "sort_order": 191,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cf5a4678-f69f-49a5-9764-74870920fe67",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 47,
+      "sort_order": 192,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2f214d19-5172-482d-9ce7-7e4eb8f655fa",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 48,
+      "sort_order": 193,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "05848f18-a5bf-48a8-8ece-96e1fcfc9e4c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 49,
+      "sort_order": 194,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e866987e-79da-4218-b420-96ddf1885cbc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 50,
+      "sort_order": 195,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8710c33d-d52d-4db7-ae23-ba2f7ac49978",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 51,
+      "sort_order": 196,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "28efcaff-8e94-403a-b5ec-2b8385c10dcf",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 52,
+      "sort_order": 197,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f09af546-cbb7-4cc7-8069-6cae245ffe86",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 53,
+      "sort_order": 198,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "34e3f918-f2be-4e06-a2db-69e37a3bc8c9",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 54,
+      "sort_order": 199,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f1c18b65-824c-4adb-9dee-ab0a9eed9a31",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 55,
+      "sort_order": 200,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8d7eebac-fdd0-4386-b24a-d287796be807",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 56,
+      "sort_order": 201,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ad82b895-a34e-4362-b1c7-4fae792338a4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 57,
+      "sort_order": 202,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c5d7e6dd-e11d-4f03-ad9e-b1a7af4507d4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 58,
+      "sort_order": 203,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "82c28de5-254b-4ffa-b44d-562ac8627a58",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 59,
+      "sort_order": 204,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "aec53a4e-ee5c-4845-b791-a284884f8930",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 60,
+      "sort_order": 205,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cef9b10f-1ee0-42ec-b372-54b000889d61",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 61,
+      "sort_order": 206,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6533360e-5e84-4320-ac74-7ba898c59ed2",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 62,
+      "sort_order": 207,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b63cac1b-ad36-48f5-bbbc-616d48a51bfb",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 63,
+      "sort_order": 208,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "91bb808e-b015-4fc4-adba-d228eb62092b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "a2d793e9-9529-4114-bc2e-b86c32fe71e5",
+      "chapter_number": 64,
+      "sort_order": 209,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2227245e-042c-4183-a1f6-b32b5b681215",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 1,
+      "sort_order": 210,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e87eca6a-e038-449e-84cc-8a44867fc842",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 2,
+      "sort_order": 211,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ebf819b2-a443-467c-9348-279932afdbce",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 3,
+      "sort_order": 212,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "245e37ec-3de9-4027-ae49-65920dca45cd",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 4,
+      "sort_order": 213,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "393f7377-309d-4b07-b9be-1b048ce002ea",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 5,
+      "sort_order": 214,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a81c17bd-93d9-47ff-88d1-e427a4cb6ba0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 6,
+      "sort_order": 215,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "95e94bce-b72b-4487-a1f1-3ede489911ab",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 7,
+      "sort_order": 216,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7f800547-a2c2-4057-976a-cef9cf35a9c1",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 8,
+      "sort_order": 217,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "91c5a3ac-0bc6-46c6-8bfc-4498f7b6daab",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 9,
+      "sort_order": 218,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a997ec82-f7c0-413f-9a1f-6c4e27581f05",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 10,
+      "sort_order": 219,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "15f9213c-769c-4d6e-bcd4-79ea6689e81c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 11,
+      "sort_order": 220,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4e3cc1a3-509e-48ce-9a06-51390ff31918",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 12,
+      "sort_order": 221,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "38392888-a468-4dcd-ade3-c9511994d5ed",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 13,
+      "sort_order": 222,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3ed1306b-88dd-4bf8-9bd2-5bb0c1599d69",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 14,
+      "sort_order": 223,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7eadea11-4149-4e64-b564-c1dd34f85067",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 15,
+      "sort_order": 224,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7118735a-4315-4a76-a4f1-387b334b1d8c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 16,
+      "sort_order": 225,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1ea20b60-4cd1-444b-8bad-4794401416f6",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 17,
+      "sort_order": 226,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d8c3746f-951b-4741-bea0-103d9a69e441",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 18,
+      "sort_order": 227,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ed25fe00-70ef-43e6-b263-191dbd7a0d7c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 19,
+      "sort_order": 228,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f714aec3-50df-4e09-b0e2-2aa23caaace6",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 20,
+      "sort_order": 229,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "577a6c89-928a-4a14-9551-44c024c1ca34",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 21,
+      "sort_order": 230,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8510afe8-e4dd-4d11-b491-970562539d92",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 22,
+      "sort_order": 231,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8fd0b2fd-3376-4813-b15a-8f80f00452ab",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 23,
+      "sort_order": 232,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "aa93904b-bdc7-4de5-837c-9c57eebb8c86",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 24,
+      "sort_order": 233,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "125ce863-9999-4dfa-8886-c8567a05e095",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8ef193bb-3168-4e67-9e9e-803765d5b703",
+      "chapter_number": 25,
+      "sort_order": 234,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "923bfbbd-5dc9-422c-9b96-85c613e4b488",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "chapter_number": 1,
+      "sort_order": 235,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4ff58105-f7cc-4ab0-b81e-7d1adb0d591d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "chapter_number": 2,
+      "sort_order": 236,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "592272bc-c377-4008-8de9-cfe96229d9eb",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "chapter_number": 3,
+      "sort_order": 237,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7abcc3f6-fbbb-46b9-98ee-d9691f441bd1",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "chapter_number": 4,
+      "sort_order": 238,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d4a63999-812a-412c-bb69-f4350ab8d8a7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "chapter_number": 5,
+      "sort_order": 239,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a3e1a3a4-ae7e-4dbb-b848-3249514b639d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "chapter_number": 6,
+      "sort_order": 240,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cc7eba88-5328-4728-8b66-f1c0310efbbf",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "chapter_number": 7,
+      "sort_order": 241,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "971f62bd-230a-4adb-ae6e-1c20d1db341c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "1d33659b-d897-4051-8b57-12029ee59e8f",
+      "chapter_number": 8,
+      "sort_order": 242,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "23b1c826-0e0a-4dd3-9547-d530a7ad1f55",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 1,
+      "sort_order": 243,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4cffa009-a5a1-4625-94f4-877a3648a277",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 2,
+      "sort_order": 244,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "992580f9-4fb9-44ae-a24b-8dd7fcd22340",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 3,
+      "sort_order": 245,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f6d101f4-bc9c-4b5c-9d02-9371181756e3",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 4,
+      "sort_order": 246,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5bf99d70-b450-4ffa-9a57-c6aaa0712a3a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 5,
+      "sort_order": 247,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cf424479-a61e-4bc4-91d3-4d22abbddd1d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 6,
+      "sort_order": 249,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6564e281-e4b6-461e-a174-fbdd78b0d62d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 7,
+      "sort_order": 250,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fc67386c-ddf3-4886-abc7-806919aa4036",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 8,
+      "sort_order": 251,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b1da689b-9dbc-418b-b8ae-ecb12312a8c6",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 10,
+      "sort_order": 252,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3f18ee4-1b31-4bc0-93c9-5b33070a6860",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 11,
+      "sort_order": 253,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "336c534c-68da-4f99-ab06-b915640e51df",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 12,
+      "sort_order": 254,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "aa498001-8eb8-427b-b282-da048a3af32b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 13,
+      "sort_order": 255,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6cd9b599-a1d7-4b0e-a458-ed246e7cc9fc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "ce9f60c7-32f1-4d5e-b4b8-a8a0aec63914",
+      "chapter_number": 14,
+      "sort_order": 256,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "995ecdf4-906f-4e60-948f-3b025d48c870",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 1,
+      "sort_order": 257,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b388f323-12f1-45be-ba5c-352809ab48c3",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 2,
+      "sort_order": 258,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b9cc4398-e9fa-43f8-9ad5-43f1143deaa2",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 3,
+      "sort_order": 259,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a1c56c40-8990-4131-862f-c99c27f26e5d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 4,
+      "sort_order": 260,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bea12a73-e05e-41e1-8cb6-f1c929cf144a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 5,
+      "sort_order": 261,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d6d48eb5-27ba-43e1-bc1d-f0267268655e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 6,
+      "sort_order": 262,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0962ed17-fdb6-47f5-a811-bcc49410f5bc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 7,
+      "sort_order": 263,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ade3d0b2-a1b4-475e-9b66-a13635e0e1d3",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 8,
+      "sort_order": 264,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e28305c4-723a-421b-b6ff-993db5207704",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 9,
+      "sort_order": 265,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "61a421c7-db5e-4f71-bbb0-6d2663a75e81",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 10,
+      "sort_order": 266,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2b6e71b3-16e2-4ca5-ab7d-d17f3890d02a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 11,
+      "sort_order": 267,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "306418a0-a1e7-4497-a361-030cfa8991b6",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 12,
+      "sort_order": 268,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d2126652-3818-422c-9ed3-5c683291ba37",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 13,
+      "sort_order": 269,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9274d898-e9ec-4b3b-a9a7-47b55fcd6429",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 14,
+      "sort_order": 270,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "24dc670c-5376-4787-9c7e-f237a85cd4c2",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 15,
+      "sort_order": 271,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "499c7846-3dee-4990-abb5-e33b029de9e0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 16,
+      "sort_order": 272,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "026e1dda-e4c1-49fc-9610-75b9fc5a655a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "8f15b7a7-ba22-4f88-97d0-23ae0ae6bc09",
+      "chapter_number": 17,
+      "sort_order": 273,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e5d2cd6a-1968-4da2-b7f8-6e3ee6b63846",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 1,
+      "sort_order": 274,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "11111111-0000-4000-8000-000000000704",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 4,
+      "sort_order": 275,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ed7ad1bd-ae2c-41cf-86be-17d0a96bfaf0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 2,
+      "sort_order": 275,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "61126eb1-be1a-4de8-bce5-201a8354cdce",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 3,
+      "sort_order": 276,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7f29894c-7c03-49db-bd85-d13b31f97377",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 5,
+      "sort_order": 278,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6aca129b-19cb-450b-acbd-d1dca717e1c4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 6,
+      "sort_order": 279,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "466538c3-0795-4e60-ba9b-d29b8d4ff44b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 7,
+      "sort_order": 280,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2df15af4-e458-4789-8ebd-7f9b8b00fcaf",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 8,
+      "sort_order": 281,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1dc9316f-fb35-49b5-9258-21fc19346de1",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 9,
+      "sort_order": 282,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2995ad98-d6de-46bc-aed2-7f43c49c43c7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 10,
+      "sort_order": 283,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2a5ec33a-135b-47ba-ba5f-8cc0196a77e3",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 11,
+      "sort_order": 284,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4d7825df-372a-4812-bc31-1b2b099350fb",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 12,
+      "sort_order": 285,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3abadc2b-ecb0-4b7f-aead-0a5bafae5f24",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 13,
+      "sort_order": 286,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "11111111-0000-4000-8000-000000000718",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 18,
+      "sort_order": 287,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cfd221d2-9829-4bcf-adc0-5dbba59cf821",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 15,
+      "sort_order": 287,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "089aa065-2afd-4946-81bb-06d47f47b2f5",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 16,
+      "sort_order": 288,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f3abd273-5ed3-4d87-88c7-bd0635af31ce",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 17,
+      "sort_order": 289,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a733a6f8-6a61-4279-8399-0d7da0e9233e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 19,
+      "sort_order": 291,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e45798c7-86d4-443b-a6b2-42f4c1a5e91b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 20,
+      "sort_order": 292,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9697a4c8-02d6-4e4d-a141-bfb7129da495",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 21,
+      "sort_order": 293,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3127d91f-36aa-423a-acf1-90eb7b98b27c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 22,
+      "sort_order": 294,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0b139e89-1b94-4941-a212-8b17bd461a07",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 23,
+      "sort_order": 295,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "39fc7a37-2c22-4b57-9610-8efa197f9675",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 24,
+      "sort_order": 296,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "58a46755-fdfd-4ce8-b3cf-93a8d5bf3c97",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 25,
+      "sort_order": 297,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3da0f0e-caaa-4319-b011-67fd7c10d511",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 26,
+      "sort_order": 298,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "de52fa45-06e5-4fbb-bb0d-3e5665f58633",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "af4656a7-9df9-46f3-a47b-897fb2f4bf17",
+      "chapter_number": 27,
+      "sort_order": 299,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ce2080dd-3760-4b03-be13-85f8ccacac47",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 1,
+      "sort_order": 300,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "11111111-0000-4000-8000-000000000906",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 6,
+      "sort_order": 301,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e741e90b-0022-4eb7-bae8-6f7d100494f4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 2,
+      "sort_order": 301,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "93dd9639-3ffa-493a-84fc-8ed102fe21cb",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 3,
+      "sort_order": 302,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8e52f732-f0d5-45b8-9d76-aa3ad6311124",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 4,
+      "sort_order": 303,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7ac5f527-b6c6-4eda-8fcb-f483c43ca28e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 5,
+      "sort_order": 304,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3e039cf8-fac1-4477-b882-e5b2fc60a66c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 7,
+      "sort_order": 306,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9c463a25-6eda-4ff2-bf33-b3c1d3932dd5",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 8,
+      "sort_order": 307,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5027cf35-e6a6-4276-b85c-5f94c26197c8",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 9,
+      "sort_order": 308,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a90e499e-dcca-4be0-9350-07ccb03f945d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 10,
+      "sort_order": 309,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fa7a6ad2-7b07-4314-8289-ecc433b8be62",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 11,
+      "sort_order": 310,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f470ab5f-42d6-44d0-a110-ad75a7ea5d5b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 12,
+      "sort_order": 311,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "639b4ad2-6625-442c-af74-f4e91db27f3a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 13,
+      "sort_order": 312,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f468230b-8431-4295-aee0-ea48085a7c62",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 14,
+      "sort_order": 313,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0b720878-87b3-4d41-94ac-330960413de9",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 15,
+      "sort_order": 314,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "56e6df03-2603-4efb-aa2d-cae52e64ec0f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 16,
+      "sort_order": 315,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "29d9521c-1b63-4f43-a612-aa800615839d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 17,
+      "sort_order": 316,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "69149592-9096-4ef4-b070-9a97c4309a6f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "901b6695-1a6f-4991-ad3b-80cc70826c61",
+      "chapter_number": 18,
+      "sort_order": 317,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b77813c0-cd01-4908-b9d3-8efc302d060e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 1,
+      "sort_order": 318,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2a2feed1-940b-405c-b6c1-9291c1af1be9",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 2,
+      "sort_order": 319,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "52397783-3fdf-493f-95c8-9c83c0cf5df0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 3,
+      "sort_order": 320,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "25806b8f-294f-4d27-ad63-fe55bb3bc0fb",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 4,
+      "sort_order": 321,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "457c65c3-d130-4f02-b137-7011f726b97f",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 5,
+      "sort_order": 322,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dbef06ca-4f72-4286-8112-340af7e99a36",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 6,
+      "sort_order": 323,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f140fdd5-11c5-415b-a4c1-54ba43d24af5",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 7,
+      "sort_order": 324,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3cadb7a1-0357-4b06-89ab-60ceb55a15d7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 8,
+      "sort_order": 325,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e414c56e-6da9-468c-8449-6ceda4694364",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 9,
+      "sort_order": 326,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "87781cea-d368-4622-808e-bd8293c8aa71",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 10,
+      "sort_order": 327,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d89ad84b-8866-469e-9d1c-afd3e74b4fa7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 11,
+      "sort_order": 328,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fbd35e25-8dc0-4131-abc1-d548c144ad10",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "f90e0e09-7bfe-4e44-a69c-188008ffe61a",
+      "chapter_number": 12,
+      "sort_order": 329,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "75ba6437-bd65-4e3e-ae59-f55a85b95813",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 1,
+      "sort_order": 330,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "708b5bec-5a3c-40f9-8661-4fe17d59a3d9",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 2,
+      "sort_order": 331,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a4c08313-1843-4ed8-8f76-2c91eb6709d4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 3,
+      "sort_order": 332,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0d1bbbcb-69ea-4d5a-a406-7c7275fff437",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 4,
+      "sort_order": 333,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ea4f7e78-04ae-4887-a71a-a42648e17dbc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 5,
+      "sort_order": 334,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3d7713db-e696-4158-afc3-7cb339783f5b",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 6,
+      "sort_order": 335,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "707c0c59-e067-437f-b1c4-4d0bf302399a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 7,
+      "sort_order": 336,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "04e3f2a2-9d90-42d8-b6ac-45079bf3f86a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 8,
+      "sort_order": 337,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f16fd11a-9e14-4a90-832e-637e8f5bf096",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 10,
+      "sort_order": 338,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f176a5ac-3edd-452b-b081-837b88fcf308",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 11,
+      "sort_order": 339,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "177e8121-cb5e-4ce1-bdef-74b58ef29bff",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 12,
+      "sort_order": 340,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3b31a877-f21f-46f2-9022-1812e20169dc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 13,
+      "sort_order": 341,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d5582f3a-07de-4485-952d-e93b80adee33",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 14,
+      "sort_order": 342,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5d0eae13-1a05-48ad-a8c6-0e389058a9ba",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 15,
+      "sort_order": 343,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "30446ee6-15cf-4221-bee7-fbbebf63b60e",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 16,
+      "sort_order": 344,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c5b21465-1f91-4929-b578-da0d10636972",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 17,
+      "sort_order": 345,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6f7fdee0-292f-46fe-8285-e86972b65b51",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 18,
+      "sort_order": 346,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "33b2674b-6535-4367-9b21-ae054a6c2f01",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 19,
+      "sort_order": 347,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bc544d8e-e4c8-4812-b5a9-7a4a89f24516",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 20,
+      "sort_order": 348,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "85021a70-9540-4999-bd1d-a964970d5d56",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 21,
+      "sort_order": 349,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b1de691b-adfb-450b-bf19-d99affbaec7c",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 22,
+      "sort_order": 350,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "597b4db3-cc61-41a2-b5e4-e5aaf8c629a8",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 23,
+      "sort_order": 351,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7ffa7e56-ee7d-4f98-b165-497d63ff40d0",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 24,
+      "sort_order": 352,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "adbace43-ce8f-4c02-adc6-fc17abaae14a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 25,
+      "sort_order": 353,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "88b99065-0e7d-4032-8c9e-fb4fbbbea100",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 26,
+      "sort_order": 354,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "18a931de-15ae-4b1f-8928-497924442399",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 27,
+      "sort_order": 355,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "796579fe-47ad-4151-a4bc-0ec3199d54a8",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 28,
+      "sort_order": 356,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fd88d127-d53f-42aa-90d4-b61f72c0c865",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 29,
+      "sort_order": 357,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "40628b6a-70cb-4034-a4f3-ad9f17cc1124",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 30,
+      "sort_order": 358,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "66924c70-a379-49b9-989f-360b8f25b61a",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 31,
+      "sort_order": 359,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "70763141-a0db-4ce7-b10d-75da41a3dd86",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 32,
+      "sort_order": 360,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "964a98ff-c935-4a33-bb1f-fe19d227e7b6",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 33,
+      "sort_order": 361,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5b756141-2def-4ff4-8c5b-3bebbf51aa69",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 34,
+      "sort_order": 362,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "323d067f-3db9-4b27-8dbc-ab5b937835fc",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 35,
+      "sort_order": 363,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e1e45bf8-62f4-41e7-bcf4-487832d31eb2",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 36,
+      "sort_order": 364,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9de7fab9-75a4-46c3-bcc9-b73c8fca5977",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 37,
+      "sort_order": 365,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3922ee43-f6c6-479c-a64c-6aa4d43454b7",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 38,
+      "sort_order": 366,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "795ee270-a296-49bc-9f52-940513091211",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 39,
+      "sort_order": 367,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "da91c013-5356-4318-9740-046d038a7ea4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 40,
+      "sort_order": 368,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6896c440-6af8-41b9-9ee2-8eeccd5944b4",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 41,
+      "sort_order": 369,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "933b3545-ed01-441b-b86e-cf9e15b20ff3",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 42,
+      "sort_order": 370,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fbd5cc9c-5817-4d93-866d-5d987d96e408",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 43,
+      "sort_order": 371,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "45ab704f-b989-4bc8-8570-267c1a039a6d",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 44,
+      "sort_order": 372,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "51d70063-7b10-47bf-861a-12dd47864a38",
+      "book_id": "1b52757a-245c-4b9e-a79a-9c4518dff94a",
+      "collection_id": "c3ef0f78-c5d4-4182-bc07-9aab5cc289a3",
+      "chapter_number": 45,
+      "sort_order": 373,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
