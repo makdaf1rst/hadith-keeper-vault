@@ -1,0 +1,215 @@
+{
+  "collections": [],
+  "chapters": [
+    {
+      "id": "092524af-35bb-494a-be14-dd65e672f163",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 1,
+      "sort_order": 186,
+      "title_bn": "১ — অধ্যায়: উপহার দেওয়ার প্রতি উৎসাহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f8bed569-b807-4cb0-91ed-3b2f39f2daec",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 2,
+      "sort_order": 187,
+      "title_bn": "২ — অধ্যায়: অল্প উপহারও গ্রহণ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d2a432fe-8772-4c2a-8fd2-fadea7ac53b8",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 3,
+      "sort_order": 188,
+      "title_bn": "৩ — অধ্যায়: মুসলিমদের উপহার গ্রহণ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bbc0ccf8-82f7-400a-b275-6767eb2300d6",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 4,
+      "sort_order": 189,
+      "title_bn": "৪ — অধ্যায়: কেউ কেউ নবী ﷺ তাঁর কোনো কোনো স্ত্রীর কাছে থাকাকালে তাঁকে উপহার দেওয়ার সময় বেছে নিত—এটি ন্যায়বিচারের পরিপন্থী নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d5912162-9f5e-43eb-9112-7e9216c5c39e",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 5,
+      "sort_order": 190,
+      "title_bn": "৫ — অধ্যায়: যে উপহার প্রত্যাখ্যান করা উচিত নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f5cee044-ae48-48db-bbc6-1c6fe069c936",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 6,
+      "sort_order": 191,
+      "title_bn": "৬ — অধ্যায়: উপহারের প্রতিদান দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a5a8732e-ecd4-44fb-8c7a-d4f009f986d6",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 7,
+      "sort_order": 192,
+      "title_bn": "৭ — অধ্যায়: নবী ﷺ-এর কিছু পরিচিত গোত্র ছাড়া অন্যদের উপহার গ্রহণ থেকে বিরত থাকা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ba010525-ead5-412f-8497-1cb0ccfa5234",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 8,
+      "sort_order": 193,
+      "title_bn": "৮ — অধ্যায়: সন্তানদের মধ্যে উপহার দেওয়ার ক্ষেত্রে ন্যায়বিচার",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "54600325-c9aa-4b03-81cc-40bdcfb9879e",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 9,
+      "sort_order": 194,
+      "title_bn": "৯ — অধ্যায়: পিতা-মাতা ব্যতীত অন্য কারও জন্য দেওয়া উপহার ফিরিয়ে নেওয়ার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9c66a54e-a2bd-45f2-be0e-d114cfad1c1c",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 10,
+      "sort_order": 195,
+      "title_bn": "১০ — অধ্যায়: যাদের জন্য উপহার গ্রহণ করা হারাম",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "48f4f2e7-c4df-4b7e-bee7-3cfb8fa413da",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 11,
+      "sort_order": 196,
+      "title_bn": "১১ — অধ্যায়: কেউ উপহার দেয় বা দেওয়ার প্রতিশ্রুতি দেয়, তারপর তা পূরণের আগে মারা গেলে—তার পরবর্তীদের জন্য তা পূরণ করা বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a77f0481-48ea-4261-a722-0440bf2395dd",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 12,
+      "sort_order": 197,
+      "title_bn": "১২ — অধ্যায়: অনুপস্থিত এবং বণ্টনের সময় উপস্থিত না থাকা ব্যক্তির জন্য নেতার উপহার সংরক্ষণ করা বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "833b432d-63e7-442a-b105-3b19ac5b04f2",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 13,
+      "sort_order": 198,
+      "title_bn": "১৩ — অধ্যায়: কেউ এমন কিছু উপহার দিলে যা ইতোমধ্যে গ্রহীতার দখলে আছে—উপহারটি বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f9dd1f24-d6e7-41ad-b59d-dee2b98a604e",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 14,
+      "sort_order": 199,
+      "title_bn": "১৪ — অধ্যায়: যে উপহারের ব্যবহার অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e1433e9f-3ed5-44fc-a8ce-9a7078397177",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 15,
+      "sort_order": 200,
+      "title_bn": "১৫ — অধ্যায়: মুশরিকদের উপহার প্রত্যাখ্যান সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8352106c-51bc-4e46-86d2-4953ef85cf38",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 16,
+      "sort_order": 201,
+      "title_bn": "১৬ — অধ্যায়: মুশরিকদের উপহার গ্রহণ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "691cef07-13f0-4dab-bc8c-d213978c1fb1",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 17,
+      "sort_order": 202,
+      "title_bn": "১৭ — অধ্যায়: মুশরিকদের উপহার দেওয়া",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “যারা দ্বীনের কারণে তোমাদের বিরুদ্ধে যুদ্ধ করেনি এবং তোমাদের ঘরবাড়ি থেকে বের করে দেয়নি, তাদের সঙ্গে সদাচরণ ও ন্যায়সঙ্গত আচরণ করতে আল্লাহ তোমাদের নিষেধ করেন না। নিশ্চয় আল্লাহ ন্যায়বিচারকারীদের ভালোবাসেন।”\n[সূরা আল-মুমতাহানাহ: ৮]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “যারা দ্বীনের কারণে তোমাদের বিরুদ্ধে যুদ্ধ করেনি এবং তোমাদের ঘরবাড়ি থেকে বের করে দেয়নি, তাদের সঙ্গে সদাচরণ ও ন্যায়সঙ্গত আচরণ করতে আল্লাহ তোমাদের নিষেধ করেন না। নিশ্চয় আল্লাহ ন্যায়বিচারকারীদের ভালোবাসেন।”\n[সূরা আল-মুমতাহানাহ: ৮]"
+    },
+    {
+      "id": "1bfb4dba-4570-4d85-a884-fe562ff47ed0",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 18,
+      "sort_order": 203,
+      "title_bn": "১৮ — অধ্যায়: দাম্পত্য জীবন শুরু করার সময় কনের জন্য পোশাক ধার নেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3aa86adc-7be8-4d24-9c3b-97cc9d8660c9",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 19,
+      "sort_order": 204,
+      "title_bn": "১৯ — অধ্যায়: উমরা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c4096d45-c1a8-4d30-a3c4-b7690236202d",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 20,
+      "sort_order": 205,
+      "title_bn": "২০ — অধ্যায়: এই মত যে, ‘এটি তোমার ও তোমার বংশধরদের’ না বললে তা দাতার কাছে ফিরে যায়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "04f224ea-68a4-4a76-9bac-56001be249a9",
+      "book_id": "00445d04-6e00-45cd-9a47-43bbbf40d5a4",
+      "collection_id": null,
+      "chapter_number": 21,
+      "sort_order": 206,
+      "title_bn": "২১ — অধ্যায়: রুকবা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
