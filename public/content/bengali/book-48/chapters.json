@@ -446,9 +446,9 @@
       "collection_id": "1df34753-55dd-4277-9438-43abdcb46fe7",
       "chapter_number": 1,
       "sort_order": 1,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "১ — অধ্যায়: নবী ﷺ-এর হজ্জ, যা বিদায় হজ্জ নামে পরিচিত",
+      "intro_bn_source": "নবী ﷺ দশম হিজরির যুল-কাদাহ মাসের পাঁচ দিন বাকি থাকতে বৃহস্পতিবার মদিনা থেকে রওনা হন। বিপুলসংখ্যক মানুষ তাঁর সঙ্গে ছিল।",
+      "intro_bn_display": "নবী ﷺ দশম হিজরির যুল-কাদাহ মাসের পাঁচ দিন বাকি থাকতে বৃহস্পতিবার মদিনা থেকে রওনা হন। বিপুলসংখ্যক মানুষ তাঁর সঙ্গে ছিল।"
     },
     {
       "id": "960c05cb-4eae-4bb3-8304-88dd3b3f0ac5",
@@ -976,7 +976,7 @@
       "collection_id": "1df34753-55dd-4277-9438-43abdcb46fe7",
       "chapter_number": 2,
       "sort_order": 2,
-      "title_bn": null,
+      "title_bn": "২ — অধ্যায়: বিদায় হজ্জের সময় একটি মহান খুতবা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1276,7 +1276,7 @@
       "collection_id": "1df34753-55dd-4277-9438-43abdcb46fe7",
       "chapter_number": 3,
       "sort_order": 3,
-      "title_bn": null,
+      "title_bn": "৩ — অধ্যায়: নবী ﷺ-এর মক্কায় অবস্থান",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1586,7 +1586,7 @@
       "collection_id": "1df34753-55dd-4277-9438-43abdcb46fe7",
       "chapter_number": 4,
       "sort_order": 4,
-      "title_bn": null,
+      "title_bn": "৪ — অধ্যায়: বিদায় হজ্জের সময় নবী ﷺ কতদিন মক্কায় অবস্থান করেছিলেন",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -1956,7 +1956,7 @@
       "collection_id": "1df34753-55dd-4277-9438-43abdcb46fe7",
       "chapter_number": 5,
       "sort_order": 5,
-      "title_bn": null,
+      "title_bn": "৫ — অধ্যায়: মক্কা থেকে মদিনায় ফেরার পথে খুম্মের পানির কাছে নবী ﷺ-এর খুতবা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -2486,7 +2486,7 @@
       "collection_id": "50db1d99-60cf-4a8f-9001-327db0b556ca",
       "chapter_number": 6,
       "sort_order": 6,
-      "title_bn": null,
+      "title_bn": "৬ — অধ্যায়: খালিদ ইবন আল-ওয়ালীদকে ইয়ামানে পাঠানো",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -2746,7 +2746,7 @@
       "collection_id": "50db1d99-60cf-4a8f-9001-327db0b556ca",
       "chapter_number": 7,
       "sort_order": 7,
-      "title_bn": null,
+      "title_bn": "৭ — অধ্যায়: বিদায় হজ্জের আগে আবূ মূসা ও মুʿআযকে ইয়ামানে পাঠানো",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -3246,7 +3246,7 @@
       "collection_id": "50db1d99-60cf-4a8f-9001-327db0b556ca",
       "chapter_number": 8,
       "sort_order": 8,
-      "title_bn": null,
+      "title_bn": "৮ — অধ্যায়: জারীর ইবন আবদুল্লাহকে যূ আল-খালাসাহর কাছে পাঠানো",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
