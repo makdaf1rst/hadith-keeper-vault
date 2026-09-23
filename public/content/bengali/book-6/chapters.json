@@ -1,0 +1,195 @@
+{
+  "collections": [],
+  "chapters": [
+    {
+      "id": "c3000000-0000-4000-8000-000000000074",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 1,
+      "sort_order": 0,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000075",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 2,
+      "sort_order": 1,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000076",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 3,
+      "sort_order": 2,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000077",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 4,
+      "sort_order": 3,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000079",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 5,
+      "sort_order": 4,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000080",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 6,
+      "sort_order": 5,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000081",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 7,
+      "sort_order": 6,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000082",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 8,
+      "sort_order": 7,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000084",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 9,
+      "sort_order": 8,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000086",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 10,
+      "sort_order": 9,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000088",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 11,
+      "sort_order": 10,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000089",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 12,
+      "sort_order": 11,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000090",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 13,
+      "sort_order": 12,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000091",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 14,
+      "sort_order": 13,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000092",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 15,
+      "sort_order": 14,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000093",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 16,
+      "sort_order": 15,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000094",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 17,
+      "sort_order": 16,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000095",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 18,
+      "sort_order": 17,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c3000000-0000-4000-8000-000000000096",
+      "book_id": "b0000000-0000-4000-8000-000000000006",
+      "collection_id": null,
+      "chapter_number": 19,
+      "sort_order": 18,
+      "title_bn": null,
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
