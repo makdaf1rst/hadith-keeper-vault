@@ -1,0 +1,482 @@
+{
+  "collections": [
+    {
+      "id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "sort_order": 1,
+      "title_bn": "১ — কুরআনের উলূম সম্পর্কে বর্ণিত বিষয়সমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "sort_order": 2,
+      "title_bn": "২ — কুরআনের ফযীলত সম্পর্কে বর্ণিত বিষয়সমূহের সমষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "83835357-1c4c-4646-99b2-ee70fa9b7741",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: কুরআনের ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7ca4b6a3-9f27-4d66-a049-84c76b719582",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: কুরআনের সর্বপ্রথম নাযিল হওয়া অংশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "593b3fe5-54cc-499d-982b-524ee1d47fb6",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: কুরআনের সর্বশেষ নাযিল হওয়া অংশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e15be084-d5c9-4568-bc44-f80acca3dbc7",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: কুরআন তিলাওয়াতের ফযীলত",
+      "intro_bn_source": "কুরআন বেশি বেশি তিলাওয়াত করা মুস্তাহাব।\nমহান আল্লাহ কুরআন তিলাওয়াতকারীদের প্রশংসা করে বলেছেন:\n“তারা সবাই একরকম নয়। আহলে কিতাবের মধ্যে একটি সৎ ও অবিচল সম্প্রদায় রয়েছে, যারা রাতের বিভিন্ন সময়ে আল্লাহর আয়াতসমূহ তিলাওয়াত করে এবং সিজদা করে।”\n[সূরা আলে ‘ইমরান ৩:১১৩]\nঅর্থাৎ, তারা সালাতে তা তিলাওয়াত করে।",
+      "intro_bn_display": "কুরআন বেশি বেশি তিলাওয়াত করা মুস্তাহাব।\nমহান আল্লাহ কুরআন তিলাওয়াতকারীদের প্রশংসা করে বলেছেন:\n“তারা সবাই একরকম নয়। আহলে কিতাবের মধ্যে একটি সৎ ও অবিচল সম্প্রদায় রয়েছে, যারা রাতের বিভিন্ন সময়ে আল্লাহর আয়াতসমূহ তিলাওয়াত করে এবং সিজদা করে।”\n[সূরা আলে ‘ইমরান ৩:১১৩]\nঅর্থাৎ, তারা সালাতে তা তিলাওয়াত করে।"
+    },
+    {
+      "id": "830440c2-6e64-4cb3-8f5c-3553bed8bd87",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: কুরআন তিলাওয়াতের আগে আল্লাহর কাছে আশ্রয় চাওয়া মুস্তাহাব",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“তুমি যখন কুরআন তিলাওয়াত করবে, তখন বিতাড়িত শয়তান থেকে আল্লাহর কাছে আশ্রয় চাও।”\n[সূরা আন-নাহল ১৬:৯৮]\nএর অর্থ: যখন তুমি তা তিলাওয়াত করার ইচ্ছা করবে; যেমন মহান আল্লাহ বলেছেন:\n“হে ঈমানদারগণ, যখন তোমরা সালাতের জন্য দাঁড়াবে, তখন তোমাদের মুখমণ্ডল ধৌত করো…”\n[সূরা আল-মায়িদাহ ৫:৬]\nআশ্রয় চাওয়ার অর্থ হলো কুরআন তিলাওয়াতের সময় শয়তানের বাধা থেকে নিজেকে রক্ষা করা। এ কারণে তিলাওয়াত শুরু করার আগে আশ্রয় চাওয়া পরে চাওয়ার চেয়ে অধিক উপযুক্ত।\nআশ্রয় চাওয়ার বাক্য হিসেবে এতটুকু বলাই যথেষ্ট:\n“আমি বিতাড়িত শয়তান থেকে আল্লাহর কাছে আশ্রয় চাই।”\nআরও কিছু বাক্য বর্ণিত হয়েছে, তবে সেগুলোর সনদ নিয়ে আলোচনা রয়েছে।",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“তুমি যখন কুরআন তিলাওয়াত করবে, তখন বিতাড়িত শয়তান থেকে আল্লাহর কাছে আশ্রয় চাও।”\n[সূরা আন-নাহল ১৬:৯৮]\nএর অর্থ: যখন তুমি তা তিলাওয়াত করার ইচ্ছা করবে; যেমন মহান আল্লাহ বলেছেন:\n“হে ঈমানদারগণ, যখন তোমরা সালাতের জন্য দাঁড়াবে, তখন তোমাদের মুখমণ্ডল ধৌত করো…”\n[সূরা আল-মায়িদাহ ৫:৬]\nআশ্রয় চাওয়ার অর্থ হলো কুরআন তিলাওয়াতের সময় শয়তানের বাধা থেকে নিজেকে রক্ষা করা। এ কারণে তিলাওয়াত শুরু করার আগে আশ্রয় চাওয়া পরে চাওয়ার চেয়ে অধিক উপযুক্ত।\nআশ্রয় চাওয়ার বাক্য হিসেবে এতটুকু বলাই যথেষ্ট:\n“আমি বিতাড়িত শয়তান থেকে আল্লাহর কাছে আশ্রয় চাই।”\nআরও কিছু বাক্য বর্ণিত হয়েছে, তবে সেগুলোর সনদ নিয়ে আলোচনা রয়েছে।"
+    },
+    {
+      "id": "050c73d0-f171-4726-9f19-11db733d4afc",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: কুরআন নাযিল হওয়ার সময়কাল",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a73d850b-277a-43f8-9055-29dcc1750801",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: কুরআন শেখা ও শেখানোতে উৎসাহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9258e996-c49a-41b5-94d5-f3a1b5b16dfc",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: যে অসুস্থতায় নবী ﷺ ইন্তেকাল করেন, সে সময় ওহী সবচেয়ে বেশি নাযিল হতো",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8af78555-8763-4090-8a46-28023338441f",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: কুরআন নিয়ে বিবাদ করা নিষিদ্ধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "46b8da4e-4132-4541-89bb-7d9565a4c4a6",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: কুরআনের সঙ্গীর মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b6c9e150-3e8a-4f48-a9bb-e8db15f8da4e",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: কুরআন তিলাওয়াতকারীর ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c723be17-3e9f-40ba-83da-ff8265bccbfe",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: কুরআন সাত হরফে নাযিল হয়েছে এবং এর অর্থ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a1356fa2-76fc-4e70-8446-d85e3aab01d7",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: কুরআন তিলাওয়াত করে সালাতে দাঁড়ানো ব্যক্তির ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "24a80a38-509f-49f4-b00c-30a917507b31",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: আল্লাহর কিতাবের এক অংশ অন্য অংশকে সত্যায়ন করে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "80c2cc38-975a-4573-8d13-3b95ec2c6e6f",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: নবী ﷺ-এর জীবদ্দশায় সম্পূর্ণ কুরআন লিখিত ছিল এবং অন্তরেও সংরক্ষিত ছিল",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই এর সংকলন ও পাঠ করানো আমার দায়িত্ব।”\n[সূরা আল-কিয়ামাহ ৭৫:১৭]\nএখানে ‘সংকলন’ বলতে মুখস্থের মাধ্যমে সংরক্ষণ বোঝানো হয়েছে। নবী ﷺ কুরআন মুখস্থকারীদের মধ্যে সর্বাগ্রে ছিলেন। তাঁর পরে বহু সাহাবি কুরআন মুখস্থ করেছিলেন; তাদের সঠিক সংখ্যা জানা নেই।\n‘সংকলন’-এর দ্বিতীয় অর্থ হলো লিখে রাখা। নবী ﷺ ইন্তেকাল করার আগে সম্পূর্ণ কুরআন খেজুরের ডাঁটা, খেজুরের ডাল, পাতলা সাদা পাথর, চামড়ার টুকরা, চর্ম, কাঁধের হাড়, অন্যান্য হাড়, উটের জিন এবং সে সময়ে পাওয়া অন্যান্য লেখার উপকরণে লিখিত হয়েছিল।\nএই লিখিত উপকরণগুলো নবী ﷺ-এর গৃহে সংরক্ষিত ছিল, তবে তখনও সেগুলো একটি বাঁধাই করা গ্রন্থে একত্র ও বিন্যস্ত করা হয়নি।",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“নিশ্চয়ই এর সংকলন ও পাঠ করানো আমার দায়িত্ব।”\n[সূরা আল-কিয়ামাহ ৭৫:১৭]\nএখানে ‘সংকলন’ বলতে মুখস্থের মাধ্যমে সংরক্ষণ বোঝানো হয়েছে। নবী ﷺ কুরআন মুখস্থকারীদের মধ্যে সর্বাগ্রে ছিলেন। তাঁর পরে বহু সাহাবি কুরআন মুখস্থ করেছিলেন; তাদের সঠিক সংখ্যা জানা নেই।\n‘সংকলন’-এর দ্বিতীয় অর্থ হলো লিখে রাখা। নবী ﷺ ইন্তেকাল করার আগে সম্পূর্ণ কুরআন খেজুরের ডাঁটা, খেজুরের ডাল, পাতলা সাদা পাথর, চামড়ার টুকরা, চর্ম, কাঁধের হাড়, অন্যান্য হাড়, উটের জিন এবং সে সময়ে পাওয়া অন্যান্য লেখার উপকরণে লিখিত হয়েছিল।\nএই লিখিত উপকরণগুলো নবী ﷺ-এর গৃহে সংরক্ষিত ছিল, তবে তখনও সেগুলো একটি বাঁধাই করা গ্রন্থে একত্র ও বিন্যস্ত করা হয়নি।"
+    },
+    {
+      "id": "4b2662b7-b6f9-466b-a0b6-3f8f1b8584ab",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: দক্ষ কুরআন তিলাওয়াতকারী এবং কষ্ট করে তিলাওয়াতকারীর ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8fc1b297-da10-47c8-bf96-3c35bd91b480",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: আল্লাহ কুরআনের মাধ্যমে কিছু মানুষকে উচ্চ মর্যাদা দেন এবং কিছু মানুষকে অবনমিত করেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "15e55a59-56d5-4691-ab6b-b126cd82c205",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: রাসূলুল্লাহ ﷺ-এর জীবদ্দশায় ওহী লেখকগণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6b1363b9-5eca-44b1-a63d-81df7b538a55",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: কুরআন তিলাওয়াতের সময় প্রশান্তি ও ফেরেশতাদের অবতরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0896323c-bb29-4321-87e0-b81c12f303c5",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: দুই সূরার মধ্যে বিসমিল্লাহ পৃথককারী চিহ্ন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3a7d2be1-5dee-430f-9677-340bcecc6e6b",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: নবী ﷺ-এর জীবদ্দশায় প্রধান কুরআন পাঠকগণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b7995a14-ec5a-4d56-8aed-cd6ef199fd0a",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: কুরআনের লোকদের জন্য কুরআনের শাফাআত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0c745583-435e-4935-8539-703e27fdd023",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: কুরআন মুখস্থকারীর ফযীলত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e00fd13b-0084-4063-9756-47ee51fdb20d",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: নবী ﷺ দুই মলাটের মধ্যবর্তী কুরআন ছাড়া আর কিছু রেখে যাননি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1e7d896c-09d4-42e5-b6c0-1a36a06b8e0b",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: কুরআন পুনরালোচনা ও সংরক্ষণে উৎসাহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cbac7fdd-048d-4106-9d2d-902b99cb6dc2",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: নবী ﷺ জিবরীলের সঙ্গে বর্তমান ক্রম অনুযায়ী কুরআন পুনরালোচনা করতেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4173792d-77b5-47ff-a478-441a534c0100",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: আবূ বকর আস-সিদ্দীকের খিলাফতে কুরআন সংকলন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5f01ae29-abc4-4e1b-b146-6d2868e73647",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: শিশুদের কুরআন শিক্ষা দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d2ec3456-2e03-4a42-b9b5-ebdf851010f0",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: যে কুরআন তিলাওয়াত করতে অক্ষম, সে তাকবীর, তাসবীহ, তাহমীদ ও তাহলীল দ্বারা আল্লাহকে স্মরণ করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "de65d75f-0e62-4008-989a-e27d4246fcdf",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: কিছু সাহাবির ব্যক্তিগত লিখিত মুসহাফ সম্পর্কে বর্ণনা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b2dc3674-d514-4ed1-b749-02ba8e0f90e0",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: ‘ক্বারী’ নামে পরিচিত হওয়ার জন্য কুরআন তিলাওয়াত করার বিরুদ্ধে সতর্কতা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5ba417f5-ede7-44cd-ac0d-4b72651f4999",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: উসমান (রাঃ) মানুষকে একটি মানক মুসহাফের ওপর একত্রিত করেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1c34db59-c6e0-4482-955e-acd69dfbe0a4",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: কত সময়ের মধ্যে কুরআন খতম করা উচিত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1c9ab60a-8496-4814-ae7d-c84a500618f0",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "09e8da73-5f3b-44d9-99f0-0fac47814350",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: আরোহণ অবস্থায় কুরআন তিলাওয়াত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4603d7ac-729e-412d-bd4a-ec78447eab24",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: কুরআন তিলাওয়াতের সময় কণ্ঠ সুন্দর করা মুস্তাহাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c9d4b3d0-2e79-4cd4-8739-a30a0ccd4204",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: কুরআন তিলাওয়াতের সময় কাঁদা",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“তারা কাঁদতে কাঁদতে মুখের ওপর লুটিয়ে পড়ে, আর তা তাদের বিনয় আরও বাড়িয়ে দেয়।”\n[সূরা আল-ইসরা ১৭:১০৯]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“তারা কাঁদতে কাঁদতে মুখের ওপর লুটিয়ে পড়ে, আর তা তাদের বিনয় আরও বাড়িয়ে দেয়।”\n[সূরা আল-ইসরা ১৭:১০৯]"
+    },
+    {
+      "id": "f82c3105-488d-4c78-a3e2-ae536859a055",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: যেসব শব্দ দিয়ে কখনো কখনো কুরআন তিলাওয়াত শেষ করা যায়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8c1e7ba9-49ab-41c9-99df-d1b63f78abd0",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: ধীরে ও স্পষ্টভাবে কুরআন তিলাওয়াত করা মুস্তাহাব",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন:\n“কুরআন ধীরে, স্পষ্ট ও পরিমিতভাবে তিলাওয়াত করো।”\n[সূরা আল-মুযযাম্মিল ৭৩:৪]\nআর তিনি বলেছেন:\n“এটি এমন এক কুরআন, যাকে আমি ভাগ ভাগ করে নাযিল করেছি, যাতে তুমি মানুষের কাছে ধীরে ধীরে তা পাঠ করতে পারো; এবং আমি তা পর্যায়ক্রমে নাযিল করেছি।”\n[সূরা আল-ইসরা ১৭:১০৬]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন:\n“কুরআন ধীরে, স্পষ্ট ও পরিমিতভাবে তিলাওয়াত করো।”\n[সূরা আল-মুযযাম্মিল ৭৩:৪]\nআর তিনি বলেছেন:\n“এটি এমন এক কুরআন, যাকে আমি ভাগ ভাগ করে নাযিল করেছি, যাতে তুমি মানুষের কাছে ধীরে ধীরে তা পাঠ করতে পারো; এবং আমি তা পর্যায়ক্রমে নাযিল করেছি।”\n[সূরা আল-ইসরা ১৭:১০৬]"
+    },
+    {
+      "id": "1d9fca65-d483-4cb1-86cc-9413233e16ac",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "২২ — অধ্যায়: কুরআনের পর্যায়ক্রমিক অবতরণ এবং আত্মার পরিশুদ্ধি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7f36547f-ba21-4454-b401-b0023fb9e5e1",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "২৩ — অধ্যায়: ‘আমি অমুক আয়াত ভুলে গেছি’ বলা অপছন্দনীয়; ‘আমাকে তা ভুলিয়ে দেওয়া হয়েছে’ বলা বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0d90c1f2-4531-4818-966f-145795aad358",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "২৪ — অধ্যায়: তিলাওয়াতের সময় পুনরাবৃত্তি ও কণ্ঠের ওঠানামা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3dfd6a8c-ec73-4ad6-8b31-bc595bbbe126",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "২৫ — অধ্যায়: কুরআনকে নিয়মিত অংশে ভাগ করে পাঠ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a5562e74-9529-445d-ae79-d7cf152459ef",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "২৬ — অধ্যায়: রুকু বা সিজদায় কুরআন তিলাওয়াত নিষিদ্ধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ff3e3ea6-b058-440d-88c2-fa5fba84194c",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "২৭ — অধ্যায়: কখনো কখনো মুসহাফের ক্রমের ভিন্ন ক্রমে কুরআন তিলাওয়াত বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ddc4ba12-915f-4c1e-a517-6b3b8f1c932e",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "২৮ — অধ্যায়: কুরআন তিলাওয়াতে আরব ও অনারব সমান",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a0fc09ff-7022-440e-8b2b-d4b5af34b231",
+      "book_id": "d96f1df3-dac1-4f93-8db2-964d7d62a40a",
+      "collection_id": "585c0dba-b78d-46c4-b142-ada2030e9d90",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "২৯ — অধ্যায়: তিলাওয়াতের সিজদায় যা বলা হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
