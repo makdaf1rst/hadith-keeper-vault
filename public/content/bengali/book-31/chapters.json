@@ -12,7 +12,7 @@
       "id": "228944db-220b-461a-bbbb-37413526323b",
       "book_id": "741fc74d-13a4-4aa5-ae6d-19d7dab1e5b1",
       "sort_order": 2,
-      "title_bn": null,
+      "title_bn": "২ — সাক্ষ্য সম্পর্কে বর্ণিত অধ্যায়সমূহের সমষ্টি",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -20,7 +20,7 @@
       "id": "80bcdb3c-8a83-4c38-826c-36a1b0292fb6",
       "book_id": "741fc74d-13a4-4aa5-ae6d-19d7dab1e5b1",
       "sort_order": 3,
-      "title_bn": null,
+      "title_bn": "৩ — নবী ﷺ-এর বিচারসমূহ সম্পর্কে বর্ণিত বিষয়ের সমষ্টি",
       "intro_bn_source": null,
       "intro_bn_display": null
     }
@@ -232,9 +232,9 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 1,
       "sort_order": 20,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "১ — অধ্যায়: সাক্ষ্যের ক্ষেত্রে ন্যায়পরায়ণ চরিত্রের শর্ত",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “তোমাদের মধ্য থেকে দুইজন ন্যায়পরায়ণ ব্যক্তিকে সাক্ষী রাখো এবং আল্লাহর জন্য সাক্ষ্য প্রতিষ্ঠা করো। এর মাধ্যমে তাকে উপদেশ দেওয়া হয়, যে আল্লাহ ও শেষ দিবসে ঈমান রাখে। আর যে আল্লাহকে ভয় করে, তিনি তার জন্য উত্তরণের পথ সৃষ্টি করেন।” [সূরা আত-তালাক: ২]\n\nআর মহান আল্লাহ বলেছেন: “হে ঈমানদারগণ, তোমাদের কারও মৃত্যু উপস্থিত হলে ওসিয়তের সময় তোমাদের মধ্য থেকে দুইজন ন্যায়পরায়ণ ব্যক্তি সাক্ষী হবে।” [সূরা আল-মায়িদাহ: ১০৬]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “তোমাদের মধ্য থেকে দুইজন ন্যায়পরায়ণ ব্যক্তিকে সাক্ষী রাখো এবং আল্লাহর জন্য সাক্ষ্য প্রতিষ্ঠা করো। এর মাধ্যমে তাকে উপদেশ দেওয়া হয়, যে আল্লাহ ও শেষ দিবসে ঈমান রাখে। আর যে আল্লাহকে ভয় করে, তিনি তার জন্য উত্তরণের পথ সৃষ্টি করেন।” [সূরা আত-তালাক: ২]\n\nআর মহান আল্লাহ বলেছেন: “হে ঈমানদারগণ, তোমাদের কারও মৃত্যু উপস্থিত হলে ওসিয়তের সময় তোমাদের মধ্য থেকে দুইজন ন্যায়পরায়ণ ব্যক্তি সাক্ষী হবে।” [সূরা আল-মায়িদাহ: ১০৬]"
     },
     {
       "id": "d8d713c8-cff8-412b-9107-5b6577541624",
@@ -242,9 +242,9 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 2,
       "sort_order": 21,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "২ — অধ্যায়: মুমিনরা পৃথিবীতে আল্লাহর সাক্ষী",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “এভাবেই আমরা তোমাদেরকে মধ্যপন্থী উম্মত করেছি, যাতে তোমরা মানুষের ওপর সাক্ষী হও এবং রাসূল তোমাদের ওপর সাক্ষী হন।” [সূরা আল-বাকারা: ১৪৩]\n\nআর মহান আল্লাহ বলেছেন: “তিনি পূর্বেও এবং এ কিতাবেও তোমাদের নাম রেখেছেন মুসলিম, যাতে রাসূল তোমাদের ওপর সাক্ষী হন এবং তোমরা মানুষের ওপর সাক্ষী হও।” [সূরা আল-হাজ্জ: ৭৮]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “এভাবেই আমরা তোমাদেরকে মধ্যপন্থী উম্মত করেছি, যাতে তোমরা মানুষের ওপর সাক্ষী হও এবং রাসূল তোমাদের ওপর সাক্ষী হন।” [সূরা আল-বাকারা: ১৪৩]\n\nআর মহান আল্লাহ বলেছেন: “তিনি পূর্বেও এবং এ কিতাবেও তোমাদের নাম রেখেছেন মুসলিম, যাতে রাসূল তোমাদের ওপর সাক্ষী হন এবং তোমরা মানুষের ওপর সাক্ষী হও।” [সূরা আল-হাজ্জ: ৭৮]"
     },
     {
       "id": "12977e1e-34cb-4b22-b238-e56e7abd5858",
@@ -252,7 +252,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 3,
       "sort_order": 22,
-      "title_bn": null,
+      "title_bn": "৩ — অধ্যায়: সাক্ষ্য চাওয়ার আগে তাড়াহুড়ো করে সাক্ষ্য দেওয়ার নিন্দা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -262,7 +262,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 4,
       "sort_order": 23,
-      "title_bn": null,
+      "title_bn": "৪ — অধ্যায়: অধিকার নষ্ট হওয়ার আশঙ্কায় চাওয়ার আগেই সাক্ষ্য দেওয়া উত্তম",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -272,9 +272,9 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 5,
       "sort_order": 24,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "৫ — অধ্যায়: সত্য সাক্ষ্য গোপন করার গুনাহ",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “আর সাক্ষ্য গোপন করো না। যে তা গোপন করে, তার অন্তর অবশ্যই পাপী। আর তোমরা যা করো, আল্লাহ সে সম্পর্কে সর্বজ্ঞ।” [সূরা আল-বাকারা: ২৮৩]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “আর সাক্ষ্য গোপন করো না। যে তা গোপন করে, তার অন্তর অবশ্যই পাপী। আর তোমরা যা করো, আল্লাহ সে সম্পর্কে সর্বজ্ঞ।” [সূরা আল-বাকারা: ২৮৩]"
     },
     {
       "id": "e29b8c85-d07d-449d-aebb-c4b3c31ded76",
@@ -282,9 +282,9 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 6,
       "sort_order": 25,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "৬ — অধ্যায়: মিথ্যা সাক্ষ্য দেওয়ার বিরুদ্ধে কঠোর সতর্কবাণী",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “আর যারা মিথ্যা সাক্ষ্য দেয় না।” [সূরা আল-ফুরকান: ৭২]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “আর যারা মিথ্যা সাক্ষ্য দেয় না।” [সূরা আল-ফুরকান: ৭২]"
     },
     {
       "id": "fd1aa807-0a16-44ee-9c73-88dc8be5b50c",
@@ -292,7 +292,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 7,
       "sort_order": 26,
-      "title_bn": null,
+      "title_bn": "৭ — অধ্যায়: নারীদের একে অন্যের ন্যায়পরায়ণতা যাচাই করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -302,9 +302,9 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 8,
       "sort_order": 27,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "৮ — অধ্যায়: দুই নারীর সাক্ষ্য এক পুরুষের সাক্ষ্যের সমান",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “আর যদি দুইজন পুরুষ না পাওয়া যায়, তবে একজন পুরুষ ও দুইজন নারী।” [সূরা আল-বাকারা: ২৮২]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “আর যদি দুইজন পুরুষ না পাওয়া যায়, তবে একজন পুরুষ ও দুইজন নারী।” [সূরা আল-বাকারা: ২৮২]"
     },
     {
       "id": "85f7c882-5b4e-483a-9d84-c14df96c5380",
@@ -312,7 +312,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 9,
       "sort_order": 28,
-      "title_bn": null,
+      "title_bn": "৯ — অধ্যায়: দুধপান সম্পর্কে সাক্ষ্য",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -322,7 +322,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 10,
       "sort_order": 29,
-      "title_bn": null,
+      "title_bn": "১০ — অধ্যায়: উপহার সম্পর্কে সাক্ষী রাখা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -332,7 +332,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 11,
       "sort_order": 30,
-      "title_bn": null,
+      "title_bn": "১১ — অধ্যায়: জুলুমের পক্ষে সাক্ষ্য দেওয়ার বিরুদ্ধে সতর্কবাণী",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -342,9 +342,9 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 12,
       "sort_order": 31,
-      "title_bn": null,
-      "intro_bn_source": null,
-      "intro_bn_display": null
+      "title_bn": "১২ — অধ্যায়: ফাসিক ব্যক্তি তাওবা করলে তার সাক্ষ্য গ্রহণ",
+      "intro_bn_source": "মহান আল্লাহ বলেছেন: “এবং কখনোই তাদের সাক্ষ্য গ্রহণ করো না; তারাই ফাসিক। তবে যারা এরপর তাওবা করে…” [সূরা আন-নূর: ৪–৫]",
+      "intro_bn_display": "মহান আল্লাহ বলেছেন: “এবং কখনোই তাদের সাক্ষ্য গ্রহণ করো না; তারাই ফাসিক। তবে যারা এরপর তাওবা করে…” [সূরা আন-নূর: ৪–৫]"
     },
     {
       "id": "8380d843-fd6a-44ac-adbe-1fa206d3dccc",
@@ -352,7 +352,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 13,
       "sort_order": 32,
-      "title_bn": null,
+      "title_bn": "১৩ — অধ্যায়: যাদের সাক্ষ্য প্রত্যাখ্যাত হয়",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -362,7 +362,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 14,
       "sort_order": 33,
-      "title_bn": null,
+      "title_bn": "১৪ — অধ্যায়: প্রমাণ দাবিদারের ওপর, আর শপথ অস্বীকারকারীর ওপর",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -372,7 +372,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 15,
       "sort_order": 34,
-      "title_bn": null,
+      "title_bn": "১৫ — অধ্যায়: একজন সাক্ষীর সঙ্গে শপথের ভিত্তিতে বিচার",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -382,7 +382,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 16,
       "sort_order": 35,
-      "title_bn": null,
+      "title_bn": "১৬ — অধ্যায়: লটারির মাধ্যমে বিচার",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -392,7 +392,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 17,
       "sort_order": 36,
-      "title_bn": null,
+      "title_bn": "১৭ — অধ্যায়: একাধিক ব্যক্তি শপথ করতে তাড়াহুড়ো করলে তাদের মধ্যে লটারি করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -402,7 +402,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 18,
       "sort_order": 37,
-      "title_bn": null,
+      "title_bn": "১৮ — অধ্যায়: খুযাইমাহ ইবন সাবিতের সাক্ষ্যকে দুই ব্যক্তির সাক্ষ্যের সমান গণ্য করা",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -412,7 +412,7 @@
       "collection_id": "228944db-220b-461a-bbbb-37413526323b",
       "chapter_number": 19,
       "sort_order": 38,
-      "title_bn": null,
+      "title_bn": "১৯ — অধ্যায়: সফরে মুসলিমের ওসিয়ত সম্পর্কে অমুসলিম সুরক্ষিত ব্যক্তিদের সাক্ষ্য",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -422,7 +422,7 @@
       "collection_id": "80bcdb3c-8a83-4c38-826c-36a1b0292fb6",
       "chapter_number": 1,
       "sort_order": 39,
-      "title_bn": null,
+      "title_bn": "১ — অধ্যায়: রাস্তা নিয়ে বিরোধ হলে তার প্রস্থ",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -432,7 +432,7 @@
       "collection_id": "80bcdb3c-8a83-4c38-826c-36a1b0292fb6",
       "chapter_number": 2,
       "sort_order": 40,
-      "title_bn": null,
+      "title_bn": "২ — অধ্যায়: খেজুরগাছের চারপাশের সংরক্ষিত স্থান সম্পর্কে বিচার",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -442,7 +442,7 @@
       "collection_id": "80bcdb3c-8a83-4c38-826c-36a1b0292fb6",
       "chapter_number": 3,
       "sort_order": 41,
-      "title_bn": null,
+      "title_bn": "৩ — অধ্যায়: খেজুরবাগানে সেচ দেওয়া সম্পর্কে বিচার",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -452,7 +452,7 @@
       "collection_id": "80bcdb3c-8a83-4c38-826c-36a1b0292fb6",
       "chapter_number": 4,
       "sort_order": 42,
-      "title_bn": null,
+      "title_bn": "৪ — অধ্যায়: যে কোনো কিছু ভেঙে ফেলে, তার ব্যাপারে বিচার",
       "intro_bn_source": null,
       "intro_bn_display": null
     },
@@ -462,7 +462,7 @@
       "collection_id": "80bcdb3c-8a83-4c38-826c-36a1b0292fb6",
       "chapter_number": 5,
       "sort_order": 43,
-      "title_bn": null,
+      "title_bn": "৫ — অধ্যায়: যৌথ উপযোগ-অধিকার সম্পর্কে বিচার",
       "intro_bn_source": null,
       "intro_bn_display": null
     }
