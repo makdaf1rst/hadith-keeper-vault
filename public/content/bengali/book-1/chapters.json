@@ -1,0 +1,135 @@
+{
+  "collections": [],
+  "chapters": [
+    {
+      "id": "30876e55-fc73-4550-86a3-35e8dd05a383",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 1,
+      "title_bn": "১ — অধ্যায়: আমল কেবল নিয়তের ওপর নির্ভরশীল",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 0
+    },
+    {
+      "id": "2ed12fe7-5183-4495-a625-aedd56fdf4d2",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 2,
+      "title_bn": "২ — অধ্যায়: রাসূলুল্লাহ ﷺ-এর প্রতি ওহীর সূচনা",
+      "intro_bn_source": "আল্লাহ সর্বোচ্চ বলেছেন:\n“নিশ্চয়ই আমি আপনার প্রতি ওহী করেছি, যেমন আমি নূহ ও তাঁর পরবর্তী নবীদের প্রতি ওহী করেছি।”\n[সূরা আন-নিসা ৪:১৬৩]",
+      "intro_bn_display": "আল্লাহ সর্বোচ্চ বলেছেন:\n“নিশ্চয়ই আমি আপনার প্রতি ওহী করেছি, যেমন আমি নূহ ও তাঁর পরবর্তী নবীদের প্রতি ওহী করেছি।”\n[সূরা আন-নিসা ৪:১৬৩]",
+      "sort_order": 1
+    },
+    {
+      "id": "38aa5446-03c7-409a-829e-c55ef0113150",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 3,
+      "title_bn": "৩ — অধ্যায়: আল্লাহ নবী ﷺ-এর প্রতি যে ওহী করেছেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 2
+    },
+    {
+      "id": "7b63a94c-4474-4ef2-8cf3-48e4bbb1b351",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 4,
+      "title_bn": "৪ — অধ্যায়: রাসূলুল্লাহ ﷺ-এর ওপর কীভাবে ওহী নাযিল হতো",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 3
+    },
+    {
+      "id": "bfc2e4f7-618d-4e6e-85b9-2397ac90564f",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 5,
+      "title_bn": "৫ — অধ্যায়: ওহীর ভার সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": "আল্লাহ সর্বোচ্চ বলেছেন:\n“নিশ্চয়ই আমি আপনার ওপর এক ভারী বাণী নাযিল করব।”\n[সূরা আল-মুযযাম্মিল ৭৩:৫]",
+      "intro_bn_display": "আল্লাহ সর্বোচ্চ বলেছেন:\n“নিশ্চয়ই আমি আপনার ওপর এক ভারী বাণী নাযিল করব।”\n[সূরা আল-মুযযাম্মিল ৭৩:৫]",
+      "sort_order": 4
+    },
+    {
+      "id": "769e6fc9-accc-447f-bba4-0ecf256b5180",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 6,
+      "title_bn": "৬ — অধ্যায়: ওহীর বিরতি সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 5
+    },
+    {
+      "id": "5208d058-5cd4-42e6-abec-4c3340c06cf8",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 7,
+      "title_bn": "৭ — অধ্যায়: ওহী নাযিলের সময় নবী ﷺ-এর তা দ্রুত গ্রহণের চেষ্টা",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 6
+    },
+    {
+      "id": "33b3c7f7-81f3-435f-ab76-494ea7088150",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 8,
+      "title_bn": "৮ — অধ্যায়: জিনদের বক্তব্য সম্পর্কে নবী ﷺ-এর প্রতি যা ওহী করা হয়েছিল",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 7
+    },
+    {
+      "id": "a2ef43b5-6dd7-4bef-a6d8-8b3335a4cba2",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 9,
+      "title_bn": "৯ — অধ্যায়: ওহী সম্পূর্ণভাবে পৌঁছে দেওয়া সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": "আল্লাহ সর্বোচ্চ বলেছেন:\n“হে রাসূল, আপনার রবের পক্ষ থেকে আপনার প্রতি যা নাযিল করা হয়েছে তা পৌঁছে দিন; আর যদি আপনি তা না করেন, তবে আপনি তাঁর বার্তা পৌঁছে দিলেন না।”\n[সূরা আল-মায়িদাহ ৫:৬৭]\nআয-যুহরী বলেছেন:\n“বার্তা আল্লাহর পক্ষ থেকে, তা পৌঁছে দেওয়া রাসূলের দায়িত্ব, আর আমাদের দায়িত্ব আত্মসমর্পণ করা।”",
+      "intro_bn_display": "আল্লাহ সর্বোচ্চ বলেছেন:\n“হে রাসূল, আপনার রবের পক্ষ থেকে আপনার প্রতি যা নাযিল করা হয়েছে তা পৌঁছে দিন; আর যদি আপনি তা না করেন, তবে আপনি তাঁর বার্তা পৌঁছে দিলেন না।”\n[সূরা আল-মায়িদাহ ৫:৬৭]\nআয-যুহরী বলেছেন:\n“বার্তা আল্লাহর পক্ষ থেকে, তা পৌঁছে দেওয়া রাসূলের দায়িত্ব, আর আমাদের দায়িত্ব আত্মসমর্পণ করা।”",
+      "sort_order": 8
+    },
+    {
+      "id": "c1aadf9b-eb56-4cd0-8031-5d919ac3c1e2",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 10,
+      "title_bn": "১০ — অধ্যায়: ওহী নাযিলের সময় আসমানবাসীদের অবস্থা",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 9
+    },
+    {
+      "id": "4406e65b-9aa0-4c51-913d-115e7cf87168",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 11,
+      "title_bn": "১১ — অধ্যায়: একটি আয়াত দুই পর্যায়ে নাযিল হওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 10
+    },
+    {
+      "id": "f44bcb10-5a44-4c94-8aa5-35f08170f6d8",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 12,
+      "title_bn": "১২ — অধ্যায়: আল্লাহ নবী ﷺ-কে মৃত্যু দেওয়া পর্যন্ত ওহী বন্ধ হয়নি",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 11
+    },
+    {
+      "id": "11111111-0000-4000-8000-000000000013",
+      "book_id": "e6877273-0a16-4aef-ac22-0ab7d89858fd",
+      "collection_id": null,
+      "chapter_number": 13,
+      "title_bn": "১৩ — অধ্যায়: রাসূলুল্লাহ ﷺ-এর ইন্তিকালের পর ওহীর সমাপ্তি",
+      "intro_bn_source": null,
+      "intro_bn_display": null,
+      "sort_order": 12
+    }
+  ]
+}
