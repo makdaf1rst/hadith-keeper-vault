@@ -9,7 +9,7 @@ import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
-import { toArabicIndicDigits } from "@/lib/normalize";
+import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
 
 type Props = {
   hadith: HadithFull;
@@ -59,6 +59,7 @@ async function copy(value: string | null, label: string) {
 
 export function HadithView({ hadith, context, showExactSource = false }: Props) {
   const { contentLanguage } = useLanguage();
+  const isBengali = contentLanguage === "bn";
   const t = useInterfaceText();
   const bengali = useQuery({
     queryKey: ["bengali-hadith", hadith.hadith_number],
@@ -100,7 +101,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
       <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-parchment px-4 py-3 sm:px-6">
         <div className="flex items-baseline gap-3">
           <span className="text-lg font-semibold tracking-tight text-primary">
-            {t.hadith} {hadith.hadith_number}
+            {t.hadith} {isBengali ? toBengaliDigits(hadith.hadith_number) : hadith.hadith_number}
           </span>
           <span className="arabic-text text-xl! leading-none! text-muted-foreground">
             {toArabicIndicDigits(hadith.hadith_number)}
@@ -142,7 +143,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
       {context ? (
         <div className="border-b border-border px-4 py-3 text-sm text-muted-foreground sm:px-6">
           <BreadcrumbLine
-            label="Book"
+            label={isBengali ? "কিতাব" : "Book"}
             ar={context.book?.title_ar}
             en={
               context.book
@@ -154,7 +155,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             }
           />
           <BreadcrumbLine
-            label="Collection"
+            label={isBengali ? "সংগ্রহ" : "Collection"}
             ar={context.collection?.title_ar}
             en={
               contentLanguage === "bn" && bengaliCollection?.title_bn
@@ -163,7 +164,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             }
           />
           <BreadcrumbLine
-            label="Chapter"
+            label={isBengali ? "অধ্যায়" : "Chapter"}
             ar={context.chapter?.title_ar}
             en={
               contentLanguage === "bn" && bengaliChapter?.title_bn
