@@ -20,7 +20,7 @@ function pick(display: string | null | undefined, source: string | null | undefi
 /**
  * Renders the introductory material (Qurʾānic verses, athar, scholarly notes) that the
  * source document places under a Kitāb / Collection / Bāb heading, before its hadiths.
- * Always complete — never clamped or truncated. Localized content is refreshed with every deployment.
+ * Always complete — never clamped or truncated. Localized intro data is refreshed on deployment.
  */
 export function IntroText({ intro, bengaliIntro, label = "Introduction", className }: Props) {
   const { contentLanguage } = useLanguage();
