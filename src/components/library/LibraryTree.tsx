@@ -23,6 +23,7 @@ import {
   fetchBengaliCollectionTranslation,
 } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
+import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
 import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
@@ -252,7 +253,12 @@ function BookNode({
               chapters={chapters.data ?? []}
             />
           </div>
-          <IntroText intro={book} className="mx-2 my-2" label={t.bookIntroduction} />
+          <IntroText
+            intro={book}
+            bengaliIntro={contentLanguage === "bn" ? getBengaliBookIntro(book.book_number) : null}
+            className="mx-2 my-2"
+            label={t.bookIntroduction}
+          />
           {headingsLoaded ? null : (
             <p className="px-2 py-1 text-xs text-muted-foreground">{t.loading}</p>
           )}
