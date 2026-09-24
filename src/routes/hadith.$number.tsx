@@ -61,16 +61,6 @@ function HadithPage() {
             <ArrowLeft className="size-4" /> {t.library}
           </Link>
           <div className="flex items-center gap-2">
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon"
-              onClick={() => setLanguageSettingsOpen(true)}
-              aria-label={t.settings}
-              title={t.settings}
-            >
-              <Settings className="size-4" />
-            </Button>
             {neighbours.data?.previous ? (
               <Button asChild variant="outline" size="sm">
                 <Link to="/hadith/$number" params={{ number: String(neighbours.data.previous) }}>
@@ -135,10 +125,6 @@ function HadithPage() {
           </div>
         ) : null}
       </main>
-      <LanguageSettingsDialog
-        open={languageSettingsOpen}
-        onOpenChange={setLanguageSettingsOpen}
-      />
     </div>
   );
 }
