@@ -1,0 +1,956 @@
+{
+  "collections": [
+    {
+      "id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "sort_order": 1,
+      "title_bn": "১ — সংকলন: পোশাকের ধরন ও রং সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "sort_order": 2,
+      "title_bn": "২ — সংকলন: চুল পরিচর্যা ও সুগন্ধি ব্যবহার সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "sort_order": 3,
+      "title_bn": "৩ — সংকলন: নারীদের পোশাক ও অলংকার সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "sort_order": 4,
+      "title_bn": "৪ — সংকলন: আংটি সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "sort_order": 5,
+      "title_bn": "৫ — সংকলন: ছবি ও ছবি নির্মাতাদের সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "12c55575-c1b2-4d82-91e0-091a4ffab59d",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: ফিতরাহর স্বভাবসমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2cb8d7d8-bca8-4b4a-ab99-53a6b5d02dfb",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: ছবি নির্মাতাদের সম্পর্কে বর্ণিত হুমকি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1fea952f-e8ab-427f-9429-378b57655afb",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: রেশম পুরুষদের জন্য হারাম, নারীদের জন্য নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2c6cae45-bd17-451a-a477-10f8267a0f98",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: রাজাদের কাছে পাঠানো চিঠিতে মোহর দেওয়ার জন্য নবী ﷺ একটি রূপার আংটি গ্রহণ করেছিলেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5bc26a4b-7527-498e-8e8d-7a38146bc597",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: উত্তম পোশাক নির্বাচন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a3d0b4b5-e0a8-4ba4-add0-dcd2583dbfb7",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: নবী ﷺ “মুহাম্মাদ, আল্লাহর রাসূল” খোদাই করা একটি রূপার আংটি গ্রহণ করেছিলেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "33599f47-4d36-499d-9254-d67e48026314",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: আল্লাহর নিয়ামতের প্রভাব দৃশ্যমান রাখার নির্দেশ—বিশেষত পোশাকে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b05d707d-1397-427c-baaa-f7be0e9e71d3",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: যে ঘরে ছবি থাকে সেখানে ফেরেশতারা প্রবেশ করেন না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "20b91479-be88-4d83-ba61-e57f36be1fd1",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: পুরুষদের জন্য যতটুকু রেশম অনুমোদিত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "032db6d5-f745-469e-a9a2-321589dda1c6",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: দাড়ি ছেড়ে দেওয়া এবং গোঁফ ছাঁটা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bde8d032-ce8f-4515-bfbb-97184b6c485b",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: পোশাকে বিনয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "21053c79-f2e3-4201-b442-a574ff87dba6",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: আল্লাহর রাসূল ﷺ-এর আংটির একই খোদাই দিয়ে আংটি খোদাই করার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8df1d3a7-162b-4576-aea7-1d3b83695d06",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: গোঁফ ছাঁটা ও ফিতরাহর অন্যান্য কাজের সময়সীমা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a4f4c77c-7fd9-4033-aad0-bd3bf28d4d01",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: পুরুষদের জন্য রেশম হারাম হওয়ার পর তা না পরে উপহার হিসেবে গ্রহণ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "43b49d08-f475-4cae-9ec9-cc9614524503",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: প্রাণহীন বস্তুর ছবি বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c2156dd1-98fe-404e-b09d-8a851585b055",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: প্রয়োজন হলে পুরুষদের রেশম পরার অনুমতি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "31615f44-8699-47e5-9739-16c036d3f2c3",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: দাড়ি বেঁধে রাখার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5f734f87-2ca0-4c7b-9b7f-aa218294bd37",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: কাপড়ের নকশা হিসেবে থাকলে ছবি বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e2a29bba-6213-464e-84ca-b56bae50c601",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: ভালো পোশাক থাকা সত্ত্বেও জীর্ণ বা ময়লা পোশাক পরা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "439fec8b-ec95-4ee0-a806-7b0277750a46",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: নবী ﷺ-এর আংটির পাথর সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bf0dba04-fa57-4fb8-a4e4-a93a3e4346a2",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: ক্রুশের ছবি ধ্বংস ও মুছে ফেলা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "503a0e62-0e64-4159-a8d5-e1f1b7ff9129",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: ডান হাতে আংটি পরা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0de3e0ba-67b2-4adf-9392-59c96347ad4e",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: সোনা ব্যবহার করার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5eda0d55-97e5-4fce-8618-2aa221bea1e2",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: পাকা চুল উপড়ে ফেলা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f9378e68-cf31-4090-a645-e8688bfab59e",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: পোশাকে অপচয়ের নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0561cae2-42ae-4fab-99e2-9dea8f35a209",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: বাম হাতে আংটি পরা বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e3bebd61-f1bf-4c9e-a0ce-33f05ab16944",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: নিষেধাজ্ঞা পুরুষদের জন্য বহাল ছিল, নারীদের জন্য নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "37c9b6c4-4b84-4944-b292-f66ebe6f8091",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: খ্যাতির জন্য পরা পোশাক সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f6a56753-9006-42f9-870c-fd6f5c8d58c6",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: পাকা চুল রং করা ও তার রং পরিবর্তন করা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3cc17cad-6d86-40a7-93ff-31cfa36ae11a",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: মেঝে ও দেয়ালে ছবি তৈরি করার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0b4f45a1-8724-4f01-844c-29cba0ca0d88",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: শামী চাদর পরা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b32e6c7a-9f28-40ca-a161-7dedc5c77d04",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: বাম হাতের কনিষ্ঠ আঙুলে আংটি পরা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "760fd5dd-c898-4925-a563-eb756a601e9f",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: সজ্জিত পর্দা ব্যবহার অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c99867b5-7134-4264-987f-7a04255073f5",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: নাক ও দাঁতের জন্য সোনা ব্যবহার বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cf33c842-a7f3-49bf-9bae-0934a2daee32",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: চুল জটবদ্ধ করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e05ab96d-8bce-4641-9585-44293c0c4f3c",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: পুরুষদের মধ্যমা ও তার পাশের আঙুলে আংটি পরার নিষেধাজ্ঞা—নারীদের জন্য নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "755bb117-c9c5-4d3f-983f-f7ea26687c4c",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: মাথার চুল সিঁথি করা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c18a344b-05dd-48c4-b999-33a9144f41ff",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: নারীর অনুকরণকারী পুরুষ এবং পুরুষের অনুকরণকারী নারীর নিন্দা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4e67db39-5062-467c-b805-697afe0dc643",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: জামা পরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cabeaabe-3bd6-469f-b63a-c0a96ba0e0ef",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: পুতুল ও অবয়ব নিয়ে খেলা বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cc119170-78c4-4e45-81ce-b3d469271a8f",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: মাথায় একগুচ্ছ চুল রেখে দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2cc6c64a-be4b-4fcb-9dce-f1fb53287906",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: লোহার আংটি সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "49c762af-63e7-4c12-953a-131aacfd8edc",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "50bf31a0-ae1c-467c-8863-a1a7637bbdd8",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: কাবা ও তার আশপাশ থেকে মূর্তি অপসারণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1867ff32-c62c-49be-a09e-44ce535a48d9",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: সাদা পোশাক পরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ee9755bb-4bbd-4ac6-8ecf-b3a5bccfa794",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: চুল জোড়া লাগানো, উল্কি করা এবং সংশ্লিষ্ট কাজের নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c54a2c8b-b048-4de4-834f-ee928b1f94ba",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: তাবাররুজের নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e80ad68d-8ae2-44a8-a2b3-c32c7575e8cd",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: রূপার আংটি গ্রহণ এবং লোহার আংটি গ্রহণ অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e1904949-ab53-4421-9183-d79c3588b081",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: পরিচর্যা না করে চুল লম্বা করা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c34ea3e8-a5bb-41e5-a8aa-3b63824ebbb4",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: লাল পোশাক পরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "00718f85-b9ea-4502-8fc7-32f9dda900ec",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: পুরুষদের কুসুম বা জাফরান দিয়ে রঞ্জিত পোশাক পরা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "128e2381-5c36-476b-b10a-1de4f0f00893",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: সমস্ত চুল মুণ্ডন করা এবং কযা‘-এর নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e6b31db6-579e-4851-98af-b154c25eb3f6",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: খিমার পরা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "391bb63e-d9eb-4a1d-a99b-e61d3e321b4d",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "3c3c3a2b-7f69-459c-aece-9725421e5b50",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: আংটির পাথর হাতের তালুর ভেতরের দিকে রাখা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b0edab65-3a78-41eb-8dfb-b2d4d540a862",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: সুগন্ধি সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ea9398fa-6367-445f-b982-783fab7b6a0e",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: মুসলিম নারীর হিজাব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d6ca7cfb-c871-4664-9139-e0f515b45f76",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: সবুজ পোশাক পরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fa322e43-5a03-4f72-a7df-a87e2135b997",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: আল্লাহর বাণী: “অথবা তাদের নারীগণ”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "43222684-a270-45d1-99f3-01c96b60fd55",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: কালো পোশাক",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4b0d3ab4-0ab8-4fc1-a855-ddab06c3c76c",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: সুগন্ধি প্রত্যাখ্যান করা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1f73bb8f-7d89-46a2-b278-2e29dbc10fff",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: পুরুষের সুগন্ধি ও নারীর সুগন্ধির পার্থক্য",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f7440b08-0990-4c33-af84-00221546ab73",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: চাদর সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c4a81b83-f9be-46d8-aa0b-9cae7f2621a4",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: দাসী নারীর আওরাহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2bd2cf75-01e1-466f-a0c6-3814d62eb2be",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: মনোযোগ বিচ্ছিন্নকারী নকশাযুক্ত পোশাক অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c6100224-ca59-4348-bae1-f29160f68634",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "2a874228-be06-4264-912e-484651f0fc5f",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: পুরুষদের জন্য খালূকের নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bb37ccd7-ae2e-4aa3-a00d-c1343a4e74f7",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: বালেগ না হওয়া বালক নারীর চুল দেখতে পারে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fa52b768-f9bb-41a3-96e4-644d727d6ee1",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: অলংকারপূর্ণ নকশা ও রেশমি পাড়যুক্ত পোশাক পরার অনুমতি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "77510c41-db0e-490b-8f96-13419a256e85",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: পুরুষ দাস তার নারী মালিকের চুল দেখতে পারে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b2b57388-4eaa-439c-8467-2783bb44da83",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: নারীর পোশাক এক হাতের বেশি লম্বা করার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e9d19ddb-f5b9-49c9-b29d-0900ec3bec62",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: হিবারাহ পোশাক পরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "14d1efc5-4633-408c-91b9-6b095a21b7a2",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: পোশাক ও অন্য বিষয়ে মিথ্যা ভান করা এবং যা দেওয়া হয়নি তা নিজের আছে বলে দেখানোর নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "86dbb471-b651-412a-9bd1-31d8fdc02b17",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: চাদর ও খামীসাহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "58154e8f-2276-466f-b34d-11a80c7e6d1d",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: নারীদের জন্য নিষিদ্ধ পোশাক",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "142ab0cb-35bd-423c-888c-88d033f5bb62",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: জুতা পরা ও তার বর্ণনা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e44de6f2-403c-4f6b-8442-a23d317fb9d5",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: সুগন্ধি ব্যবহার করে নারীর বাইরে যাওয়ার বিরুদ্ধে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c4504a0e-c2a5-41e7-9522-e07963271243",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: পাগড়ি পরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2ba7eb9e-c040-49ea-8045-7d671ad9c1a9",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: বুরনুস পরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3d7ed781-69cd-4245-b4ab-978b08fec737",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "1d0c798e-f5fa-4ff7-ae2f-f8917dccadf6",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: নারীর চুল কাটা বৈধ এবং তা মুণ্ডন করার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "88204d5a-3af1-41f4-a720-7dd23b64b784",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "২২ — অধ্যায়: সোনার বোতামযুক্ত চাদর পরা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e244f95c-e05a-470e-968a-d30af885c786",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "২৩ — অধ্যায়: পায়জামা পরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6cc6b665-4cc5-4763-bbc6-b69eb42a105b",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "২৪ — অধ্যায়: ইযার ও তালি দেওয়া চাদর",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bd5e08a8-ae3a-4f26-a9fd-87d02d238cad",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "২৫ — অধ্যায়: পোশাক দিয়ে মাথা ও মুখের একাংশ ঢেকে রাখা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c7d686df-ca90-42b9-afe3-8ed9d3299c56",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "২৬ — অধ্যায়: পশম ও উলের তৈরি পোশাক",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "42b387a4-5360-4b1b-96de-059d9428c100",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "২৭ — অধ্যায়: বোতাম খোলা রাখা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3961ed4f-b014-49d7-8904-76ea2eec4c87",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "২৮ — অধ্যায়: সাম্মা পদ্ধতিতে কাপড় জড়ানো এবং এক কাপড়ে হাঁটু তুলে বসার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0e6d4807-59aa-44e9-8974-557383c5f852",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "২৯ — অধ্যায়: ইযার টাখনুর নিচে ঝুলিয়ে রাখার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5469aa2b-58fa-401a-9e25-44a3d6a78149",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "৩০ — অধ্যায়: নবী ﷺ-এর ইযারের অবস্থান",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d20c166e-9d11-4828-899b-c3ff6bb51003",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "৩১ — অধ্যায়: উরু উন্মুক্ত করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "457588e6-3cdd-4948-b3a7-20928d8502a2",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "৩২ — অধ্যায়: পোশাকে অহংকার ও গর্বভরে তা টেনে চলার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "84de224d-738c-4be7-a64c-e4f20d5570d8",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "৩৩ — অধ্যায়: কাফিরদের অনুকরণ করা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c0f9416b-8ff0-4c3b-bb97-d6d5d3e96bec",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "৩৪ — অধ্যায়: ঘরের আসবাব ও বিছানাপত্র",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8c4ba4bb-97ff-42b0-a5a9-b208b49f430a",
+      "book_id": "27bf187e-c827-4e7c-a979-4cdb41e22023",
+      "collection_id": "185a564b-7ff6-40f9-9a66-ec695492a4ba",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "৩৫ — অধ্যায়: পোশাক, সোনা ও রূপা সম্পর্কে আদেশ ও নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
