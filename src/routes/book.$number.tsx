@@ -8,6 +8,7 @@ import {
   fetchBengaliStructure,
   type BengaliChapterTranslation,
 } from "@/lib/bengali-translations";
+import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import {
   fetchBookByNumber,
@@ -152,7 +153,9 @@ function BookPage() {
             <div>
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <h1 className="text-2xl font-semibold text-foreground">
-                  {formatBookTitle(book.data.book_number, book.data.title_en)}
+                  {contentLanguage === "bn"
+                    ? getBengaliBookTitle(book.data.book_number) ?? formatBookTitle(book.data.book_number, book.data.title_en)
+                    : formatBookTitle(book.data.book_number, book.data.title_en)}
                 </h1>
                 <KitabDownloadMenu
                   book={book.data}
