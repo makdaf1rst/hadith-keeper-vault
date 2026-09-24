@@ -10,6 +10,7 @@ import { HadithView } from "@/components/library/HadithView";
 import { Button } from "@/components/ui/button";
 import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
+import { toBengaliDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/hadith/$number")({
   head: ({ params }) => {
@@ -31,6 +32,7 @@ function HadithPage() {
   const { number } = Route.useParams();
   const t = useInterfaceText();
   const { contentLanguage } = useLanguage();
+  const isBengali = contentLanguage === "bn";
   const [languageSettingsOpen, setLanguageSettingsOpen] = useState(false);
   const hadithNumber = Number(number);
 
@@ -75,14 +77,14 @@ function HadithPage() {
             {neighbours.data?.previous ? (
               <Button asChild variant="outline" size="sm">
                 <Link to="/hadith/$number" params={{ number: String(neighbours.data.previous) }}>
-                  <ChevronLeft /> {neighbours.data.previous}
+                  <ChevronLeft /> {isBengali ? toBengaliDigits(neighbours.data.previous) : neighbours.data.previous}
                 </Link>
               </Button>
             ) : null}
             {neighbours.data?.next ? (
               <Button asChild variant="outline" size="sm">
                 <Link to="/hadith/$number" params={{ number: String(neighbours.data.next) }}>
-                  {neighbours.data.next} <ChevronRight />
+                  {isBengali ? toBengaliDigits(neighbours.data.next) : neighbours.data.next} <ChevronRight />
                 </Link>
               </Button>
             ) : null}
@@ -97,7 +99,7 @@ function HadithPage() {
         ) : null}
         {!hadith.isLoading && !hadith.data ? (
           <div className="rounded-lg border border-border bg-card p-6">
-            <h1 className="text-lg font-semibold">{t.hadith} {number} {t.hadithNotImported}</h1>
+            <h1 className="text-lg font-semibold">{t.hadith} {isBengali ? toBengaliDigits(number) : number} {t.hadithNotImported}</h1>
             <p className="mt-2 text-sm text-muted-foreground">
               {t.hadithNumberRange}
             </p>
@@ -121,7 +123,7 @@ function HadithPage() {
                     to="/hadith/$number"
                     params={{ number: String(neighbours.data.previous) }}
                   >
-                    <ChevronLeft /> {t.previousHadith} {neighbours.data.previous}
+                    <ChevronLeft /> {t.previousHadith} {isBengali ? toBengaliDigits(neighbours.data.previous) : neighbours.data.previous}
                   </Link>
                 </Button>
               ) : (
@@ -130,7 +132,7 @@ function HadithPage() {
               {neighbours.data?.next ? (
                 <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
                   <Link to="/hadith/$number" params={{ number: String(neighbours.data.next) }}>
-                    {t.nextHadith} {neighbours.data.next} <ChevronRight />
+                    {t.nextHadith} {isBengali ? toBengaliDigits(neighbours.data.next) : neighbours.data.next} <ChevronRight />
                   </Link>
                 </Button>
               ) : (
