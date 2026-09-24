@@ -23,7 +23,7 @@ import {
   fetchBengaliCollectionTranslation,
 } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
-import { toArabicIndicDigits } from "@/lib/normalize";
+import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
 function formatArabicBookTitle(number: number, title: string | null) {
@@ -79,6 +79,8 @@ function Toggle({
 }
 
 function HadithChips({ hadiths }: { hadiths: HadithStub[] }) {
+  const { contentLanguage } = useLanguage();
+  const isBengali = contentLanguage === "bn";
   return (
     <ul className="flex flex-wrap gap-1.5 px-2 py-2">
       {hadiths.map((h) => (
@@ -88,7 +90,7 @@ function HadithChips({ hadiths }: { hadiths: HadithStub[] }) {
             params={{ number: String(h.hadith_number) }}
             className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-sm transition-colors hover:border-primary hover:text-primary"
           >
-            {h.hadith_number}
+            {isBengali ? toBengaliDigits(h.hadith_number) : h.hadith_number}
             <span className="arabic-text text-sm! leading-none! text-muted-foreground">
               {toArabicIndicDigits(h.hadith_number)}
             </span>
@@ -121,6 +123,8 @@ function HadithList({ chapterId }: { chapterId: string }) {
  */
 function BookHadiths({ bookId }: { bookId: string }) {
   const t = useInterfaceText();
+  const { contentLanguage } = useLanguage();
+  const isBengali = contentLanguage === "bn";
   const { data, isLoading } = useQuery({
     queryKey: ["book-hadiths", bookId],
     queryFn: () => fetchBookHadiths(bookId),
@@ -153,7 +157,7 @@ function BookHadiths({ bookId }: { bookId: string }) {
       {sections.map((section, i) => (
         <li key={section[0]!.id} className="border-l border-border pl-2">
           <p className="px-2 py-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            {t.section} {i + 1}
+            {t.section} {isBengali ? toBengaliDigits(i + 1) : i + 1}
           </p>
           <HadithChips hadiths={section} />
         </li>
