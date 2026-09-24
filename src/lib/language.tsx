@@ -8,9 +8,6 @@ export type ContentLanguage = "en" | "bn";
 type LanguageContextValue = {
   interfaceLanguage: InterfaceLanguage;
   contentLanguage: ContentLanguage;
-  bengaliPreviewUnlocked: boolean;
-  bengaliPreviewChecking: boolean;
-  unlockBengaliPreview: (code: string) => Promise<{ ok: boolean; error?: string }>;
   setInterfaceLanguage: (language: InterfaceLanguage) => void;
   setContentLanguage: (language: ContentLanguage) => void;
 };
@@ -29,73 +26,18 @@ function readStored<T extends string>(key: string, allowed: readonly T[], fallba
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [interfaceLanguage, setInterfaceLanguageState] = useState<InterfaceLanguage>("en");
   const [contentLanguage, setContentLanguageState] = useState<ContentLanguage>("en");
-  const [bengaliPreviewUnlocked, setBengaliPreviewUnlocked] = useState(false);
-  const [bengaliPreviewChecking, setBengaliPreviewChecking] = useState(true);
 
   useEffect(() => {
-    let cancelled = false;
-
-    async function restoreLanguages() {
-      try {
-        const response = await fetch("/__bengali-preview/status", {
-          cache: "no-store",
-          credentials: "same-origin",
-        });
-        const data = response.ok
-          ? ((await response.json()) as { unlocked?: boolean })
-          : { unlocked: false };
-        const unlocked = data.unlocked === true;
-        if (cancelled) return;
-        setBengaliPreviewUnlocked(unlocked);
-        setInterfaceLanguageState(
-          unlocked ? readStored(INTERFACE_KEY, ["en", "bn"] as const, "en") : "en",
-        );
-        setContentLanguageState(
-          unlocked ? readStored(CONTENT_KEY, ["en", "bn"] as const, "en") : "en",
-        );
-      } catch {
-        if (cancelled) return;
-        setBengaliPreviewUnlocked(false);
-        setInterfaceLanguageState("en");
-        setContentLanguageState("en");
-      } finally {
-        if (!cancelled) setBengaliPreviewChecking(false);
-      }
-    }
-
-    void restoreLanguages();
-    return () => {
-      cancelled = true;
-    };
+    setInterfaceLanguageState(readStored(INTERFACE_KEY, ["en", "bn"] as const, "en"));
+    setContentLanguageState(readStored(CONTENT_KEY, ["en", "bn"] as const, "en"));
   }, []);
 
-  const unlockBengaliPreview = async (code: string) => {
-    try {
-      const response = await fetch("/__bengali-preview/unlock", {
-        method: "POST",
-        credentials: "same-origin",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ code }),
-      });
-      if (!response.ok) {
-        const data = (await response.json().catch(() => null)) as { error?: string } | null;
-        return { ok: false, error: data?.error ?? "Unable to unlock Bengali preview." };
-      }
-      setBengaliPreviewUnlocked(true);
-      return { ok: true };
-    } catch {
-      return { ok: false, error: "Unable to unlock Bengali preview." };
-    }
-  };
-
   const setInterfaceLanguage = (language: InterfaceLanguage) => {
-    if (language === "bn" && !bengaliPreviewUnlocked) return;
     setInterfaceLanguageState(language);
     if (typeof window !== "undefined") window.localStorage.setItem(INTERFACE_KEY, language);
   };
 
   const setContentLanguage = (language: ContentLanguage) => {
-    if (language === "bn" && !bengaliPreviewUnlocked) return;
     setContentLanguageState(language);
     if (typeof window !== "undefined") window.localStorage.setItem(CONTENT_KEY, language);
   };
@@ -110,13 +52,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     () => ({
       interfaceLanguage,
       contentLanguage,
-      bengaliPreviewUnlocked,
-      bengaliPreviewChecking,
-      unlockBengaliPreview,
       setInterfaceLanguage,
       setContentLanguage,
     }),
-    [interfaceLanguage, contentLanguage, bengaliPreviewUnlocked, bengaliPreviewChecking],
+    [interfaceLanguage, contentLanguage],
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
