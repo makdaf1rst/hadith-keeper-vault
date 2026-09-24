@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { Toaster } from "../components/ui/sonner";
-import { LanguageProvider, useLanguage } from "../lib/language";
+import { LanguageProvider } from "../lib/language";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -137,40 +137,6 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-function BottomLanguageSelector() {
-  const {
-    interfaceLanguage,
-    contentLanguage,
-    setInterfaceLanguage,
-    setContentLanguage,
-  } = useLanguage();
-
-  const value = contentLanguage === "bn" || interfaceLanguage === "bn" ? "bn" : "en";
-
-  return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto flex max-w-7xl justify-end px-4 py-6 sm:px-6 lg:px-8">
-        <label className="flex items-center gap-2 text-xs text-muted-foreground">
-          <span>Language</span>
-          <select
-            value={value}
-            onChange={(event) => {
-              const language = event.target.value === "bn" ? "bn" : "en";
-              setInterfaceLanguage(language);
-              setContentLanguage(language);
-            }}
-            className="h-8 rounded-md border border-input bg-background px-2 text-xs text-foreground"
-            aria-label="Language"
-          >
-            <option value="en">English</option>
-            <option value="bn">বাংলা</option>
-          </select>
-        </label>
-      </div>
-    </footer>
-  );
-}
-
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -179,7 +145,6 @@ function RootComponent() {
       <LanguageProvider>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
-        <BottomLanguageSelector />
         <Toaster />
       </LanguageProvider>
     </QueryClientProvider>
