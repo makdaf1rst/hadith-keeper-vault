@@ -230,13 +230,6 @@ function Index() {
                       {t.contact}
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                    className="cursor-pointer"
-                    onSelect={() => setLanguageSettingsOpen(true)}
-                  >
-                    <Settings aria-hidden />
-                    {t.settings}
-                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -307,10 +300,6 @@ function Index() {
           </section>
         </div>
       </main>
-      <LanguageSettingsDialog
-        open={languageSettingsOpen}
-        onOpenChange={setLanguageSettingsOpen}
-      />
     </div>
   );
 }
