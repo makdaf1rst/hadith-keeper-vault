@@ -30,7 +30,7 @@ import {
   type Book,
   type Chapter,
 } from "@/lib/library-api";
-import { useInterfaceText } from "@/lib/language";
+import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/")({
@@ -155,6 +155,41 @@ function SelectedBookContents({ book }: { book: Book }) {
         )}
       </div>
     </>
+  );
+}
+
+
+function BottomLanguageSelector() {
+  const {
+    interfaceLanguage,
+    contentLanguage,
+    setInterfaceLanguage,
+    setContentLanguage,
+  } = useLanguage();
+
+  const value = contentLanguage === "bn" || interfaceLanguage === "bn" ? "bn" : "en";
+
+  return (
+    <footer className="border-t border-border bg-background">
+      <div className="mx-auto flex max-w-7xl justify-end px-4 py-6 sm:px-6 lg:px-8">
+        <label className="flex items-center gap-2 text-xs text-muted-foreground">
+          <span>Language</span>
+          <select
+            value={value}
+            onChange={(event) => {
+              const language = event.target.value === "bn" ? "bn" : "en";
+              setInterfaceLanguage(language);
+              setContentLanguage(language);
+            }}
+            className="h-8 rounded-md border border-input bg-background px-2 text-xs text-foreground"
+            aria-label="Language"
+          >
+            <option value="en">English</option>
+            <option value="bn">বাংলা</option>
+          </select>
+        </label>
+      </div>
+    </footer>
   );
 }
 
@@ -300,6 +335,7 @@ function Index() {
           </section>
         </div>
       </main>
+      <BottomLanguageSelector />
     </div>
   );
 }
