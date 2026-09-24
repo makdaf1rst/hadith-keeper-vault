@@ -1,0 +1,4836 @@
+{
+  "collections": [
+    {
+      "id": "836a3831-c865-401c-9915-608db861bdc3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 1,
+      "title_bn": "১ — সংকলন: মহৎ চরিত্র সম্পর্কে বর্ণনাসমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 2,
+      "title_bn": "২ — সংকলন: পিতা-মাতার প্রতি সদাচরণ ও আত্মীয়তার সম্পর্ক বজায় রাখা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 3,
+      "title_bn": "৩ — সংকলন: মুসলিমদের গুণাবলি ও তাদের পারস্পরিক অধিকার সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a907d79c-352d-4e21-9b90-15ce92df65e9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 4,
+      "title_bn": "৪ — সংকলন: এতিম, বিধবা, দরিদ্র, দুর্বল ও অভাবগ্রস্তদের সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 5,
+      "title_bn": "৫ — সংকলন: প্রতিবেশীর অধিকার ও প্রতিবেশীসুলভ আচরণের আদব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 6,
+      "title_bn": "৬ — সংকলন: অনুমতি চাওয়া ও সালাম দেওয়ার আদব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 7,
+      "title_bn": "৭ — সংকলন: বসা ও মজলিসের আদব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 8,
+      "title_bn": "৮ — সংকলন: খাওয়া ও পান করার আদব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 9,
+      "title_bn": "৯ — সংকলন: আতিথেয়তা ও অন্যকে আহার করানোর আদবসংক্রান্ত অধ্যায়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "caeabba3-d5cd-4357-9301-aebd65c8393c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 10,
+      "title_bn": "১০ — সংকলন: পোশাক ও সাজসজ্জার আদব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 11,
+      "title_bn": "১১ — সংকলন: নাম, কুনিয়াহ ও উপাধিসংক্রান্ত অধ্যায়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 12,
+      "title_bn": "১২ — সংকলন: কথা, অভিব্যক্তি ও পত্রালাপের আদব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "139629a4-f569-4e15-a470-2319eca47498",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 13,
+      "title_bn": "১৩ — সংকলন: সৎকাজের আদেশ, দাওয়াহ ও নসিহত সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 14,
+      "title_bn": "১৪ — সংকলন: রাত ও দিনের আদব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 15,
+      "title_bn": "১৫ — সংকলন: বিনোদন, খেলাধুলা ও শারীরিক নড়াচড়া সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 16,
+      "title_bn": "১৬ — সংকলন: রাস্তা, সফর ও ভ্রমণের আদব সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 17,
+      "title_bn": "১৭ — সংকলন: প্রাণীদের প্রতি সদয় আচরণ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cc24f6b7-283e-402e-ae7e-81980b1016f8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 18,
+      "title_bn": "১৮ — সংকলন: সংক্রমণ ও কুসংস্কারমূলক অশুভ লক্ষণ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 19,
+      "title_bn": "১৯ — সংকলন: মন্দ চরিত্রের বৈশিষ্ট্যসমূহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "sort_order": 20,
+      "title_bn": "২০ — সংকলন: মুনাফিকি ও মুনাফিকদের সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "efccb8c8-f9d3-4950-952f-cb1c7a82ed9f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: কারও নাম আবদুল্লাহ বা আবদুর রহমান রাখার সুপারিশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "03c3c9ec-41b7-4aec-b41f-8629c5f6b868",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: প্রাণীদের প্রতি দয়া প্রদর্শন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b4d5850b-554c-4441-ae88-abd56488e195",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: নিজের ভাইকে “হে কাফির” বলার বিরুদ্ধে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e2fb6bab-f0ff-4370-9278-7ff298d86a4e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "cc24f6b7-283e-402e-ae7e-81980b1016f8",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: ইসলামে অশুভ লক্ষণ বা কুসংস্কার অপছন্দনীয়—এ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f343edd7-45bf-44f8-a969-90574091e654",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: স্বামী তার স্ত্রীর জন্য বিনোদন ও খেলাধুলার সুযোগ দেওয়া বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "55920ba9-4c60-4ea5-9e5d-4210834c0537",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "caeabba3-d5cd-4357-9301-aebd65c8393c",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: পোশাক পরার সময় ডান দিক থেকে শুরু করার সুপারিশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cfcc66d5-99b3-4a94-87db-47b5de32074d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: মুনাফিকির নিদর্শনসমূহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9089b25d-49ed-4b80-b83e-d3d77f192828",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: ঘুমাতে যাওয়ার সময় ঘরের আগুন ও প্রদীপ নিভিয়ে দেওয়া সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4d3f2464-84ba-438c-abc4-f8ecdf414f4f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: জিহ্বার হিফাযত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "73900bea-d306-4347-8f97-45499aea2d0d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: সৎকাজের আদেশ ও অসৎকাজে নিষেধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9e9a4145-60c8-49a6-9dfa-7384eb9da224",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: রাস্তা থেকে কষ্টদায়ক বস্তু সরানোর মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "47307951-70fe-43ef-a0b5-d881cabfd647",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: অতিথিকে সম্মান করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "20f3fcce-a4f1-4d81-bce9-592c218b1d21",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: খাবার ও পানীয়ের ওপর এবং ঘরে প্রবেশের সময় আল্লাহর নাম বলা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b1cd4002-b7d1-42d1-91e1-23b0ab6a8716",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: সর্বোত্তম মজলিস হলো সবচেয়ে প্রশস্ত মজলিস",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f9df5279-5973-4a14-9cc4-b64a690c900f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: দৃষ্টি নত রাখা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f64dc9f1-c2fa-4a1c-a508-255f6bdafdc4",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: উত্তম চরিত্র সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e8dc910a-ed6c-43ca-82bf-590edaee916f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: নেকি ও গুনাহের ব্যাখ্যা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "deabed96-af6b-4f52-a4b7-fe7b1a74e733",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: মুমিনদের পারস্পরিক দয়া, সহমর্মিতা ও সহযোগিতা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "507c0e5d-8eb7-479b-96e4-b328da94f559",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "a907d79c-352d-4e21-9b90-15ce92df65e9",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: এতিমের দায়িত্ব গ্রহণকারীর মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "52ab28ab-6afb-46da-8913-c5ba7f6e4d9a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: প্রতিবেশীর যত্ন নেওয়া ও তার সঙ্গে উত্তম আচরণের নির্দেশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b29fe6c5-c4f8-4bc4-b10a-2e1b3bb02cb2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: নিজের ওপর অতিথিকে অগ্রাধিকার দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "13145281-1c25-4596-9f67-539f6f66c15a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: শুরুতে আল্লাহর নাম বলতে ভুলে গেলে স্মরণ হওয়ার সময় তা বলা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1e9777d4-a80f-4d3c-b57c-37202aa004e8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: মজলিসের যেখানে শেষ পাওয়া যায় সেখানে বসা এবং বৃত্তের ভেতরে খালি জায়গায় বসা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f0d6b437-5a6a-4baf-a90e-0e5ccc684a2a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: চোখের যিনা হলো তাকানো",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b72c35ca-d11c-4cd0-bec9-c307c92849ee",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: প্রতিবেশী মুসলিম না হলেও তার সঙ্গে উত্তম আচরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5fcf433b-abe6-4fe2-80bf-0731be81dddb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "a907d79c-352d-4e21-9b90-15ce92df65e9",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: বিধবা ও দরিদ্রদের সহায়তায় চেষ্টা করার মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "546590d8-5346-424c-bf54-5464d45e0289",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: মুমিনদের পারস্পরিক আনুগত্য ও বন্ধন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2122eda7-869f-4c9a-ad8c-7d8dba5699f1",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: পিতা-মাতার প্রতি সদাচরণ আল্লাহর কাছে সর্বাধিক প্রিয় আমলসমূহের একটি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1f60a6c1-157f-418f-9305-ad6a0ec0c66a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: সর্বোত্তম চরিত্রের অধিকারীরাই মানুষের মধ্যে সর্বোত্তম",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f34c36b9-1661-48f7-b2b1-6d030cb75e0c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: বৈধ গান ও নিষিদ্ধ গান",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4be6b443-1309-48a6-bda5-e9c522129788",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: অশ্লীলতা ও লজ্জাজনক কাজ পরিহার",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "68973f1b-a41b-450c-bde9-8be07bc7fd9e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: সন্তানদের নবীদের নামে নামকরণের সুপারিশ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "789c4175-2379-470f-9e37-2ad98c222843",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "cc24f6b7-283e-402e-ae7e-81980b1016f8",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: অশুভ লক্ষণ যদি কোনো কিছুর মধ্যে থাকত, তবে তা তিনটি বিষয়ে থাকত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "381b4c2a-3d24-4fb2-b9ec-58e90fdd2519",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: নিজে পালন না করে সৎকাজের আদেশ করা এবং নিজে মন্দকাজ করতে করতে তা নিষেধ করার বিরুদ্ধে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fad75bb4-a258-498d-912c-508d500cee4c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: দ্বিমুখী ব্যক্তির নিন্দা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1e25f2c9-a658-4ddd-acc7-8271851adadb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: মুমিন ভালো কথা বলবে অথবা নীরব থাকবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "722b19b2-6ad7-4204-bf24-17bc4386bc66",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "caeabba3-d5cd-4357-9301-aebd65c8393c",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: জুতা পরার সময় ডান দিক থেকে এবং খোলার সময় বাম দিক থেকে শুরু করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9c3e4718-e0bf-468c-89e5-60dd4e29ba52",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: প্রাণীদের পানি পান করানোর মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6ebeacc4-98d7-4b2d-a415-99a87f6d69df",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: মানুষের চলার পথে তাদের কষ্ট দেওয়ার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8c6039af-76e4-43d0-9841-9f40a60c8846",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: সূর্যাস্তের পর শিশু ও গৃহপালিত পশুকে বাইরে যেতে না দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "952b518d-1637-46d5-8fc1-587fff873831",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: যে আতিথেয়তা করে না তার মধ্যে কল্যাণ নেই",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fd322fae-49af-4fd8-961b-ea9c4180c60d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "a907d79c-352d-4e21-9b90-15ce92df65e9",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: দরিদ্রকে সদাকাহ দেওয়ার মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e320be81-6df8-4dcb-b7a2-831c0bebecb2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: আল্লাহ তোমাদের অন্তর ও আমলের দিকে তাকান",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fba8fd84-5590-4a02-8538-a3fab86c707e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: পিতা-মাতার প্রতি সদাচরণকারীর দু‘আ কবুল হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "412d7d55-fd64-4b09-8337-1f4aed0a8b4a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: নারী তার প্রতিবেশীকে যা দেয় তা তুচ্ছ মনে করবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fcf12932-e920-46d1-84fc-e6e30b45df12",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: আকস্মিক অনিচ্ছাকৃত দৃষ্টি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b1287c49-752e-449d-83cc-aae252a69436",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: সত্যবাদিতার মর্যাদা ও মিথ্যার নিন্দা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "51afa7df-4ec0-4bc6-9222-faad225eaa33",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: ডান হাতে খাওয়া ও পান করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "798174f1-3566-409a-9279-1fa3e68e9e41",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: কারও জায়গায় বসার জন্য তাকে সেখান থেকে উঠিয়ে দেওয়ার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2f760cbc-4791-4eb6-b02a-dc7850018674",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: গুনাহের বিষয় না হলে মানুষের জন্য বিষয় সহজ করা ও সুসংবাদ দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5677fd85-2361-4884-aeb2-eec567a2c8ab",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: ইশার আগে ঘুমানো এবং প্রয়োজন ছাড়া পরে জেগে কথা বলা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "92761a53-c274-4927-9b76-2738c9ba4297",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "caeabba3-d5cd-4357-9301-aebd65c8393c",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: দাঁড়িয়ে জুতা পরার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "75996d50-be9f-475c-bd79-671e51861411",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: সুন্দর নাম থেকে শুভ লক্ষণ গ্রহণ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "93dc1504-2bb2-4e3e-8e38-a36edfe8585a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: মুনাফিকদের নেতা আবদুল্লাহ ইবন উবাই ইবন সালূল সম্পর্কে বর্ণনাসমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0fd7dcab-5213-43eb-84ec-27fa02cb2f30",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: উত্তম ও মনোরম কথা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "830fbae9-2ada-45b4-ab7f-18113b8a5c8a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: মিথ্যার নিন্দা ও তা থেকে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1edd20d9-28cf-4020-9d92-2e2bad8aecc6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "cc24f6b7-283e-402e-ae7e-81980b1016f8",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: কোনো ঘরে বসবাস করে জীবন অশান্ত হলে সেখান থেকে চলে যাওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7badd5d1-04c6-4f17-b884-7d216f56ea33",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: প্রাণীদের প্রতি সদয় হওয়া এবং বাড়ি ও সফরে তাদের যত্ন নেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0e523ae6-8d26-489e-916a-b8c16e523735",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: আঙিনা পরিষ্কার রাখা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ad88a1bb-1a11-42fb-a027-c4aec1b83df0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: বাদ্যযন্ত্রের শব্দ শুনলে কানে আঙুল দেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6bf2153c-642c-42c2-b834-e0cd0a567d6b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: শিশুকে “এসো, এটা নাও” বলে কিছু না দেওয়া মিথ্যা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8cebc9bb-b94e-4bb3-9123-fee4cccbe96c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: রাস্তার অধিকারসমূহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1ec7be16-d7dd-4d54-bef3-982f668ee333",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "caeabba3-d5cd-4357-9301-aebd65c8393c",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: এক পায়ে শুধু একটি স্যান্ডেল পরে হাঁটার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ca065a9a-8063-4cc2-b518-2fbf23593ea9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: উটের গলায় ঘণ্টা ব্যবহারের বিরুদ্ধে কঠোর সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ccf0ec19-6271-4ec2-acfe-90e76d880c1f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: নিচু স্বরে কথা বলা বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ecf48ca1-681f-4e42-b196-d96a6e7e8a30",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: মুনাফিকদের সম্পর্কে হুযাইফাহর হাদীস",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ffe56ca4-c28e-42ad-a47d-de627a01ebb5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: আল্লাহর বান্দাদের নিরাশ করার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bf93245f-bd71-456b-bbf0-101ea56474b7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: নবী ﷺ-এর জীবদ্দশায় ‘আবুল কাসিম’ কুনিয়াহ গ্রহণের নিষেধাজ্ঞা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b5624003-e14a-46e5-8633-375630a80230",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: নামাজরত, সফররত বা প্রয়োজন আছে এমন ব্যক্তির রাতে জেগে থাকা বৈধ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "250d9b82-0712-476e-b91e-d33046f17725",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: প্রয়োজন ছাড়া পশুর পিঠে স্থির হয়ে থাকা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "de4fbd71-a7e0-4611-9d32-52e5680065c8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "cc24f6b7-283e-402e-ae7e-81980b1016f8",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: কুসংস্কারমূলক অশুভ লক্ষণ অনুযায়ী কাজকারীর কাফফারা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4db5e33e-5013-475c-9fd6-06668b4614a3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: অনুমতি চাওয়ার বিধান",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4418c372-0dcb-4ca1-a2e1-a2cea661daac",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "a907d79c-352d-4e21-9b90-15ce92df65e9",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: দুর্বলদের অধিকার লঙ্ঘনের বিরুদ্ধে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "37e8ba66-2547-4fb1-b484-760bb4a0ea9d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: আতিথেয়তা তিন দিনের",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e7993427-61ba-4f1e-a05d-fcc823f0eb09",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: দুই ব্যক্তির অনুমতি ছাড়া তাদের মাঝখানে বসা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d728ea51-d223-43a4-a79f-651263182665",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: কোন প্রতিবেশীর অধিকার বেশি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5e75a442-ba9d-4213-bf3e-395dcce58ba3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: কোমলতার মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0a8fe134-664c-4f31-8c25-281db006bd29",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: এক মুসলিমের ওপর অন্য মুসলিমের কিছু অধিকার",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5e66f469-81e8-40f5-8bc1-d2288701388e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: পিতা-মাতার অধিকারের মহত্ত্ব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "71687f25-bc98-42ff-a1e1-9ad8b8c2ab96",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: ওজর ছাড়া বাম হাতে খাওয়া অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "27ff55c3-4dd6-4ef5-84ab-2772caecc564",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Prohibition of Harming One’s Neighbor",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2665e6f3-363d-4f8c-a73c-5fef3167dbf9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – Seeking Permission Was Prescribed Because of the Gaze",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e22b4357-3a0b-4b54-8468-78f9c994283e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "a907d79c-352d-4e21-9b90-15ce92df65e9",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – What Has Been Narrated Concerning Mercy Toward Children",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d11d5627-9827-417e-896d-82c02ec2bd8c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Dislike of Sitting Between a Man and His Son",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ebd3c8a6-b30f-44e5-b46b-f45d36567052",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Recommendation of Forgiving Others",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ebab5d76-91b1-4daf-9a4f-b62b96fc38b3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Believer Is the Mirror of the Believer",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cf6b2817-c52b-4bd7-a540-1c2c15013a97",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Right of the Guest",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "560b34bb-7bae-4336-aa74-567abe203905",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Right of the Mother Is Greater Than the Right of the Father",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3e3b1f34-d07f-478d-846f-10391fd4c3f4",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Recommendation to Eat from What Is Nearest and the Dislike of Eating from the Middle of the Food",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "25b52c30-9939-456e-8f6f-02dd79b8b2ad",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "caeabba3-d5cd-4357-9301-aebd65c8393c",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – Combing, Arranging, and Caring for the Hair",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "60fb1ed9-91c0-4ed4-b923-6bc6a010f9f9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – What Has Been Narrated Concerning the Prohibition of Combining His Name and His Kunyah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d57467d4-cc98-46dd-a909-b88b66cefc67",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – Affectation and Excessive Eloquence in Speech",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "349d7bdc-d50b-4b41-9215-732c025265ca",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Prohibition of Extremism in Religion",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3fbdc722-0460-4bd8-91bb-69de5e108ad3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – Sleeping on a Bed",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c6c409d9-c7af-43e2-a619-509c48befcc4",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Prohibition of Playing Nardashīr",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "18612ec5-ce01-4ec0-9a6f-5ff8a5c295d5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Dislike of Tying a Person with a Rope While Walking",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a1082274-712b-4db3-847b-cfbf095690ae",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – Three People Riding on One Animal",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "29326402-6110-4529-bfc9-e44987b104c3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The One Who Makes People Laugh with His Lies",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7da94438-4025-4877-b032-fc39d882f809",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "Chapter 5 – The Owner of the Red Camel Was among the Hypocrites",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d682c63d-9288-497d-aeba-3063a948610b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – The Manner of Seeking Permission",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "869b9530-881b-4305-b491-1e3764c0e4aa",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – What Has Been Narrated Concerning Sincere Advice",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "64505b98-7e02-4cdf-9d67-93dce7acea81",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – Islam Is a Religion of Pure Monotheism and Ease",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "009844f7-f02f-4dc5-989c-4512a86c1baf",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – Whoever Leaves His Seat and Then Returns Has More Right to It",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c70bdce1-c057-4e84-a98c-cda5ccb221fd",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – The Permissibility of Eating from Different Parts of the Dish When the Companions’ Approval Is Known",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5597a5ae-fea7-44c8-bf24-bbcf8ab05e7a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – The Sin of One Whose Neighbor Is Not Safe from His Harm",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f7e8d266-fe53-4973-9cb4-8207c2a57233",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – Giving Priority to Dutifulness Toward One’s Mother over Voluntary Prayer",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "36ff3436-d91b-469d-a434-745348ffeadf",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – Encouragement to Honor a Guest Even If He Previously Failed to Offer You Hospitality",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5ff9b253-7322-4da7-9a68-e4b5b7cf2bd2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – What Has Been Narrated Concerning the Etiquette of Walking",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8a1e5020-d781-4142-9b64-dacee994ef45",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – Allah Sending a Wind upon the Death of a Hypocrite during the Prophet’s ﷺ Lifetime",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b08c2e75-3a9f-4c80-8bbf-48a81e7dafc9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – The Prohibition of Riding an Animal That Feeds on Filth",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c7cff8fe-2339-4ad6-b379-30ef171de6b7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – What Has Been Narrated Permitting the Combination after His Death ﷺ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "351f31d3-7450-459a-bb0f-62f22ee6d71e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – Winning Hearts toward Islam",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "97b969a2-8255-4e7a-968d-fb92587b2f8e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "caeabba3-d5cd-4357-9301-aebd65c8393c",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – The Recommendation of Adorning Oneself for Delegations and Visitors",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "19d3def3-7120-4095-8ee6-2382fdbe1abd",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – What Has Been Narrated Concerning Good Eloquence, Poetry, Rajaz, and Chanting While Traveling",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "42237542-4aa0-4791-bec8-d6c8cbab468f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – Indirect Expressions Provide a Way to Avoid Lying",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5e5d28e9-88f0-4382-96c1-a16da27f2e5c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – The Dislike of Having More Sleeping Arrangements than Needed",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "17da7f99-e988-4818-b392-8dd48ef048ef",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "Chapter 6 – The Prohibition of Throwing Small Stones with the Fingers",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a211eb67-9488-4ab8-8b29-c69e82444d07",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – The Prophet ﷺ Identifying Some of the Hypocrites",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1449b8db-5e24-40cb-a3dc-9e8343b3933e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – Raising One’s Gaze toward the Sky to Remember the Greatness of Allah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "226062e1-4821-43f8-9fff-ec1f1e872257",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – What Has Been Narrated Concerning Reciting Poetry",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ab7ec2e9-9623-4011-9af4-614bdefc92a9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – Walking Quickly When There Is a Need",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "68f597e2-85ff-4406-b933-477d937452de",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – From the Etiquette of Correction Is Not Addressing the Wrongdoer Directly in Front of the People",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b1df2ed4-542d-4987-bd69-915344c8a4c7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – The Owner of a Mount Has the Greatest Right to Its Front Seat Unless He Gives It to Someone Else",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cb16c0b3-5c75-41b6-8003-07c549c76fdf",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – Changing an Unpleasant Name to a Good Name",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1ae0a120-694a-45ea-9dcd-55852dc773a5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – The Prohibition of Lying on One’s Back When There Is a Fear of Exposing the ʿAwrah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5cf8af6e-4837-440f-a678-2dc282062d0e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – The One Who Reconciles between People Is Not Considered a Liar",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fe9b8b59-2f77-4eec-841b-af86a60067b1",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – What Has Been Narrated Concerning Modesty",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dcda3bbe-0a8a-4602-a7a7-2f6c741c70dc",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – Brotherhood and Alliances",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3e06bfa3-eff0-4d6b-a137-2f5fa9e669c0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – The Command to Maintain Ties with One’s Parents Even If They Are Polytheists",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ee4a0f5f-569e-4eb0-8257-35dd33e28bf9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – Gathering Together to Eat",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bafb4289-3e9a-4748-8232-054b1ec3e8e4",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – Giving Salām Before Seeking Permission",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d1a8db9e-6d73-4f2f-87a0-98db685c127b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – Your Guest Has a Right over You",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "07b05ac3-df7e-4f44-9243-56ef34c0da01",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – Placing Timber into a Neighbor’s Wall",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3b31f6e8-2f6e-4d4f-8ce7-e9d76ef59619",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "Chapter 7 – The Dislike of Sitting Partly in Shade and Partly in Sunlight",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3258ec87-bf8e-4ea8-93ef-e252d2d61582",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Muslim Is the One from Whose Tongue and Hand the Muslims Are Safe",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "37b5eb7d-7cda-4d91-957d-2b7188934649",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – Accepting an Invitation to a Meal",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "149b8ec6-adbf-465c-a70b-86e4e9741282",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Manner of Sitting While Eating",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "441771b8-2273-47d5-82e4-5f4bce80c60f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – A Righteous Neighbor Is Part of a Person’s Happiness",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "83e8cccc-9214-4152-9144-749d0d4a1448",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – A Disliked Sitting Posture",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1dda78c3-2700-410f-a6d4-a41fba9fbb3b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – Raising the Curtain and Opening the Door Are Signs of Permission",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "898897b1-d4d3-42c5-bbb9-0cff5ae88ed6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – There Is No Improper Shyness in Seeking Knowledge",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "14f94b3c-fa73-4826-8916-84a3fa83c61c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Hypocrite Whom the Earth Cast Out",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "605b9dca-4184-4fb9-9dd4-eb0c8893e293",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Etiquette of Passing by the Dwellings of a People Who Were Punished",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ba7329bc-ea64-4c2a-b70f-4bd2f9fa65e9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Prohibition of Following a Falling Star with One’s Gaze",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "220881b8-74d3-444c-8216-172dcba5025e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Prohibition of Arguing Falsely",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0188a1a1-a927-4b2b-84f5-9768e9f4a6dd",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Recommendation of Raising One’s Head toward the Sky While Speaking at Appropriate Times",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "91303ac5-2d1f-4aff-9749-aa96dde07977",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Prohibition of Taking the Name “King of Kings”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3e0731fa-04ab-47b0-9d1f-d764d00e77fb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Permissibility of Lying on One’s Back When the ʿAwrah Is Not Exposed",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8aeb462d-6f96-4501-991e-09ba5d2e7f8b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – The Prohibition of Cursing Animals",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3ff252c3-231b-4bfb-9768-cfc62839f4e5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – Condemnation of One Who Lives to See His Parents, or One of Them, Reach Old Age Yet Does Not Enter Paradise",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dc4649ab-7622-415c-a8f8-b9b4f1d1ed8b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "Chapter 8 – Warning against Poetry That Distracts from the Remembrance of Allah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a8fde404-9d2b-4309-bb05-79ce0d9c6e95",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – The Prohibition of Pointing a Weapon at a Muslim",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8abd9eb4-c47a-4a57-8e7c-a69045ba1b64",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Sitting in the Iḥtibāʾ Posture",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dc96623c-12a6-426f-b3fb-6f8f3b0918e0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Every Good Deed Is Charity",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "201285b3-5dff-4244-adae-637a42e2c547",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d8452583-c386-48fc-b964-dee24ae8534a",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – The First Two Disputants on the Day of Resurrection Will Be Two Neighbors",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d2ccd0dd-6a20-4439-abdf-65ecf78542ea",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Accepting an Invitation Even If the Food Offered Is Something Small",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ad89d80c-c2b4-4607-a51f-f3c37b9baf24",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – What Has Been Narrated Concerning Eating While Reclining",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cf68faa5-b220-4fde-9cdb-9fb7d8ed6c64",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Even If a Man Is Invited, He Should Not Enter Until He Seeks Permission",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4b3e60d2-39aa-4b99-9b77-c98b3e17dcff",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Caring for the Welfare of Riding Animals during Travel and Choosing the Night for Traveling",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2b087979-65b9-4c3f-ac46-160311d73cd1",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Warning against Tormenting an Animal That Causes No Harm",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "aa5041a4-d442-41dc-905b-cfa817476ba8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – The Dislike of Naming with Aflah, Rabāḥ, Yasār, Najīḥ, Nāfiʿ, Yaʿlā, and Barakah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0c17d5c5-69ec-4d44-86a9-2c2fd39004e3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Disobedience to Parents Is Among the Major Sins",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b1e5d9d8-e120-43f8-917e-27db350ba2b7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Among the Traits of the Hypocrites Is That They Love to Be Praised for What They Did Not Do",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bbf02d22-8c3c-4a72-bf70-2ed6c042cd35",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Poking a Stick into Water and Mud",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c44e450b-e642-4b67-9cea-4e18e4915df4",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Avoiding False Speech",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fa378d36-d580-4017-83db-3ef7dbc09187",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Satirizing the Polytheists",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "51addd0c-7c32-4f94-8182-785c4c84dc78",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – Saying “To Proceed” in a Sermon",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "621415b2-70af-4ab0-a5d8-366531bf946a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "Chapter 9 – The Dislike of Lying on One’s Face",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "110d4ee9-50a5-491d-bc7d-949ba60e2ce3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – It Is Not Permissible to Say to a Hypocrite: “My Master”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "de664d8d-79a3-42aa-9356-4bb5e024f38a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b535f294-b9bd-41bb-b310-7047fe13ffd6",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – The Dislike of Harvesting at Night",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b3cba912-0c69-4326-aba2-f030575a45a0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ee4c297-c36b-458f-8453-4f0e77dbb8b1",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – A Man Poking the Ground with a Stick",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5b6fbca2-ab46-4bd6-9bae-2524aaaaec8f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – Quickening One’s Walk without Running",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6799efed-22fa-4a98-b882-894600da27a8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – Animals Whose Killing Has Been Prohibited",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b3609e3d-2418-4865-aa98-1df00bccc83c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – The Prohibition of Injustice",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "87c9b949-3378-43e9-b40b-669cc6a63d0e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – Warning against Exceeding the Limits in Satire",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "393dd8c9-e8ef-4b1c-96ce-a4d9dfb34292",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – Among the Greatest Major Sins Is for a Man to Cause His Parents to Be Cursed",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6ccb053d-8939-48bf-9804-32bd8f01ab88",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – Taking One’s Kunyah from the Eldest Child",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "12be9eea-9a26-4764-b972-33763bce32e5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "139629a4-f569-4e15-a470-2319eca47498",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – The Preacher Saying: “Whoever Disobeys Allah and His Messenger Has Gone Astray”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5429a38d-73d3-44ac-87e0-49682e7d0bc3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – The Prophet’s Acceptance of Invitations from Tradesmen",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "70cf2342-c358-4c27-ab27-b9b6c0878326",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – If a Morsel Falls, Do Not Leave It for Satan",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b5d6b26e-5c78-4f28-b84f-b02688314d55",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – A Man’s Messenger to Another Man Constitutes Permission",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a5253853-9f7b-49e3-9c14-2812ef16b126",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – One Who Reclines in the Presence of His Companions",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5f4e33b5-5c5c-4ae3-856b-40b8a0b8c230",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – What Has Been Narrated Concerning Giving a Beneficial Loan and Guiding the Lost",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e5dbe465-fe62-4427-8f5d-21f4ca5ad250",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "Chapter 10 – Holding the Points of Arrows Lest They Injure a Muslim",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f12ad889-34f1-472a-90d2-6c589152b696",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – The Virtue of Maintaining Ties with the Friends of One’s Parents",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b78f9a33-c9d9-46be-bb1f-ef2a14e1f0f9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – The Recommendation of Meeting Others with a Cheerful Face",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1bfc4a09-2997-42a3-8fb1-53e73479820d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – One Seeking Permission Should Not Stand Directly Facing the Door",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dd04be86-e4d1-4230-8ed0-3199c9ba1be5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – One for Whom a Cushion Was Offered, but Who Chose Humility",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e558573c-0f2f-43a1-83dc-c982a578994b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – What Has Been Narrated Concerning Licking the Fingers and the Dish and Seeking the Blessing of the Food",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9edda624-77c0-4cab-97b2-fb5c1cc23756",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – If Two People Invite You, Accept the Invitation of the One Whose Door Is Closer",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "502bb952-512f-4451-9454-3dfe4ea236bc",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – Handing Over a Sword While It Is Sheathed",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b4a0fe93-3c46-43c1-affa-4a0f90b0f54c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – The Prohibition of Tale-Bearing",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "45e46a89-c6a5-4cab-8c34-1c226a2e406a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – What Has Been Narrated Concerning Giving a Kunyah to a Child",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a5c51c23-adea-4b75-bc97-5466c4fdd353",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – If There Are Three People, Two Should Not Converse Privately to the Exclusion of the Third",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7cc6b118-b26c-46ae-89f0-3c43f91656b7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – What Has Been Narrated Concerning the Parable of the Hypocrite",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0969769d-a8ab-4b34-a1f0-03be4897ae79",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – Animals Whose Killing Has Been Commanded",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "efe19c03-8ead-48a9-acc7-2f729db3071e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "Chapter 11 – The Recommendation of Hastening Back to One’s Family after Completing the Purpose of a Journey",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8d06aa43-0118-45f4-bf58-5782ae95fe26",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – It Is Not Lawful for a Muslim to Frighten Another Muslim",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1dc743e2-db21-4f2c-bd73-0793d33cca98",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – One Who Gets Up, or Appears Ready to Get Up, So That the People Will Leave",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bbdaf393-e49c-4934-921d-f73637e869ae",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – The Prohibition of Eating the Food of Those Competing in Ostentation",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "900705ac-4ace-4133-84e3-568cefa56359",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – The Dislike of Saying “It Is Me” When the Person Seeking Permission Is Asked, “Who Are You?”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "86594dc3-5f18-4bf2-ad04-fb67b0999943",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – Smiling and Laughter",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "72a5e6e8-9231-4e9b-9853-43f45da13c9c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – Treating Children Equally in Kissing and Affection",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "189d1caa-d6c0-497a-a0d8-4494ca07b3a4",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – The Recommendation to Eat with Three Fingers",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "65e6fb86-c57d-494c-ba4b-9ac6f055d1f3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – The Dislike of Entering between Two People Who Are Speaking Privately",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a9b47f1f-60aa-42cf-b273-7e58bf1fff1a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – The Prohibition of Backbiting",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "50c1afb8-9465-4002-ab77-d4d0f5e92a18",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – The Hypocrites Gathering at the Mountain Pass to Betray the Messenger of Allah ﷺ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "16f7ad4d-9064-4731-8cdd-d6b1e9ea2cb6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – What Has Been Narrated Concerning Shortening Names Affectionately",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a8fca5d0-c8f7-472c-bf10-4125506ac36d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – The Prohibition of Cursing the Rooster",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "867b7318-f9f1-4c25-9dd1-1e0fb6f69ed3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "Chapter 12 – What Has Been Narrated Concerning the Dislike of Traveling Alone",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0ba27929-7f36-4b38-bca6-145344e53db8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – A Man Having More than One Kunyah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bc2eb6b6-8c4c-4045-96f2-35eb09739315",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – The Prohibition of Striking the Face",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "01c36ae5-15c3-4b41-b9e0-e2419a118ec0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – Statements of the Hypocrites Intended to Harm the Prophet ﷺ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "83f72e87-801e-489f-bc10-ef8600aa1028",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – Speaking Privately in the Presence of Other People",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d5643eea-ab62-40b6-9c4c-9ac93f15320b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – The Recommendation of Appointing a Leader during Travel",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "16adebc9-5a7b-4a8b-9213-0eb64ebfc21e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – Warning against Searching for the Faults and Private Matters of Muslims",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "048a6432-4923-4784-998a-cf92c8856828",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – Wiping with a Cloth After Licking the Fingers",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "191be4b1-2718-45e7-9768-c5653e12a871",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – Generosity, Nobility, and Open-Handedness",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "88da52b1-e7a9-4d13-95ed-f04c128870a5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8a678a6c-949b-41b0-b0c2-040fc42dbf7c",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – What Is Said in Gatherings Is a Trust",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5eaea70d-97d0-441f-ace4-4e4f3f215fce",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – The Virtue of Defending the Honor of One’s Muslim Brother",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bb35ead6-6360-4e73-b530-e047ba225ef2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – What Has Been Narrated Concerning Dutifulness to One’s Maternal Aunt",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "773d97f1-3482-497b-85f1-f9e45341f87b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – Seeking Permission Before Leaving",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7be6bc64-b9e8-4b02-a3a1-fa5dde8617c6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "Chapter 13 – The Prohibition of Burdening Oneself Excessively for a Guest",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c69bae07-b1c5-46d9-91c2-d77d9aec8ea0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – Preparing Food and Making an Effort for a Guest",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ba67b204-7cf3-438b-a6cc-0a8a18eb1ca6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – What Has Been Narrated Concerning Gratitude for Kindness",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "79811456-bc5c-4d74-a421-cc4ce53021e8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – The Virtue of Maintaining Kinship and the Warning Against Severing It",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4bc912f5-4764-4a02-b1d8-f660651f19f5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – The Virtue of Concealing the Faults of a Muslim",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "30c3f792-570a-45d4-ab07-ad0537d69025",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – The Beginning of the Greeting of Salām",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fa35abb1-4164-418f-b81c-4dacd7a216fb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – Wuḍūʾ Is Not Required Because of Food",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4e5867d7-8c43-4680-99f5-19766aa830a8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – The Permissibility of Mentioning the Faults of People of Evil and Corruption, and Repelling Their Harm with Words and Wealth",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "165ad97d-2cb1-4b5c-b796-89a9108a669f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – Taking a Kunyah without Having Children",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b77f385f-fc9b-407d-a3de-a79e772a4088",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – The Prohibition of Branding an Animal on the Face",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7b8932fb-1d4d-4136-92d7-ed0998d1d9e5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – Lengthy Private Conversation",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "529b3d3e-dd9e-4e44-a4b0-5e28659a6008",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – The Leader of a Traveling Group Should Remain toward the Rear",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d30b6ed6-a18e-4de8-b48f-31ea6e4109a3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "b3bdf9e2-e532-4c37-b9df-99700743fa73",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "Chapter 14 – Hypocrisy after the Time of the Prophet ﷺ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "53c74f67-1eb4-4535-80f3-d0ac37015517",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – Al-Salām Is One of the Names of Allah, the Exalted",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7ba4b81e-ec00-493a-ab3f-bbc4fb6c5e59",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – The Virtue of Clothing a Muslim",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e6f6b3d5-0665-496b-b6a0-d74a75f1f758",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – Washing the Hands After Eating",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f08facc9-9a8f-4f49-87ac-ab6b0cac95ae",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – What Has Been Narrated Concerning Forbearance, Deliberation, and Taking One’s Time",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "039b9e27-11af-41d9-b7a5-5f1fd0e5eddb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – The First Person to Offer Hospitality to a Guest",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "247d85e3-0182-45d7-8aee-cb1c5c32e4eb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – Whoever Maintains Kinship, Allah Maintains His Connection with Him",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e41b3a48-eebd-44a4-a46e-1eeb40a6f77e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – The Permissibility of Branding Away from the Face for Identification",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9056ee24-f2e1-4a43-b618-a8742dfb4192",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – The Prophet ﷺ Calling ʿAbdullāh ibn Ubayy ibn Salūl “Abū Ḥubāb” before He Accepted Islam",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a7b3809b-4621-4564-b50b-f438f0329b87",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – Keeping a Secret",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3bfdb682-d7ce-4c82-8fe1-ece7cd2f7d1b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – The Recommendation of Traveling on Thursday",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6ba3d8ff-39ad-4d12-adbb-5d74c4ac955b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "Chapter 15 – The Prohibition of Insulting One’s Parents",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e307f4f3-eb1d-4871-b8f6-68d23b80bbd2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – What Has Been Narrated Concerning Taking the Kunyah Abū ʿĪsā",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "080251cb-870e-4e09-acfe-124cf43eafc2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – The Prohibition of Traveling with the Muṣḥaf into the Land of a Hostile Enemy",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "31fd9826-9853-474a-8e25-bb40cec8974c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – The Prohibition of Cursing Time",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fddf22fb-f2fa-4600-98a0-69e1fd222a1c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – Warning against Evil Suspicion, Spying, Envy, Hatred, and Similar Traits",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1f969359-0bd5-437d-a990-9369747ae1f2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – The Dislike of Breeding Donkeys with Horses",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c15c3516-a3f8-47d6-b529-89fc778a76c8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – The Command to Spread Salām",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "080714ba-0195-4506-8b49-31f47a0e7d3a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – Food Should Not Be Criticized",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "933aceaa-9cbd-4f08-a7fd-f0e984daff10",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – The Best People Are Those Whose Good Is Hoped For and Whose Harm Is Feared Not",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "869d3a36-879a-48f4-b264-265d199d55c5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – Kinship Is to Be Maintained with Its Proper Due",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6755aad5-055b-4772-9f5b-b6b864aa3799",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – A Man Asking for Food in His Own Home",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "009d8d5b-95cd-4168-87b4-1056be43ee64",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "Chapter 16 – Warning Against Unjustly Attacking the Honor of a Muslim",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bba0c451-18b8-483e-a83f-561052318e23",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – Provision Is Expanded Through Maintaining Kinship Ties",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2f3f4203-5479-47b7-9a6f-d79e2598c431",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – The Food of One Is Sufficient for Two",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "97262095-bcdf-4d4c-92ff-8d869baa7677",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – The Virtue of Being the First to Give Salām",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e36deb9d-afb5-4c6d-896d-a91192b4c1c7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – The Believer Overcomes His Devil",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b145e718-87be-462c-afa2-56a84776c655",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – What Has Been Narrated Concerning Reconciling People",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fc440044-4fe8-45e4-8bc8-4db74145ecbf",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – Seeking the Host’s Permission for a Person Who Was Not Invited",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f1df7df7-3c5c-407c-8f2f-f15aea90abb1",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – The Dislike of Hanging a Bowstring around a Camel’s Neck",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "889b3322-f779-405f-9c9e-7ef773d56312",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – The Dislike of Calling Grapes “Karm”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b7d41552-a2df-4291-b1fb-87c23da4a5b3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – Gentleness toward Women during Travel",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8546e597-70f9-4665-9cc7-8b72d3240ee3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – The Prohibition of Calling One Another by Offensive Nicknames",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c1f75bf0-f248-4523-9771-cf8388127e54",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "Chapter 17 – Suspicion That Is Permissible",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "33e2d63c-0f43-42da-917a-be1ca0dc22c6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – The Believer Eats and Drinks with One Intestine, While the Disbeliever Eats with Seven Intestines",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "28e4d8b1-47ca-4cf3-8284-994e18000885",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – The Prohibition of Greeting Solely with the Hands, Head, or Gestures",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "05207a6d-b433-4baa-b253-5c70b69342e9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – A Believer Is Not Stung from the Same Hole Twice",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ff7a1f69-162f-4006-9c67-139b68ac314e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – The Virtue of One Who Maintains Kinship Ties Despite the One Who Severs Them",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "af6a18ae-2a8a-4541-9413-ae32d86fb4d2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – Dealing Diplomatically and Gently with People",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "47fdd43c-7e8e-40a0-8e8d-5cf807187f72",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – A Man Giving His Riding Animal a Name",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "aefe4705-eab1-4da9-8c7d-3e50807088dd",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – From the Etiquette of Walking Is for One Person to Hold Another’s Hand",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "771473bd-b0f8-44f5-8d99-edb78f0359c4",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – Recording People’s Names in Registers",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f1fb4258-f0a0-4472-8623-027ddb6e1193",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – A Man Preparing Food for His Guests Without Eating with Them",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9ebf3311-7ccd-4416-8433-ddf579016f2b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – Condemnation of Mutual Resentment and Hostility",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e6800bfc-adeb-4b69-917a-089ea7fe5e68",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "Chapter 18 – The Prohibition of Saying: “The People Are Ruined”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a21c159a-54cb-4171-bd9b-eef78a54640c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – Warning against Saying: “Allah Will Not Forgive So-and-So”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "489552a5-e294-4492-8505-5e8b879e5857",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "2f921d68-101d-41b5-bef0-846f5666a4d1",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – Walking after the Fajr Prayer",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "393a7993-b9ec-49d2-98d9-aa4978932eb2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – The Prohibition of Boycotting a Muslim for More than Three Days without a Legitimate Religious Excuse",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "495d4766-ea8f-4138-80d4-182ccbac9c84",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – What Has Been Narrated Concerning Killing Dogs",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "710a10df-5c70-4ce3-bbfc-841c16d8c0ad",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – A Severe Warning against Claiming Lineage to Someone Other than One’s Father or Allegiance to Other than One’s True Patrons",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c1c3f8c9-898d-4185-b7e5-6267dc3e476a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – Admitting Invited Guests in Groups When the Place Cannot Accommodate Them All",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7bf76db2-3670-4182-bccc-26e8a1914e7a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – What Has Been Narrated Concerning Eating Until Full",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e057f165-a876-4851-aec0-00b881e1827b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – A Person Should Give Salām to Those He Knows and Those He Does Not Know",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ccea1c4f-c0d0-4ede-a743-97ad678eacf4",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – What Has Been Narrated Concerning Humility",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fecc4c0b-8e15-4058-84bc-a2ca8a41054c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – The One Who Truly Maintains Kinship Is Not Merely the One Who Reciprocates",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "905cc63a-5df9-4fba-8cd3-707eace6c96a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "Chapter 19 – The Believer Is Innocent-Hearted and Noble",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fe25c3d6-b6fe-4faf-a4f1-825a081b4dcc",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – Maintaining Ties with a Polytheist Brother",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "eb9b5cbb-2b7b-4cfd-8308-8fdf8a8c54a2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – What Has Been Narrated Concerning Mercy",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dec30230-c1d1-466e-a86e-84080de07daf",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – The Rider Should Give Salām to the One Who Is Walking",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4b351884-b3c9-4133-9b2d-ef0808ad735e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – The Dislike of Praying When Food Has Been Served",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c7da99f3-c41f-47f1-ac39-54348f659ee7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – The Believer Is Sociable and Easy to Befriend",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "eadc15e1-206d-47ab-98dd-ac8d53701cb2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – The Dislike of Anger and Agitation in the Presence of Guests",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c9b12241-b05a-4db8-852d-909450752f49",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – The Permissibility of Affectionately Saying “My Son” to Someone Who Is Not One’s Son",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "23b82616-6c3b-405d-ac7f-a664b8b2258f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – What Has Been Narrated Concerning the Terms “Slave,” “Female Slave,” “Master,” and “Patron”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1492d154-ebb7-46a7-80b7-7fb8c4422c97",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – The Prohibition of Relating Everything One Hears",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7b69f343-1173-43d2-8ee7-9c2814423811",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "Chapter 20 – What Has Been Narrated Concerning Killing Snakes",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ac30a82c-a199-4a30-bbdd-198dd4c40b1f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – What Has Been Narrated Concerning Roasted Food",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cc2d619b-e528-4a3c-814e-0a3accad1b00",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – One Who Maintained Kinship Ties During His Time of Polytheism and Then Embraced Islam",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "693c8c5b-c2a2-4991-9a21-f402f031648a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – Saying “Yarḥamuk Allah” to One Who Sneezes",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4fd2719c-881e-4348-b20c-c01b98b38a92",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – What Has Been Narrated Concerning Mercy Toward Animals",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9af6e5e7-7a1c-4c51-bf6f-5aabd94f7a2e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – Giving Salām to Children",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d72e9658-7530-463a-800f-26d575a8fc46",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – The Dislike of Saying: “My Soul Has Become Foul”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "32d6e800-e9e0-4ffa-8616-87aa8ec6922f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – Warning against Insulting and Fighting",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "11099803-1f4f-4ae9-a247-ca143b6434ce",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "4ffa93bc-cb0d-4430-90a0-ac46c1736953",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – The Prohibition of Chasing after Pigeons",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a9c6f484-442e-4c56-bf12-729982293dca",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – The Guest Saying to His Host: “I Will Not Eat Until You Eat”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3d9fbcbf-bb73-44db-896c-4cc141394d9b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "038f7c34-2eef-4ea6-8fb4-9ab53e737899",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "Chapter 21 – People Will Be Called by Their Fathers on the Day of Resurrection",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "383834c2-fdff-4186-addb-6dfd39884a46",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "Chapter 22 – If a Man Is Invited to Food, He Should Not Question Its Source",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "306045ae-9586-470a-9d06-a14523fad25c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "Chapter 22 – Whoever Says, “Come, Let Me Gamble with You,” Should Give Charity",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5a6e2378-443b-4b16-8d86-d053b4b55586",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "Chapter 22 – What Has Been Narrated That Two People Trading Insults Are from Satan",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a283be7c-d5ca-4dee-8e91-b1c03839a7be",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "Chapter 22 – What Has Been Narrated Concerning Gnawing Meat from the Bone",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5a4b74f0-f819-4d55-a2cb-76b077daa3b8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "Chapter 22 – Showing Mercy to the Young and Honoring the Elderly",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0dcda62b-e6a0-44d6-93a0-22d15744e211",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "Chapter 22 – Men Giving Salām to Women and Women to Men When There Is No Fear of Temptation",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9c76646f-68d6-4696-a7e1-1fc36dd1341e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "Chapter 22 – What to Say When Someone Sneezes",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fcd1d2a9-7181-45c5-9703-68e6cc9b3a97",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "Chapter 22 – The Sin of Severing Kinship Ties",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1cbb299c-b8e9-47f0-986c-cf9300fadfec",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "Chapter 23 – One Who Sneezes Is Not to Be Given the Response if He Does Not Praise Allah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "38c82ddc-aa44-4191-a87d-3af35f3f8200",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "Chapter 23 – Honoring the Elderly in Speech",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b39b8a50-c675-4ecc-b3e5-a1d7bcd896ba",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "Chapter 23 – What Has Been Narrated Concerning Increasing the Broth for One’s Neighbors",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "428eb0b6-c9d7-478c-9773-3b558951aa8e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "Chapter 23 – If a Man Parts from His Companion and Then Meets Him Again, He Should Give Salām Again",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "75b18b1c-a690-4e45-a199-22943b064194",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "Chapter 23 – The Virtue of Treating Daughters and Sisters Well",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0b96ffe7-1596-45b9-b7b7-47e9c90c1c58",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "Chapter 23 – Saying Takbīr and Tasbīḥ When Amazed",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1ac3f6a6-c877-40e2-95db-0a29ff3cdf3b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "Chapter 23 – The Prohibition of Insulting the Dead",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cf42fe6c-1761-4a0f-9499-a777febe4098",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "Chapter 23 – One Should Invite Only the God-Fearing to One’s Food",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d7acbfd3-c687-4821-a1aa-984b006a3054",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "Chapter 24 – Giving Salām When Entering a Gathering and When Leaving It",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b3782d67-270b-4d7a-9fcd-4936d49d658e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "Chapter 24 – How Many Times the One Who Sneezes Should Be Given the Response",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e2236a10-3b4c-4eab-b3f1-90cbe64cbad8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "Chapter 24 – The Prohibition of Disliking Daughters",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "552253f5-6c5e-48bd-9418-511e42199acf",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "Chapter 24 – What Has Been Narrated Concerning Overlooking the Slips of People of Virtue",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9950ad63-f95d-4b89-8595-874d157cc481",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "Chapter 24 – The Dislike of Eating Food While It Is Very Hot",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "602802d4-16f6-4323-bcbc-d5fadfe86e6e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "Chapter 24 – Saying: “How Are You This Morning?”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "82eac9c1-c298-48b9-be2c-7968b6fecf1f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "Chapter 24 – Condemnation of Cursing",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f95238ab-251d-4d17-9d51-2763df16cd82",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "Chapter 24 – The Permissibility of Hosting a Disbeliever",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "154d8387-2557-4557-b4d6-00610698ebe5",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "Chapter 25 – Warning against Exalting Oneself in Rivalry with Allah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d0b9f7c1-aa81-4c41-9ca7-40ed07ea03fb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "Chapter 25 – Responding with the Words: “Labbayka wa Saʿdayk”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8027484a-d6cf-4c0e-b567-dece305de50a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "Chapter 25 – Conversing with a Guest at Night",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b6cffba6-625d-4dce-ba17-20e813bf5222",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "Chapter 25 – Standing for an Elder or a Person of Virtue and Honor as a Form of Respect",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2a9c8265-bb60-4973-8f7f-6b4297c50171",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "Chapter 25 – Among the Greatest Sins Is for a Man to Kill His Child for Fear That the Child Will Share His Food",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7befbed8-029c-41b3-b538-40da537bc557",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "Chapter 25 – What Has Been Narrated Concerning Returning the Salām",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "45f88ff3-2e10-4387-b33a-440290c75a49",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "Chapter 25 – Lowering the Voice and Covering the Face When Sneezing",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7a0ef6cc-72fb-46a5-ab7c-c9124cfe6c7d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "Chapter 25 – What Has Been Narrated Concerning Biting Meat from the Bone",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7370df00-56ab-43c8-aef8-906564cd94ac",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "Chapter 26 – Kissing Children and Showing Them Mercy",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a1cb0b7c-2faf-4d8e-9798-8d376e041570",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "Chapter 26 – The Dislike of Saying “ʿAlayka al-Salām”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e59aaa89-5071-4fe7-81fd-5c9b40ac6b1d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "Chapter 26 – Cutting Meat with a Knife",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e94ecb71-7be0-487b-82bb-95a5bfa06387",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "Chapter 26 – The Prohibition of Standing as an Act of Exaltation",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "60d69aeb-ced4-436b-b1f1-4b1a84ae543a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "befa4e98-cc82-4138-a90d-5c0490b1542c",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "Chapter 26 – Whoever Yawns Should Place His Hand over His Mouth",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bff10207-c05f-49b8-be04-a2b85eae23e6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "Chapter 26 – Warning against Arrogance",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "50ff8360-2027-4019-bbde-f099b116bcc3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "Chapter 26 – Saying: “May Allah Make Me Your Ransom”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f80d16c5-9355-4788-81e9-c9bed74cd063",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "Chapter 26 – Whether One May Visit His Companion Every Day, Morning and Evening",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b920099c-8324-4956-88c6-f57211ee77a2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "Chapter 27 – Restraining Oneself from Evil Is Charity",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d277d256-3c27-4762-8df0-cad9ccca3ad6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "Chapter 27 – One Who Replies by Saying “ʿAlayka al-Salām”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "49522c35-fbe8-4cea-9f0b-227704a68238",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "Chapter 27 – The Prohibition of Taking Two or More Dates at Once During Hardship Except with the Permission of One’s Companions",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c6efe769-adc0-415a-807b-54574a0c25f7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "d7f9d608-59bd-48f3-8d8c-27f69e2b3dfa",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "Chapter 27 – Allowing a Young Girl to Play",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "062205a8-67a2-47a6-b2d9-5e230eb1ab99",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "Chapter 27 – What Has Been Narrated Concerning the Condemnation of the Arrogant",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9894487d-cf56-434a-a10c-762d23d9dc01",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "8fe92392-df92-43c7-88e7-ecb3a1059a02",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "Chapter 27 – One Who Visits a People, Eats with Them, and Prays There",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "28e4a9f8-3c28-45f5-8f6b-2e3acd2249ae",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "Chapter 27 – Saying: “May My Father and Mother Be Your Ransom”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "25189047-ad97-4e85-b834-78f6a930712d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "Chapter 28 – Saying to Someone: “May Allah Protect You”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "064be49e-ae3f-4ddc-b4f8-bf14a6db6034",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "Chapter 28 – Warning against Looking Down upon a Muslim Even If He Is among the Weak",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7a15324c-c1fe-4339-abb0-68022cf68c06",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "Chapter 28 – One Person Returning Salām on Behalf of a Group",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bd64a627-aef8-430e-b2d1-5a2ea22f5d26",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "Chapter 28 – Asking the Guest to Supplicate After Eating",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "615708be-1636-4938-a5e9-6d045e921db0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "Chapter 28 – Stroking a Child’s Head Out of Compassion",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "988fd3f2-767f-4771-9351-cd3fc24dcd57",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "Chapter 29 – What Has Been Narrated Concerning Eating on a Khuwān, a Dining Cloth, and a Table",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2eadb8fe-d15f-4de3-9f9b-b8afac1fd78b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "Chapter 29 – Part of Noble Character Is for a Man to Assist His Family",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e1385c2a-a1eb-4f36-ab97-c9ba47588570",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "Chapter 29 – How to Respond When Told, “So-and-So Sends You Salām”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cd1a3c02-7ee9-4395-9d9f-0bc3f423f97b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "Chapter 29 – Saying of Something: “It Is Nothing,” Meaning That It Has No Real Validity",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9c68a5e0-65be-42e1-8ef7-17a49724c397",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "Chapter 29 – The Prohibition of Self-Admiration",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0ad169b4-affb-4d22-877e-ec62cebb3bcb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "Chapter 30 – What Has Been Narrated Concerning the Prohibition of Drinking While Standing",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "29225249-f736-4358-af7b-bf974537c15f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "Chapter 30 – Miserliness in Giving Salām",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d319ed1b-6ee1-479f-9923-36121d26f709",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "Chapter 30 – The Recommendation of Keeping the Company of the Righteous and Avoiding Bad Companions",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a752883b-7cfb-4c9a-b773-72e2ebfc3d1f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "Chapter 30 – What Has Been Narrated Concerning Minor and Hidden Shirk",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "355877cb-0509-4d3c-afe7-81e8f233fd0b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "Chapter 30 – What Has Been Narrated Concerning Saying: “Wayḥak” and “Waylak”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9ec098d6-444f-4daf-adc1-d918ebd58d47",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "Chapter 31 – Condemnation of Avarice and Cowardice",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "55b2c02c-23cd-4c44-b400-d808df767e38",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "Chapter 31 – The Prophet ﷺ Saying: “May Your Right Hand Be Dusty” and “ʿAqrā Ḥalqā”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fd7ea946-bccf-4333-a3e4-3151a2387454",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "Chapter 31 – The Permissibility of Drinking While Standing",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9b191b72-aefb-46a2-ab44-a6bafa1b825c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "Chapter 31 – The Recommendation of Interceding in Matters That Are Not Forbidden",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5be7d8a1-fce2-40f4-af00-c18d944020d3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "Chapter 31 – Giving Salām in the Presence of a Sleeping Person",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3251d74e-b197-405f-814d-0500491600e0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "Chapter 32 – The Recommendation to Drink in Three Breaths Outside the Vessel",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9be1faec-e9e8-484f-862f-e9e256940459",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "Chapter 32 – The Dislike of Giving Salām to One Who Is Urinating",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bcd4754a-b3e5-4504-8547-4d697db0be7a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "Chapter 32 – What Has Been Narrated Concerning the Virtue of Concealing the Faults of Others",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4305b611-7d45-47a2-9c51-e334b1d8a324",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "Chapter 32 – What Has Been Narrated Concerning the Condemnation of Miserliness",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "59bd47cd-ee58-48ce-ad9b-4d264acabc39",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "Chapter 32 – Saying “Be Gone!” to an Evil Person",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "456130d0-a045-4065-aad8-f2c45a860e32",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "Chapter 33 – The Permissibility of Drinking in a Single Breath",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8e7b7baf-4e3e-40cf-9736-8b84d5043f3b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "Chapter 33 – A Believer Concealing His Own Sins",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bc222b88-1ef0-4252-ae65-da2615868193",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "Chapter 33 – The Dislike of Initiating Salām to the People of the Book and How to Respond to Them",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "83d00206-2d41-474a-b51e-213319c9e944",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "Chapter 33 – Guarding against Anger",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "24ade4a2-2a46-478b-bbd5-4f3fa645ebe1",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "Chapter 33 – What Has Been Narrated Concerning the Prohibition of Saying “If Only”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d3d29de6-7c95-474c-93c3-9ea109f09296",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "Chapter 34 – Situations in Which Saying “If Only” Is Permissible",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d081ae69-5aef-42f7-ad8b-ec4417c5ae1e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "Chapter 34 – The Virtue of One Who Controls Himself When Angry",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "94d9c2c9-84a5-4ce3-92c8-2e5001e03ee8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "Chapter 34 – The Virtue of Restraining Anger",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "142aceaa-210a-434c-b376-4d704e973c6b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "Chapter 34 – Giving Salām to a Gathering Containing a Mixture of Muslims and Polytheists",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "86ca7048-0384-4932-bc8f-3de14c3079db",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "Chapter 34 – The Prohibition of Breathing into the Vessel While Drinking",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "05cf3c12-d64f-40fe-aafc-707c469b4334",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "Chapter 35 – The Dislike of Blowing into a Drink",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c03f1709-8edc-4fc8-ab1d-ff300ad0dcfb",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "Chapter 35 – What Has Been Narrated Concerning Consultation",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4d823b20-c398-475d-ad28-ee5cf22244a6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "Chapter 35 – Handshaking and Embracing",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a8d330b3-0979-4046-825e-fcb5473b72a6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "Chapter 35 – Saying “Receive Glad Tidings” When Intending to Fulfill a Promise",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2f1e0edf-01e6-45bd-9187-810547ae4843",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "Chapter 35 – What Should Be Said and Done When Angry",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5c7406f8-9f8f-44a1-b82a-8c058f149a7c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "Chapter 36 – The Dislike of Drinking from a Chipped or Broken Edge of a Cup",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "65b1fbf4-74b5-46be-9b03-ded96c8a71c7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "Chapter 36 – Shaking Hands with One Hand",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d03d9251-08c6-4317-88cc-1876b13feb91",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "Chapter 36 – Securing the Right of the Weak from the Strong",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "edc95e4d-7c3e-4270-9590-27719d14104b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "Chapter 36 – Saying: “If Only Such-and-Such Were the Case”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a3ac2614-a48a-410b-ae3a-a70be8f10915",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "Chapter 36 – When Anger Is Permissible",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a8dec54d-83a8-432c-b1a0-36dcbd33cf4f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "Chapter 37 – What Has Been Narrated Concerning Wishing for Good",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2c3566ab-0011-4e4b-ada0-52af30411cf6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "Chapter 37 – The Prohibition of Striking the Face",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "04258402-b586-4bb8-a411-ee42624f4473",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "Chapter 37 – What Has Been Narrated Concerning Drinking Water Directly Without a Vessel",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2d52e6ca-036c-43cc-bf32-337bd94013c7",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "Chapter 37 – What Has Been Narrated Concerning Love of Allah and His Messenger",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "70d1ec04-fe56-45b9-be4a-7c4c4c5eb119",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "Chapter 37 – Shaking Hands with Both Hands on Occasion",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "54c3ed2e-d449-43f1-8749-e6b852c2b741",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "Chapter 38 – From Good Manners Is That a Man Not Release Another’s Hand Until the Other Releases It",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c8f2d26e-7483-4357-a70d-76bffa19a38f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "Chapter 38 – The Virtue of Those Who Love One Another for the Sake of Allah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f5b0d449-26f0-47ae-8f48-d04b7517e6cd",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "Chapter 38 – The Prohibition of Drinking Directly from the Mouths of Waterskins",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8402d9b1-28dd-47f5-98e8-bc80592916ac",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "Chapter 38 – Forms of Wishing That Are Disliked",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4cb908e5-ed05-4dad-bc29-d4162405d72a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "Chapter 38 – The Severe Warning against Those Who Torture People without Right",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ae2b5146-7d14-4845-b9e0-22c20b308b99",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "Chapter 39 – What Has Been Narrated Concerning Avoiding the People of Deviant Desires and Hating Their Deviation",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "df9543ad-8de1-4bda-8e3f-f93378f93e18",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "Chapter 39 – What Has Been Narrated Concerning Kissing",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fd9f2c52-e09e-45da-8780-c8eab6864ffc",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "Chapter 39 – What Has Been Narrated Permitting That",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3b9d1041-a163-4015-8e5d-684b9f839471",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "Chapter 39 – Good Praise and Bad Praise",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a3783d93-ce8c-4848-88cf-17e9a894721e",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "Chapter 39 – The Prohibition of Obscene and Abusive Speech",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ce688514-f922-499a-95a0-fc4333fa669b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "Chapter 40 – What Has Been Narrated Concerning the Condemnation of Partisanship and Tribal Fanaticism",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "66ba15c5-bf1f-460a-9f2d-6ae2ca052cc3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "Chapter 40 – Moderation in Praise and the Dislike of Exaggerating in It",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "af22f2db-4ade-4167-bdc0-28a53dcd64da",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "Chapter 40 – Beginning the Serving of Drink with the Elder, Then Proceeding to His Right",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ccfbbb48-1336-43fd-b21b-df4a75d56568",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "Chapter 40 – The Meeting of the Souls of the Believers",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "91009759-580e-4419-aa2c-aa340999e2aa",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "Chapter 40 – Giving People Their Proper Rank and Status",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1edaaf69-ddb3-4756-bb3f-05ac5c8e457a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "Chapter 41 – When Allah Loves a Servant, He Causes His Servants to Love Him",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2b1a3c87-1012-4eb2-adb4-d2ae1e2c9641",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "Chapter 41 – What Has Been Narrated Concerning Drinking Milk Mixed with Water",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f250da47-6863-40d5-a929-6cf0c88456b3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "f7f0c7db-27c0-49b2-ab68-0dc2daadabae",
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "Chapter 41 – Welcoming the Guest, Visitor, and Delegation",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2cb69de3-eb3b-454f-bedd-0442cc9fe2f2",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "Chapter 41 – Praising One’s Brother for What One Truly Knows of Him",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d777f57c-37bc-4e8a-8b7d-2a52501397a6",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "Chapter 41 – Condemnation of Boasting about Lineage",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "32c301fe-1d5e-497e-ad31-4f30dc50c9aa",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 42,
+      "sort_order": 42,
+      "title_bn": "Chapter 42 – If a Man Loves Someone, He Should Tell Him",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d151c145-3858-4032-80dc-f57a07faf796",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 42,
+      "sort_order": 42,
+      "title_bn": "Chapter 42 – Drinking Milk Is from the Natural Disposition, Unlike Wine",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b19e96a2-4b60-46db-8cdb-2fbc9690535c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 42,
+      "sort_order": 42,
+      "title_bn": "Chapter 42 – If a Righteous Person Is Praised, It Is Glad Tidings and Does Not Harm Him",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ad8aac15-5b38-479e-8503-9c66f2baa2ba",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 42,
+      "sort_order": 42,
+      "title_bn": "Chapter 42 – Warning against Openly Publicizing Sin",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "304aec67-a3f3-4696-baae-aed3f590e975",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 43,
+      "sort_order": 43,
+      "title_bn": "Chapter 43 – The Prohibition of Laughing When Someone Passes Wind",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "e827e005-7409-4295-bda6-a8fdf598c6d1",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 43,
+      "sort_order": 43,
+      "title_bn": "Chapter 43 – The Recommendation of Saying, “I Do Not Declare Anyone Pure before Allah,” When Praising Someone",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4f7320bc-e1b6-4870-96e8-f9a4274a6b85",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 43,
+      "sort_order": 43,
+      "title_bn": "Chapter 43 – The Virtue of Visiting One’s Brother for the Sake of Allah",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f2053d64-ce2f-4960-bc1c-4d7d88523073",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 43,
+      "sort_order": 43,
+      "title_bn": "Chapter 43 – Rinsing the Mouth After Eating and Drinking",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0b3ccf2f-309a-43ba-987b-45e38f9fad1b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 44,
+      "sort_order": 44,
+      "title_bn": "Chapter 44 – Covering a Cup of Milk",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1f533aed-278b-4f6c-ab62-1c439c264b3a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 44,
+      "sort_order": 44,
+      "title_bn": "Chapter 44 – The Virtue of Visiting the Sick",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4b9c1cb4-4e8e-493c-a8f7-eea4df0e818f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 44,
+      "sort_order": 44,
+      "title_bn": "Chapter 44 – The Prohibition of Excessive Laughter",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "02580f0f-683c-49f7-b320-66d838e4c6b8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 44,
+      "sort_order": 44,
+      "title_bn": "Chapter 44 – The Prohibition of Supplicating against Oneself, One’s Children, or One’s Wealth",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2ec81ed1-5ed4-4c43-ab27-9570e617a3e8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 45,
+      "sort_order": 45,
+      "title_bn": "Chapter 45 – A Person Will Be with Those Whom He Loves",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "800cd026-5a97-46b8-af21-004bf06f0dba",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 45,
+      "sort_order": 45,
+      "title_bn": "Chapter 45 – Bones and Dung Are Food for the Jinn",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4854ebe3-0a33-495a-95ff-ef922fa43998",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 45,
+      "sort_order": 45,
+      "title_bn": "Chapter 45 – How a Letter Should Be Written to the People of the Book",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "142d7f55-a524-4b48-8cfe-e493e4432c9d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 45,
+      "sort_order": 45,
+      "title_bn": "Chapter 45 – Warning against Excessive Questioning, Over-Scrupulousness, and Extremism in Religion",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0186cb42-d12e-4b55-93df-8d6e3a8f1dcd",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 46,
+      "sort_order": 46,
+      "title_bn": "Chapter 46 – A Ruler May Prevent the Disclosure of State Secrets",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b998e272-63da-46c3-a242-e6fbae42efa9",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 46,
+      "sort_order": 46,
+      "title_bn": "Chapter 46 – The Prohibition of Taking One’s Brother’s Property",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2b4d2dda-6918-49ef-9d1b-8abb1a6b44f3",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 46,
+      "sort_order": 46,
+      "title_bn": "Chapter 46 – The One Serving Drink Is the Last of the People to Drink",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "452ad818-6d5f-4821-82f5-b1ea7b66715d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 46,
+      "sort_order": 46,
+      "title_bn": "Chapter 46 – Souls Are Like Conscripted Soldiers",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "612a48a5-7beb-4464-a6ca-34106acbe546",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 47,
+      "sort_order": 47,
+      "title_bn": "Chapter 47 – Seeking Pleasant-Tasting Water Even from a Distant Place",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8603cd0d-9d86-4c3d-a3b0-36a410a19ca8",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 47,
+      "sort_order": 47,
+      "title_bn": "Chapter 47 – Concerning One Who Seeks Allah’s Pleasure Even at the Cost of People’s Displeasure",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f150e8e0-0263-4418-a9ea-23a8a3faf847",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 47,
+      "sort_order": 47,
+      "title_bn": "Chapter 47 – One Should Not Take a Share for Oneself When Dividing Common Property among People",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "062dc727-0bc4-4526-a58c-0cbf0e9a7f02",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "304364d0-60c5-4b03-b240-9b1625e845df",
+      "chapter_number": 47,
+      "sort_order": 47,
+      "title_bn": "Chapter 47 – What Has Been Narrated Concerning Parables",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cb8573cb-1a45-4767-83fc-592e3ab6d4bf",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 48,
+      "sort_order": 48,
+      "title_bn": "Chapter 48 – Concerning True Nobility and Lineage",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "30dd2b73-62c3-43a3-b11b-f241738a4b38",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 48,
+      "sort_order": 48,
+      "title_bn": "Chapter 48 – The Prohibition of Drinking from Vessels of Gold and Silver",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "22b4cddb-0a2b-4460-81f3-29de3be257f0",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 48,
+      "sort_order": 48,
+      "title_bn": "Chapter 48 – The Prohibition of Scheming and Deception",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f73928e4-0f42-4d4d-9286-83a6b6eea994",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "71720e55-ae94-4396-8a7a-1c3c135dd63e",
+      "chapter_number": 49,
+      "sort_order": 49,
+      "title_bn": "Chapter 49 – What Has Been Narrated Concerning Effeminate Men",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1153c74b-1aaa-4071-9f66-57a20d3c6161",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "350c00eb-bcf0-4981-8936-11242a6328a8",
+      "chapter_number": 49,
+      "sort_order": 49,
+      "title_bn": "Chapter 49 – The Recommendation of Taking a Midday Nap for One Who Is Able",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "71062ef4-eed1-4d2a-8395-bdb779d21e0b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 49,
+      "sort_order": 49,
+      "title_bn": "Chapter 49 – Good Treatment of Servants and Those Under One’s Authority",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0835dd60-82d4-48c0-a9ad-1c3c30b049fa",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 50,
+      "sort_order": 50,
+      "title_bn": "Chapter 50 – The Recommendation of Frequently Pardoning a Servant",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b4210631-4369-4fcb-855a-6bd92c625389",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 51,
+      "sort_order": 51,
+      "title_bn": "Chapter 51 – The Expiation for Striking One’s Slave Is to Free Him",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1e772d18-c0c4-4336-a97a-7fa19d5aa09f",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 52,
+      "sort_order": 52,
+      "title_bn": "Chapter 52 – Warning Against Accusing One’s Slave of Zinā",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2284ec46-b0bd-4f80-9702-e1287c95580b",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 53,
+      "sort_order": 53,
+      "title_bn": "Chapter 53 – The Reward of a Slave Who Worships His Lord Well and Is Sincere to His Master",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "36d3e071-b27f-420c-9f06-68141e828817",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 54,
+      "sort_order": 54,
+      "title_bn": "Chapter 54 – A Slave Is a Shepherd and Is Responsible for His Master’s Property",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ea182a64-d52e-439d-bf34-fcbf5399712c",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 55,
+      "sort_order": 55,
+      "title_bn": "Chapter 55 – It Is Better to Avoid Striking When the Objective Can Be Achieved Without It",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ae51417b-29cd-4bab-aaa8-6d491bc4e47a",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 56,
+      "sort_order": 56,
+      "title_bn": "Chapter 56 – The Highest Example of Good Treatment of a Servant",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "914948dc-3c01-4efd-a08f-9ee324d8e915",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 57,
+      "sort_order": 57,
+      "title_bn": "Chapter 57 – Warning Against Corrupting a Slave Against His Master",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c7378743-adca-44ed-99c7-e137ca468e7d",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 58,
+      "sort_order": 58,
+      "title_bn": "Chapter 58 – Hanging a Whip in the House",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4caa0f56-ff60-4261-9feb-39cfedfdbe48",
+      "book_id": "c41b1c24-7ccc-4539-83fb-ddd8c66b0f25",
+      "collection_id": "836a3831-c865-401c-9915-608db861bdc3",
+      "chapter_number": 59,
+      "sort_order": 59,
+      "title_bn": "Chapter 59 – Praising Disbelievers for Good Deeds",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
