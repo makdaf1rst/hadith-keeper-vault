@@ -1,0 +1,1160 @@
+{
+  "collections": [
+    {
+      "id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "sort_order": 1,
+      "title_bn": "১ — সংকলন: ফিতনা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "sort_order": 2,
+      "title_bn": "২ — সংকলন: কিয়ামতের ছোট আলামতসমূহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "sort_order": 3,
+      "title_bn": "৩ — সংকলন: কিয়ামতের বড় আলামতসমূহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "e2579a26-8641-43b7-999e-cfa92a094abf",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": null,
+      "sort_order": 0,
+      "title_bn": "ভূমিকা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d51a985c-b390-483a-b63e-274cb10f9205",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: প্রথম আলামত—ধোঁয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "66394f9b-50e7-4ddd-8bd6-1ae57d00eb0a",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: কিয়ামত কখন সংঘটিত হবে?",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d54ef5b3-4119-4e21-aa0e-6d858745aaf7",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: ফিতনা প্রকাশের আগে সৎকর্মে দ্রুত অগ্রসর হওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2d9af878-2271-4e9c-899d-022c4b15c3ad",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: কিয়ামতের আলামতসমূহ প্রকাশের আগে সৎকর্মে দ্রুত অগ্রসর হওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b2f95429-b303-41b1-bc87-21ace77f2522",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: সৌভাগ্যবান সে, যাকে ফিতনা থেকে দূরে রাখা হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cfcd88cd-0dbc-4b44-a8c7-ff8d20ff45b3",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: দ্বিতীয় আলামত—দাজ্জালের আবির্ভাব, তার বর্ণনা ও ফিতনা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c12a2ce7-0ed7-47de-b3fa-072b075f7509",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: কিয়ামতের কয়েকটি আলামতের উল্লেখ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b0a7ed4e-c786-49ed-836f-51a4ee7029c9",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: ফিতনা থেকে আশ্রয় প্রার্থনা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "552f436d-3450-4ccd-97df-bc6c0d95d4b9",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: ইসফাহানের সত্তর হাজার ইয়াহূদী দাজ্জালকে অনুসরণ করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2d9c8f06-7f0d-4b0c-bec1-425067924b72",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: দাজ্জাল মক্কা বা মদিনায় প্রবেশ করবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "76c28938-70d5-444a-89e4-6c5b166f6240",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: ফিতনার স্থান থেকে দূরে থাকা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "39b004e8-ebd4-433a-aeb3-8bc3174a2c01",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: কিয়ামত নিকটবর্তী হওয়ার আলামতের মধ্যে নবী ﷺ-এর প্রেরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4e960529-651d-4117-a165-5a37afc07c36",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: কিয়ামত নিকটবর্তী হওয়ার আলামতের মধ্যে নবী ﷺ-এর মৃত্যু, বাইতুল মাকদিস বিজয় এবং ব্যাপক মৃত্যু",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2d8b29fb-8ec8-4eff-ba78-f25974446280",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: ফিতনার সময় ধৈর্য",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d7b2da7b-ec08-4551-a8a8-a521db553705",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: যা মানুষকে দাজ্জাল থেকে রক্ষা করে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c5e51f22-8c38-4e4a-9c13-01c01b6245e9",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: কিয়ামতের আগে অন্ধকার রাতের খণ্ডাংশের মতো ফিতনা হবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0d2e682f-def8-4680-887a-39723ed0619f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: আল-জাসসাসাহর ঘটনা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3d302e58-beb9-440a-94e8-ab5a7dde7f1a",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: ফিতনা থেকে নাজাতের উপায়সমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b5f554c0-5b2b-4261-bcd3-f163d1e59083",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: ইবন সাইয়্যাদ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1ec5217e-9765-445e-a65e-ecd3f41b81cd",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: আমানত নষ্ট হলে কিয়ামতের অপেক্ষা করো",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "325b5fe1-049a-4b4b-981f-5e5a90e3f5a7",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: ফিতনার সময় নিজেকে গুটিয়ে নেওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9b280e8b-a624-48cc-96e8-7fd41691030e",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: ফিতনার সময় যে তার জানা সত্যের এক-দশমাংশও আঁকড়ে ধরে, সে নাজাতপ্রাপ্ত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f8f957cb-6325-4983-9f91-7f929ce19f57",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: তৃতীয় আলামত—দাব্বাহর আবির্ভাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7b9251fb-52e7-46a3-b656-1c30bf8c1ef9",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: কিয়ামতের আগে সময় সংকুচিত হবে, জ্ঞান উঠিয়ে নেওয়া হবে, অজ্ঞতা, ফিতনা, মিথ্যা, কৃপণতা, যিনা, সুদ ও মদ্যপান ছড়িয়ে পড়বে, হত্যা বৃদ্ধি পাবে এবং বাজারগুলো কাছাকাছি হবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "892d9ab4-d2da-4cbd-b289-82aca7056ee8",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: খবর যাচাই করা ফিতনা থেকে নাজাতের উপায়সমূহের একটি",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "79445443-61eb-4a8f-bdf9-30151e1d1d5e",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: চতুর্থ আলামত—পশ্চিম দিক থেকে সূর্য উদয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0b3382a8-5e5a-46ec-85ce-8b78929759ce",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: কিয়ামতের আগে সালাম পরিচিতজনদের মধ্যে সীমাবদ্ধ হবে, বাণিজ্য ও লেখালেখি ছড়াবে, আত্মীয়তার সম্পর্ক ছিন্ন হবে, মিথ্যা সাক্ষ্য প্রকাশ পাবে এবং সত্য সাক্ষ্য গোপন করা হবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cc3cc72c-2af0-47e4-a356-26a95554aebc",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: পঞ্চম আলামত—ঈসা ইবন মারইয়াম (আলাইহিস সালাম)-এর অবতরণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "afd5673d-1f18-4b14-9e66-c2b27132dade",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: ফিতনা দেখা দিলে এবং সকল অবস্থায় মুসলিম জামা‘আতের সঙ্গে থাকার আবশ্যকতা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9daf4abf-1125-4bdc-aa6c-380cbe79c224",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: কিয়ামতের আলামতের মধ্যে অশ্লীলতা ও ইচ্ছাকৃত অশ্লীল আচরণ, আত্মীয়তার সম্পর্ক ছিন্ন করা, বিশ্বস্তকে বিশ্বাসঘাতক বলা, বিশ্বাসঘাতককে বিশ্বাস করা, সত্যবাদীকে প্রত্যাখ্যান এবং মিথ্যাবাদীকে বিশ্বাস করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4bc21b1e-c865-4a0b-a326-1f22dcc22f4a",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: শেষ যুগের খলিফা মাহদীর আবির্ভাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5bc143a4-07bf-4d24-a86d-683a8efc5f72",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: কিয়ামতের আলামতের মধ্যে নারীর সংখ্যা বৃদ্ধি ও পুরুষের সংখ্যা হ্রাস",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0da03792-f1ae-46ff-808c-beac59ced504",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: ফিতনার মধ্যে তাড়াহুড়ো করে ঝাঁপিয়ে পড়ার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "be05a66c-21d7-41b3-883b-fe2608c37a0e",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: ষষ্ঠ আলামত—ইয়াজূজ ও মাজূজের আবির্ভাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "eb90cc1a-f000-4599-b71f-0ca60df82b60",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: কিয়ামতের আলামতের মধ্যে মানুষ মসজিদ নিয়ে গর্ব করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1c87beb9-5c74-471a-ad03-65439e02475e",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: এমন কথা উচ্চারণের বিরুদ্ধে সতর্কবাণী যা মুসলিমদের মধ্যে বিভেদ ও রক্তপাতের কারণ হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ceac9644-9b77-4cff-affb-b7294f83da3f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: ফিতনার সময় যে নিজের দীন দৃঢ়ভাবে আঁকড়ে ধরে, সে যেন জ্বলন্ত অঙ্গার ধরে আছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a4a5a12f-ba3c-4828-a097-7785b9737254",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: কিয়ামতের আলামতের মধ্যে ভবনসজ্জা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d9bcd546-700c-445c-997b-63f6518a46b0",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: সপ্তম, অষ্টম ও নবম আলামত—পৃথিবীর তিনটি ধস",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "91b98ae4-f8e2-4ffc-b25d-1db984a06e6b",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: কিয়ামতের আলামতের মধ্যে কনিষ্ঠ বা অপেক্ষাকৃত কম যোগ্য লোকদের কাছ থেকে জ্ঞান গ্রহণ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8d8246a6-7525-4eb7-b34f-3b4d31f1e216",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: হারজের সময় ইবাদতের মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f53b55e0-0993-4980-8c79-0632bb67caf3",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "12bca9a9-e8fe-4630-bba7-9e722977218f",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: দশম আলামত—মানুষকে একত্র করবে এমন আগুনের আবির্ভাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "35646ba0-b982-4c26-9871-9111e2ae3194",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: এই উম্মাহর কিছু দলের মধ্যে শির্ক প্রকাশ না পাওয়া পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "19354588-de88-41a9-bf44-231ae1fa6563",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: নবী ﷺ কিয়ামত পর্যন্ত ঘটবে এমন ফিতনা ও অন্যান্য ঘটনার সংবাদ দিয়েছেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d2818fdd-14c1-434c-a376-7cd60db56449",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: মিথ্যাবাদী দাবিদাররা না আসা পর্যন্ত কিয়ামত হবে না; প্রত্যেকে নিজেকে আল্লাহর রাসূল বলে দাবি করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "72357e8c-66ad-40b3-b9da-1c0d3e4b218c",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: নবী ﷺ-এর খুতবা এবং কিয়ামত পর্যন্ত যা ঘটবে তা ব্যাখ্যা করা সম্পর্কে হুযাইফাহর হাদীস",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "897108fa-a100-476a-b38b-02882df2eb47",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: কিয়ামতের আলামতের মধ্যে দাসী তার মালিকাকে জন্ম দেবে, খালি পা ও উলঙ্গ লোকেরা মানুষের নেতা হবে এবং রাখালরা উঁচু ভবন নির্মাণে প্রতিযোগিতা করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b2df30b7-932d-4b0f-9b0d-96b976ec446e",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: দুনিয়ার অবশিষ্ট অংশ হলো পরীক্ষা ও ফিতনা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4da39ed7-4199-4352-b540-0efaf4fffe08",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: দুনিয়া শেষ হবে না যতক্ষণ না নীচ ও হীন লোকেরা তাতে সবচেয়ে সুখী হয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1a1da340-62b0-44a9-b803-a4390749231d",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: ফিতনার আবির্ভাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1e484ac1-cf6d-4003-bb80-2c970aad7d7f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: বৃষ্টির মতো নেমে আসা ফিতনা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3f519df2-8209-4111-ba12-424260e9534a",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: সম্পদ প্রচুর না হওয়া এবং সদাকাহ গ্রহণের মতো কাউকে না পাওয়া পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "60a8edaf-5221-47ab-975c-0a62c648309e",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: অন্তরের সামনে ফিতনা উপস্থাপিত হওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5d194bdd-6425-471b-9325-0021ecc18b72",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: আরব ভূমি আবার তৃণভূমি ও নদীতে পরিণত না হওয়া পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "71f5bd81-32eb-488a-b0cc-e39cb2472b84",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: ফিতনা একের পর এক আসবে; প্রতিটি পূর্ববর্তীটিকে হালকা মনে করাবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1d06cdcb-fef5-4b25-b511-24800f2868d7",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: ফুরাত নদী সোনার পাহাড় উন্মোচিত না করা পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5b571947-00ec-4586-b4a8-a2f5547b550b",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "২২ — অধ্যায়: এমন কোনো সময় আসে না যার পরবর্তী সময়টি তার চেয়ে মন্দ নয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "323b32e2-77e6-4bec-908e-d11000ab758f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "২২ — অধ্যায়: বন্য পশু মানুষের সঙ্গে কথা না বলা পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9bf10ccf-e4a8-4d5f-b3a3-39aaa1de3bf1",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "২৩ — অধ্যায়: নবী ﷺ-এর বাণী: “আমার পরে একে অপরের ঘাড়ে আঘাত করে কুফরিতে ফিরে যেয়ো না”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a3992870-3800-4d28-a79b-79795efbcfed",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "২৩ — অধ্যায়: হিজায ভূমি থেকে আগুন বের না হওয়া পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "46170928-6633-467f-a5c3-e6ef991719de",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "২৪ — অধ্যায়: এমন আগুনের আবির্ভাব যা পূর্ব থেকে পশ্চিম পর্যন্ত মানুষকে একত্র করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "84975837-c5b3-48ef-911d-348700f7ae2f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "২৪ — অধ্যায়: দুই মুসলিম তরবারি নিয়ে মুখোমুখি হলে উভয়ই জাহান্নামে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "72c3a2e9-723b-426b-911b-6f7d764be6ef",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "২৫ — অধ্যায়: মদিনা তার মন্দ লোকদের বের করে না দেওয়া পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d37281b3-78af-4fef-b6ec-2ce8686e30d5",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "২৫ — অধ্যায়: এই উম্মাহর মধ্যে একবার তরবারি বের হলে কিয়ামত পর্যন্ত তা আর উঠিয়ে নেওয়া হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "40bb6c47-2e43-4c0a-842b-0c3a6c397779",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "২৬ — অধ্যায়: মদিনার ভবনসমূহ সালা‘ পাহাড় পর্যন্ত পৌঁছাবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "076383c7-cf3e-464f-9262-dac7dd4b29a9",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "২৬ — অধ্যায়: নবী ﷺ তাঁর সাহাবীদের হত্যার পূর্বসংবাদ দিয়েছেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "29c29919-abc5-4254-9e23-b9aa6ec8ddf0",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "২৭ — অধ্যায়: নবী ﷺ-এর বাণী: “নিকটবর্তী অকল্যাণের কারণে আরবদের জন্য ধ্বংস”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f5e216a8-e19b-423c-9276-17a1cf5f4538",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "২৭ — অধ্যায়: মদিনার নগর বিস্তার বৃদ্ধি পাবে, তারপর শেষ যুগের কাছাকাছি তা ধ্বংসপ্রাপ্ত হবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "97695026-8f25-4552-86cb-0487240b64b6",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "২৮ — অধ্যায়: দুই বড় দল পরস্পর যুদ্ধ না করা পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c16f8521-f1ef-47e2-9420-3d511bc5afa5",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "২৮ — অধ্যায়: দুনিয়ার স্বার্থে যুদ্ধের ফিতনা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d44ff42f-0bd0-4785-9c0a-a43f4c0346a4",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "২৯ — অধ্যায়: মুসলিমরা তুর্কিদের সঙ্গে যুদ্ধ না করা পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "5ce3cb95-e7a5-4f42-b739-8949c7264ef8",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "২৯ — অধ্যায়: বন্ধ দরজা ভেঙে গেলে ফিতনার আবির্ভাব",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "cce0108e-e404-41bc-9c68-4ae6df5f07f9",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "৩০ — অধ্যায়: উসমান (রাদিয়াল্লাহু আনহু)-এর হত্যার ফিতনা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "02cd2188-3302-48cd-835d-0f68c8c26f4b",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "৩০ — অধ্যায়: কাহতান থেকে এক ব্যক্তি বের হয়ে তার লাঠি দিয়ে মানুষকে পরিচালিত না করা পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b8bccf94-0ce9-48c2-81b0-bcf29b4ca1e3",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "৩১ — অধ্যায়: নবী ﷺ-এর পূর্বসংবাদ—বিদ্রোহী দল আম্মারকে হত্যা করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a4dd03c5-df01-4263-9462-230bb5632a7f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 31,
+      "sort_order": 31,
+      "title_bn": "৩১ — অধ্যায়: আল-জাহজাহ নামের এক ব্যক্তি শাসন না করা পর্যন্ত দিন-রাত শেষ হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "59697b56-c55a-45c0-8ef0-6d5ff6b7298f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "৩২ — অধ্যায়: মুসলিমদের আরব উপদ্বীপ, তারপর পারস্য, তারপর রোমানদের এবং এরপর দাজ্জালের বিরুদ্ধে বিজয়যাত্রা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c4278e2d-04ec-48a9-97a0-fad20d109512",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 32,
+      "sort_order": 32,
+      "title_bn": "৩২ — অধ্যায়: উষ্ট্রের যুদ্ধ সম্পর্কে বর্ণনাসমূহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f0a36bc3-a4f0-4d9f-bb12-6853ffe748f5",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "৩৩ — অধ্যায়: কিয়ামতের আলামতের মধ্যে শেষ যুগে মুসলিমরা রোমানদের সঙ্গে যুদ্ধ করবে এবং আল্লাহ তাদের বিজয় দেবেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b86c736d-beda-4738-a8d5-b90ab5ed6982",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 33,
+      "sort_order": 33,
+      "title_bn": "৩৩ — অধ্যায়: খাওয়ারিজদের ফিতনার উল্লেখ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ac8cbe36-faeb-47a2-855f-393ec0d9dbbd",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "৩৪ — অধ্যায়: খাওয়ারিজদের মধ্যকার মুখাদ্দাজের বর্ণনা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b2dc2bf0-112a-402a-a961-e5b3bce804af",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 34,
+      "sort_order": 34,
+      "title_bn": "৩৪ — অধ্যায়: রোমানদের সঙ্গে যুদ্ধ এবং দাজ্জালের আবির্ভাবের আগে কনস্টান্টিনোপল বিজিত না হওয়া পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b01162ed-a75a-4176-906f-42566dbda362",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "৩৫ — অধ্যায়: নবী ﷺ-এর বাণী: “ফিতনা পূর্ব দিক থেকে আসবে”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a080538c-ed6c-4536-b961-b240e40b5103",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 35,
+      "sort_order": 35,
+      "title_bn": "৩৫ — অধ্যায়: মুসলিমরা ইয়াহূদীদের সঙ্গে যুদ্ধ করে তাদের হত্যা না করা পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2dafd728-2f18-4458-abd6-7e2c0777cacf",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "৩৬ — অধ্যায়: ব্যাপক বৃষ্টি হলেও পৃথিবী কিছু উৎপন্ন না করা পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "83e18332-5b09-4c8a-8446-f45fd7416a81",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 36,
+      "sort_order": 36,
+      "title_bn": "৩৬ — অধ্যায়: ইরাক, শাম ও মিসরের লোকেরা তাদের সম্পদের যাকাত বন্ধ করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2c9480a0-2bc9-4b72-a879-edb29e494527",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "৩৭ — অধ্যায়: বসরা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "00f464ab-cb99-409f-9a8a-4680d0122873",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 37,
+      "sort_order": 37,
+      "title_bn": "৩৭ — অধ্যায়: কিয়ামত নিকটবর্তী হলে বজ্রাঘাত বৃদ্ধি পাবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "51079224-fcc1-4a77-9c82-6d52e798d2c6",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "৩৮ — অধ্যায়: ভূমিকম্প বৃদ্ধি না পাওয়া পর্যন্ত কিয়ামত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c89c47ae-2960-440f-958b-f58670cf7ebd",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 38,
+      "sort_order": 38,
+      "title_bn": "৩৮ — অধ্যায়: হাবশীদের উসকানি দেওয়ার নিষেধাজ্ঞা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "37ef3eba-712e-4175-9574-8cba69df024e",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "৩৯ — অধ্যায়: কিয়ামতের আগে এই উম্মাহর মধ্যে ভূমিধস, পাথর বর্ষণ ও আকৃতি পরিবর্তনের ঘটনা ঘটবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2a8c347a-1cc2-4afc-8b0c-71137f401c3a",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 39,
+      "sort_order": 39,
+      "title_bn": "৩৯ — অধ্যায়: উম্মাহর জন্য পথভ্রষ্টকারী নেতাদের বিপদ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8435b97e-0963-4d1c-9d1d-2dba0ffaf372",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "৪০ — অধ্যায়: পবিত্র ঘরের দিকে অগ্রসরমান বাহিনীকে পৃথিবী গ্রাস করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "606ea71e-7f00-45f5-a76a-cc07cbe1e1ca",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 40,
+      "sort_order": 40,
+      "title_bn": "৪০ — অধ্যায়: এই উম্মাহর মধ্যে এমন লোক হবে যারা চাবুক বহন করবে এবং আল্লাহর ক্রোধের মধ্যে সকাল-সন্ধ্যা করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0a2b45cb-a411-4245-8b25-b414a3d8727b",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "৪১ — অধ্যায়: এই উম্মাহ একে অপরকে ধ্বংস করবে ও দাসত্বে আবদ্ধ করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "240f3856-87e3-46ab-8d36-b342d153d291",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 41,
+      "sort_order": 41,
+      "title_bn": "৪১ — অধ্যায়: পবিত্র ঘরে হজ করা বন্ধ না হওয়া পর্যন্ত কিয়ামত হবে না; এটি ঈসা (আলাইহিস সালাম)-এর যুগের পরে শেষ সময়ের কাছাকাছি ঘটবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bf9a7c01-2811-4851-87a8-48cadacf73d5",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 42,
+      "sort_order": 42,
+      "title_bn": "৪২ — অধ্যায়: শেষ যুগের কাছাকাছি কাবা ধ্বংস সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "727a586a-e1a9-40da-8f7d-097d31776ab9",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 42,
+      "sort_order": 42,
+      "title_bn": "৪২ — অধ্যায়: নবী ﷺ-এর বাণী: “আমার উম্মাহর ধ্বংস কুরাইশের কিছু তরুণের হাতে হবে”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "68543ba3-6a44-4e30-97f0-d0b3cb07cae4",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 43,
+      "sort_order": 43,
+      "title_bn": "৪৩ — অধ্যায়: আরব গোত্রগুলোর মধ্যে কুরাইশ সবচেয়ে দ্রুত বিলুপ্ত হবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "65748ae5-5f9b-4c49-8af5-fb5ddc40d2b1",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 43,
+      "sort_order": 43,
+      "title_bn": "৪৩ — অধ্যায়: শেষ যুগের কাছাকাছি কঠিন পরীক্ষার কারণে মানুষ যা কামনা করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "abd186a5-4cd2-42c1-8baa-fd35f5094be5",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "7cffa390-c9ed-44c6-b49c-a8e9275d1f53",
+      "chapter_number": 44,
+      "sort_order": 44,
+      "title_bn": "৪৪ — অধ্যায়: শেষ যুগের কাছাকাছি আল্লাহ এমন বাতাস পাঠাবেন যা প্রত্যেক মুসলিমের প্রাণ নিয়ে নেবে; কেবল সবচেয়ে নিকৃষ্ট লোকেরা থাকবে, আর তাদের ওপরই কিয়ামত হবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "766722f0-987b-48ee-945a-71abab4fc71f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 44,
+      "sort_order": 44,
+      "title_bn": "৪৪ — অধ্যায়: এই উম্মাহ ইয়াহূদী ও খ্রিস্টানদের পথ অনুসরণ করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9cc75fc6-834f-46e3-8ab1-6dc14a93c141",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 45,
+      "sort_order": 45,
+      "title_bn": "৪৫ — অধ্যায়: এই উম্মাহ তিয়াত্তর দলে বিভক্ত হবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "664727a5-a2d6-4ed7-a5f2-0173137edab2",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 46,
+      "sort_order": 46,
+      "title_bn": "৪৬ — অধ্যায়: অনারবদের প্রাধান্য সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "56636d2d-8edf-427a-b067-255ef0006191",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 47,
+      "sort_order": 47,
+      "title_bn": "৪৭ — অধ্যায়: ইসলামের বিরুদ্ধে জাতিসমূহের একত্রিত হওয়া",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b67f7c3a-1311-4b20-aa01-9e8e1385ecc0",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 48,
+      "sort_order": 48,
+      "title_bn": "৪৮ — অধ্যায়: মুসলিমরা শিগগিরই মদিনায় সীমাবদ্ধ হয়ে পড়বে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d0f8e54a-814b-497f-aefb-8dfe4b002e8d",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 49,
+      "sort_order": 49,
+      "title_bn": "৪৯ — অধ্যায়: বড় যুদ্ধসমূহ সংঘটিত হলে আল্লাহ মাওয়ালীদের মধ্য থেকে একটি বাহিনী পাঠাবেন, যাদের মাধ্যমে তিনি এই দীনকে সাহায্য করবেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7e8646ef-0f59-4e28-a760-570982621ff0",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 50,
+      "sort_order": 50,
+      "title_bn": "৫০ — অধ্যায়: আল্লাহ কোনো জাতির ওপর শাস্তি পাঠালে তা তাদের সবাইকে পরিব্যাপ্ত করে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b50d3d4d-3913-4a53-aca5-cb5b3938d32f",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 51,
+      "sort_order": 51,
+      "title_bn": "৫১ — অধ্যায়: শাসক জালিম হলেও কোমল কথা ও হিকমাহর সঙ্গে তাকে নসিহত করা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6c7a0d7d-653d-4308-bfbe-4ea375fa664d",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 52,
+      "sort_order": 52,
+      "title_bn": "৫২ — অধ্যায়: মুমিন এমন পরীক্ষার মুখোমুখি নিজেকে করবে না যা সে সহ্য করতে পারে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "074e9ce5-888c-4462-b4c9-a3c53b9c68a8",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 53,
+      "sort_order": 53,
+      "title_bn": "৫৩ — অধ্যায়: আমার উম্মাহ পথভ্রষ্টতার ওপর একমত হবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "0baf44d2-848d-48e6-a689-114d52e0caf6",
+      "book_id": "d4fe7d84-380f-49d6-a477-94e1fe75db58",
+      "collection_id": "8ba2ab9f-c3f3-44f6-8859-e6c7ac0699f8",
+      "chapter_number": 54,
+      "sort_order": 54,
+      "title_bn": "৫৪ — অধ্যায়: মুজাদ্দিদ ও আবদালদের সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
