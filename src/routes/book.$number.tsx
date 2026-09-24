@@ -4,6 +4,11 @@ import { ArrowLeft } from "lucide-react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
+import {
+  fetchBengaliStructure,
+  type BengaliChapterTranslation,
+} from "@/lib/bengali-translations";
+import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import {
   fetchBookByNumber,
@@ -12,6 +17,7 @@ import {
   fetchCollections,
   type Chapter,
 } from "@/lib/library-api";
+import { useLanguage } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/book/$number")({
@@ -64,14 +70,29 @@ function ChapterHadiths({ chapter }: { chapter: Chapter }) {
   );
 }
 
-function ChapterBlock({ chapter }: { chapter: Chapter }) {
+function ChapterBlock({
+  chapter,
+  bengali,
+}: {
+  chapter: Chapter;
+  bengali?: BengaliChapterTranslation | null;
+}) {
+  const { contentLanguage } = useLanguage();
+  const title =
+    contentLanguage === "bn" && bengali?.title_bn
+      ? bengali.title_bn
+      : formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter";
+
   return (
     <li className="border-l-2 border-border pl-3">
-      <p className="text-sm font-medium">
-        {formatChapterTitle(chapter.chapter_number, chapter.title_en) || "Chapter"}
-      </p>
+      <p className="text-sm font-medium">{title}</p>
       {chapter.title_ar ? <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p> : null}
-      <IntroText intro={chapter} className="mt-2" label="Chapter introduction" />
+      <IntroText
+        intro={chapter}
+        bengaliIntro={bengali}
+        className="mt-2"
+        label={contentLanguage === "bn" ? "অধ্যায়ের ভূমিকা" : "Chapter introduction"}
+      />
       <ChapterHadiths chapter={chapter} />
     </li>
   );
@@ -79,6 +100,7 @@ function ChapterBlock({ chapter }: { chapter: Chapter }) {
 
 function BookPage() {
   const { number } = Route.useParams();
+  const { contentLanguage } = useLanguage();
   const bookNumber = Number(number);
 
   const book = useQuery({
@@ -96,6 +118,18 @@ function BookPage() {
     queryFn: () => fetchChapters(book.data!.id),
     enabled: !!book.data,
   });
+  const bengaliStructure = useQuery({
+    queryKey: ["bengali-structure", bookNumber],
+    queryFn: () => fetchBengaliStructure(bookNumber),
+    enabled: contentLanguage === "bn" && Number.isFinite(bookNumber),
+  });
+
+  const bengaliCollections = new Map(
+    (bengaliStructure.data?.collections ?? []).map((item) => [item.id, item]),
+  );
+  const bengaliChapters = new Map(
+    (bengaliStructure.data?.chapters ?? []).map((item) => [item.id, item]),
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -119,7 +153,9 @@ function BookPage() {
             <div>
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <h1 className="text-2xl font-semibold text-foreground">
-                  {formatBookTitle(book.data.book_number, book.data.title_en)}
+                  {contentLanguage === "bn"
+                    ? getBengaliBookTitle(book.data.book_number) ?? formatBookTitle(book.data.book_number, book.data.title_en)
+                    : formatBookTitle(book.data.book_number, book.data.title_en)}
                 </h1>
                 <KitabDownloadMenu
                   book={book.data}
@@ -131,26 +167,50 @@ function BookPage() {
               <IntroText intro={book.data} className="mt-4" label="Book introduction" />
             </div>
 
-            {(collections.data ?? []).map((collection) => (
-              <section key={collection.id} className="rounded-lg border border-border bg-card p-5">
-                <h2 className="text-lg font-semibold">{collection.title_en ?? "Collection"}</h2>
-                {collection.title_ar ? <p className="arabic-text">{collection.title_ar}</p> : null}
-                <IntroText intro={collection} className="mt-3" label="Collection introduction" />
-                <ul className="mt-3 space-y-3">
-                  {orderCollectionChapters(
-                    (chapters.data ?? []).filter((chapter) => chapter.collection_id === collection.id),
-                  ).map((chapter) => <ChapterBlock key={chapter.id} chapter={chapter} />)}
-                </ul>
-              </section>
-            ))}
+            {(collections.data ?? []).map((collection) => {
+              const bengaliCollection = bengaliCollections.get(collection.id);
+              return (
+                <section key={collection.id} className="rounded-lg border border-border bg-card p-5">
+                  <h2 className="text-lg font-semibold">
+                    {contentLanguage === "bn" && bengaliCollection?.title_bn
+                      ? bengaliCollection.title_bn
+                      : collection.title_en ?? "Collection"}
+                  </h2>
+                  {collection.title_ar ? <p className="arabic-text">{collection.title_ar}</p> : null}
+                  <IntroText
+                    intro={collection}
+                    bengaliIntro={bengaliCollection}
+                    className="mt-3"
+                    label={contentLanguage === "bn" ? "সংগ্রহের ভূমিকা" : "Collection introduction"}
+                  />
+                  <ul className="mt-3 space-y-3">
+                    {orderCollectionChapters(
+                      (chapters.data ?? []).filter((chapter) => chapter.collection_id === collection.id),
+                    ).map((chapter) => (
+                      <ChapterBlock
+                        key={chapter.id}
+                        chapter={chapter}
+                        bengali={bengaliChapters.get(chapter.id)}
+                      />
+                    ))}
+                  </ul>
+                </section>
+              );
+            })}
 
             {(chapters.data ?? []).some((chapter) => !chapter.collection_id) ? (
               <section className="rounded-lg border border-border bg-card p-5">
-                <h2 className="text-lg font-semibold">Chapters</h2>
+                <h2 className="text-lg font-semibold">{contentLanguage === "bn" ? "অধ্যায়সমূহ" : "Chapters"}</h2>
                 <ul className="mt-3 space-y-3">
                   {(chapters.data ?? [])
                     .filter((chapter) => !chapter.collection_id)
-                    .map((chapter) => <ChapterBlock key={chapter.id} chapter={chapter} />)}
+                    .map((chapter) => (
+                      <ChapterBlock
+                        key={chapter.id}
+                        chapter={chapter}
+                        bengali={bengaliChapters.get(chapter.id)}
+                      />
+                    ))}
                 </ul>
               </section>
             ) : null}

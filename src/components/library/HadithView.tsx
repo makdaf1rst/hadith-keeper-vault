@@ -4,7 +4,8 @@ import { toast } from "sonner";
 
 import { BookmarkButton } from "@/components/library/BookmarkButton";
 import { Button } from "@/components/ui/button";
-import { fetchBengaliTranslation } from "@/lib/bengali-translations";
+import { fetchBengaliStructure, fetchBengaliTranslation } from "@/lib/bengali-translations";
+import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
@@ -64,6 +65,17 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
     queryFn: () => fetchBengaliTranslation(hadith.hadith_number),
     enabled: contentLanguage === "bn",
   });
+  const bengaliStructure = useQuery({
+    queryKey: ["bengali-structure", context?.book?.book_number],
+    queryFn: () => fetchBengaliStructure(context!.book!.book_number),
+    enabled: contentLanguage === "bn" && !!context?.book?.book_number,
+  });
+  const bengaliCollection = context?.collection
+    ? bengaliStructure.data?.collections.find((item) => item.id === context.collection?.id)
+    : null;
+  const bengaliChapter = context?.chapter
+    ? bengaliStructure.data?.chapters.find((item) => item.id === context.chapter?.id)
+    : null;
 
   const arabic = showExactSource
     ? hadith.arabic_source
@@ -134,22 +146,31 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             ar={context.book?.title_ar}
             en={
               context.book
-                ? formatBookTitle(context.book.book_number, context.book.title_en)
+                ? contentLanguage === "bn"
+                  ? getBengaliBookTitle(context.book.book_number) ??
+                    formatBookTitle(context.book.book_number, context.book.title_en)
+                  : formatBookTitle(context.book.book_number, context.book.title_en)
                 : null
             }
           />
           <BreadcrumbLine
             label="Collection"
             ar={context.collection?.title_ar}
-            en={context.collection?.title_en}
+            en={
+              contentLanguage === "bn" && bengaliCollection?.title_bn
+                ? bengaliCollection.title_bn
+                : context.collection?.title_en
+            }
           />
           <BreadcrumbLine
             label="Chapter"
             ar={context.chapter?.title_ar}
             en={
-              context.chapter
-                ? formatChapterTitle(context.chapter.chapter_number, context.chapter.title_en)
-                : null
+              contentLanguage === "bn" && bengaliChapter?.title_bn
+                ? bengaliChapter.title_bn
+                : context.chapter
+                  ? formatChapterTitle(context.chapter.chapter_number, context.chapter.title_en)
+                  : null
             }
           />
         </div>

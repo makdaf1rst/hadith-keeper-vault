@@ -18,7 +18,11 @@ import { IntroText } from "@/components/library/IntroText";
 import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import { useInterfaceText, useLanguage } from "@/lib/language";
-import { fetchBengaliChapterTranslation } from "@/lib/bengali-translations";
+import {
+  fetchBengaliChapterTranslation,
+  fetchBengaliCollectionTranslation,
+} from "@/lib/bengali-translations";
+import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { toArabicIndicDigits } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
 
@@ -173,21 +177,14 @@ function ChapterNode({ chapter, bookNumber }: { chapter: Chapter; bookNumber: nu
       <Toggle open={open} onClick={() => setOpen((v) => !v)}>
         <Title
           ar={chapter.title_ar}
-          en={bn?.title ?? (formatChapterTitle(chapter.chapter_number, chapter.title_en) || null)}
+          en={bn?.title_bn ?? (formatChapterTitle(chapter.chapter_number, chapter.title_en) || null)}
         />
       </Toggle>
       {open ? (
         <>
           <IntroText
-            intro={
-              bn
-                ? {
-                    ...chapter,
-                    intro_en_source: bn.intro,
-                    intro_en_display: bn.intro,
-                  }
-                : chapter
-            }
+            intro={chapter}
+            bengaliIntro={bn}
             className="mx-2 my-2"
             label={t.chapterIntroduction}
           />
@@ -208,6 +205,7 @@ function BookNode({
   onToggle: () => void;
 }) {
   const t = useInterfaceText();
+  const { contentLanguage } = useLanguage();
   const collections = useQuery({
     queryKey: ["collections", book.id],
     queryFn: () => fetchCollections(book.id),
@@ -228,7 +226,11 @@ function BookNode({
       <Toggle open={open} onClick={onToggle} className="items-center">
         <Title
           ar={formatArabicBookTitle(book.book_number, book.title_ar)}
-          en={formatBookTitle(book.book_number, book.title_en)}
+          en={
+            contentLanguage === "bn"
+              ? getBengaliBookTitle(book.book_number) ?? formatBookTitle(book.book_number, book.title_en)
+              : formatBookTitle(book.book_number, book.title_en)
+          }
         />
       </Toggle>
       {open ? (
@@ -277,15 +279,27 @@ function CollectionNode({
   bookNumber: number;
 }) {
   const t = useInterfaceText();
+  const { contentLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
+  const bengali = useQuery({
+    queryKey: ["bengali-collection", bookNumber, collection.id],
+    queryFn: () => fetchBengaliCollectionTranslation(bookNumber, collection.id),
+    enabled: contentLanguage === "bn",
+  });
+  const bn = contentLanguage === "bn" ? bengali.data : null;
   return (
     <li className="border-l border-border pl-2">
       <Toggle open={open} onClick={() => setOpen((v) => !v)}>
-        <Title ar={collection.title_ar} en={collection.title_en} />
+        <Title ar={collection.title_ar} en={bn?.title_bn ?? collection.title_en} />
       </Toggle>
       {open ? (
         <>
-          <IntroText intro={collection} className="mx-2 my-2" label={t.collectionIntroduction} />
+          <IntroText
+            intro={collection}
+            bengaliIntro={bn}
+            className="mx-2 my-2"
+            label={t.collectionIntroduction}
+          />
           <ul className="space-y-0.5 pl-4">
             {chapters.length ? (
               chapters.map((chapter) => (

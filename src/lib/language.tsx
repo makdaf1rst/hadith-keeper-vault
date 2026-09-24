@@ -28,18 +28,31 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [contentLanguage, setContentLanguageState] = useState<ContentLanguage>("en");
 
   useEffect(() => {
-    setInterfaceLanguageState(readStored(INTERFACE_KEY, ["en", "bn"] as const, "en"));
-    setContentLanguageState(readStored(CONTENT_KEY, ["en", "bn"] as const, "en"));
+    const savedInterface = readStored(INTERFACE_KEY, ["en", "bn"] as const, "en");
+    const savedContent = readStored(CONTENT_KEY, ["en", "bn"] as const, "en");
+    const language = savedInterface === "bn" || savedContent === "bn" ? "bn" : "en";
+    setInterfaceLanguageState(language);
+    setContentLanguageState(language);
+    window.localStorage.setItem(INTERFACE_KEY, language);
+    window.localStorage.setItem(CONTENT_KEY, language);
   }, []);
 
   const setInterfaceLanguage = (language: InterfaceLanguage) => {
     setInterfaceLanguageState(language);
-    if (typeof window !== "undefined") window.localStorage.setItem(INTERFACE_KEY, language);
+    setContentLanguageState(language);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(INTERFACE_KEY, language);
+      window.localStorage.setItem(CONTENT_KEY, language);
+    }
   };
 
   const setContentLanguage = (language: ContentLanguage) => {
     setContentLanguageState(language);
-    if (typeof window !== "undefined") window.localStorage.setItem(CONTENT_KEY, language);
+    setInterfaceLanguageState(language);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(CONTENT_KEY, language);
+      window.localStorage.setItem(INTERFACE_KEY, language);
+    }
   };
 
   useEffect(() => {
