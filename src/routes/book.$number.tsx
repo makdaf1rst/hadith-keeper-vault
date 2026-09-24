@@ -125,10 +125,16 @@ function BookPage() {
   });
 
   const bengaliCollections = new Map(
-    (bengaliStructure.data?.collections ?? []).map((item) => [item.id, item]),
+    (bengaliStructure.data?.collections ?? []).flatMap((item) => [
+      [item.id, item] as const,
+      [`sort:${item.sort_order}`, item] as const,
+    ]),
   );
   const bengaliChapters = new Map(
-    (bengaliStructure.data?.chapters ?? []).map((item) => [item.id, item]),
+    (bengaliStructure.data?.chapters ?? []).flatMap((item) => [
+      [item.id, item] as const,
+      [`sort:${item.sort_order}`, item] as const,
+    ]),
   );
 
   return (
@@ -168,7 +174,9 @@ function BookPage() {
             </div>
 
             {(collections.data ?? []).map((collection) => {
-              const bengaliCollection = bengaliCollections.get(collection.id);
+              const bengaliCollection =
+                bengaliCollections.get(collection.id) ??
+                bengaliCollections.get(`sort:${collection.sort_order}`);
               return (
                 <section key={collection.id} className="rounded-lg border border-border bg-card p-5">
                   <h2 className="text-lg font-semibold">
@@ -190,7 +198,10 @@ function BookPage() {
                       <ChapterBlock
                         key={chapter.id}
                         chapter={chapter}
-                        bengali={bengaliChapters.get(chapter.id)}
+                        bengali={
+                          bengaliChapters.get(chapter.id) ??
+                          bengaliChapters.get(`sort:${chapter.sort_order}`)
+                        }
                       />
                     ))}
                   </ul>
@@ -208,7 +219,10 @@ function BookPage() {
                       <ChapterBlock
                         key={chapter.id}
                         chapter={chapter}
-                        bengali={bengaliChapters.get(chapter.id)}
+                        bengali={
+                          bengaliChapters.get(chapter.id) ??
+                          bengaliChapters.get(`sort:${chapter.sort_order}`)
+                        }
                       />
                     ))}
                 </ul>
