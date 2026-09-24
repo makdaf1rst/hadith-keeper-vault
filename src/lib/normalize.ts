@@ -43,3 +43,9 @@ const ARABIC_INDIC = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"
 export function toArabicIndicDigits(value: number | string): string {
   return String(value).replace(/\d/g, (d) => ARABIC_INDIC[Number(d)] ?? d);
 }
+
+const BENGALI_DIGITS = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+
+export function toBengaliDigits(value: number | string): string {
+  return String(value).replace(/\d/g, (d) => BENGALI_DIGITS[Number(d)] ?? d);
+}
