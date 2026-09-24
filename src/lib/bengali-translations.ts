@@ -6,21 +6,31 @@ export type BengaliHadithTranslation = {
   status?: "draft" | "reviewed" | "approved";
 };
 
-export type BengaliChapterTranslation = {
-  chapter_id: string;
-  chapter_number: number;
-  title: string;
-  intro: string;
-  status?: "draft" | "reviewed" | "approved";
+export type BengaliStructuralTranslation = {
+  id: string;
+  book_id: string;
+  collection_id?: string | null;
+  chapter_number?: number | null;
+  title_bn: string | null;
+  intro_bn_source: string | null;
+  intro_bn_display: string | null;
+  sort_order: number;
+};
+
+export type BengaliChapterTranslation = BengaliStructuralTranslation;
+export type BengaliCollectionTranslation = BengaliStructuralTranslation;
+
+export type BengaliStructureFile = {
+  collections: BengaliCollectionTranslation[];
+  chapters: BengaliChapterTranslation[];
 };
 
 type BengaliTranslationFile = Record<string, BengaliHadithTranslation>;
-type BengaliChapterTranslationFile = Record<string, BengaliChapterTranslation>;
 type HadithIndexEntry = { n: number; b: number };
 
 let indexCache: Promise<Map<number, number>> | null = null;
 const bookCache = new Map<number, Promise<BengaliTranslationFile>>();
-const chapterBookCache = new Map<number, Promise<BengaliChapterTranslationFile>>();
+const chapterBookCache = new Map<number, Promise<BengaliStructureFile>>();
 
 async function loadHadithIndex(): Promise<Map<number, number>> {
   indexCache ??= fetch("/content/hadith-index.json", { cache: "no-store" })
@@ -68,21 +78,25 @@ export async function fetchBengaliTranslation(
 }
 
 
-async function loadChapterTranslations(bookNumber: number): Promise<BengaliChapterTranslationFile> {
+async function loadChapterTranslations(bookNumber: number): Promise<BengaliStructureFile> {
   let cached = chapterBookCache.get(bookNumber);
   if (!cached) {
     cached = fetch(`/content/bengali/book-${bookNumber}/chapters.json`, { cache: "no-store" })
       .then(async (response) => {
-        if (response.status === 404) return {};
+        if (response.status === 404) return { collections: [], chapters: [] };
         if (!response.ok) {
-          throw new Error(`Failed to load Bengali chapter translations for book ${bookNumber}: ${response.status}`);
+          throw new Error(`Failed to load Bengali structural translations for book ${bookNumber}: ${response.status}`);
         }
-        return (await response.json()) as BengaliChapterTranslationFile;
+        return (await response.json()) as BengaliStructureFile;
       })
-      .catch(() => ({}));
+      .catch(() => ({ collections: [], chapters: [] }));
     chapterBookCache.set(bookNumber, cached);
   }
   return cached;
+}
+
+export async function fetchBengaliStructure(bookNumber: number): Promise<BengaliStructureFile> {
+  return loadChapterTranslations(bookNumber);
 }
 
 export async function fetchBengaliChapterTranslation(
@@ -90,5 +104,13 @@ export async function fetchBengaliChapterTranslation(
   chapterId: string,
 ): Promise<BengaliChapterTranslation | null> {
   const translations = await loadChapterTranslations(bookNumber);
-  return translations[chapterId] ?? null;
+  return translations.chapters.find((chapter) => chapter.id === chapterId) ?? null;
+}
+
+export async function fetchBengaliCollectionTranslation(
+  bookNumber: number,
+  collectionId: string,
+): Promise<BengaliCollectionTranslation | null> {
+  const translations = await loadChapterTranslations(bookNumber);
+  return translations.collections.find((collection) => collection.id === collectionId) ?? null;
 }
