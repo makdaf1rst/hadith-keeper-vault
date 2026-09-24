@@ -1,0 +1,588 @@
+{
+  "collections": [
+    {
+      "id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "sort_order": 1,
+      "title_bn": "১ — সংকলন: যুহদ ও হৃদয় কোমলকারী বিষয়ের মর্যাদা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "9a927930-998f-4689-832a-e7a060595ddf",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "sort_order": 2,
+      "title_bn": "২ — সংকলন: নবী ﷺ ও তাঁর সাহাবীগণের জীবনযাপন সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "sort_order": 3,
+      "title_bn": "৩ — সংকলন: নারীর ফিতনা ও সম্পদের ভালোবাসা সম্পর্কে সতর্কবাণী হিসেবে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1f7e1abe-9dc1-445f-93ef-877d63a24c82",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "sort_order": 4,
+      "title_bn": "৪ — সংকলন: বৈধ বিষয়ে বাড়াবাড়ি পরিহার সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ],
+  "chapters": [
+    {
+      "id": "cf3b0fa0-f3d4-4432-adb4-ebb99f2f46ff",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "9a927930-998f-4689-832a-e7a060595ddf",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: আখিরাতের জীবন ছাড়া প্রকৃত কোনো জীবন নেই",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "32448da7-9ecc-4f05-89c0-2d35f73abcde",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "1f7e1abe-9dc1-445f-93ef-877d63a24c82",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: বৈধ বিষয়ে অতিরিক্ততা অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "322d59f5-a912-4ab1-8ecd-c2068e845b6f",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: নির্জনতার মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1152bc24-a294-4702-9e9b-19cc81b8d4a4",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 1,
+      "sort_order": 1,
+      "title_bn": "১ — অধ্যায়: নারীর ফিতনা সম্পর্কে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "75636adf-3c5d-44db-abaf-b4a0b0f50735",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: দুনিয়ায় এমনভাবে থাকো যেন তুমি একজন অপরিচিত বা পথ অতিক্রমকারী মুসাফির",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "196333a4-4a9b-4a93-b689-d0ebf5c35ba9",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "9a927930-998f-4689-832a-e7a060595ddf",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: নবী ﷺ কীভাবে জীবনযাপন করতেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4423dd5d-8702-440a-a279-1d283cb50c1e",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "1f7e1abe-9dc1-445f-93ef-877d63a24c82",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: ঘর নির্মাণে অপচয় ও বাড়াবাড়ি অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d891c53c-e8da-457f-9304-d4cddbeac975",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 2,
+      "sort_order": 2,
+      "title_bn": "২ — অধ্যায়: সম্পদের ফিতনা সম্পর্কে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "d0b5412b-5921-4d2c-947d-8c51e96679a1",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "9a927930-998f-4689-832a-e7a060595ddf",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: নবী ﷺ-এর কাছে থাকা সম্পদ দ্রুত বণ্টন করার আগ্রহ—ঋণ পরিশোধের জন্য যা সংরক্ষণ করতেন তা ব্যতীত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c0b978ed-9a40-4532-a921-5cf1cc53f7f7",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: প্রকৃত সম্পদ হলো অন্তরের প্রাচুর্য",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8408b274-a7ba-4972-8016-02e9bfe35eac",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "1f7e1abe-9dc1-445f-93ef-877d63a24c82",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: যার স্ত্রী ও বাসস্থান রয়েছে সে সচ্ছলদের অন্তর্ভুক্ত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "13a99984-78ae-4a25-ad95-7c5c3ff9ede1",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 3,
+      "sort_order": 3,
+      "title_bn": "৩ — অধ্যায়: দুনিয়া মুমিনের কারাগার এবং কাফিরের জান্নাত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b137cce0-6680-4017-b74d-233ff2c0364a",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "1f7e1abe-9dc1-445f-93ef-877d63a24c82",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: প্রয়োজনমতো যা যথেষ্ট তাতেই সন্তুষ্ট থাকার প্রতি উৎসাহ",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3e35af8c-4842-4602-ade9-f996acfafb90",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: যে আল্লাহর সাক্ষাৎ ভালোবাসে, আল্লাহও তার সাক্ষাৎ ভালোবাসেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "67baabcf-8e57-4e1b-b326-883d5766b445",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: মানুষের দীর্ঘ আশা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2403552b-1a11-4ccc-8945-de43af937ba6",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "9a927930-998f-4689-832a-e7a060595ddf",
+      "chapter_number": 4,
+      "sort_order": 4,
+      "title_bn": "৪ — অধ্যায়: নবী ﷺ-এর বাণী: “আমি যা জানি তোমরা যদি তা জানতে, তবে অল্প হাসতে এবং বেশি কাঁদতে”",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ad8376b1-3690-4acb-a382-1a17c7716801",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "9a927930-998f-4689-832a-e7a060595ddf",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: সাহাবীগণের জীবনযাত্রার অবস্থা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "c1bda09b-dc16-4d48-946b-4bd38200af34",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "1f7e1abe-9dc1-445f-93ef-877d63a24c82",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: বৈধ জিনিসে অতিরিক্ত ভোগবিলাস অপছন্দনীয়",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a7165919-7830-4366-83a6-a51e33f049b3",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: বান্দা ভালো কাজের ইচ্ছা করলে তা তার জন্য লেখা হয়; আর মন্দ কাজের ইচ্ছা করলে তা তার বিরুদ্ধে লেখা হয় না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2253d1c7-7e88-4f05-82d8-6a8c06c82646",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 5,
+      "sort_order": 5,
+      "title_bn": "৫ — অধ্যায়: আল্লাহ দুনিয়ার কোনো কিছুকে উঁচু করেন না, পরে তা নামিয়ে না দেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "68f0bb3d-00d6-426b-beaa-f68d4a944f2b",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: দুনিয়ার মোহ ও তা নিয়ে প্রতিযোগিতা সম্পর্কে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f22f7dc7-df14-4009-9b34-16dabf4a5775",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "1f7e1abe-9dc1-445f-93ef-877d63a24c82",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: ইবাদত ও সকল বিষয়ে মধ্যপন্থা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fc9dbc48-6f06-45db-97ba-dfef3f2e4dc8",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 6,
+      "sort_order": 6,
+      "title_bn": "৬ — অধ্যায়: দুনিয়ায় যাদের সম্পদ বেশি, আখিরাতে তাদের অংশ কম হবে—তবে যারা তা কল্যাণে ব্যয় করে তারা ব্যতিক্রম",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "bfd21e11-328b-4a9c-8348-6b7b012a11da",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: দুনিয়ার ভোগসামগ্রী সবুজ ও সুমিষ্ট",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "df0513f4-5378-4d21-9928-88d8e9510924",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 7,
+      "sort_order": 7,
+      "title_bn": "৭ — অধ্যায়: মানুষ তার সম্পদ থেকে যা আগে পাঠায় সেটিই প্রকৃতপক্ষে তার; আর যা রেখে যায় তা তার উত্তরাধিকারীদের",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2cc0edc7-bb11-4175-ae80-9cb1731fcb37",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: যে দুনিয়াকে তার প্রধান চিন্তা বানায়, আল্লাহ তার বিষয়গুলো ছড়িয়ে দেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4eaa3ab4-bb8f-4374-9e49-d96ab46c0e30",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 8,
+      "sort_order": 8,
+      "title_bn": "৮ — অধ্যায়: দুনিয়া থেকে বিমুখ থাকার প্রতি উৎসাহ সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "f36b389f-9570-4917-abd1-5c7fb68370d3",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: দুনিয়ার তুচ্ছতা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "1f277f79-5895-40a6-9f03-e09c74fbed52",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 9,
+      "sort_order": 9,
+      "title_bn": "৯ — অধ্যায়: মৃত্যুর পর মানুষের সঙ্গে তার আমল ছাড়া আর কিছুই থাকে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "67a7de86-10f6-4a1b-b19c-0236d1fcc9a7",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: আদমসন্তানের পেট মাটি ছাড়া কিছুই পূর্ণ করে না; আর যে তাওবা করে আল্লাহ তার তাওবা কবুল করেন",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dc1f2d4f-3435-4ebb-96f9-bdf1f49d05f8",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 10,
+      "sort_order": 10,
+      "title_bn": "১০ — অধ্যায়: মুত্তাকী, অমুখাপেক্ষী ও লোকচক্ষুর আড়ালে থাকা বান্দার মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "61dfe54d-b026-432d-841d-77b79b056ba0",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: যে দুনিয়ার দাসে পরিণত হয় তার নিন্দা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a6985977-2428-4196-90be-3538b0e4dda7",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 11,
+      "sort_order": 11,
+      "title_bn": "১১ — অধ্যায়: আল্লাহর ভয়ে কান্নার মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "b18b2dac-8ed8-4a5a-a934-f1ea02df64f5",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: সম্পদ ও মর্যাদার ভালোবাসা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "7eb2ac77-d791-4b1e-a787-4565239c3b83",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 12,
+      "sort_order": 12,
+      "title_bn": "১২ — অধ্যায়: কিয়ামতের দিন বান্দা তার আমলকে তুচ্ছ মনে করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a1b66b1a-0139-4d63-b4d9-d450beaa7af7",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: চার প্রকার মানুষের তুলনায় দুনিয়ার দৃষ্টান্ত",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "3f180662-40ff-469e-8d64-35df89880f5f",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 13,
+      "sort_order": 13,
+      "title_bn": "১৩ — অধ্যায়: মৃত্যুকে স্মরণ করা সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "ac80b4c1-f57a-46d6-913e-57521b7920fb",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: উত্তম গুণাবলি সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "240b2317-f08d-4c61-8ebf-b6879eba8075",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "8f974707-233d-40ed-b198-5e0e8af44bc0",
+      "chapter_number": 14,
+      "sort_order": 14,
+      "title_bn": "১৪ — অধ্যায়: সন্ন্যাসবাদ গ্রহণ ও দুনিয়ার জীবন ত্যাগ করার বিরুদ্ধে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "af490663-8bf6-416f-a1a8-e9ec4be88c27",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 15,
+      "sort_order": 15,
+      "title_bn": "১৫ — অধ্যায়: যুহদ ও হৃদয় কোমলকারী বিষয় সম্পর্কে আবূ আল-ইয়াসার ও জাবির ইবন আবদুল্লাহর হাদীস",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "453825d9-0a52-4ab8-9fba-de96cd9b7a5e",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 16,
+      "sort_order": 16,
+      "title_bn": "১৬ — অধ্যায়: দুর্বল ও দরিদ্রদের মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "10f3cbd8-4778-4411-9502-9bde3f5d4268",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 17,
+      "sort_order": 17,
+      "title_bn": "১৭ — অধ্যায়: এমন সৎকর্মের মাধ্যমে দুনিয়ায় পাথেয় গ্রহণ করা যা আখিরাতে উপকার করবে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "fc2e53c9-42bf-4e6c-958d-0ac9d78b1de2",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 18,
+      "sort_order": 18,
+      "title_bn": "১৮ — অধ্যায়: আল্লাহর ওপর তাওয়াক্কুলের মর্যাদা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "009072b2-11eb-4e56-959f-13e0f40d90b5",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 19,
+      "sort_order": 19,
+      "title_bn": "১৯ — অধ্যায়: যার জীবন দীর্ঘ এবং আমল উত্তম",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "4521ab2c-9d6e-4beb-9fe0-175343d4f076",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 20,
+      "sort_order": 20,
+      "title_bn": "২০ — অধ্যায়: মুহাম্মদ ﷺ-এর উম্মাহর আয়ু সম্পর্কে যা বর্ণিত হয়েছে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "60fb176c-7e05-4f5f-9a0c-2b8c4facf3ed",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 21,
+      "sort_order": 21,
+      "title_bn": "২১ — অধ্যায়: ষাট বছর বয়সের পর অজুহাতের অবকাশ থাকে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "655dbbad-70f6-484d-a177-63ca033683b2",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 22,
+      "sort_order": 22,
+      "title_bn": "২২ — অধ্যায়: দীনের বিষয়ে মুসলিম তার চেয়ে উচ্চতর ব্যক্তির দিকে তাকাবে, আর দুনিয়ার বিষয়ে তার চেয়ে নিম্নতর ব্যক্তির দিকে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "6d040613-1e82-45f7-b4e5-0be5f7918b71",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 23,
+      "sort_order": 23,
+      "title_bn": "২৩ — অধ্যায়: নিজের সৎকর্ম দ্বারা প্রতারিত হওয়ার বিরুদ্ধে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "2ad20b7c-8a43-4129-a946-a4cc93531ada",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 24,
+      "sort_order": 24,
+      "title_bn": "২৪ — অধ্যায়: কেউ কেবল নিজের আমল দ্বারা নাজাত পাবে না এবং কেবল আমল দ্বারা জান্নাতে প্রবেশ করবে না",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "73b7a700-73c2-4da0-ab08-6f23bb29a540",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 25,
+      "sort_order": 25,
+      "title_bn": "২৫ — অধ্যায়: যেসব গুনাহকে তুচ্ছ মনে করা হয় সেগুলো সম্পর্কে সতর্কবাণী",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a88d357c-341d-49ed-82d0-f35e51bcd3bc",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 26,
+      "sort_order": 26,
+      "title_bn": "২৬ — অধ্যায়: সুযোগ হারানোর আগে সুস্থতা ও অবসর সময়কে কাজে লাগানো",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "a467f661-01aa-48ca-96ed-3b68a877e496",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 27,
+      "sort_order": 27,
+      "title_bn": "২৭ — অধ্যায়: ইসলাম পূর্বের সবকিছু মুছে দেয়—তবে পরে যে মন্দকর্ম করে তার বিষয় ব্যতিক্রম",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "8f229d4f-0e8a-4b71-b133-f09df00db699",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 28,
+      "sort_order": 28,
+      "title_bn": "২৮ — অধ্যায়: আল্লাহর নিয়ামতের কৃতজ্ঞতা",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "dbd5d832-e66c-43e0-b8c3-4a984e16a859",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 29,
+      "sort_order": 29,
+      "title_bn": "২৯ — অধ্যায়: জীবিকার কঠিন কষ্ট ধৈর্যের সঙ্গে সহ্যকারী ব্যক্তি সম্পর্কে",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    },
+    {
+      "id": "15d1e2f1-b5cd-4174-bcd0-f66b64a49817",
+      "book_id": "d7241e7e-46e0-4145-81c0-5572efcb8443",
+      "collection_id": "eabd2006-754b-4e6c-af73-ff79c98cbbb8",
+      "chapter_number": 30,
+      "sort_order": 30,
+      "title_bn": "৩০ — অধ্যায়: মুমিনের সকল বিষয়ই কল্যাণকর",
+      "intro_bn_source": null,
+      "intro_bn_display": null
+    }
+  ]
+}
