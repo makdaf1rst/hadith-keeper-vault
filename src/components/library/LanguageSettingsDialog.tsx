@@ -46,7 +46,6 @@ export function LanguageSettingsDialog({ open, onOpenChange }: Props) {
       return;
     }
     setAccessCode("");
-    setContentLanguage("bn");
   }
 
   return (
