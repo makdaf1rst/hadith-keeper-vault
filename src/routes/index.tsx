@@ -211,6 +211,7 @@ function BottomLanguageSelector() {
   );
 }
 
+// Bengali library summary and numerals follow the selected interface language.
 function Index() {
   const stats = useQuery({ queryKey: ["library-stats"], queryFn: fetchLibraryStats });
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
