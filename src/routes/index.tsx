@@ -78,7 +78,13 @@ function SelectedChapter({ chapter, bookNumber }: { chapter: Chapter; bookNumber
   const { contentLanguage } = useLanguage();
   const bengali = useQuery({
     queryKey: ["bengali-selected-chapter", bookNumber, chapter.id],
-    queryFn: () => fetchBengaliChapterTranslation(bookNumber, chapter.id),
+    queryFn: () =>
+      fetchBengaliChapterTranslation(
+        bookNumber,
+        chapter.id,
+        chapter.sort_order,
+        chapter.chapter_number,
+      ),
     enabled: contentLanguage === "bn",
   });
   const bn = contentLanguage === "bn" ? bengali.data : null;
