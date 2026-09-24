@@ -22,7 +22,7 @@ type Props = {
   chapterTitle?: string | null;
 };
 
-/** Saves a hadith to the reader's account. Never creates or changes hadith records. */
+/** Saves a hadith to the reader's account. Never creates or changes hadith records. UI text follows the selected interface language. */
 export function BookmarkButton({ number, bookTitle, collectionTitle, chapterTitle }: Props) {
   const { has, toggle, signedIn, pending } = useBookmarks();
   const { interfaceLanguage } = useLanguage();
