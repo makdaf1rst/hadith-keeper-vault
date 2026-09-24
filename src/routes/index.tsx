@@ -179,7 +179,7 @@ function BottomLanguageSelector() {
     setContentLanguage,
   } = useLanguage();
 
-  const value = contentLanguage === "bn" || interfaceLanguage === "bn" ? "bn" : "en";
+  const value = contentLanguage;
 
   return (
     <footer className="border-t border-border bg-background">
