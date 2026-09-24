@@ -1,0 +1,46 @@
+name: Sync Bengali content to main
+
+on:
+  push:
+    branches:
+      - feature/bengali-language
+    paths:
+      - "public/content/bengali/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-bengali-to-main
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync Bengali content into main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main feature/bengali-language
+          git switch main
+          git reset --hard origin/main
+
+          git checkout origin/feature/bengali-language -- public/content/bengali
+
+          if git diff --quiet -- public/content/bengali; then
+            echo "No Bengali content changes to sync."
+            exit 0
+          fi
+
+          git add public/content/bengali
+          git commit -m "Sync Bengali content from feature branch"
+          git push origin main
