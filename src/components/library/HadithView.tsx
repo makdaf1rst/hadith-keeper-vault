@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { BookmarkButton } from "@/components/library/BookmarkButton";
 import { Button } from "@/components/ui/button";
 import { fetchBengaliStructure, fetchBengaliTranslation } from "@/lib/bengali-translations";
+import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
@@ -145,7 +146,10 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             ar={context.book?.title_ar}
             en={
               context.book
-                ? formatBookTitle(context.book.book_number, context.book.title_en)
+                ? contentLanguage === "bn"
+                  ? getBengaliBookTitle(context.book.book_number) ??
+                    formatBookTitle(context.book.book_number, context.book.title_en)
+                  : formatBookTitle(context.book.book_number, context.book.title_en)
                 : null
             }
           />
