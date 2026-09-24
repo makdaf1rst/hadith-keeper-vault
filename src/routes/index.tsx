@@ -25,6 +25,7 @@ import {
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { fetchBengaliChapterTranslation } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
+import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
 import {
   fetchChapterHadiths,
   fetchChapters,
@@ -152,7 +153,14 @@ function SelectedBookContents({ book }: { book: Book }) {
           {toArabicIndicDigits(book.book_number)}. {book.title_ar}
         </p>
       ) : null}
-      {hasIntro(book) ? <IntroText intro={book} className="mt-3" label={t.bookIntroduction} /> : null}
+      {hasIntro(book) ? (
+        <IntroText
+          intro={book}
+          bengaliIntro={contentLanguage === "bn" ? getBengaliBookIntro(book.book_number) : null}
+          className="mt-3"
+          label={t.bookIntroduction}
+        />
+      ) : null}
 
       <div className="mt-5 border-t border-border pt-4">
         <h3 className="text-base font-semibold text-foreground">
