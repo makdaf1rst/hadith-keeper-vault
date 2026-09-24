@@ -45,7 +45,7 @@ export function IntroText({ intro, bengaliIntro, label = "Introduction", classNa
       {translation ? (
         <div
           lang={contentLanguage === "bn" ? "bn" : "en"}
-          className={contentLanguage === "bn" ? "text-foreground leading-8" : "english-text text-foreground"}
+          className={contentLanguage === "bn" ? "whitespace-pre-line text-foreground leading-8" : "english-text text-foreground"}
         >
           {translation}
         </div>
