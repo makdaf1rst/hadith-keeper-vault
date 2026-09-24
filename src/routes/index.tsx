@@ -23,6 +23,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
+import { getBookIntroDisplayOverride } from "@/lib/book-intro-overrides";
 import { fetchBengaliChapterTranslation } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
@@ -65,6 +66,7 @@ export const Route = createFileRoute("/")({
 
 function hasIntro(book: Book | null): book is Book {
   if (!book) return false;
+  if (getBookIntroDisplayOverride(book.book_number)) return true;
   return [
     book.intro_ar_display,
     book.intro_ar_source,
