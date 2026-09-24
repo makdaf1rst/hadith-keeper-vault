@@ -101,15 +101,33 @@ export async function fetchBengaliStructure(bookNumber: number): Promise<Bengali
 export async function fetchBengaliChapterTranslation(
   bookNumber: number,
   chapterId: string,
+  sortOrder?: number,
+  chapterNumber?: number | null,
 ): Promise<BengaliChapterTranslation | null> {
   const translations = await loadChapterTranslations(bookNumber);
-  return translations.chapters.find((chapter) => chapter.id === chapterId) ?? null;
+  return (
+    translations.chapters.find((chapter) => chapter.id === chapterId) ??
+    translations.chapters.find(
+      (chapter) =>
+        sortOrder !== undefined &&
+        chapter.sort_order === sortOrder &&
+        (chapterNumber == null || chapter.chapter_number === chapterNumber),
+    ) ??
+    null
+  );
 }
 
 export async function fetchBengaliCollectionTranslation(
   bookNumber: number,
   collectionId: string,
+  sortOrder?: number,
 ): Promise<BengaliCollectionTranslation | null> {
   const translations = await loadChapterTranslations(bookNumber);
-  return translations.collections.find((collection) => collection.id === collectionId) ?? null;
+  return (
+    translations.collections.find((collection) => collection.id === collectionId) ??
+    translations.collections.find(
+      (collection) => sortOrder !== undefined && collection.sort_order === sortOrder,
+    ) ??
+    null
+  );
 }
