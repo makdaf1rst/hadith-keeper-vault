@@ -5,10 +5,11 @@ import { useState } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
+import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
 import { Button } from "@/components/ui/button";
 import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours } from "@/lib/library-api";
-import { useInterfaceText } from "@/lib/language";
+import { useInterfaceText, useLanguage } from "@/lib/language";
 
 export const Route = createFileRoute("/hadith/$number")({
   head: ({ params }) => {
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/hadith/$number")({
 function HadithPage() {
   const { number } = Route.useParams();
   const t = useInterfaceText();
+  const { contentLanguage } = useLanguage();
   const [languageSettingsOpen, setLanguageSettingsOpen] = useState(false);
   const hadithNumber = Number(number);
 
@@ -49,6 +51,15 @@ function HadithPage() {
     queryFn: () => fetchNeighbours(hadithNumber),
     enabled: Number.isFinite(hadithNumber),
   });
+
+  const bengaliStructure = useQuery({
+    queryKey: ["bengali-structure", context.data?.book?.book_number],
+    queryFn: () => fetchBengaliStructure(context.data!.book!.book_number),
+    enabled: contentLanguage === "bn" && !!context.data?.book?.book_number,
+  });
+  const bengaliChapter = context.data?.chapter
+    ? bengaliStructure.data?.chapters.find((item) => item.id === context.data?.chapter?.id)
+    : null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -94,7 +105,11 @@ function HadithPage() {
         ) : null}
         {hadith.data ? (
           <div className="space-y-4">
-            <IntroText intro={context.data?.chapter} label={t.chapterIntroduction} />
+            <IntroText
+              intro={context.data?.chapter}
+              bengaliIntro={bengaliChapter}
+              label={t.chapterIntroduction}
+            />
             <HadithView hadith={hadith.data} context={context.data} />
             <nav
               aria-label={t.hadithNavigation}
