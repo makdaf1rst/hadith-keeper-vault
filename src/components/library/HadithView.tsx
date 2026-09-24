@@ -26,6 +26,7 @@ function text(display: string | null, source: string | null) {
 }
 
 /**
+ * Bengali UI labels and digits follow the selected content language.
  * The stored "full" record begins with the Arabic and English texts and then continues
  * with grading, references and commentary. Strip the parts that are already rendered
  * above so nothing is shown twice, while keeping any remaining material in full.
