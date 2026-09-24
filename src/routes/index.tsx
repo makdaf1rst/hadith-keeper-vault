@@ -33,7 +33,7 @@ import {
   type Chapter,
 } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
-import { toArabicIndicDigits } from "@/lib/normalize";
+import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -115,7 +115,7 @@ function SelectedChapter({ chapter, bookNumber }: { chapter: Chapter; bookNumber
                 params={{ number: String(hadith.hadith_number) }}
                 className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-sm transition-colors hover:border-primary hover:text-primary"
               >
-                {hadith.hadith_number}
+                {contentLanguage === "bn" ? toBengaliDigits(hadith.hadith_number) : hadith.hadith_number}
                 <span className="arabic-text text-sm! leading-none! text-muted-foreground">
                   {toArabicIndicDigits(hadith.hadith_number)}
                 </span>
@@ -156,7 +156,7 @@ function SelectedBookContents({ book }: { book: Book }) {
 
       <div className="mt-5 border-t border-border pt-4">
         <h3 className="text-base font-semibold text-foreground">
-          {t.babs} {chapters.data ? `(${chapters.data.length})` : ""}
+          {t.babs} {chapters.data ? `(${contentLanguage === "bn" ? toBengaliDigits(chapters.data.length) : chapters.data.length})` : ""}
         </h3>
         {chapters.isLoading ? (
           <p className="mt-3 text-sm text-muted-foreground">{t.loading}</p>
@@ -308,7 +308,9 @@ function Index() {
             <div className="border-b border-border pb-4">
               <p className="text-sm text-muted-foreground">
                 {stats.data
-                  ? `${stats.data.books} ${t.booksLabel} · ${stats.data.hadiths} ${t.importedStats}`
+                  ? isBengali
+                    ? `${toBengaliDigits(stats.data.books)} কিতাব · মোট ${toBengaliDigits(stats.data.hadiths)} হাদিস`
+                    : `${stats.data.books} ${t.booksLabel} · ${stats.data.hadiths} ${t.importedStats}`
                   : t.bilingualCollection}
               </p>
             </div>
