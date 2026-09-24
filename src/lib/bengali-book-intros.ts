@@ -1,3 +1,4 @@
+// Bengali Kitab-level introductions used by all book-level intro views.
 export type BengaliBookIntro = {
   intro_bn_source: string;
   intro_bn_display: string;
