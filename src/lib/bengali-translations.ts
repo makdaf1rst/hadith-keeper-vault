@@ -29,7 +29,6 @@ type BengaliTranslationFile = Record<string, BengaliHadithTranslation>;
 type HadithIndexEntry = { n: number; b: number };
 
 let indexCache: Promise<Map<number, number>> | null = null;
-const bookCache = new Map<number, Promise<BengaliTranslationFile>>();
 
 
 async function loadHadithIndex(): Promise<Map<number, number>> {
@@ -46,20 +45,20 @@ async function loadHadithIndex(): Promise<Map<number, number>> {
 }
 
 async function loadBookTranslations(bookNumber: number): Promise<BengaliTranslationFile> {
-  let cached = bookCache.get(bookNumber);
-  if (!cached) {
-    cached = fetch(`/content/bengali/book-${bookNumber}/hadiths.json`, { cache: "no-store" })
-      .then(async (response) => {
-        if (response.status === 404) return {};
-        if (!response.ok) {
-          throw new Error(`Failed to load Bengali translations for book ${bookNumber}: ${response.status}`);
-        }
-        return (await response.json()) as BengaliTranslationFile;
-      })
-      .catch(() => ({}));
-    bookCache.set(bookNumber, cached);
+  try {
+    const response = await fetch(`/content/bengali/book-${bookNumber}/hadiths.json`, {
+      cache: "no-store",
+    });
+    if (response.status === 404) return {};
+    if (!response.ok) {
+      throw new Error(
+        `Failed to load Bengali translations for book ${bookNumber}: ${response.status}`,
+      );
+    }
+    return (await response.json()) as BengaliTranslationFile;
+  } catch {
+    return {};
   }
-  return cached;
 }
 
 /**
