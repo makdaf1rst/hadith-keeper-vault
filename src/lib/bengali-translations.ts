@@ -46,7 +46,7 @@ async function loadHadithIndex(): Promise<Map<number, number>> {
 
 async function loadBookTranslations(bookNumber: number): Promise<BengaliTranslationFile> {
   try {
-    const response = await fetch(`/content/bengali/book-${bookNumber}/hadiths.json`, {
+    const response = await fetch(`/content/bengali/book-${bookNumber}/hadiths.json?v=${Date.now()}`, {
       cache: "no-store",
     });
     if (response.status === 404) return {};
@@ -79,7 +79,7 @@ export async function fetchBengaliTranslation(
 
 async function loadChapterTranslations(bookNumber: number): Promise<BengaliStructureFile> {
   try {
-    const response = await fetch(`/content/bengali/book-${bookNumber}/chapters.json`, {
+    const response = await fetch(`/content/bengali/book-${bookNumber}/chapters.json?v=${Date.now()}`, {
       cache: "no-store",
     });
     if (response.status === 404) return { collections: [], chapters: [] };
