@@ -23,6 +23,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
+import { fetchBengaliChapterTranslation } from "@/lib/bengali-translations";
+import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import {
   fetchChapterHadiths,
   fetchChapters,
@@ -30,7 +32,7 @@ import {
   type Book,
   type Chapter,
 } from "@/lib/library-api";
-import { useInterfaceText } from "@/lib/language";
+import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/")({
@@ -71,8 +73,15 @@ function hasIntro(book: Book | null): book is Book {
 }
 
 
-function SelectedChapter({ chapter }: { chapter: Chapter }) {
+function SelectedChapter({ chapter, bookNumber }: { chapter: Chapter; bookNumber: number }) {
   const t = useInterfaceText();
+  const { contentLanguage } = useLanguage();
+  const bengali = useQuery({
+    queryKey: ["bengali-selected-chapter", bookNumber, chapter.id],
+    queryFn: () => fetchBengaliChapterTranslation(bookNumber, chapter.id),
+    enabled: contentLanguage === "bn",
+  });
+  const bn = contentLanguage === "bn" ? bengali.data : null;
   const hadiths = useQuery({
     queryKey: ["selected-book-chapter-hadiths", chapter.id],
     queryFn: () => fetchChapterHadiths(chapter.id),
@@ -81,14 +90,14 @@ function SelectedChapter({ chapter }: { chapter: Chapter }) {
   return (
     <li className="rounded-md border border-border bg-background p-3">
       <p className="text-sm font-semibold text-foreground">
-        {formatChapterTitle(chapter.chapter_number, chapter.title_en) || t.chapter}
+        {bn?.title_bn ?? (formatChapterTitle(chapter.chapter_number, chapter.title_en) || t.chapter)}
       </p>
       {chapter.title_ar ? (
         <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
           {chapter.title_ar}
         </p>
       ) : null}
-      <IntroText intro={chapter} className="mt-2" label={t.chapterIntroduction} />
+      <IntroText intro={chapter} bengaliIntro={bn} className="mt-2" label={t.chapterIntroduction} />
       {hadiths.isLoading ? (
         <p className="mt-2 text-xs text-muted-foreground">{t.loadingHadiths}</p>
       ) : hadiths.data?.length ? (
@@ -117,6 +126,7 @@ function SelectedChapter({ chapter }: { chapter: Chapter }) {
 
 function SelectedBookContents({ book }: { book: Book }) {
   const t = useInterfaceText();
+  const { contentLanguage } = useLanguage();
   const chapters = useQuery({
     queryKey: ["selected-book-chapters", book.id, "v2"],
     queryFn: () => fetchChapters(book.id),
@@ -127,7 +137,9 @@ function SelectedBookContents({ book }: { book: Book }) {
   return (
     <>
       <h2 className="mt-4 text-lg font-semibold text-foreground">
-        {formatBookTitle(book.book_number, book.title_en)}
+        {contentLanguage === "bn"
+          ? getBengaliBookTitle(book.book_number) ?? formatBookTitle(book.book_number, book.title_en)
+          : formatBookTitle(book.book_number, book.title_en)}
       </h2>
       {book.title_ar ? (
         <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
@@ -147,7 +159,7 @@ function SelectedBookContents({ book }: { book: Book }) {
             {chapters.data
               .filter((chapter) => !chapter.collection_id)
               .map((chapter) => (
-                <SelectedChapter key={chapter.id} chapter={chapter} />
+                <SelectedChapter key={chapter.id} chapter={chapter} bookNumber={book.book_number} />
               ))}
           </ul>
         ) : (
