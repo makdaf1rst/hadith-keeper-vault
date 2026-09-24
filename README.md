@@ -3642,3 +3642,5 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+<!-- deployment refresh: Bengali footer language selector -->
