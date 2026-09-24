@@ -75,8 +75,8 @@ async function handleBengaliPreviewAuth(request: Request, env: unknown): Promise
 
     let submitted = "";
     try {
-      const body = (await request.json()) as { passcode?: unknown };
-      submitted = typeof body.passcode === "string" ? body.passcode : "";
+      const body = (await request.json()) as { code?: unknown };
+      submitted = typeof body.code === "string" ? body.code : "";
     } catch {
       return Response.json({ ok: false, error: "Invalid request." }, { status: 400 });
     }
