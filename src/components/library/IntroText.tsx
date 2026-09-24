@@ -1,8 +1,13 @@
 import { getBookIntroDisplayOverride } from "@/lib/book-intro-overrides";
 import type { Intro } from "@/lib/library-api";
+import { useLanguage } from "@/lib/language";
 
 type Props = {
   intro: (Partial<Intro> & { book_number?: number | null }) | null | undefined;
+  bengaliIntro?: {
+    intro_bn_source?: string | null;
+    intro_bn_display?: string | null;
+  } | null;
   label?: string;
   className?: string;
 };
@@ -17,11 +22,14 @@ function pick(display: string | null | undefined, source: string | null | undefi
  * source document places under a Kitāb / Collection / Bāb heading, before its hadiths.
  * Always complete — never clamped or truncated.
  */
-export function IntroText({ intro, label = "Introduction", className }: Props) {
+export function IntroText({ intro, bengaliIntro, label = "Introduction", className }: Props) {
+  const { contentLanguage } = useLanguage();
   const override = getBookIntroDisplayOverride(intro?.book_number);
   const ar = override?.intro_ar_display ?? pick(intro?.intro_ar_display, intro?.intro_ar_source);
   const en = override?.intro_en_display ?? pick(intro?.intro_en_display, intro?.intro_en_source);
-  if (!ar && !en) return null;
+  const bn = pick(bengaliIntro?.intro_bn_display, bengaliIntro?.intro_bn_source);
+  const translation = contentLanguage === "bn" ? bn : en;
+  if (!ar && !translation) return null;
 
   return (
     <section
@@ -33,8 +41,15 @@ export function IntroText({ intro, label = "Introduction", className }: Props) {
         {label}
       </p>
       {ar ? <p className="arabic-text text-foreground">{ar}</p> : null}
-      {ar && en ? <hr className="my-3 border-border" /> : null}
-      {en ? <div className="english-text text-foreground">{en}</div> : null}
+      {ar && translation ? <hr className="my-3 border-border" /> : null}
+      {translation ? (
+        <div
+          lang={contentLanguage === "bn" ? "bn" : "en"}
+          className={contentLanguage === "bn" ? "text-foreground leading-8" : "english-text text-foreground"}
+        >
+          {translation}
+        </div>
+      ) : null}
     </section>
   );
 }
