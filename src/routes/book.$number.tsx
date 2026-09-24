@@ -9,6 +9,7 @@ import {
   type BengaliChapterTranslation,
 } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
+import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import {
   fetchBookByNumber,
@@ -170,7 +171,12 @@ function BookPage() {
                 />
               </div>
               {book.data.title_ar ? <p className="arabic-text">{book.data.title_ar}</p> : null}
-              <IntroText intro={book.data} className="mt-4" label="Book introduction" />
+              <IntroText
+                intro={book.data}
+                bengaliIntro={contentLanguage === "bn" ? getBengaliBookIntro(book.data.book_number) : null}
+                className="mt-4"
+                label={contentLanguage === "bn" ? "কিতাবের ভূমিকা" : "Book introduction"}
+              />
             </div>
 
             {(collections.data ?? []).map((collection) => {
