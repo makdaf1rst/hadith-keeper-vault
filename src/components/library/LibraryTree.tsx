@@ -168,7 +168,13 @@ function ChapterNode({ chapter, bookNumber }: { chapter: Chapter; bookNumber: nu
   const [open, setOpen] = useState(false);
   const bengali = useQuery({
     queryKey: ["bengali-chapter", bookNumber, chapter.id],
-    queryFn: () => fetchBengaliChapterTranslation(bookNumber, chapter.id),
+    queryFn: () =>
+      fetchBengaliChapterTranslation(
+        bookNumber,
+        chapter.id,
+        chapter.sort_order,
+        chapter.chapter_number,
+      ),
     enabled: contentLanguage === "bn",
   });
   const bn = contentLanguage === "bn" ? bengali.data : null;
@@ -283,7 +289,8 @@ function CollectionNode({
   const [open, setOpen] = useState(false);
   const bengali = useQuery({
     queryKey: ["bengali-collection", bookNumber, collection.id],
-    queryFn: () => fetchBengaliCollectionTranslation(bookNumber, collection.id),
+    queryFn: () =>
+      fetchBengaliCollectionTranslation(bookNumber, collection.id, collection.sort_order),
     enabled: contentLanguage === "bn",
   });
   const bn = contentLanguage === "bn" ? bengali.data : null;
