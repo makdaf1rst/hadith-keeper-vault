@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { ThemeToggle } from "../components/library/ThemeToggle";
 import { Toaster } from "../components/ui/sonner";
 import { LanguageProvider } from "../lib/language";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -123,11 +124,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const themeInitScript = `(function(){try{var t=localStorage.getItem("jami-theme");var d=t==="dark"||(t!=="light"&&window.matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d);}catch(e){}})();`;
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
         {children}
@@ -145,6 +149,7 @@ function RootComponent() {
       <LanguageProvider>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
+        <ThemeToggle />
         <Toaster />
       </LanguageProvider>
     </QueryClientProvider>
