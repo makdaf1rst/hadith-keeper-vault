@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import {
@@ -22,16 +22,22 @@ export const Route = createFileRoute("/chapter/$id")({
 function ReadingLink({
   target,
   children,
+  className,
 }: {
   target: ReadingTarget;
   children: ReactNode;
+  className?: string;
 }) {
   return target.kind === "hadith" ? (
-    <Link to="/hadith/$number" params={{ number: String(target.number) }}>
+    <Link
+      to="/hadith/$number"
+      params={{ number: String(target.number) }}
+      className={className}
+    >
       {children}
     </Link>
   ) : (
-    <Link to="/chapter/$id" params={{ id: target.id }}>
+    <Link to="/chapter/$id" params={{ id: target.id }} className={className}>
       {children}
     </Link>
   );
@@ -89,18 +95,22 @@ function ChapterReadingPage() {
           </Link>
           <div className="flex items-center gap-2">
             {neighbours.data?.previous ? (
-              <Button asChild variant="outline" size="sm">
-                <ReadingLink target={neighbours.data.previous}>
-                  <ChevronLeft /> {targetLabel(neighbours.data.previous, isBengali, t.chapter)}
-                </ReadingLink>
-              </Button>
+              <ReadingLink
+                target={neighbours.data.previous}
+                className={buttonVariants({ variant: "outline", size: "sm" })}
+              >
+                <ChevronLeft className="size-4 shrink-0" />
+                <span>{targetLabel(neighbours.data.previous, isBengali, t.chapter)}</span>
+              </ReadingLink>
             ) : null}
             {neighbours.data?.next ? (
-              <Button asChild variant="outline" size="sm">
-                <ReadingLink target={neighbours.data.next}>
-                  {targetLabel(neighbours.data.next, isBengali, t.chapter)} <ChevronRight />
-                </ReadingLink>
-              </Button>
+              <ReadingLink
+                target={neighbours.data.next}
+                className={buttonVariants({ variant: "outline", size: "sm" })}
+              >
+                <span>{targetLabel(neighbours.data.next, isBengali, t.chapter)}</span>
+                <ChevronRight className="size-4 shrink-0" />
+              </ReadingLink>
             ) : null}
           </div>
         </div>
@@ -150,27 +160,47 @@ function ChapterReadingPage() {
 
             <nav
               aria-label={t.hadithNavigation}
-              className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between"
+              className="grid grid-cols-2 gap-3 border-t border-border pt-6"
             >
               {neighbours.data?.previous ? (
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                  <ReadingLink target={neighbours.data.previous}>
-                    <ChevronLeft /> {neighbours.data.previous.kind === "chapter" ? t.chapter : t.previousHadith}{" "}
-                    {targetLabel(neighbours.data.previous, isBengali, t.chapter)}
-                  </ReadingLink>
-                </Button>
+                <ReadingLink
+                  target={neighbours.data.previous}
+                  className={buttonVariants({
+                    variant: "outline",
+                    size: "lg",
+                    className: "w-full justify-start px-4 sm:px-6",
+                  })}
+                >
+                  <ChevronLeft className="size-5 shrink-0" />
+                  <span className="truncate">
+                    {neighbours.data.previous.kind === "chapter" ? t.chapter : t.previousHadith}{" "}
+                    {neighbours.data.previous.kind === "hadith"
+                      ? targetLabel(neighbours.data.previous, isBengali, t.chapter)
+                      : ""}
+                  </span>
+                </ReadingLink>
               ) : (
-                <span className="hidden sm:block" />
+                <span />
               )}
               {neighbours.data?.next ? (
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                  <ReadingLink target={neighbours.data.next}>
+                <ReadingLink
+                  target={neighbours.data.next}
+                  className={buttonVariants({
+                    variant: "outline",
+                    size: "lg",
+                    className: "w-full justify-end px-4 sm:px-6",
+                  })}
+                >
+                  <span className="truncate">
                     {neighbours.data.next.kind === "chapter" ? t.chapter : t.nextHadith}{" "}
-                    {targetLabel(neighbours.data.next, isBengali, t.chapter)} <ChevronRight />
-                  </ReadingLink>
-                </Button>
+                    {neighbours.data.next.kind === "hadith"
+                      ? targetLabel(neighbours.data.next, isBengali, t.chapter)
+                      : ""}
+                  </span>
+                  <ChevronRight className="size-5 shrink-0" />
+                </ReadingLink>
               ) : (
-                <span className="hidden sm:block" />
+                <span />
               )}
             </nav>
           </div>
