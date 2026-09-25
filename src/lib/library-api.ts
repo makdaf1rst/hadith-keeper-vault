@@ -375,15 +375,45 @@ async function readingSequenceForHadith(hadithNumber: number) {
   return position < 0 ? null : { bookNumber: entry.b, sequence, position };
 }
 
+async function adjacentAcrossBooks(
+  bookNumber: number,
+  sequence: ReadingTarget[],
+  position: number,
+): Promise<{ previous: ReadingTarget | null; next: ReadingTarget | null }> {
+  const books = [...(await loadBooks())].sort((a, b) => a.book_number - b.book_number);
+  const bookIndex = books.findIndex((book) => book.book_number === bookNumber);
+
+  let previous = position > 0 ? sequence[position - 1] : null;
+  let next = position < sequence.length - 1 ? sequence[position + 1] : null;
+
+  if (!previous && bookIndex > 0) {
+    for (let i = bookIndex - 1; i >= 0; i -= 1) {
+      const previousSequence = await readingSequenceForBook(books[i].book_number);
+      if (previousSequence.length > 0) {
+        previous = previousSequence[previousSequence.length - 1];
+        break;
+      }
+    }
+  }
+
+  if (!next && bookIndex >= 0 && bookIndex < books.length - 1) {
+    for (let i = bookIndex + 1; i < books.length; i += 1) {
+      const nextSequence = await readingSequenceForBook(books[i].book_number);
+      if (nextSequence.length > 0) {
+        next = nextSequence[0];
+        break;
+      }
+    }
+  }
+
+  return { previous, next };
+}
+
 export async function fetchNeighbours(hadithNumber: number) {
   const result = await readingSequenceForHadith(hadithNumber);
   if (!result) return { previous: null, next: null };
 
-  const { sequence, position } = result;
-  return {
-    previous: position > 0 ? sequence[position - 1] : null,
-    next: position < sequence.length - 1 ? sequence[position + 1] : null,
-  };
+  return adjacentAcrossBooks(result.bookNumber, result.sequence, result.position);
 }
 
 export async function fetchChapterContext(chapterId: string) {
@@ -412,10 +442,7 @@ export async function fetchChapterNeighbours(chapterId: string) {
   );
   if (position < 0) return { previous: null, next: null };
 
-  return {
-    previous: position > 0 ? sequence[position - 1] : null,
-    next: position < sequence.length - 1 ? sequence[position + 1] : null,
-  };
+  return adjacentAcrossBooks(bookNumber, sequence, position);
 }
 
 export type SearchFilters = {
