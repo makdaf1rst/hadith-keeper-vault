@@ -279,81 +279,96 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     hadithsByChapter.set(hadith.chapter_id, list);
   }
 
-  const chapterGroups = new Map<string, Chapter[]>();
-  for (const chapter of file.chapters) {
-    const key = chapter.collection_id ?? "__root__";
-    const list = chapterGroups.get(key) ?? [];
-    list.push(chapter);
-    chapterGroups.set(key, list);
-  }
+  const collections = [...file.collections].sort((a, b) => a.sort_order - b.sort_order);
+  const collectionRank = new Map(collections.map((collection, index) => [collection.id, index]));
+
+  const structuralChapters = [...file.chapters].sort((a, b) => {
+    const aCollection = a.collection_id
+      ? (collectionRank.get(a.collection_id) ?? Number.MAX_SAFE_INTEGER)
+      : -1;
+    const bCollection = b.collection_id
+      ? (collectionRank.get(b.collection_id) ?? Number.MAX_SAFE_INTEGER)
+      : -1;
+    if (aCollection !== bCollection) return aCollection - bCollection;
+    return a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0);
+  });
 
   const stopsAfter = new Map<number, Chapter[]>();
-  const stopsBeforeFirst: Chapter[] = [];
+  const stopsBefore = new Map<number, Chapter[]>();
 
-  for (const chapters of chapterGroups.values()) {
-    const ordered = [...chapters].sort(
-      (a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0),
-    );
+  for (let i = 0; i < structuralChapters.length; i += 1) {
+    const chapter = structuralChapters[i];
+    if ((hadithsByChapter.get(chapter.id) ?? []).length > 0) continue;
+    if (!hasMeaningfulChapterIntro(chapter)) continue;
 
-    for (let i = 0; i < ordered.length; i += 1) {
-      const chapter = ordered[i];
-      if ((hadithsByChapter.get(chapter.id) ?? []).length > 0) continue;
-      if (!hasMeaningfulChapterIntro(chapter)) continue;
+    let previousNumber: number | null = null;
+    let nextNumber: number | null = null;
 
-      let previousHadithNumber: number | null = null;
-      let nextHadithNumber: number | null = null;
-
-      for (let j = i - 1; j >= 0; j -= 1) {
-        const previousChapterHadiths = hadithsByChapter.get(ordered[j].id) ?? [];
-        if (previousChapterHadiths.length > 0) {
-          previousHadithNumber = Math.max(
-            ...previousChapterHadiths.map((hadith) => hadith.hadith_number),
-          );
-          break;
-        }
+    for (let j = i - 1; j >= 0; j -= 1) {
+      const previousHadiths = hadithsByChapter.get(structuralChapters[j].id) ?? [];
+      if (previousHadiths.length > 0) {
+        previousNumber = Math.max(...previousHadiths.map((hadith) => hadith.hadith_number));
+        break;
       }
+    }
 
-      for (let j = i + 1; j < ordered.length; j += 1) {
-        const nextChapterHadiths = hadithsByChapter.get(ordered[j].id) ?? [];
-        if (nextChapterHadiths.length > 0) {
-          nextHadithNumber = Math.min(
-            ...nextChapterHadiths.map((hadith) => hadith.hadith_number),
-          );
-          break;
-        }
+    for (let j = i + 1; j < structuralChapters.length; j += 1) {
+      const nextHadiths = hadithsByChapter.get(structuralChapters[j].id) ?? [];
+      if (nextHadiths.length > 0) {
+        nextNumber = Math.min(...nextHadiths.map((hadith) => hadith.hadith_number));
+        break;
       }
+    }
 
-      let boundary: number | null = previousHadithNumber;
-
-      if (boundary === null && nextHadithNumber !== null) {
-        const previousGlobal = [...sortedHadiths]
-          .reverse()
-          .find((hadith) => hadith.hadith_number < nextHadithNumber);
-        boundary = previousGlobal?.hadith_number ?? null;
-      }
-
-      if (boundary === null) {
-        stopsBeforeFirst.push(chapter);
-        continue;
-      }
-
-      const list = stopsAfter.get(boundary) ?? [];
+    // Only insert the chapter when its structural neighbours agree with the
+    // numbered hadith reading order. This prevents unrelated collection-only
+    // chapters from being dumped at the start of a book (notably Book 48).
+    if (
+      previousNumber !== null &&
+      nextNumber !== null &&
+      previousNumber < nextNumber
+    ) {
+      const list = stopsAfter.get(previousNumber) ?? [];
       list.push(chapter);
-      stopsAfter.set(boundary, list);
+      stopsAfter.set(previousNumber, list);
+      continue;
+    }
+
+    if (previousNumber !== null && nextNumber === null) {
+      const lastHadithNumber = sortedHadiths.at(-1)?.hadith_number ?? null;
+      if (lastHadithNumber !== null && previousNumber === lastHadithNumber) {
+        const list = stopsAfter.get(previousNumber) ?? [];
+        list.push(chapter);
+        stopsAfter.set(previousNumber, list);
+      }
+      continue;
+    }
+
+    if (previousNumber === null && nextNumber !== null) {
+      const firstHadithNumber = sortedHadiths[0]?.hadith_number ?? null;
+      if (firstHadithNumber !== null && nextNumber === firstHadithNumber) {
+        const list = stopsBefore.get(nextNumber) ?? [];
+        list.push(chapter);
+        stopsBefore.set(nextNumber, list);
+      }
     }
   }
 
   const sequence: ReadingTarget[] = [];
 
-  for (const chapter of stopsBeforeFirst.sort((a, b) => a.sort_order - b.sort_order)) {
-    sequence.push({ kind: "chapter", id: chapter.id });
-  }
-
   for (const hadith of sortedHadiths) {
+    const before = stopsBefore.get(hadith.hadith_number);
+    if (before?.length) {
+      before
+        .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
+        .forEach((chapter) => sequence.push({ kind: "chapter", id: chapter.id }));
+    }
+
     sequence.push({ kind: "hadith", number: hadith.hadith_number });
-    const stops = stopsAfter.get(hadith.hadith_number);
-    if (stops?.length) {
-      stops
+
+    const after = stopsAfter.get(hadith.hadith_number);
+    if (after?.length) {
+      after
         .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
         .forEach((chapter) => sequence.push({ kind: "chapter", id: chapter.id }));
     }
