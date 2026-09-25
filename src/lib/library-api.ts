@@ -250,18 +250,129 @@ export async function fetchHadithContext(hadith: HadithFull) {
   return { book, collection, chapter };
 }
 
-export async function fetchNeighbours(hadithNumber: number) {
-  const index = await loadHadithIndex();
-  let previous: number | null = null;
-  let next: number | null = null;
-  for (const entry of index) {
-    if (entry.n < hadithNumber) previous = entry.n;
-    if (entry.n > hadithNumber) {
-      next = entry.n;
-      break;
+export type ReadingTarget =
+  | { kind: "hadith"; number: number }
+  | { kind: "chapter"; id: string };
+
+function hasMeaningfulChapterIntro(chapter: Chapter): boolean {
+  return [
+    chapter.intro_ar_display,
+    chapter.intro_ar_source,
+    chapter.intro_en_display,
+    chapter.intro_en_source,
+  ].some((value) => value?.trim());
+}
+
+async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget[]> {
+  const [chapterFile, hadiths] = await Promise.all([
+    loadBookChapters(bookNumber),
+    loadBookHadiths(bookNumber),
+  ]);
+
+  const byChapter = new Map<string, HadithFull[]>();
+  const unassigned: HadithFull[] = [];
+  for (const hadith of hadiths) {
+    if (!hadith.chapter_id) {
+      unassigned.push(hadith);
+      continue;
+    }
+    const list = byChapter.get(hadith.chapter_id) ?? [];
+    list.push(hadith);
+    byChapter.set(hadith.chapter_id, list);
+  }
+
+  const sequence: ReadingTarget[] = [];
+  const chapters = [...chapterFile.chapters].sort(
+    (a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0),
+  );
+
+  for (const chapter of chapters) {
+    const chapterHadiths = (byChapter.get(chapter.id) ?? []).sort(
+      (a, b) => a.sort_order - b.sort_order || a.hadith_number - b.hadith_number,
+    );
+    if (chapterHadiths.length > 0) {
+      sequence.push(
+        ...chapterHadiths.map((hadith) => ({ kind: "hadith", number: hadith.hadith_number }) as const),
+      );
+    } else if (hasMeaningfulChapterIntro(chapter)) {
+      sequence.push({ kind: "chapter", id: chapter.id });
     }
   }
+
+  unassigned
+    .sort((a, b) => a.sort_order - b.sort_order || a.hadith_number - b.hadith_number)
+    .forEach((hadith) => sequence.push({ kind: "hadith", number: hadith.hadith_number }));
+
+  return sequence;
+}
+
+async function adjacentReadingTarget(
+  bookNumber: number,
+  target: ReadingTarget,
+): Promise<{ previous: ReadingTarget | null; next: ReadingTarget | null }> {
+  const books = await loadBooks();
+  const bookNumbers = [...books].sort((a, b) => a.book_number - b.book_number).map((b) => b.book_number);
+  const currentBookIndex = bookNumbers.indexOf(bookNumber);
+  const sequence = await readingSequenceForBook(bookNumber);
+  const currentIndex = sequence.findIndex((item) =>
+    target.kind === "hadith"
+      ? item.kind === "hadith" && item.number === target.number
+      : item.kind === "chapter" && item.id === target.id,
+  );
+
+  let previous = currentIndex > 0 ? sequence[currentIndex - 1] : null;
+  let next = currentIndex >= 0 && currentIndex < sequence.length - 1 ? sequence[currentIndex + 1] : null;
+
+  if (!previous && currentBookIndex > 0) {
+    for (let i = currentBookIndex - 1; i >= 0; i -= 1) {
+      const previousSequence = await readingSequenceForBook(bookNumbers[i]);
+      if (previousSequence.length) {
+        previous = previousSequence[previousSequence.length - 1];
+        break;
+      }
+    }
+  }
+
+  if (!next && currentBookIndex >= 0 && currentBookIndex < bookNumbers.length - 1) {
+    for (let i = currentBookIndex + 1; i < bookNumbers.length; i += 1) {
+      const nextSequence = await readingSequenceForBook(bookNumbers[i]);
+      if (nextSequence.length) {
+        next = nextSequence[0];
+        break;
+      }
+    }
+  }
+
   return { previous, next };
+}
+
+export async function fetchNeighbours(hadithNumber: number) {
+  const index = await loadHadithIndex();
+  const entry = index.find((item) => item.n === hadithNumber);
+  if (!entry) return { previous: null, next: null };
+  return adjacentReadingTarget(entry.b, { kind: "hadith", number: hadithNumber });
+}
+
+export async function fetchChapterContext(chapterId: string) {
+  const bookNumber = await bookNumberForHeadingId(chapterId);
+  if (bookNumber === null) return null;
+
+  const [books, file] = await Promise.all([loadBooks(), loadBookChapters(bookNumber)]);
+  const chapter = file.chapters.find((item) => item.id === chapterId) ?? null;
+  if (!chapter) return null;
+
+  const book = books.find((item) => item.book_number === bookNumber) ?? null;
+  const collection = chapter.collection_id
+    ? (file.collections.find((item) => item.id === chapter.collection_id) ?? null)
+    : null;
+
+  return { book, collection, chapter };
+}
+
+export async function fetchChapterNeighbours(chapterId: string) {
+  const bookNumber = await bookNumberForHeadingId(chapterId);
+  if (bookNumber === null) return { previous: null, next: null };
+  return adjacentReadingTarget(bookNumber, { kind: "chapter", id: chapterId });
 }
 
 export type SearchFilters = {
