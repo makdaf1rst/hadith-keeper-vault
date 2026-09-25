@@ -263,79 +263,84 @@ function hasMeaningfulChapterIntro(chapter: Chapter): boolean {
   ].some((value) => value?.trim());
 }
 
-function chapterPosition(file: BookChaptersFile, chapterId: string | null): number {
-  if (!chapterId) return -1;
-  const ordered = [...file.chapters].sort(
-    (a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0),
-  );
-  return ordered.findIndex((chapter) => chapter.id === chapterId);
+function orderedChapters(file: BookChaptersFile): Chapter[] {
+  const collections = [...file.collections].sort((a, b) => a.sort_order - b.sort_order);
+  const collectionRank = new Map(collections.map((collection, index) => [collection.id, index]));
+
+  return [...file.chapters].sort((a, b) => {
+    const aCollection = a.collection_id ? (collectionRank.get(a.collection_id) ?? Number.MAX_SAFE_INTEGER) : -1;
+    const bCollection = b.collection_id ? (collectionRank.get(b.collection_id) ?? Number.MAX_SAFE_INTEGER) : -1;
+    if (aCollection !== bCollection) return aCollection - bCollection;
+    return a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0);
+  });
 }
 
-async function meaningfulEmptyChaptersBetween(
-  left: HadithFull,
-  right: HadithFull,
-): Promise<Chapter[]> {
-  if (!left.book_id || !right.book_id || left.book_id !== right.book_id) return [];
-
-  const bookNumber = await bookNumberForId(left.book_id);
-  if (bookNumber === null) return [];
-
+async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget[]> {
   const [file, hadiths] = await Promise.all([
     loadBookChapters(bookNumber),
     loadBookHadiths(bookNumber),
   ]);
 
-  const ordered = [...file.chapters].sort(
-    (a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0),
+  const hadithsByChapter = new Map<string, HadithFull[]>();
+  const unassigned: HadithFull[] = [];
+
+  for (const hadith of hadiths) {
+    if (!hadith.chapter_id) {
+      unassigned.push(hadith);
+      continue;
+    }
+    const list = hadithsByChapter.get(hadith.chapter_id) ?? [];
+    list.push(hadith);
+    hadithsByChapter.set(hadith.chapter_id, list);
+  }
+
+  const sequence: ReadingTarget[] = [];
+
+  for (const chapter of orderedChapters(file)) {
+    const chapterHadiths = (hadithsByChapter.get(chapter.id) ?? []).sort(
+      (a, b) => a.hadith_number - b.hadith_number,
+    );
+
+    if (chapterHadiths.length > 0) {
+      sequence.push(
+        ...chapterHadiths.map(
+          (hadith) => ({ kind: "hadith", number: hadith.hadith_number }) as ReadingTarget,
+        ),
+      );
+    } else if (hasMeaningfulChapterIntro(chapter)) {
+      sequence.push({ kind: "chapter", id: chapter.id });
+    }
+  }
+
+  for (const hadith of unassigned.sort((a, b) => a.hadith_number - b.hadith_number)) {
+    sequence.push({ kind: "hadith", number: hadith.hadith_number });
+  }
+
+  return sequence;
+}
+
+async function readingSequenceForHadith(hadithNumber: number) {
+  const index = await loadHadithIndex();
+  const entry = index.find((item) => item.n === hadithNumber);
+  if (!entry) return null;
+
+  const sequence = await readingSequenceForBook(entry.b);
+  const position = sequence.findIndex(
+    (item) => item.kind === "hadith" && item.number === hadithNumber,
   );
-  const leftPos = chapterPosition(file, left.chapter_id);
-  const rightPos = chapterPosition(file, right.chapter_id);
-  if (leftPos < 0 || rightPos < 0 || leftPos === rightPos) return [];
 
-  const low = Math.min(leftPos, rightPos);
-  const high = Math.max(leftPos, rightPos);
-  const occupied = new Set(hadiths.map((hadith) => hadith.chapter_id).filter(Boolean));
-
-  return ordered
-    .slice(low + 1, high)
-    .filter((chapter) => !occupied.has(chapter.id) && hasMeaningfulChapterIntro(chapter));
+  return position < 0 ? null : { bookNumber: entry.b, sequence, position };
 }
 
 export async function fetchNeighbours(hadithNumber: number) {
-  const index = await loadHadithIndex();
-  const currentIndex = index.findIndex((entry) => entry.n === hadithNumber);
-  if (currentIndex < 0) return { previous: null, next: null };
+  const result = await readingSequenceForHadith(hadithNumber);
+  if (!result) return { previous: null, next: null };
 
-  const current = await fetchHadithByNumber(hadithNumber);
-  if (!current) return { previous: null, next: null };
-
-  let previous: ReadingTarget | null = null;
-  let next: ReadingTarget | null = null;
-
-  const previousNumber = currentIndex > 0 ? index[currentIndex - 1]?.n ?? null : null;
-  const nextNumber = currentIndex < index.length - 1 ? index[currentIndex + 1]?.n ?? null : null;
-
-  if (previousNumber !== null) {
-    const previousHadith = await fetchHadithByNumber(previousNumber);
-    if (previousHadith) {
-      const between = await meaningfulEmptyChaptersBetween(previousHadith, current);
-      previous = between.length
-        ? { kind: "chapter", id: between[between.length - 1].id }
-        : { kind: "hadith", number: previousNumber };
-    }
-  }
-
-  if (nextNumber !== null) {
-    const nextHadith = await fetchHadithByNumber(nextNumber);
-    if (nextHadith) {
-      const between = await meaningfulEmptyChaptersBetween(current, nextHadith);
-      next = between.length
-        ? { kind: "chapter", id: between[0].id }
-        : { kind: "hadith", number: nextNumber };
-    }
-  }
-
-  return { previous, next };
+  const { sequence, position } = result;
+  return {
+    previous: position > 0 ? sequence[position - 1] : null,
+    next: position < sequence.length - 1 ? sequence[position + 1] : null,
+  };
 }
 
 export async function fetchChapterContext(chapterId: string) {
@@ -358,64 +363,16 @@ export async function fetchChapterNeighbours(chapterId: string) {
   const bookNumber = await bookNumberForHeadingId(chapterId);
   if (bookNumber === null) return { previous: null, next: null };
 
-  const [file, hadiths] = await Promise.all([
-    loadBookChapters(bookNumber),
-    loadBookHadiths(bookNumber),
-  ]);
-  const orderedChapters = [...file.chapters].sort(
-    (a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0),
+  const sequence = await readingSequenceForBook(bookNumber);
+  const position = sequence.findIndex(
+    (item) => item.kind === "chapter" && item.id === chapterId,
   );
-  const currentPos = orderedChapters.findIndex((chapter) => chapter.id === chapterId);
-  if (currentPos < 0) return { previous: null, next: null };
-
-  const occupied = new Set(hadiths.map((hadith) => hadith.chapter_id).filter(Boolean));
-
-  for (let i = currentPos - 1; i >= 0; i -= 1) {
-    const chapter = orderedChapters[i];
-    const chapterHadiths = hadiths
-      .filter((hadith) => hadith.chapter_id === chapter.id)
-      .sort((a, b) => a.hadith_number - b.hadith_number);
-
-    if (chapterHadiths.length) {
-      return {
-        previous: { kind: "hadith", number: chapterHadiths[chapterHadiths.length - 1].hadith_number } as ReadingTarget,
-        next: await nextTargetAfterChapter(orderedChapters, hadiths, occupied, currentPos),
-      };
-    }
-    if (hasMeaningfulChapterIntro(chapter)) {
-      return {
-        previous: { kind: "chapter", id: chapter.id } as ReadingTarget,
-        next: await nextTargetAfterChapter(orderedChapters, hadiths, occupied, currentPos),
-      };
-    }
-  }
+  if (position < 0) return { previous: null, next: null };
 
   return {
-    previous: null,
-    next: await nextTargetAfterChapter(orderedChapters, hadiths, occupied, currentPos),
+    previous: position > 0 ? sequence[position - 1] : null,
+    next: position < sequence.length - 1 ? sequence[position + 1] : null,
   };
-}
-
-async function nextTargetAfterChapter(
-  orderedChapters: Chapter[],
-  hadiths: HadithFull[],
-  occupied: Set<string | null>,
-  currentPos: number,
-): Promise<ReadingTarget | null> {
-  for (let i = currentPos + 1; i < orderedChapters.length; i += 1) {
-    const chapter = orderedChapters[i];
-    const chapterHadiths = hadiths
-      .filter((hadith) => hadith.chapter_id === chapter.id)
-      .sort((a, b) => a.hadith_number - b.hadith_number);
-
-    if (chapterHadiths.length) {
-      return { kind: "hadith", number: chapterHadiths[0].hadith_number };
-    }
-    if (!occupied.has(chapter.id) && hasMeaningfulChapterIntro(chapter)) {
-      return { kind: "chapter", id: chapter.id };
-    }
-  }
-  return null;
 }
 
 export type SearchFilters = {
