@@ -113,6 +113,30 @@ function AuthPage() {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setPending(false);
     if (error) {
+      if (/email not confirmed/i.test(error.message)) {
+        toast.error("Your email isn't confirmed yet.", {
+          description: "Open the confirmation link we emailed you, or resend it.",
+          action: {
+            label: "Resend email",
+            onClick: async () => {
+              const { error: resendError } = await supabase.auth.resend({
+                type: "signup",
+                email,
+                options: { emailRedirectTo: window.location.origin },
+              });
+              if (resendError) toast.error(resendError.message);
+              else toast.success("Confirmation email sent. Check your inbox and spam folder.");
+            },
+          },
+        });
+        return;
+      }
+      if (/invalid login credentials/i.test(error.message)) {
+        toast.error("Email or password is incorrect.", {
+          description: "Use “Forgot password?” to reset it if needed.",
+        });
+        return;
+      }
       toast.error(error.message);
       return;
     }
