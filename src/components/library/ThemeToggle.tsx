@@ -1,3 +1,4 @@
+import { useLocation } from "@tanstack/react-router";
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -9,6 +10,8 @@ const STORAGE_KEY = "jami-theme";
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
+  const location = useLocation();
+  const isHadithPage = location.pathname.startsWith("/hadith/");
 
   useEffect(() => {
     const isDark = document.documentElement.classList.contains("dark");
@@ -30,7 +33,9 @@ export function ThemeToggle() {
       variant="outline"
       size="sm"
       onClick={toggleTheme}
-      className="fixed top-4 right-14 z-50 h-9 gap-2 rounded-md border-border bg-background/95 px-3 text-foreground shadow-md backdrop-blur transition-colors hover:bg-accent sm:top-6 sm:right-16"
+      className={`fixed right-14 z-50 h-9 gap-2 rounded-md border-border bg-background/95 px-3 text-foreground shadow-md backdrop-blur transition-colors hover:bg-accent sm:right-16 ${
+        isHadithPage ? "top-48" : "top-4 sm:top-6"
+      }`}
       aria-label={nextLabel}
       title={nextLabel}
     >
