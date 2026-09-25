@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import type { ReactNode } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { Button } from "@/components/ui/button";
@@ -23,7 +24,7 @@ function ReadingLink({
   children,
 }: {
   target: ReadingTarget;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return target.kind === "hadith" ? (
     <Link to="/hadith/$number" params={{ number: String(target.number) }}>
