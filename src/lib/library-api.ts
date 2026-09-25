@@ -303,6 +303,7 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
 
   for (let i = 0; i < structuralChapters.length; i += 1) {
     const chapter = structuralChapters[i];
+    if (!chapter) continue;
     if ((hadithsByChapter.get(chapter.id) ?? []).length > 0) continue;
     if (!hasMeaningfulChapterIntro(chapter)) continue;
 
@@ -310,7 +311,9 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     let nextNumber: number | null = null;
 
     for (let j = i - 1; j >= 0; j -= 1) {
-      const previousHadiths = hadithsByChapter.get(structuralChapters[j].id) ?? [];
+      const previousChapter = structuralChapters[j];
+      if (!previousChapter) continue;
+      const previousHadiths = hadithsByChapter.get(previousChapter.id) ?? [];
       if (previousHadiths.length > 0) {
         previousNumber = Math.max(...previousHadiths.map((hadith) => hadith.hadith_number));
         break;
@@ -318,7 +321,9 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     }
 
     for (let j = i + 1; j < structuralChapters.length; j += 1) {
-      const nextHadiths = hadithsByChapter.get(structuralChapters[j].id) ?? [];
+      const nextChapter = structuralChapters[j];
+      if (!nextChapter) continue;
+      const nextHadiths = hadithsByChapter.get(nextChapter.id) ?? [];
       if (nextHadiths.length > 0) {
         nextNumber = Math.min(...nextHadiths.map((hadith) => hadith.hadith_number));
         break;
@@ -361,12 +366,19 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
 
   const sequence: ReadingTarget[] = [];
 
+  const toChapterTarget = (chapter: Chapter): ReadingTarget => ({
+    kind: "chapter",
+    id: chapter.id,
+    chapterNumber: chapter.chapter_number ?? null,
+    isIntroduction: true,
+  });
+
   for (const hadith of sortedHadiths) {
     const before = stopsBefore.get(hadith.hadith_number);
     if (before?.length) {
       before
         .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
-        .forEach((chapter) => sequence.push({ kind: "chapter", id: chapter.id }));
+        .forEach((chapter) => sequence.push(toChapterTarget(chapter)));
     }
 
     sequence.push({ kind: "hadith", number: hadith.hadith_number });
@@ -375,7 +387,7 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     if (after?.length) {
       after
         .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
-        .forEach((chapter) => sequence.push({ kind: "chapter", id: chapter.id }));
+        .forEach((chapter) => sequence.push(toChapterTarget(chapter)));
     }
   }
 
@@ -403,14 +415,17 @@ async function adjacentAcrossBooks(
   const books = [...(await loadBooks())].sort((a, b) => a.book_number - b.book_number);
   const bookIndex = books.findIndex((book) => book.book_number === bookNumber);
 
-  let previous = position > 0 ? sequence[position - 1] : null;
-  let next = position < sequence.length - 1 ? sequence[position + 1] : null;
+  let previous: ReadingTarget | null = position > 0 ? (sequence[position - 1] ?? null) : null;
+  let next: ReadingTarget | null =
+    position < sequence.length - 1 ? (sequence[position + 1] ?? null) : null;
 
   if (!previous && bookIndex > 0) {
     for (let i = bookIndex - 1; i >= 0; i -= 1) {
-      const previousSequence = await readingSequenceForBook(books[i].book_number);
+      const previousBook = books[i];
+      if (!previousBook) continue;
+      const previousSequence = await readingSequenceForBook(previousBook.book_number);
       if (previousSequence.length > 0) {
-        previous = previousSequence[previousSequence.length - 1];
+        previous = previousSequence[previousSequence.length - 1] ?? null;
         break;
       }
     }
@@ -418,9 +433,11 @@ async function adjacentAcrossBooks(
 
   if (!next && bookIndex >= 0 && bookIndex < books.length - 1) {
     for (let i = bookIndex + 1; i < books.length; i += 1) {
-      const nextSequence = await readingSequenceForBook(books[i].book_number);
+      const nextBook = books[i];
+      if (!nextBook) continue;
+      const nextSequence = await readingSequenceForBook(nextBook.book_number);
       if (nextSequence.length > 0) {
-        next = nextSequence[0];
+        next = nextSequence[0] ?? null;
         break;
       }
     }

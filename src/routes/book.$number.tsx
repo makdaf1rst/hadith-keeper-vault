@@ -76,7 +76,7 @@ function ChapterBlock({
   bengali,
 }: {
   chapter: Chapter;
-  bengali?: BengaliChapterTranslation | null;
+  bengali?: BengaliChapterTranslation | null | undefined;
 }) {
   const { contentLanguage } = useLanguage();
   const title =

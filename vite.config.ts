@@ -32,6 +32,8 @@ export default defineConfig({
           { pattern: "www.jami-al-kamil.com", custom_domain: true },
         ],
       },
-    },
+      // The wrangler key is supported at runtime but missing from the
+      // installed config package's option types.
+    } as unknown as { nodeCompat?: boolean; deployConfig?: boolean },
   },
 });

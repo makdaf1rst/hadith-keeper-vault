@@ -17,6 +17,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SendGiftRouteImport } from './routes/send-gift'
 import { Route as BookNumberRouteImport } from './routes/book.$number'
+import { Route as ChapterIdRouteImport } from './routes/chapter.$id'
 import { Route as HadithNumberRouteImport } from './routes/hadith.$number'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const BookNumberRoute = BookNumberRouteImport.update({
   path: '/book/$number',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChapterIdRoute = ChapterIdRouteImport.update({
+  id: '/chapter/$id',
+  path: '/chapter/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HadithNumberRoute = HadithNumberRouteImport.update({
   id: '/hadith/$number',
   path: '/hadith/$number',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
+  '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
+  '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
+  '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/send-gift'
     | '/book/$number'
+    | '/chapter/$id'
     | '/hadith/$number'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/send-gift'
     | '/book/$number'
+    | '/chapter/$id'
     | '/hadith/$number'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/send-gift'
     | '/book/$number'
+    | '/chapter/$id'
     | '/hadith/$number'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   SendGiftRoute: typeof SendGiftRoute
   BookNumberRoute: typeof BookNumberRoute
+  ChapterIdRoute: typeof ChapterIdRoute
   HadithNumberRoute: typeof HadithNumberRoute
 }
 
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookNumberRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chapter/$id': {
+      id: '/chapter/$id'
+      path: '/chapter/$id'
+      fullPath: '/chapter/$id'
+      preLoaderRoute: typeof ChapterIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hadith/$number': {
       id: '/hadith/$number'
       path: '/hadith/$number'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   SendGiftRoute: SendGiftRoute,
   BookNumberRoute: BookNumberRoute,
+  ChapterIdRoute: ChapterIdRoute,
   HadithNumberRoute: HadithNumberRoute,
 }
 export const routeTree = rootRouteImport
