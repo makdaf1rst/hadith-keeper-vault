@@ -34,6 +34,6 @@ export default defineConfig({
       },
       // The wrangler key is supported at runtime but missing from the
       // installed config package's option types.
-    } as { wrangler: { name: string; routes: { pattern: string; custom_domain: boolean }[] } },
+    } as unknown as { nodeCompat?: boolean; deployConfig?: boolean },
   },
 });
