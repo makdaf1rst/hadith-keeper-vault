@@ -1,16 +1,42 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight, Settings } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
 import { Button } from "@/components/ui/button";
-import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours } from "@/lib/library-api";
+import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours, type ReadingTarget } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
+
+function ReadingLink({
+  target,
+  children,
+}: {
+  target: ReadingTarget;
+  children: ReactNode;
+}) {
+  return target.kind === "hadith" ? (
+    <Link to="/hadith/$number" params={{ number: String(target.number) }}>
+      {children}
+    </Link>
+  ) : (
+    <Link to="/chapter/$id" params={{ id: target.id }}>
+      {children}
+    </Link>
+  );
+}
+
+function targetLabel(target: ReadingTarget, isBengali: boolean, chapterLabel: string) {
+  return target.kind === "hadith"
+    ? isBengali
+      ? toBengaliDigits(target.number)
+      : target.number
+    : chapterLabel;
+}
 
 export const Route = createFileRoute("/hadith/$number")({
   head: ({ params }) => {
@@ -76,16 +102,16 @@ function HadithPage() {
           <div className="flex items-center gap-2">
             {neighbours.data?.previous ? (
               <Button asChild variant="outline" size="sm">
-                <Link to="/hadith/$number" params={{ number: String(neighbours.data.previous) }}>
-                  <ChevronLeft /> {isBengali ? toBengaliDigits(neighbours.data.previous) : neighbours.data.previous}
-                </Link>
+                <ReadingLink target={neighbours.data.previous}>
+                  <ChevronLeft /> {targetLabel(neighbours.data.previous, isBengali, t.chapter)}
+                </ReadingLink>
               </Button>
             ) : null}
             {neighbours.data?.next ? (
               <Button asChild variant="outline" size="sm">
-                <Link to="/hadith/$number" params={{ number: String(neighbours.data.next) }}>
-                  {isBengali ? toBengaliDigits(neighbours.data.next) : neighbours.data.next} <ChevronRight />
-                </Link>
+                <ReadingLink target={neighbours.data.next}>
+                  {targetLabel(neighbours.data.next, isBengali, t.chapter)} <ChevronRight />
+                </ReadingLink>
               </Button>
             ) : null}
           </div>
@@ -119,21 +145,20 @@ function HadithPage() {
             >
               {neighbours.data?.previous ? (
                 <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                  <Link
-                    to="/hadith/$number"
-                    params={{ number: String(neighbours.data.previous) }}
-                  >
-                    <ChevronLeft /> {t.previousHadith} {isBengali ? toBengaliDigits(neighbours.data.previous) : neighbours.data.previous}
-                  </Link>
+                  <ReadingLink target={neighbours.data.previous}>
+                    <ChevronLeft /> {neighbours.data.previous.kind === "chapter" ? t.chapter : t.previousHadith}{" "}
+                    {targetLabel(neighbours.data.previous, isBengali, t.chapter)}
+                  </ReadingLink>
                 </Button>
               ) : (
                 <span className="hidden sm:block" />
               )}
               {neighbours.data?.next ? (
                 <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                  <Link to="/hadith/$number" params={{ number: String(neighbours.data.next) }}>
-                    {t.nextHadith} {isBengali ? toBengaliDigits(neighbours.data.next) : neighbours.data.next} <ChevronRight />
-                  </Link>
+                  <ReadingLink target={neighbours.data.next}>
+                    {neighbours.data.next.kind === "chapter" ? t.chapter : t.nextHadith}{" "}
+                    {targetLabel(neighbours.data.next, isBengali, t.chapter)} <ChevronRight />
+                  </ReadingLink>
                 </Button>
               ) : (
                 <span className="hidden sm:block" />
