@@ -252,7 +252,12 @@ export async function fetchHadithContext(hadith: HadithFull) {
 
 export type ReadingTarget =
   | { kind: "hadith"; number: number }
-  | { kind: "chapter"; id: string };
+  | {
+      kind: "chapter";
+      id: string;
+      chapterNumber: number | null;
+      isIntroduction: boolean;
+    };
 
 function hasMeaningfulChapterIntro(chapter: Chapter): boolean {
   return [
