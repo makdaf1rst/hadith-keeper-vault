@@ -2,18 +2,27 @@
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
+import { verifyBengaliPreviewCode } from "@/lib/bengali-preview.functions";
+
 export type InterfaceLanguage = "en" | "bn";
 export type ContentLanguage = "en" | "bn";
+
+type UnlockResult = { ok: boolean; error?: string };
 
 type LanguageContextValue = {
   interfaceLanguage: InterfaceLanguage;
   contentLanguage: ContentLanguage;
   setInterfaceLanguage: (language: InterfaceLanguage) => void;
   setContentLanguage: (language: ContentLanguage) => void;
+  bengaliPreviewUnlocked: boolean;
+  bengaliPreviewChecking: boolean;
+  unlockBengaliPreview: (code: string) => Promise<UnlockResult>;
 };
 
 const INTERFACE_KEY = "jami-interface-language";
 const CONTENT_KEY = "jami-content-language";
+const BENGALI_PREVIEW_KEY = "jami-bengali-preview-until";
+const BENGALI_PREVIEW_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
