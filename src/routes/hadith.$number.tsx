@@ -37,11 +37,19 @@ function ReadingLink({
 }
 
 function targetLabel(target: ReadingTarget, isBengali: boolean, chapterLabel: string) {
-  return target.kind === "hadith"
-    ? isBengali
-      ? toBengaliDigits(target.number)
-      : target.number
-    : chapterLabel;
+  if (target.kind === "hadith") {
+    return isBengali ? toBengaliDigits(target.number) : target.number;
+  }
+
+  if (target.isIntroduction) {
+    return isBengali ? "ভূমিকা" : "Introduction";
+  }
+
+  if (target.chapterNumber != null) {
+    return `${chapterLabel} ${isBengali ? toBengaliDigits(target.chapterNumber) : target.chapterNumber}`;
+  }
+
+  return chapterLabel;
 }
 
 export const Route = createFileRoute("/hadith/$number")({
@@ -164,10 +172,9 @@ function HadithPage() {
                 >
                   <ChevronLeft className="size-5 shrink-0" />
                   <span className="truncate">
-                    {neighbours.data.previous.kind === "chapter" ? t.chapter : t.previousHadith}{" "}
-                    {neighbours.data.previous.kind === "hadith"
+                    {neighbours.data.previous.kind === "chapter"
                       ? targetLabel(neighbours.data.previous, isBengali, t.chapter)
-                      : ""}
+                      : `${t.previousHadith} ${targetLabel(neighbours.data.previous, isBengali, t.chapter)}`}
                   </span>
                 </ReadingLink>
               ) : (
@@ -183,10 +190,9 @@ function HadithPage() {
                   })}
                 >
                   <span className="truncate">
-                    {neighbours.data.next.kind === "chapter" ? t.chapter : t.nextHadith}{" "}
-                    {neighbours.data.next.kind === "hadith"
+                    {neighbours.data.next.kind === "chapter"
                       ? targetLabel(neighbours.data.next, isBengali, t.chapter)
-                      : ""}
+                      : `${t.nextHadith} ${targetLabel(neighbours.data.next, isBengali, t.chapter)}`}
                   </span>
                   <ChevronRight className="size-5 shrink-0" />
                 </ReadingLink>
