@@ -7,7 +7,7 @@ type Props = {
   bengaliIntro?: {
     intro_bn_source?: string | null;
     intro_bn_display?: string | null;
-  } | null;
+  } | null | undefined;
   label?: string;
   className?: string;
 };
