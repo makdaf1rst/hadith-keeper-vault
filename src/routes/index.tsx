@@ -1,3 +1,4 @@
+// Lovable sync marker: Book 66 QC deployment
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
