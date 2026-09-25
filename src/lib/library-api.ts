@@ -263,57 +263,100 @@ function hasMeaningfulChapterIntro(chapter: Chapter): boolean {
   ].some((value) => value?.trim());
 }
 
-function orderedChapters(file: BookChaptersFile): Chapter[] {
-  const collections = [...file.collections].sort((a, b) => a.sort_order - b.sort_order);
-  const collectionRank = new Map(collections.map((collection, index) => [collection.id, index]));
-
-  return [...file.chapters].sort((a, b) => {
-    const aCollection = a.collection_id ? (collectionRank.get(a.collection_id) ?? Number.MAX_SAFE_INTEGER) : -1;
-    const bCollection = b.collection_id ? (collectionRank.get(b.collection_id) ?? Number.MAX_SAFE_INTEGER) : -1;
-    if (aCollection !== bCollection) return aCollection - bCollection;
-    return a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0);
-  });
-}
-
 async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget[]> {
   const [file, hadiths] = await Promise.all([
     loadBookChapters(bookNumber),
     loadBookHadiths(bookNumber),
   ]);
 
+  const sortedHadiths = [...hadiths].sort((a, b) => a.hadith_number - b.hadith_number);
   const hadithsByChapter = new Map<string, HadithFull[]>();
-  const unassigned: HadithFull[] = [];
 
-  for (const hadith of hadiths) {
-    if (!hadith.chapter_id) {
-      unassigned.push(hadith);
-      continue;
-    }
+  for (const hadith of sortedHadiths) {
+    if (!hadith.chapter_id) continue;
     const list = hadithsByChapter.get(hadith.chapter_id) ?? [];
     list.push(hadith);
     hadithsByChapter.set(hadith.chapter_id, list);
   }
 
-  const sequence: ReadingTarget[] = [];
+  const chapterGroups = new Map<string, Chapter[]>();
+  for (const chapter of file.chapters) {
+    const key = chapter.collection_id ?? "__root__";
+    const list = chapterGroups.get(key) ?? [];
+    list.push(chapter);
+    chapterGroups.set(key, list);
+  }
 
-  for (const chapter of orderedChapters(file)) {
-    const chapterHadiths = (hadithsByChapter.get(chapter.id) ?? []).sort(
-      (a, b) => a.hadith_number - b.hadith_number,
+  const stopsAfter = new Map<number, Chapter[]>();
+  const stopsBeforeFirst: Chapter[] = [];
+
+  for (const chapters of chapterGroups.values()) {
+    const ordered = [...chapters].sort(
+      (a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0),
     );
 
-    if (chapterHadiths.length > 0) {
-      sequence.push(
-        ...chapterHadiths.map(
-          (hadith) => ({ kind: "hadith", number: hadith.hadith_number }) as ReadingTarget,
-        ),
-      );
-    } else if (hasMeaningfulChapterIntro(chapter)) {
-      sequence.push({ kind: "chapter", id: chapter.id });
+    for (let i = 0; i < ordered.length; i += 1) {
+      const chapter = ordered[i];
+      if ((hadithsByChapter.get(chapter.id) ?? []).length > 0) continue;
+      if (!hasMeaningfulChapterIntro(chapter)) continue;
+
+      let previousHadithNumber: number | null = null;
+      let nextHadithNumber: number | null = null;
+
+      for (let j = i - 1; j >= 0; j -= 1) {
+        const previousChapterHadiths = hadithsByChapter.get(ordered[j].id) ?? [];
+        if (previousChapterHadiths.length > 0) {
+          previousHadithNumber = Math.max(
+            ...previousChapterHadiths.map((hadith) => hadith.hadith_number),
+          );
+          break;
+        }
+      }
+
+      for (let j = i + 1; j < ordered.length; j += 1) {
+        const nextChapterHadiths = hadithsByChapter.get(ordered[j].id) ?? [];
+        if (nextChapterHadiths.length > 0) {
+          nextHadithNumber = Math.min(
+            ...nextChapterHadiths.map((hadith) => hadith.hadith_number),
+          );
+          break;
+        }
+      }
+
+      let boundary: number | null = previousHadithNumber;
+
+      if (boundary === null && nextHadithNumber !== null) {
+        const previousGlobal = [...sortedHadiths]
+          .reverse()
+          .find((hadith) => hadith.hadith_number < nextHadithNumber);
+        boundary = previousGlobal?.hadith_number ?? null;
+      }
+
+      if (boundary === null) {
+        stopsBeforeFirst.push(chapter);
+        continue;
+      }
+
+      const list = stopsAfter.get(boundary) ?? [];
+      list.push(chapter);
+      stopsAfter.set(boundary, list);
     }
   }
 
-  for (const hadith of unassigned.sort((a, b) => a.hadith_number - b.hadith_number)) {
+  const sequence: ReadingTarget[] = [];
+
+  for (const chapter of stopsBeforeFirst.sort((a, b) => a.sort_order - b.sort_order)) {
+    sequence.push({ kind: "chapter", id: chapter.id });
+  }
+
+  for (const hadith of sortedHadiths) {
     sequence.push({ kind: "hadith", number: hadith.hadith_number });
+    const stops = stopsAfter.get(hadith.hadith_number);
+    if (stops?.length) {
+      stops
+        .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
+        .forEach((chapter) => sequence.push({ kind: "chapter", id: chapter.id }));
+    }
   }
 
   return sequence;
