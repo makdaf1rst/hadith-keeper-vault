@@ -28,13 +28,14 @@ export function ThemeToggle() {
     <Button
       type="button"
       variant="outline"
-      size="icon"
+      size="sm"
       onClick={toggleTheme}
-      className="fixed bottom-4 left-4 z-50 size-10 rounded-full border-border bg-background/95 text-foreground shadow-md backdrop-blur transition-colors hover:bg-accent sm:bottom-6 sm:left-6"
+      className="fixed top-4 right-14 z-50 h-9 gap-2 rounded-md border-border bg-background/95 px-3 text-foreground shadow-md backdrop-blur transition-colors hover:bg-accent sm:top-6 sm:right-16"
       aria-label={nextLabel}
       title={nextLabel}
     >
       {theme === "dark" ? <Sun className="size-4" aria-hidden /> : <Moon className="size-4" aria-hidden />}
+      <span className="text-xs font-medium">{theme === "dark" ? "Light" : "Dark"}</span>
     </Button>
   );
 }
