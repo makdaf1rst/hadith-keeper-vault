@@ -285,7 +285,7 @@ function Index() {
                   <DropdownMenuItem asChild>
                     <Link to="/downloads" className="cursor-pointer">
                       <Download aria-hidden />
-                      {contentLanguage === "bn" ? "ডাউনলোড" : "Downloads"}
+                      {interfaceLanguage === "bn" ? "ডাউনলোড" : "Downloads"}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
