@@ -16,7 +16,6 @@ import { useState } from "react";
 
 import { ContinueReading } from "@/components/library/ContinueReading";
 import { IntroText } from "@/components/library/IntroText";
-import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
 import { LibraryTree } from "@/components/library/LibraryTree";
 import { SearchPanel } from "@/components/library/SearchPanel";
 import { Button } from "@/components/ui/button";
@@ -24,6 +23,11 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
@@ -191,47 +195,12 @@ function SelectedBookContents({ book }: { book: Book }) {
 }
 
 
-function BottomLanguageSelector() {
-  const {
-    interfaceLanguage,
-    contentLanguage,
-    setInterfaceLanguage,
-    setContentLanguage,
-  } = useLanguage();
-
-  const value = contentLanguage;
-
-  return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto flex max-w-7xl justify-end px-4 py-6 sm:px-6 lg:px-8">
-        <label className="flex items-center gap-2 text-xs text-muted-foreground">
-          <span>{interfaceLanguage === "bn" ? "ভাষা" : "Language"}</span>
-          <select
-            value={value}
-            onChange={(event) => {
-              const language = event.target.value === "bn" ? "bn" : "en";
-              setInterfaceLanguage(language);
-              setContentLanguage(language);
-            }}
-            className="h-8 rounded-md border border-input bg-background px-2 text-xs text-foreground"
-            aria-label={interfaceLanguage === "bn" ? "ভাষা" : "Language"}
-          >
-            <option value="en">English</option>
-            <option value="bn">বাংলা</option>
-          </select>
-        </label>
-      </div>
-    </footer>
-  );
-}
-
 // Bengali library summary and numerals follow the selected interface language.
 function Index() {
   const stats = useQuery({ queryKey: ["library-stats"], queryFn: fetchLibraryStats });
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
-  const [languageSettingsOpen, setLanguageSettingsOpen] = useState(false);
   const t = useInterfaceText();
-  const { interfaceLanguage } = useLanguage();
+  const { interfaceLanguage, contentLanguage, setInterfaceLanguage, setContentLanguage } = useLanguage();
   const isBengali = interfaceLanguage === "bn";
 
   return (
@@ -289,6 +258,25 @@ function Index() {
                       {interfaceLanguage === "bn" ? "ডাউনলোড" : "Downloads"}
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger>
+                      <Settings aria-hidden />
+                      {interfaceLanguage === "bn" ? "ভাষা" : "Language"}
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuSubContent className="bg-parchment">
+                      <DropdownMenuRadioGroup
+                        value={contentLanguage}
+                        onValueChange={(value) => {
+                          const language = value === "bn" ? "bn" : "en";
+                          setInterfaceLanguage(language);
+                          setContentLanguage(language);
+                        }}
+                      >
+                        <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
+                        <DropdownMenuRadioItem value="bn">বাংলা</DropdownMenuRadioItem>
+                      </DropdownMenuRadioGroup>
+                    </DropdownMenuSubContent>
+                  </DropdownMenuSub>
                   <DropdownMenuItem asChild>
                     <Link to="/announcements" className="cursor-pointer">
                       <Bell aria-hidden />
@@ -403,7 +391,6 @@ function Index() {
           </section>
         </div>
       </main>
-      <BottomLanguageSelector />
     </div>
   );
 }
