@@ -453,24 +453,6 @@ export async function fetchNeighbours(hadithNumber: number) {
   return adjacentAcrossBooks(result.bookNumber, result.sequence, result.position);
 }
 
-export async function fetchAdjacentHadithNumber(
-  hadithNumber: number,
-  direction: "previous" | "next",
-): Promise<number | null> {
-  const first = await fetchNeighbours(hadithNumber);
-  let target = first[direction];
-  let guard = 0;
-
-  while (target && guard < 100) {
-    if (target.kind === "hadith") return target.number;
-    const neighbours = await fetchChapterNeighbours(target.id);
-    target = neighbours[direction];
-    guard += 1;
-  }
-
-  return null;
-}
-
 
 export async function fetchChapterContext(chapterId: string) {
   const bookNumber = await bookNumberForHeadingId(chapterId);
