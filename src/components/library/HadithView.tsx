@@ -3,7 +3,6 @@ import { Copy, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { BookmarkButton } from "@/components/library/BookmarkButton";
-import { HadithAudioPlayer } from "@/components/library/HadithAudioPlayer";
 import { Button } from "@/components/ui/button";
 import { fetchBengaliStructure, fetchBengaliTranslation } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
@@ -178,11 +177,6 @@ export function HadithView({
           >
             <Share2 /> {isBengali ? "শেয়ার" : "Share"}
           </Button>
-          <HadithAudioPlayer
-            hadith={hadith}
-            englishText={english}
-            context={context}
-          />
         </div>
         )}
       </header>
