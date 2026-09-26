@@ -214,6 +214,32 @@ function paragraphs(value: string) {
     .filter((line) => line.length > 0);
 }
 
+/* ------------------------------- TXT ------------------------------- */
+
+/**
+ * Plain-text QC export: hadith number + translation only.
+ * No Kitab/Majmu/Bab headings, intros, Arabic, or other structural material.
+ */
+export function buildKitabTxt(model: KitabExport) {
+  const lines: string[] = [];
+
+  for (const block of model.blocks) {
+    if (block.kind !== "hadith") continue;
+    lines.push(String(block.number));
+    if (block.en?.trim()) lines.push(block.en.trim());
+    if (block.extra?.trim()) lines.push(block.extra.trim());
+    lines.push("");
+  }
+
+  return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
+}
+
+export async function downloadKitabTxt(model: KitabExport, fileName: string) {
+  const text = buildKitabTxt(model);
+  const blob = new Blob(["\uFEFF", text], { type: "text/plain;charset=utf-8" });
+  return deliverFile(blob, fileName);
+}
+
 /* ------------------------------ DOCX ------------------------------ */
 
 export async function downloadKitabDocx(model: KitabExport, fileName: string) {

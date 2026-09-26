@@ -14,6 +14,7 @@ import {
   buildKitabExport,
   downloadKitabDocx,
   downloadKitabPdf,
+  downloadKitabTxt,
   kitabFileName,
   type BengaliExportData,
 } from "@/lib/kitab-export";
@@ -171,7 +172,8 @@ async function loadBengali(book: Book): Promise<BengaliExportData> {
 }
 
 function DownloadActions({ book, collection, bn }: { book: Book; collection?: Collection; bn: boolean }) {
-  const [busy, setBusy] = useState<null | "pdf" | "docx">(null);
+  const [busy, setBusy] = useState<null | "pdf" | "docx" | "txt-en" | "txt-bn">(null);
+  const showBook48Txt = book.book_number === 48 && !!collection;
 
   async function run(kind: "pdf" | "docx") {
     if (busy) return;
@@ -211,6 +213,44 @@ function DownloadActions({ book, collection, bn }: { book: Book; collection?: Co
     }
   }
 
+  async function runTxt(lang: "en" | "bn") {
+    if (busy || !collection) return;
+    const busyKey = lang === "bn" ? "txt-bn" : "txt-en";
+    setBusy(busyKey);
+    const notice = toast.loading(lang === "bn" ? "বাংলা TXT তৈরি হচ্ছে…" : "Preparing English TXT…");
+    try {
+      const [collections, chapters, hadiths, bengali] = await Promise.all([
+        fetchCollections(book.id),
+        fetchChapters(book.id),
+        fetchBookHadiths(book.id),
+        lang === "bn" ? loadBengali(book) : Promise.resolve(null),
+      ]);
+
+      const model = buildKitabExport(book, collections, chapters, hadiths, {
+        lang,
+        bengali,
+        collectionId: collection.id,
+      });
+
+      const part = collection.sort_order;
+      const fileName = `Book-48-Part-${part}-${lang === "bn" ? "Bangla" : "English"}.txt`;
+      const outcome = await downloadKitabTxt(model, fileName);
+      const msg =
+        outcome === "shared"
+          ? "TXT file ready — choose “Save to Files”."
+          : outcome === "opened"
+            ? "TXT file opened — use your browser’s share or save option."
+            : outcome === "cancelled"
+              ? "Download cancelled."
+              : "Download started.";
+      toast.success(msg, { id: notice });
+    } catch {
+      toast.error("The TXT download could not be prepared. Please try again.", { id: notice });
+    } finally {
+      setBusy(null);
+    }
+  }
+
   return (
     <div className="flex shrink-0 gap-2">
       <Button variant="outline" size="sm" className="h-10 flex-1 sm:flex-none" disabled={busy !== null} onClick={() => void run("pdf")}>
@@ -219,6 +259,16 @@ function DownloadActions({ book, collection, bn }: { book: Book; collection?: Co
       <Button variant="outline" size="sm" className="h-10 flex-1 sm:flex-none" disabled={busy !== null} onClick={() => void run("docx")}>
         {busy === "docx" ? <Loader2 className="animate-spin" /> : <FileText />} Word (.docx)
       </Button>
+      {showBook48Txt ? (
+        <>
+          <Button variant="outline" size="sm" className="h-10 flex-1 sm:flex-none" disabled={busy !== null} onClick={() => void runTxt("en")}>
+            {busy === "txt-en" ? <Loader2 className="animate-spin" /> : <FileText />} English TXT
+          </Button>
+          <Button variant="outline" size="sm" className="h-10 flex-1 sm:flex-none" disabled={busy !== null} onClick={() => void runTxt("bn")}>
+            {busy === "txt-bn" ? <Loader2 className="animate-spin" /> : <FileText />} বাংলা TXT
+          </Button>
+        </>
+      ) : null}
     </div>
   );
 }
