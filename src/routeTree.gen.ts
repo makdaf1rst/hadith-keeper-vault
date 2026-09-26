@@ -17,7 +17,6 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SendGiftRouteImport } from './routes/send-gift'
-import { Route as TopicsRouteImport } from './routes/topics'
 import { Route as BookNumberRouteImport } from './routes/book.$number'
 import { Route as ChapterIdRouteImport } from './routes/chapter.$id'
 import { Route as HadithNumberRouteImport } from './routes/hadith.$number'
@@ -62,11 +61,6 @@ const SendGiftRoute = SendGiftRouteImport.update({
   path: '/send-gift',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TopicsRoute = TopicsRouteImport.update({
-  id: '/topics',
-  path: '/topics',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BookNumberRoute = BookNumberRouteImport.update({
   id: '/book/$number',
   path: '/book/$number',
@@ -92,7 +86,6 @@ export interface FileRoutesByFullPath {
   '/downloads': typeof DownloadsRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
-  '/topics': typeof TopicsRoute
   '/book/$number': typeof BookNumberRoute
   '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
@@ -106,7 +99,6 @@ export interface FileRoutesByTo {
   '/downloads': typeof DownloadsRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
-  '/topics': typeof TopicsRoute
   '/book/$number': typeof BookNumberRoute
   '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
@@ -121,7 +113,6 @@ export interface FileRoutesById {
   '/downloads': typeof DownloadsRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
-  '/topics': typeof TopicsRoute
   '/book/$number': typeof BookNumberRoute
   '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
@@ -137,7 +128,6 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/projects'
     | '/send-gift'
-    | '/topics'
     | '/book/$number'
     | '/chapter/$id'
     | '/hadith/$number'
@@ -151,7 +141,6 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/projects'
     | '/send-gift'
-    | '/topics'
     | '/book/$number'
     | '/chapter/$id'
     | '/hadith/$number'
@@ -165,7 +154,6 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/projects'
     | '/send-gift'
-    | '/topics'
     | '/book/$number'
     | '/chapter/$id'
     | '/hadith/$number'
@@ -180,7 +168,6 @@ export interface RootRouteChildren {
   DownloadsRoute: typeof DownloadsRoute
   ProjectsRoute: typeof ProjectsRoute
   SendGiftRoute: typeof SendGiftRoute
-  TopicsRoute: typeof TopicsRoute
   BookNumberRoute: typeof BookNumberRoute
   ChapterIdRoute: typeof ChapterIdRoute
   HadithNumberRoute: typeof HadithNumberRoute
@@ -244,13 +231,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SendGiftRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/topics': {
-      id: '/topics'
-      path: '/topics'
-      fullPath: '/topics'
-      preLoaderRoute: typeof TopicsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/book/$number': {
       id: '/book/$number'
       path: '/book/$number'
@@ -284,7 +264,6 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadsRoute: DownloadsRoute,
   ProjectsRoute: ProjectsRoute,
   SendGiftRoute: SendGiftRoute,
-  TopicsRoute: TopicsRoute,
   BookNumberRoute: BookNumberRoute,
   ChapterIdRoute: ChapterIdRoute,
   HadithNumberRoute: HadithNumberRoute,

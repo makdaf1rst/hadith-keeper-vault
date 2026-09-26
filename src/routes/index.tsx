@@ -11,7 +11,6 @@ import {
   FolderKanban,
   Mail,
   Settings,
-  Tags,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -288,12 +287,6 @@ function Index() {
                     <Link to="/downloads" className="cursor-pointer">
                       <Download aria-hidden />
                       {interfaceLanguage === "bn" ? "ডাউনলোড" : "Downloads"}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/topics" className="cursor-pointer">
-                      <Tags aria-hidden />
-                      {interfaceLanguage === "bn" ? "বিষয়সূচি" : "Subject Index"}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
