@@ -15,7 +15,6 @@ import {
   type HadithStub,
 } from "@/lib/library-api";
 import { IntroText } from "@/components/library/IntroText";
-import { KitabDownloadMenu } from "@/components/library/KitabDownloadMenu";
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import {
@@ -246,13 +245,6 @@ function BookNode({
       </Toggle>
       {open ? (
         <div className="pl-4">
-          <div className="mx-2 my-2 flex flex-wrap items-center gap-2">
-            <KitabDownloadMenu
-              book={book}
-              collections={collections.data ?? []}
-              chapters={chapters.data ?? []}
-            />
-          </div>
           <IntroText
             intro={book}
             bengaliIntro={contentLanguage === "bn" ? getBengaliBookIntro(book.book_number) : null}

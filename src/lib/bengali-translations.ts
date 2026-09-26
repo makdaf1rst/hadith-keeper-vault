@@ -131,3 +131,10 @@ export async function fetchBengaliCollectionTranslation(
     null
   );
 }
+
+/** All Bengali hadith translations for one book, read fresh (used by downloads). */
+export async function fetchBengaliBookTranslations(
+  bookNumber: number,
+): Promise<Record<string, BengaliHadithTranslation>> {
+  return loadBookTranslations(bookNumber);
+}

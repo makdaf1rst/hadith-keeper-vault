@@ -6,6 +6,7 @@ import {
   Bell,
   Bookmark as BookmarkIcon,
   BookOpen,
+  Download,
   EllipsisVertical,
   FolderKanban,
   Mail,
@@ -279,6 +280,12 @@ function Index() {
                     <Link to="/bookmarks" className="cursor-pointer">
                       <BookmarkIcon aria-hidden />
                       {t.bookmarks}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/downloads" className="cursor-pointer">
+                      <Download aria-hidden />
+                      {interfaceLanguage === "bn" ? "ডাউনলোড" : "Downloads"}
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
