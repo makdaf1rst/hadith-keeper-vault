@@ -214,6 +214,58 @@ function paragraphs(value: string) {
     .filter((line) => line.length > 0);
 }
 
+/* ------------------------------- TXT ------------------------------- */
+
+/**
+ * Builds a language-only plain-text export.
+ * Arabic is intentionally omitted so English TXT and Bangla TXT remain separate.
+ */
+export function buildKitabTxt(model: KitabExport) {
+  const lines: string[] = [];
+  const hadithLabel = model.lang === "bn" ? "হাদীস" : "Hadith";
+
+  const push = (value: string | null | undefined) => {
+    if (!value?.trim()) return;
+    lines.push(value.trim());
+  };
+
+  for (const block of model.blocks) {
+    switch (block.kind) {
+      case "kitab":
+        push(block.en);
+        lines.push("");
+        break;
+      case "collection":
+        push(block.en);
+        lines.push("");
+        break;
+      case "chapter":
+        push(block.en);
+        lines.push("");
+        break;
+      case "intro":
+        push(block.label);
+        push(block.en);
+        lines.push("");
+        break;
+      case "hadith":
+        lines.push(`${hadithLabel} ${block.number}`);
+        push(block.en);
+        if (block.extra) push(block.extra);
+        lines.push("");
+        break;
+    }
+  }
+
+  return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
+}
+
+export async function downloadKitabTxt(model: KitabExport, fileName: string) {
+  const text = buildKitabTxt(model);
+  const blob = new Blob(["\uFEFF", text], { type: "text/plain;charset=utf-8" });
+  return deliverFile(blob, fileName);
+}
+
 /* ------------------------------ DOCX ------------------------------ */
 
 export async function downloadKitabDocx(model: KitabExport, fileName: string) {
