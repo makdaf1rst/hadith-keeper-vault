@@ -11,7 +11,6 @@ import {
   FolderKanban,
   Mail,
   Settings,
-  Tags,
 } from "lucide-react";
 import { useState } from "react";
 
