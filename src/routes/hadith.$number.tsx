@@ -8,7 +8,6 @@ import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDia
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
 import { ReaderControls } from "@/components/library/ReaderControls";
-import { RelatedHadiths } from "@/components/library/RelatedHadiths";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { useReaderSettings } from "@/lib/reader-settings";
 import { recordHistory } from "@/lib/reading-history";
@@ -244,12 +243,6 @@ function HadithPage() {
                 <span />
               )}
             </nav>
-            {readerMode ? null : (
-              <RelatedHadiths
-                hadith={hadith.data}
-                bookNumber={context.data?.book?.book_number ?? null}
-              />
-            )}
           </div>
         ) : null}
       </main>
