@@ -291,12 +291,6 @@ function Index() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/topics" className="cursor-pointer">
-                      <Tags aria-hidden />
-                      {interfaceLanguage === "bn" ? "বিষয়সূচি" : "Subject Index"}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <Link to="/announcements" className="cursor-pointer">
                       <Bell aria-hidden />
                       {t.announcements}
