@@ -93,6 +93,7 @@ export function ReaderControls({ settings, update }: Props) {
         variant={settings.readerMode ? "default" : "outline"}
         size="sm"
         aria-pressed={settings.readerMode}
+        aria-label={bn ? "রিডার মোড" : "Reader mode"}
         onClick={() => update({ readerMode: !settings.readerMode })}
       >
         {settings.readerMode ? <X className="size-4" /> : <BookOpenText className="size-4" />}
