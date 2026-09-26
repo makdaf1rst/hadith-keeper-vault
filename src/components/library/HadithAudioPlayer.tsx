@@ -50,7 +50,7 @@ type Props = {
     book: Book | null;
     collection: Collection | null;
     chapter: Chapter | null;
-  };
+  } | undefined;
 };
 
 const SETTINGS_KEY = "jami-listen-settings.v1";
