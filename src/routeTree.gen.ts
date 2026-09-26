@@ -14,6 +14,7 @@ import { Route as AnnouncementsRouteImport } from './routes/announcements'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SendGiftRouteImport } from './routes/send-gift'
 import { Route as BookNumberRouteImport } from './routes/book.$number'
@@ -43,6 +44,11 @@ const BookmarksRoute = BookmarksRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadsRoute = DownloadsRouteImport.update({
+  id: '/downloads',
+  path: '/downloads',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
@@ -89,6 +96,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
@@ -102,6 +110,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/projects': typeof ProjectsRoute
   '/send-gift': typeof SendGiftRoute
   '/book/$number': typeof BookNumberRoute
@@ -116,6 +125,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/bookmarks'
     | '/contact'
+    | '/downloads'
     | '/projects'
     | '/send-gift'
     | '/book/$number'
@@ -128,6 +138,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/bookmarks'
     | '/contact'
+    | '/downloads'
     | '/projects'
     | '/send-gift'
     | '/book/$number'
@@ -140,6 +151,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/bookmarks'
     | '/contact'
+    | '/downloads'
     | '/projects'
     | '/send-gift'
     | '/book/$number'
@@ -153,6 +165,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   BookmarksRoute: typeof BookmarksRoute
   ContactRoute: typeof ContactRoute
+  DownloadsRoute: typeof DownloadsRoute
   ProjectsRoute: typeof ProjectsRoute
   SendGiftRoute: typeof SendGiftRoute
   BookNumberRoute: typeof BookNumberRoute
@@ -195,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downloads': {
+      id: '/downloads'
+      path: '/downloads'
+      fullPath: '/downloads'
+      preLoaderRoute: typeof DownloadsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -241,6 +261,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   BookmarksRoute: BookmarksRoute,
   ContactRoute: ContactRoute,
+  DownloadsRoute: DownloadsRoute,
   ProjectsRoute: ProjectsRoute,
   SendGiftRoute: SendGiftRoute,
   BookNumberRoute: BookNumberRoute,
