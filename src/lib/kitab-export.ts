@@ -217,44 +217,18 @@ function paragraphs(value: string) {
 /* ------------------------------- TXT ------------------------------- */
 
 /**
- * Builds a language-only plain-text export.
- * Arabic is intentionally omitted so English TXT and Bangla TXT remain separate.
+ * Plain-text QC export: hadith number + translation only.
+ * No Kitab/Majmu/Bab headings, intros, Arabic, or other structural material.
  */
 export function buildKitabTxt(model: KitabExport) {
   const lines: string[] = [];
-  const hadithLabel = model.lang === "bn" ? "হাদীস" : "Hadith";
-
-  const push = (value: string | null | undefined) => {
-    if (!value?.trim()) return;
-    lines.push(value.trim());
-  };
 
   for (const block of model.blocks) {
-    switch (block.kind) {
-      case "kitab":
-        push(block.en);
-        lines.push("");
-        break;
-      case "collection":
-        push(block.en);
-        lines.push("");
-        break;
-      case "chapter":
-        push(block.en);
-        lines.push("");
-        break;
-      case "intro":
-        push(block.label);
-        push(block.en);
-        lines.push("");
-        break;
-      case "hadith":
-        lines.push(`${hadithLabel} ${block.number}`);
-        push(block.en);
-        if (block.extra) push(block.extra);
-        lines.push("");
-        break;
-    }
+    if (block.kind !== "hadith") continue;
+    lines.push(String(block.number));
+    if (block.en?.trim()) lines.push(block.en.trim());
+    if (block.extra?.trim()) lines.push(block.extra.trim());
+    lines.push("");
   }
 
   return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
