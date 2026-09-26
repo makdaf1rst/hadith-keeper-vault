@@ -143,7 +143,6 @@ function HadithPage() {
             <ArrowLeft className="size-4" /> {t.library}
           </Link>
           <div className="flex flex-wrap items-center justify-end gap-2">
-            <ReaderControls settings={reader} update={updateReader} />
             {readerMode ? null : (
             <>
             {neighbours.data?.previous ? (
@@ -167,6 +166,9 @@ function HadithPage() {
             </>
             )}
           </div>
+        </div>
+        <div className="mx-auto flex max-w-4xl justify-end px-4 pb-3 sm:px-6">
+          <ReaderControls settings={reader} update={updateReader} />
         </div>
       </header>
 
