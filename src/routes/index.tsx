@@ -11,9 +11,11 @@ import {
   FolderKanban,
   Mail,
   Settings,
+  Tags,
 } from "lucide-react";
 import { useState } from "react";
 
+import { ContinueReading } from "@/components/library/ContinueReading";
 import { IntroText } from "@/components/library/IntroText";
 import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
 import { LibraryTree } from "@/components/library/LibraryTree";
@@ -289,6 +291,12 @@ function Index() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
+                    <Link to="/topics" className="cursor-pointer">
+                      <Tags aria-hidden />
+                      {interfaceLanguage === "bn" ? "বিষয়সূচি" : "Subject Index"}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
                     <Link to="/announcements" className="cursor-pointer">
                       <Bell aria-hidden />
                       {t.announcements}
@@ -314,6 +322,7 @@ function Index() {
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <ContinueReading />
         <SearchPanel />
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[22rem_1fr]">
