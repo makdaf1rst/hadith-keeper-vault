@@ -233,7 +233,7 @@ function BookRow({ book, title, bn }: { book: Book; title: string; bn: boolean }
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
       >
-        <span className="min-w-0">
+        <span className="min-w-0 flex-1">
           <span className="block text-sm font-medium text-foreground">{title}</span>
           {book.title_ar ? (
             <span className="arabic-text block text-base! leading-normal! text-muted-foreground">{book.title_ar}</span>
