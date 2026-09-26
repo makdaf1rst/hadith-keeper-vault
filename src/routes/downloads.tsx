@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronDown, ChevronRight, FileText, Loader2, Lock } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { ChevronDown, ChevronRight, FileText, Loader2 } from "lucide-react";
+import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -10,7 +10,6 @@ import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { fetchBengaliBookTranslations, fetchBengaliStructure } from "@/lib/bengali-translations";
 import { formatBookTitle } from "@/lib/display-titles";
-import { verifyDownloadsPasscode } from "@/lib/downloads-access.functions";
 import {
   buildKitabExport,
   downloadKitabDocx,
@@ -32,9 +31,9 @@ export const Route = createFileRoute("/downloads")({
   head: () => ({
     meta: [
       { title: "Downloads — Al-Jāmiʿ al-Kāmil" },
-      { name: "description", content: "Private PDF and Word downloads of each Kitāb and Majmūʿ of Al-Jāmiʿ al-Kāmil." },
+      { name: "description", content: "PDF and Word downloads of each Kitāb and Majmūʿ of Al-Jāmiʿ al-Kāmil." },
       { property: "og:title", content: "Downloads — Al-Jāmiʿ al-Kāmil" },
-      { property: "og:description", content: "Private PDF and Word downloads of each Kitāb and Majmūʿ." },
+      { property: "og:description", content: "PDF and Word downloads of each Kitāb and Majmūʿ." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -42,36 +41,9 @@ export const Route = createFileRoute("/downloads")({
   component: DownloadsPage,
 });
 
-const UNLOCK_KEY = "jami-downloads-unlocked";
-
 function DownloadsPage() {
   const { contentLanguage } = useLanguage();
   const bn = contentLanguage === "bn";
-  const [unlocked, setUnlocked] = useState(false);
-  const [code, setCode] = useState("");
-  const [checking, setChecking] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (sessionStorage.getItem(UNLOCK_KEY) === "1") setUnlocked(true);
-  }, []);
-
-  async function unlock(e: React.FormEvent) {
-    e.preventDefault();
-    setChecking(true);
-    setError(null);
-    try {
-      const res = await verifyDownloadsPasscode({ data: { code: code.trim() } });
-      if (res.ok) {
-        sessionStorage.setItem(UNLOCK_KEY, "1");
-        setUnlocked(true);
-      } else setError(res.error);
-    } catch {
-      setError("Unable to check the passcode right now.");
-    } finally {
-      setChecking(false);
-    }
-  }
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6">
@@ -83,27 +55,7 @@ function DownloadsPage() {
       </p>
 
       <div className="mt-6">
-        {unlocked ? (
-          <DownloadList bn={bn} />
-        ) : (
-          <form onSubmit={unlock} className="max-w-sm space-y-3 rounded-xl border bg-card p-5 shadow-sm">
-            <label htmlFor="dl-code" className="flex items-center gap-2 text-sm font-medium">
-              <Lock className="size-4" aria-hidden /> {bn ? "পাসকোড" : "Passcode"}
-            </label>
-            <Input
-              id="dl-code"
-              type="password"
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
-              autoComplete="off"
-            />
-            {error ? <p className="text-sm text-destructive">{error}</p> : null}
-            <Button type="submit" disabled={checking || !code.trim()} className="w-full">
-              {checking ? <Loader2 className="animate-spin" /> : null}
-              {bn ? "খুলুন" : "Unlock"}
-            </Button>
-          </form>
-        )}
+        <DownloadList bn={bn} />
       </div>
 
       <div className="mt-8">
