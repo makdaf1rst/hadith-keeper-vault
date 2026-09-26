@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Copy } from "lucide-react";
+import { Copy, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { BookmarkButton } from "@/components/library/BookmarkButton";
@@ -17,6 +17,9 @@ type Props = {
     | { book: Book | null; collection: Collection | null; chapter: Chapter | null }
     | undefined;
   showExactSource?: boolean | undefined;
+  readerMode?: boolean | undefined;
+  arabicScale?: number | undefined;
+  translationScale?: number | undefined;
 };
 
 
@@ -58,7 +61,35 @@ async function copy(value: string | null, label: string) {
   }
 }
 
-export function HadithView({ hadith, context, showExactSource = false }: Props) {
+/** Shares only the permanent link + short title — never the full hadith text. */
+async function shareHadith(number: number, bengali: boolean) {
+  const url = `${window.location.origin}/hadith/${number}`;
+  const title = `${bengali ? "হাদিস" : "Hadith"} ${number} — Al-Jāmiʿ al-Kāmil`;
+  if (typeof navigator.share === "function") {
+    try {
+      await navigator.share({ title, url });
+      return;
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") return;
+      // fall through to copying the link
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    toast.success(bengali ? "হাদিসের লিংক কপি হয়েছে।" : "Link to this hadith copied.");
+  } catch {
+    toast.error(bengali ? "লিংক কপি করা যায়নি।" : "Sharing isn't available in this browser.");
+  }
+}
+
+export function HadithView({
+  hadith,
+  context,
+  showExactSource = false,
+  readerMode = false,
+  arabicScale = 1,
+  translationScale = 1,
+}: Props) {
   const { contentLanguage } = useLanguage();
   const isBengali = contentLanguage === "bn";
   const t = useInterfaceText();
@@ -108,6 +139,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             {toArabicIndicDigits(hadith.hadith_number)}
           </span>
         </div>
+        {readerMode ? null : (
         <div className="flex flex-wrap gap-2">
           <BookmarkButton
             number={hadith.hadith_number}
@@ -138,7 +170,15 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
           <Button variant="outline" size="sm" onClick={() => copy(whole, t.fullEntry)}>
             <Copy /> {t.fullEntry}
           </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => shareHadith(hadith.hadith_number, isBengali)}
+          >
+            <Share2 /> {isBengali ? "শেয়ার" : "Share"}
+          </Button>
         </div>
+        )}
       </header>
 
       {context ? (
@@ -179,7 +219,11 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
       ) : null}
 
       <div className="space-y-6 px-4 py-6 sm:px-6">
-        {arabic ? <p className="arabic-text text-foreground">{arabic}</p> : null}
+        {arabic ? (
+          <p className="arabic-text text-foreground" style={{ fontSize: `${1.55 * arabicScale}rem` }}>
+            {arabic}
+          </p>
+        ) : null}
         {arabic && (selectedTranslation || contentLanguage === "bn") ? (
           <hr className="border-border" />
         ) : null}
@@ -187,7 +231,11 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
           bengali.isLoading ? (
             <p className="text-sm text-muted-foreground">{t.loading}</p>
           ) : selectedTranslation ? (
-            <div lang="bn" className="text-foreground leading-8">
+            <div
+              lang="bn"
+              className="text-foreground leading-8"
+              style={{ fontSize: `${translationScale}rem`, lineHeight: 2 }}
+            >
               {selectedTranslation}
             </div>
           ) : (
@@ -196,12 +244,22 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             </div>
           )
         ) : english ? (
-          <div className="english-text text-foreground">{english}</div>
+          <div
+            className="english-text text-foreground"
+            style={{ fontSize: `${1.0625 * translationScale}rem` }}
+          >
+            {english}
+          </div>
         ) : null}
         {extra ? (
           <>
             <hr className="border-border" />
-            <div className="english-text text-foreground">{extra}</div>
+            <div
+              className="english-text text-foreground"
+              style={{ fontSize: `${1.0625 * translationScale}rem` }}
+            >
+              {extra}
+            </div>
           </>
         ) : null}
         {!arabic && !selectedTranslation && !english && !extra ? (
