@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Copy } from "lucide-react";
+import { CircleAlert, Copy, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { BookmarkButton } from "@/components/library/BookmarkButton";
@@ -44,6 +44,71 @@ function remainder(full: string | null, parts: (string | null)[]) {
   return rest.trim().length > 0 ? rest.trim() : null;
 }
 
+
+
+async function shareHadith(hadithNumber: number, isBengali: boolean) {
+  const url = typeof window !== "undefined" ? window.location.href : "";
+  const title = `Hadith ${hadithNumber} — Al-Jāmiʿ al-Kāmil`;
+  const text = isBengali
+    ? `আল-জামিʿ আল-কামিল থেকে হাদিস ${toBengaliDigits(hadithNumber)}`
+    : `Hadith ${hadithNumber} from Al-Jāmiʿ al-Kāmil`;
+
+  try {
+    if (navigator.share) {
+      await navigator.share({ title, text, url });
+      return;
+    }
+    await navigator.clipboard.writeText(url);
+    toast.success(isBengali ? "হাদিসের লিংক কপি হয়েছে।" : "Hadith link copied.");
+  } catch (error) {
+    if (error instanceof DOMException && error.name === "AbortError") return;
+    try {
+      await navigator.clipboard.writeText(url);
+      toast.success(isBengali ? "হাদিসের লিংক কপি হয়েছে।" : "Hadith link copied.");
+    } catch {
+      toast.error(isBengali ? "শেয়ার করা যায়নি।" : "Sharing failed.");
+    }
+  }
+}
+
+function reportIssue(hadithNumber: number, isBengali: boolean) {
+  if (typeof window === "undefined") return;
+
+  const subject = isBengali
+    ? `হাদিস ${toBengaliDigits(hadithNumber)} — সংশোধন / ত্রুটি প্রতিবেদন`
+    : `Hadith ${hadithNumber} — Correction / Error Report`;
+
+  const body = isBengali
+    ? [
+        `আসসালামু আলাইকুম,`,
+        ``,
+        `আমি হাদিস ${toBengaliDigits(hadithNumber)}-এ একটি সম্ভাব্য ভুল বা সংশোধনযোগ্য বিষয় পেয়েছি।`,
+        ``,
+        `হাদিসের লিংক: ${window.location.href}`,
+        ``,
+        `সমস্যার ধরন (যেমন: আরবি, বাংলা অনুবাদ, ইংরেজি অনুবাদ, রেফারেন্স, গ্রেড, প্রদর্শন):`,
+        ``,
+        `সমস্যার বিস্তারিত:`,
+        ``,
+        `সম্ভব হলে স্ক্রিনশট সংযুক্ত করুন।`,
+      ].join("\n")
+    : [
+        `Assalamu alaikum,`,
+        ``,
+        `I found a possible error or correction needed in Hadith ${hadithNumber}.`,
+        ``,
+        `Hadith link: ${window.location.href}`,
+        ``,
+        `Type of issue (for example: Arabic, English/Bengali translation, reference, grade, or display):`,
+        ``,
+        `Details of the issue:`,
+        ``,
+        `Please attach a screenshot if possible.`,
+      ].join("\n");
+
+  window.location.href =
+    `mailto:Aljamiushshamil@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 async function copy(value: string | null, label: string) {
   if (!value) {
@@ -150,6 +215,22 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
           </Button>
           <Button variant="outline" size="sm" onClick={() => copy(whole, t.fullEntry)}>
             <Copy /> {t.fullEntry}
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => void shareHadith(hadith.hadith_number, isBengali)}
+          >
+            <Share2 />
+            {isBengali ? "শেয়ার" : "Share"}
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => reportIssue(hadith.hadith_number, isBengali)}
+          >
+            <CircleAlert />
+            {isBengali ? "ত্রুটি জানান" : "Report error"}
           </Button>
         </div>
       </header>
