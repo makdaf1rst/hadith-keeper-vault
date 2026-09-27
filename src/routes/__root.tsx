@@ -1,3 +1,4 @@
+// Deployment sync marker: restore current homepage and hadith actions
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
