@@ -1,3 +1,4 @@
+// Deployment sync marker: home language toggle
 // Lovable sync marker: Book 43 QC deployment
 // Lovable sync marker: Book 66 QC deployment
 import { useQuery } from "@tanstack/react-query";
