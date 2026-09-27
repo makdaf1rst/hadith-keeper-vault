@@ -3,6 +3,7 @@ import {
   fetchBookHadiths,
   fetchBooks,
   fetchHadithByNumber,
+  searchHadiths,
   type HadithFull,
   type SearchResult,
 } from "@/lib/library-api";
@@ -13,7 +14,10 @@ import { containsArabic, normalizeArabic, normalizeEnglish } from "@/lib/normali
  * static content; nothing is written or altered.
  */
 export type GradeFilter = "any" | "agreed" | "sahih" | "hasan";
-export type AdvancedResult = SearchResult & { bengali_text?: string | null };
+export type AdvancedResult = SearchResult & {
+  bengali_text?: string | null;
+  match_score?: number;
+};
 
 export type AdvancedOptions = {
   from: number | null;
@@ -158,4 +162,150 @@ export async function searchBengaliInBook(
     if (out.length >= 200) break;
   }
   return out.sort((a, b) => a.hadith_number - b.hadith_number);
+}
+
+
+function containsBengali(value: string) {
+  return /[\u0980-\u09FF]/.test(value);
+}
+
+function meaningfulWords(value: string, language: "ar" | "en" | "bn") {
+  const normalized =
+    language === "ar"
+      ? normalizeArabic(value)
+      : language === "bn"
+        ? normalizeBengali(value)
+        : normalizeEnglish(value);
+
+  return Array.from(
+    new Set(
+      normalized
+        .split(" ")
+        .map((word) => word.trim())
+        .filter((word) => word.length >= (language === "en" ? 2 : 1)),
+    ),
+  ).slice(0, 12);
+}
+
+function minimumRememberedWordMatches(wordCount: number) {
+  if (wordCount <= 1) return 1;
+  if (wordCount <= 3) return 1;
+  return Math.max(2, Math.ceil(wordCount * 0.4));
+}
+
+/**
+ * "I remember some words" search used by Advanced Search.
+ *
+ * Unlike an exact phrase search, words may appear in any order. Results are
+ * ranked by how many remembered words occur in the same hadith. Only hadith
+ * records are returned; headings are never part of this result set.
+ */
+export async function searchRememberedWords(
+  query: string,
+  scope: { bookId: string | null; collectionId: string | null; chapterId: string | null },
+  language: "all" | "ar" | "en",
+  exact: boolean,
+): Promise<AdvancedResult[]> {
+  const raw = query.trim();
+  if (!raw) return [];
+
+  if (containsBengali(raw)) {
+    return searchBengaliRememberedWords(raw, exact, scope);
+  }
+
+  const detected: "ar" | "en" = containsArabic(raw) ? "ar" : "en";
+  if ((language === "ar" && detected !== "ar") || (language === "en" && detected !== "en")) {
+    return [];
+  }
+
+  if (exact) {
+    return searchHadiths({
+      query: raw,
+      ...scope,
+      language: detected,
+    });
+  }
+
+  const words = meaningfulWords(raw, detected);
+  if (!words.length) return [];
+
+  const searches = await Promise.all(
+    words.map((word) =>
+      searchHadiths({
+        query: word,
+        ...scope,
+        language: detected,
+      }),
+    ),
+  );
+
+  const byId = new Map<string, AdvancedResult & { match_score: number }>();
+  for (const hits of searches) {
+    for (const hit of hits) {
+      const existing = byId.get(hit.id);
+      if (existing) {
+        existing.match_score += 1;
+      } else {
+        byId.set(hit.id, { ...hit, match_score: 1 });
+      }
+    }
+  }
+
+  const minimum = minimumRememberedWordMatches(words.length);
+  return [...byId.values()]
+    .filter((result) => result.match_score >= minimum)
+    .sort((a, b) => b.match_score - a.match_score || a.hadith_number - b.hadith_number)
+    .slice(0, 200);
+}
+
+async function searchBengaliRememberedWords(
+  query: string,
+  exact: boolean,
+  scope: { bookId: string | null; collectionId: string | null; chapterId: string | null },
+): Promise<AdvancedResult[]> {
+  const books = await fetchBooks();
+  const selectedBooks = scope.bookId ? books.filter((book) => book.id === scope.bookId) : books;
+  const needle = normalizeBengali(query);
+  const words = meaningfulWords(query, "bn");
+  if (!needle || !words.length) return [];
+
+  const perBook = await Promise.all(
+    selectedBooks.map(async (book) => {
+      const [translations, hadiths] = await Promise.all([
+        fetchBengaliBookTranslations(book.book_number),
+        fetchBookHadiths(book.id),
+      ]);
+      const results: AdvancedResult[] = [];
+
+      for (const hadith of hadiths) {
+        if (scope.collectionId && hadith.collection_id !== scope.collectionId) continue;
+        if (scope.chapterId && hadith.chapter_id !== scope.chapterId) continue;
+
+        const text = translations[String(hadith.hadith_number)]?.text;
+        if (!text) continue;
+        const hay = normalizeBengali(text);
+
+        const score = exact
+          ? hay.includes(needle)
+            ? words.length + 10
+            : 0
+          : words.reduce((count, word) => count + (hay.includes(word) ? 1 : 0), 0);
+
+        if (!score) continue;
+        results.push({ ...toResult(hadith), bengali_text: text, match_score: score });
+      }
+      return results;
+    }),
+  );
+
+  const minimum = exact ? 1 : minimumRememberedWordMatches(words.length);
+  return perBook
+    .flat()
+    .filter((result) => (result.match_score ?? 0) >= minimum)
+    .sort(
+      (a, b) =>
+        (b.match_score ?? 0) - (a.match_score ?? 0) ||
+        a.hadith_number - b.hadith_number,
+    )
+    .slice(0, 200);
 }
