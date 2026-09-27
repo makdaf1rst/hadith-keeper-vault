@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight, Settings } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
@@ -11,6 +11,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours, type ReadingTarget } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
+import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
+import { recordHistory } from "@/lib/reading-history";
 
 function ReadingLink({
   target,
@@ -108,6 +110,21 @@ function HadithPage() {
             item.chapter_number === context.data.chapter.chapter_number),
       )
     : null;
+
+  useEffect(() => {
+    if (!hadith.data) return;
+
+    recordHistory({
+      number: hadith.data.hadith_number,
+      bookTitle: context.data?.book
+        ? formatBookTitle(context.data.book.book_number, context.data.book.title_en)
+        : null,
+      collectionTitle: context.data?.collection?.title_en ?? null,
+      chapterTitle: context.data?.chapter
+        ? formatChapterTitle(context.data.chapter.chapter_number, context.data.chapter.title_en)
+        : null,
+    });
+  }, [hadith.data, context.data]);
 
   return (
     <div className="min-h-screen bg-background">
