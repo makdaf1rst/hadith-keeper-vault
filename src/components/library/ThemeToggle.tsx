@@ -33,7 +33,7 @@ export function ThemeToggle() {
       variant="outline"
       size="sm"
       onClick={toggleTheme}
-      className={`fixed z-50 h-9 gap-2 rounded-md border-border bg-background/95 px-3 text-foreground shadow-md backdrop-blur transition-colors hover:bg-accent ${
+      className={`absolute z-50 h-9 gap-2 rounded-md border-border bg-background/95 px-3 text-foreground shadow-md backdrop-blur transition-colors hover:bg-accent ${
         isHadithPage
           ? "top-4 left-1/2 -translate-x-1/2"
           : "top-4 right-14 sm:top-6 sm:right-16"
