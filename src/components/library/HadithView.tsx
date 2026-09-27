@@ -73,10 +73,19 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
     enabled: contentLanguage === "bn" && !!context?.book?.book_number,
   });
   const bengaliCollection = context?.collection
-    ? bengaliStructure.data?.collections.find((item) => item.id === context.collection?.id)
+    ? bengaliStructure.data?.collections.find((item) => item.id === context.collection?.id) ??
+      bengaliStructure.data?.collections.find(
+        (item) => item.sort_order === context.collection?.sort_order,
+      )
     : null;
   const bengaliChapter = context?.chapter
-    ? bengaliStructure.data?.chapters.find((item) => item.id === context.chapter?.id)
+    ? bengaliStructure.data?.chapters.find((item) => item.id === context.chapter?.id) ??
+      bengaliStructure.data?.chapters.find(
+        (item) =>
+          item.sort_order === context.chapter?.sort_order &&
+          (context.chapter?.chapter_number == null ||
+            item.chapter_number === context.chapter.chapter_number),
+      )
     : null;
 
   const arabic = showExactSource
@@ -149,8 +158,10 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             en={
               context.book
                 ? contentLanguage === "bn"
-                  ? getBengaliBookTitle(context.book.book_number) ??
-                    formatBookTitle(context.book.book_number, context.book.title_en)
+                  ? toBengaliDigits(
+                      getBengaliBookTitle(context.book.book_number) ??
+                        formatBookTitle(context.book.book_number, context.book.title_en),
+                    )
                   : formatBookTitle(context.book.book_number, context.book.title_en)
                 : null
             }
@@ -159,8 +170,10 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             label={isBengali ? "সংগ্রহ" : "Collection"}
             ar={context.collection?.title_ar}
             en={
-              contentLanguage === "bn" && bengaliCollection?.title_bn
-                ? bengaliCollection.title_bn
+              contentLanguage === "bn"
+                ? toBengaliDigits(
+                    bengaliCollection?.title_bn ?? context.collection?.title_en ?? "",
+                  ) || null
                 : context.collection?.title_en
             }
           />
@@ -168,8 +181,16 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             label={isBengali ? "অধ্যায়" : "Chapter"}
             ar={context.chapter?.title_ar}
             en={
-              contentLanguage === "bn" && bengaliChapter?.title_bn
-                ? bengaliChapter.title_bn
+              contentLanguage === "bn"
+                ? toBengaliDigits(
+                    bengaliChapter?.title_bn ??
+                      (context.chapter
+                        ? formatChapterTitle(
+                            context.chapter.chapter_number,
+                            context.chapter.title_en,
+                          )
+                        : ""),
+                  ) || null
                 : context.chapter
                   ? formatChapterTitle(context.chapter.chapter_number, context.chapter.title_en)
                   : null
