@@ -100,6 +100,10 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
   const extra = remainder(full, [arabic, english]);
   const selectedTranslation =
     contentLanguage === "bn" ? (bengali.data?.text ?? null) : english;
+  const displayedTranslation =
+    contentLanguage === "bn" && selectedTranslation
+      ? toBengaliDigits(selectedTranslation)
+      : selectedTranslation;
 
   const whole =
     contentLanguage === "bn"
@@ -207,9 +211,9 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
         {contentLanguage === "bn" ? (
           bengali.isLoading ? (
             <p className="text-sm text-muted-foreground">{t.loading}</p>
-          ) : selectedTranslation ? (
+          ) : displayedTranslation ? (
             <div lang="bn" className="text-foreground leading-8">
-              {selectedTranslation}
+              {displayedTranslation}
             </div>
           ) : (
             <div className="rounded-md border border-dashed border-border bg-muted/30 px-4 py-3 text-sm text-muted-foreground">
