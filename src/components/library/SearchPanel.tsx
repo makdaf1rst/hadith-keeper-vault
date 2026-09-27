@@ -62,7 +62,6 @@ export function SearchPanel() {
   const [rangeTo, setRangeTo] = useState("");
   const [grade, setGrade] = useState<GradeFilter>("any");
   const [exact, setExact] = useState(false);
-  const [field, setField] = useState<"default" | "bn">("default");
 
   const parseNum = (value: string) => {
     const n = Number(value.trim());
@@ -72,7 +71,6 @@ export function SearchPanel() {
   const to = advancedOpen ? parseNum(rangeTo) : null;
   const advGrade: GradeFilter = advancedOpen ? grade : "any";
   const advExact = advancedOpen && exact;
-  const advField = advancedOpen ? field : "default";
   const advancedActive =
     from != null || to != null || advGrade !== "any" || advExact || advancedOpen;
   const rangeOnly = !query.trim() && (from != null || to != null);
@@ -101,7 +99,6 @@ export function SearchPanel() {
       to,
       advGrade,
       advExact,
-      advField,
     ],
     queryFn: async (): Promise<AdvancedResult[]> => {
       const scope = {
@@ -330,23 +327,6 @@ export function SearchPanel() {
                 <SelectItem value="agreed">{bn ? "মুত্তাফাকুন আলাইহি" : "Agreed upon"}</SelectItem>
                 <SelectItem value="sahih">{bn ? "সহীহ" : "Sahih"}</SelectItem>
                 <SelectItem value="hasan">{bn ? "হাসান" : "Hasan"}</SelectItem>
-              </SelectContent>
-            </Select>
-          </label>
-
-          <label className="space-y-1">
-            <span className="block text-xs font-semibold text-muted-foreground">
-              {bn ? "কোথায় খুঁজবেন" : "Search in"}
-            </span>
-            <Select value={field} onValueChange={(v) => setField(v as "default" | "bn")}>
-              <SelectTrigger className="w-full bg-background" aria-label={bn ? "কোথায় খুঁজবেন" : "Search in"}>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="default">
-                  {bn ? "স্বয়ংক্রিয় — আরবি / ইংরেজি / বাংলা" : "Auto — Arabic / English / Bengali"}
-                </SelectItem>
-                <SelectItem value="bn">{bn ? "বাংলা অনুবাদ" : "Bengali translation"}</SelectItem>
               </SelectContent>
             </Select>
           </label>
