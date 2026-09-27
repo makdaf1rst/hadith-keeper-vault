@@ -100,7 +100,13 @@ function HadithPage() {
     enabled: contentLanguage === "bn" && !!context.data?.book?.book_number,
   });
   const bengaliChapter = context.data?.chapter
-    ? bengaliStructure.data?.chapters.find((item) => item.id === context.data?.chapter?.id)
+    ? bengaliStructure.data?.chapters.find((item) => item.id === context.data?.chapter?.id) ??
+      bengaliStructure.data?.chapters.find(
+        (item) =>
+          item.sort_order === context.data?.chapter?.sort_order &&
+          (context.data?.chapter?.chapter_number == null ||
+            item.chapter_number === context.data.chapter.chapter_number),
+      )
     : null;
 
   return (
