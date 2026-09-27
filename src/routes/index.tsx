@@ -10,6 +10,7 @@ import {
   EllipsisVertical,
   FolderKanban,
   Mail,
+  Languages,
   Settings,
 } from "lucide-react";
 import { useState } from "react";
@@ -205,8 +206,24 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-parchment">
-        <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-6 sm:px-6 lg:px-8">
+      <header className="relative border-b border-border bg-parchment">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => {
+            const next = isBengali ? "en" : "bn";
+            setInterfaceLanguage(next);
+            setContentLanguage(next);
+          }}
+          className="absolute top-4 left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-3 shadow-sm backdrop-blur hover:bg-accent sm:left-6"
+          aria-label={isBengali ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
+          title={isBengali ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
+        >
+          <Languages className="size-4" aria-hidden />
+          <span className="font-medium">{isBengali ? "English" : "বাংলা"}</span>
+        </Button>
+        <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 pt-16 pb-6 sm:px-6 sm:pt-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-1 sm:flex-row sm:gap-8">
               <img
