@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronDown, ChevronRight, FileText, Loader2 } from "lucide-react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { ChevronDown, ChevronRight, FileText, Loader2, ShieldCheck } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
@@ -45,6 +45,141 @@ export const Route = createFileRoute("/downloads")({
 function DownloadsPage() {
   const { contentLanguage } = useLanguage();
   const bn = contentLanguage === "bn";
+  const navigate = useNavigate();
+  const [agreed, setAgreed] = useState(false);
+
+  if (!agreed) {
+    return (
+      <main className="min-h-screen bg-background px-4 py-6 sm:px-6 sm:py-10">
+        <section
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="download-pledge-title"
+          className="mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-gold/35 bg-card shadow-xl"
+        >
+          <div className="border-b border-border bg-parchment px-5 py-5 text-center sm:px-8">
+            <div className="mx-auto mb-3 flex size-11 items-center justify-center rounded-full border border-gold/40 bg-background shadow-sm">
+              <ShieldCheck className="size-5 text-primary" aria-hidden />
+            </div>
+            <p className="arabic-text text-center! text-lg! leading-normal! text-primary">
+              بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+            </p>
+            <h1 id="download-pledge-title" className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+              {bn ? "ডাউনলোডের আগে একটি আমানত ও অঙ্গীকার" : "A Trust Before You Download"}
+            </h1>
+          </div>
+
+          <div className="max-h-[68vh] space-y-5 overflow-y-auto px-5 py-6 leading-7 sm:px-8">
+            {bn ? (
+              <>
+                <p>
+                  এই প্রকল্প এবং এর অন্তর্ভুক্ত সকল উপকরণ <strong>আল্লাহর সন্তুষ্টির উদ্দেশ্যে সম্পূর্ণ বিনামূল্যে</strong> প্রস্তুত ও প্রকাশ করা হয়েছে। আল্লাহর ইচ্ছায় আমাদের উদ্দেশ্য হলো—এটি যেন সর্বদা বিনামূল্যে থাকে, যাতে মানুষ রাসূলুল্লাহ ﷺ-এর সুন্নাহ পড়তে, অধ্যয়ন করতে, সংরক্ষণ করতে, অন্যদের শেখাতে এবং এর দ্বারা উপকৃত হতে পারে।
+                </p>
+                <p>
+                  আপনি এই উপকরণসমূহ <strong>সম্পূর্ণ বিনামূল্যে ডাউনলোড করতে পারেন</strong>—নিজের অধ্যয়ন, গবেষণা, শিক্ষা, ছাত্রদের পড়ানো, পরিবার ও বন্ধুদের সঙ্গে ভাগ করে নেওয়া এবং অন্যান্য কল্যাণকর অ-বাণিজ্যিক কাজে ব্যবহারের জন্য।
+                </p>
+                <p>
+                  তবে আমরা আল্লাহর সামনে আপনার কাছে এই অঙ্গীকার চাই যে, বিনামূল্যে দেওয়া এই কাজ, এর সংকলিত উপকরণ অথবা এর ডাউনলোডযোগ্য বিষয়বস্তু নিয়ে আপনি <strong>বিক্রি করবেন না, বিক্রির উদ্দেশ্যে পুনরায় প্যাকেজ করবেন না, পেইড ওয়াল বা অর্থের বিনিময়ে সীমাবদ্ধ করবেন না এবং ব্যক্তিগত বাণিজ্যিক লাভের পণ্য হিসেবে ব্যবহার করবেন না।</strong>
+                </p>
+
+                <blockquote className="rounded-xl border border-gold/30 bg-accent/30 px-4 py-4">
+                  <p className="font-medium">“আর আমার আয়াতসমূহের বিনিময়ে সামান্য মূল্য গ্রহণ করো না।”</p>
+                  <footer className="mt-1 text-sm text-muted-foreground">আল-কুরআন ২:৪১</footer>
+                </blockquote>
+
+                <blockquote className="rounded-xl border border-border bg-muted/30 px-4 py-4">
+                  <p className="font-medium">
+                    “যে ব্যক্তি এমন জ্ঞান অর্জন করে, যা আল্লাহর সন্তুষ্টি লাভের উদ্দেশ্যে শেখা হয়, কিন্তু সে তা কেবল দুনিয়ার কোনো স্বার্থ লাভের জন্য শেখে, সে কিয়ামতের দিন জান্নাতের সুগন্ধও পাবে না।”
+                  </p>
+                  <footer className="mt-1 text-sm text-muted-foreground">সুনান আবু দাউদ, ৩৬৬৪</footer>
+                </blockquote>
+
+                <p>
+                  এই আয়াত ও হাদীস আমাদের ইখলাসের গুরুত্ব এবং আল্লাহর দ্বীনকে দুনিয়াবি স্বার্থের উপায়ে পরিণত করার ভয়াবহতা স্মরণ করিয়ে দেয়।
+                </p>
+                <p>
+                  এই শর্ত আপনাকে এই জ্ঞান <strong>অধ্যয়ন করা, শেখানো, উদ্ধৃত করা, বিনামূল্যে শেয়ার করা অথবা অন্যদের উপকার করার</strong> ক্ষেত্রে বাধা দেয় না। এর উদ্দেশ্য শুধু এতটুকু—যে কাজটি বিনামূল্যে আল্লাহর সন্তুষ্টির জন্য দেওয়া হয়েছে, কেউ যেন সেটি নিয়ে নিজের বাণিজ্যিক পণ্য হিসেবে বিক্রি না করে।
+                </p>
+
+                <div className="rounded-xl border-2 border-primary/25 bg-primary/5 px-4 py-4">
+                  <p className="mb-2 font-semibold">আপনার অঙ্গীকার</p>
+                  <p>
+                    <strong>“আল্লাহর নামে আমি অঙ্গীকার করছি যে, এই ডাউনলোড করা উপকরণ আমি অধ্যয়ন, শিক্ষা, গবেষণা, সংরক্ষণ এবং কল্যাণকরভাবে বিনামূল্যে প্রচারের জন্য ব্যবহার করব। এই বিনামূল্যে দেওয়া প্রকল্প বা এর ডাউনলোডযোগ্য উপকরণ আমি বিক্রি করব না, বাণিজ্যিকভাবে পুনর্বিতরণ করব না, পেইড ওয়ালের পেছনে রাখব না এবং লাভের উদ্দেশ্যে কোনো পণ্য হিসেবে উপস্থাপন করব না।”</strong>
+                  </p>
+                </div>
+
+                <p className="text-sm text-muted-foreground">
+                  আল্লাহ এই জ্ঞানকে উপকারী করুন, আমাদের ইখলাস রক্ষা করুন, আমাদের ভুলত্রুটি ক্ষমা করুন এবং এই কাজকে একমাত্র তাঁর সন্তুষ্টির জন্য কবুল করুন। আমীন।
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  This project, and everything made available through it, has been prepared and shared <strong>freely for the sake of Allah</strong>. By Allah’s permission, our intention is that it remain freely accessible so that people may read, study, benefit from, preserve, and teach the Sunnah of the Messenger of Allah ﷺ.
+                </p>
+                <p>
+                  You are welcome to download this material <strong>without charge</strong> for your own study, research, teaching, sharing with students, family, friends, and other beneficial non-commercial purposes.
+                </p>
+                <p>
+                  However, we ask you before Allah not to take this freely provided work, or the knowledge and compiled material contained within it, and <strong>sell it, repackage it for sale, place it behind a paywall, or use it as a product for personal commercial profit.</strong>
+                </p>
+
+                <blockquote className="rounded-xl border border-gold/30 bg-accent/30 px-4 py-4">
+                  <p className="font-medium">“And do not exchange My signs for a small price.”</p>
+                  <footer className="mt-1 text-sm text-muted-foreground">Qur’an 2:41</footer>
+                </blockquote>
+
+                <blockquote className="rounded-xl border border-border bg-muted/30 px-4 py-4">
+                  <p className="font-medium">
+                    “Whoever learns knowledge by which the Face of Allah is sought, but learns it only to obtain some worldly gain, will not smell the fragrance of Paradise on the Day of Resurrection.”
+                  </p>
+                  <footer className="mt-1 text-sm text-muted-foreground">Sunan Abī Dāwūd, 3664</footer>
+                </blockquote>
+
+                <p>
+                  These texts remind us of the seriousness of sincerity and of not turning the religion of Allah into a means of worldly exploitation.
+                </p>
+                <p>
+                  This condition does <strong>not</strong> prevent you from studying the material, teaching from it, quoting from it, sharing it freely, or benefiting others with it. Its purpose is simply to protect a project that was given freely from being taken and sold as someone else’s commercial product.
+                </p>
+
+                <div className="rounded-xl border-2 border-primary/25 bg-primary/5 px-4 py-4">
+                  <p className="mb-2 font-semibold">Your pledge</p>
+                  <p>
+                    <strong>“By the name of Allah, I agree that I will use these downloaded materials for study, teaching, research, preservation, and beneficial sharing. I will not sell, commercially redistribute, place behind a paywall, or present this freely provided project or its downloadable contents as a product for profit.”</strong>
+                  </p>
+                </div>
+
+                <p className="text-sm text-muted-foreground">
+                  May Allah make this knowledge beneficial, preserve our sincerity, forgive our shortcomings, and accept this work solely for His sake. Āmīn.
+                </p>
+              </>
+            )}
+          </div>
+
+          <div className="grid gap-3 border-t border-border bg-parchment px-5 py-5 sm:grid-cols-2 sm:px-8">
+            <Button
+              type="button"
+              size="lg"
+              onClick={() => setAgreed(true)}
+              className="w-full"
+            >
+              {bn ? "আমি সম্মত — ডাউনলোডে যান" : "I Agree — Continue to Downloads"}
+            </Button>
+            <Button
+              type="button"
+              size="lg"
+              variant="outline"
+              onClick={() => navigate({ to: "/" })}
+              className="w-full"
+            >
+              {bn ? "আমি সম্মত নই — হোম পেজে ফিরে যান" : "I Do Not Agree — Return Home"}
+            </Button>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6">
