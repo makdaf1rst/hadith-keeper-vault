@@ -1,3 +1,4 @@
+// Deployment sync marker: bilingual download pledge gate
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ChevronDown, ChevronRight, FileText, Loader2, ShieldCheck } from "lucide-react";
