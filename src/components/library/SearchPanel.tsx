@@ -23,7 +23,7 @@ import {
   hadithsInRange,
   RANGE_LIMIT,
   refineResults,
-  searchBengaliInBook,
+  searchRememberedWords,
   type AdvancedResult,
   type GradeFilter,
 } from "@/lib/advanced-search";
@@ -74,9 +74,8 @@ export function SearchPanel() {
   const advExact = advancedOpen && exact;
   const advField = advancedOpen ? field : "default";
   const advancedActive =
-    from != null || to != null || advGrade !== "any" || advExact || advField === "bn";
+    from != null || to != null || advGrade !== "any" || advExact || advancedOpen;
   const rangeOnly = !query.trim() && (from != null || to != null);
-  const bengaliNeedsBook = advField === "bn" && bookId === ALL;
 
   const books = useQuery({ queryKey: ["books"], queryFn: fetchBooks });
   const collections = useQuery({
@@ -111,12 +110,11 @@ export function SearchPanel() {
         chapterId: chapterId === ALL ? null : chapterId,
       };
       let base: AdvancedResult[];
-      if (advField === "bn" && query.trim()) {
-        if (!scope.bookId) return [];
-        base = await searchBengaliInBook(scope.bookId, query, advExact, scope);
-      } else if (!query.trim()) {
+      if (!query.trim()) {
         const start = from ?? to ?? 1;
         base = await hadithsInRange(start, to ?? start + RANGE_LIMIT - 1, scope);
+      } else if (advancedOpen) {
+        base = await searchRememberedWords(query, scope, language, advExact);
       } else {
         base = await searchHadiths({ query, ...scope, language });
       }
@@ -136,7 +134,7 @@ export function SearchPanel() {
   const headings = useQuery({
     queryKey: ["heading-search", query],
     queryFn: () => searchHeadings(query),
-    enabled: query.trim().length > 1,
+    enabled: !advancedOpen && query.trim().length > 1,
   });
 
   const numeric = useMemo(() => {
@@ -346,7 +344,7 @@ export function SearchPanel() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="default">
-                  {bn ? "আরবি / ইংরেজি (উপরের ভাষা অনুযায়ী)" : "Arabic / English (language above)"}
+                  {bn ? "স্বয়ংক্রিয় — আরবি / ইংরেজি / বাংলা" : "Auto — Arabic / English / Bengali"}
                 </SelectItem>
                 <SelectItem value="bn">{bn ? "বাংলা অনুবাদ" : "Bengali translation"}</SelectItem>
               </SelectContent>
@@ -365,8 +363,8 @@ export function SearchPanel() {
 
           <p className="text-xs text-muted-foreground sm:col-span-2 lg:col-span-4">
             {bn
-              ? `ফিল্টার শুধু বিদ্যমান ফলাফল সংকুচিত করে। শুধু নম্বর-পরিসর দিলে সর্বোচ্চ ${RANGE_LIMIT}টি হাদিস দেখানো হয়। বাংলা অনুসন্ধানের জন্য একটি কিতাব নির্বাচন করুন।`
-              : `Filters only narrow the existing results. A number range on its own lists up to ${RANGE_LIMIT} hadiths. Bengali search needs a Kitāb selected.`}
+              ? `মনে থাকা শব্দগুলো যেকোনো ক্রমে লিখুন। উন্নত অনুসন্ধান কেবল হাদিস দেখাবে এবং যে হাদিসে বেশি শব্দ মিলে তাকে আগে দেখাবে। আরবি, ইংরেজি ও বাংলা স্বয়ংক্রিয়ভাবে শনাক্ত হয়। শুধু নম্বর-পরিসর দিলে সর্বোচ্চ ${RANGE_LIMIT}টি হাদিস দেখানো হয়।`
+              : `Enter the words you remember in any order. Advanced search returns hadiths only and ranks hadiths with more matching words first. Arabic, English, and Bengali are detected automatically. A number range on its own lists up to ${RANGE_LIMIT} hadiths.`}
           </p>
         </div>
       ) : null}
@@ -383,7 +381,7 @@ export function SearchPanel() {
         </div>
       ) : null}
 
-      {query && headings.data?.length ? (
+      {!advancedOpen && query && headings.data?.length ? (
         <div className="rounded-md border border-border bg-card px-4 py-3">
           <h3 className="mb-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
             {t.matchingHeadings}
@@ -420,11 +418,6 @@ export function SearchPanel() {
 
       {query || rangeOnly ? (
         <div className="space-y-3">
-          {bengaliNeedsBook && query.trim() ? (
-            <p className="text-sm text-muted-foreground">
-              {bn ? "বাংলা অনুবাদে খুঁজতে উপরে একটি কিতাব নির্বাচন করুন।" : "Choose a Kitāb above to search the Bengali translation."}
-            </p>
-          ) : null}
           {results.isLoading ? <p className="text-sm text-muted-foreground">{t.searching}</p> : null}
           {results.error ? (
             <p className="text-sm text-destructive">{t.searchFailed}</p>
