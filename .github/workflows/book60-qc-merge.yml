@@ -1,0 +1,84 @@
+name: Book 60 QC merge pass
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/book60-qc-merge-pass.txt"
+      - ".github/workflows/book60-qc-merge.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: book60-qc-merge
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge one QC pass into Bengali Book 60
+        shell: bash
+        run: |
+          set -euo pipefail
+          PASS="$(tr -d '[:space:]' < .github/book60-qc-merge-pass.txt)"
+          node <<'NODE'
+          const fs = require('fs');
+          const pass = Number(fs.readFileSync('.github/book60-qc-merge-pass.txt','utf8').trim());
+          if (!Number.isInteger(pass) || pass < 1 || pass > 5) {
+            throw new Error('Invalid pass number: ' + pass);
+          }
+
+          const basePath = 'public/content/bengali/book-60/hadiths.json';
+          const overridePath = 'public/content/bengali/book-60/qc-overrides.json';
+
+          const base = JSON.parse(fs.readFileSync(basePath,'utf8'));
+          const overrides = JSON.parse(fs.readFileSync(overridePath,'utf8'));
+          const keys = Object.keys(overrides).sort((a,b)=>Number(a)-Number(b));
+
+          const start = (pass - 1) * 50;
+          const end = Math.min(pass * 50, keys.length);
+          const selected = keys.slice(start, end);
+
+          if (!selected.length) throw new Error('No override entries selected for pass ' + pass);
+
+          for (const k of selected) base[k] = overrides[k];
+
+          for (const k of selected) {
+            if (JSON.stringify(base[k]) !== JSON.stringify(overrides[k])) {
+              throw new Error('Verification failed for hadith ' + k);
+            }
+          }
+
+          fs.writeFileSync(basePath, JSON.stringify(base));
+          fs.writeFileSync('/tmp/book60-pass.txt', selected.join(','));
+          console.log('PASS=' + pass);
+          console.log('COUNT=' + selected.length);
+          console.log('FIRST=' + selected[0]);
+          console.log('LAST=' + selected[selected.length - 1]);
+          NODE
+
+      - name: Commit only Book 60 Bengali hadith file
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add public/content/bengali/book-60/hadiths.json
+
+          if git diff --cached --quiet; then
+            echo "No Book 60 changes needed for this pass."
+            exit 0
+          fi
+
+          PASS="$(tr -d '[:space:]' < .github/book60-qc-merge-pass.txt)"
+          git commit -m "Book 60 QC: merge verified overrides pass ${PASS}/5"
+          git push origin main
