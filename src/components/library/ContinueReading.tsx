@@ -1,3 +1,4 @@
+// Deployment sync marker: always-visible continue reading panel
 import { Link } from "@tanstack/react-router";
 import { BookOpenText, History } from "lucide-react";
 
