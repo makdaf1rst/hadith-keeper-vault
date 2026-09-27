@@ -20,7 +20,6 @@ export function ContinueReading() {
   const bn = interfaceLanguage === "bn";
   const num = (n: number) => (bn ? toBengaliDigits(n) : String(n));
   const latest = history[0];
-  if (!latest) return null;
 
   return (
     <div className="mb-4 flex flex-wrap items-center gap-3 rounded-md border border-gold/50 bg-accent/30 px-4 py-3">
@@ -29,21 +28,31 @@ export function ContinueReading() {
         <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
           {bn ? "পড়া চালিয়ে যান" : "Continue reading"}
         </p>
-        <p className="truncate text-sm text-foreground">
-          {bn ? "হাদিস" : "Hadith"} {num(latest.number)}
-          {latest.chapterTitle ?? latest.bookTitle ? (
-            <span className="text-muted-foreground"> · {latest.chapterTitle ?? latest.bookTitle}</span>
-          ) : null}
-        </p>
+        {latest ? (
+          <p className="truncate text-sm text-foreground">
+            {bn ? "হাদিস" : "Hadith"} {num(latest.number)}
+            {latest.chapterTitle ?? latest.bookTitle ? (
+              <span className="text-muted-foreground"> · {latest.chapterTitle ?? latest.bookTitle}</span>
+            ) : null}
+          </p>
+        ) : (
+          <p className="text-sm text-muted-foreground">
+            {bn
+              ? "এখনও কোনো সাম্প্রতিক হাদিস সংরক্ষিত হয়নি। একটি হাদিস খুললে এখানে আপনার পড়ার স্থান মনে রাখা হবে।"
+              : "No recent hadith yet. Open a hadith and your reading place will be remembered here."}
+          </p>
+        )}
       </div>
       <div className="flex gap-2">
-        <Link
-          to="/hadith/$number"
-          params={{ number: String(latest.number) }}
-          className={buttonVariants({ size: "sm" })}
-        >
-          {bn ? "চালিয়ে যান" : "Continue"}
-        </Link>
+        {latest ? (
+          <Link
+            to="/hadith/$number"
+            params={{ number: String(latest.number) }}
+            className={buttonVariants({ size: "sm" })}
+          >
+            {bn ? "চালিয়ে যান" : "Continue"}
+          </Link>
+        ) : null}
         <Dialog>
           <DialogTrigger asChild>
             <Button variant="outline" size="sm">
@@ -59,9 +68,10 @@ export function ContinueReading() {
                   : "Saved on this device only."}
               </DialogDescription>
             </DialogHeader>
-            <ul className="space-y-2">
-              {history.map((entry) => (
-                <li key={entry.number}>
+            {history.length ? (
+              <ul className="space-y-2">
+                {history.map((entry) => (
+                  <li key={entry.number}>
                   <Link
                     to="/hadith/$number"
                     params={{ number: String(entry.number) }}
@@ -79,12 +89,19 @@ export function ContinueReading() {
                       </span>
                     ) : null}
                   </Link>
-                </li>
-              ))}
-            </ul>
-            <Button variant="ghost" size="sm" className="self-start" onClick={clearHistory}>
-              {bn ? "ইতিহাস মুছুন" : "Clear history"}
-            </Button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                {bn ? "এখনও কোনো হাদিস দেখা হয়নি।" : "No hadith has been viewed yet."}
+              </p>
+            )}
+            {history.length ? (
+              <Button variant="ghost" size="sm" className="self-start" onClick={clearHistory}>
+                {bn ? "ইতিহাস মুছুন" : "Clear history"}
+              </Button>
+            ) : null}
           </DialogContent>
         </Dialog>
       </div>
