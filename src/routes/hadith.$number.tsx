@@ -1,16 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight, Settings } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
-import { ReaderControls } from "@/components/library/ReaderControls";
-import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
-import { useReaderSettings } from "@/lib/reader-settings";
-import { recordHistory } from "@/lib/reading-history";
 import { buttonVariants } from "@/components/ui/button";
 import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours, type ReadingTarget } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
@@ -103,32 +99,14 @@ function HadithPage() {
     queryFn: () => fetchBengaliStructure(context.data!.book!.book_number),
     enabled: contentLanguage === "bn" && !!context.data?.book?.book_number,
   });
-  const [reader, updateReader] = useReaderSettings();
-  const readerMode = reader.readerMode;
-
-  useEffect(() => {
-    if (!readerMode) return;
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") updateReader({ readerMode: false });
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [readerMode, updateReader]);
-
-  // Device-local reading history (localStorage only).
-  useEffect(() => {
-    if (!hadith.data || !context.data) return;
-    const { book, collection, chapter } = context.data;
-    recordHistory({
-      number: hadith.data.hadith_number,
-      bookTitle: book ? formatBookTitle(book.book_number, book.title_en) : null,
-      collectionTitle: collection?.title_en ?? null,
-      chapterTitle: chapter ? formatChapterTitle(chapter.chapter_number, chapter.title_en) : null,
-    });
-  }, [hadith.data, context.data]);
-
   const bengaliChapter = context.data?.chapter
-    ? bengaliStructure.data?.chapters.find((item) => item.id === context.data?.chapter?.id)
+    ? bengaliStructure.data?.chapters.find((item) => item.id === context.data?.chapter?.id) ??
+      bengaliStructure.data?.chapters.find(
+        (item) =>
+          item.sort_order === context.data?.chapter?.sort_order &&
+          (context.data?.chapter?.chapter_number == null ||
+            item.chapter_number === context.data.chapter.chapter_number),
+      )
     : null;
 
   return (
@@ -141,9 +119,7 @@ function HadithPage() {
           >
             <ArrowLeft className="size-4" /> {t.library}
           </Link>
-          <div className="flex flex-wrap items-center justify-end gap-2">
-            {readerMode ? null : (
-            <>
+          <div className="flex items-center gap-2">
             {neighbours.data?.previous ? (
               <ReadingLink
                 target={neighbours.data.previous}
@@ -162,12 +138,7 @@ function HadithPage() {
                 <ChevronRight className="size-4 shrink-0" />
               </ReadingLink>
             ) : null}
-            </>
-            )}
           </div>
-        </div>
-        <div className="mx-auto flex max-w-4xl justify-end px-4 pb-3 sm:px-6">
-          <ReaderControls settings={reader} update={updateReader} />
         </div>
       </header>
 
@@ -186,20 +157,12 @@ function HadithPage() {
         ) : null}
         {hadith.data ? (
           <div className="space-y-4">
-            {readerMode ? null : (
-              <IntroText
-                intro={context.data?.chapter}
-                bengaliIntro={bengaliChapter}
-                label={t.chapterIntroduction}
-              />
-            )}
-            <HadithView
-              hadith={hadith.data}
-              context={context.data}
-              readerMode={readerMode}
-              arabicScale={reader.arabicScale}
-              translationScale={reader.translationScale}
+            <IntroText
+              intro={context.data?.chapter}
+              bengaliIntro={bengaliChapter}
+              label={t.chapterIntroduction}
             />
+            <HadithView hadith={hadith.data} context={context.data} />
             <nav
               aria-label={t.hadithNavigation}
               className="grid grid-cols-2 gap-3 border-t border-border pt-6"
