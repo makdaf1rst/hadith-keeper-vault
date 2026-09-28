@@ -45,6 +45,8 @@ export type ExportOptions = {
   lang?: ExportLang;
   /** When set, only this Collection (Majmūʿ) is exported. */
   collectionId?: string;
+  /** When set, only this Bāb (with its parent Majmūʿ heading) is exported. */
+  chapterId?: string;
   bengali?: BengaliExportData | null;
 };
 
@@ -142,7 +144,7 @@ export function buildKitabExport(
   const title = only ? `${bookTitle} — ${onlyTitle}` : bookTitle;
 
   blocks.push({ kind: "kitab", en: bookTitle, ar: book.title_ar });
-  if (!only) {
+  if (!only && !options.chapterId) {
     const bookIntro = introBlock(book, L.kitabIntro, bengali?.bookIntro ?? null, lang);
     if (bookIntro) blocks.push(bookIntro);
   }
@@ -182,6 +184,23 @@ export function buildKitabExport(
     }
   };
 
+  const onlyChapter = options.chapterId
+    ? chapters.find((c) => c.id === options.chapterId) ?? null
+    : null;
+
+  if (onlyChapter) {
+    const parent = onlyChapter.collection_id
+      ? collections.find((c) => c.id === onlyChapter.collection_id) ?? null
+      : null;
+    if (parent) {
+      const bnTitle = lang === "bn" ? pick(bengali?.collections.get(parent.id)?.title_bn, null) : null;
+      blocks.push({ kind: "collection", en: bnTitle ?? parent.title_en, ar: parent.title_ar });
+    }
+    pushChapter(onlyChapter);
+    const chapterLabel = toc[toc.length - 1]?.label ?? L.bab;
+    return { title: `${bookTitle} — ${chapterLabel}`, titleAr: book.title_ar, lang, toc: [], blocks };
+  }
+
   if (only) {
     pushCollection(only);
   } else {
@@ -194,8 +213,15 @@ export function buildKitabExport(
   return { title, titleAr: book.title_ar, lang, toc, blocks };
 }
 
-export function kitabFileName(book: Book, extension: string, collection?: Collection | null) {
-  const suffix = collection ? `-Majmu-${collection.sort_order}-${collection.title_en ?? ""}` : "";
+export function kitabFileName(
+  book: Book,
+  extension: string,
+  collection?: Collection | null,
+  chapter?: Chapter | null,
+) {
+  const suffix =
+    (collection ? `-Majmu-${collection.sort_order}-${collection.title_en ?? ""}` : "") +
+    (chapter ? `-Bab-${chapter.chapter_number ?? chapter.sort_order}` : "");
   const base = `Kitab-${book.book_number}-${formatBookTitle(book.book_number, book.title_en) || ""}${suffix}`;
   const safe = base
     .normalize("NFKD")
