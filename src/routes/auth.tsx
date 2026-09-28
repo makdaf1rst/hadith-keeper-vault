@@ -72,7 +72,10 @@ function AuthPage() {
         toast.error(error.message);
         return;
       }
-      toast.success("Check your email for a password reset link.");
+      toast.success("Password reset email requested.", {
+        description:
+          "If an account exists for this email, a reset link will be sent. Check your inbox and spam/junk folder.",
+      });
       setMode("signin");
       return;
     }
@@ -161,8 +164,8 @@ function AuthPage() {
                     : "Sign in"}
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              The library is free to read without an account. Sign in only to save bookmarks
-              across your devices.
+              The library is free to read without an account. Bookmarks save on this device automatically.
+              Sign in only if you want them synced across your devices.
             </p>
           </div>
           {mode !== "update" ? (
@@ -232,14 +235,21 @@ function AuthPage() {
             </>
           ) : null}
           {mode === "reset" ? (
-            <Button
-              type="button"
-              variant="ghost"
-              className="w-full"
-              onClick={() => setMode("signin")}
-            >
-              Back to sign in
-            </Button>
+            <>
+              <p className="text-xs leading-5 text-muted-foreground">
+                If the email does not arrive, check spam or junk. Email delivery is handled by the
+                account email service; your bookmarks on this device remain available even if you
+                cannot sign in.
+              </p>
+              <Button
+                type="button"
+                variant="ghost"
+                className="w-full"
+                onClick={() => setMode("signin")}
+              >
+                Back to sign in
+              </Button>
+            </>
           ) : null}
         </form>
         <Button asChild variant="outline" className="w-full">
