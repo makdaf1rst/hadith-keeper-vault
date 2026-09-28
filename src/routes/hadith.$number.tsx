@@ -1,3 +1,4 @@
+// Production rebuild marker: reader controls
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight, Settings } from "lucide-react";
