@@ -1,3 +1,4 @@
+// Production rebuild marker: author-translator credits
 // Production rebuild marker: Library Menu
 // Deployment sync marker: home language toggle
 // Lovable sync marker: Book 43 QC deployment
