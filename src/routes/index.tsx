@@ -8,7 +8,7 @@ import {
   Bookmark as BookmarkIcon,
   BookOpen,
   Download,
-  EllipsisVertical,
+  Menu,
   FolderKanban,
   Mail,
   Languages,
@@ -254,13 +254,16 @@ function Index() {
                 <DropdownMenuTrigger asChild>
                   <Button
                     type="button"
-                    variant="ghost"
-                    size="icon"
-                    className="size-8 text-muted-foreground hover:text-foreground"
-                    aria-label="Open library menu"
-                    title="Library menu"
+                    variant="outline"
+                    size="sm"
+                    className="h-9 gap-2 rounded-full border-gold/40 bg-background/90 px-3 text-foreground shadow-sm backdrop-blur hover:bg-accent"
+                    aria-label={interfaceLanguage === "bn" ? "লাইব্রেরি মেনু খুলুন" : "Open Library Menu"}
+                    title={interfaceLanguage === "bn" ? "লাইব্রেরি মেনু" : "Library Menu"}
                   >
-                    <EllipsisVertical aria-hidden />
+                    <Menu className="size-4" aria-hidden />
+                    <span className="font-medium">
+                      {interfaceLanguage === "bn" ? "লাইব্রেরি মেনু" : "Library Menu"}
+                    </span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-44 bg-parchment">
