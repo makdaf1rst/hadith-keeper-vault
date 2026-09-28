@@ -259,13 +259,11 @@ export type ReadingTarget =
       isIntroduction: boolean;
     };
 
-function hasMeaningfulChapterIntro(chapter: Chapter): boolean {
-  return [
-    chapter.intro_ar_display,
-    chapter.intro_ar_source,
-    chapter.intro_en_display,
-    chapter.intro_en_source,
-  ].some((value) => value?.trim());
+function isIntroductionChapter(chapter: Chapter, collections: Collection[]): boolean {
+  if (chapter.chapter_number != null) return false;
+  if (!/^chapter$/i.test((chapter.title_en ?? "").trim())) return false;
+  const collection = collections.find((item) => item.id === chapter.collection_id);
+  return /introduction/i.test(collection?.title_en ?? "");
 }
 
 async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget[]> {
@@ -300,12 +298,12 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
 
   const stopsAfter = new Map<number, Chapter[]>();
   const stopsBefore = new Map<number, Chapter[]>();
+  const unanchored: Chapter[] = [];
 
   for (let i = 0; i < structuralChapters.length; i += 1) {
     const chapter = structuralChapters[i];
     if (!chapter) continue;
     if ((hadithsByChapter.get(chapter.id) ?? []).length > 0) continue;
-    if (!hasMeaningfulChapterIntro(chapter)) continue;
 
     let previousNumber: number | null = null;
     let nextNumber: number | null = null;
@@ -350,8 +348,8 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
         const list = stopsAfter.get(previousNumber) ?? [];
         list.push(chapter);
         stopsAfter.set(previousNumber, list);
+        continue;
       }
-      continue;
     }
 
     if (previousNumber === null && nextNumber !== null) {
@@ -360,26 +358,53 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
         const list = stopsBefore.get(nextNumber) ?? [];
         list.push(chapter);
         stopsBefore.set(nextNumber, list);
+        continue;
       }
+    }
+
+    // Fallback so every chapter stays reachable: attach after the closest
+    // structurally preceding hadith, otherwise before the closest following one.
+    if (previousNumber !== null) {
+      const list = stopsAfter.get(previousNumber) ?? [];
+      list.push(chapter);
+      stopsAfter.set(previousNumber, list);
+    } else if (nextNumber !== null) {
+      const list = stopsBefore.get(nextNumber) ?? [];
+      list.push(chapter);
+      stopsBefore.set(nextNumber, list);
+    } else {
+      unanchored.push(chapter);
     }
   }
 
   const sequence: ReadingTarget[] = [];
 
+  const chapterById = new Map(file.chapters.map((chapter) => [chapter.id, chapter]));
+  const emitted = new Set<string>();
   const toChapterTarget = (chapter: Chapter): ReadingTarget => ({
     kind: "chapter",
     id: chapter.id,
     chapterNumber: chapter.chapter_number ?? null,
-    isIntroduction: true,
+    isIntroduction: isIntroductionChapter(chapter, file.collections),
   });
+  const pushChapter = (chapter: Chapter) => {
+    if (emitted.has(chapter.id)) return;
+    emitted.add(chapter.id);
+    sequence.push(toChapterTarget(chapter));
+  };
+  unanchored.forEach(pushChapter);
 
   for (const hadith of sortedHadiths) {
     const before = stopsBefore.get(hadith.hadith_number);
     if (before?.length) {
       before
         .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
-        .forEach((chapter) => sequence.push(toChapterTarget(chapter)));
+        .forEach(pushChapter);
     }
+
+    // Every chapter is its own reading step, placed before its first hadith.
+    const ownChapter = hadith.chapter_id ? chapterById.get(hadith.chapter_id) : undefined;
+    if (ownChapter) pushChapter(ownChapter);
 
     sequence.push({ kind: "hadith", number: hadith.hadith_number });
 
@@ -387,7 +412,7 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     if (after?.length) {
       after
         .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
-        .forEach((chapter) => sequence.push(toChapterTarget(chapter)));
+        .forEach(pushChapter);
     }
   }
 

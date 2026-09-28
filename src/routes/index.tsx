@@ -656,8 +656,8 @@ function Index() {
                 <X aria-hidden />
               </Button>
             </div>
-            <h3 className="mt-1 text-lg font-semibold text-foreground">{tourSteps[tourStep].title}</h3>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">{tourSteps[tourStep].text}</p>
+            <h3 className="mt-1 text-lg font-semibold text-foreground">{tourSteps[tourStep]?.title}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{tourSteps[tourStep]?.text}</p>
             <div className="mt-4 flex items-center justify-between gap-2">
               <Button
                 type="button"

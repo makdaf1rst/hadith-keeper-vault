@@ -21,15 +21,15 @@ const EMPTY: Bookmark[] = [];
 function normalizeBookmark(item: unknown): Bookmark | null {
   if (!item || typeof item !== "object") return null;
   const value = item as Record<string, unknown>;
-  const number = Number(value.number);
+  const number = Number(value["number"]);
   if (!Number.isFinite(number) || number <= 0) return null;
 
   return {
     number,
-    bookTitle: typeof value.bookTitle === "string" ? value.bookTitle : null,
-    collectionTitle: typeof value.collectionTitle === "string" ? value.collectionTitle : null,
-    chapterTitle: typeof value.chapterTitle === "string" ? value.chapterTitle : null,
-    savedAt: Number.isFinite(Number(value.savedAt)) ? Number(value.savedAt) : Date.now(),
+    bookTitle: typeof value["bookTitle"] === "string" ? value["bookTitle"] : null,
+    collectionTitle: typeof value["collectionTitle"] === "string" ? value["collectionTitle"] : null,
+    chapterTitle: typeof value["chapterTitle"] === "string" ? value["chapterTitle"] : null,
+    savedAt: Number.isFinite(Number(value["savedAt"])) ? Number(value["savedAt"]) : Date.now(),
   };
 }
 
