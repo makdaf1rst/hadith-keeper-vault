@@ -276,6 +276,23 @@ function Index() {
                       {interfaceLanguage === "bn" ? "ডাউনলোড" : "Downloads"}
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={
+                        contentLanguage === "bn"
+                          ? "https://drive.google.com/file/d/1c5KMFNUTWDgYVqAGU1hKgU6fv9EgsFen/view"
+                          : "https://drive.google.com/file/d/10_ZkVs3B4kIlxTnMSYy982FwMmAxSSFY/view"
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer"
+                    >
+                      <BookOpen aria-hidden />
+                      {interfaceLanguage === "bn"
+                        ? "আল-জামি‘ আল-কামিলে ব্যবহৃত গ্রন্থসমূহ"
+                        : "Books Used in al-Jāmiʿ al-Kāmil"}
+                    </a>
+                  </DropdownMenuItem>
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>
                       <Settings aria-hidden />
