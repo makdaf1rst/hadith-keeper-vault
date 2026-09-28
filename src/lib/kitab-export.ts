@@ -144,7 +144,7 @@ export function buildKitabExport(
   const title = only ? `${bookTitle} — ${onlyTitle}` : bookTitle;
 
   blocks.push({ kind: "kitab", en: bookTitle, ar: book.title_ar });
-  if (!only) {
+  if (!only && !options.chapterId) {
     const bookIntro = introBlock(book, L.kitabIntro, bengali?.bookIntro ?? null, lang);
     if (bookIntro) blocks.push(bookIntro);
   }
