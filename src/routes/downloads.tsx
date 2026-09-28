@@ -268,27 +268,136 @@ function BookRow({ book, bn }: { book: Book; bn: boolean }) {
           {collections.isLoading ? (
             <p className="text-sm text-muted-foreground">Loading…</p>
           ) : list.length === 0 ? (
-            <DownloadActions book={book} bn={bn} />
+            <BabList book={book} bn={bn} />
           ) : (
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {list.map((c) => (
-                <li key={c.id} className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium">{c.title_en}</p>
-                    {c.title_ar ? (
-                      <p className="arabic-text text-sm" dir="rtl">
-                        {c.title_ar}
-                      </p>
-                    ) : null}
-                  </div>
-                  <DownloadActions book={book} collection={c} bn={bn} />
-                </li>
+                <CollectionRow key={c.id} book={book} collection={c} bn={bn} />
               ))}
             </ul>
           )}
         </div>
       ) : null}
     </li>
+  );
+}
+
+function CollectionRow({ book, collection, bn }: { book: Book; collection: Collection; bn: boolean }) {
+  const [open, setOpen] = useState(false);
+  const structure = useQuery({
+    queryKey: ["bn-structure", book.book_number],
+    queryFn: () => fetchBengaliStructure(book.book_number),
+    enabled: bn && open,
+  });
+  const bnTitle = bn
+    ? structure.data?.collections.find((c) => c.id === collection.id)?.title_bn
+    : null;
+  return (
+    <li className="rounded-md border bg-background">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="flex w-full items-start gap-2 p-3 text-left"
+      >
+        {open ? <ChevronDown className="mt-0.5 size-4 shrink-0" /> : <ChevronRight className="mt-0.5 size-4 shrink-0" />}
+        <span className="min-w-0 flex-1">
+          <span className="block text-sm font-medium">{bnTitle || collection.title_en}</span>
+          {collection.title_ar ? (
+            <span className="arabic-text block text-sm" dir="rtl">
+              {collection.title_ar}
+            </span>
+          ) : null}
+        </span>
+      </button>
+      {open ? (
+        <div className="border-t px-3 py-3">
+          <BabList book={book} collection={collection} bn={bn} />
+        </div>
+      ) : null}
+    </li>
+  );
+}
+
+function BabList({ book, collection, bn }: { book: Book; collection?: Collection; bn: boolean }) {
+  const chapters = useQuery({
+    queryKey: ["dl-chapters", book.id],
+    queryFn: () => fetchChapters(book.id),
+  });
+  const structure = useQuery({
+    queryKey: ["bn-structure", book.book_number],
+    queryFn: () => fetchBengaliStructure(book.book_number),
+    enabled: bn,
+  });
+  const [q, setQ] = useState("");
+  const babs = useMemo(() => {
+    const all = chapters.data ?? [];
+    return collection
+      ? orderCollectionChapters(all.filter((c) => c.collection_id === collection.id))
+      : [...all.filter((c) => !c.collection_id)].sort((a, b) => a.sort_order - b.sort_order);
+  }, [chapters.data, collection]);
+  const bnTitles = useMemo(
+    () => new Map((structure.data?.chapters ?? []).map((c) => [c.id, c.title_bn])),
+    [structure.data],
+  );
+  const labelFor = (c: Chapter) =>
+    (bn && bnTitles.get(c.id) ? formatChapterTitle(c.chapter_number, bnTitles.get(c.id)!) : null) ||
+    formatChapterTitle(c.chapter_number, c.title_en) ||
+    (bn ? "বাব" : "Bāb");
+  const filtered = useMemo(() => {
+    const term = q.trim().toLowerCase();
+    if (!term) return babs;
+    return babs.filter((c) =>
+      [String(c.chapter_number ?? ""), c.title_en ?? "", c.title_ar ?? "", bnTitles.get(c.id) ?? ""]
+        .join(" ")
+        .toLowerCase()
+        .includes(term),
+    );
+  }, [babs, q, bnTitles]);
+
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-col gap-2 rounded-md border border-gold/30 bg-parchment p-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm font-semibold">
+          {collection
+            ? bn ? "সম্পূর্ণ মাজমূ‘" : "Entire Collection"
+            : bn ? "সম্পূর্ণ কিতাব" : "Entire Kitāb"}
+        </p>
+        <DownloadActions book={book} collection={collection} bn={bn} />
+      </div>
+      {chapters.isLoading ? (
+        <p className="text-sm text-muted-foreground">Loading…</p>
+      ) : babs.length > 0 ? (
+        <>
+          {babs.length > 8 ? (
+            <Input
+              placeholder={bn ? "বাব নম্বর বা নাম দিয়ে খুঁজুন" : "Filter Bābs by number or title"}
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              aria-label="Filter Bābs"
+            />
+          ) : null}
+          <ul className="max-h-[60vh] space-y-3 overflow-y-auto pr-1">
+            {filtered.map((c) => (
+              <li
+                key={c.id}
+                className="flex flex-col gap-2 border-b pb-3 last:border-b-0 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="min-w-0">
+                  <p className="text-sm">{labelFor(c)}</p>
+                  {c.title_ar ? (
+                    <p className="arabic-text text-sm" dir="rtl">
+                      {c.title_ar}
+                    </p>
+                  ) : null}
+                </div>
+                <DownloadActions book={book} collection={collection} chapter={c} bn={bn} />
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+    </div>
   );
 }
 
