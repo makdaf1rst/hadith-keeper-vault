@@ -1,17 +1,7 @@
-import { Link } from "@tanstack/react-router";
 import { Bookmark, BookmarkCheck } from "lucide-react";
-import { useState } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { useBookmarks } from "@/lib/bookmarks";
 import { useLanguage } from "@/lib/language";
 
@@ -22,19 +12,14 @@ type Props = {
   chapterTitle?: string | null;
 };
 
-/** Saves a hadith to the reader's account. Never creates or changes hadith records. UI text follows the selected interface language. */
+/** Saves immediately on the device; signed-in readers also sync to their account. */
 export function BookmarkButton({ number, bookTitle, collectionTitle, chapterTitle }: Props) {
   const { has, toggle, signedIn, pending } = useBookmarks();
   const { interfaceLanguage } = useLanguage();
   const bn = interfaceLanguage === "bn";
-  const [promptOpen, setPromptOpen] = useState(false);
   const saved = has(number);
 
   async function onClick() {
-    if (!signedIn) {
-      setPromptOpen(true);
-      return;
-    }
     try {
       const added = await toggle({
         number,
@@ -42,73 +27,58 @@ export function BookmarkButton({ number, bookTitle, collectionTitle, chapterTitl
         collectionTitle: collectionTitle ?? null,
         chapterTitle: chapterTitle ?? null,
       });
-      toast.success(
-        added
-          ? bn
-            ? "হাদীসটি বুকমার্ক করা হয়েছে।"
-            : `Hadith ${number} bookmarked.`
-          : bn
-            ? "বুকমার্ক সরানো হয়েছে।"
-            : "Bookmark removed.",
-      );
+
+      if (added) {
+        toast.success(
+          signedIn
+            ? bn
+              ? "হাদীসটি বুকমার্ক করা হয়েছে এবং অ্যাকাউন্টে সিঙ্ক হয়েছে।"
+              : `Hadith ${number} bookmarked and synced.`
+            : bn
+              ? "হাদীসটি এই ডিভাইসে বুকমার্ক করা হয়েছে।"
+              : `Hadith ${number} saved on this device.`,
+          !signedIn
+            ? {
+                description: bn
+                  ? "অন্য ডিভাইসেও বুকমার্ক পেতে সাইন ইন করুন।"
+                  : "Sign in to sync bookmarks across devices.",
+              }
+            : undefined,
+        );
+      } else {
+        toast.success(bn ? "বুকমার্ক সরানো হয়েছে।" : "Bookmark removed.");
+      }
     } catch (error) {
-      toast.error(
+      toast.warning(
         bn
-          ? "এই বুকমার্কটি সংরক্ষণ করা যায়নি।"
+          ? "বুকমার্কটি এই ডিভাইসে সংরক্ষিত আছে, কিন্তু অ্যাকাউন্টে সিঙ্ক করা যায়নি।"
           : error instanceof Error
             ? error.message
-            : "Could not save this bookmark.",
+            : "Saved on this device, but account sync failed.",
       );
     }
   }
 
   return (
-    <>
-      <Button
-        type="button"
-        variant={saved ? "default" : "outline"}
-        size="sm"
-        disabled={pending}
-        aria-pressed={saved}
-        aria-label={
-          bn
-            ? saved
-              ? "বুকমার্ক থেকে হাদীসটি সরান"
-              : "হাদীসটি বুকমার্ক করুন"
-            : saved
-              ? `Remove hadith ${number} from bookmarks`
-              : `Bookmark hadith ${number}`
-        }
-        onClick={onClick}
-      >
-        {saved ? <BookmarkCheck aria-hidden /> : <Bookmark aria-hidden />}
-        {saved ? (bn ? "বুকমার্ক করা" : "Bookmarked") : bn ? "বুকমার্ক" : "Bookmark"}
-      </Button>
-
-      <Dialog open={promptOpen} onOpenChange={setPromptOpen}>
-        <DialogContent className="bg-parchment sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>{bn ? "বুকমার্ক সংরক্ষণ করতে সাইন ইন করুন" : "Sign in to save bookmarks"}</DialogTitle>
-            <DialogDescription>
-              {bn
-                ? "বুকমার্ক সংরক্ষণ করতে একটি অ্যাকাউন্ট তৈরি করুন অথবা সাইন ইন করুন। গ্রন্থাগার পড়া ও অনুসন্ধান করা সবসময় বিনামূল্যে এবং উন্মুক্ত থাকবে।"
-                : "Please create an account or sign in to save bookmarks. Reading and searching the library always stays free and open."}
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter className="flex-col gap-2 sm:flex-row">
-            <Button asChild variant="outline" className="w-full sm:w-auto">
-              <Link to="/auth" search={{ mode: "signup" }}>
-                {bn ? "অ্যাকাউন্ট তৈরি করুন" : "Create Account"}
-              </Link>
-            </Button>
-            <Button asChild className="w-full sm:w-auto">
-              <Link to="/auth" search={{ mode: "signin" }}>
-                {bn ? "সাইন ইন" : "Sign In"}
-              </Link>
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    </>
+    <Button
+      type="button"
+      variant={saved ? "default" : "outline"}
+      size="sm"
+      disabled={pending}
+      aria-pressed={saved}
+      aria-label={
+        bn
+          ? saved
+            ? "বুকমার্ক থেকে হাদীসটি সরান"
+            : "হাদীসটি বুকমার্ক করুন"
+          : saved
+            ? `Remove hadith ${number} from bookmarks`
+            : `Bookmark hadith ${number}`
+      }
+      onClick={onClick}
+    >
+      {saved ? <BookmarkCheck aria-hidden /> : <Bookmark aria-hidden />}
+      {saved ? (bn ? "বুকমার্ক করা" : "Bookmarked") : bn ? "বুকমার্ক" : "Bookmark"}
+    </Button>
   );
 }
