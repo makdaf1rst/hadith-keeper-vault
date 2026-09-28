@@ -320,7 +320,7 @@ function CollectionRow({ book, collection, bn }: { book: Book; collection: Colle
   );
 }
 
-function BabList({ book, collection, bn }: { book: Book; collection?: Collection; bn: boolean }) {
+function BabList({ book, collection, bn }: { book: Book; collection?: Collection | undefined; bn: boolean }) {
   const chapters = useQuery({
     queryKey: ["dl-chapters", book.id],
     queryFn: () => fetchChapters(book.id),
@@ -424,8 +424,8 @@ function DownloadActions({
   bn,
 }: {
   book: Book;
-  collection?: Collection;
-  chapter?: Chapter;
+  collection?: Collection | undefined;
+  chapter?: Chapter | undefined;
   bn: boolean;
 }) {
   const [busy, setBusy] = useState<null | "pdf" | "docx" | "txt-en" | "txt-bn">(null);
