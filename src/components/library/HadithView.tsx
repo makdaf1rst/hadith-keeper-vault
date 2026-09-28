@@ -11,6 +11,7 @@ import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
+import { useReaderSettings } from "@/lib/reader-settings";
 
 type Props = {
   hadith: HadithFull;
@@ -128,6 +129,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
   const { contentLanguage } = useLanguage();
   const isBengali = contentLanguage === "bn";
   const t = useInterfaceText();
+  const [readerSettings] = useReaderSettings();
   const bengali = useQuery({
     queryKey: ["bengali-hadith", hadith.hadith_number],
     queryFn: () => fetchBengaliTranslation(hadith.hadith_number),
@@ -286,7 +288,14 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
       ) : null}
 
       <div className="space-y-6 px-4 py-6 sm:px-6">
-        {arabic ? <p className="arabic-text text-foreground">{arabic}</p> : null}
+        {arabic ? (
+          <p
+            className="arabic-text text-foreground"
+            style={{ fontSize: `calc(1em * ${readerSettings.arabicScale})` }}
+          >
+            {arabic}
+          </p>
+        ) : null}
         {arabic && (selectedTranslation || contentLanguage === "bn") ? (
           <hr className="border-border" />
         ) : null}
@@ -294,7 +303,11 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
           bengali.isLoading ? (
             <p className="text-sm text-muted-foreground">{t.loading}</p>
           ) : displayedTranslation ? (
-            <div lang="bn" className="text-foreground leading-8">
+            <div
+              lang="bn"
+              className="text-foreground leading-8"
+              style={{ fontSize: `calc(1em * ${readerSettings.translationScale})` }}
+            >
               {displayedTranslation}
             </div>
           ) : (
@@ -303,12 +316,22 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             </div>
           )
         ) : english ? (
-          <div className="english-text text-foreground">{english}</div>
+          <div
+            className="english-text text-foreground"
+            style={{ fontSize: `calc(1em * ${readerSettings.translationScale})` }}
+          >
+            {english}
+          </div>
         ) : null}
         {extra ? (
           <>
             <hr className="border-border" />
-            <div className="english-text text-foreground">{extra}</div>
+            <div
+              className="english-text text-foreground"
+              style={{ fontSize: `calc(1em * ${readerSettings.translationScale})` }}
+            >
+              {extra}
+            </div>
           </>
         ) : null}
         {!arabic && !selectedTranslation && !english && !extra ? (
