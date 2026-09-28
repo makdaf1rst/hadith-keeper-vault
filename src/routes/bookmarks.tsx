@@ -12,7 +12,7 @@ export const Route = createFileRoute("/bookmarks")({
   head: () => {
     const title = "My Bookmarks — Al-Jāmiʿ al-Kāmil";
     const description =
-      "Your saved hadiths from Al-Jāmiʿ al-Kāmil, stored with your account and available on every device, with their Book, Collection and Chapter context.";
+      "Your saved hadiths from Al-Jāmiʿ al-Kāmil. Bookmarks save on this device automatically and sync across devices when you sign in.";
     return {
       meta: [
         { title },
@@ -65,41 +65,49 @@ function BookmarksPage() {
       <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         <h1 className="text-3xl font-semibold text-foreground">{bn ? "আমার বুকমার্ক" : "My Bookmarks"}</h1>
         <p className="mt-3 text-sm text-muted-foreground">
-          {bn
-            ? "আপনি যে হাদীসগুলো সংরক্ষণ করেন সেগুলো আপনার অ্যাকাউন্টে থাকে, তাই যেকোনো ডিভাইস থেকে সেগুলো দেখতে পারবেন।"
-            : "Hadiths you save are kept with your account, so they follow you to any device."}
+          {signedIn
+            ? bn
+              ? "বুকমার্ক এই ডিভাইসে সংরক্ষিত হয় এবং আপনার অ্যাকাউন্টেও সিঙ্ক হয়, তাই অন্য ডিভাইসে সাইন ইন করলে সেগুলো পাওয়া যাবে।"
+              : "Bookmarks are saved on this device and synced to your account, so they appear when you sign in on another device."
+            : bn
+              ? "বুকমার্ক এই ডিভাইসে স্বয়ংক্রিয়ভাবে সংরক্ষিত হয়। অন্য ডিভাইসেও পেতে সাইন ইন করুন।"
+              : "Bookmarks are saved automatically on this device. Sign in to sync them across devices."}
         </p>
 
         {sessionLoading ? (
           <p className="mt-8 text-sm text-muted-foreground">{bn ? "লোড হচ্ছে…" : "Loading…"}</p>
-        ) : !signedIn ? (
-          <div className="mt-8 rounded-lg border border-dashed border-border bg-card p-8 text-center">
-            <p className="text-base font-medium text-foreground">
-              {bn ? "বুকমার্ক সংরক্ষণ করতে অ্যাকাউন্ট তৈরি করুন অথবা সাইন ইন করুন" : "Please create an account or sign in to save bookmarks"}
-            </p>
-            <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-              {bn
-                ? "সম্পূর্ণ গ্রন্থাগার পড়া ও অনুসন্ধান করা বিনামূল্যে এবং উন্মুক্ত থাকবে—শুধু সংরক্ষিত হাদীসগুলো রাখার জন্য অ্যাকাউন্ট প্রয়োজন।"
-                : "Reading and searching the whole library stays free and open — an account is only needed to keep your saved hadiths."}
-            </p>
-            <div className="mt-6 flex flex-col justify-center gap-2 sm:flex-row">
-              <Button asChild variant="outline">
-                <Link to="/auth" search={{ mode: "signup", redirect: "/bookmarks" }}>
-                  {bn ? "অ্যাকাউন্ট তৈরি করুন" : "Create Account"}
-                </Link>
-              </Button>
-              <Button asChild>
-                <Link to="/auth" search={{ mode: "signin", redirect: "/bookmarks" }}>
-                  {bn ? "সাইন ইন" : "Sign In"}
-                </Link>
-              </Button>
-            </div>
-          </div>
-        ) : isLoading ? (
-          <p className="mt-8 text-sm text-muted-foreground">
-            {bn ? "আপনার বুকমার্ক লোড হচ্ছে…" : "Loading your bookmarks…"}
-          </p>
-        ) : bookmarks.length === 0 ? (
+        ) : (
+          <>
+            {!signedIn ? (
+              <div className="mt-6 rounded-lg border border-border bg-card p-4">
+                <p className="text-sm font-medium text-foreground">
+                  {bn ? "অন্য ডিভাইসেও বুকমার্ক চান?" : "Want your bookmarks on other devices?"}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {bn
+                    ? "সাইন ইন করলে এই ডিভাইসের বুকমার্কগুলো আপনার অ্যাকাউন্টে সিঙ্ক হবে।"
+                    : "Sign in and the bookmarks on this device will sync to your account."}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <Button asChild variant="outline" size="sm">
+                    <Link to="/auth" search={{ mode: "signup", redirect: "/bookmarks" }}>
+                      {bn ? "অ্যাকাউন্ট তৈরি করুন" : "Create Account"}
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm">
+                    <Link to="/auth" search={{ mode: "signin", redirect: "/bookmarks" }}>
+                      {bn ? "সাইন ইন" : "Sign In"}
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            ) : isLoading ? (
+              <p className="mt-4 text-sm text-muted-foreground">
+                {bn ? "অ্যাকাউন্টের বুকমার্ক সিঙ্ক হচ্ছে…" : "Syncing account bookmarks…"}
+              </p>
+            ) : null}
+
+            {bookmarks.length === 0 ? (
           <div className="mt-8 rounded-lg border border-dashed border-border bg-card p-8 text-center">
             <p className="text-base font-medium text-foreground">
               {bn ? "এখনও কোনো হাদীস সংরক্ষণ করা হয়নি" : "No saved hadiths yet"}
@@ -110,7 +118,7 @@ function BookmarksPage() {
                 : "Open any hadith and tap “Bookmark” beside its number. Saved hadiths appear here."}
             </p>
           </div>
-        ) : (
+            ) : (
           <ul className="mt-8 space-y-3">
             {bookmarks.map((b) => (
               <li key={b.number} className="rounded-lg border border-border bg-card p-4 shadow-sm">
@@ -149,6 +157,8 @@ function BookmarksPage() {
               </li>
             ))}
           </ul>
+            )}
+          </>
         )}
 
         <Button asChild variant="outline" className="mt-10">
