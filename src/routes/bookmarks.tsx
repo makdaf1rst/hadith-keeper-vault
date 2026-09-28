@@ -1,9 +1,9 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ArrowLeft, BookmarkX, Library, LogOut } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowLeft, BookmarkX, Download, Library, Upload } from "lucide-react";
+import { useRef } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
-import { supabase } from "@/integrations/supabase/client";
 import { useBookmarks } from "@/lib/bookmarks";
 import { useLanguage } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/bookmarks")({
   head: () => {
     const title = "My Bookmarks — Al-Jāmiʿ al-Kāmil";
     const description =
-      "Your saved hadiths from Al-Jāmiʿ al-Kāmil. Bookmarks save on this device automatically and sync across devices when you sign in.";
+      "Bookmarks saved privately on this device, with backup and restore support for moving them between devices.";
     return {
       meta: [
         { title },
@@ -33,81 +33,111 @@ function toBengaliDigits(value: number | string) {
 }
 
 function BookmarksPage() {
-  const navigate = useNavigate();
   const { interfaceLanguage } = useLanguage();
   const bn = interfaceLanguage === "bn";
-  const { bookmarks, remove, signedIn, sessionLoading, isLoading } = useBookmarks();
+  const { bookmarks, remove, isLoading, createBackup, restoreBackup } = useBookmarks();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  async function signOut() {
-    await supabase.auth.signOut();
-    toast.success(bn ? "সাইন আউট করা হয়েছে।" : "Signed out.");
-    navigate({ to: "/" });
+  function backupBookmarks() {
+    try {
+      const backup = createBackup();
+      const blob = new Blob([JSON.stringify(backup, null, 2)], {
+        type: "application/json;charset=utf-8",
+      });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      const date = new Date().toISOString().slice(0, 10);
+      anchor.href = url;
+      anchor.download = `al-jami-al-kamil-bookmarks-${date}.json`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+
+      toast.success(
+        bn
+          ? "বুকমার্ক ব্যাকআপ ফাইল তৈরি হয়েছে। এটি আপনার ডিভাইসের Files বা পছন্দের ক্লাউড ড্রাইভে সংরক্ষণ করুন।"
+          : "Bookmark backup created. Save the file in Files or your preferred cloud drive.",
+      );
+    } catch {
+      toast.error(bn ? "ব্যাকআপ ফাইল তৈরি করা যায়নি।" : "Could not create the backup file.");
+    }
+  }
+
+  async function restoreFromFile(file: File) {
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+      const result = restoreBackup(parsed);
+      toast.success(
+        bn
+          ? `${toBengaliDigits(result.imported)}টি বুকমার্ক ব্যাকআপ থেকে পড়া হয়েছে। মোট ${toBengaliDigits(result.total)}টি বুকমার্ক আছে।`
+          : `${result.imported} bookmarks read from the backup. You now have ${result.total} bookmarks.`,
+      );
+    } catch (error) {
+      toast.error(
+        bn
+          ? "এই ফাইলটি বৈধ আল-জামি‘ আল-কামিল বুকমার্ক ব্যাকআপ নয়।"
+          : error instanceof Error
+            ? error.message
+            : "This is not a valid Al-Jāmiʿ al-Kāmil bookmark backup.",
+      );
+    } finally {
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
   }
 
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-parchment">
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-5 sm:px-6">
-          <span className="flex items-center gap-3">
-            <Library className="size-5 text-primary" aria-hidden />
-            <span className="text-sm font-medium text-foreground">
-              {bn ? "আল-জামি আল-কামিল" : "Al-Jāmiʿ al-Kāmil"}
-            </span>
+        <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-5 sm:px-6">
+          <Library className="size-5 text-primary" aria-hidden />
+          <span className="text-sm font-medium text-foreground">
+            {bn ? "আল-জামি আল-কামিল" : "Al-Jāmiʿ al-Kāmil"}
           </span>
-          {signedIn ? (
-            <Button type="button" variant="ghost" size="sm" onClick={signOut}>
-              <LogOut aria-hidden /> {bn ? "সাইন আউট" : "Sign out"}
-            </Button>
-          ) : null}
         </div>
       </header>
 
       <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-        <h1 className="text-3xl font-semibold text-foreground">{bn ? "আমার বুকমার্ক" : "My Bookmarks"}</h1>
-        <p className="mt-3 text-sm text-muted-foreground">
-          {signedIn
-            ? bn
-              ? "বুকমার্ক এই ডিভাইসে সংরক্ষিত হয় এবং আপনার অ্যাকাউন্টেও সিঙ্ক হয়, তাই অন্য ডিভাইসে সাইন ইন করলে সেগুলো পাওয়া যাবে।"
-              : "Bookmarks are saved on this device and synced to your account, so they appear when you sign in on another device."
-            : bn
-              ? "বুকমার্ক এই ডিভাইসে স্বয়ংক্রিয়ভাবে সংরক্ষিত হয়। অন্য ডিভাইসেও পেতে সাইন ইন করুন।"
-              : "Bookmarks are saved automatically on this device. Sign in to sync them across devices."}
+        <h1 className="text-3xl font-semibold text-foreground">
+          {bn ? "আমার বুকমার্ক" : "My Bookmarks"}
+        </h1>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">
+          {bn
+            ? "বুকমার্কগুলো এই ডিভাইসে ব্যক্তিগতভাবে সংরক্ষিত থাকে। অন্য ডিভাইসে নিতে নিচের ব্যাকআপ ফাইল তৈরি করুন এবং সেখানে Restore Bookmarks ব্যবহার করুন।"
+            : "Bookmarks are stored privately on this device. To move them to another device, create a backup file below and use Restore Bookmarks there."}
         </p>
 
-        {sessionLoading ? (
-          <p className="mt-8 text-sm text-muted-foreground">{bn ? "লোড হচ্ছে…" : "Loading…"}</p>
-        ) : (
-          <>
-            {!signedIn ? (
-              <div className="mt-6 rounded-lg border border-border bg-card p-4">
-                <p className="text-sm font-medium text-foreground">
-                  {bn ? "অন্য ডিভাইসেও বুকমার্ক চান?" : "Want your bookmarks on other devices?"}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {bn
-                    ? "সাইন ইন করলে এই ডিভাইসের বুকমার্কগুলো আপনার অ্যাকাউন্টে সিঙ্ক হবে।"
-                    : "Sign in and the bookmarks on this device will sync to your account."}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <Button asChild variant="outline" size="sm">
-                    <Link to="/auth" search={{ mode: "signup", redirect: "/bookmarks" }}>
-                      {bn ? "অ্যাকাউন্ট তৈরি করুন" : "Create Account"}
-                    </Link>
-                  </Button>
-                  <Button asChild size="sm">
-                    <Link to="/auth" search={{ mode: "signin", redirect: "/bookmarks" }}>
-                      {bn ? "সাইন ইন" : "Sign In"}
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            ) : isLoading ? (
-              <p className="mt-4 text-sm text-muted-foreground">
-                {bn ? "অ্যাকাউন্টের বুকমার্ক সিঙ্ক হচ্ছে…" : "Syncing account bookmarks…"}
-              </p>
-            ) : null}
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Button type="button" variant="outline" onClick={backupBookmarks}>
+            <Download aria-hidden />
+            {bn ? "বুকমার্ক ব্যাকআপ" : "Backup Bookmarks"}
+          </Button>
+          <Button type="button" variant="outline" onClick={() => fileInputRef.current?.click()}>
+            <Upload aria-hidden />
+            {bn ? "বুকমার্ক পুনরুদ্ধার" : "Restore Bookmarks"}
+          </Button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".json,application/json"
+            className="hidden"
+            onChange={(event) => {
+              const file = event.target.files?.[0];
+              if (file) void restoreFromFile(file);
+            }}
+          />
+        </div>
 
-            {bookmarks.length === 0 ? (
+        <div className="mt-4 rounded-lg border border-border bg-card p-4 text-sm text-muted-foreground">
+          {bn
+            ? "ব্যাকআপ ফাইলটি আপনি iPhone Files, iCloud Drive, Google Drive, কম্পিউটার বা অন্য নিরাপদ স্থানে রাখতে পারেন। সাইট আপনার Drive বা Files অ্যাকাউন্টে প্রবেশ করে না।"
+            : "You can keep the backup file in iPhone Files, iCloud Drive, Google Drive, a computer, or another safe location. The website does not access your Drive or Files account."}
+        </div>
+
+        {isLoading ? (
+          <p className="mt-8 text-sm text-muted-foreground">{bn ? "লোড হচ্ছে…" : "Loading…"}</p>
+        ) : bookmarks.length === 0 ? (
           <div className="mt-8 rounded-lg border border-dashed border-border bg-card p-8 text-center">
             <p className="text-base font-medium text-foreground">
               {bn ? "এখনও কোনো হাদীস সংরক্ষণ করা হয়নি" : "No saved hadiths yet"}
@@ -118,25 +148,38 @@ function BookmarksPage() {
                 : "Open any hadith and tap “Bookmark” beside its number. Saved hadiths appear here."}
             </p>
           </div>
-            ) : (
+        ) : (
           <ul className="mt-8 space-y-3">
-            {bookmarks.map((b) => (
-              <li key={b.number} className="rounded-lg border border-border bg-card p-4 shadow-sm">
+            {bookmarks.map((bookmark) => (
+              <li
+                key={bookmark.number}
+                className="rounded-lg border border-border bg-card p-4 shadow-sm"
+              >
                 <div className="flex flex-wrap items-start justify-between gap-3">
-                  <Link to="/hadith/$number" params={{ number: String(b.number) }} className="min-w-0 flex-1">
+                  <Link
+                    to="/hadith/$number"
+                    params={{ number: String(bookmark.number) }}
+                    className="min-w-0 flex-1"
+                  >
                     <span className="flex items-baseline gap-2 text-base font-semibold text-primary">
-                      {bn ? `হাদীস ${toBengaliDigits(b.number)}` : `Hadith ${b.number}`}
+                      {bn
+                        ? `হাদীস ${toBengaliDigits(bookmark.number)}`
+                        : `Hadith ${bookmark.number}`}
                       {!bn ? (
                         <span className="arabic-text text-base! leading-none! text-muted-foreground">
-                          {toArabicIndicDigits(b.number)}
+                          {toArabicIndicDigits(bookmark.number)}
                         </span>
                       ) : null}
                     </span>
                     {!bn ? (
                       <span className="mt-1 block space-y-0.5 text-sm text-muted-foreground">
-                        {b.bookTitle ? <span className="block">{b.bookTitle}</span> : null}
-                        {b.collectionTitle ? <span className="block">{b.collectionTitle}</span> : null}
-                        {b.chapterTitle ? <span className="block">{b.chapterTitle}</span> : null}
+                        {bookmark.bookTitle ? <span className="block">{bookmark.bookTitle}</span> : null}
+                        {bookmark.collectionTitle ? (
+                          <span className="block">{bookmark.collectionTitle}</span>
+                        ) : null}
+                        {bookmark.chapterTitle ? (
+                          <span className="block">{bookmark.chapterTitle}</span>
+                        ) : null}
                       </span>
                     ) : null}
                   </Link>
@@ -145,25 +188,35 @@ function BookmarksPage() {
                     variant="outline"
                     size="sm"
                     onClick={() => {
-                      void remove(b.number)
-                        .then(() => toast.success(bn ? "বুকমার্ক সরানো হয়েছে।" : "Bookmark removed."))
-                        .catch(() => toast.error(bn ? "এই বুকমার্কটি সরানো যায়নি।" : "Could not remove this bookmark."));
+                      void remove(bookmark.number)
+                        .then(() =>
+                          toast.success(bn ? "বুকমার্ক সরানো হয়েছে।" : "Bookmark removed."),
+                        )
+                        .catch(() =>
+                          toast.error(
+                            bn ? "এই বুকমার্কটি সরানো যায়নি।" : "Could not remove this bookmark.",
+                          ),
+                        );
                     }}
-                    aria-label={bn ? `বুকমার্ক থেকে হাদীস ${toBengaliDigits(b.number)} সরান` : `Remove hadith ${b.number} from bookmarks`}
+                    aria-label={
+                      bn
+                        ? `বুকমার্ক থেকে হাদীস ${toBengaliDigits(bookmark.number)} সরান`
+                        : `Remove hadith ${bookmark.number} from bookmarks`
+                    }
                   >
-                    <BookmarkX aria-hidden /> {bn ? "সরান" : "Remove"}
+                    <BookmarkX aria-hidden />
+                    {bn ? "সরান" : "Remove"}
                   </Button>
                 </div>
               </li>
             ))}
           </ul>
-            )}
-          </>
         )}
 
         <Button asChild variant="outline" className="mt-10">
           <Link to="/">
-            <ArrowLeft aria-hidden /> {bn ? "গ্রন্থাগারে ফিরে যান" : "Back to the library"}
+            <ArrowLeft aria-hidden />
+            {bn ? "গ্রন্থাগারে ফিরে যান" : "Back to the library"}
           </Link>
         </Button>
       </main>
