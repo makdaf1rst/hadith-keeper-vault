@@ -131,7 +131,7 @@ function HadithPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className={readerSettings.readerMode ? "border-b border-border bg-parchment/95" : "border-b border-border bg-parchment"}>
+      <header className={readerSettings.readerMode ? "relative border-b border-border bg-parchment/95" : "relative border-b border-border bg-parchment"}>
         <Button
           type="button"
           variant="outline"
