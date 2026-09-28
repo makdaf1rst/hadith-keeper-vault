@@ -4,7 +4,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight, Settings } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
-import { IntroText } from "@/components/library/IntroText";
 import { ReaderControls } from "@/components/library/ReaderControls";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
