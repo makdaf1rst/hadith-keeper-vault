@@ -1,13 +1,13 @@
 // Production rebuild marker: reader controls
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ChevronLeft, ChevronRight, Settings } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Languages } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
 import { ReaderControls } from "@/components/library/ReaderControls";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours, type ReadingTarget } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
@@ -65,6 +65,8 @@ export const Route = createFileRoute("/hadith/$number")({
         { name: "description", content: description },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
+        { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary" },
       ],
     };
   },
@@ -74,7 +76,7 @@ export const Route = createFileRoute("/hadith/$number")({
 function HadithPage() {
   const { number } = Route.useParams();
   const t = useInterfaceText();
-  const { contentLanguage } = useLanguage();
+  const { interfaceLanguage, contentLanguage, setInterfaceLanguage, setContentLanguage } = useLanguage();
   const isBengali = contentLanguage === "bn";
   const [readerSettings, updateReaderSettings] = useReaderSettings();
   const hadithNumber = Number(number);
@@ -130,7 +132,23 @@ function HadithPage() {
   return (
     <div className="min-h-screen bg-background">
       <header className={readerSettings.readerMode ? "border-b border-border bg-parchment/95" : "border-b border-border bg-parchment"}>
-        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6 sm:pt-4">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => {
+            const next = interfaceLanguage === "bn" ? "en" : "bn";
+            setInterfaceLanguage(next);
+            setContentLanguage(next);
+          }}
+          className="absolute top-4 left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-2 shadow-sm backdrop-blur hover:bg-accent sm:left-6 sm:px-3"
+          aria-label={interfaceLanguage === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
+          title={interfaceLanguage === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
+        >
+          <Languages className="size-4" aria-hidden />
+          <span className="hidden font-medium sm:inline">{interfaceLanguage === "bn" ? "English" : "বাংলা"}</span>
+        </Button>
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
