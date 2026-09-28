@@ -242,12 +242,28 @@ function Index() {
                     ? "সহীহ হাদীসের পূর্ণাঙ্গ ও সর্বব্যাপী সংকলন, ফিকহের অধ্যায় অনুযায়ী বিন্যস্ত"
                     : "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh"}
                 </p>
-                <p className="arabic-text mt-2 text-center! text-lg! leading-snug! text-muted-foreground">
-                  ضياء الرحمن الأعظمي
-                </p>
-                <p className="mt-1 text-center text-sm font-medium text-muted-foreground">
-                  {isBengali ? "দিয়া আল-রহমান আল-আযমী" : "Ḍiyāʾ al-Raḥmān al-Aʿẓamī"}
-                </p>
+                <div className="mt-3 space-y-2 text-center text-muted-foreground">
+                  <div>
+                    <p className="arabic-text text-center! text-base! leading-snug!">
+                      المصنِّف: ضياء الرحمن الأعظمي
+                    </p>
+                    <p className="mt-0.5 text-sm font-medium">
+                      {isBengali
+                        ? "গ্রন্থকার: দিয়াউর রহমান আল-আযমী"
+                        : "Author: Ḍiyāʾ al-Raḥmān al-Aʿẓamī"}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="arabic-text text-center! text-base! leading-snug!">
+                      ترجمة: سدمان ظريف طلحة
+                    </p>
+                    <p className="mt-0.5 text-sm font-medium">
+                      {isBengali
+                        ? "অনুবাদ: সাদমান জারিফ তালহা"
+                        : "Translated by: Sadman Zarif Talha"}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="ml-auto flex shrink-0 items-center gap-1">
