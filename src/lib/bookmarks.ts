@@ -1,8 +1,4 @@
 import { useEffect, useState } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-
-import { supabase } from "@/integrations/supabase/client";
-import { useSession } from "@/lib/session";
 
 export type Bookmark = {
   number: number;
@@ -12,25 +8,28 @@ export type Bookmark = {
   savedAt: number;
 };
 
-type Row = {
-  hadith_number: number;
-  book_title: string | null;
-  collection_title: string | null;
-  chapter_title: string | null;
-  created_at: string;
+export type BookmarkBackup = {
+  app: "al-jami-al-kamil";
+  version: 1;
+  exportedAt: string;
+  bookmarks: Bookmark[];
 };
 
 const STORAGE_KEY = "jami-al-kamil-bookmarks-v1";
-const DELETED_KEY = "jami-al-kamil-bookmark-deletions-v1";
 const EMPTY: Bookmark[] = [];
 
-function toBookmark(row: Row): Bookmark {
+function normalizeBookmark(item: unknown): Bookmark | null {
+  if (!item || typeof item !== "object") return null;
+  const value = item as Record<string, unknown>;
+  const number = Number(value.number);
+  if (!Number.isFinite(number) || number <= 0) return null;
+
   return {
-    number: row.hadith_number,
-    bookTitle: row.book_title,
-    collectionTitle: row.collection_title,
-    chapterTitle: row.chapter_title,
-    savedAt: new Date(row.created_at).getTime(),
+    number,
+    bookTitle: typeof value.bookTitle === "string" ? value.bookTitle : null,
+    collectionTitle: typeof value.collectionTitle === "string" ? value.collectionTitle : null,
+    chapterTitle: typeof value.chapterTitle === "string" ? value.chapterTitle : null,
+    savedAt: Number.isFinite(Number(value.savedAt)) ? Number(value.savedAt) : Date.now(),
   };
 }
 
@@ -42,14 +41,9 @@ function readLocalBookmarks(): Bookmark[] {
     const parsed = JSON.parse(raw);
     if (!Array.isArray(parsed)) return EMPTY;
     return parsed
-      .filter((item) => item && Number.isFinite(Number(item.number)))
-      .map((item) => ({
-        number: Number(item.number),
-        bookTitle: typeof item.bookTitle === "string" ? item.bookTitle : null,
-        collectionTitle: typeof item.collectionTitle === "string" ? item.collectionTitle : null,
-        chapterTitle: typeof item.chapterTitle === "string" ? item.chapterTitle : null,
-        savedAt: Number.isFinite(Number(item.savedAt)) ? Number(item.savedAt) : Date.now(),
-      }));
+      .map(normalizeBookmark)
+      .filter((bookmark): bookmark is Bookmark => !!bookmark)
+      .sort((a, b) => b.savedAt - a.savedAt);
   } catch {
     return EMPTY;
   }
@@ -57,235 +51,91 @@ function readLocalBookmarks(): Bookmark[] {
 
 function writeLocalBookmarks(bookmarks: Bookmark[]) {
   if (typeof window === "undefined") return;
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks));
-  } catch {
-    // If storage is unavailable, the in-memory bookmark still works for this tab.
-  }
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks));
 }
 
-function readDeletedNumbers(): number[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = window.localStorage.getItem(DELETED_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    return parsed.map(Number).filter(Number.isFinite);
-  } catch {
-    return [];
-  }
-}
-
-function writeDeletedNumbers(numbers: number[]) {
-  if (typeof window === "undefined") return;
-  try {
-    window.localStorage.setItem(DELETED_KEY, JSON.stringify(Array.from(new Set(numbers))));
-  } catch {
-    // Best-effort sync metadata only.
-  }
-}
-
-function markDeleted(number: number) {
-  const next = [...readDeletedNumbers(), number];
-  writeDeletedNumbers(next);
-}
-
-function clearDeleted(number: number) {
-  writeDeletedNumbers(readDeletedNumbers().filter((item) => item !== number));
-}
-
-function mergeBookmarks(local: Bookmark[], remote: Bookmark[], deleted: Set<number>) {
+function mergeBookmarks(current: Bookmark[], incoming: Bookmark[]) {
   const merged = new Map<number, Bookmark>();
-  remote.forEach((bookmark) => {
-    if (!deleted.has(bookmark.number)) merged.set(bookmark.number, bookmark);
-  });
-  local.forEach((bookmark) => {
-    if (!deleted.has(bookmark.number)) merged.set(bookmark.number, bookmark);
+  [...current, ...incoming].forEach((bookmark) => {
+    const existing = merged.get(bookmark.number);
+    if (!existing || bookmark.savedAt >= existing.savedAt) {
+      merged.set(bookmark.number, bookmark);
+    }
   });
   return Array.from(merged.values()).sort((a, b) => b.savedAt - a.savedAt);
 }
 
 /**
- * Bookmarks always save to this browser/device first.
- * Signed-in readers additionally sync the same bookmarks to their account,
- * allowing them to appear on other devices after sign-in.
+ * Device-only bookmarks. No account or sign-in is required.
+ * Readers can export a backup file and restore it on another device.
  */
 export function useBookmarks() {
-  const { user, signedIn, loading: sessionLoading } = useSession();
-  const queryClient = useQueryClient();
-  const userId = user?.id ?? null;
-  const queryKey = ["bookmarks", userId] as const;
   const [bookmarks, setBookmarks] = useState<Bookmark[]>(EMPTY);
-  const [localReady, setLocalReady] = useState(false);
-  const [pending, setPending] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setBookmarks(readLocalBookmarks());
-    setLocalReady(true);
+    setIsLoading(false);
   }, []);
-
-  const remote = useQuery({
-    queryKey,
-    enabled: !!userId,
-    queryFn: async (): Promise<Bookmark[]> => {
-      const { data, error } = await supabase
-        .from("bookmarks")
-        .select("hadith_number, book_title, collection_title, chapter_title, created_at")
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return (data ?? []).map((row) => toBookmark(row as Row));
-    },
-  });
-
-  // On sign-in, apply device-side deletions, merge account + device bookmarks,
-  // then upload any bookmarks that exist only on this device.
-  useEffect(() => {
-    if (!userId || !localReady || !remote.data) return;
-
-    const deletedNumbers = readDeletedNumbers();
-    const deleted = new Set(deletedNumbers);
-    const merged = mergeBookmarks(bookmarks, remote.data, deleted);
-
-    if (JSON.stringify(merged) !== JSON.stringify(bookmarks)) {
-      setBookmarks(merged);
-    }
-    writeLocalBookmarks(merged);
-
-    const remoteNumbers = new Set(remote.data.map((bookmark) => bookmark.number));
-    const deviceOnly = bookmarks.filter(
-      (bookmark) => !remoteNumbers.has(bookmark.number) && !deleted.has(bookmark.number),
-    );
-
-    const sync = async () => {
-      let changed = false;
-
-      if (deletedNumbers.length) {
-        const { error } = await supabase
-          .from("bookmarks")
-          .delete()
-          .eq("user_id", userId)
-          .in("hadith_number", deletedNumbers);
-        if (!error) {
-          writeDeletedNumbers([]);
-          changed = true;
-        } else {
-          console.error("Could not sync bookmark deletions to account", error);
-        }
-      }
-
-      if (deviceOnly.length) {
-        const { error } = await supabase
-          .from("bookmarks")
-          .upsert(
-            deviceOnly.map((bookmark) => ({
-              user_id: userId,
-              hadith_number: bookmark.number,
-              book_title: bookmark.bookTitle ?? null,
-              collection_title: bookmark.collectionTitle ?? null,
-              chapter_title: bookmark.chapterTitle ?? null,
-            })),
-            { onConflict: "user_id,hadith_number" },
-          );
-        if (!error) {
-          changed = true;
-        } else {
-          console.error("Could not sync device bookmarks to account", error);
-        }
-      }
-
-      if (changed) void queryClient.invalidateQueries({ queryKey });
-    };
-
-    void sync();
-  }, [bookmarks, localReady, queryClient, remote.data, userId]);
 
   async function toggle(entry: Omit<Bookmark, "savedAt">) {
     const exists = bookmarks.some((bookmark) => bookmark.number === entry.number);
-
-    if (exists) {
-      markDeleted(entry.number);
-    } else {
-      clearDeleted(entry.number);
-    }
-
     const next = exists
       ? bookmarks.filter((bookmark) => bookmark.number !== entry.number)
       : [{ ...entry, savedAt: Date.now() }, ...bookmarks];
 
     setBookmarks(next);
     writeLocalBookmarks(next);
-
-    if (!userId) return !exists;
-
-    setPending(true);
-    try {
-      if (exists) {
-        const { error } = await supabase
-          .from("bookmarks")
-          .delete()
-          .eq("user_id", userId)
-          .eq("hadith_number", entry.number);
-        if (error) throw error;
-        clearDeleted(entry.number);
-      } else {
-        const { error } = await supabase.from("bookmarks").upsert(
-          {
-            user_id: userId,
-            hadith_number: entry.number,
-            book_title: entry.bookTitle ?? null,
-            collection_title: entry.collectionTitle ?? null,
-            chapter_title: entry.chapterTitle ?? null,
-          },
-          { onConflict: "user_id,hadith_number" },
-        );
-        if (error) throw error;
-      }
-
-      void queryClient.invalidateQueries({ queryKey });
-      return !exists;
-    } catch (error) {
-      throw new Error(
-        error instanceof Error
-          ? `Saved on this device, but account sync failed: ${error.message}`
-          : "Saved on this device, but account sync failed.",
-      );
-    } finally {
-      setPending(false);
-    }
+    return !exists;
   }
 
   async function remove(number: number) {
-    markDeleted(number);
     const next = bookmarks.filter((bookmark) => bookmark.number !== number);
     setBookmarks(next);
     writeLocalBookmarks(next);
+  }
 
-    if (!userId) return;
+  function createBackup(): BookmarkBackup {
+    return {
+      app: "al-jami-al-kamil",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      bookmarks,
+    };
+  }
 
-    setPending(true);
-    try {
-      const { error } = await supabase
-        .from("bookmarks")
-        .delete()
-        .eq("user_id", userId)
-        .eq("hadith_number", number);
-      if (error) throw error;
-      clearDeleted(number);
-      void queryClient.invalidateQueries({ queryKey });
-    } finally {
-      setPending(false);
+  function restoreBackup(input: unknown) {
+    if (!input || typeof input !== "object") {
+      throw new Error("Invalid bookmark backup file.");
     }
+
+    const backup = input as Partial<BookmarkBackup>;
+    if (backup.app !== "al-jami-al-kamil" || backup.version !== 1 || !Array.isArray(backup.bookmarks)) {
+      throw new Error("This is not a valid Al-Jāmiʿ al-Kāmil bookmark backup.");
+    }
+
+    const incoming = backup.bookmarks
+      .map(normalizeBookmark)
+      .filter((bookmark): bookmark is Bookmark => !!bookmark);
+
+    const merged = mergeBookmarks(bookmarks, incoming);
+    setBookmarks(merged);
+    writeLocalBookmarks(merged);
+
+    return {
+      imported: incoming.length,
+      total: merged.length,
+    };
   }
 
   return {
     bookmarks,
-    signedIn,
-    sessionLoading,
-    isLoading: !localReady || (!!userId && remote.isLoading),
-    pending,
+    isLoading,
+    pending: false,
     has: (number: number) => bookmarks.some((bookmark) => bookmark.number === number),
     toggle,
     remove,
+    createBackup,
+    restoreBackup,
   };
 }
