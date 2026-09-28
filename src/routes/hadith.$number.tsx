@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Settings } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
-import { LanguageSettingsDialog } from "@/components/library/LanguageSettingsDialog";
+import { ReaderControls } from "@/components/library/ReaderControls";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
 import { buttonVariants } from "@/components/ui/button";
@@ -13,6 +13,7 @@ import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { recordHistory } from "@/lib/reading-history";
+import { useReaderSettings } from "@/lib/reader-settings";
 
 function ReadingLink({
   target,
@@ -75,7 +76,7 @@ function HadithPage() {
   const t = useInterfaceText();
   const { contentLanguage } = useLanguage();
   const isBengali = contentLanguage === "bn";
-  const [languageSettingsOpen, setLanguageSettingsOpen] = useState(false);
+  const [readerSettings, updateReaderSettings] = useReaderSettings();
   const hadithNumber = Number(number);
 
   const hadith = useQuery({
@@ -128,38 +129,43 @@ function HadithPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-parchment">
-        <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
+      <header className={readerSettings.readerMode ? "border-b border-border bg-parchment/95" : "border-b border-border bg-parchment"}>
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
           >
             <ArrowLeft className="size-4" /> {t.library}
           </Link>
-          <div className="flex items-center gap-2">
-            {neighbours.data?.previous ? (
-              <ReadingLink
-                target={neighbours.data.previous}
-                className={buttonVariants({ variant: "outline", size: "sm" })}
-              >
-                <ChevronLeft className="size-4 shrink-0" />
-                <span>{targetLabel(neighbours.data.previous, isBengali, t.chapter)}</span>
-              </ReadingLink>
-            ) : null}
-            {neighbours.data?.next ? (
-              <ReadingLink
-                target={neighbours.data.next}
-                className={buttonVariants({ variant: "outline", size: "sm" })}
-              >
-                <span>{targetLabel(neighbours.data.next, isBengali, t.chapter)}</span>
-                <ChevronRight className="size-4 shrink-0" />
-              </ReadingLink>
+          <div className="ml-auto flex flex-wrap items-center justify-end gap-2">
+            <ReaderControls settings={readerSettings} update={updateReaderSettings} />
+            {!readerSettings.readerMode ? (
+              <>
+                {neighbours.data?.previous ? (
+                  <ReadingLink
+                    target={neighbours.data.previous}
+                    className={buttonVariants({ variant: "outline", size: "sm" })}
+                  >
+                    <ChevronLeft className="size-4 shrink-0" />
+                    <span>{targetLabel(neighbours.data.previous, isBengali, t.chapter)}</span>
+                  </ReadingLink>
+                ) : null}
+                {neighbours.data?.next ? (
+                  <ReadingLink
+                    target={neighbours.data.next}
+                    className={buttonVariants({ variant: "outline", size: "sm" })}
+                  >
+                    <span>{targetLabel(neighbours.data.next, isBengali, t.chapter)}</span>
+                    <ChevronRight className="size-4 shrink-0" />
+                  </ReadingLink>
+                ) : null}
+              </>
             ) : null}
           </div>
         </div>
       </header>
 
-      <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+      <main className={readerSettings.readerMode ? "mx-auto max-w-3xl px-4 py-8 sm:px-6" : "mx-auto max-w-4xl px-4 py-8 sm:px-6"}>
         {hadith.isLoading ? <p className="text-muted-foreground">{t.loadingHadith}</p> : null}
         {hadith.error ? (
           <p className="text-destructive">{t.hadithLoadFailed}</p>
@@ -174,15 +180,17 @@ function HadithPage() {
         ) : null}
         {hadith.data ? (
           <div className="space-y-4">
-            <IntroText
-              intro={context.data?.chapter}
-              bengaliIntro={bengaliChapter}
-              label={t.chapterIntroduction}
-            />
+            {!readerSettings.readerMode ? (
+              <IntroText
+                intro={context.data?.chapter}
+                bengaliIntro={bengaliChapter}
+                label={t.chapterIntroduction}
+              />
+            ) : null}
             <HadithView hadith={hadith.data} context={context.data} />
             <nav
               aria-label={t.hadithNavigation}
-              className="grid grid-cols-2 gap-3 border-t border-border pt-6"
+              className={readerSettings.readerMode ? "grid grid-cols-2 gap-3 pt-2" : "grid grid-cols-2 gap-3 border-t border-border pt-6"}
             >
               {neighbours.data?.previous ? (
                 <ReadingLink
