@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { fetchBengaliBookTranslations, fetchBengaliStructure } from "@/lib/bengali-translations";
-import { formatBookTitle } from "@/lib/display-titles";
+import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import {
   buildKitabExport,
   downloadKitabDocx,
@@ -25,6 +25,7 @@ import {
   fetchChapters,
   fetchCollections,
   type Book,
+  type Chapter,
   type Collection,
 } from "@/lib/library-api";
 import { useLanguage } from "@/lib/language";
@@ -416,9 +417,19 @@ async function loadBengali(book: Book): Promise<BengaliExportData> {
   };
 }
 
-function DownloadActions({ book, collection, bn }: { book: Book; collection?: Collection; bn: boolean }) {
+function DownloadActions({
+  book,
+  collection,
+  chapter,
+  bn,
+}: {
+  book: Book;
+  collection?: Collection;
+  chapter?: Chapter;
+  bn: boolean;
+}) {
   const [busy, setBusy] = useState<null | "pdf" | "docx" | "txt-en" | "txt-bn">(null);
-  const showBook48Txt = book.book_number === 48 && !!collection;
+  const showBook48Txt = book.book_number === 48 && !!collection && !chapter;
 
   async function run(kind: "pdf" | "docx") {
     if (busy) return;
@@ -434,10 +445,10 @@ function DownloadActions({ book, collection, bn }: { book: Book; collection?: Co
       const model = buildKitabExport(book, collections, chapters, hadiths, {
         lang: bn ? "bn" : "en",
         bengali,
-        ...(collection ? { collectionId: collection.id } : {}),
+        ...(chapter ? { chapterId: chapter.id } : collection ? { collectionId: collection.id } : {}),
       });
       if (kind === "docx") {
-        const outcome = await downloadKitabDocx(model, kitabFileName(book, "docx", collection));
+        const outcome = await downloadKitabDocx(model, kitabFileName(book, "docx", collection, chapter));
         const msg =
           outcome === "shared"
             ? "Word file ready — choose “Save to Files”."
