@@ -15,8 +15,12 @@ import {
   Mail,
   Languages,
   Settings,
+  HelpCircle,
+  Search,
+  ArrowLeftRight,
+  X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ContinueReading } from "@/components/library/ContinueReading";
 import { IntroText } from "@/components/library/IntroText";
@@ -203,9 +207,105 @@ function SelectedBookContents({ book }: { book: Book }) {
 function Index() {
   const stats = useQuery({ queryKey: ["library-stats"], queryFn: fetchLibraryStats });
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [guideOpen, setGuideOpen] = useState(false);
+  const [tourStep, setTourStep] = useState<number | null>(null);
   const t = useInterfaceText();
   const { interfaceLanguage, contentLanguage, setInterfaceLanguage, setContentLanguage } = useLanguage();
   const isBengali = interfaceLanguage === "bn";
+
+  const tourSteps = isBengali
+    ? [
+        {
+          title: "দ্রুত অনুসন্ধান",
+          text: "হাদীস নম্বর, ইংরেজি বা বাংলা শব্দ দিয়ে পুরো গ্রন্থাগারে অনুসন্ধান করুন।",
+          target: "site-search-guide",
+        },
+        {
+          title: "ভাষা পরিবর্তন",
+          text: "এক ট্যাপে ইংরেজি ও বাংলা ইন্টারফেস এবং অনুবাদের মধ্যে পরিবর্তন করুন।",
+          target: "language-switch-guide",
+        },
+        {
+          title: "লাইব্রেরি মেনু",
+          text: "বুকমার্ক, ডাউনলোড, ব্যবহৃত গ্রন্থ, সাহাবী বর্ণনাকারী, ঘোষণা, অন্যান্য প্রকল্প ও যোগাযোগ এখানে পাবেন।",
+          target: "library-menu-guide",
+        },
+        {
+          title: "বুকমার্ক",
+          text: "যেকোনো হাদীস ডিভাইসে সংরক্ষণ করুন। My Bookmarks থেকে ব্যাকআপ ফাইল তৈরি করে অন্য ডিভাইসে পুনরুদ্ধার করতে পারবেন।",
+          target: null,
+        },
+        {
+          title: "আগের ও পরের হাদীস",
+          text: "হাদীস পড়ার সময় Previous ও Next ব্যবহার করে ধারাবাহিকভাবে পুরো সংগ্রহে এগিয়ে যান।",
+          target: null,
+        },
+      ]
+    : [
+        {
+          title: "Search quickly",
+          text: "Search the entire library by hadith number or by English or Bangla words.",
+          target: "site-search-guide",
+        },
+        {
+          title: "Switch language",
+          text: "Change between the English and Bangla interface and translations with one tap.",
+          target: "language-switch-guide",
+        },
+        {
+          title: "Library Menu",
+          text: "Find bookmarks, downloads, books used, Sahabah narrators, announcements, other projects, and contact here.",
+          target: "library-menu-guide",
+        },
+        {
+          title: "Bookmarks",
+          text: "Save any hadith on your device. From My Bookmarks you can create a backup file and restore it on another device.",
+          target: null,
+        },
+        {
+          title: "Previous and Next",
+          text: "While reading a hadith, use Previous and Next to move continuously through the collection.",
+          target: null,
+        },
+      ];
+
+  useEffect(() => {
+    try {
+      if (!window.localStorage.getItem("jami-al-kamil-website-guide-seen-v1")) {
+        setGuideOpen(true);
+      }
+    } catch {
+      // The guide still remains available from Library Menu.
+    }
+  }, []);
+
+  useEffect(() => {
+    if (tourStep === null) return;
+    const target = tourSteps[tourStep]?.target;
+    if (!target) return;
+    window.setTimeout(() => {
+      document.getElementById(target)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 80);
+  }, [tourStep, isBengali]);
+
+  function markGuideSeen() {
+    try {
+      window.localStorage.setItem("jami-al-kamil-website-guide-seen-v1", "1");
+    } catch {
+      // Ignore storage failures.
+    }
+  }
+
+  function closeGuide() {
+    markGuideSeen();
+    setGuideOpen(false);
+  }
+
+  function startTour() {
+    markGuideSeen();
+    setGuideOpen(false);
+    setTourStep(0);
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -219,7 +319,8 @@ function Index() {
             setInterfaceLanguage(next);
             setContentLanguage(next);
           }}
-          className="absolute top-4 left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-3 shadow-sm backdrop-blur hover:bg-accent sm:left-6"
+          id="language-switch-guide"
+          className={`absolute top-4 left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-3 shadow-sm backdrop-blur hover:bg-accent sm:left-6 ${tourStep === 1 ? "ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}`}
           aria-label={isBengali ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
           title={isBengali ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
         >
@@ -274,7 +375,8 @@ function Index() {
                     type="button"
                     variant="outline"
                     size="sm"
-                    className="h-9 gap-2 rounded-full border-gold/40 bg-background/90 px-3 text-foreground shadow-sm backdrop-blur hover:bg-accent"
+                    id="library-menu-guide"
+                    className={`h-9 gap-2 rounded-full border-gold/40 bg-background/90 px-3 text-foreground shadow-sm backdrop-blur hover:bg-accent ${tourStep === 2 ? "ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}`}
                     aria-label={interfaceLanguage === "bn" ? "লাইব্রেরি মেনু খুলুন" : "Open Library Menu"}
                     title={interfaceLanguage === "bn" ? "লাইব্রেরি মেনু" : "Library Menu"}
                   >
@@ -362,6 +464,13 @@ function Index() {
                       {t.otherProjects}
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer"
+                    onSelect={() => setGuideOpen(true)}
+                  >
+                    <HelpCircle aria-hidden />
+                    {isBengali ? "ওয়েবসাইট গাইড" : "Website Guide"}
+                  </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/contact" className="cursor-pointer">
                       <Mail aria-hidden />
@@ -377,7 +486,12 @@ function Index() {
 
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <ContinueReading />
-        <SearchPanel />
+        <div
+          id="site-search-guide"
+          className={tourStep === 0 ? "rounded-xl ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}
+        >
+          <SearchPanel />
+        </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[22rem_1fr]">
           <aside className="rounded-lg border border-border bg-sidebar p-3">
@@ -464,6 +578,117 @@ function Index() {
           </section>
         </div>
       </main>
+
+      {guideOpen ? (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="website-guide-title"
+            className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-border bg-background p-5 shadow-2xl sm:p-7"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2 id="website-guide-title" className="text-2xl font-semibold text-foreground">
+                  {isBengali ? "আল-জামি‘ আল-কামিলে স্বাগতম" : "Welcome to Al-Jāmiʿ al-Kāmil"}
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {isBengali
+                    ? "কয়েক সেকেন্ডে গুরুত্বপূর্ণ সুবিধাগুলো জেনে নিন, যাতে এই হাদীস গ্রন্থাগার থেকে সর্বোচ্চ উপকার নিতে পারেন।"
+                    : "Learn the most useful features in a few seconds so you can benefit from the hadith library immediately."}
+                </p>
+              </div>
+              <Button type="button" variant="ghost" size="icon" onClick={closeGuide} aria-label="Close guide">
+                <X aria-hidden />
+              </Button>
+            </div>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {[
+                [Search, isBengali ? "অনুসন্ধান" : "Search", isBengali ? "নম্বর বা শব্দ দিয়ে হাদীস খুঁজুন।" : "Find hadiths by number or words."],
+                [Languages, isBengali ? "ভাষা" : "Language", isBengali ? "ইংরেজি ও বাংলার মধ্যে পরিবর্তন করুন।" : "Switch between English and Bangla."],
+                [BookmarkIcon, isBengali ? "বুকমার্ক" : "Bookmarks", isBengali ? "ডিভাইসে সংরক্ষণ, ব্যাকআপ ও পুনরুদ্ধার করুন।" : "Save on your device, then backup and restore."],
+                [Download, isBengali ? "ডাউনলোড" : "Downloads", isBengali ? "অফলাইনে পড়ার জন্য উপলভ্য কনটেন্ট নিন।" : "Get available content for offline study."],
+                [Menu, isBengali ? "লাইব্রেরি মেনু" : "Library Menu", isBengali ? "গুরুত্বপূর্ণ সব টুল এক জায়গায়।" : "All important library tools in one place."],
+                [ArrowLeftRight, isBengali ? "আগের / পরের" : "Previous / Next", isBengali ? "হাদীস থেকে হাদীসে ধারাবাহিকভাবে যান।" : "Move continuously from hadith to hadith."],
+              ].map(([Icon, title, text], index) => {
+                const FeatureIcon = Icon as typeof Search;
+                return (
+                  <div key={index} className="flex gap-3 rounded-xl border border-border bg-card p-3">
+                    <FeatureIcon className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
+                    <div>
+                      <p className="font-medium text-foreground">{title as string}</p>
+                      <p className="mt-0.5 text-xs leading-5 text-muted-foreground">{text as string}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+              <Button type="button" variant="outline" onClick={closeGuide}>
+                {isBengali ? "পড়া শুরু করুন" : "Start Reading"}
+              </Button>
+              <Button type="button" onClick={startTour}>
+                {isBengali ? "আমাকে দেখিয়ে দিন" : "Show Me Around"}
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      {tourStep !== null ? (
+        <div className="pointer-events-none fixed inset-0 z-[90] bg-black/20">
+          <div className="pointer-events-auto absolute right-4 bottom-4 left-4 mx-auto max-w-md rounded-2xl border border-border bg-background p-5 shadow-2xl sm:right-6 sm:bottom-6 sm:left-auto">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs font-medium text-muted-foreground">
+                {isBengali
+                  ? `${toBengaliDigits(tourStep + 1)} / ${toBengaliDigits(tourSteps.length)}`
+                  : `${tourStep + 1} / ${tourSteps.length}`}
+              </p>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                onClick={() => setTourStep(null)}
+                aria-label="End tour"
+              >
+                <X aria-hidden />
+              </Button>
+            </div>
+            <h3 className="mt-1 text-lg font-semibold text-foreground">{tourSteps[tourStep].title}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{tourSteps[tourStep].text}</p>
+            <div className="mt-4 flex items-center justify-between gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                disabled={tourStep === 0}
+                onClick={() => setTourStep((step) => (step === null ? 0 : Math.max(0, step - 1)))}
+              >
+                {isBengali ? "পেছনে" : "Back"}
+              </Button>
+              <Button
+                type="button"
+                onClick={() => {
+                  if (tourStep >= tourSteps.length - 1) {
+                    setTourStep(null);
+                  } else {
+                    setTourStep(tourStep + 1);
+                  }
+                }}
+              >
+                {tourStep >= tourSteps.length - 1
+                  ? isBengali
+                    ? "শেষ"
+                    : "Finish"
+                  : isBengali
+                    ? "পরবর্তী"
+                    : "Next"}
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
