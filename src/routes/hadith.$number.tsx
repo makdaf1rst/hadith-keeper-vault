@@ -181,13 +181,6 @@ function HadithPage() {
         ) : null}
         {hadith.data ? (
           <div className="space-y-4">
-            {!readerSettings.readerMode ? (
-              <IntroText
-                intro={context.data?.chapter}
-                bengaliIntro={bengaliChapter}
-                label={t.chapterIntroduction}
-              />
-            ) : null}
             <HadithView hadith={hadith.data} context={context.data} />
             <nav
               aria-label={t.hadithNavigation}
