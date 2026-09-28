@@ -12,9 +12,9 @@ type Props = {
   chapterTitle?: string | null;
 };
 
-/** Saves immediately on the device; signed-in readers also sync to their account. */
+/** Saves bookmarks directly on the reader's device. */
 export function BookmarkButton({ number, bookTitle, collectionTitle, chapterTitle }: Props) {
-  const { has, toggle, signedIn, pending } = useBookmarks();
+  const { has, toggle, pending } = useBookmarks();
   const { interfaceLanguage } = useLanguage();
   const bn = interfaceLanguage === "bn";
   const saved = has(number);
@@ -28,33 +28,22 @@ export function BookmarkButton({ number, bookTitle, collectionTitle, chapterTitl
         chapterTitle: chapterTitle ?? null,
       });
 
-      if (added) {
-        toast.success(
-          signedIn
-            ? bn
-              ? "হাদীসটি বুকমার্ক করা হয়েছে এবং অ্যাকাউন্টে সিঙ্ক হয়েছে।"
-              : `Hadith ${number} bookmarked and synced.`
-            : bn
-              ? "হাদীসটি এই ডিভাইসে বুকমার্ক করা হয়েছে।"
-              : `Hadith ${number} saved on this device.`,
-          !signedIn
-            ? {
-                description: bn
-                  ? "অন্য ডিভাইসেও বুকমার্ক পেতে সাইন ইন করুন।"
-                  : "Sign in to sync bookmarks across devices.",
-              }
-            : undefined,
-        );
-      } else {
-        toast.success(bn ? "বুকমার্ক সরানো হয়েছে।" : "Bookmark removed.");
-      }
+      toast.success(
+        added
+          ? bn
+            ? "হাদীসটি এই ডিভাইসে বুকমার্ক করা হয়েছে।"
+            : `Hadith ${number} saved on this device.`
+          : bn
+            ? "বুকমার্ক সরানো হয়েছে।"
+            : "Bookmark removed.",
+      );
     } catch (error) {
-      toast.warning(
+      toast.error(
         bn
-          ? "বুকমার্কটি এই ডিভাইসে সংরক্ষিত আছে, কিন্তু অ্যাকাউন্টে সিঙ্ক করা যায়নি।"
+          ? "এই বুকমার্কটি সংরক্ষণ করা যায়নি।"
           : error instanceof Error
             ? error.message
-            : "Saved on this device, but account sync failed.",
+            : "Could not save this bookmark.",
       );
     }
   }
