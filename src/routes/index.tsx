@@ -293,6 +293,23 @@ function Index() {
                         : "Books Used in al-Jāmiʿ al-Kāmil"}
                     </a>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a
+                      href={
+                        contentLanguage === "bn"
+                          ? "https://drive.google.com/file/d/1UVM6aDTx6YNbOZP8uvP4bNghx7dwxJUI/view"
+                          : "https://drive.google.com/file/d/19C5NU_lLYtPqTSS-h1PhVxxaWQXdQq49/view"
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer"
+                    >
+                      <BookOpen aria-hidden />
+                      {interfaceLanguage === "bn"
+                        ? "আল-জামি‘ আল-কামিলের সাহাবী বর্ণনাকারীগণ"
+                        : "Sahabah Narrators in al-Jāmiʿ al-Kāmil"}
+                    </a>
+                  </DropdownMenuItem>
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>
                       <Settings aria-hidden />
