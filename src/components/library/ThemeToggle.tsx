@@ -1,3 +1,4 @@
+// Theme deployment refresh marker
 import { useLocation } from "@tanstack/react-router";
 import { BookOpen, Check, Circle, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
