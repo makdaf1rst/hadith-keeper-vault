@@ -1,4 +1,3 @@
-// Theme deployment refresh marker
 import { useLocation } from "@tanstack/react-router";
 import { BookOpen, Check, Circle, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -11,28 +10,38 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-type Theme = "light" | "sepia" | "dark" | "black";
+type Theme = "light" | "sepia" | "soft-gray" | "green" | "dark" | "warm-night" | "black";
 
 const STORAGE_KEY = "jami-theme";
 
 const THEMES: Array<{ value: Theme; label: string }> = [
   { value: "light", label: "Light" },
   { value: "sepia", label: "Sepia" },
+  { value: "soft-gray", label: "Soft Gray" },
+  { value: "green", label: "Green" },
   { value: "dark", label: "Dark" },
+  { value: "warm-night", label: "Warm Night" },
   { value: "black", label: "Black" },
 ];
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
-  root.classList.remove("dark", "sepia", "black");
+  root.classList.remove("dark", "sepia", "soft-gray", "green", "warm-night", "black");
+
   if (theme === "dark") root.classList.add("dark");
   if (theme === "sepia") root.classList.add("sepia");
+  if (theme === "soft-gray") root.classList.add("soft-gray");
+  if (theme === "green") root.classList.add("green");
+  if (theme === "warm-night") root.classList.add("dark", "warm-night");
   if (theme === "black") root.classList.add("dark", "black");
 }
 
 function detectTheme(): Theme {
   const root = document.documentElement;
   if (root.classList.contains("black")) return "black";
+  if (root.classList.contains("warm-night")) return "warm-night";
+  if (root.classList.contains("green")) return "green";
+  if (root.classList.contains("soft-gray")) return "soft-gray";
   if (root.classList.contains("sepia")) return "sepia";
   if (root.classList.contains("dark")) return "dark";
   return "light";
@@ -40,8 +49,9 @@ function detectTheme(): Theme {
 
 function ThemeIcon({ theme }: { theme: Theme }) {
   if (theme === "light") return <Sun className="size-4" aria-hidden />;
-  if (theme === "sepia") return <BookOpen className="size-4" aria-hidden />;
-  if (theme === "dark") return <Moon className="size-4" aria-hidden />;
+  if (theme === "sepia" || theme === "soft-gray" || theme === "green")
+    return <BookOpen className="size-4" aria-hidden />;
+  if (theme === "dark" || theme === "warm-night") return <Moon className="size-4" aria-hidden />;
   return <Circle className="size-4 fill-current" aria-hidden />;
 }
 
@@ -76,11 +86,13 @@ export function ThemeToggle() {
           title="Choose reading color theme"
         >
           <ThemeIcon theme={theme} />
-          <span className="text-xs font-medium">{THEMES.find((item) => item.value === theme)?.label}</span>
+          <span className="text-xs font-medium">
+            {THEMES.find((item) => item.value === theme)?.label}
+          </span>
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align="end" className="min-w-36">
+      <DropdownMenuContent align="end" className="min-w-40">
         {THEMES.map((item) => (
           <DropdownMenuItem
             key={item.value}
