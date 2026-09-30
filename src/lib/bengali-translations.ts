@@ -58,21 +58,19 @@ async function loadBookTranslations(bookNumber: number): Promise<BengaliTranslat
 
     const translations = (await response.json()) as BengaliTranslationFile;
 
-    // Book 60 QC corrections are kept as a small overlay so reviewed fixes can
-    // ship safely without rewriting the multi-megabyte source translation file.
-    if (bookNumber === 60) {
-      try {
-        const overridesResponse = await fetch(
-          `/content/bengali/book-60/qc-overrides.json?v=${Date.now()}`,
-          { cache: "no-store" },
-        );
-        if (overridesResponse.ok) {
-          const overrides = (await overridesResponse.json()) as BengaliTranslationFile;
-          return { ...translations, ...overrides };
-        }
-      } catch {
-        // Fall back to the base translation file if the optional overlay is unavailable.
+    // Reviewed QC corrections are kept as small per-book overlays so fixes can
+    // ship safely without rewriting the multi-megabyte source translation files.
+    try {
+      const overridesResponse = await fetch(
+        `/content/bengali/book-${bookNumber}/qc-overrides.json?v=${Date.now()}`,
+        { cache: "no-store" },
+      );
+      if (overridesResponse.ok) {
+        const overrides = (await overridesResponse.json()) as BengaliTranslationFile;
+        return { ...translations, ...overrides };
       }
+    } catch {
+      // Fall back to the base translation file if the optional overlay is unavailable.
     }
 
     return translations;
