@@ -134,11 +134,31 @@ function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
   return cached;
 }
 
-/** Every hadith of one book, from its static per-book file. */
+/** Every hadith of one book, from its static per-book file.
+ *
+ * Optional small qc-overrides.json files are merged at read time so reviewed
+ * corrections can ship without rewriting the multi-megabyte base hadith files.
+ */
 function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
   let cached = bookHadithsCache.get(bookNumber);
   if (!cached) {
-    cached = fetchContent(`book-${bookNumber}/hadiths.json`) as Promise<HadithFull[]>;
+    cached = (async () => {
+      const hadiths = (await fetchContent(`book-${bookNumber}/hadiths.json`)) as HadithFull[];
+
+      try {
+        const overrides = (await fetchContent(
+          `book-${bookNumber}/qc-overrides.json`,
+        )) as Record<string, Partial<HadithFull> & { hadith_number: number }>;
+
+        return hadiths.map((hadith) => {
+          const override = overrides[String(hadith.hadith_number)];
+          return override ? { ...hadith, ...override } : hadith;
+        });
+      } catch {
+        return hadiths;
+      }
+    })();
+
     bookHadithsCache.set(bookNumber, cached);
   }
   return cached;
