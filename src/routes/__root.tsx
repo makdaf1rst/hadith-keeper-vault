@@ -14,6 +14,8 @@ import appCss from "../styles.css?url";
 import { ThemeToggle } from "../components/library/ThemeToggle";
 import { Toaster } from "../components/ui/sonner";
 import { LanguageProvider } from "../lib/language";
+import { OfflineBanner } from "../components/OfflineBanner";
+import { registerServiceWorker } from "../lib/register-sw";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -117,6 +119,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),
   shellComponent: RootShell,
@@ -145,6 +148,10 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    registerServiceWorker();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
@@ -152,6 +159,7 @@ function RootComponent() {
         <Outlet />
         <ThemeToggle />
         <Toaster />
+        <OfflineBanner />
       </LanguageProvider>
     </QueryClientProvider>
   );
