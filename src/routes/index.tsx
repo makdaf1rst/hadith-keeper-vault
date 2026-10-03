@@ -13,6 +13,7 @@ import {
   Menu,
   FolderKanban,
   Mail,
+  ShieldCheck,
   Languages,
   Settings,
   HelpCircle,
@@ -91,7 +92,6 @@ function hasIntro(book: Book | null): book is Book {
   ].some((value) => value && value.trim().length > 0);
 }
 
-
 function SelectedChapter({ chapter, bookNumber }: { chapter: Chapter; bookNumber: number }) {
   const t = useInterfaceText();
   const { contentLanguage } = useLanguage();
@@ -115,7 +115,8 @@ function SelectedChapter({ chapter, bookNumber }: { chapter: Chapter; bookNumber
   return (
     <li className="rounded-md border border-border bg-background p-3">
       <p className="text-sm font-semibold text-foreground">
-        {bn?.title_bn ?? (formatChapterTitle(chapter.chapter_number, chapter.title_en) || t.chapter)}
+        {bn?.title_bn ??
+          (formatChapterTitle(chapter.chapter_number, chapter.title_en) || t.chapter)}
       </p>
       {chapter.title_ar ? (
         <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
@@ -134,7 +135,9 @@ function SelectedChapter({ chapter, bookNumber }: { chapter: Chapter; bookNumber
                 params={{ number: String(hadith.hadith_number) }}
                 className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-sm transition-colors hover:border-primary hover:text-primary"
               >
-                {contentLanguage === "bn" ? toBengaliDigits(hadith.hadith_number) : hadith.hadith_number}
+                {contentLanguage === "bn"
+                  ? toBengaliDigits(hadith.hadith_number)
+                  : hadith.hadith_number}
                 <span className="arabic-text text-sm! leading-none! text-muted-foreground">
                   {toArabicIndicDigits(hadith.hadith_number)}
                 </span>
@@ -163,7 +166,8 @@ function SelectedBookContents({ book }: { book: Book }) {
     <>
       <h2 className="mt-4 text-lg font-semibold text-foreground">
         {contentLanguage === "bn"
-          ? getBengaliBookTitle(book.book_number) ?? formatBookTitle(book.book_number, book.title_en)
+          ? (getBengaliBookTitle(book.book_number) ??
+            formatBookTitle(book.book_number, book.title_en))
           : formatBookTitle(book.book_number, book.title_en)}
       </h2>
       {book.title_ar ? (
@@ -182,7 +186,10 @@ function SelectedBookContents({ book }: { book: Book }) {
 
       <div className="mt-5 border-t border-border pt-4">
         <h3 className="text-base font-semibold text-foreground">
-          {t.babs} {chapters.data ? `(${contentLanguage === "bn" ? toBengaliDigits(chapters.data.length) : chapters.data.length})` : ""}
+          {t.babs}{" "}
+          {chapters.data
+            ? `(${contentLanguage === "bn" ? toBengaliDigits(chapters.data.length) : chapters.data.length})`
+            : ""}
         </h3>
         {chapters.isLoading ? (
           <p className="mt-3 text-sm text-muted-foreground">{t.loading}</p>
@@ -202,7 +209,6 @@ function SelectedBookContents({ book }: { book: Book }) {
   );
 }
 
-
 // Bengali library summary and numerals follow the selected interface language.
 function Index() {
   const stats = useQuery({ queryKey: ["library-stats"], queryFn: fetchLibraryStats });
@@ -210,7 +216,8 @@ function Index() {
   const [guideOpen, setGuideOpen] = useState(false);
   const [tourStep, setTourStep] = useState<number | null>(null);
   const t = useInterfaceText();
-  const { interfaceLanguage, contentLanguage, setInterfaceLanguage, setContentLanguage } = useLanguage();
+  const { interfaceLanguage, contentLanguage, setInterfaceLanguage, setContentLanguage } =
+    useLanguage();
   const isBengali = interfaceLanguage === "bn";
 
   const tourSteps = isBengali
@@ -377,7 +384,9 @@ function Index() {
                     size="sm"
                     id="library-menu-guide"
                     className={`h-9 gap-2 rounded-full border-gold/40 bg-background/90 px-3 text-foreground shadow-sm backdrop-blur hover:bg-accent ${tourStep === 2 ? "ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}`}
-                    aria-label={interfaceLanguage === "bn" ? "লাইব্রেরি মেনু খুলুন" : "Open Library Menu"}
+                    aria-label={
+                      interfaceLanguage === "bn" ? "লাইব্রেরি মেনু খুলুন" : "Open Library Menu"
+                    }
                     title={interfaceLanguage === "bn" ? "লাইব্রেরি মেনু" : "Library Menu"}
                   >
                     <Menu className="size-4" aria-hidden />
@@ -464,10 +473,7 @@ function Index() {
                       {t.otherProjects}
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                    className="cursor-pointer"
-                    onSelect={() => setGuideOpen(true)}
-                  >
+                  <DropdownMenuItem className="cursor-pointer" onSelect={() => setGuideOpen(true)}>
                     <HelpCircle aria-hidden />
                     {isBengali ? "ওয়েবসাইট গাইড" : "Website Guide"}
                   </DropdownMenuItem>
@@ -475,6 +481,12 @@ function Index() {
                     <Link to="/contact" className="cursor-pointer">
                       <Mail aria-hidden />
                       {t.contact}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/privacy" className="cursor-pointer">
+                      <ShieldCheck aria-hidden />
+                      {t.privacy}
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -488,7 +500,11 @@ function Index() {
         <ContinueReading />
         <div
           id="site-search-guide"
-          className={tourStep === 0 ? "rounded-xl ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}
+          className={
+            tourStep === 0
+              ? "rounded-xl ring-4 ring-primary ring-offset-4 ring-offset-background"
+              : ""
+          }
         >
           <SearchPanel />
         </div>
@@ -522,53 +538,71 @@ function Index() {
                   {isBengali ? (
                     <>
                       <p>
-                        শাইখ দিয়া আল-রহমান আল-আযমী (ضياء الرحمن الأعظمي) ছিলেন হাদীসের একজন বিশিষ্ট আলিম এবং মদিনা ইসলামী বিশ্ববিদ্যালয়ের অধ্যাপক। তাঁর অন্যতম শ্রেষ্ঠ ইলমী কীর্তি হলো{" "}
-                        <em>আল-জামি‘ আল-কামিল ফি আল-হাদীস আস-সহীহ আশ-শামিল আল-মুরাত্তাব ‘আলা আবওয়াব আল-ফিকহ</em>—
-                        রাসূলুল্লাহ ﷺ-এর নির্ভরযোগ্য সুন্নাহকে এক সুবিস্তৃত ও সুসংগঠিত সংকলনে একত্র করার এক মহৎ প্রচেষ্টা।
+                        শাইখ দিয়া আল-রহমান আল-আযমী (ضياء الرحمن الأعظمي) ছিলেন হাদীসের একজন বিশিষ্ট
+                        আলিম এবং মদিনা ইসলামী বিশ্ববিদ্যালয়ের অধ্যাপক। তাঁর অন্যতম শ্রেষ্ঠ ইলমী
+                        কীর্তি হলো{" "}
+                        <em>
+                          আল-জামি‘ আল-কামিল ফি আল-হাদীস আস-সহীহ আশ-শামিল আল-মুরাত্তাব ‘আলা আবওয়াব
+                          আল-ফিকহ
+                        </em>
+                        — রাসূলুল্লাহ ﷺ-এর নির্ভরযোগ্য সুন্নাহকে এক সুবিস্তৃত ও সুসংগঠিত সংকলনে
+                        একত্র করার এক মহৎ প্রচেষ্টা।
                       </p>
                       <p>
-                        এই গ্রন্থ প্রস্তুত করতে শাইখ আল-আযমী ২০০টিরও বেশি হাদীসগ্রন্থ থেকে উপকরণ গ্রহণ করেন এবং পুনরাবৃত্তি বাদ দিয়ে আনুমানিক ৬০,০০০ স্বতন্ত্র হাদীসের বিশাল ভাণ্ডার পর্যালোচনা করেন। ব্যাপক গবেষণা, তুলনা, যাচাই ও হাদীসের মান নির্ধারণের মাধ্যমে তিনি চূড়ান্ত সংকলনে ১৬,৫৪৬টি নম্বরযুক্ত বর্ণনা অন্তর্ভুক্ত করেন। এই গ্রন্থের অন্যতম বৈশিষ্ট্য হলো গ্রহণযোগ্য বর্ণনা—সহীহ ও হাসান হাদীস—এর ওপর গুরুত্ব, যা ইসলামী ফিকহের কিতাব ও অধ্যায় অনুযায়ী বিন্যস্ত।
+                        এই গ্রন্থ প্রস্তুত করতে শাইখ আল-আযমী ২০০টিরও বেশি হাদীসগ্রন্থ থেকে উপকরণ
+                        গ্রহণ করেন এবং পুনরাবৃত্তি বাদ দিয়ে আনুমানিক ৬০,০০০ স্বতন্ত্র হাদীসের বিশাল
+                        ভাণ্ডার পর্যালোচনা করেন। ব্যাপক গবেষণা, তুলনা, যাচাই ও হাদীসের মান
+                        নির্ধারণের মাধ্যমে তিনি চূড়ান্ত সংকলনে ১৬,৫৪৬টি নম্বরযুক্ত বর্ণনা
+                        অন্তর্ভুক্ত করেন। এই গ্রন্থের অন্যতম বৈশিষ্ট্য হলো গ্রহণযোগ্য বর্ণনা—সহীহ ও
+                        হাসান হাদীস—এর ওপর গুরুত্ব, যা ইসলামী ফিকহের কিতাব ও অধ্যায় অনুযায়ী
+                        বিন্যস্ত।
                       </p>
                       <p>
-                        এই বাংলা অনুবাদ মহান এই গ্রন্থকে বাংলা ভাষাভাষী পাঠকদের জন্য আরও সহজলভ্য করার এবং রাসূলুল্লাহ ﷺ-এর সুন্নাহ সংরক্ষণ ও প্রচারে আমাদের সামর্থ্য অনুযায়ী ক্ষুদ্র অবদান রাখার একটি বিনীত প্রচেষ্টা।
+                        এই বাংলা অনুবাদ মহান এই গ্রন্থকে বাংলা ভাষাভাষী পাঠকদের জন্য আরও সহজলভ্য
+                        করার এবং রাসূলুল্লাহ ﷺ-এর সুন্নাহ সংরক্ষণ ও প্রচারে আমাদের সামর্থ্য অনুযায়ী
+                        ক্ষুদ্র অবদান রাখার একটি বিনীত প্রচেষ্টা।
                       </p>
                       <p>
-                        আমরা আল্লাহর কাছে প্রার্থনা করি, তিনি আমাদের ভুল ও ত্রুটি ক্ষমা করুন, এই প্রচেষ্টায় ইখলাস ও উপকার দান করুন, সুন্নাহর খেদমতের জন্য শাইখ দিয়া আল-রহমান আল-আযমীকে অফুরন্ত প্রতিদান দিন এবং এই কাজটি কেবল তাঁর সন্তুষ্টির জন্য আমাদের পক্ষ থেকে কবুল করুন। আমীন।
+                        আমরা আল্লাহর কাছে প্রার্থনা করি, তিনি আমাদের ভুল ও ত্রুটি ক্ষমা করুন, এই
+                        প্রচেষ্টায় ইখলাস ও উপকার দান করুন, সুন্নাহর খেদমতের জন্য শাইখ দিয়া
+                        আল-রহমান আল-আযমীকে অফুরন্ত প্রতিদান দিন এবং এই কাজটি কেবল তাঁর সন্তুষ্টির
+                        জন্য আমাদের পক্ষ থেকে কবুল করুন। আমীন।
                       </p>
                     </>
                   ) : (
                     <>
                       <p>
                         Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī (ضياء الرحمن الأعظمي) was a distinguished
-                        scholar of Ḥadīth and a professor at the Islamic University of Madinah. Among
-                        his greatest scholarly achievements is{" "}
+                        scholar of Ḥadīth and a professor at the Islamic University of Madinah.
+                        Among his greatest scholarly achievements is{" "}
                         <em>
                           Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil al-Murattab ʿalā Abwāb
                           al-Fiqh
                         </em>
-                        , a monumental effort to gather the reliable Sunnah of the Messenger of Allah ﷺ
-                        into one comprehensive and systematically arranged collection.
+                        , a monumental effort to gather the reliable Sunnah of the Messenger of
+                        Allah ﷺ into one comprehensive and systematically arranged collection.
                       </p>
                       <p>
-                        In preparing this work, Shaykh al-Aʿẓamī drew upon more than 200 books of Ḥadīth
-                        and surveyed a vast body of narrations that he estimated at approximately 60,000
-                        distinct hadith texts after repetitions were removed. Through extensive
-                        research, comparison, verification, and grading, he compiled 16,546 numbered
-                        narrations in the final collection. One of the defining features of the work is
-                        its focus on accepted narrations — Ṣaḥīḥ (Authentic) and Ḥasan (Good) hadiths —
-                        arranged according to the books and chapters of Islamic jurisprudence.
+                        In preparing this work, Shaykh al-Aʿẓamī drew upon more than 200 books of
+                        Ḥadīth and surveyed a vast body of narrations that he estimated at
+                        approximately 60,000 distinct hadith texts after repetitions were removed.
+                        Through extensive research, comparison, verification, and grading, he
+                        compiled 16,546 numbered narrations in the final collection. One of the
+                        defining features of the work is its focus on accepted narrations — Ṣaḥīḥ
+                        (Authentic) and Ḥasan (Good) hadiths — arranged according to the books and
+                        chapters of Islamic jurisprudence.
                       </p>
                       <p>
                         This English translation is a humble effort to make this great work more
                         accessible to English-speaking readers and to contribute, in whatever small
-                        measure we can, to the preservation and spread of the Sunnah of the Messenger of
-                        Allah ﷺ.
+                        measure we can, to the preservation and spread of the Sunnah of the
+                        Messenger of Allah ﷺ.
                       </p>
                       <p>
                         We ask Allah to overlook our mistakes and shortcomings, place sincerity and
-                        benefit in this effort, reward Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī abundantly for
-                        his service to the Sunnah, and accept this deed from us solely for His sake.
-                        Āmīn.
+                        benefit in this effort, reward Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī abundantly
+                        for his service to the Sunnah, and accept this deed from us solely for His
+                        sake. Āmīn.
                       </p>
                     </>
                   )}
@@ -598,27 +632,74 @@ function Index() {
                     : "Learn the most useful features in a few seconds so you can benefit from the hadith library immediately."}
                 </p>
               </div>
-              <Button type="button" variant="ghost" size="icon" onClick={closeGuide} aria-label="Close guide">
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                onClick={closeGuide}
+                aria-label="Close guide"
+              >
                 <X aria-hidden />
               </Button>
             </div>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {[
-                [Search, isBengali ? "অনুসন্ধান" : "Search", isBengali ? "নম্বর বা শব্দ দিয়ে হাদীস খুঁজুন।" : "Find hadiths by number or words."],
-                [Languages, isBengali ? "ভাষা" : "Language", isBengali ? "ইংরেজি ও বাংলার মধ্যে পরিবর্তন করুন।" : "Switch between English and Bangla."],
-                [BookmarkIcon, isBengali ? "বুকমার্ক" : "Bookmarks", isBengali ? "ডিভাইসে সংরক্ষণ, ব্যাকআপ ও পুনরুদ্ধার করুন।" : "Save on your device, then backup and restore."],
-                [Download, isBengali ? "ডাউনলোড" : "Downloads", isBengali ? "অফলাইনে পড়ার জন্য উপলভ্য কনটেন্ট নিন।" : "Get available content for offline study."],
-                [Menu, isBengali ? "লাইব্রেরি মেনু" : "Library Menu", isBengali ? "গুরুত্বপূর্ণ সব টুল এক জায়গায়।" : "All important library tools in one place."],
-                [ArrowLeftRight, isBengali ? "আগের / পরের" : "Previous / Next", isBengali ? "হাদীস থেকে হাদীসে ধারাবাহিকভাবে যান।" : "Move continuously from hadith to hadith."],
+                [
+                  Search,
+                  isBengali ? "অনুসন্ধান" : "Search",
+                  isBengali
+                    ? "নম্বর বা শব্দ দিয়ে হাদীস খুঁজুন।"
+                    : "Find hadiths by number or words.",
+                ],
+                [
+                  Languages,
+                  isBengali ? "ভাষা" : "Language",
+                  isBengali
+                    ? "ইংরেজি ও বাংলার মধ্যে পরিবর্তন করুন।"
+                    : "Switch between English and Bangla.",
+                ],
+                [
+                  BookmarkIcon,
+                  isBengali ? "বুকমার্ক" : "Bookmarks",
+                  isBengali
+                    ? "ডিভাইসে সংরক্ষণ, ব্যাকআপ ও পুনরুদ্ধার করুন।"
+                    : "Save on your device, then backup and restore.",
+                ],
+                [
+                  Download,
+                  isBengali ? "ডাউনলোড" : "Downloads",
+                  isBengali
+                    ? "অফলাইনে পড়ার জন্য উপলভ্য কনটেন্ট নিন।"
+                    : "Get available content for offline study.",
+                ],
+                [
+                  Menu,
+                  isBengali ? "লাইব্রেরি মেনু" : "Library Menu",
+                  isBengali
+                    ? "গুরুত্বপূর্ণ সব টুল এক জায়গায়।"
+                    : "All important library tools in one place.",
+                ],
+                [
+                  ArrowLeftRight,
+                  isBengali ? "আগের / পরের" : "Previous / Next",
+                  isBengali
+                    ? "হাদীস থেকে হাদীসে ধারাবাহিকভাবে যান।"
+                    : "Move continuously from hadith to hadith.",
+                ],
               ].map(([Icon, title, text], index) => {
                 const FeatureIcon = Icon as typeof Search;
                 return (
-                  <div key={index} className="flex gap-3 rounded-xl border border-border bg-card p-3">
+                  <div
+                    key={index}
+                    className="flex gap-3 rounded-xl border border-border bg-card p-3"
+                  >
                     <FeatureIcon className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
                     <div>
                       <p className="font-medium text-foreground">{title as string}</p>
-                      <p className="mt-0.5 text-xs leading-5 text-muted-foreground">{text as string}</p>
+                      <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
+                        {text as string}
+                      </p>
                     </div>
                   </div>
                 );
@@ -656,8 +737,12 @@ function Index() {
                 <X aria-hidden />
               </Button>
             </div>
-            <h3 className="mt-1 text-lg font-semibold text-foreground">{tourSteps[tourStep]?.title}</h3>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">{tourSteps[tourStep]?.text}</p>
+            <h3 className="mt-1 text-lg font-semibold text-foreground">
+              {tourSteps[tourStep]?.title}
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              {tourSteps[tourStep]?.text}
+            </p>
             <div className="mt-4 flex items-center justify-between gap-2">
               <Button
                 type="button"
