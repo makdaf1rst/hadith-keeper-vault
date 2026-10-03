@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "postbuild": "node scripts/build-search-index.mjs",
+    "postbuild": "node scripts/build-search-index.mjs && node scripts/build-sitemap.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
@@ -91,4 +91,4 @@
     "typescript-eslint": "^8.56.1",
     "vite": "^8.2.0"
   }
-}
+}\n
