@@ -2,27 +2,18 @@
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
-import { verifyBengaliPreviewCode } from "@/lib/bengali-preview.functions";
-
 export type InterfaceLanguage = "en" | "bn";
 export type ContentLanguage = "en" | "bn";
-
-type UnlockResult = { ok: boolean; error?: string };
 
 type LanguageContextValue = {
   interfaceLanguage: InterfaceLanguage;
   contentLanguage: ContentLanguage;
   setInterfaceLanguage: (language: InterfaceLanguage) => void;
   setContentLanguage: (language: ContentLanguage) => void;
-  bengaliPreviewUnlocked: boolean;
-  bengaliPreviewChecking: boolean;
-  unlockBengaliPreview: (code: string) => Promise<UnlockResult>;
 };
 
 const INTERFACE_KEY = "jami-interface-language";
 const CONTENT_KEY = "jami-content-language";
-const BENGALI_PREVIEW_KEY = "jami-bengali-preview-until";
-const BENGALI_PREVIEW_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
@@ -35,24 +26,11 @@ function readStored<T extends string>(key: string, allowed: readonly T[], fallba
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [interfaceLanguage, setInterfaceLanguageState] = useState<InterfaceLanguage>("en");
   const [contentLanguage, setContentLanguageState] = useState<ContentLanguage>("en");
-  const [bengaliPreviewUnlocked, setBengaliPreviewUnlocked] = useState(false);
-  const [bengaliPreviewChecking, setBengaliPreviewChecking] = useState(true);
 
   useEffect(() => {
-    let unlocked = false;
-    const until = Number(window.localStorage.getItem(BENGALI_PREVIEW_KEY) ?? "0");
-    if (Number.isFinite(until) && until > Date.now()) {
-      unlocked = true;
-    } else {
-      window.localStorage.removeItem(BENGALI_PREVIEW_KEY);
-    }
-    setBengaliPreviewUnlocked(unlocked);
-    setBengaliPreviewChecking(false);
-
     const savedInterface = readStored(INTERFACE_KEY, ["en", "bn"] as const, "en");
     const savedContent = readStored(CONTENT_KEY, ["en", "bn"] as const, "en");
-    const saved = savedInterface === "bn" || savedContent === "bn" ? "bn" : "en";
-    const language = saved === "bn" && !unlocked ? "en" : saved;
+    const language = savedInterface === "bn" || savedContent === "bn" ? "bn" : "en";
     setInterfaceLanguageState(language);
     setContentLanguageState(language);
     window.localStorage.setItem(INTERFACE_KEY, language);
@@ -77,23 +55,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const unlockBengaliPreview = async (code: string): Promise<UnlockResult> => {
-    try {
-      const result = await verifyBengaliPreviewCode({ data: { code } });
-      if (!result.ok) return { ok: false, error: result.error };
-      setBengaliPreviewUnlocked(true);
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(
-          BENGALI_PREVIEW_KEY,
-          String(Date.now() + BENGALI_PREVIEW_TTL_MS),
-        );
-      }
-      return { ok: true };
-    } catch {
-      return { ok: false, error: "Unable to verify the access code right now." };
-    }
-  };
-
   useEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.lang = interfaceLanguage === "bn" ? "bn" : "en";
@@ -106,11 +67,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       contentLanguage,
       setInterfaceLanguage,
       setContentLanguage,
-      bengaliPreviewUnlocked,
-      bengaliPreviewChecking,
-      unlockBengaliPreview,
     }),
-    [interfaceLanguage, contentLanguage, bengaliPreviewUnlocked, bengaliPreviewChecking],
+    [interfaceLanguage, contentLanguage],
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
