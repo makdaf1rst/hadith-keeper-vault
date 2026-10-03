@@ -1,5 +1,12 @@
 apply plugin: 'com.android.application'
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = file('keystore.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+def hasSigningProps = keystoreProperties['storeFile'] != null || System.getenv('JAMI_ANDROID_STORE_PASSWORD') != null
+
 android {
     namespace = "com.jamialkamil.app"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -16,8 +23,19 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword'] ?: System.getenv('JAMI_ANDROID_STORE_PASSWORD')
+            keyAlias keystoreProperties['keyAlias'] ?: System.getenv('JAMI_ANDROID_KEY_ALIAS')
+            keyPassword keystoreProperties['keyPassword'] ?: System.getenv('JAMI_ANDROID_KEY_PASSWORD')
+        }
+    }
     buildTypes {
         release {
+            if (hasSigningProps) {
+                signingConfig signingConfigs.release
+            }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
