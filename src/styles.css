@@ -360,3 +360,9 @@
   white-space: pre-wrap;
 }
 
+
+/* iOS/Android app webview: page draws edge-to-edge under the system bars. */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}

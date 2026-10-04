@@ -327,7 +327,7 @@ function Index() {
             setContentLanguage(next);
           }}
           id="language-switch-guide"
-          className={`absolute top-4 left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-3 shadow-sm backdrop-blur hover:bg-accent sm:left-6 ${tourStep === 1 ? "ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}`}
+          className={`absolute top-[calc(1rem+env(safe-area-inset-top))] left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-3 shadow-sm backdrop-blur hover:bg-accent sm:left-6 ${tourStep === 1 ? "ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}`}
           aria-label={isBengali ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
           title={isBengali ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
         >

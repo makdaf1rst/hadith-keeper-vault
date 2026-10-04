@@ -79,8 +79,8 @@ export function ThemeToggle() {
           size="sm"
           className={`absolute z-50 h-9 gap-2 rounded-md border-border bg-background/95 px-3 text-foreground shadow-md backdrop-blur transition-colors hover:bg-accent ${
             isHadithPage
-              ? "top-4 left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0"
-              : "top-4 right-14 sm:top-6 sm:right-16"
+              ? "top-[calc(1rem+env(safe-area-inset-top))] left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0"
+              : "top-[calc(1rem+env(safe-area-inset-top))] right-14 sm:right-16"
           }`}
           aria-label="Choose reading color theme"
           title="Choose reading color theme"

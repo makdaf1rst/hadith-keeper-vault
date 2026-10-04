@@ -18,7 +18,7 @@ export function OfflineBanner() {
   if (!offline) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center gap-2 bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
+    <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center gap-2 bg-primary px-4 py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] text-sm font-medium text-primary-foreground">
       <WifiOff className="size-4" />
       You're offline — showing saved pages
     </div>

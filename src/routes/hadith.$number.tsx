@@ -8,7 +8,12 @@ import { ReaderControls } from "@/components/library/ReaderControls";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { fetchHadithByNumber, fetchHadithContext, fetchNeighbours, type ReadingTarget } from "@/lib/library-api";
+import {
+  fetchHadithByNumber,
+  fetchHadithContext,
+  fetchNeighbours,
+  type ReadingTarget,
+} from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
@@ -25,11 +30,7 @@ function ReadingLink({
   className?: string;
 }) {
   return target.kind === "hadith" ? (
-    <Link
-      to="/hadith/$number"
-      params={{ number: String(target.number) }}
-      className={className}
-    >
+    <Link to="/hadith/$number" params={{ number: String(target.number) }} className={className}>
       {children}
     </Link>
   ) : (
@@ -76,7 +77,8 @@ export const Route = createFileRoute("/hadith/$number")({
 function HadithPage() {
   const { number } = Route.useParams();
   const t = useInterfaceText();
-  const { interfaceLanguage, contentLanguage, setInterfaceLanguage, setContentLanguage } = useLanguage();
+  const { interfaceLanguage, contentLanguage, setInterfaceLanguage, setContentLanguage } =
+    useLanguage();
   const isBengali = contentLanguage === "bn";
   const [readerSettings, updateReaderSettings] = useReaderSettings();
   const hadithNumber = Number(number);
@@ -105,13 +107,13 @@ function HadithPage() {
     enabled: contentLanguage === "bn" && !!context.data?.book?.book_number,
   });
   const bengaliChapter = context.data?.chapter
-    ? bengaliStructure.data?.chapters.find((item) => item.id === context.data?.chapter?.id) ??
+    ? (bengaliStructure.data?.chapters.find((item) => item.id === context.data?.chapter?.id) ??
       bengaliStructure.data?.chapters.find(
         (item) =>
           item.sort_order === context.data?.chapter?.sort_order &&
           (context.data?.chapter?.chapter_number == null ||
             item.chapter_number === context.data.chapter.chapter_number),
-      )
+      ))
     : null;
 
   useEffect(() => {
@@ -131,7 +133,13 @@ function HadithPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className={readerSettings.readerMode ? "relative border-b border-border bg-parchment/95" : "relative border-b border-border bg-parchment"}>
+      <header
+        className={
+          readerSettings.readerMode
+            ? "relative border-b border-border bg-parchment/95"
+            : "relative border-b border-border bg-parchment"
+        }
+      >
         <Button
           type="button"
           variant="outline"
@@ -141,12 +149,14 @@ function HadithPage() {
             setInterfaceLanguage(next);
             setContentLanguage(next);
           }}
-          className="absolute top-4 left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-2 shadow-sm backdrop-blur hover:bg-accent sm:left-6 sm:px-3"
+          className="absolute top-[calc(1rem+env(safe-area-inset-top))] left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-2 shadow-sm backdrop-blur hover:bg-accent sm:left-6 sm:px-3"
           aria-label={interfaceLanguage === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
           title={interfaceLanguage === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
         >
           <Languages className="size-4" aria-hidden />
-          <span className="hidden font-medium sm:inline">{interfaceLanguage === "bn" ? "English" : "বাংলা"}</span>
+          <span className="hidden font-medium sm:inline">
+            {interfaceLanguage === "bn" ? "English" : "বাংলা"}
+          </span>
         </Button>
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6">
           <Link
@@ -183,17 +193,21 @@ function HadithPage() {
         </div>
       </header>
 
-      <main className={readerSettings.readerMode ? "mx-auto max-w-3xl px-4 py-8 sm:px-6" : "mx-auto max-w-4xl px-4 py-8 sm:px-6"}>
+      <main
+        className={
+          readerSettings.readerMode
+            ? "mx-auto max-w-3xl px-4 py-8 sm:px-6"
+            : "mx-auto max-w-4xl px-4 py-8 sm:px-6"
+        }
+      >
         {hadith.isLoading ? <p className="text-muted-foreground">{t.loadingHadith}</p> : null}
-        {hadith.error ? (
-          <p className="text-destructive">{t.hadithLoadFailed}</p>
-        ) : null}
+        {hadith.error ? <p className="text-destructive">{t.hadithLoadFailed}</p> : null}
         {!hadith.isLoading && !hadith.data ? (
           <div className="rounded-lg border border-border bg-card p-6">
-            <h1 className="text-lg font-semibold">{t.hadith} {isBengali ? toBengaliDigits(number) : number} {t.hadithNotImported}</h1>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {t.hadithNumberRange}
-            </p>
+            <h1 className="text-lg font-semibold">
+              {t.hadith} {isBengali ? toBengaliDigits(number) : number} {t.hadithNotImported}
+            </h1>
+            <p className="mt-2 text-sm text-muted-foreground">{t.hadithNumberRange}</p>
           </div>
         ) : null}
         {hadith.data ? (
@@ -201,7 +215,11 @@ function HadithPage() {
             <HadithView hadith={hadith.data} context={context.data} />
             <nav
               aria-label={t.hadithNavigation}
-              className={readerSettings.readerMode ? "grid grid-cols-2 gap-3 pt-2" : "grid grid-cols-2 gap-3 border-t border-border pt-6"}
+              className={
+                readerSettings.readerMode
+                  ? "grid grid-cols-2 gap-3 pt-2"
+                  : "grid grid-cols-2 gap-3 border-t border-border pt-6"
+              }
             >
               {neighbours.data?.previous ? (
                 <ReadingLink
