@@ -132,11 +132,7 @@ function BookHadiths({ bookId }: { bookId: string }) {
 
   if (isLoading) return <p className="px-2 py-1 text-xs text-muted-foreground">{t.loading}</p>;
   if (!data?.length)
-    return (
-      <p className="px-2 py-1 text-xs text-muted-foreground">
-        {t.nothingInBook}
-      </p>
-    );
+    return <p className="px-2 py-1 text-xs text-muted-foreground">{t.nothingInBook}</p>;
 
   const byChapter = new Map<string, HadithStub[]>();
   for (const h of data) {
@@ -187,7 +183,9 @@ function ChapterNode({ chapter, bookNumber }: { chapter: Chapter; bookNumber: nu
       <Toggle open={open} onClick={() => setOpen((v) => !v)}>
         <Title
           ar={chapter.title_ar}
-          en={bn?.title_bn ?? (formatChapterTitle(chapter.chapter_number, chapter.title_en) || null)}
+          en={
+            bn?.title_bn ?? (formatChapterTitle(chapter.chapter_number, chapter.title_en) || null)
+          }
         />
       </Toggle>
       {open ? (
@@ -238,7 +236,8 @@ function BookNode({
           ar={formatArabicBookTitle(book.book_number, book.title_ar)}
           en={
             contentLanguage === "bn"
-              ? getBengaliBookTitle(book.book_number) ?? formatBookTitle(book.book_number, book.title_en)
+              ? (getBengaliBookTitle(book.book_number) ??
+                formatBookTitle(book.book_number, book.title_en))
               : formatBookTitle(book.book_number, book.title_en)
           }
         />
@@ -256,7 +255,9 @@ function BookNode({
           )}
           <ul className="space-y-0.5">
             {(collections.data ?? []).map((collection) => {
-              const own = orderCollectionChapters((chapters.data ?? []).filter((c) => c.collection_id === collection.id));
+              const own = orderCollectionChapters(
+                (chapters.data ?? []).filter((c) => c.collection_id === collection.id),
+              );
               return (
                 <CollectionNode
                   key={collection.id}
@@ -335,8 +336,7 @@ export function LibraryTree({
   const { data, isLoading, error } = useQuery({ queryKey: ["books"], queryFn: fetchBooks });
 
   if (isLoading) return <p className="px-2 py-3 text-sm text-muted-foreground">{t.loadingBooks}</p>;
-  if (error)
-    return <p className="px-2 py-3 text-sm text-destructive">{t.libraryLoadFailed}</p>;
+  if (error) return <p className="px-2 py-3 text-sm text-destructive">{t.libraryLoadFailed}</p>;
   if (!data?.length)
     return (
       <p className="px-2 py-3 text-sm text-muted-foreground">

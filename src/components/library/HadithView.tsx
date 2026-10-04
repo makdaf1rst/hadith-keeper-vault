@@ -16,11 +16,9 @@ import { useReaderSettings } from "@/lib/reader-settings";
 type Props = {
   hadith: HadithFull;
   context?:
-    | { book: Book | null; collection: Collection | null; chapter: Chapter | null }
-    | undefined;
+    { book: Book | null; collection: Collection | null; chapter: Chapter | null } | undefined;
   showExactSource?: boolean | undefined;
 };
-
 
 function text(display: string | null, source: string | null) {
   const value = display ?? source;
@@ -45,8 +43,6 @@ function remainder(full: string | null, parts: (string | null)[]) {
   }
   return rest.trim().length > 0 ? rest.trim() : null;
 }
-
-
 
 async function shareHadith(hadithNumber: number, isBengali: boolean) {
   const url = typeof window !== "undefined" ? window.location.href : "";
@@ -108,8 +104,7 @@ function reportIssue(hadithNumber: number, isBengali: boolean) {
         `Please attach a screenshot if possible.`,
       ].join("\n");
 
-  window.location.href =
-    `mailto:Aljamiushshamil@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:Aljamiushshamil@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 async function copy(value: string | null, label: string) {
@@ -141,19 +136,19 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
     enabled: contentLanguage === "bn" && !!context?.book?.book_number,
   });
   const bengaliCollection = context?.collection
-    ? bengaliStructure.data?.collections.find((item) => item.id === context.collection?.id) ??
+    ? (bengaliStructure.data?.collections.find((item) => item.id === context.collection?.id) ??
       bengaliStructure.data?.collections.find(
         (item) => item.sort_order === context.collection?.sort_order,
-      )
+      ))
     : null;
   const bengaliChapter = context?.chapter
-    ? bengaliStructure.data?.chapters.find((item) => item.id === context.chapter?.id) ??
+    ? (bengaliStructure.data?.chapters.find((item) => item.id === context.chapter?.id) ??
       bengaliStructure.data?.chapters.find(
         (item) =>
           item.sort_order === context.chapter?.sort_order &&
           (context.chapter?.chapter_number == null ||
             item.chapter_number === context.chapter.chapter_number),
-      )
+      ))
     : null;
 
   const arabic = showExactSource
@@ -166,8 +161,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
     ? hadith.full_source_content
     : text(hadith.full_display_content, hadith.full_source_content);
   const extra = remainder(full, [arabic, english]);
-  const selectedTranslation =
-    contentLanguage === "bn" ? (bengali.data?.text ?? null) : english;
+  const selectedTranslation = contentLanguage === "bn" ? (bengali.data?.text ?? null) : english;
   const displayedTranslation =
     contentLanguage === "bn" && selectedTranslation
       ? toBengaliDigits(selectedTranslation)
@@ -176,7 +170,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
   const whole =
     contentLanguage === "bn"
       ? [arabic, selectedTranslation, extra].filter(Boolean).join("\n\n")
-      : full ?? [arabic, english, extra].filter(Boolean).join("\n\n");
+      : (full ?? [arabic, english, extra].filter(Boolean).join("\n\n"));
 
   return (
     <article className="rounded-lg border border-border bg-card shadow-sm">
@@ -353,7 +347,6 @@ function BreadcrumbLine({
   ar?: string | null | undefined;
   en?: string | null | undefined;
 }) {
-
   if (!ar && !en) return null;
   return (
     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-0.5">
@@ -361,7 +354,9 @@ function BreadcrumbLine({
         {label}
       </span>
       {en ? <span className="text-foreground">{en}</span> : null}
-      {ar ? <span className="arabic-text text-base! leading-normal! text-foreground">{ar}</span> : null}
+      {ar ? (
+        <span className="arabic-text text-base! leading-normal! text-foreground">{ar}</span>
+      ) : null}
     </div>
   );
 }

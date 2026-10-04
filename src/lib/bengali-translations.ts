@@ -30,7 +30,6 @@ type HadithIndexEntry = { n: number; b: number };
 
 let indexCache: Promise<Map<number, number>> | null = null;
 
-
 async function loadHadithIndex(): Promise<Map<number, number>> {
   indexCache ??= fetch("/content/hadith-index.json", { cache: "no-store" })
     .then(async (response) => {
@@ -46,9 +45,12 @@ async function loadHadithIndex(): Promise<Map<number, number>> {
 
 async function loadBookTranslations(bookNumber: number): Promise<BengaliTranslationFile> {
   try {
-    const response = await fetch(`/content/bengali/book-${bookNumber}/hadiths.json?v=${Date.now()}`, {
-      cache: "no-store",
-    });
+    const response = await fetch(
+      `/content/bengali/book-${bookNumber}/hadiths.json?v=${Date.now()}`,
+      {
+        cache: "no-store",
+      },
+    );
     if (response.status === 404) return {};
     if (!response.ok) {
       throw new Error(
@@ -94,12 +96,14 @@ export async function fetchBengaliTranslation(
   return translations[String(hadithNumber)] ?? null;
 }
 
-
 async function loadChapterTranslations(bookNumber: number): Promise<BengaliStructureFile> {
   try {
-    const response = await fetch(`/content/bengali/book-${bookNumber}/chapters.json?v=${Date.now()}`, {
-      cache: "no-store",
-    });
+    const response = await fetch(
+      `/content/bengali/book-${bookNumber}/chapters.json?v=${Date.now()}`,
+      {
+        cache: "no-store",
+      },
+    );
     if (response.status === 404) return { collections: [], chapters: [] };
     if (!response.ok) {
       throw new Error(

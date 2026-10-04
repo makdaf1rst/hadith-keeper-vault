@@ -3,12 +3,7 @@ import { BookOpenText, Minus, Plus, Type, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useLanguage } from "@/lib/language";
-import {
-  SCALE_MAX,
-  SCALE_MIN,
-  SCALE_STEP,
-  type ReaderSettings,
-} from "@/lib/reader-settings";
+import { SCALE_MAX, SCALE_MIN, SCALE_STEP, type ReaderSettings } from "@/lib/reader-settings";
 
 type Props = {
   settings: ReaderSettings;
@@ -99,8 +94,12 @@ export function ReaderControls({ settings, update }: Props) {
         {settings.readerMode ? <X className="size-4" /> : <BookOpenText className="size-4" />}
         <span className="hidden sm:inline">
           {settings.readerMode
-            ? bn ? "রিডার মোড বন্ধ" : "Exit reader mode"
-            : bn ? "রিডার মোড" : "Reader mode"}
+            ? bn
+              ? "রিডার মোড বন্ধ"
+              : "Exit reader mode"
+            : bn
+              ? "রিডার মোড"
+              : "Reader mode"}
         </span>
       </Button>
     </div>

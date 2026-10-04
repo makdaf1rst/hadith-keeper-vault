@@ -22,10 +22,7 @@ export function cleanNumberedTitle(
     "i",
   );
   const hadLabeledNumber = new RegExp(String.raw`^${label}\s+(?:no\.?\s*)?\d`, "i").test(clean);
-  clean = clean.replace(
-    labeledNumber,
-    "",
-  );
+  clean = clean.replace(labeledNumber, "");
 
   // Handles one or more numeric prefixes: "1 — ..." or "1 — 1. ...".
   clean = clean.replace(new RegExp(String.raw`^(?:\d+${SEPARATOR})+`), "");
@@ -63,7 +60,7 @@ export function formatChapterTitle(
 }
 
 export function orderCollectionChapters<
-  T extends { chapter_number: number | null; sort_order: number; id: string }
+  T extends { chapter_number: number | null; sort_order: number; id: string },
 >(chapters: T[]): T[] {
   if (chapters.length < 2) return [...chapters];
 
@@ -75,13 +72,11 @@ export function orderCollectionChapters<
   if (canUseChapterNumbers) {
     return [...chapters].sort(
       (a, b) =>
-        (a.chapter_number! - b.chapter_number!) ||
-        (a.sort_order - b.sort_order) ||
+        a.chapter_number! - b.chapter_number! ||
+        a.sort_order - b.sort_order ||
         a.id.localeCompare(b.id),
     );
   }
 
-  return [...chapters].sort(
-    (a, b) => (a.sort_order - b.sort_order) || a.id.localeCompare(b.id),
-  );
+  return [...chapters].sort((a, b) => a.sort_order - b.sort_order || a.id.localeCompare(b.id));
 }

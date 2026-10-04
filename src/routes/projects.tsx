@@ -6,9 +6,15 @@ export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
       { title: "Other Projects — Al-Jāmiʿ al-Kāmil" },
-      { name: "description", content: "Other scholarly projects connected with the Al-Jāmiʿ al-Kāmil library." },
+      {
+        name: "description",
+        content: "Other scholarly projects connected with the Al-Jāmiʿ al-Kāmil library.",
+      },
       { property: "og:title", content: "Other Projects — Al-Jāmiʿ al-Kāmil" },
-      { property: "og:description", content: "Other scholarly projects connected with the Al-Jāmiʿ al-Kāmil library." },
+      {
+        property: "og:description",
+        content: "Other scholarly projects connected with the Al-Jāmiʿ al-Kāmil library.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -44,16 +50,27 @@ function ProjectsPage() {
   return (
     <main className="mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">{bn ? "অন্যান্য প্রকল্প" : "Other Projects"}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">
+          {bn ? "অন্যান্য প্রকল্প" : "Other Projects"}
+        </h1>
         <p className="mt-2 text-muted-foreground">
-          {bn ? "সংশ্লিষ্ট ইলমী কাজ ও গবেষণা প্রকল্পসমূহ।" : "Related scholarly works and research projects."}
+          {bn
+            ? "সংশ্লিষ্ট ইলমী কাজ ও গবেষণা প্রকল্পসমূহ।"
+            : "Related scholarly works and research projects."}
         </p>
       </div>
 
       <div className="space-y-6">
         {projects.map((project) => (
           <section key={project.href} className="rounded-xl border bg-card p-5 shadow-sm sm:p-6">
-            <a href={project.href} target="_blank" rel="noreferrer noopener" className="block text-2xl font-semibold leading-relaxed text-primary underline-offset-4 hover:underline" dir="rtl" lang="ar">
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="block text-2xl font-semibold leading-relaxed text-primary underline-offset-4 hover:underline"
+              dir="rtl"
+              lang="ar"
+            >
               {project.title}
             </a>
             <p className="mt-4 leading-7 text-foreground/90">{bn ? project.bn : project.en}</p>
@@ -62,7 +79,10 @@ function ProjectsPage() {
       </div>
 
       <div className="mt-8">
-        <Link to="/" className="inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+        <Link
+          to="/"
+          className="inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
           {bn ? "← গ্রন্থাগারে ফিরে যান" : "← Back to the Library"}
         </Link>
       </div>

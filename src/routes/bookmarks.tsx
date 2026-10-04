@@ -173,7 +173,9 @@ function BookmarksPage() {
                     </span>
                     {!bn ? (
                       <span className="mt-1 block space-y-0.5 text-sm text-muted-foreground">
-                        {bookmark.bookTitle ? <span className="block">{bookmark.bookTitle}</span> : null}
+                        {bookmark.bookTitle ? (
+                          <span className="block">{bookmark.bookTitle}</span>
+                        ) : null}
                         {bookmark.collectionTitle ? (
                           <span className="block">{bookmark.collectionTitle}</span>
                         ) : null}

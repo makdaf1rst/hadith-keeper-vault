@@ -36,9 +36,7 @@ import * as pagefind from "pagefind";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const contentDir = path.join(repoRoot, "public", "content");
-const defaultOutput = [".output/public", "dist"].find((d) =>
-  existsSync(path.join(repoRoot, d)),
-);
+const defaultOutput = [".output/public", "dist"].find((d) => existsSync(path.join(repoRoot, d)));
 const outputDir = path.resolve(
   process.env.OUTPUT_DIR ?? path.join(repoRoot, defaultOutput ?? ".output/public"),
 );
@@ -52,31 +50,35 @@ const ARABIC_DIACRITICS = /[ؐ-ًؚ-ٰٟۖ-ۭ]/g;
 const TATWEEL = /ـ/g;
 
 function normalizeArabic(input) {
-  return input
-    .replace(ARABIC_DIACRITICS, "")
-    .replace(TATWEEL, "")
-    .replace(/[آأإٱٲٳ]/g, "ا") // alif variants -> alif
-    .replace(/ى/g, "ي") // alif maqsura -> ya
-    .replace(/ة/g, "ه") // ta marbuta -> ha
-    .replace(/ؤ/g, "و") // waw hamza -> waw
-    .replace(/ئ/g, "ي") // ya hamza -> ya
-    .replace(/[ء]/g, "")
-    // Ignore punctuation/symbols for matching while leaving stored/displayed Arabic untouched.
-    .replace(/[\p{P}\p{S}]+/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  return (
+    input
+      .replace(ARABIC_DIACRITICS, "")
+      .replace(TATWEEL, "")
+      .replace(/[آأإٱٲٳ]/g, "ا") // alif variants -> alif
+      .replace(/ى/g, "ي") // alif maqsura -> ya
+      .replace(/ة/g, "ه") // ta marbuta -> ha
+      .replace(/ؤ/g, "و") // waw hamza -> waw
+      .replace(/ئ/g, "ي") // ya hamza -> ya
+      .replace(/[ء]/g, "")
+      // Ignore punctuation/symbols for matching while leaving stored/displayed Arabic untouched.
+      .replace(/[\p{P}\p{S}]+/gu, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
 }
 
 function normalizeEnglish(input) {
-  return input
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "") // strip Latin diacritics (Bukhārī -> Bukhari)
-    .toLowerCase()
-    // Treat apostrophe-like marks as separators so copied text aligns with the stored search index.
-    .replace(/[‘’ʻʼ'`´]/g, " ")
-    .replace(/[^a-z0-9]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  return (
+    input
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "") // strip Latin diacritics (Bukhārī -> Bukhari)
+      .toLowerCase()
+      // Treat apostrophe-like marks as separators so copied text aligns with the stored search index.
+      .replace(/[‘’ʻʼ'`´]/g, " ")
+      .replace(/[^a-z0-9]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
 }
 
 async function readJson(file) {

@@ -8,11 +8,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
-import {
-  fetchChapterContext,
-  fetchChapterNeighbours,
-  type ReadingTarget,
-} from "@/lib/library-api";
+import { fetchChapterContext, fetchChapterNeighbours, type ReadingTarget } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
 
@@ -30,11 +26,7 @@ function ReadingLink({
   className?: string;
 }) {
   return target.kind === "hadith" ? (
-    <Link
-      to="/hadith/$number"
-      params={{ number: String(target.number) }}
-      className={className}
-    >
+    <Link to="/hadith/$number" params={{ number: String(target.number) }} className={className}>
       {children}
     </Link>
   ) : (
@@ -83,24 +75,22 @@ function ChapterReadingPage() {
   });
 
   const bengaliCollection = context.data?.collection
-    ? bengaliStructure.data?.collections.find(
+    ? (bengaliStructure.data?.collections.find(
         (item) => item.id === context.data?.collection?.id,
       ) ??
       bengaliStructure.data?.collections.find(
         (item) => item.sort_order === context.data?.collection?.sort_order,
-      )
+      ))
     : null;
 
   const bengaliChapter = context.data?.chapter
-    ? bengaliStructure.data?.chapters.find(
-        (item) => item.id === context.data?.chapter?.id,
-      ) ??
+    ? (bengaliStructure.data?.chapters.find((item) => item.id === context.data?.chapter?.id) ??
       bengaliStructure.data?.chapters.find(
         (item) =>
           item.sort_order === context.data?.chapter?.sort_order &&
           (context.data?.chapter?.chapter_number == null ||
             item.chapter_number === context.data.chapter.chapter_number),
-      )
+      ))
     : null;
 
   const isIntroductionChapter =
@@ -123,10 +113,7 @@ function ChapterReadingPage() {
                 context.data.chapter.title_en,
               ),
             )
-          : formatChapterTitle(
-              context.data.chapter.chapter_number,
-              context.data.chapter.title_en,
-            )
+          : formatChapterTitle(context.data.chapter.chapter_number, context.data.chapter.title_en)
     : t.chapter;
 
   return (
@@ -194,18 +181,14 @@ function ChapterReadingPage() {
                               context.data.book.title_en,
                             ),
                         )
-                      : formatBookTitle(
-                          context.data.book.book_number,
-                          context.data.book.title_en,
-                        )}
+                      : formatBookTitle(context.data.book.book_number, context.data.book.title_en)}
                   </p>
                 ) : null}
                 {context.data.collection?.title_en ? (
                   <p className="mt-1 text-sm text-muted-foreground">
                     {contentLanguage === "bn"
                       ? toBengaliDigits(
-                          bengaliCollection?.title_bn ??
-                            context.data.collection.title_en,
+                          bengaliCollection?.title_bn ?? context.data.collection.title_en,
                         )
                       : context.data.collection.title_en}
                   </p>

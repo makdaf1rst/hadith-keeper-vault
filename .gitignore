@@ -35,3 +35,4 @@ dist-ssr
 # Local DB dumps (user data, never commit)
 _backups/
 *.backup
+.tmp-archive/

@@ -3,10 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { IntroText } from "@/components/library/IntroText";
-import {
-  fetchBengaliStructure,
-  type BengaliChapterTranslation,
-} from "@/lib/bengali-translations";
+import { fetchBengaliStructure, type BengaliChapterTranslation } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
@@ -47,7 +44,9 @@ function ChapterHadiths({ chapter }: { chapter: Chapter }) {
   }
 
   if (!hadiths.data?.length) {
-    return <p className="mt-2 text-xs text-muted-foreground">No numbered hadiths in this chapter.</p>;
+    return (
+      <p className="mt-2 text-xs text-muted-foreground">No numbered hadiths in this chapter.</p>
+    );
   }
 
   return (
@@ -86,7 +85,9 @@ function ChapterBlock({
   return (
     <li className="border-l-2 border-border pl-3">
       <p className="text-sm font-medium">{title}</p>
-      {chapter.title_ar ? <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p> : null}
+      {chapter.title_ar ? (
+        <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p>
+      ) : null}
       <IntroText
         intro={chapter}
         bengaliIntro={bengali}
@@ -160,14 +161,17 @@ function BookPage() {
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <h1 className="text-2xl font-semibold text-foreground">
                   {contentLanguage === "bn"
-                    ? getBengaliBookTitle(book.data.book_number) ?? formatBookTitle(book.data.book_number, book.data.title_en)
+                    ? (getBengaliBookTitle(book.data.book_number) ??
+                      formatBookTitle(book.data.book_number, book.data.title_en))
                     : formatBookTitle(book.data.book_number, book.data.title_en)}
                 </h1>
               </div>
               {book.data.title_ar ? <p className="arabic-text">{book.data.title_ar}</p> : null}
               <IntroText
                 intro={book.data}
-                bengaliIntro={contentLanguage === "bn" ? getBengaliBookIntro(book.data.book_number) : null}
+                bengaliIntro={
+                  contentLanguage === "bn" ? getBengaliBookIntro(book.data.book_number) : null
+                }
                 className="mt-4"
                 label={contentLanguage === "bn" ? "কিতাবের ভূমিকা" : "Book introduction"}
               />
@@ -178,13 +182,18 @@ function BookPage() {
                 bengaliCollections.get(collection.id) ??
                 bengaliCollections.get(`sort:${collection.sort_order}`);
               return (
-                <section key={collection.id} className="rounded-lg border border-border bg-card p-5">
+                <section
+                  key={collection.id}
+                  className="rounded-lg border border-border bg-card p-5"
+                >
                   <h2 className="text-lg font-semibold">
                     {contentLanguage === "bn" && bengaliCollection?.title_bn
                       ? bengaliCollection.title_bn
-                      : collection.title_en ?? "Collection"}
+                      : (collection.title_en ?? "Collection")}
                   </h2>
-                  {collection.title_ar ? <p className="arabic-text">{collection.title_ar}</p> : null}
+                  {collection.title_ar ? (
+                    <p className="arabic-text">{collection.title_ar}</p>
+                  ) : null}
                   <IntroText
                     intro={collection}
                     bengaliIntro={bengaliCollection}
@@ -193,7 +202,9 @@ function BookPage() {
                   />
                   <ul className="mt-3 space-y-3">
                     {orderCollectionChapters(
-                      (chapters.data ?? []).filter((chapter) => chapter.collection_id === collection.id),
+                      (chapters.data ?? []).filter(
+                        (chapter) => chapter.collection_id === collection.id,
+                      ),
                     ).map((chapter) => (
                       <ChapterBlock
                         key={chapter.id}
@@ -211,7 +222,9 @@ function BookPage() {
 
             {(chapters.data ?? []).some((chapter) => !chapter.collection_id) ? (
               <section className="rounded-lg border border-border bg-card p-5">
-                <h2 className="text-lg font-semibold">{contentLanguage === "bn" ? "অধ্যায়সমূহ" : "Chapters"}</h2>
+                <h2 className="text-lg font-semibold">
+                  {contentLanguage === "bn" ? "অধ্যায়সমূহ" : "Chapters"}
+                </h2>
                 <ul className="mt-3 space-y-3">
                   {(chapters.data ?? [])
                     .filter((chapter) => !chapter.collection_id)

@@ -99,7 +99,9 @@ const intros: Record<number, string> = {
   66: `কিয়ামতের দিনের বিবরণ সম্পর্কে যা বর্ণিত হয়েছে তার সংকলন।`,
 };
 
-export function getBengaliBookIntro(bookNumber: number | null | undefined): BengaliBookIntro | null {
+export function getBengaliBookIntro(
+  bookNumber: number | null | undefined,
+): BengaliBookIntro | null {
   if (!bookNumber) return null;
   const value = intros[bookNumber];
   if (!value) return null;

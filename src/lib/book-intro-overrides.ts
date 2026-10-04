@@ -13,7 +13,8 @@ type BookIntroDisplayOverride = {
 export const bookIntroDisplayOverrides: Record<number, BookIntroDisplayOverride> = {
   9: {
     intro_ar_display: "جموع ما جاء في وجوب الصالة وفضلها",
-    intro_en_display: "A collection of what has been reported about the obligation of prayer and its virtue",
+    intro_en_display:
+      "A collection of what has been reported about the obligation of prayer and its virtue",
   },
   13: {
     intro_ar_display: "جموع أبواب الصبر على االبتالء والمرض",
@@ -27,7 +28,8 @@ export const bookIntroDisplayOverrides: Record<number, BookIntroDisplayOverride>
   },
   15: {
     intro_ar_display: "جموع ما جاء في وجوب الصيام وفضله وأحكامه",
-    intro_en_display: "Collected sections on the obligation of fasting, its virtue, and its rulings",
+    intro_en_display:
+      "Collected sections on the obligation of fasting, its virtue, and its rulings",
   },
   16: {
     intro_ar_display: "جموع أبواب ما جاء في وجوب الحّج وفضله وشروطه",
@@ -35,7 +37,8 @@ export const bookIntroDisplayOverrides: Record<number, BookIntroDisplayOverride>
   },
   24: {
     intro_ar_display: "جموع أبواب ما جاء في النكاح وشروطه",
-    intro_en_display: "Collected chapters on what has been reported regarding marriage and its conditions",
+    intro_en_display:
+      "Collected chapters on what has been reported regarding marriage and its conditions",
   },
   31: {
     intro_ar_display: "جموع ما جاء في أدب القاضي",
@@ -59,7 +62,8 @@ export const bookIntroDisplayOverrides: Record<number, BookIntroDisplayOverride>
   },
   43: {
     intro_ar_display: "جموع ما ج اء في فضائل الجهاد",
-    intro_en_display: "Collection of Chapters Concerning the Virtues of Striving in the Path of God",
+    intro_en_display:
+      "Collection of Chapters Concerning the Virtues of Striving in the Path of God",
   },
   47: {
     intro_ar_display: "جموع أخبار آدم عليه السالم",
@@ -71,7 +75,8 @@ export const bookIntroDisplayOverrides: Record<number, BookIntroDisplayOverride>
   },
   52: {
     intro_ar_display: "مجموع ما جاء في فضائل مكة والمدينة مًعا",
-    intro_en_display: "Collection of Narrations Concerning the Virtues of Makkah and Madinah Together",
+    intro_en_display:
+      "Collection of Narrations Concerning the Virtues of Makkah and Madinah Together",
   },
   53: {
     intro_ar_display: "مجموع ما جاء في فضائل الشهور",
@@ -95,7 +100,8 @@ export const bookIntroDisplayOverrides: Record<number, BookIntroDisplayOverride>
   },
   63: {
     intro_ar_display: "جموع ما جاء في أنواع اللباس وألوانه",
-    intro_en_display: "Collection of What Has Been Narrated Concerning Types and Colors of Clothing",
+    intro_en_display:
+      "Collection of What Has Been Narrated Concerning Types and Colors of Clothing",
   },
   65: {
     intro_ar_display: "جموع ما جاء في الفتن",

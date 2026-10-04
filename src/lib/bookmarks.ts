@@ -110,7 +110,11 @@ export function useBookmarks() {
     }
 
     const backup = input as Partial<BookmarkBackup>;
-    if (backup.app !== "al-jami-al-kamil" || backup.version !== 1 || !Array.isArray(backup.bookmarks)) {
+    if (
+      backup.app !== "al-jami-al-kamil" ||
+      backup.version !== 1 ||
+      !Array.isArray(backup.bookmarks)
+    ) {
       throw new Error("This is not a valid Al-Jāmiʿ al-Kāmil bookmark backup.");
     }
 

@@ -86,7 +86,11 @@ function remainder(full: string | null, parts: (string | null)[]) {
   return rest.trim().length > 0 ? rest.trim() : null;
 }
 
-function hadithBlock(h: HadithFull, lang: ExportLang, bengali?: BengaliExportData | null): ExportBlock {
+function hadithBlock(
+  h: HadithFull,
+  lang: ExportLang,
+  bengali?: BengaliExportData | null,
+): ExportBlock {
   const ar = pick(h.arabic_display, h.arabic_source);
   if (lang === "bn") {
     const bn = pick(bengali?.hadiths[String(h.hadith_number)]?.text, null);
@@ -108,9 +112,7 @@ function byOrder<T extends { sort_order: number }>(rows: T[]) {
 }
 
 function hadithOrder(rows: HadithFull[]) {
-  return [...rows].sort(
-    (a, b) => a.sort_order - b.sort_order || a.hadith_number - b.hadith_number,
-  );
+  return [...rows].sort((a, b) => a.sort_order - b.sort_order || a.hadith_number - b.hadith_number);
 }
 
 export function buildKitabExport(
@@ -121,11 +123,21 @@ export function buildKitabExport(
   options: ExportOptions = {},
 ): KitabExport {
   const lang = options.lang ?? "en";
-  const bengali = lang === "bn" ? options.bengali ?? null : null;
+  const bengali = lang === "bn" ? (options.bengali ?? null) : null;
   const L =
     lang === "bn"
-      ? { kitabIntro: "কিতাবের ভূমিকা", collIntro: "মাজমূ‘-এর ভূমিকা", babIntro: "বাবের ভূমিকা", bab: "বাব" }
-      : { kitabIntro: "Kitāb introduction", collIntro: "Majmūʿ introduction", babIntro: "Bāb introduction", bab: "Bāb" };
+      ? {
+          kitabIntro: "কিতাবের ভূমিকা",
+          collIntro: "মাজমূ‘-এর ভূমিকা",
+          babIntro: "বাবের ভূমিকা",
+          bab: "বাব",
+        }
+      : {
+          kitabIntro: "Kitāb introduction",
+          collIntro: "Majmūʿ introduction",
+          babIntro: "Bāb introduction",
+          bab: "Bāb",
+        };
 
   const blocks: ExportBlock[] = [];
   const toc: TocEntry[] = [];
@@ -133,13 +145,13 @@ export function buildKitabExport(
     (lang === "bn" ? bengali?.bookTitle : null) ??
     (formatBookTitle(book.book_number, book.title_en) || `Book ${book.book_number}`);
   const only = options.collectionId
-    ? collections.find((c) => c.id === options.collectionId) ?? null
+    ? (collections.find((c) => c.id === options.collectionId) ?? null)
     : null;
   const onlyTitle = only
-    ? (lang === "bn" ? pick(bengali?.collections.get(only.id)?.title_bn, null) : null) ??
+    ? ((lang === "bn" ? pick(bengali?.collections.get(only.id)?.title_bn, null) : null) ??
       only.title_en ??
       only.title_ar ??
-      ""
+      "")
     : null;
   const title = only ? `${bookTitle} — ${onlyTitle}` : bookTitle;
 
@@ -170,9 +182,19 @@ export function buildKitabExport(
   };
 
   const pushCollection = (collection: Collection) => {
-    const bnTitle = lang === "bn" ? pick(bengali?.collections.get(collection.id)?.title_bn, null) : null;
-    blocks.push({ kind: "collection", en: bnTitle ?? collection.title_en, ar: collection.title_ar });
-    const intro = introBlock(collection, L.collIntro, bengali?.collections.get(collection.id), lang);
+    const bnTitle =
+      lang === "bn" ? pick(bengali?.collections.get(collection.id)?.title_bn, null) : null;
+    blocks.push({
+      kind: "collection",
+      en: bnTitle ?? collection.title_en,
+      ar: collection.title_ar,
+    });
+    const intro = introBlock(
+      collection,
+      L.collIntro,
+      bengali?.collections.get(collection.id),
+      lang,
+    );
     if (intro) blocks.push(intro);
     const own = orderCollectionChapters(chapters.filter((c) => c.collection_id === collection.id));
     for (const chapter of own) pushChapter(chapter);
@@ -185,20 +207,27 @@ export function buildKitabExport(
   };
 
   const onlyChapter = options.chapterId
-    ? chapters.find((c) => c.id === options.chapterId) ?? null
+    ? (chapters.find((c) => c.id === options.chapterId) ?? null)
     : null;
 
   if (onlyChapter) {
     const parent = onlyChapter.collection_id
-      ? collections.find((c) => c.id === onlyChapter.collection_id) ?? null
+      ? (collections.find((c) => c.id === onlyChapter.collection_id) ?? null)
       : null;
     if (parent) {
-      const bnTitle = lang === "bn" ? pick(bengali?.collections.get(parent.id)?.title_bn, null) : null;
+      const bnTitle =
+        lang === "bn" ? pick(bengali?.collections.get(parent.id)?.title_bn, null) : null;
       blocks.push({ kind: "collection", en: bnTitle ?? parent.title_en, ar: parent.title_ar });
     }
     pushChapter(onlyChapter);
     const chapterLabel = toc[toc.length - 1]?.label ?? L.bab;
-    return { title: `${bookTitle} — ${chapterLabel}`, titleAr: book.title_ar, lang, toc: [], blocks };
+    return {
+      title: `${bookTitle} — ${chapterLabel}`,
+      titleAr: book.title_ar,
+      lang,
+      toc: [],
+      blocks,
+    };
   }
 
   if (only) {
@@ -257,7 +286,12 @@ export function buildKitabTxt(model: KitabExport) {
     lines.push("");
   }
 
-  return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
+  return (
+    lines
+      .join("\n")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim() + "\n"
+  );
 }
 
 export async function downloadKitabTxt(model: KitabExport, fileName: string) {

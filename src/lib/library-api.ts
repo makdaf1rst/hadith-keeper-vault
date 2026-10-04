@@ -146,9 +146,10 @@ function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
       const hadiths = (await fetchContent(`book-${bookNumber}/hadiths.json`)) as HadithFull[];
 
       try {
-        const overrides = (await fetchContent(
-          `book-${bookNumber}/qc-overrides.json`,
-        )) as Record<string, Partial<HadithFull> & { hadith_number: number }>;
+        const overrides = (await fetchContent(`book-${bookNumber}/qc-overrides.json`)) as Record<
+          string,
+          Partial<HadithFull> & { hadith_number: number }
+        >;
 
         return hadiths.map((hadith) => {
           const override = overrides[String(hadith.hadith_number)];
@@ -351,11 +352,7 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     // Only insert the chapter when its structural neighbours agree with the
     // numbered hadith reading order. This prevents unrelated collection-only
     // chapters from being dumped at the start of a book (notably Book 48).
-    if (
-      previousNumber !== null &&
-      nextNumber !== null &&
-      previousNumber < nextNumber
-    ) {
+    if (previousNumber !== null && nextNumber !== null && previousNumber < nextNumber) {
       const list = stopsAfter.get(previousNumber) ?? [];
       list.push(chapter);
       stopsAfter.set(previousNumber, list);
@@ -418,7 +415,10 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     const before = stopsBefore.get(hadith.hadith_number);
     if (before?.length) {
       before
-        .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
+        .sort(
+          (a, b) =>
+            a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0),
+        )
         .forEach(pushChapter);
     }
 
@@ -431,7 +431,10 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     const after = stopsAfter.get(hadith.hadith_number);
     if (after?.length) {
       after
-        .sort((a, b) => a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0))
+        .sort(
+          (a, b) =>
+            a.sort_order - b.sort_order || (a.chapter_number ?? 0) - (b.chapter_number ?? 0),
+        )
         .forEach(pushChapter);
     }
   }
@@ -498,7 +501,6 @@ export async function fetchNeighbours(hadithNumber: number) {
   return adjacentAcrossBooks(result.bookNumber, result.sequence, result.position);
 }
 
-
 export async function fetchChapterContext(chapterId: string) {
   const bookNumber = await bookNumberForHeadingId(chapterId);
   if (bookNumber === null) return null;
@@ -520,9 +522,7 @@ export async function fetchChapterNeighbours(chapterId: string) {
   if (bookNumber === null) return { previous: null, next: null };
 
   const sequence = await readingSequenceForBook(bookNumber);
-  const position = sequence.findIndex(
-    (item) => item.kind === "chapter" && item.id === chapterId,
-  );
+  const position = sequence.findIndex((item) => item.kind === "chapter" && item.id === chapterId);
   if (position < 0) return { previous: null, next: null };
 
   return adjacentAcrossBooks(bookNumber, sequence, position);

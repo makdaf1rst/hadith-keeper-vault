@@ -139,10 +139,7 @@ export function SearchPanel() {
     return /^\d{1,5}$/.test(trimmed) ? Number(trimmed) : null;
   }, [query]);
 
-  const bookById = useMemo(
-    () => new Map((books.data ?? []).map((b) => [b.id, b])),
-    [books.data],
-  );
+  const bookById = useMemo(() => new Map((books.data ?? []).map((b) => [b.id, b])), [books.data]);
 
   const filtersActive =
     bookId !== ALL || collectionId !== ALL || chapterId !== ALL || language !== "all";
@@ -236,10 +233,8 @@ export function SearchPanel() {
             <SelectItem value={ALL}>{t.allChapters}</SelectItem>
             {(chapters.data ?? []).map((chapter) => (
               <SelectItem key={chapter.id} value={chapter.id}>
-                {formatChapterTitle(
-                  chapter.chapter_number,
-                  chapter.title_en ?? chapter.title_ar,
-                ) || "Chapter"}
+                {formatChapterTitle(chapter.chapter_number, chapter.title_en ?? chapter.title_ar) ||
+                  "Chapter"}
               </SelectItem>
             ))}
           </SelectContent>
@@ -280,7 +275,9 @@ export function SearchPanel() {
           onClick={() => setAdvancedOpen((open) => !open)}
         >
           <SlidersHorizontal /> {bn ? "উন্নত অনুসন্ধান" : "Advanced search"}
-          <ChevronDown className={advancedOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+          <ChevronDown
+            className={advancedOpen ? "rotate-180 transition-transform" : "transition-transform"}
+          />
         </Button>
       </div>
 
@@ -382,7 +379,7 @@ export function SearchPanel() {
                   <span>
                     {hit.kind === "chapter"
                       ? formatChapterTitle(hit.chapterNumber, hit.title_en ?? hit.title_ar)
-                      : hit.title_en ?? hit.title_ar}
+                      : (hit.title_en ?? hit.title_ar)}
                   </span>
                 )}
                 {hit.title_ar && hit.title_en ? (
@@ -398,14 +395,12 @@ export function SearchPanel() {
 
       {query || rangeOnly ? (
         <div className="space-y-3">
-          {results.isLoading ? <p className="text-sm text-muted-foreground">{t.searching}</p> : null}
-          {results.error ? (
-            <p className="text-sm text-destructive">{t.searchFailed}</p>
+          {results.isLoading ? (
+            <p className="text-sm text-muted-foreground">{t.searching}</p>
           ) : null}
+          {results.error ? <p className="text-sm text-destructive">{t.searchFailed}</p> : null}
           {results.data && results.data.length === 0 && !results.isLoading ? (
-            <p className="text-sm text-muted-foreground">
-              {t.noSearchMatch}
-            </p>
+            <p className="text-sm text-muted-foreground">{t.noSearchMatch}</p>
           ) : null}
           {results.data?.map((result) => {
             const book = result.book_id ? bookById.get(result.book_id) : undefined;
@@ -417,7 +412,9 @@ export function SearchPanel() {
                 className="block rounded-md border border-border bg-card px-4 py-3 transition-colors hover:border-primary"
               >
                 <div className="flex flex-wrap items-baseline gap-2">
-                  <span className="font-semibold text-primary">{t.hadith} {result.hadith_number}</span>
+                  <span className="font-semibold text-primary">
+                    {t.hadith} {result.hadith_number}
+                  </span>
                   {book ? (
                     <span className="text-xs text-muted-foreground">
                       {formatBookTitle(book.book_number, book.title_en ?? book.title_ar)}

@@ -129,7 +129,12 @@ export async function hadithsInRange(
 }
 
 function normalizeBengali(value: string) {
-  return value.normalize("NFC").toLowerCase().replace(/[\p{P}\p{S}]+/gu, " ").replace(/\s+/g, " ").trim();
+  return value
+    .normalize("NFC")
+    .toLowerCase()
+    .replace(/[\p{P}\p{S}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /** Searches the existing Bengali translation file of one Kitāb. */
@@ -163,7 +168,6 @@ export async function searchBengaliInBook(
   }
   return out.sort((a, b) => a.hadith_number - b.hadith_number);
 }
-
 
 function containsBengali(value: string) {
   return /[\u0980-\u09FF]/.test(value);
@@ -303,9 +307,7 @@ async function searchBengaliRememberedWords(
     .flat()
     .filter((result) => (result.match_score ?? 0) >= minimum)
     .sort(
-      (a, b) =>
-        (b.match_score ?? 0) - (a.match_score ?? 0) ||
-        a.hadith_number - b.hadith_number,
+      (a, b) => (b.match_score ?? 0) - (a.match_score ?? 0) || a.hadith_number - b.hadith_number,
     )
     .slice(0, 200);
 }

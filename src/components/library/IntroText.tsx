@@ -4,10 +4,13 @@ import { useLanguage } from "@/lib/language";
 
 type Props = {
   intro: (Partial<Intro> & { book_number?: number | null }) | null | undefined;
-  bengaliIntro?: {
-    intro_bn_source?: string | null;
-    intro_bn_display?: string | null;
-  } | null | undefined;
+  bengaliIntro?:
+    | {
+        intro_bn_source?: string | null;
+        intro_bn_display?: string | null;
+      }
+    | null
+    | undefined;
   label?: string;
   className?: string;
 };
@@ -33,9 +36,7 @@ export function IntroText({ intro, bengaliIntro, label = "Introduction", classNa
 
   return (
     <section
-      className={
-        "rounded-md border border-border bg-parchment px-4 py-3 " + (className ?? "")
-      }
+      className={"rounded-md border border-border bg-parchment px-4 py-3 " + (className ?? "")}
     >
       <p className="mb-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
         {label}
@@ -45,7 +46,11 @@ export function IntroText({ intro, bengaliIntro, label = "Introduction", classNa
       {translation ? (
         <div
           lang={contentLanguage === "bn" ? "bn" : "en"}
-          className={contentLanguage === "bn" ? "whitespace-pre-line text-foreground leading-8" : "english-text text-foreground"}
+          className={
+            contentLanguage === "bn"
+              ? "whitespace-pre-line text-foreground leading-8"
+              : "english-text text-foreground"
+          }
         >
           {translation}
         </div>

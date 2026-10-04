@@ -32,8 +32,11 @@ export function ContinueReading() {
         {latest ? (
           <p className="truncate text-sm text-foreground">
             {bn ? "হাদিস" : "Hadith"} {num(latest.number)}
-            {latest.chapterTitle ?? latest.bookTitle ? (
-              <span className="text-muted-foreground"> · {latest.chapterTitle ?? latest.bookTitle}</span>
+            {(latest.chapterTitle ?? latest.bookTitle) ? (
+              <span className="text-muted-foreground">
+                {" "}
+                · {latest.chapterTitle ?? latest.bookTitle}
+              </span>
             ) : null}
           </p>
         ) : (
@@ -64,32 +67,32 @@ export function ContinueReading() {
             <DialogHeader>
               <DialogTitle>{bn ? "সম্প্রতি দেখা হাদিস" : "Recently viewed"}</DialogTitle>
               <DialogDescription>
-                {bn
-                  ? "শুধু এই ডিভাইসে সংরক্ষিত।"
-                  : "Saved on this device only."}
+                {bn ? "শুধু এই ডিভাইসে সংরক্ষিত।" : "Saved on this device only."}
               </DialogDescription>
             </DialogHeader>
             {history.length ? (
               <ul className="space-y-2">
                 {history.map((entry) => (
                   <li key={entry.number}>
-                  <Link
-                    to="/hadith/$number"
-                    params={{ number: String(entry.number) }}
-                    className="block rounded-md border border-border bg-card px-3 py-2 text-sm transition-colors hover:border-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                  >
-                    <span className="font-semibold text-primary">
-                      {bn ? "হাদিস" : "Hadith"} {num(entry.number)}
-                    </span>
-                    {entry.bookTitle ? (
-                      <span className="block text-xs text-muted-foreground">{entry.bookTitle}</span>
-                    ) : null}
-                    {entry.chapterTitle ? (
-                      <span className="block truncate text-xs text-muted-foreground">
-                        {entry.chapterTitle}
+                    <Link
+                      to="/hadith/$number"
+                      params={{ number: String(entry.number) }}
+                      className="block rounded-md border border-border bg-card px-3 py-2 text-sm transition-colors hover:border-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                    >
+                      <span className="font-semibold text-primary">
+                        {bn ? "হাদিস" : "Hadith"} {num(entry.number)}
                       </span>
-                    ) : null}
-                  </Link>
+                      {entry.bookTitle ? (
+                        <span className="block text-xs text-muted-foreground">
+                          {entry.bookTitle}
+                        </span>
+                      ) : null}
+                      {entry.chapterTitle ? (
+                        <span className="block truncate text-xs text-muted-foreground">
+                          {entry.chapterTitle}
+                        </span>
+                      ) : null}
+                    </Link>
                   </li>
                 ))}
               </ul>
