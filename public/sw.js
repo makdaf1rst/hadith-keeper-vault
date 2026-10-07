@@ -8,7 +8,7 @@
  * Never cached: /auth and /admin routes, /api, anything non-GET, /auth/v1.
  */
 
-const VERSION = "v1";
+const VERSION = "v2";
 const PAGES = `jk-pages-${VERSION}`;
 const ASSETS = `jk-assets-${VERSION}`;
 const DATA = `jk-data-${VERSION}`;
