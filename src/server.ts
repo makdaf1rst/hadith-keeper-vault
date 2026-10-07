@@ -46,6 +46,16 @@ function isH3SwallowedErrorBody(body: string): boolean {
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const url = new URL(request.url);
+    const isWww = url.hostname === "www.jami-al-kamil.com";
+    const isHttp = url.protocol === "http:";
+
+    if (isWww || isHttp) {
+      url.protocol = "https:";
+      url.hostname = "jami-al-kamil.com";
+      return Response.redirect(url.toString(), 301);
+    }
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
