@@ -154,12 +154,21 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
   const arabic = showExactSource
     ? hadith.arabic_source
     : text(hadith.arabic_display, hadith.arabic_source);
-  const english = showExactSource
+  const englishRaw = showExactSource
     ? hadith.english_source
     : text(hadith.english_display, hadith.english_source);
-  const full = showExactSource
+  const fullRaw = showExactSource
     ? hadith.full_source_content
     : text(hadith.full_display_content, hadith.full_source_content);
+  const correctHadith16273 = (value: string | null) =>
+    hadith.hadith_number === 16273 && value
+      ? value.replace(
+          "Yes. By the One in whose hand is my soul,",
+          "No. By the One in whose hand is my soul,",
+        )
+      : value;
+  const english = correctHadith16273(englishRaw);
+  const full = correctHadith16273(fullRaw);
   const extra = remainder(full, [arabic, english]);
   const selectedTranslation = contentLanguage === "bn" ? (bengali.data?.text ?? null) : english;
   const displayedTranslation =
