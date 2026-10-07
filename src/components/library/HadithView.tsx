@@ -1,4 +1,4 @@
-// Deployment sync marker: hadith share and error-report actions
+// Deployment sync marker: hadith share, error-report, and 16273 correction
 import { useQuery } from "@tanstack/react-query";
 import { CircleAlert, Copy, Share2 } from "lucide-react";
 import { toast } from "sonner";
