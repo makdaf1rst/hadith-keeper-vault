@@ -1,0 +1,40 @@
+name: Fix Hadith 16273 translation
+
+on:
+  push:
+    branches:
+      - feature/bengali-language
+    paths:
+      - ".github/workflows/fix-hadith-16273.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/bengali-language
+      - name: Correct Yes to No in Hadith 16273
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("public/content/book-66/hadiths.json")
+          s = p.read_text(encoding="utf-8")
+          old = "“Yes. By the One in whose hand is my soul,"
+          new = "“No. By the One in whose hand is my soul,"
+          count = s.count(old)
+          if count != 1:
+              raise SystemExit(f"Expected exactly one target phrase, found {count}")
+          s = s.replace(old, new, 1)
+          p.write_text(s, encoding="utf-8")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/content/book-66/hadiths.json
+          git commit -m "Fix Hadith 16273 response translation"
+          git push origin HEAD:feature/bengali-language
