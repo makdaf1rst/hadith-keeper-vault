@@ -134,11 +134,30 @@ function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
   return cached;
 }
 
+function applyKnownHadithTextCorrections(hadith: HadithFull): HadithFull {
+  if (hadith.hadith_number !== 16273) return hadith;
+
+  const correctResponse = (value: string | null) =>
+    value?.replace(
+      "“Yes. By the One in whose hand is my soul,",
+      "“No. By the One in whose hand is my soul,",
+    ) ?? null;
+
+  return {
+    ...hadith,
+    english_source: correctResponse(hadith.english_source),
+    english_display: correctResponse(hadith.english_display),
+    full_source_content: correctResponse(hadith.full_source_content),
+    full_display_content: correctResponse(hadith.full_display_content),
+  };
+}
+
 /** Every hadith of one book, from its static per-book file. */
 function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
   let cached = bookHadithsCache.get(bookNumber);
   if (!cached) {
-    cached = fetchContent(`book-${bookNumber}/hadiths.json`) as Promise<HadithFull[]>;
+    cached = (fetchContent(`book-${bookNumber}/hadiths.json`) as Promise<HadithFull[]>)
+      .then((hadiths) => hadiths.map(applyKnownHadithTextCorrections));
     bookHadithsCache.set(bookNumber, cached);
   }
   return cached;
