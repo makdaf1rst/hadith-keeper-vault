@@ -278,16 +278,6 @@ function Index() {
       ];
 
   useEffect(() => {
-    try {
-      if (!window.localStorage.getItem("jami-al-kamil-website-guide-seen-v1")) {
-        setGuideOpen(true);
-      }
-    } catch {
-      // The guide still remains available from Library Menu.
-    }
-  }, []);
-
-  useEffect(() => {
     if (tourStep === null) return;
     const target = tourSteps[tourStep]?.target;
     if (!target) return;
