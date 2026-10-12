@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { IntroText } from "@/components/library/IntroText";
+import { ReaderSubBar, subBarBack } from "@/components/library/ReaderSubBar";
 import { fetchBengaliStructure, type BengaliChapterTranslation } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
@@ -140,7 +141,17 @@ function BookPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-parchment">
+      <ReaderSubBar
+        left={
+          <Link to="/" className={subBarBack}>
+            <ArrowLeft className="size-4 shrink-0" />
+            {contentLanguage === "bn" ? "লাইব্রেরি" : "Library"}
+          </Link>
+        }
+        title={contentLanguage === "bn" ? "কিতাব" : "Book"}
+        {...(Number.isFinite(bookNumber) ? { progress: bookNumber / 66 } : {})}
+      />
+      <header className="hidden border-b border-border bg-parchment [.app_&]:block">
         <div className="mx-auto max-w-4xl px-4 py-4 sm:px-6">
           <Link
             to="/"
@@ -184,7 +195,7 @@ function BookPage() {
               return (
                 <section
                   key={collection.id}
-                  className="rounded-lg border border-border bg-card p-5"
+                  className="rounded-lg border border-border bg-card p-5 web:rounded-2xl"
                 >
                   <h2 className="text-lg font-semibold">
                     {contentLanguage === "bn" && bengaliCollection?.title_bn
@@ -221,7 +232,7 @@ function BookPage() {
             })}
 
             {(chapters.data ?? []).some((chapter) => !chapter.collection_id) ? (
-              <section className="rounded-lg border border-border bg-card p-5">
+              <section className="rounded-lg border border-border bg-card p-5 web:rounded-2xl">
                 <h2 className="text-lg font-semibold">
                   {contentLanguage === "bn" ? "অধ্যায়সমূহ" : "Chapters"}
                 </h2>

@@ -57,11 +57,11 @@ function preview(value: string | null, term: string) {
   return (start > 0 ? "… " : "") + slice + (flat.length > start + 260 ? " …" : "");
 }
 
-export function SearchPanel() {
+export function SearchPanel({ initialQuery }: { initialQuery?: string | undefined } = {}) {
   const navigate = useNavigate();
   const t = useInterfaceText();
-  const [input, setInput] = useState("");
-  const [query, setQuery] = useState("");
+  const [input, setInput] = useState(initialQuery ?? "");
+  const [query, setQuery] = useState(initialQuery ?? "");
   const [bookId, setBookId] = useState<string>(ALL);
   const [collectionId, setCollectionId] = useState<string>(ALL);
   const [chapterId, setChapterId] = useState<string>(ALL);
@@ -178,7 +178,7 @@ export function SearchPanel() {
     ).length;
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-4 web:space-y-6 web:font-sans">
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -187,24 +187,24 @@ export function SearchPanel() {
         className="flex flex-col gap-2 sm:flex-row [.app_&]:flex-row"
       >
         <div className="relative flex-1">
-          <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
+          <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground web:left-5 web:size-5" />
           <Input
             value={input}
             onChange={(event) => setInput(event.target.value)}
             placeholder={t.searchPlaceholder}
             aria-label={t.searchAria}
             enterKeyHint="search"
-            className="h-11 bg-card pl-9 text-base [.app_&]:rounded-full"
+            className="h-11 bg-card pl-9 text-base [.app_&]:rounded-full web:h-14 web:rounded-full web:pl-13 web:font-sans web:shadow-sm"
           />
         </div>
-        <Button type="submit" className="h-11 px-6 [.app_&]:hidden">
+        <Button type="submit" className="h-11 px-6 [.app_&]:hidden web:h-14 web:rounded-full web:px-7">
           {t.search}
         </Button>
         {query ? (
           <Button
             type="button"
             variant="ghost"
-            className="h-11 [.app_&]:px-3"
+            className="h-11 [.app_&]:px-3 web:h-14 web:rounded-full"
             aria-label={t.clear}
             onClick={() => {
               setInput("");
@@ -232,7 +232,7 @@ export function SearchPanel() {
       </form>
 
       {!query && !rangeOnly ? (
-        <div className="hidden space-y-5 font-sans [.app_&]:block">
+        <div className="space-y-5 font-sans">
           {recent.length ? (
             <div>
               <div className="mb-2 flex items-center justify-between px-1">
@@ -260,7 +260,7 @@ export function SearchPanel() {
                     <button
                       type="button"
                       onClick={() => runSearch(term)}
-                      className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] hover:bg-accent"
+                      className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] hover:bg-accent focus-visible:bg-accent focus-visible:outline-none"
                     >
                       <History className="size-4 text-muted-foreground" aria-hidden />
                       {term}
@@ -280,7 +280,7 @@ export function SearchPanel() {
                   key={term}
                   type="button"
                   onClick={() => runSearch(term)}
-                  className="rounded-full border border-border bg-card px-4 py-2 text-sm hover:bg-accent"
+                  className="rounded-full border border-border bg-card px-4 py-2 text-sm transition-colors hover:border-primary/50 hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                 >
                   {term}
                 </button>
@@ -301,7 +301,7 @@ export function SearchPanel() {
             setChapterId(ALL);
           }}
         >
-          <SelectTrigger className="w-56 bg-card">
+          <SelectTrigger className="w-56 bg-card web:h-9 web:rounded-full">
             <SelectValue placeholder={t.allBooks} />
           </SelectTrigger>
           <SelectContent>
@@ -319,7 +319,7 @@ export function SearchPanel() {
           onValueChange={setCollectionId}
           disabled={bookId === ALL || !(collections.data ?? []).length}
         >
-          <SelectTrigger className="w-56 bg-card">
+          <SelectTrigger className="w-56 bg-card web:h-9 web:rounded-full">
             <SelectValue placeholder={t.allCollections} />
           </SelectTrigger>
           <SelectContent>
@@ -337,7 +337,7 @@ export function SearchPanel() {
           onValueChange={setChapterId}
           disabled={bookId === ALL || !(chapters.data ?? []).length}
         >
-          <SelectTrigger className="w-56 bg-card">
+          <SelectTrigger className="w-56 bg-card web:h-9 web:rounded-full">
             <SelectValue placeholder={t.allChapters} />
           </SelectTrigger>
           <SelectContent>
@@ -352,7 +352,7 @@ export function SearchPanel() {
         </Select>
 
         <Select value={language} onValueChange={(value) => setLanguage(value as typeof language)}>
-          <SelectTrigger className="w-40 bg-card">
+          <SelectTrigger className="w-40 bg-card web:h-9 web:rounded-full">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -381,6 +381,7 @@ export function SearchPanel() {
           type="button"
           variant={advancedOpen ? "secondary" : "outline"}
           size="sm"
+          className="web:h-9 web:rounded-full"
           aria-expanded={advancedOpen}
           aria-controls="advanced-search-panel"
           onClick={() => setAdvancedOpen((open) => !open)}
@@ -395,7 +396,7 @@ export function SearchPanel() {
       {advancedOpen ? (
         <div
           id="advanced-search-panel"
-          className="grid gap-3 rounded-md border border-border bg-card p-4 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-3 rounded-md border border-border bg-card p-4 sm:grid-cols-2 lg:grid-cols-4 web:rounded-2xl"
         >
           <fieldset className="space-y-1">
             <legend className="text-xs font-semibold text-muted-foreground">
@@ -458,7 +459,7 @@ export function SearchPanel() {
       ) : null}
 
       {numeric ? (
-        <div className="rounded-md border border-gold/50 bg-accent/40 px-4 py-3">
+        <div className="rounded-md border border-gold/50 bg-accent/40 px-4 py-3 web:rounded-2xl">
           <button
             type="button"
             onClick={() => navigate({ to: "/hadith/$number", params: { number: String(numeric) } })}
@@ -470,7 +471,7 @@ export function SearchPanel() {
       ) : null}
 
       {!advancedOpen && query && headings.data?.length ? (
-        <div className="rounded-md border border-border bg-card px-4 py-3">
+        <div className="rounded-md border border-border bg-card px-4 py-3 web:rounded-2xl web:px-5">
           <h3 className="mb-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
             {t.matchingHeadings}
           </h3>
@@ -505,7 +506,7 @@ export function SearchPanel() {
       ) : null}
 
       {query || rangeOnly ? (
-        <div className="space-y-3">
+        <div className="space-y-3 web:space-y-0 web:divide-y web:divide-border web:border-t">
           {results.isLoading ? (
             <p className="text-sm text-muted-foreground">{t.searching}</p>
           ) : null}
@@ -520,7 +521,7 @@ export function SearchPanel() {
                 key={result.id}
                 to="/hadith/$number"
                 params={{ number: String(result.hadith_number) }}
-                className="block rounded-md border border-border bg-card px-4 py-3 transition-colors hover:border-primary"
+                className="block rounded-md border border-border bg-card px-4 py-3 transition-colors hover:border-primary web:rounded-none web:border-0 web:bg-transparent web:px-2 web:py-5 web:hover:bg-accent/50"
               >
                 <div className="flex flex-wrap items-baseline gap-2">
                   <span className="font-semibold text-primary">

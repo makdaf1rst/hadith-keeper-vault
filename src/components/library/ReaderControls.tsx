@@ -10,7 +10,7 @@ type Props = {
   update: (patch: Partial<ReaderSettings>) => void;
 };
 
-function Stepper({
+export function Stepper({
   label,
   value,
   onChange,
@@ -59,7 +59,7 @@ export function ReaderControls({ settings, update }: Props) {
     <div className="flex items-center gap-2">
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="sm" aria-label={bn ? "লেখার আকার" : "Text size"}>
+          <Button variant="outline" size="sm" className="web:rounded-full" aria-label={bn ? "লেখার আকার" : "Text size"}>
             <Type className="size-4" />
             <span className="hidden sm:inline">{bn ? "লেখার আকার" : "Text size"}</span>
           </Button>
@@ -87,6 +87,7 @@ export function ReaderControls({ settings, update }: Props) {
       <Button
         variant={settings.readerMode ? "default" : "outline"}
         size="sm"
+        className="web:rounded-full"
         aria-pressed={settings.readerMode}
         aria-label={bn ? "রিডার মোড" : "Reader mode"}
         onClick={() => update({ readerMode: !settings.readerMode })}

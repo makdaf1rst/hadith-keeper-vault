@@ -1,25 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight, ExternalLink, Share2 } from "lucide-react";
-import { toast } from "sonner";
 import type { ReactNode } from "react";
 
 import { AboutLibrary } from "@/components/library/AboutLibrary";
 import { useInterfaceText, useLanguage } from "@/lib/language";
+import { BOOKS_USED_URL, NARRATORS_URL, shareApp } from "@/lib/links";
 import { THEMES, useTheme } from "@/lib/theme";
 
 export const Route = createFileRoute("/settings")({
   head: () => ({ meta: [{ title: "Settings — Al-Jāmiʿ al-Kāmil" }] }),
   component: SettingsPage,
 });
-
-const BOOKS_USED_URL = {
-  en: "https://drive.google.com/file/d/10_ZkVs3B4kIlxTnMSYy982FwMmAxSSFY/view",
-  bn: "https://drive.google.com/file/d/1c5KMFNUTWDgYVqAGU1hKgU6fv9EgsFen/view",
-};
-const NARRATORS_URL = {
-  en: "https://drive.google.com/file/d/19C5NU_lLYtPqTSS-h1PhVxxaWQXdQq49/view",
-  bn: "https://drive.google.com/file/d/1UVM6aDTx6YNbOZP8uvP4bNghx7dwxJUI/view",
-};
 
 const rowClass =
   "flex min-h-12 w-full items-center justify-between gap-3 px-4 py-3 text-left text-[15px] text-foreground transition-colors hover:bg-accent focus-visible:bg-accent focus-visible:outline-none";
@@ -59,22 +50,6 @@ function ExternalRow({ href, label }: { href: string; label: string }) {
       </a>
     </li>
   );
-}
-
-async function shareApp(bn: boolean) {
-  const url = "https://jami-al-kamil.com";
-  try {
-    if (navigator.share) {
-      await navigator.share({ title: "Al-Jāmiʿ al-Kāmil", url });
-      return;
-    }
-    await navigator.clipboard.writeText(url);
-    toast.success(bn ? "লিংক কপি হয়েছে" : "Link copied");
-  } catch (error) {
-    // user closing the share sheet is not an error
-    if (error instanceof DOMException && error.name === "AbortError") return;
-    toast.error(bn ? "শেয়ার করা যায়নি" : "Could not share");
-  }
 }
 
 function SettingsPage() {

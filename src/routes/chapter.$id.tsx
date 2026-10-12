@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { buttonVariants } from "@/components/ui/button";
+import { ReaderSubBar, subBarBack, subBarPill } from "@/components/library/ReaderSubBar";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
@@ -118,7 +119,31 @@ function ChapterReadingPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-parchment">
+      <ReaderSubBar
+        left={
+          <Link to="/" className={subBarBack}>
+            <ArrowLeft className="size-4 shrink-0" /> {t.library}
+          </Link>
+        }
+        title={t.chapter}
+        right={
+          <>
+            {neighbours.data?.previous ? (
+              <ReadingLink target={neighbours.data.previous} className={subBarPill}>
+                <ChevronLeft className="size-3.5 shrink-0" />
+                <span>{targetLabel(neighbours.data.previous, isBengali, t.chapter)}</span>
+              </ReadingLink>
+            ) : null}
+            {neighbours.data?.next ? (
+              <ReadingLink target={neighbours.data.next} className={subBarPill}>
+                <span>{targetLabel(neighbours.data.next, isBengali, t.chapter)}</span>
+                <ChevronRight className="size-3.5 shrink-0" />
+              </ReadingLink>
+            ) : null}
+          </>
+        }
+      />
+      <header className="hidden border-b border-border bg-parchment [.app_&]:block">
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6 sm:pt-4">
           <Link
             to="/"
@@ -157,7 +182,7 @@ function ChapterReadingPage() {
 
         {context.data ? (
           <div className="space-y-4">
-            <article className="rounded-lg border border-border bg-card shadow-sm">
+            <article className="rounded-lg border border-border bg-card shadow-sm web:rounded-2xl web:shadow-xs">
               <header className="border-b border-border bg-parchment px-4 py-4 sm:px-6">
                 <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
                   {t.chapter}
@@ -213,7 +238,7 @@ function ChapterReadingPage() {
                   className={buttonVariants({
                     variant: "outline",
                     size: "lg",
-                    className: "w-full justify-start px-4 sm:px-6",
+                    className: "w-full justify-start px-4 sm:px-6 web:rounded-full",
                   })}
                 >
                   <ChevronLeft className="size-5 shrink-0" />
@@ -232,7 +257,7 @@ function ChapterReadingPage() {
                   className={buttonVariants({
                     variant: "outline",
                     size: "lg",
-                    className: "w-full justify-end px-4 sm:px-6",
+                    className: "w-full justify-end px-4 sm:px-6 web:rounded-full",
                   })}
                 >
                   <span className="truncate">

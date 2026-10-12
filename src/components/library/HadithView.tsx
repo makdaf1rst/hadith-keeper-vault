@@ -189,8 +189,8 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
       : (full ?? [arabic, english, extra].filter(Boolean).join("\n\n"));
 
   return (
-    <article className="rounded-lg border border-border bg-card shadow-sm">
-      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-parchment px-4 py-3 sm:px-6">
+    <article className="rounded-lg border border-border bg-card shadow-sm web:flex web:flex-col web:rounded-none web:border-0 web:bg-transparent web:shadow-none">
+      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-parchment px-4 py-3 sm:px-6 web:bg-transparent web:px-0 web:pb-2 web:font-sans">
         <div className="flex items-baseline gap-3">
           <span className="text-lg font-semibold tracking-tight text-primary">
             {t.hadith} {isBengali ? toBengaliDigits(hadith.hadith_number) : hadith.hadith_number}
@@ -199,8 +199,9 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             {toArabicIndicDigits(hadith.hadith_number)}
           </span>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 web:gap-0.5">
           <BookmarkButton
+            className={quiet}
             number={hadith.hadith_number}
             bookTitle={
               context?.book
@@ -214,45 +215,21 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
                 : null
             }
           />
-          <Button variant="outline" size="sm" className="[.app_&]:hidden" onClick={() => copy(arabic, t.arabic)}>
-            <Copy /> {t.arabic}
-          </Button>
           <Button
             variant="outline"
             size="sm"
-            className="[.app_&]:hidden"
-            onClick={() =>
-              copy(selectedTranslation, contentLanguage === "bn" ? t.bengali : t.english)
-            }
-          >
-            <Copy /> {contentLanguage === "bn" ? t.bengali : t.english}
-          </Button>
-          <Button variant="outline" size="sm" className="[.app_&]:hidden" onClick={() => copy(whole, t.fullEntry)}>
-            <Copy /> {t.fullEntry}
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
+            className={quiet}
+            aria-label={isBengali ? "শেয়ার" : "Share"}
             onClick={() => void shareHadith(hadith.hadith_number, isBengali)}
           >
             <Share2 />
-            <span className="[.app_&]:sr-only">{isBengali ? "শেয়ার" : "Share"}</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            className="[.app_&]:hidden"
-            onClick={() => reportIssue(hadith.hadith_number, isBengali)}
-          >
-            <CircleAlert />
-            {isBengali ? "ত্রুটি জানান" : "Report error"}
           </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
                 size="sm"
-                className="hidden [.app_&]:inline-flex"
+                className={quiet}
                 aria-label={isBengali ? "আরও" : "More actions"}
               >
                 <MoreHorizontal />
@@ -282,7 +259,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
       </header>
 
       {context ? (
-        <div className="border-b border-border px-4 py-3 text-sm text-muted-foreground sm:px-6">
+        <div className="border-b border-border px-4 py-3 text-sm text-muted-foreground sm:px-6 web:order-first web:mb-8 web:rounded-2xl web:border web:bg-card web:px-6 web:py-5 web:font-sans web:shadow-xs">
           <BreadcrumbLine
             label={isBengali ? "কিতাব" : "Book"}
             ar={context.book?.title_ar}
@@ -330,7 +307,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
         </div>
       ) : null}
 
-      <div className="space-y-6 px-4 py-6 sm:px-6">
+      <div className="space-y-6 px-4 py-6 sm:px-6 web:px-0 web:pt-4 web:pb-10">
         {arabic ? (
           <p
             className="arabic-text text-foreground"
@@ -386,6 +363,10 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
     </article>
   );
 }
+
+// website: borderless Quran.com-style icon actions; the app keeps its outline buttons
+const quiet =
+  "web:rounded-full web:border-transparent web:bg-transparent web:px-2.5 web:text-muted-foreground web:shadow-none web:hover:bg-accent web:hover:text-foreground web:aria-pressed:text-primary";
 
 function BreadcrumbLine({
   label,
