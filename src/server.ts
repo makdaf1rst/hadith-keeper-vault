@@ -48,7 +48,9 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     const url = new URL(request.url);
     const isWww = url.hostname === "www.jami-al-kamil.com";
-    const isHttp = url.protocol === "http:";
+    // local dev server is http-only; redirecting it to https://localhost hangs every page
+    const isLocal = url.hostname === "localhost" || url.hostname === "127.0.0.1";
+    const isHttp = url.protocol === "http:" && !isLocal;
 
     if (isWww || isHttp) {
       url.protocol = "https:";

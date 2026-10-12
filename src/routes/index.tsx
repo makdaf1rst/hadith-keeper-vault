@@ -309,7 +309,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <header className="hidden px-4 pt-[calc(1.25rem+env(safe-area-inset-top))] font-sans [.app_&]:block">
-        <img src="/jami-al-kamil-logo.png" alt="Al-Jami al-Kamil — الجامع الكامل" className="h-10 w-auto" />
+        <img src="/jami-al-kamil-logo.png" alt="Al-Jami al-Kamil — الجامع الكامل" className="mx-auto h-24 w-auto max-w-[80%] object-contain" />
         <h1 className="mt-4 font-sans text-3xl font-bold text-foreground">{t.library}</h1>
       </header>
       <header className="relative border-b border-border bg-parchment [.app_&]:hidden">
