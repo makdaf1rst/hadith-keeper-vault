@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { ThemeToggle } from "../components/library/ThemeToggle";
+import { TabBar } from "../components/TabBar";
 import { Toaster } from "../components/ui/sonner";
 import { LanguageProvider } from "../lib/language";
 import { OfflineBanner } from "../components/OfflineBanner";
@@ -128,7 +129,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
-const themeInitScript = `(function(){try{var t=localStorage.getItem("jami-theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}var e=document.documentElement;e.classList.remove("dark","sepia","soft-gray","green","warm-night","black");if(t==="dark")e.classList.add("dark");if(t==="sepia")e.classList.add("sepia");if(t==="soft-gray")e.classList.add("soft-gray");if(t==="green")e.classList.add("green");if(t==="warm-night")e.classList.add("dark","warm-night");if(t==="black")e.classList.add("dark","black");}catch(e){}})();`;
+const themeInitScript = `(function(){try{var t=localStorage.getItem("jami-theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}var e=document.documentElement;e.classList.remove("dark","sepia","soft-gray","green","warm-night","black");if(t==="dark")e.classList.add("dark");if(t==="sepia")e.classList.add("sepia");if(t==="soft-gray")e.classList.add("soft-gray");if(t==="green")e.classList.add("green");if(t==="warm-night")e.classList.add("dark","warm-night");if(t==="black")e.classList.add("dark","black");}catch(e){}try{var q=location.search;if(/[?&]app=1/.test(q))localStorage.setItem("jami-app-preview","1");if(/[?&]app=0/.test(q))localStorage.removeItem("jami-app-preview");var c=window.Capacitor;if((c&&c.isNativePlatform&&c.isNativePlatform())||localStorage.getItem("jami-app-preview"))document.documentElement.classList.add("app");}catch(e){}})();`;
+// "app" class = running inside the Capacitor shell (or ?app=1 preview); app-only UI keys off it in CSS so desktop never flashes it
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
@@ -156,8 +158,15 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-        <ThemeToggle />
+        {/* app only: bottom padding keeps page content clear of the fixed TabBar */}
+        <div className="[.app_&]:pb-[calc(5rem+env(safe-area-inset-bottom))]">
+          <Outlet />
+        </div>
+        <TabBar />
+        {/* ponytail: desktop keeps the old floating picker until the site redesign; app uses Settings → Appearance */}
+        <div className="[.app_&]:hidden">
+          <ThemeToggle />
+        </div>
         <Toaster />
         <OfflineBanner />
       </LanguageProvider>

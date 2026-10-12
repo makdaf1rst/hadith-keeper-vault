@@ -17,7 +17,9 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as SendGiftRouteImport } from './routes/send-gift'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as BookNumberRouteImport } from './routes/book.$number'
 import { Route as ChapterIdRouteImport } from './routes/chapter.$id'
 import { Route as HadithNumberRouteImport } from './routes/hadith.$number'
@@ -62,9 +64,19 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SendGiftRoute = SendGiftRouteImport.update({
   id: '/send-gift',
   path: '/send-gift',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookNumberRoute = BookNumberRouteImport.update({
@@ -92,7 +104,9 @@ export interface FileRoutesByFullPath {
   '/downloads': typeof DownloadsRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
+  '/search': typeof SearchRoute
   '/send-gift': typeof SendGiftRoute
+  '/settings': typeof SettingsRoute
   '/book/$number': typeof BookNumberRoute
   '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
@@ -106,7 +120,9 @@ export interface FileRoutesByTo {
   '/downloads': typeof DownloadsRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
+  '/search': typeof SearchRoute
   '/send-gift': typeof SendGiftRoute
+  '/settings': typeof SettingsRoute
   '/book/$number': typeof BookNumberRoute
   '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
@@ -121,7 +137,9 @@ export interface FileRoutesById {
   '/downloads': typeof DownloadsRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
+  '/search': typeof SearchRoute
   '/send-gift': typeof SendGiftRoute
+  '/settings': typeof SettingsRoute
   '/book/$number': typeof BookNumberRoute
   '/chapter/$id': typeof ChapterIdRoute
   '/hadith/$number': typeof HadithNumberRoute
@@ -137,7 +155,9 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/privacy'
     | '/projects'
+    | '/search'
     | '/send-gift'
+    | '/settings'
     | '/book/$number'
     | '/chapter/$id'
     | '/hadith/$number'
@@ -151,7 +171,9 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/privacy'
     | '/projects'
+    | '/search'
     | '/send-gift'
+    | '/settings'
     | '/book/$number'
     | '/chapter/$id'
     | '/hadith/$number'
@@ -165,7 +187,9 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/privacy'
     | '/projects'
+    | '/search'
     | '/send-gift'
+    | '/settings'
     | '/book/$number'
     | '/chapter/$id'
     | '/hadith/$number'
@@ -180,7 +204,9 @@ export interface RootRouteChildren {
   DownloadsRoute: typeof DownloadsRoute
   PrivacyRoute: typeof PrivacyRoute
   ProjectsRoute: typeof ProjectsRoute
+  SearchRoute: typeof SearchRoute
   SendGiftRoute: typeof SendGiftRoute
+  SettingsRoute: typeof SettingsRoute
   BookNumberRoute: typeof BookNumberRoute
   ChapterIdRoute: typeof ChapterIdRoute
   HadithNumberRoute: typeof HadithNumberRoute
@@ -244,11 +270,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/send-gift': {
       id: '/send-gift'
       path: '/send-gift'
       fullPath: '/send-gift'
       preLoaderRoute: typeof SendGiftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book/$number': {
@@ -284,7 +324,9 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadsRoute: DownloadsRoute,
   PrivacyRoute: PrivacyRoute,
   ProjectsRoute: ProjectsRoute,
+  SearchRoute: SearchRoute,
   SendGiftRoute: SendGiftRoute,
+  SettingsRoute: SettingsRoute,
   BookNumberRoute: BookNumberRoute,
   ChapterIdRoute: ChapterIdRoute,
   HadithNumberRoute: HadithNumberRoute,
