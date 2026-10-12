@@ -35,9 +35,9 @@ function formatArabicBookTitle(number: number, title: string | null) {
   return `${toArabicIndicDigits(number)}. ${clean}`;
 }
 
-function Title({ ar, en }: { ar: string | null; en: string | null }) {
+function Title({ ar, en, className }: { ar: string | null; en: string | null; className?: string }) {
   return (
-    <span className="flex min-w-0 flex-1 flex-col gap-0.5 text-left">
+    <span className={cn("flex min-w-0 flex-1 flex-col gap-0.5 text-left", className)}>
       {en ? <span className="text-sm leading-snug font-medium">{en}</span> : null}
       {ar ? (
         <span className="arabic-text text-base! leading-relaxed! text-muted-foreground">{ar}</span>
@@ -231,8 +231,13 @@ function BookNode({
 
   return (
     <li className="rounded-md">
-      <Toggle open={open} onClick={onToggle} className="items-center">
+      <Toggle
+        open={open}
+        onClick={onToggle}
+        className="items-center [.app_&]:rounded-none [.app_&]:px-4 [.app_&]:py-3"
+      >
         <Title
+          className="[.app_&]:flex-row [.app_&]:items-center [.app_&]:justify-between [.app_&]:gap-3 [.app_&]:font-sans"
           ar={formatArabicBookTitle(book.book_number, book.title_ar)}
           en={
             contentLanguage === "bn"
@@ -346,7 +351,7 @@ export function LibraryTree({
     );
 
   return (
-    <ul className="space-y-0.5">
+    <ul className="space-y-0.5 [.app_&]:divide-y [.app_&]:divide-border [.app_&]:overflow-hidden [.app_&]:rounded-2xl [.app_&]:border [.app_&]:border-border [.app_&]:bg-card [.app_&]:space-y-0">
       {data.map((book) => (
         <BookNode
           key={book.id}

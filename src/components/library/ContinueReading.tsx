@@ -112,3 +112,37 @@ export function ContinueReading() {
     </div>
   );
 }
+
+// App-only "Recent" chip row (Quran.com style); the website keeps ContinueReading above.
+export function RecentChips() {
+  const history = useReadingHistory();
+  const { interfaceLanguage } = useLanguage();
+  const bn = interfaceLanguage === "bn";
+  if (history.length === 0) return null;
+
+  return (
+    <section className="hidden font-sans [.app_&]:block">
+      <h2 className="mb-2 px-4 font-sans text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+        {bn ? "সাম্প্রতিক" : "Recent"}
+      </h2>
+      <ul className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
+        {history.slice(0, 5).map((entry) => (
+          <li key={entry.number} className="shrink-0">
+            <Link
+              to="/hadith/$number"
+              params={{ number: String(entry.number) }}
+              className="flex max-w-56 flex-col rounded-2xl border border-border bg-card px-4 py-2.5 transition-colors hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <span className="text-sm font-semibold text-foreground">
+                {bn ? "হাদিস" : "Hadith"} {bn ? toBengaliDigits(entry.number) : entry.number}
+              </span>
+              <span className="truncate text-xs text-muted-foreground">
+                {entry.chapterTitle ?? entry.bookTitle ?? entry.collectionTitle}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}

@@ -23,7 +23,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { ContinueReading } from "@/components/library/ContinueReading";
+import { AboutLibrary } from "@/components/library/AboutLibrary";
+import { ContinueReading, RecentChips } from "@/components/library/ContinueReading";
 import { IntroText } from "@/components/library/IntroText";
 import { LibraryTree } from "@/components/library/LibraryTree";
 import { SearchPanel } from "@/components/library/SearchPanel";
@@ -307,7 +308,11 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="relative border-b border-border bg-parchment">
+      <header className="hidden px-4 pt-[calc(1.25rem+env(safe-area-inset-top))] font-sans [.app_&]:block">
+        <img src="/jami-al-kamil-logo.png" alt="Al-Jami al-Kamil — الجامع الكامل" className="h-10 w-auto" />
+        <h1 className="mt-4 font-sans text-3xl font-bold text-foreground">{t.library}</h1>
+      </header>
+      <header className="relative border-b border-border bg-parchment [.app_&]:hidden">
         <Button
           type="button"
           variant="outline"
@@ -487,28 +492,31 @@ function Index() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <ContinueReading />
+      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 [.app_&]:pt-4">
+        <RecentChips />
+        <div className="[.app_&]:hidden">
+          <ContinueReading />
+        </div>
         <div
           id="site-search-guide"
-          className={
+          className={`[.app_&]:hidden ${
             tourStep === 0
               ? "rounded-xl ring-4 ring-primary ring-offset-4 ring-offset-background"
               : ""
-          }
+          }`}
         >
           <SearchPanel />
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[22rem_1fr]">
-          <aside className="rounded-lg border border-border bg-sidebar p-3">
-            <h2 className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold tracking-wide text-sidebar-foreground uppercase">
+        <div className="mt-8 grid gap-6 lg:grid-cols-[22rem_1fr] [.app_&]:mt-6 [.app_&]:block">
+          <aside className="rounded-lg border border-border bg-sidebar p-3 [.app_&]:border-0 [.app_&]:bg-transparent [.app_&]:p-0">
+            <h2 className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold tracking-wide text-sidebar-foreground uppercase [.app_&]:px-4 [.app_&]:font-sans [.app_&]:text-xs [.app_&]:text-muted-foreground">
               <BookOpen className="size-4" aria-hidden /> {t.contents}
             </h2>
             <LibraryTree selectedBookId={selectedBook?.id ?? null} onSelectBook={setSelectedBook} />
           </aside>
 
-          <section className="rounded-lg border border-border bg-card p-6">
+          <section className="rounded-lg border border-border bg-card p-6 [.app_&]:hidden">
             <div className="border-b border-border pb-4">
               <p className="text-sm text-muted-foreground">
                 {stats.data
@@ -525,79 +533,7 @@ function Index() {
                 <h2 className="mt-4 text-lg font-semibold text-foreground">
                   {isBengali ? "এই গ্রন্থাগার সম্পর্কে" : "About this library"}
                 </h2>
-                <div className="mt-3 space-y-4 leading-7 text-muted-foreground">
-                  {isBengali ? (
-                    <>
-                      <p>
-                        শাইখ দিয়া আল-রহমান আল-আযমী (ضياء الرحمن الأعظمي) ছিলেন হাদীসের একজন বিশিষ্ট
-                        আলিম এবং মদিনা ইসলামী বিশ্ববিদ্যালয়ের অধ্যাপক। তাঁর অন্যতম শ্রেষ্ঠ ইলমী
-                        কীর্তি হলো{" "}
-                        <em>
-                          আল-জামি‘ আল-কামিল ফি আল-হাদীস আস-সহীহ আশ-শামিল আল-মুরাত্তাব ‘আলা আবওয়াব
-                          আল-ফিকহ
-                        </em>
-                        — রাসূলুল্লাহ ﷺ-এর নির্ভরযোগ্য সুন্নাহকে এক সুবিস্তৃত ও সুসংগঠিত সংকলনে
-                        একত্র করার এক মহৎ প্রচেষ্টা।
-                      </p>
-                      <p>
-                        এই গ্রন্থ প্রস্তুত করতে শাইখ আল-আযমী ২০০টিরও বেশি হাদীসগ্রন্থ থেকে উপকরণ
-                        গ্রহণ করেন এবং পুনরাবৃত্তি বাদ দিয়ে আনুমানিক ৬০,০০০ স্বতন্ত্র হাদীসের বিশাল
-                        ভাণ্ডার পর্যালোচনা করেন। ব্যাপক গবেষণা, তুলনা, যাচাই ও হাদীসের মান
-                        নির্ধারণের মাধ্যমে তিনি চূড়ান্ত সংকলনে ১৬,৫৪৬টি নম্বরযুক্ত বর্ণনা
-                        অন্তর্ভুক্ত করেন। এই গ্রন্থের অন্যতম বৈশিষ্ট্য হলো গ্রহণযোগ্য বর্ণনা—সহীহ ও
-                        হাসান হাদীস—এর ওপর গুরুত্ব, যা ইসলামী ফিকহের কিতাব ও অধ্যায় অনুযায়ী
-                        বিন্যস্ত।
-                      </p>
-                      <p>
-                        এই বাংলা অনুবাদ মহান এই গ্রন্থকে বাংলা ভাষাভাষী পাঠকদের জন্য আরও সহজলভ্য
-                        করার এবং রাসূলুল্লাহ ﷺ-এর সুন্নাহ সংরক্ষণ ও প্রচারে আমাদের সামর্থ্য অনুযায়ী
-                        ক্ষুদ্র অবদান রাখার একটি বিনীত প্রচেষ্টা।
-                      </p>
-                      <p>
-                        আমরা আল্লাহর কাছে প্রার্থনা করি, তিনি আমাদের ভুল ও ত্রুটি ক্ষমা করুন, এই
-                        প্রচেষ্টায় ইখলাস ও উপকার দান করুন, সুন্নাহর খেদমতের জন্য শাইখ দিয়া
-                        আল-রহমান আল-আযমীকে অফুরন্ত প্রতিদান দিন এবং এই কাজটি কেবল তাঁর সন্তুষ্টির
-                        জন্য আমাদের পক্ষ থেকে কবুল করুন। আমীন।
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <p>
-                        Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī (ضياء الرحمن الأعظمي) was a distinguished
-                        scholar of Ḥadīth and a professor at the Islamic University of Madinah.
-                        Among his greatest scholarly achievements is{" "}
-                        <em>
-                          Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil al-Murattab ʿalā Abwāb
-                          al-Fiqh
-                        </em>
-                        , a monumental effort to gather the reliable Sunnah of the Messenger of
-                        Allah ﷺ into one comprehensive and systematically arranged collection.
-                      </p>
-                      <p>
-                        In preparing this work, Shaykh al-Aʿẓamī drew upon more than 200 books of
-                        Ḥadīth and surveyed a vast body of narrations that he estimated at
-                        approximately 60,000 distinct hadith texts after repetitions were removed.
-                        Through extensive research, comparison, verification, and grading, he
-                        compiled 16,546 numbered narrations in the final collection. One of the
-                        defining features of the work is its focus on accepted narrations — Ṣaḥīḥ
-                        (Authentic) and Ḥasan (Good) hadiths — arranged according to the books and
-                        chapters of Islamic jurisprudence.
-                      </p>
-                      <p>
-                        This English translation is a humble effort to make this great work more
-                        accessible to English-speaking readers and to contribute, in whatever small
-                        measure we can, to the preservation and spread of the Sunnah of the
-                        Messenger of Allah ﷺ.
-                      </p>
-                      <p>
-                        We ask Allah to overlook our mistakes and shortcomings, place sincerity and
-                        benefit in this effort, reward Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī abundantly
-                        for his service to the Sunnah, and accept this deed from us solely for His
-                        sake. Āmīn.
-                      </p>
-                    </>
-                  )}
-                </div>
+                <AboutLibrary bn={isBengali} className="mt-3" />
               </>
             )}
           </section>

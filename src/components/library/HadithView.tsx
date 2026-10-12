@@ -1,10 +1,17 @@
 // Deployment sync marker: hadith share, error-report, and 16273 correction refresh
 import { useQuery } from "@tanstack/react-query";
-import { CircleAlert, Copy, Share2 } from "lucide-react";
+import { CircleAlert, Copy, MoreHorizontal, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { BookmarkButton } from "@/components/library/BookmarkButton";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { fetchBengaliStructure, fetchBengaliTranslation } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
@@ -207,19 +214,20 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
                 : null
             }
           />
-          <Button variant="outline" size="sm" onClick={() => copy(arabic, t.arabic)}>
+          <Button variant="outline" size="sm" className="[.app_&]:hidden" onClick={() => copy(arabic, t.arabic)}>
             <Copy /> {t.arabic}
           </Button>
           <Button
             variant="outline"
             size="sm"
+            className="[.app_&]:hidden"
             onClick={() =>
               copy(selectedTranslation, contentLanguage === "bn" ? t.bengali : t.english)
             }
           >
             <Copy /> {contentLanguage === "bn" ? t.bengali : t.english}
           </Button>
-          <Button variant="outline" size="sm" onClick={() => copy(whole, t.fullEntry)}>
+          <Button variant="outline" size="sm" className="[.app_&]:hidden" onClick={() => copy(whole, t.fullEntry)}>
             <Copy /> {t.fullEntry}
           </Button>
           <Button
@@ -228,16 +236,48 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             onClick={() => void shareHadith(hadith.hadith_number, isBengali)}
           >
             <Share2 />
-            {isBengali ? "শেয়ার" : "Share"}
+            <span className="[.app_&]:sr-only">{isBengali ? "শেয়ার" : "Share"}</span>
           </Button>
           <Button
             variant="outline"
             size="sm"
+            className="[.app_&]:hidden"
             onClick={() => reportIssue(hadith.hadith_number, isBengali)}
           >
             <CircleAlert />
             {isBengali ? "ত্রুটি জানান" : "Report error"}
           </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                className="hidden [.app_&]:inline-flex"
+                aria-label={isBengali ? "আরও" : "More actions"}
+              >
+                <MoreHorizontal />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="font-sans">
+              <DropdownMenuItem onSelect={() => copy(arabic, t.arabic)}>
+                <Copy /> {t.arabic}
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onSelect={() =>
+                  copy(selectedTranslation, contentLanguage === "bn" ? t.bengali : t.english)
+                }
+              >
+                <Copy /> {contentLanguage === "bn" ? t.bengali : t.english}
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => copy(whole, t.fullEntry)}>
+                <Copy /> {t.fullEntry}
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onSelect={() => reportIssue(hadith.hadith_number, isBengali)}>
+                <CircleAlert /> {isBengali ? "ত্রুটি জানান" : "Report error"}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
 
