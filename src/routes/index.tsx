@@ -322,7 +322,7 @@ function Index() {
     <div className="min-h-screen bg-background">
       <header className="hidden px-4 pt-[calc(1.25rem+env(safe-area-inset-top))] font-sans [.app_&]:block">
         <img src="/jami-al-kamil-logo.png" alt="Al-Jami al-Kamil — الجامع الكامل" className="h-10 w-auto" />
-        <h1 className="mt-4 text-3xl font-bold text-foreground">{t.library}</h1>
+        <h1 className="mt-4 font-sans text-3xl font-bold text-foreground">{t.library}</h1>
       </header>
       <header className="relative border-b border-border bg-parchment [.app_&]:hidden">
         <Button

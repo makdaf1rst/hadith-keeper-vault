@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, ChevronRight, ExternalLink } from "lucide-react";
+import { Check, ChevronRight, ExternalLink, Share2 } from "lucide-react";
+import { toast } from "sonner";
 import type { ReactNode } from "react";
 
 import { AboutLibrary } from "@/components/library/AboutLibrary";
@@ -27,7 +28,7 @@ function Group({ title, children }: { title?: string; children: ReactNode }) {
   return (
     <section className="mt-6">
       {title ? (
-        <h2 className="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        <h2 className="mb-2 px-4 font-sans text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           {title}
         </h2>
       ) : null}
@@ -60,6 +61,22 @@ function ExternalRow({ href, label }: { href: string; label: string }) {
   );
 }
 
+async function shareApp(bn: boolean) {
+  const url = "https://jami-al-kamil.com";
+  try {
+    if (navigator.share) {
+      await navigator.share({ title: "Al-Jāmiʿ al-Kāmil", url });
+      return;
+    }
+    await navigator.clipboard.writeText(url);
+    toast.success(bn ? "লিংক কপি হয়েছে" : "Link copied");
+  } catch (error) {
+    // user closing the share sheet is not an error
+    if (error instanceof DOMException && error.name === "AbortError") return;
+    toast.error(bn ? "শেয়ার করা যায়নি" : "Could not share");
+  }
+}
+
 function SettingsPage() {
   const t = useInterfaceText();
   const { interfaceLanguage, contentLanguage, setInterfaceLanguage } = useLanguage();
@@ -69,7 +86,7 @@ function SettingsPage() {
 
   return (
     <main className="mx-auto max-w-2xl px-4 pb-8 pt-[calc(1.5rem+env(safe-area-inset-top))] font-sans sm:px-6">
-      <h1 className="text-3xl font-bold text-foreground">{t.settings}</h1>
+      <h1 className="font-sans text-3xl font-bold text-foreground">{t.settings}</h1>
 
       <Group title={bn ? "চেহারা" : "Appearance"}>
         {THEMES.map((item) => (
@@ -143,6 +160,12 @@ function SettingsPage() {
       </Group>
 
       <Group title={bn ? "সহায়তা" : "Support"}>
+        <li>
+          <button type="button" className={rowClass} onClick={() => void shareApp(bn)}>
+            {bn ? "অ্যাপটি শেয়ার করুন" : "Share the app"}
+            <Share2 className="size-4 text-muted-foreground" aria-hidden />
+          </button>
+        </li>
         <RouteRow to="/send-gift" label={bn ? "উপহার পাঠান" : "Send Gift"} />
         <RouteRow to="/contact" label={t.contact} />
         <RouteRow to="/privacy" label={t.privacy} />

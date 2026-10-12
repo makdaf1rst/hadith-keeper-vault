@@ -122,7 +122,7 @@ export function RecentChips() {
 
   return (
     <section className="hidden font-sans [.app_&]:block">
-      <h2 className="mb-2 px-4 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+      <h2 className="mb-2 px-4 font-sans text-xs font-semibold tracking-wide text-muted-foreground uppercase">
         {bn ? "সাম্প্রতিক" : "Recent"}
       </h2>
       <ul className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">

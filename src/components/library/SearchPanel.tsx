@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { ChevronDown, Search, SlidersHorizontal, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { ChevronDown, History, Search, SlidersHorizontal, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -32,6 +32,17 @@ import { useInterfaceText, useLanguage } from "@/lib/language";
 import { normalizeEnglish, toArabicIndicDigits } from "@/lib/normalize";
 
 const ALL = "__all__";
+const RECENT_KEY = "jami-recent-searches";
+const SUGGESTIONS = ["الصلاة", "prayer", "1", "intention"];
+
+function readRecent(): string[] {
+  try {
+    const list = JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]");
+    return Array.isArray(list) ? list.filter((x) => typeof x === "string").slice(0, 8) : [];
+  } catch {
+    return [];
+  }
+}
 
 function preview(value: string | null, term: string) {
   if (!value) return null;
@@ -62,6 +73,24 @@ export function SearchPanel() {
   const [rangeTo, setRangeTo] = useState("");
   const [grade, setGrade] = useState<GradeFilter>("any");
   const [exact, setExact] = useState(false);
+  // app only: filters fold behind one button; the website always shows them
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [recent, setRecent] = useState<string[]>([]);
+  useEffect(() => setRecent(readRecent()), []);
+
+  const runSearch = (term: string) => {
+    setInput(term);
+    setQuery(term);
+    const trimmed = term.trim();
+    if (!trimmed) return;
+    const next = [trimmed, ...readRecent().filter((x) => x !== trimmed)].slice(0, 8);
+    setRecent(next);
+    try {
+      localStorage.setItem(RECENT_KEY, JSON.stringify(next));
+    } catch {
+      // private mode: recents just don't persist
+    }
+  };
 
   const parseNum = (value: string) => {
     const n = Number(value.trim());
@@ -143,15 +172,19 @@ export function SearchPanel() {
 
   const filtersActive =
     bookId !== ALL || collectionId !== ALL || chapterId !== ALL || language !== "all";
+  const activeFilterCount =
+    [bookId !== ALL, collectionId !== ALL, chapterId !== ALL, language !== "all", advancedOpen].filter(
+      Boolean,
+    ).length;
 
   return (
     <section className="space-y-4">
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          setQuery(input);
+          runSearch(input);
         }}
-        className="flex flex-col gap-2 sm:flex-row"
+        className="flex flex-col gap-2 sm:flex-row [.app_&]:flex-row"
       >
         <div className="relative flex-1">
           <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
@@ -160,28 +193,106 @@ export function SearchPanel() {
             onChange={(event) => setInput(event.target.value)}
             placeholder={t.searchPlaceholder}
             aria-label={t.searchAria}
-            className="h-11 bg-card pl-9 text-base"
+            enterKeyHint="search"
+            className="h-11 bg-card pl-9 text-base [.app_&]:rounded-full"
           />
         </div>
-        <Button type="submit" className="h-11 px-6">
+        <Button type="submit" className="h-11 px-6 [.app_&]:hidden">
           {t.search}
         </Button>
         {query ? (
           <Button
             type="button"
             variant="ghost"
-            className="h-11"
+            className="h-11 [.app_&]:px-3"
+            aria-label={t.clear}
             onClick={() => {
               setInput("");
               setQuery("");
             }}
           >
-            <X /> {t.clear}
+            <X /> <span className="[.app_&]:hidden">{t.clear}</span>
           </Button>
         ) : null}
+        <Button
+          type="button"
+          variant={filtersOpen ? "secondary" : "outline"}
+          className="relative hidden h-11 rounded-full px-3 [.app_&]:inline-flex"
+          aria-expanded={filtersOpen}
+          aria-label={bn ? "ফিল্টার" : "Filters"}
+          onClick={() => setFiltersOpen((open) => !open)}
+        >
+          <SlidersHorizontal />
+          {activeFilterCount ? (
+            <span className="absolute -top-1 -right-1 grid size-5 place-items-center rounded-full bg-primary text-[11px] text-primary-foreground">
+              {activeFilterCount}
+            </span>
+          ) : null}
+        </Button>
       </form>
 
-      <div className="flex flex-wrap items-center gap-2">
+      {!query && !rangeOnly ? (
+        <div className="hidden space-y-5 font-sans [.app_&]:block">
+          {recent.length ? (
+            <div>
+              <div className="mb-2 flex items-center justify-between px-1">
+                <h2 className="font-sans text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                  {bn ? "সাম্প্রতিক অনুসন্ধান" : "Recent searches"}
+                </h2>
+                <button
+                  type="button"
+                  className="text-xs text-primary"
+                  onClick={() => {
+                    setRecent([]);
+                    try {
+                      localStorage.removeItem(RECENT_KEY);
+                    } catch {
+                      // nothing stored
+                    }
+                  }}
+                >
+                  {t.clear}
+                </button>
+              </div>
+              <ul className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
+                {recent.map((term) => (
+                  <li key={term}>
+                    <button
+                      type="button"
+                      onClick={() => runSearch(term)}
+                      className="flex w-full items-center gap-3 px-4 py-3 text-left text-[15px] hover:bg-accent"
+                    >
+                      <History className="size-4 text-muted-foreground" aria-hidden />
+                      {term}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          <div>
+            <h2 className="mb-2 px-1 font-sans text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+              {bn ? "এভাবে অনুসন্ধান করুন" : "Try searching with"}
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {SUGGESTIONS.map((term) => (
+                <button
+                  key={term}
+                  type="button"
+                  onClick={() => runSearch(term)}
+                  className="rounded-full border border-border bg-card px-4 py-2 text-sm hover:bg-accent"
+                >
+                  {term}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      <div
+        className={`flex flex-wrap items-center gap-2 ${filtersOpen ? "" : "[.app_&]:hidden"} [.app_&]:*:w-full`}
+      >
         <Select
           value={bookId}
           onValueChange={(value) => {
