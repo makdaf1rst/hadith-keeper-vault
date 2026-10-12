@@ -5,6 +5,8 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Languages } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
 import { ReaderControls } from "@/components/library/ReaderControls";
+import { ReaderSubBar, subBarBack, subBarPill } from "@/components/library/ReaderSubBar";
+import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { fetchBengaliStructure } from "@/lib/bengali-translations";
 import { HadithView } from "@/components/library/HadithView";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -19,6 +21,9 @@ import { toBengaliDigits } from "@/lib/normalize";
 import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { recordHistory } from "@/lib/reading-history";
 import { useReaderSettings } from "@/lib/reader-settings";
+
+// ponytail: hardcoded total for the progress line; read library-stats if the count changes
+const TOTAL_HADITHS = 16546;
 
 function ReadingLink({
   target,
@@ -131,13 +136,59 @@ function HadithPage() {
     });
   }, [hadith.data, context.data]);
 
+  const book = context.data?.book;
+  const num = isBengali ? toBengaliDigits(hadithNumber) : hadithNumber;
+
   return (
     <div className="min-h-screen bg-background">
+      <ReaderSubBar
+        progress={hadithNumber / TOTAL_HADITHS}
+        left={
+          book ? (
+            <Link
+              to="/book/$number"
+              params={{ number: String(book.book_number) }}
+              className={subBarBack}
+            >
+              <ArrowLeft className="size-4 shrink-0" />
+              <span className="truncate">
+                {isBengali
+                  ? (getBengaliBookTitle(book.book_number) ??
+                    formatBookTitle(book.book_number, book.title_en))
+                  : formatBookTitle(book.book_number, book.title_en)}
+              </span>
+            </Link>
+          ) : (
+            <Link to="/" className={subBarBack}>
+              <ArrowLeft className="size-4 shrink-0" /> {t.library}
+            </Link>
+          )
+        }
+        title={`${t.hadith} ${num}`}
+        right={
+          <>
+            <ReaderControls settings={readerSettings} update={updateReaderSettings} />
+            {neighbours.data?.previous ? (
+              <ReadingLink
+                target={neighbours.data.previous}
+                className={subBarPill}
+              >
+                <ChevronLeft className="size-3.5" aria-label={t.previousHadith} />
+              </ReadingLink>
+            ) : null}
+            {neighbours.data?.next ? (
+              <ReadingLink target={neighbours.data.next} className={subBarPill}>
+                <ChevronRight className="size-3.5" aria-label={t.nextHadith} />
+              </ReadingLink>
+            ) : null}
+          </>
+        }
+      />
       <header
         className={
           readerSettings.readerMode
-            ? "relative border-b border-border bg-parchment/95"
-            : "relative border-b border-border bg-parchment"
+            ? "relative hidden border-b border-border bg-parchment/95 [.app_&]:block"
+            : "relative hidden border-b border-border bg-parchment [.app_&]:block"
         }
       >
         <Button
@@ -227,7 +278,7 @@ function HadithPage() {
                   className={buttonVariants({
                     variant: "outline",
                     size: "lg",
-                    className: "w-full justify-start px-4 sm:px-6",
+                    className: "w-full justify-start px-4 sm:px-6 web:rounded-full",
                   })}
                 >
                   <ChevronLeft className="size-5 shrink-0" />
@@ -246,7 +297,7 @@ function HadithPage() {
                   className={buttonVariants({
                     variant: "outline",
                     size: "lg",
-                    className: "w-full justify-end px-4 sm:px-6",
+                    className: "w-full justify-end px-4 sm:px-6 web:rounded-full",
                   })}
                 >
                   <span className="truncate">

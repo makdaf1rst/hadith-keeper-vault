@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export type Theme = "light" | "sepia" | "soft-gray" | "green" | "dark" | "warm-night" | "black";
 
 const STORAGE_KEY = "jami-theme";
+const EVENT = "jami-theme-change";
 
 // swatch = the theme's --background in styles.css, so the picker previews the real page color
 export const THEMES: Array<{ value: Theme; label: string; swatch: string }> = [
@@ -42,7 +43,11 @@ export function useTheme(): [Theme, (theme: Theme) => void] {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    setTheme(detectTheme());
+    // header popover + footer select both hold a copy; keep them in sync
+    const sync = () => setTheme(detectTheme());
+    sync();
+    window.addEventListener(EVENT, sync);
+    return () => window.removeEventListener(EVENT, sync);
   }, []);
 
   const selectTheme = (next: Theme) => {
@@ -53,6 +58,7 @@ export function useTheme(): [Theme, (theme: Theme) => void] {
       // private mode: theme still applies for this session
     }
     setTheme(next);
+    window.dispatchEvent(new Event(EVENT));
   };
 
   return [theme, selectTheme];

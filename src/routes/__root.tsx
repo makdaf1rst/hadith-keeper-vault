@@ -11,7 +11,8 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { ThemeToggle } from "../components/library/ThemeToggle";
+import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
 import { TabBar } from "../components/TabBar";
 import { Toaster } from "../components/ui/sonner";
 import { LanguageProvider } from "../lib/language";
@@ -159,14 +160,12 @@ function RootComponent() {
       <LanguageProvider>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         {/* app only: bottom padding keeps page content clear of the fixed TabBar */}
+        <SiteHeader />
         <div className="[.app_&]:pb-[calc(5rem+env(safe-area-inset-bottom))]">
           <Outlet />
         </div>
+        <SiteFooter />
         <TabBar />
-        {/* ponytail: desktop keeps the old floating picker until the site redesign; app uses Settings → Appearance */}
-        <div className="[.app_&]:hidden">
-          <ThemeToggle />
-        </div>
         <Toaster />
         <OfflineBanner />
       </LanguageProvider>

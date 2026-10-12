@@ -13,7 +13,13 @@ type Props = {
 };
 
 /** Saves bookmarks directly on the reader's device. */
-export function BookmarkButton({ number, bookTitle, collectionTitle, chapterTitle }: Props) {
+export function BookmarkButton({
+  number,
+  bookTitle,
+  collectionTitle,
+  chapterTitle,
+  className,
+}: Props & { className?: string }) {
   const { has, toggle, pending } = useBookmarks();
   const { interfaceLanguage } = useLanguage();
   const bn = interfaceLanguage === "bn";
@@ -65,9 +71,12 @@ export function BookmarkButton({ number, bookTitle, collectionTitle, chapterTitl
             : `Bookmark hadith ${number}`
       }
       onClick={onClick}
+      className={className}
     >
       {saved ? <BookmarkCheck aria-hidden /> : <Bookmark aria-hidden />}
-      {saved ? (bn ? "বুকমার্ক করা" : "Bookmarked") : bn ? "বুকমার্ক" : "Bookmark"}
+      <span className="web:sr-only">
+        {saved ? (bn ? "বুকমার্ক করা" : "Bookmarked") : bn ? "বুকমার্ক" : "Bookmark"}
+      </span>
     </Button>
   );
 }

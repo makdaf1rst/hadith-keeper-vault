@@ -3,57 +3,26 @@
 // Deployment sync marker: home language toggle
 // Lovable sync marker: Book 43 QC deployment
 // Lovable sync marker: Book 66 QC deployment
-import { useQuery } from "@tanstack/react-query";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
-  Bell,
+  ArrowLeftRight,
   Bookmark as BookmarkIcon,
   BookOpen,
   Download,
-  Menu,
-  FolderKanban,
-  Mail,
-  ShieldCheck,
   Languages,
-  Settings,
-  HelpCircle,
+  Menu,
   Search,
-  ArrowLeftRight,
   X,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { AboutLibrary } from "@/components/library/AboutLibrary";
-import { ContinueReading, RecentChips } from "@/components/library/ContinueReading";
-import { IntroText } from "@/components/library/IntroText";
+import { RecentChips } from "@/components/library/ContinueReading";
+import { AboutSection, BookGrid, ContinueCard, HomeHero } from "@/components/library/HomeDesktop";
 import { LibraryTree } from "@/components/library/LibraryTree";
-import { SearchPanel } from "@/components/library/SearchPanel";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
-import { getBookIntroDisplayOverride } from "@/lib/book-intro-overrides";
-import { fetchBengaliChapterTranslation } from "@/lib/bengali-translations";
-import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
-import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
-import {
-  fetchChapterHadiths,
-  fetchChapters,
-  fetchLibraryStats,
-  type Book,
-  type Chapter,
-} from "@/lib/library-api";
+import type { Book } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
-import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
+import { toBengaliDigits } from "@/lib/normalize";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,143 +52,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function hasIntro(book: Book | null): book is Book {
-  if (!book) return false;
-  if (getBookIntroDisplayOverride(book.book_number)) return true;
-  return [
-    book.intro_ar_display,
-    book.intro_ar_source,
-    book.intro_en_display,
-    book.intro_en_source,
-  ].some((value) => value && value.trim().length > 0);
-}
-
-function SelectedChapter({ chapter, bookNumber }: { chapter: Chapter; bookNumber: number }) {
-  const t = useInterfaceText();
-  const { contentLanguage } = useLanguage();
-  const bengali = useQuery({
-    queryKey: ["bengali-selected-chapter", bookNumber, chapter.id],
-    queryFn: () =>
-      fetchBengaliChapterTranslation(
-        bookNumber,
-        chapter.id,
-        chapter.sort_order,
-        chapter.chapter_number,
-      ),
-    enabled: contentLanguage === "bn",
-  });
-  const bn = contentLanguage === "bn" ? bengali.data : null;
-  const hadiths = useQuery({
-    queryKey: ["selected-book-chapter-hadiths", chapter.id],
-    queryFn: () => fetchChapterHadiths(chapter.id),
-  });
-
-  return (
-    <li className="rounded-md border border-border bg-background p-3">
-      <p className="text-sm font-semibold text-foreground">
-        {bn?.title_bn ??
-          (formatChapterTitle(chapter.chapter_number, chapter.title_en) || t.chapter)}
-      </p>
-      {chapter.title_ar ? (
-        <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
-          {chapter.title_ar}
-        </p>
-      ) : null}
-      <IntroText intro={chapter} bengaliIntro={bn} className="mt-2" label={t.chapterIntroduction} />
-      {hadiths.isLoading ? (
-        <p className="mt-2 text-xs text-muted-foreground">{t.loadingHadiths}</p>
-      ) : hadiths.data?.length ? (
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {hadiths.data.map((hadith) => (
-            <li key={hadith.id}>
-              <Link
-                to="/hadith/$number"
-                params={{ number: String(hadith.hadith_number) }}
-                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-sm transition-colors hover:border-primary hover:text-primary"
-              >
-                {contentLanguage === "bn"
-                  ? toBengaliDigits(hadith.hadith_number)
-                  : hadith.hadith_number}
-                <span className="arabic-text text-sm! leading-none! text-muted-foreground">
-                  {toArabicIndicDigits(hadith.hadith_number)}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="mt-2 text-xs text-muted-foreground">{t.noNumberedHadiths}</p>
-      )}
-    </li>
-  );
-}
-
-function SelectedBookContents({ book }: { book: Book }) {
-  const t = useInterfaceText();
-  const { contentLanguage } = useLanguage();
-  const chapters = useQuery({
-    queryKey: ["selected-book-chapters", book.id, "v2"],
-    queryFn: () => fetchChapters(book.id),
-    refetchOnMount: "always",
-    refetchOnWindowFocus: true,
-  });
-
-  return (
-    <>
-      <h2 className="mt-4 text-lg font-semibold text-foreground">
-        {contentLanguage === "bn"
-          ? (getBengaliBookTitle(book.book_number) ??
-            formatBookTitle(book.book_number, book.title_en))
-          : formatBookTitle(book.book_number, book.title_en)}
-      </h2>
-      {book.title_ar ? (
-        <p className="arabic-text mt-1 text-base! leading-relaxed! text-muted-foreground">
-          {toArabicIndicDigits(book.book_number)}. {book.title_ar}
-        </p>
-      ) : null}
-      {hasIntro(book) ? (
-        <IntroText
-          intro={book}
-          bengaliIntro={contentLanguage === "bn" ? getBengaliBookIntro(book.book_number) : null}
-          className="mt-3"
-          label={t.bookIntroduction}
-        />
-      ) : null}
-
-      <div className="mt-5 border-t border-border pt-4">
-        <h3 className="text-base font-semibold text-foreground">
-          {t.babs}{" "}
-          {chapters.data
-            ? `(${contentLanguage === "bn" ? toBengaliDigits(chapters.data.length) : chapters.data.length})`
-            : ""}
-        </h3>
-        {chapters.isLoading ? (
-          <p className="mt-3 text-sm text-muted-foreground">{t.loading}</p>
-        ) : chapters.data?.length ? (
-          <ul className="mt-3 space-y-3">
-            {chapters.data
-              .filter((chapter) => !chapter.collection_id)
-              .map((chapter) => (
-                <SelectedChapter key={chapter.id} chapter={chapter} bookNumber={book.book_number} />
-              ))}
-          </ul>
-        ) : (
-          <p className="mt-3 text-sm text-muted-foreground">{t.noChaptersYet}</p>
-        )}
-      </div>
-    </>
-  );
-}
-
 // Bengali library summary and numerals follow the selected interface language.
 function Index() {
-  const stats = useQuery({ queryKey: ["library-stats"], queryFn: fetchLibraryStats });
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [guideOpen, setGuideOpen] = useState(false);
   const [tourStep, setTourStep] = useState<number | null>(null);
   const t = useInterfaceText();
-  const { interfaceLanguage, contentLanguage, setInterfaceLanguage, setContentLanguage } =
-    useLanguage();
+  const { interfaceLanguage } = useLanguage();
   const isBengali = interfaceLanguage === "bn";
 
   const tourSteps = isBengali
@@ -282,9 +121,16 @@ function Index() {
     if (tourStep === null) return;
     const target = tourSteps[tourStep]?.target;
     if (!target) return;
-    window.setTimeout(() => {
-      document.getElementById(target)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    const el = document.getElementById(target);
+    const ring = ["ring-4", "ring-primary", "ring-offset-4", "ring-offset-background"];
+    el?.classList.add(...ring);
+    const timer = window.setTimeout(() => {
+      el?.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 80);
+    return () => {
+      window.clearTimeout(timer);
+      el?.classList.remove(...ring);
+    };
   }, [tourStep, isBengali]);
 
   function markGuideSeen() {
@@ -309,234 +155,31 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <header className="hidden px-4 pt-[calc(1.25rem+env(safe-area-inset-top))] font-sans [.app_&]:block">
-        <img src="/jami-al-kamil-logo.png" alt="Al-Jami al-Kamil — الجامع الكامل" className="mx-auto h-24 w-auto max-w-[80%] object-contain" />
+        <img
+          src="/jami-al-kamil-logo.png"
+          alt="Al-Jami al-Kamil — الجامع الكامل"
+          className="mx-auto h-24 w-auto max-w-[80%] object-contain"
+        />
         <h1 className="mt-4 font-sans text-3xl font-bold text-foreground">{t.library}</h1>
       </header>
-      <header className="relative border-b border-border bg-parchment [.app_&]:hidden">
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          onClick={() => {
-            const next = isBengali ? "en" : "bn";
-            setInterfaceLanguage(next);
-            setContentLanguage(next);
-          }}
-          id="language-switch-guide"
-          className={`absolute top-[calc(1rem+env(safe-area-inset-top))] left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-3 shadow-sm backdrop-blur hover:bg-accent sm:left-6 ${tourStep === 1 ? "ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}`}
-          aria-label={isBengali ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
-          title={isBengali ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
-        >
-          <Languages className="size-4" aria-hidden />
-          <span className="font-medium">{isBengali ? "English" : "বাংলা"}</span>
-        </Button>
-        <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 pt-16 pb-6 sm:px-6 sm:pt-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-1 sm:flex-row sm:gap-8">
-              <img
-                src="/jami-al-kamil-logo.png"
-                alt="Al-Jami al-Kamil — الجامع الكامل"
-                className="h-20 w-auto shrink-0 sm:h-24"
-              />
-              <div className="min-w-0 flex-1 text-center">
-                <h1 className="arabic-text text-center! text-2xl! font-semibold leading-tight! text-foreground">
-                  الجامع الكامل في الحديث الصحيح الشامل المرتب على أبواب الفقه
-                </h1>
-                <p className="mt-1 text-base font-medium text-foreground">
-                  {isBengali
-                    ? "সহীহ হাদীসের পূর্ণাঙ্গ ও সর্বব্যাপী সংকলন, ফিকহের অধ্যায় অনুযায়ী বিন্যস্ত"
-                    : "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh"}
-                </p>
-                <div className="mt-3 space-y-2 text-center text-muted-foreground">
-                  <div>
-                    <p className="arabic-text text-center! text-base! leading-snug!">
-                      المصنِّف: ضياء الرحمن الأعظمي
-                    </p>
-                    <p className="mt-0.5 text-sm font-medium">
-                      {isBengali
-                        ? "গ্রন্থকার: দিয়াউর রহমান আল-আযমী"
-                        : "Author: Ḍiyāʾ al-Raḥmān al-Aʿẓamī"}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="arabic-text text-center! text-base! leading-snug!">
-                      ترجمة: سدمان ظريف طلحة
-                    </p>
-                    <p className="mt-0.5 text-sm font-medium">
-                      {isBengali
-                        ? "অনুবাদ: সাদমান জারিফ তালহা"
-                        : "Translated by: Sadman Zarif Talha"}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="ml-auto flex shrink-0 items-center gap-1">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    id="library-menu-guide"
-                    className={`h-9 gap-2 rounded-full border-gold/40 bg-background/90 px-3 text-foreground shadow-sm backdrop-blur hover:bg-accent ${tourStep === 2 ? "ring-4 ring-primary ring-offset-4 ring-offset-background" : ""}`}
-                    aria-label={
-                      interfaceLanguage === "bn" ? "লাইব্রেরি মেনু খুলুন" : "Open Library Menu"
-                    }
-                    title={interfaceLanguage === "bn" ? "লাইব্রেরি মেনু" : "Library Menu"}
-                  >
-                    <Menu className="size-4" aria-hidden />
-                    <span className="font-medium">
-                      {interfaceLanguage === "bn" ? "লাইব্রেরি মেনু" : "Library Menu"}
-                    </span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-44 bg-parchment">
-                  <DropdownMenuItem asChild>
-                    <Link to="/bookmarks" className="cursor-pointer">
-                      <BookmarkIcon aria-hidden />
-                      {t.bookmarks}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/downloads" className="cursor-pointer">
-                      <Download aria-hidden />
-                      {interfaceLanguage === "bn" ? "ডাউনলোড" : "Downloads"}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a
-                      href={
-                        contentLanguage === "bn"
-                          ? "https://drive.google.com/file/d/1c5KMFNUTWDgYVqAGU1hKgU6fv9EgsFen/view"
-                          : "https://drive.google.com/file/d/10_ZkVs3B4kIlxTnMSYy982FwMmAxSSFY/view"
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cursor-pointer"
-                    >
-                      <BookOpen aria-hidden />
-                      {interfaceLanguage === "bn"
-                        ? "আল-জামি‘ আল-কামিলে ব্যবহৃত গ্রন্থসমূহ"
-                        : "Books Used in al-Jāmiʿ al-Kāmil"}
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a
-                      href={
-                        contentLanguage === "bn"
-                          ? "https://drive.google.com/file/d/1UVM6aDTx6YNbOZP8uvP4bNghx7dwxJUI/view"
-                          : "https://drive.google.com/file/d/19C5NU_lLYtPqTSS-h1PhVxxaWQXdQq49/view"
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cursor-pointer"
-                    >
-                      <BookOpen aria-hidden />
-                      {interfaceLanguage === "bn"
-                        ? "আল-জামি‘ আল-কামিলের সাহাবী বর্ণনাকারীগণ"
-                        : "Sahabah Narrators in al-Jāmiʿ al-Kāmil"}
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuSub>
-                    <DropdownMenuSubTrigger>
-                      <Settings aria-hidden />
-                      {interfaceLanguage === "bn" ? "ভাষা" : "Language"}
-                    </DropdownMenuSubTrigger>
-                    <DropdownMenuSubContent className="bg-parchment">
-                      <DropdownMenuRadioGroup
-                        value={contentLanguage}
-                        onValueChange={(value) => {
-                          const language = value === "bn" ? "bn" : "en";
-                          setInterfaceLanguage(language);
-                          setContentLanguage(language);
-                        }}
-                      >
-                        <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
-                        <DropdownMenuRadioItem value="bn">বাংলা</DropdownMenuRadioItem>
-                      </DropdownMenuRadioGroup>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuSub>
-                  <DropdownMenuItem asChild>
-                    <Link to="/announcements" className="cursor-pointer">
-                      <Bell aria-hidden />
-                      {t.announcements}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/projects" className="cursor-pointer">
-                      <FolderKanban aria-hidden />
-                      {t.otherProjects}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer" onSelect={() => setGuideOpen(true)}>
-                    <HelpCircle aria-hidden />
-                    {isBengali ? "ওয়েবসাইট গাইড" : "Website Guide"}
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/contact" className="cursor-pointer">
-                      <Mail aria-hidden />
-                      {t.contact}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/privacy" className="cursor-pointer">
-                      <ShieldCheck aria-hidden />
-                      {t.privacy}
-                    </Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-          </div>
-        </div>
-      </header>
+      <HomeHero bn={isBengali} onGuide={() => setGuideOpen(true)} />
 
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 [.app_&]:pt-4">
         <RecentChips />
-        <div className="[.app_&]:hidden">
-          <ContinueReading />
-        </div>
-        <div
-          id="site-search-guide"
-          className={`[.app_&]:hidden ${
-            tourStep === 0
-              ? "rounded-xl ring-4 ring-primary ring-offset-4 ring-offset-background"
-              : ""
-          }`}
-        >
-          <SearchPanel />
+        <div className="mx-auto max-w-6xl space-y-14 pt-4 [.app_&]:hidden">
+          <ContinueCard bn={isBengali} />
+          <BookGrid bn={isBengali} />
+          <AboutSection bn={isBengali} />
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[22rem_1fr] [.app_&]:mt-6 [.app_&]:block">
+        {/* app only: the website uses BookGrid above */}
+        <div className="hidden [.app_&]:mt-6 [.app_&]:block">
           <aside className="rounded-lg border border-border bg-sidebar p-3 [.app_&]:border-0 [.app_&]:bg-transparent [.app_&]:p-0">
             <h2 className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold tracking-wide text-sidebar-foreground uppercase [.app_&]:px-4 [.app_&]:font-sans [.app_&]:text-xs [.app_&]:text-muted-foreground">
               <BookOpen className="size-4" aria-hidden /> {t.contents}
             </h2>
             <LibraryTree selectedBookId={selectedBook?.id ?? null} onSelectBook={setSelectedBook} />
           </aside>
-
-          <section className="rounded-lg border border-border bg-card p-6 [.app_&]:hidden">
-            <div className="border-b border-border pb-4">
-              <p className="text-sm text-muted-foreground">
-                {stats.data
-                  ? isBengali
-                    ? `${toBengaliDigits(stats.data.books)} কিতাব · মোট ${toBengaliDigits(stats.data.hadiths)} হাদিস`
-                    : `${stats.data.books} ${t.booksLabel} · ${stats.data.hadiths} ${t.importedStats}`
-                  : t.bilingualCollection}
-              </p>
-            </div>
-            {selectedBook ? (
-              <SelectedBookContents book={selectedBook} />
-            ) : (
-              <>
-                <h2 className="mt-4 text-lg font-semibold text-foreground">
-                  {isBengali ? "এই গ্রন্থাগার সম্পর্কে" : "About this library"}
-                </h2>
-                <AboutLibrary bn={isBengali} className="mt-3" />
-              </>
-            )}
-          </section>
         </div>
       </main>
 

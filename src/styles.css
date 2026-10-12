@@ -3,6 +3,8 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/* website only (not the Capacitor/?app=1 shell) */
+@custom-variant web (&:where(html:not(.app) *));
 
 /*
  * Design system definition.
