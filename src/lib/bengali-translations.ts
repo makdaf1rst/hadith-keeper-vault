@@ -93,7 +93,21 @@ export async function fetchBengaliTranslation(
   if (!bookNumber) return null;
 
   const translations = await loadBookTranslations(bookNumber);
-  return translations[String(hadithNumber)] ?? null;
+  const translation = translations[String(hadithNumber)] ?? null;
+
+  // Hadith 653: preserve the archived text while correcting the displayed
+  // rendering of محمد بن عبد الله ورسوله.
+  if (hadithNumber === 653 && translation) {
+    return {
+      ...translation,
+      text: translation.text.replace(
+        "আল্লাহর বান্দা ও তাঁর রাসূল মুহাম্মাদের পক্ষ থেকে রোমের শাসক হিরাক্লিয়াসের প্রতি।",
+        "মুহাম্মাদ ইবনু আবদুল্লাহ, আল্লাহর রাসূলের পক্ষ থেকে রোমের শাসক হিরাক্লিয়াসের প্রতি।",
+      ),
+    };
+  }
+
+  return translation;
 }
 
 
