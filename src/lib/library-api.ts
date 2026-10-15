@@ -135,6 +135,22 @@ function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
 }
 
 function applyKnownHadithTextCorrections(hadith: HadithFull): HadithFull {
+  // Hadith 653: محمد بن عبد الله ورسوله means Muhammad, son of Abdullah,
+  // the Messenger of Allah, not "the servant of Allah and His Messenger".
+  if (hadith.hadith_number === 653) {
+    const correctMuhammadLine = (value: string | null) =>
+      value?.replace(
+        "From Muḥammad, the servant of Allah and His Messenger, to Heraclius, the ruler of the Romans.",
+        "From Muḥammad, son of ʿAbdullāh, the Messenger of Allah, to Heraclius, the ruler of the Romans.",
+      ) ?? null;
+
+    return {
+      ...hadith,
+      english_display: correctMuhammadLine(hadith.english_display),
+      full_display_content: correctMuhammadLine(hadith.full_display_content),
+    };
+  }
+
   if (hadith.hadith_number !== 16273) return hadith;
 
   const correctResponse = (value: string | null) =>
