@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 import { IntroText } from "@/components/library/IntroText";
 import { ReaderSubBar, subBarBack } from "@/components/library/ReaderSubBar";
@@ -70,6 +71,30 @@ function ChapterHadiths({ chapter }: { chapter: Chapter }) {
   );
 }
 
+// ponytail: native <details>; children mount only once opened so a closed baab never fetches its hadiths.
+function Fold({
+  summary,
+  className,
+  children,
+}: {
+  summary: React.ReactNode;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <details className={className} onToggle={(e) => setOpen(e.currentTarget.open)}>
+      <summary className="flex cursor-pointer list-none items-start gap-2 [&::-webkit-details-marker]:hidden">
+        <ChevronRight
+          className={`mt-1 size-4 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-90" : ""}`}
+        />
+        <div className="min-w-0 flex-1">{summary}</div>
+      </summary>
+      {open ? children : null}
+    </details>
+  );
+}
+
 function ChapterBlock({
   chapter,
   bengali,
@@ -85,17 +110,24 @@ function ChapterBlock({
 
   return (
     <li className="border-l-2 border-border pl-3">
-      <p className="text-sm font-medium">{title}</p>
-      {chapter.title_ar ? (
-        <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p>
-      ) : null}
-      <IntroText
-        intro={chapter}
-        bengaliIntro={bengali}
-        className="mt-2"
-        label={contentLanguage === "bn" ? "অধ্যায়ের ভূমিকা" : "Chapter introduction"}
-      />
-      <ChapterHadiths chapter={chapter} />
+      <Fold
+        summary={
+          <>
+            <p className="text-sm font-medium">{title}</p>
+            {chapter.title_ar ? (
+              <p className="arabic-text text-lg! leading-relaxed!">{chapter.title_ar}</p>
+            ) : null}
+          </>
+        }
+      >
+        <IntroText
+          intro={chapter}
+          bengaliIntro={bengali}
+          className="mt-2"
+          label={contentLanguage === "bn" ? "অধ্যায়ের ভূমিকা" : "Chapter introduction"}
+        />
+        <ChapterHadiths chapter={chapter} />
+      </Fold>
     </li>
   );
 }
@@ -197,36 +229,45 @@ function BookPage() {
                   key={collection.id}
                   className="rounded-lg border border-border bg-card p-5 web:rounded-2xl"
                 >
-                  <h2 className="text-lg font-semibold">
-                    {contentLanguage === "bn" && bengaliCollection?.title_bn
-                      ? bengaliCollection.title_bn
-                      : (collection.title_en ?? "Collection")}
-                  </h2>
-                  {collection.title_ar ? (
-                    <p className="arabic-text">{collection.title_ar}</p>
-                  ) : null}
-                  <IntroText
-                    intro={collection}
-                    bengaliIntro={bengaliCollection}
-                    className="mt-3"
-                    label={contentLanguage === "bn" ? "সংগ্রহের ভূমিকা" : "Collection introduction"}
-                  />
-                  <ul className="mt-3 space-y-3">
-                    {orderCollectionChapters(
-                      (chapters.data ?? []).filter(
-                        (chapter) => chapter.collection_id === collection.id,
-                      ),
-                    ).map((chapter) => (
-                      <ChapterBlock
-                        key={chapter.id}
-                        chapter={chapter}
-                        bengali={
-                          bengaliChapters.get(chapter.id) ??
-                          bengaliChapters.get(`sort:${chapter.sort_order}`)
-                        }
-                      />
-                    ))}
-                  </ul>
+                  <Fold
+                    summary={
+                      <>
+                        <h2 className="text-lg font-semibold">
+                          {contentLanguage === "bn" && bengaliCollection?.title_bn
+                            ? bengaliCollection.title_bn
+                            : (collection.title_en ?? "Collection")}
+                        </h2>
+                        {collection.title_ar ? (
+                          <p className="arabic-text">{collection.title_ar}</p>
+                        ) : null}
+                      </>
+                    }
+                  >
+                    <IntroText
+                      intro={collection}
+                      bengaliIntro={bengaliCollection}
+                      className="mt-3"
+                      label={
+                        contentLanguage === "bn" ? "সংগ্রহের ভূমিকা" : "Collection introduction"
+                      }
+                    />
+                    <ul className="mt-3 space-y-3">
+                      {orderCollectionChapters(
+                        (chapters.data ?? []).filter(
+                          (chapter) => chapter.collection_id === collection.id,
+                        ),
+                      ).map((chapter) => (
+                        <ChapterBlock
+                          key={chapter.id}
+                          chapter={chapter}
+                          bengali={
+                            bengaliChapters.get(chapter.id) ??
+                            bengaliChapters.get(`sort:${chapter.sort_order}`)
+                          }
+                        />
+                      ))}
+                    </ul>
+                  </Fold>
                 </section>
               );
             })}
