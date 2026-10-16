@@ -77,7 +77,8 @@ function DownloadsPage() {
             </h1>
           </div>
 
-          <div className="max-h-[68vh] space-y-5 overflow-y-auto px-5 py-6 leading-7 sm:px-8">
+          {/* Phones scroll the page, not a nested box, so the floating tab bar never covers the pledge or buttons. */}
+          <div className="space-y-5 px-5 py-6 leading-7 sm:max-h-[68vh] sm:overflow-y-auto sm:px-8">
             {bn ? (
               <>
                 <p>

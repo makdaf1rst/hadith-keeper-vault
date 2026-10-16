@@ -608,23 +608,24 @@ async function pagefindSearchHadiths(filters: SearchFilters): Promise<SearchResu
 
   const { results } = await pagefind.search(term, { filters: pfFilters });
 
+  // Up to 2 records per hadith (ar + en), so 400 records covers the 200-result cap.
+  // Fragments load in parallel and carry the display text: no book-file downloads.
+  const records = await Promise.all(results.slice(0, 400).map((result) => result.data()));
+
   const seen = new Set<number>();
   const out: SearchResult[] = [];
-  for (const result of results) {
-    const { meta } = await result.data();
+  for (const { meta } of records) {
     const hadithNumber = Number(meta["hadith_number"]);
     if (!hadithNumber || seen.has(hadithNumber)) continue;
     seen.add(hadithNumber);
-    const hadith = await fetchHadithByNumber(hadithNumber);
-    if (!hadith) continue;
     out.push({
-      id: hadith.id,
-      hadith_number: hadith.hadith_number,
-      book_id: hadith.book_id,
-      collection_id: hadith.collection_id,
-      chapter_id: hadith.chapter_id,
-      arabic_display: hadith.arabic_display,
-      english_display: hadith.english_display,
+      id: meta["id"] ?? String(hadithNumber),
+      hadith_number: hadithNumber,
+      book_id: meta["book_id"] ?? null,
+      collection_id: meta["collection_id"] ?? null,
+      chapter_id: meta["chapter_id"] ?? null,
+      arabic_display: meta["ar"] ?? null,
+      english_display: meta["en"] ?? null,
     });
     if (out.length >= 200) break;
   }

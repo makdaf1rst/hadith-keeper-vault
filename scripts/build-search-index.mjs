@@ -167,7 +167,11 @@ function hadithMeta(h, book) {
     title: `Hadith ${h.hadith_number}`,
     kind: "hadith",
     hadith_number: String(h.hadith_number),
+    id: h.id,
   };
+  // Display text rides in the fragment so search results never load book files.
+  if (h.arabic_display) meta.ar = h.arabic_display;
+  if (h.english_display) meta.en = h.english_display;
   if (book) {
     meta.book_number = String(book.book_number);
     meta.book_id = book.id;

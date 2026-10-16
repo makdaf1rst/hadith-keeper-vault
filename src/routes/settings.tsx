@@ -6,6 +6,7 @@ import { AboutLibrary } from "@/components/library/AboutLibrary";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { BOOKS_USED_URL, NARRATORS_URL, shareApp } from "@/lib/links";
 import { THEMES, useTheme } from "@/lib/theme";
+import { SHOW_WELCOME_EVENT } from "@/components/WelcomeTour";
 
 export const Route = createFileRoute("/settings")({
   head: () => ({ meta: [{ title: "Settings — Al-Jāmiʿ al-Kāmil" }] }),
@@ -142,6 +143,16 @@ function SettingsPage() {
           </button>
         </li>
         <RouteRow to="/send-gift" label={bn ? "উপহার পাঠান" : "Send Gift"} />
+        <li>
+          <button
+            type="button"
+            className={rowClass}
+            onClick={() => window.dispatchEvent(new Event(SHOW_WELCOME_EVENT))}
+          >
+            {bn ? "অ্যাপ পরিচিতি আবার দেখুন" : "How to use the app"}
+            <ChevronRight className="size-4 text-muted-foreground" aria-hidden />
+          </button>
+        </li>
         <RouteRow to="/contact" label={t.contact} />
         <RouteRow to="/privacy" label={t.privacy} />
       </Group>

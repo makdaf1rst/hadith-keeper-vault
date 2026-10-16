@@ -11,36 +11,41 @@ All values for the Play Console store listing. Paths are relative to the repo ro
 
 ## Store listing (Main store listing)
 
-- App name: `Jāmiʿ al-Kāmil`
+- App name (30 max, keyword helps search): `Jāmiʿ al-Kāmil: Hadith Library`
 - Short description (80 max):
-  `The complete al-Jami al-Kamil hadith library in Arabic, English and Bengali`
+  `Hadith library: 16,546 narrations in Arabic, English & Bangla. Offline, no ads`
 - Full description (4000 max):
 
 ```
-Jami al-Kamil is the complete digital library of al-Jami al-Kamil by Shaykh Dr. Diya al-Rahman al-A'zami, one of the most comprehensive hadith collections ever compiled: 16,546 narrations gathered from more than 200 source works, organized across 66 books.
+Read and search 16,546 authentic hadith in Arabic, English and Bangla (Bengali), all in one free Islamic library app that works offline.
 
-Read every narration in the original Arabic, with translations in English and Bengali.
+Jami al-Kamil brings you al-Jami al-Kamil fi al-Hadith al-Sahih al-Shamil by Shaykh Dr. Diya al-Rahman al-A'zami: one of the most comprehensive hadith collections ever compiled, gathered from more than 200 source works and organized across 66 books.
 
-FEATURES
-- The full 66-book library: 16,546 narrations with Arabic text and translation
-- Fast search across the entire collection
-- Bookmarks and reading history, saved automatically on your device
-- Download books for offline reading
-- Backup and restore: export your bookmarks and progress as a file, import it on any other device
-- No account, no sign-in, no ads, no tracking. Everything stays on your device.
-- Free, forever
+WHY READERS USE IT
+- Every narration in the original Arabic with English and Bangla translation
+- Search by word or phrase across the whole collection, in Arabic, English or Bangla
+- Bookmark any hadith and pick up where you left off
+- Download books and read hadith offline, with no internet connection
+- Backup and restore your bookmarks to move them to a new phone
+- Reading themes, including dark mode, sepia and a "follow my device" option
+- Switch the app between English and Bangla
+- A short guided tour on first launch, replayable any time from Settings
+
+PRIVATE BY DESIGN
+No account, no sign-in, no ads, no tracking. Your bookmarks and reading progress stay on your device unless you export them yourself.
 
 ABOUT THE COLLECTION
-Al-Jami al-Kamil is the life's work of Shaykh Dr. Diya al-Rahman al-A'zami, who spent decades collecting, verifying, and organizing narrations from over two hundred classical and contemporary sources into a single comprehensive collection.
+Al-Jami al-Kamil is the life's work of Shaykh Dr. Diya al-Rahman al-A'zami, who spent decades collecting, verifying and organizing narrations from over two hundred classical and contemporary sources into a single collection.
 
-Your bookmarks and reading progress never leave your device unless you export them yourself.
+Free, forever. Feedback and corrections: saqibh49@gmail.com
 ```
 
 ## Graphics
 
 - App icon (512x512): `public/icon-512.png`
 - Feature graphic (1024x500): `assets/store/play-feature-graphic.png`
-- Phone screenshots (upload all 6): `assets/store/asc-6.5/iphone-01..06-*.png`
+- Phone screenshots (upload all 7, in order): `assets/store/play-phone/01..07.png`
+  (regenerate from `app-screenshots/` with `python3 scripts/store-screenshots.py`)
 
 ## Categorization and contact
 

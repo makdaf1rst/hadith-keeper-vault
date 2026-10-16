@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 
-export type Theme = "light" | "sepia" | "soft-gray" | "green" | "dark" | "warm-night" | "black";
+export type Theme =
+  "system" | "light" | "sepia" | "soft-gray" | "green" | "dark" | "warm-night" | "black";
 
 const STORAGE_KEY = "jami-theme";
 const EVENT = "jami-theme-change";
+const DARK_QUERY = "(prefers-color-scheme: dark)";
 
 // swatch = the theme's --background in styles.css, so the picker previews the real page color
 export const THEMES: Array<{ value: Theme; label: string; swatch: string }> = [
+  {
+    value: "system",
+    label: "System",
+    swatch: "linear-gradient(135deg, oklch(0.978 0.011 85) 50%, oklch(0.19 0.014 60) 50%)",
+  },
   { value: "light", label: "Light", swatch: "oklch(0.978 0.011 85)" },
   { value: "sepia", label: "Sepia", swatch: "oklch(0.94 0.03 82)" },
   { value: "soft-gray", label: "Soft Gray", swatch: "oklch(0.94 0.006 250)" },
@@ -16,38 +23,54 @@ export const THEMES: Array<{ value: Theme; label: string; swatch: string }> = [
   { value: "black", label: "Black", swatch: "oklch(0.08 0 0)" },
 ];
 
+function isTheme(value: string | null): value is Theme {
+  return THEMES.some((item) => item.value === value);
+}
+
+// no stored choice = follow the device, same as the pre-paint script in __root.tsx
+function readStoredTheme(): Theme {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return isTheme(stored) ? stored : "system";
+  } catch {
+    return "system";
+  }
+}
+
 function applyTheme(theme: Theme) {
+  const resolved =
+    theme === "system" ? (window.matchMedia(DARK_QUERY).matches ? "dark" : "light") : theme;
   const root = document.documentElement;
   root.classList.remove("dark", "sepia", "soft-gray", "green", "warm-night", "black");
 
-  if (theme === "dark") root.classList.add("dark");
-  if (theme === "sepia") root.classList.add("sepia");
-  if (theme === "soft-gray") root.classList.add("soft-gray");
-  if (theme === "green") root.classList.add("green");
-  if (theme === "warm-night") root.classList.add("dark", "warm-night");
-  if (theme === "black") root.classList.add("dark", "black");
-}
-
-function detectTheme(): Theme {
-  const root = document.documentElement;
-  if (root.classList.contains("black")) return "black";
-  if (root.classList.contains("warm-night")) return "warm-night";
-  if (root.classList.contains("green")) return "green";
-  if (root.classList.contains("soft-gray")) return "soft-gray";
-  if (root.classList.contains("sepia")) return "sepia";
-  if (root.classList.contains("dark")) return "dark";
-  return "light";
+  if (resolved === "dark") root.classList.add("dark");
+  if (resolved === "sepia") root.classList.add("sepia");
+  if (resolved === "soft-gray") root.classList.add("soft-gray");
+  if (resolved === "green") root.classList.add("green");
+  if (resolved === "warm-night") root.classList.add("dark", "warm-night");
+  if (resolved === "black") root.classList.add("dark", "black");
 }
 
 export function useTheme(): [Theme, (theme: Theme) => void] {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("system");
 
   useEffect(() => {
     // header popover + footer select both hold a copy; keep them in sync
-    const sync = () => setTheme(detectTheme());
+    const sync = () => setTheme(readStoredTheme());
     sync();
     window.addEventListener(EVENT, sync);
-    return () => window.removeEventListener(EVENT, sync);
+
+    // device flips light/dark while the app is open: follow it if the user chose System
+    const media = window.matchMedia(DARK_QUERY);
+    const onDeviceChange = () => {
+      if (readStoredTheme() === "system") applyTheme("system");
+    };
+    media.addEventListener("change", onDeviceChange);
+
+    return () => {
+      window.removeEventListener(EVENT, sync);
+      media.removeEventListener("change", onDeviceChange);
+    };
   }, []);
 
   const selectTheme = (next: Theme) => {
