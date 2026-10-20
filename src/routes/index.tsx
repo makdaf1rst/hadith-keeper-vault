@@ -154,13 +154,42 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="hidden px-4 pt-[calc(1.25rem+env(safe-area-inset-top))] font-sans [.app_&]:block">
-        <img
-          src="/jami-al-kamil-logo.png"
-          alt="Al-Jami al-Kamil — الجامع الكامل"
-          className="mx-auto h-24 w-auto max-w-[80%] object-contain"
-        />
-        <h1 className="mt-4 font-sans text-3xl font-bold text-foreground">{t.library}</h1>
+      <header className="hidden font-sans [.app_&]:block">
+        <div className="relative overflow-hidden bg-linear-to-b from-parchment from-50% to-background px-4 pt-[calc(2rem+env(safe-area-inset-top))] pb-10 text-center">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_80%_at_50%_0%,color-mix(in_oklch,var(--gold)_18%,transparent),transparent)]"
+          />
+          <p
+            lang="ar"
+            dir="rtl"
+            className="relative arabic-text text-center! text-5xl leading-[1.3]! text-primary/85"
+          >
+            الجامع الكامل
+          </p>
+          <p className="relative mt-3 text-sm font-semibold tracking-[0.18em] text-foreground uppercase">
+            {isBengali ? "আল-জামি‘ আল-কামিল" : "Al-Jāmiʿ al-Kāmil"}
+          </p>
+          <p className="relative mt-2 text-xs text-muted-foreground">
+            <span className="whitespace-nowrap">
+              {isBengali ? "দিয়াউর রহমান আল-আযমী" : "Ḍiyāʾ al-Raḥmān al-Aʿẓamī"}
+            </span>
+            <span className="mx-2 text-gold">◆</span>
+            <span className="whitespace-nowrap">
+              {isBengali ? "অনুবাদ: " : "Translated by "}
+              <span className="font-medium text-foreground">
+                {isBengali ? "সাদমান জারিফ তালহা" : "Sadman Zarif Talha"}
+              </span>
+            </span>
+          </p>
+        </div>
+        <div className="mt-1 flex items-center justify-center gap-3 px-4">
+          <span aria-hidden className="h-px w-12 bg-linear-to-r from-transparent to-gold/60" />
+          <span aria-hidden className="text-[10px] text-gold">◆</span>
+          <h1 className="font-serif text-2xl font-medium text-foreground">{t.library}</h1>
+          <span aria-hidden className="text-[10px] text-gold">◆</span>
+          <span aria-hidden className="h-px w-12 bg-linear-to-l from-transparent to-gold/60" />
+        </div>
       </header>
       <HomeHero bn={isBengali} onGuide={() => setGuideOpen(true)} />
 
