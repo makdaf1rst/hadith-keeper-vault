@@ -110,16 +110,16 @@ export const Route = createFileRoute("/")({
     scripts: [{ type: "application/ld+json", children: JSON.stringify(JSON_LD) }],
     meta: [
       {
-        title: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+        title: "Al-Jāmiʿ al-Kāmil Hadith — Arabic & English Translation",
       },
       {
         name: "description",
         content:
-          "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh, by Ḍiyāʾ al-Raḥmān al-Aʿẓamī. Browse and search 66 Books and 16,546 numbered hadiths with complete Arabic text, English translation, references, grades and commentary.",
+          "Al-Jāmiʿ al-Kāmil by Ḍiyāʾ al-Raḥmān al-Aʿẓamī: all 16,546 authentic hadiths with Arabic text, full English translation, grades and references.",
       },
       {
         property: "og:title",
-        content: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+        content: "Al-Jāmiʿ al-Kāmil Hadith — Arabic & English Translation",
       },
       {
         property: "og:description",
@@ -268,7 +268,7 @@ function Index() {
         <div className="mt-1 flex items-center justify-center gap-3 px-4">
           <span aria-hidden className="h-px w-12 bg-linear-to-r from-transparent to-gold/60" />
           <span aria-hidden className="text-[10px] text-gold">◆</span>
-          <h1 className="font-serif text-2xl font-medium text-foreground">{t.library}</h1>
+          <h2 className="font-serif text-2xl font-medium text-foreground">{t.library}</h2>
           <span aria-hidden className="text-[10px] text-gold">◆</span>
           <span aria-hidden className="h-px w-12 bg-linear-to-l from-transparent to-gold/60" />
         </div>
