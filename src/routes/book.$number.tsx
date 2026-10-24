@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
@@ -18,17 +18,52 @@ import {
 } from "@/lib/library-api";
 import { useLanguage } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
+import { makeBreadcrumbList, SITE_ORIGIN, sourceExcerpt } from "@/lib/seo";
 
 export const Route = createFileRoute("/book/$number")({
-  head: ({ params }) => {
-    const title = `Book ${params.number} — Al-Jāmiʿ al-Kāmil`;
-    const description = `Collections and chapters of Book ${params.number} of Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil, with complete Arabic and English headings.`;
+  loader: async ({ params }) => {
+    const bookNumber = Number(params.number);
+    if (!Number.isSafeInteger(bookNumber) || bookNumber < 1) throw notFound();
+
+    const book = await fetchBookByNumber(bookNumber);
+    if (!book) throw notFound();
+
+    const [collections, chapters] = await Promise.all([
+      fetchCollections(book.id),
+      fetchChapters(book.id),
+    ]);
+    return { book, collections, chapters };
+  },
+  head: ({ loaderData }) => {
+    if (!loaderData) return {};
+    const { book } = loaderData;
+    const bookTitle = formatBookTitle(book.book_number, book.title_en);
+    const canonical = `${SITE_ORIGIN}/book/${book.book_number}`;
+    const title = `${bookTitle} — Al-Jāmiʿ al-Kāmil`;
+    const description =
+      sourceExcerpt(book.intro_en_display) ||
+      `Collections and chapters of ${bookTitle} in Arabic and English.`;
+
     return {
       meta: [
         { title },
         { name: "description", content: description },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            ...makeBreadcrumbList([
+              { name: "Home", url: `${SITE_ORIGIN}/` },
+              { name: bookTitle, url: canonical },
+            ]),
+          }),
+        },
       ],
     };
   },
@@ -134,6 +169,7 @@ function ChapterBlock({
 
 function BookPage() {
   const { number } = Route.useParams();
+  const loaderData = Route.useLoaderData();
   const { contentLanguage } = useLanguage();
   const bookNumber = Number(number);
 
@@ -141,21 +177,25 @@ function BookPage() {
     queryKey: ["book", bookNumber],
     queryFn: () => fetchBookByNumber(bookNumber),
     enabled: Number.isFinite(bookNumber),
+    initialData: loaderData.book,
   });
   const collections = useQuery({
     queryKey: ["collections", book.data?.id],
     queryFn: () => fetchCollections(book.data!.id),
     enabled: !!book.data,
+    initialData: loaderData.collections,
   });
   const chapters = useQuery({
     queryKey: ["chapters", book.data?.id],
     queryFn: () => fetchChapters(book.data!.id),
     enabled: !!book.data,
+    initialData: loaderData.chapters,
   });
   const bengaliStructure = useQuery({
     queryKey: ["bengali-structure", bookNumber],
     queryFn: () => fetchBengaliStructure(bookNumber),
-    enabled: contentLanguage === "bn" && Number.isFinite(bookNumber),
+    enabled:
+      typeof window !== "undefined" && contentLanguage === "bn" && Number.isFinite(bookNumber),
   });
 
   const bengaliCollections = new Map(

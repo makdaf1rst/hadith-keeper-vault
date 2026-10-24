@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -12,8 +12,59 @@ import { formatBookTitle, formatChapterTitle } from "@/lib/display-titles";
 import { fetchChapterContext, fetchChapterNeighbours, type ReadingTarget } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
+import { makeBreadcrumbList, SITE_ORIGIN, sourceExcerpt, WORK_NAME } from "@/lib/seo";
 
 export const Route = createFileRoute("/chapter/$id")({
+  loader: async ({ params }) => {
+    const context = await fetchChapterContext(params.id);
+    if (!context) throw notFound();
+    return { context };
+  },
+  head: ({ loaderData }) => {
+    if (!loaderData) return {};
+    const { context } = loaderData;
+    const canonical = `${SITE_ORIGIN}/chapter/${encodeURIComponent(context.chapter.id)}`;
+    const chapterTitle =
+      formatChapterTitle(context.chapter.chapter_number, context.chapter.title_en) || "Chapter";
+    const bookTitle = context.book
+      ? formatBookTitle(context.book.book_number, context.book.title_en)
+      : WORK_NAME;
+    const title = `${chapterTitle} — ${bookTitle} — Al-Jāmiʿ al-Kāmil`;
+    const description =
+      sourceExcerpt(context.chapter.intro_en_display) || `${chapterTitle} in ${bookTitle}.`;
+    const breadcrumbs = [
+      { name: "Home", url: `${SITE_ORIGIN}/` },
+      ...(context.book
+        ? [
+            {
+              name: bookTitle,
+              url: `${SITE_ORIGIN}/book/${context.book.book_number}`,
+            },
+          ]
+        : []),
+      { name: chapterTitle, url: canonical },
+    ];
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            ...makeBreadcrumbList(breadcrumbs),
+          }),
+        },
+      ],
+    };
+  },
   component: ChapterReadingPage,
 });
 
@@ -55,6 +106,7 @@ function targetLabel(target: ReadingTarget, isBengali: boolean, chapterLabel: st
 
 function ChapterReadingPage() {
   const { id } = Route.useParams();
+  const loaderData = Route.useLoaderData();
   const t = useInterfaceText();
   const { contentLanguage } = useLanguage();
   const isBengali = contentLanguage === "bn";
@@ -62,17 +114,22 @@ function ChapterReadingPage() {
   const context = useQuery({
     queryKey: ["chapter-reading-context", id],
     queryFn: () => fetchChapterContext(id),
+    initialData: loaderData.context,
   });
 
   const neighbours = useQuery({
     queryKey: ["chapter-reading-neighbours", id],
     queryFn: () => fetchChapterNeighbours(id),
+    enabled: typeof window !== "undefined",
   });
 
   const bengaliStructure = useQuery({
     queryKey: ["bengali-structure", context.data?.book?.book_number],
     queryFn: () => fetchBengaliStructure(context.data!.book!.book_number),
-    enabled: contentLanguage === "bn" && !!context.data?.book?.book_number,
+    enabled:
+      typeof window !== "undefined" &&
+      contentLanguage === "bn" &&
+      !!context.data?.book?.book_number,
   });
 
   const bengaliCollection = context.data?.collection
