@@ -67,6 +67,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/acknowledgments" className={linkClass}>
+                {bn ? "অবদান ও কৃতজ্ঞতা" : "Acknowledgments"}
+              </Link>
+            </li>
+            <li>
               <Link to="/announcements" className={linkClass}>
                 {t.announcements}
               </Link>

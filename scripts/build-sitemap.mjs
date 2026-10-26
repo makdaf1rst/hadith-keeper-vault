@@ -31,6 +31,7 @@ const hadithIndex = await readJson(path.join(contentDir, "hadith-index.json"));
 
 const urls = new Set([
   `${baseUrl}/`,
+  `${baseUrl}/acknowledgments`,
   `${baseUrl}/announcements`,
   `${baseUrl}/contact`,
   `${baseUrl}/projects`,

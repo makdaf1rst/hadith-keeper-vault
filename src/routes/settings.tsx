@@ -131,6 +131,7 @@ function SettingsPage() {
             <AboutLibrary bn={bn} className="px-4 pb-4 text-sm" />
           </details>
         </li>
+        <RouteRow to="/acknowledgments" label={bn ? "অবদান ও কৃতজ্ঞতা" : "Acknowledgments"} />
         <RouteRow to="/announcements" label={t.announcements} />
         <RouteRow to="/projects" label={t.otherProjects} />
       </Group>
