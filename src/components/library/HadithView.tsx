@@ -19,7 +19,7 @@ import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
 import { useReaderSettings } from "@/lib/reader-settings";
-import { canonicalUrl, isNative, openExternal } from "@/lib/native";
+import { canonicalUrl, isNative, isShareCancelled, openExternal } from "@/lib/native";
 
 type Props = {
   hadith: HadithFull;
@@ -72,7 +72,7 @@ async function shareHadith(hadithNumber: number, isBengali: boolean) {
     await navigator.clipboard.writeText(url);
     toast.success(isBengali ? "হাদিসের লিংক কপি হয়েছে।" : "Hadith link copied.");
   } catch (error) {
-    if (error instanceof DOMException && error.name === "AbortError") return;
+    if (isShareCancelled(error)) return;
     try {
       await navigator.clipboard.writeText(url);
       toast.success(isBengali ? "হাদিসের লিংক কপি হয়েছে।" : "Hadith link copied.");

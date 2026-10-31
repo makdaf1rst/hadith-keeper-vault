@@ -1,5 +1,5 @@
 import { toast } from "sonner";
-import { isNative } from "./native";
+import { isNative, isShareCancelled } from "./native";
 
 // shared by /settings (app) and the site header menu + footer (website)
 export const BOOKS_USED_URL = {
@@ -26,8 +26,7 @@ export async function shareApp(bn: boolean) {
     await navigator.clipboard.writeText(url);
     toast.success(bn ? "লিংক কপি হয়েছে" : "Link copied");
   } catch (error) {
-    // user closing the share sheet is not an error
-    if (error instanceof DOMException && error.name === "AbortError") return;
+    if (isShareCancelled(error)) return;
     toast.error(bn ? "শেয়ার করা যায়নি" : "Could not share");
   }
 }

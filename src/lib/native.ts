@@ -15,6 +15,12 @@ export function canonicalUrl(value: string | URL = window.location.href) {
   return isNative() ? `https://jami-al-kamil.com${url.pathname}${url.search}${url.hash}` : url.href;
 }
 
+// Closing the share sheet rejects: AbortError on the web, a "Share canceled" message from the plugin.
+export function isShareCancelled(error: unknown) {
+  if (error instanceof DOMException) return error.name === "AbortError";
+  return error instanceof Error && error.message.toLowerCase().includes("cancel");
+}
+
 function hadithFromDeepLink(value: string) {
   try {
     const url = new URL(value);
