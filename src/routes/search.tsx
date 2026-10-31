@@ -16,7 +16,7 @@ function SearchPage() {
   const t = useInterfaceText();
   const { q } = Route.useSearch();
   return (
-    <main className="mx-auto max-w-3xl px-4 pt-[calc(1.5rem+env(safe-area-inset-top))] sm:px-6 web:pt-12 sm:web:pt-16">
+    <main className="mx-auto max-w-3xl px-4 pt-6 sm:px-6 web:pt-12 sm:web:pt-16">
       <h1 className="mb-4 font-sans text-3xl font-bold text-foreground web:mb-6 web:text-center web:text-4xl web:tracking-tight">
         {t.search}
       </h1>

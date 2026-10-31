@@ -368,3 +368,14 @@ body {
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
 }
+
+/* Themed strip behind the status bar. The iOS scroll edge effect it replaces follows the phone's
+   appearance, not the app theme, so a light theme on a dark-mode phone got a grey band. */
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  height: env(safe-area-inset-top);
+  background: var(--background);
+}

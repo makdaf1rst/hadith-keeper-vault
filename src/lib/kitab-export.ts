@@ -518,29 +518,32 @@ function supportsAnchorDownload() {
   return "download" in document.createElement("a");
 }
 
+async function shareNativeFile(
+  fileName: string,
+  write: () => Promise<{ uri: string }>,
+): Promise<DeliveryOutcome> {
+  try {
+    const { uri } = await write();
+    const { Share } = await import("@capacitor/share");
+    await Share.share({ title: fileName, files: [uri] });
+    return "shared";
+  } catch (error) {
+    if ((error as Error)?.message?.toLowerCase().includes("cancel")) return "cancelled";
+    throw error;
+  }
+}
+
 export async function deliverFile(blob: Blob, fileName: string): Promise<DeliveryOutcome> {
   if (isNative()) {
-    try {
-      const [{ Filesystem, Directory }, { Share }] = await Promise.all([
-        import("@capacitor/filesystem"),
-        import("@capacitor/share"),
-      ]);
+    return shareNativeFile(fileName, async () => {
+      const { Filesystem, Directory } = await import("@capacitor/filesystem");
       const bytes = new Uint8Array(await blob.arrayBuffer());
       let binary = "";
       for (let offset = 0; offset < bytes.length; offset += 0x8000) {
         binary += String.fromCharCode(...bytes.subarray(offset, offset + 0x8000));
       }
-      const written = await Filesystem.writeFile({
-        path: fileName,
-        data: btoa(binary),
-        directory: Directory.Cache,
-      });
-      await Share.share({ title: fileName, files: [written.uri] });
-      return "shared";
-    } catch (error) {
-      if ((error as Error)?.message?.toLowerCase().includes("cancel")) return "cancelled";
-      throw error;
-    }
+      return Filesystem.writeFile({ path: fileName, data: btoa(binary), directory: Directory.Cache });
+    });
   }
   const file = new File([blob], fileName, { type: blob.type || DOCX_TYPE });
 
@@ -668,8 +671,18 @@ export function buildKitabHtml(model: KitabExport) {
  * Renders the same content in a hidden frame and hands it to the browser's
  * print-to-PDF pipeline, which shapes Arabic correctly and paginates the book.
  */
-export async function downloadKitabPdf(model: KitabExport) {
+export async function downloadKitabPdf(
+  model: KitabExport,
+  fileName: string,
+): Promise<DeliveryOutcome | "printing"> {
   const html = buildKitabHtml(model);
+  if (isNative()) {
+    const { registerPlugin } = await import("@capacitor/core");
+    const Pdf = registerPlugin<{
+      write(options: { html: string; fileName: string }): Promise<{ uri: string }>;
+    }>("Pdf");
+    return shareNativeFile(fileName, () => Pdf.write({ html, fileName }));
+  }
   const frame = document.createElement("iframe");
   frame.setAttribute("aria-hidden", "true");
   frame.style.position = "fixed";
@@ -694,4 +707,5 @@ export async function downloadKitabPdf(model: KitabExport) {
   frame.contentWindow?.focus();
   frame.contentWindow?.print();
   setTimeout(() => frame.remove(), 60_000);
+  return "printing";
 }

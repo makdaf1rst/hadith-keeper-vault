@@ -559,8 +559,14 @@ function DownloadActions({
                 : "Download started.";
         toast.success(msg, { id: notice });
       } else {
-        await downloadKitabPdf(model);
-        toast.success("Choose “Save as PDF” in the print window.", { id: notice });
+        const outcome = await downloadKitabPdf(model, kitabFileName(book, "pdf", collection, chapter));
+        const msg =
+          outcome === "shared"
+            ? "PDF ready — choose “Save to Files”."
+            : outcome === "cancelled"
+              ? "Download cancelled."
+              : "Choose “Save as PDF” in the print window.";
+        toast.success(msg, { id: notice });
       }
     } catch {
       toast.error("The download could not be prepared. Please try again.", { id: notice });

@@ -21,6 +21,13 @@ export function isShareCancelled(error: unknown) {
   return error instanceof Error && error.message.toLowerCase().includes("cancel");
 }
 
+// navigator.clipboard loses the user gesture across awaits in WKWebView; UIPasteboard has no such limit.
+export async function copyText(value: string) {
+  if (!isNative()) return navigator.clipboard.writeText(value);
+  const { Clipboard } = await import("@capacitor/clipboard");
+  await Clipboard.write({ string: value });
+}
+
 function hadithFromDeepLink(value: string) {
   try {
     const url = new URL(value);

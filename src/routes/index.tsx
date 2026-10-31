@@ -237,7 +237,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <header className="hidden font-sans [.app_&]:block">
-        <div className="relative overflow-hidden bg-linear-to-b from-parchment from-50% to-background px-4 pt-[calc(2rem+env(safe-area-inset-top))] pb-10 text-center">
+        <div className="relative overflow-hidden bg-linear-to-b from-parchment from-50% to-background px-4 pt-8 pb-10 text-center">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_80%_at_50%_0%,color-mix(in_oklch,var(--gold)_18%,transparent),transparent)]"

@@ -19,7 +19,7 @@ import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
 import { useReaderSettings } from "@/lib/reader-settings";
-import { canonicalUrl, isNative, isShareCancelled, openExternal } from "@/lib/native";
+import { canonicalUrl, copyText, isNative, isShareCancelled, openExternal } from "@/lib/native";
 
 type Props = {
   hadith: HadithFull;
@@ -74,7 +74,7 @@ async function shareHadith(hadithNumber: number, isBengali: boolean) {
   } catch (error) {
     if (isShareCancelled(error)) return;
     try {
-      await navigator.clipboard.writeText(url);
+      await copyText(url);
       toast.success(isBengali ? "হাদিসের লিংক কপি হয়েছে।" : "Hadith link copied.");
     } catch {
       toast.error(isBengali ? "শেয়ার করা যায়নি।" : "Sharing failed.");
@@ -128,10 +128,10 @@ async function copy(value: string | null, label: string) {
     return;
   }
   try {
-    await navigator.clipboard.writeText(value);
+    await copyText(value);
     toast.success(`${label} copied in full.`);
   } catch {
-    toast.error("Copying failed in this browser.");
+    toast.error("Copying failed.");
   }
 }
 

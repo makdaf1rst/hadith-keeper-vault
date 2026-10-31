@@ -137,8 +137,8 @@ function BookmarksPage() {
 
         <div className="mt-4 rounded-lg border border-border bg-card p-4 text-sm text-muted-foreground">
           {bn
-            ? "ব্যাকআপ ফাইলটি আপনি iPhone Files, iCloud Drive, Google Drive, কম্পিউটার বা অন্য নিরাপদ স্থানে রাখতে পারেন। সাইট আপনার Drive বা Files অ্যাকাউন্টে প্রবেশ করে না।"
-            : "You can keep the backup file in iPhone Files, iCloud Drive, Google Drive, a computer, or another safe location. The website does not access your Drive or Files account."}
+            ? "ব্যাকআপ ফাইলটি আপনি iPhone Files, iCloud Drive, Google Drive, কম্পিউটার বা অন্য নিরাপদ স্থানে রাখতে পারেন। আপনার Drive বা Files অ্যাকাউন্টে প্রবেশ করা হয় না।"
+            : "You can keep the backup file in iPhone Files, iCloud Drive, Google Drive, a computer, or another safe location. Your Drive or Files account is never accessed."}
         </div>
 
         {isLoading ? (

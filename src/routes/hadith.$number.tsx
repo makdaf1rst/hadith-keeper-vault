@@ -283,7 +283,7 @@ function HadithPage() {
             setInterfaceLanguage(next);
             setContentLanguage(next);
           }}
-          className="absolute top-[calc(1rem+env(safe-area-inset-top))] left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-2 shadow-sm backdrop-blur hover:bg-accent sm:left-6 sm:px-3"
+          className="absolute top-4 left-4 z-10 h-9 rounded-full border-gold/40 bg-background/90 px-2 shadow-sm backdrop-blur hover:bg-accent sm:left-6 sm:px-3"
           aria-label={interfaceLanguage === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
           title={interfaceLanguage === "bn" ? "Switch to English" : "বাংলায় পরিবর্তন করুন"}
         >
