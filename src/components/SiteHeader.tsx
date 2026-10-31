@@ -228,7 +228,6 @@ function MenuSheet({ bn }: { bn: boolean }) {
             {route("/projects", t.otherProjects)}
           </MenuGroup>
           <MenuGroup title={bn ? "সহায়তা" : "Support"}>
-            {route("/send-gift", bn ? "উপহার পাঠান" : "Send Gift")}
             <li>
               <button type="button" className={rowClass} onClick={() => void shareApp(bn)}>
                 {bn ? "শেয়ার করুন" : "Share"}

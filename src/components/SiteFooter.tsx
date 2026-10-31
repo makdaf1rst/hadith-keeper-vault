@@ -79,11 +79,6 @@ export function SiteFooter() {
           </Column>
           <Column title={bn ? "সহায়তা" : "Support"}>
             <li>
-              <Link to="/send-gift" className={linkClass}>
-                {bn ? "উপহার পাঠান" : "Send Gift"}
-              </Link>
-            </li>
-            <li>
               <button type="button" className={linkClass} onClick={() => void shareApp(bn)}>
                 {bn ? "শেয়ার করুন" : "Share"}
               </button>

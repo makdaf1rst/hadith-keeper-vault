@@ -142,7 +142,6 @@ function SettingsPage() {
             <Share2 className="size-4 text-muted-foreground" aria-hidden />
           </button>
         </li>
-        <RouteRow to="/send-gift" label={bn ? "উপহার পাঠান" : "Send Gift"} />
         <li>
           <button
             type="button"
