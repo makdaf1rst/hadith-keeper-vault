@@ -1,0 +1,34 @@
+import "./styles.css";
+import "@fontsource/amiri/arabic-400.css";
+import "@fontsource/amiri/arabic-700.css";
+import "@fontsource/amiri/arabic-400-italic.css";
+import "@fontsource/amiri/latin-400.css";
+import "@fontsource/amiri/latin-700.css";
+import "@fontsource/amiri/latin-400-italic.css";
+import "@fontsource/lora/400.css";
+import "@fontsource/lora/500.css";
+import "@fontsource/lora/600.css";
+import "@fontsource/lora/700.css";
+import "@fontsource/lora/400-italic.css";
+import "@fontsource/lora/500-italic.css";
+import "@fontsource/lora/600-italic.css";
+import "@fontsource/lora/700-italic.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+
+import { RouterProvider } from "@tanstack/react-router";
+import { createRoot } from "react-dom/client";
+import { Route } from "./routes/__root";
+import { getRouter } from "./router";
+import { startNativeApp } from "./lib/native";
+import { applyStoredTheme } from "./lib/theme";
+
+applyStoredTheme();
+(Route.update as (options: { shellComponent: undefined }) => void)({ shellComponent: undefined });
+const router = getRouter();
+const root = document.getElementById("root");
+if (!root) throw new Error("Missing #root");
+createRoot(root).render(<RouterProvider router={router} />);
+requestAnimationFrame(() => startNativeApp(router));

@@ -1,6 +1,7 @@
 import { createIsomorphicFn } from "@tanstack/react-start";
 
 import { containsArabic, normalizeArabic, normalizeEnglish } from "@/lib/normalize";
+import { isNative } from "@/lib/native";
 
 export type Intro = {
   intro_ar_source: string | null;
@@ -95,6 +96,11 @@ function getWorkerAssetsBinding(): AssetsBinding | null {
  */
 const fetchContent = createIsomorphicFn()
   .client(async (path: string): Promise<unknown> => {
+    if (isNative()) {
+      const { readContentOverlay } = await import("@/lib/content-refresh");
+      const overlay = await readContentOverlay(path);
+      if (overlay !== undefined) return overlay;
+    }
     const response = await fetch(`/content/${path}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`Failed to load /content/${path}: ${response.status}`);
     return response.json();

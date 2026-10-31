@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "postbuild": "node scripts/build-hadith-chunks.mjs && node scripts/build-search-index.mjs && node scripts/build-sitemap.mjs",
+    "postbuild": "node scripts/build-hadith-chunks.mjs && node scripts/build-search-index.mjs && node scripts/build-sitemap.mjs && node scripts/build-content-manifest.mjs",
+    "build:ios": "node scripts/build-ios-web.mjs",
+    "check:ios": "node scripts/check-ios-bundle.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
