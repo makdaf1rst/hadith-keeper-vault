@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useBookmarks } from "@/lib/bookmarks";
 import { useLanguage } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
+import { isNative } from "@/lib/native";
 
 export const Route = createFileRoute("/bookmarks")({
   head: () => {
@@ -38,21 +39,26 @@ function BookmarksPage() {
   const { bookmarks, remove, isLoading, createBackup, restoreBackup } = useBookmarks();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  function backupBookmarks() {
+  async function backupBookmarks() {
     try {
       const backup = createBackup();
       const blob = new Blob([JSON.stringify(backup, null, 2)], {
         type: "application/json;charset=utf-8",
       });
-      const url = URL.createObjectURL(blob);
-      const anchor = document.createElement("a");
       const date = new Date().toISOString().slice(0, 10);
-      anchor.href = url;
-      anchor.download = `al-jami-al-kamil-bookmarks-${date}.json`;
-      document.body.appendChild(anchor);
-      anchor.click();
-      anchor.remove();
-      URL.revokeObjectURL(url);
+      if (isNative()) {
+        const { deliverFile } = await import("@/lib/kitab-export");
+        if ((await deliverFile(blob, `al-jami-al-kamil-bookmarks-${date}.json`)) === "cancelled") return;
+      } else {
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = `al-jami-al-kamil-bookmarks-${date}.json`;
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        URL.revokeObjectURL(url);
+      }
 
       toast.success(
         bn
@@ -109,7 +115,7 @@ function BookmarksPage() {
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
-          <Button type="button" variant="outline" onClick={backupBookmarks}>
+          <Button type="button" variant="outline" onClick={() => void backupBookmarks()}>
             <Download aria-hidden />
             {bn ? "বুকমার্ক ব্যাকআপ" : "Backup Bookmarks"}
           </Button>

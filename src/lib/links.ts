@@ -1,4 +1,5 @@
 import { toast } from "sonner";
+import { isNative } from "./native";
 
 // shared by /settings (app) and the site header menu + footer (website)
 export const BOOKS_USED_URL = {
@@ -13,6 +14,11 @@ export const NARRATORS_URL = {
 export async function shareApp(bn: boolean) {
   const url = "https://jami-al-kamil.com";
   try {
+    if (isNative()) {
+      const { Share } = await import("@capacitor/share");
+      await Share.share({ title: "Al-Jāmiʿ al-Kāmil", url });
+      return;
+    }
     if (navigator.share) {
       await navigator.share({ title: "Al-Jāmiʿ al-Kāmil", url });
       return;

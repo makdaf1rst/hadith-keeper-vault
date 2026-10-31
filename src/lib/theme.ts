@@ -49,6 +49,20 @@ function applyTheme(theme: Theme) {
   if (resolved === "green") root.classList.add("green");
   if (resolved === "warm-night") root.classList.add("dark", "warm-night");
   if (resolved === "black") root.classList.add("dark", "black");
+  if (typeof window !== "undefined" && window.Capacitor?.isNativePlatform?.()) {
+    // Capacitor Style names the background: Style.Dark = light text for a dark page
+    void import("@capacitor/status-bar")
+      .then(({ StatusBar, Style }) =>
+        StatusBar.setStyle({
+          style: ["dark", "warm-night", "black"].includes(resolved) ? Style.Dark : Style.Light,
+        }),
+      )
+      .catch(() => undefined);
+  }
+}
+
+export function applyStoredTheme() {
+  applyTheme(readStoredTheme());
 }
 
 export function useTheme(): [Theme, (theme: Theme) => void] {

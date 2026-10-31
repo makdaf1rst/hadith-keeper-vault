@@ -1,6 +1,7 @@
 import { formatBookTitle, formatChapterTitle, orderCollectionChapters } from "@/lib/display-titles";
 import type { BengaliStructuralTranslation } from "@/lib/bengali-translations";
 import type { Book, Chapter, Collection, HadithFull, Intro } from "@/lib/library-api";
+import { isNative } from "./native";
 
 /**
  * Builds a deterministic, display-only export model for one Kitāb.
@@ -518,6 +519,29 @@ function supportsAnchorDownload() {
 }
 
 export async function deliverFile(blob: Blob, fileName: string): Promise<DeliveryOutcome> {
+  if (isNative()) {
+    try {
+      const [{ Filesystem, Directory }, { Share }] = await Promise.all([
+        import("@capacitor/filesystem"),
+        import("@capacitor/share"),
+      ]);
+      const bytes = new Uint8Array(await blob.arrayBuffer());
+      let binary = "";
+      for (let offset = 0; offset < bytes.length; offset += 0x8000) {
+        binary += String.fromCharCode(...bytes.subarray(offset, offset + 0x8000));
+      }
+      const written = await Filesystem.writeFile({
+        path: fileName,
+        data: btoa(binary),
+        directory: Directory.Cache,
+      });
+      await Share.share({ title: fileName, files: [written.uri] });
+      return "shared";
+    } catch (error) {
+      if ((error as Error)?.message?.toLowerCase().includes("cancel")) return "cancelled";
+      throw error;
+    }
+  }
   const file = new File([blob], fileName, { type: blob.type || DOCX_TYPE });
 
   // iOS Safari ignores anchor downloads for blobs; the Share sheet ("Save to Files")

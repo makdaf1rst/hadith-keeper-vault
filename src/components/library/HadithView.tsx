@@ -19,6 +19,7 @@ import type { Book, Chapter, Collection, HadithFull } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toArabicIndicDigits, toBengaliDigits } from "@/lib/normalize";
 import { useReaderSettings } from "@/lib/reader-settings";
+import { canonicalUrl, isNative, openExternal } from "@/lib/native";
 
 type Props = {
   hadith: HadithFull;
@@ -52,13 +53,18 @@ function remainder(full: string | null, parts: (string | null)[]) {
 }
 
 async function shareHadith(hadithNumber: number, isBengali: boolean) {
-  const url = typeof window !== "undefined" ? window.location.href : "";
+  const url = typeof window !== "undefined" ? canonicalUrl() : "";
   const title = `Hadith ${hadithNumber} — Al-Jāmiʿ al-Kāmil`;
   const text = isBengali
     ? `আল-জামিʿ আল-কামিল থেকে হাদিস ${toBengaliDigits(hadithNumber)}`
     : `Hadith ${hadithNumber} from Al-Jāmiʿ al-Kāmil`;
 
   try {
+    if (isNative()) {
+      const { Share } = await import("@capacitor/share");
+      await Share.share({ title, text, url });
+      return;
+    }
     if (navigator.share) {
       await navigator.share({ title, text, url });
       return;
@@ -76,7 +82,7 @@ async function shareHadith(hadithNumber: number, isBengali: boolean) {
   }
 }
 
-function reportIssue(hadithNumber: number, isBengali: boolean) {
+async function reportIssue(hadithNumber: number, isBengali: boolean) {
   if (typeof window === "undefined") return;
 
   const subject = isBengali
@@ -89,7 +95,7 @@ function reportIssue(hadithNumber: number, isBengali: boolean) {
         ``,
         `আমি হাদিস ${toBengaliDigits(hadithNumber)}-এ একটি সম্ভাব্য ভুল বা সংশোধনযোগ্য বিষয় পেয়েছি।`,
         ``,
-        `হাদিসের লিংক: ${window.location.href}`,
+        `হাদিসের লিংক: ${canonicalUrl()}`,
         ``,
         `সমস্যার ধরন (যেমন: আরবি, বাংলা অনুবাদ, ইংরেজি অনুবাদ, রেফারেন্স, গ্রেড, প্রদর্শন):`,
         ``,
@@ -102,7 +108,7 @@ function reportIssue(hadithNumber: number, isBengali: boolean) {
         ``,
         `I found a possible error or correction needed in Hadith ${hadithNumber}.`,
         ``,
-        `Hadith link: ${window.location.href}`,
+        `Hadith link: ${canonicalUrl()}`,
         ``,
         `Type of issue (for example: Arabic, English/Bengali translation, reference, grade, or display):`,
         ``,
@@ -111,7 +117,9 @@ function reportIssue(hadithNumber: number, isBengali: boolean) {
         `Please attach a screenshot if possible.`,
       ].join("\n");
 
-  window.location.href = `mailto:Aljamiushshamil@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const mailto = `mailto:Aljamiushshamil@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  if (isNative()) await openExternal(mailto);
+  else window.location.href = mailto;
 }
 
 async function copy(value: string | null, label: string) {

@@ -1,12 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight, ExternalLink, Share2 } from "lucide-react";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import { AboutLibrary } from "@/components/library/AboutLibrary";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { BOOKS_USED_URL, NARRATORS_URL, shareApp } from "@/lib/links";
 import { THEMES, useTheme } from "@/lib/theme";
 import { SHOW_WELCOME_EVENT } from "@/components/WelcomeTour";
+import { isNative } from "@/lib/native";
+import { dailyNotificationSettings, setDailyNotifications } from "@/lib/daily-notifications";
 
 export const Route = createFileRoute("/settings")({
   head: () => ({ meta: [{ title: "Settings — Al-Jāmiʿ al-Kāmil" }] }),
@@ -59,6 +61,26 @@ function SettingsPage() {
   const [theme, setTheme] = useTheme();
   const bn = interfaceLanguage === "bn";
   const docLang = contentLanguage === "bn" ? "bn" : "en";
+  const initialDaily = dailyNotificationSettings();
+  const [dailyEnabled, setDailyEnabled] = useState(initialDaily.enabled);
+  const [dailyTime, setDailyTime] = useState(initialDaily.time);
+  const [dailyMessage, setDailyMessage] = useState("");
+
+  async function updateDaily(enabled: boolean, time = dailyTime) {
+    setDailyMessage("");
+    try {
+      const result = await setDailyNotifications(enabled, time);
+      if (!result.ok) {
+        setDailyEnabled(false);
+        setDailyMessage(bn ? "নোটিফিকেশনের অনুমতি দেওয়া হয়নি।" : "Notification permission was denied.");
+        return;
+      }
+      setDailyEnabled(enabled);
+    } catch {
+      setDailyEnabled(false);
+      setDailyMessage(bn ? "নোটিফিকেশন সেট করা যায়নি।" : "Could not schedule notifications.");
+    }
+  }
 
   return (
     <main className="mx-auto max-w-2xl px-4 pb-8 pt-[calc(1.5rem+env(safe-area-inset-top))] font-sans sm:px-6">
@@ -86,6 +108,38 @@ function SettingsPage() {
           </li>
         ))}
       </Group>
+
+      {isNative() ? (
+        <Group title={bn ? "দৈনিক হাদিস" : "Daily hadith"}>
+          <li className="px-4 py-3">
+            <label className="flex items-center justify-between gap-3 text-[15px] text-foreground">
+              <span>{bn ? "দৈনিক নোটিফিকেশন" : "Daily notification"}</span>
+              <input
+                type="checkbox"
+                checked={dailyEnabled}
+                onChange={(event) => void updateDaily(event.target.checked)}
+                className="size-5 accent-primary"
+              />
+            </label>
+          </li>
+          <li className="px-4 py-3">
+            <label className="flex items-center justify-between gap-3 text-[15px] text-foreground">
+              <span>{bn ? "সময়" : "Time"}</span>
+              <input
+                type="time"
+                value={dailyTime}
+                onChange={(event) => {
+                  const value = event.target.value;
+                  setDailyTime(value);
+                  if (dailyEnabled) void updateDaily(true, value);
+                }}
+                className="rounded-md border border-input bg-background px-2 py-1"
+              />
+            </label>
+            {dailyMessage ? <p className="mt-2 text-sm text-destructive">{dailyMessage}</p> : null}
+          </li>
+        </Group>
+      ) : null}
 
       {/* the home page header (with its language button) is hidden in the app, so language lives here */}
       <Group title={bn ? "ভাষা" : "Language"}>
