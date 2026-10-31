@@ -3,6 +3,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
+import { BookAudioDownload } from "@/components/library/HadithAudio";
 import { IntroText } from "@/components/library/IntroText";
 import { ReaderSubBar, subBarBack } from "@/components/library/ReaderSubBar";
 import { fetchBengaliStructure, type BengaliChapterTranslation } from "@/lib/bengali-translations";
@@ -248,6 +249,7 @@ function BookPage() {
                       formatBookTitle(book.data.book_number, book.data.title_en))
                     : formatBookTitle(book.data.book_number, book.data.title_en)}
                 </h1>
+                <BookAudioDownload bookId={book.data.id} bookNumber={book.data.book_number} />
               </div>
               {book.data.title_ar ? <p className="arabic-text">{book.data.title_ar}</p> : null}
               <IntroText
