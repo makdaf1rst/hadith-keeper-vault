@@ -4,6 +4,7 @@ import { CircleAlert, Copy, MoreHorizontal, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { BookmarkButton } from "@/components/library/BookmarkButton";
+import { ListenButton } from "@/components/library/HadithAudio";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -208,6 +209,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
           </span>
         </div>
         <div className="flex flex-wrap gap-2 web:gap-0.5">
+          <ListenButton number={hadith.hadith_number} className={quiet} />
           <BookmarkButton
             className={quiet}
             number={hadith.hadith_number}

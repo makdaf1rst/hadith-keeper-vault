@@ -21,7 +21,7 @@ export function TabBar() {
       aria-label="Main"
       className="fixed inset-x-0 bottom-0 z-40 hidden justify-center [.app_&]:flex px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))]"
     >
-      <ul className="flex w-full max-w-md items-center justify-around rounded-full border border-border bg-background/90 p-1.5 font-sans shadow-lg backdrop-blur">
+      <ul className="glass flex w-full max-w-md items-center justify-around rounded-full p-1.5 font-sans">
         {TABS.map(({ to, icon: Icon, label }) => {
           const active = isActive(to);
           return (
@@ -31,7 +31,7 @@ export function TabBar() {
                 aria-current={active ? "page" : undefined}
                 className={`flex flex-col items-center gap-0.5 rounded-full py-1.5 text-[11px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                   active
-                    ? "bg-accent text-primary"
+                    ? "bg-primary/12 text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >

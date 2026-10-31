@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { TabBar } from "../components/TabBar";
+import { AudioDock } from "../components/library/AudioDock";
 import { Toaster } from "../components/ui/sonner";
 import { LanguageProvider } from "../lib/language";
 import { OfflineBanner } from "../components/OfflineBanner";
@@ -168,6 +169,7 @@ function RootComponent() {
         </div>
         <SiteFooter />
         <TabBar />
+        <AudioDock />
         <Toaster />
         {!isNative() ? <OfflineBanner /> : null}
         <WelcomeTour />
