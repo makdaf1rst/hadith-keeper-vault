@@ -10,6 +10,7 @@ import {
 } from "@/components/library/HadithAudio";
 import { IntroText } from "@/components/library/IntroText";
 import { ReaderSubBar, subBarBack } from "@/components/library/ReaderSubBar";
+import { AUDIO_BASE } from "@/lib/audio";
 import { fetchBengaliStructure, type BengaliChapterTranslation } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
@@ -160,7 +161,7 @@ function ChapterBlock({
   return (
     <li className="border-l-2 border-border pl-3">
       <Fold
-        aside={<ChapterListenButton chapterId={chapter.id} />}
+        aside={AUDIO_BASE ? <ChapterListenButton chapterId={chapter.id} /> : undefined}
         summary={
           <>
             <p className="text-sm font-medium">{title}</p>

@@ -16,6 +16,7 @@ import { SiteHeader } from "../components/SiteHeader";
 import { TabBar } from "../components/TabBar";
 import { AudioDock } from "../components/library/AudioDock";
 import { Toaster } from "../components/ui/sonner";
+import { AUDIO_BASE } from "../lib/audio";
 import { LanguageProvider } from "../lib/language";
 import { OfflineBanner } from "../components/OfflineBanner";
 import { WelcomeTour } from "../components/WelcomeTour";
@@ -168,7 +169,7 @@ function RootComponent() {
         </div>
         <SiteFooter />
         <TabBar />
-        <AudioDock />
+        {AUDIO_BASE ? <AudioDock /> : null}
         <Toaster />
         <OfflineBanner />
         <WelcomeTour />
