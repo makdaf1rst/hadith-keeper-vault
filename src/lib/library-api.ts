@@ -565,6 +565,28 @@ export async function fetchChapterNeighbours(chapterId: string) {
   return adjacentAcrossBooks(bookNumber, sequence, position);
 }
 
+/** The hadith a chapter leads into: its own first, else the next in reading order, across books. */
+export async function fetchChapterFirstHadith(chapterId: string): Promise<number | null> {
+  const bookNumber = await bookNumberForHeadingId(chapterId);
+  if (bookNumber === null) return null;
+
+  const sequence = await readingSequenceForBook(bookNumber);
+  const position = sequence.findIndex((item) => item.kind === "chapter" && item.id === chapterId);
+  if (position < 0) return null;
+
+  const inBook = sequence.slice(position).find((item) => item.kind === "hadith");
+  if (inBook?.kind === "hadith") return inBook.number;
+
+  const books = [...(await loadBooks())].sort((a, b) => a.book_number - b.book_number);
+  for (const book of books.filter((item) => item.book_number > bookNumber)) {
+    const later = (await readingSequenceForBook(book.book_number)).find(
+      (item) => item.kind === "hadith",
+    );
+    if (later?.kind === "hadith") return later.number;
+  }
+  return null;
+}
+
 export type SearchFilters = {
   query: string;
   bookId?: string | null;

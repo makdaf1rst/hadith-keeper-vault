@@ -20,7 +20,6 @@ import {
   fetchChapters,
   fetchCollections,
   type Chapter,
-  type HadithStub,
 } from "@/lib/library-api";
 import { useLanguage } from "@/lib/language";
 import { toArabicIndicDigits } from "@/lib/normalize";
@@ -76,18 +75,17 @@ export const Route = createFileRoute("/book/$number")({
   component: BookPage,
 });
 
-function ChapterHadiths({
-  hadiths,
-  isLoading,
-}: {
-  hadiths: HadithStub[] | undefined;
-  isLoading: boolean;
-}) {
-  if (isLoading) {
+function ChapterHadiths({ chapter }: { chapter: Chapter }) {
+  const hadiths = useQuery({
+    queryKey: ["chapter-hadiths", chapter.id],
+    queryFn: () => fetchChapterHadiths(chapter.id),
+  });
+
+  if (hadiths.isLoading) {
     return <p className="mt-2 text-xs text-muted-foreground">Loading hadiths…</p>;
   }
 
-  if (!hadiths?.length) {
+  if (!hadiths.data?.length) {
     return (
       <p className="mt-2 text-xs text-muted-foreground">No numbered hadiths in this chapter.</p>
     );
@@ -95,7 +93,7 @@ function ChapterHadiths({
 
   return (
     <ul className="mt-3 flex flex-wrap gap-2">
-      {hadiths.map((hadith) => (
+      {hadiths.data.map((hadith) => (
         <li key={hadith.id} className="flex items-center gap-1">
           <Link
             to="/hadith/$number"
@@ -118,13 +116,11 @@ function ChapterHadiths({
 function Fold({
   summary,
   aside,
-  onOpenChange,
   className,
   children,
 }: {
   summary: React.ReactNode;
   aside?: React.ReactNode;
-  onOpenChange?: (open: boolean) => void;
   className?: string;
   children: React.ReactNode;
 }) {
@@ -132,11 +128,7 @@ function Fold({
   return (
     <details
       className={className ? `relative ${className}` : "relative"}
-      onToggle={(e) => {
-        const next = e.currentTarget.open;
-        setOpen(next);
-        onOpenChange?.(next);
-      }}
+      onToggle={(e) => setOpen(e.currentTarget.open)}
     >
       <summary
         className={`flex cursor-pointer list-none items-start gap-2 [&::-webkit-details-marker]:hidden ${aside ? "pr-10" : ""}`}
@@ -146,7 +138,7 @@ function Fold({
         />
         <div className="min-w-0 flex-1">{summary}</div>
       </summary>
-      {aside ? <div className="absolute top-0 right-0">{aside}</div> : null}
+      {open && aside ? <div className="absolute top-0 right-0">{aside}</div> : null}
       {open ? children : null}
     </details>
   );
@@ -160,13 +152,6 @@ function ChapterBlock({
   bengali?: BengaliChapterTranslation | null | undefined;
 }) {
   const { contentLanguage } = useLanguage();
-  const [open, setOpen] = useState(false);
-  const hadiths = useQuery({
-    queryKey: ["chapter-hadiths", chapter.id],
-    queryFn: () => fetchChapterHadiths(chapter.id),
-    enabled: open,
-  });
-  const firstHadith = hadiths.data?.[0]?.hadith_number;
   const title =
     contentLanguage === "bn" && bengali?.title_bn
       ? bengali.title_bn
@@ -175,12 +160,7 @@ function ChapterBlock({
   return (
     <li className="border-l-2 border-border pl-3">
       <Fold
-        onOpenChange={setOpen}
-        aside={
-          firstHadith ? (
-            <ChapterListenButton chapterId={chapter.id} firstHadith={firstHadith} />
-          ) : null
-        }
+        aside={<ChapterListenButton chapterId={chapter.id} />}
         summary={
           <>
             <p className="text-sm font-medium">{title}</p>
@@ -196,7 +176,7 @@ function ChapterBlock({
           className="mt-2"
           label={contentLanguage === "bn" ? "অধ্যায়ের ভূমিকা" : "Chapter introduction"}
         />
-        <ChapterHadiths hadiths={hadiths.data} isLoading={hadiths.isLoading} />
+        <ChapterHadiths chapter={chapter} />
       </Fold>
     </li>
   );

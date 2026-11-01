@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { playChapter, playHadith, usePlayer } from "@/components/library/AudioDock";
 import { Button } from "@/components/ui/button";
 import { AUDIO_BASE, MB_PER_HADITH, isBookSaved, removeBook, saveBook } from "@/lib/audio";
-import { fetchBookHadiths } from "@/lib/library-api";
+import { fetchBookHadiths, fetchChapterFirstHadith } from "@/lib/library-api";
 import { useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 
@@ -51,15 +51,18 @@ export function ListenButton({
 
 export function ChapterListenButton({
   chapterId,
-  firstHadith,
   className,
 }: {
   chapterId: string;
-  firstHadith?: number | undefined;
   className?: string;
 }) {
   const { contentLanguage } = useLanguage();
   const { track, paused } = usePlayer();
+  const { data: firstHadith } = useQuery({
+    queryKey: ["chapter-first-hadith", chapterId],
+    queryFn: () => fetchChapterFirstHadith(chapterId),
+    enabled: Boolean(AUDIO_BASE),
+  });
   if (!AUDIO_BASE || !firstHadith) return null;
   const playing = !paused && track?.chapter === chapterId && track.lang === contentLanguage;
   const bn = contentLanguage === "bn";
