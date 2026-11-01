@@ -24,20 +24,102 @@ import type { Book } from "@/lib/library-api";
 import { useInterfaceText, useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 
+const SITE = "https://jami-al-kamil.com/";
+
+// One source for the visible FAQ and its FAQPage JSON-LD, so the two never drift.
+const FAQ: [string, string][] = [
+  [
+    "Is there an English translation of Al-Jāmiʿ al-Kāmil?",
+    "Yes. The complete English translation of all 16,546 hadiths of Al-Jāmiʿ al-Kāmil, translated by Sadman Zarif Talha, is published free at jami-al-kamil.com alongside the full Arabic text, references and grades.",
+  ],
+  [
+    "Who compiled Al-Jāmiʿ al-Kāmil?",
+    "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil was compiled by Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī, a scholar of Ḥadīth and professor at the Islamic University of Madinah.",
+  ],
+  [
+    "How many hadiths are in Al-Jāmiʿ al-Kāmil?",
+    "The collection contains 16,546 numbered narrations in 66 books. Shaykh al-Aʿẓamī drew on more than 200 books of Ḥadīth and surveyed roughly 60,000 distinct hadith texts to compile it.",
+  ],
+  [
+    "How is Al-Jāmiʿ al-Kāmil organized?",
+    "It includes only accepted narrations, Ṣaḥīḥ (authentic) and Ḥasan (good), arranged according to the books and chapters of Islamic jurisprudence (fiqh).",
+  ],
+];
+
+// Same facts in Bengali for the Bengali interface; the JSON-LD stays English since SSR renders English.
+const FAQ_BN: [string, string][] = [
+  [
+    "আল-জামি‘ আল-কামিলের কি ইংরেজি অনুবাদ আছে?",
+    "হ্যাঁ। আল-জামি‘ আল-কামিলের ১৬,৫৪৬টি হাদীসের পূর্ণাঙ্গ ইংরেজি অনুবাদ, অনুবাদক সাদমান জারিফ তালহা, jami-al-kamil.com-এ পূর্ণ আরবি পাঠ, সূত্র ও মান-নির্ণয়সহ বিনামূল্যে প্রকাশিত। বাংলা অনুবাদও এখানে পাওয়া যায়।",
+  ],
+  [
+    "আল-জামি‘ আল-কামিল কে সংকলন করেছেন?",
+    "আল-জামি‘ আল-কামিল ফি আল-হাদীস আস-সহীহ আশ-শামিল সংকলন করেছেন শাইখ দিয়াউর রহমান আল-আযমী, যিনি হাদীস বিশারদ এবং মদিনা ইসলামী বিশ্ববিদ্যালয়ের অধ্যাপক।",
+  ],
+  [
+    "আল-জামি‘ আল-কামিলে কতটি হাদীস আছে?",
+    "এই সংকলনে ৬৬টি কিতাবে ১৬,৫৪৬টি ক্রমিক নম্বরযুক্ত বর্ণনা রয়েছে। শাইখ আল-আযমী ২০০টিরও বেশি হাদীসগ্রন্থ থেকে প্রায় ৬০,০০০ স্বতন্ত্র হাদীস যাচাই করে এটি সংকলন করেছেন।",
+  ],
+  [
+    "আল-জামি‘ আল-কামিল কীভাবে বিন্যস্ত?",
+    "এতে কেবল গ্রহণযোগ্য বর্ণনা, সহীহ ও হাসান, অন্তর্ভুক্ত করা হয়েছে এবং ইসলামী ফিকহের কিতাব ও অধ্যায় অনুযায়ী বিন্যস্ত করা হয়েছে।",
+  ],
+];
+
+const BOOK = {
+  "@type": "Book",
+  "@id": `${SITE}#book`,
+  name: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil",
+  alternateName: ["الجامع الكامل في الحديث الصحيح الشامل", "Al-Jami al-Kamil", "Jami al-Kamil"],
+  author: { "@type": "Person", name: "Ḍiyāʾ al-Raḥmān al-Aʿẓamī" },
+  translator: { "@type": "Person", name: "Sadman Zarif Talha" },
+  inLanguage: ["ar", "en", "bn"],
+  isAccessibleForFree: true,
+  url: SITE,
+};
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}#website`,
+      name: "Al-Jāmiʿ al-Kāmil",
+      url: SITE,
+      about: { "@id": `${SITE}#book` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${SITE}search?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+    BOOK,
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQ.map(([q, a]) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(JSON_LD) }],
     meta: [
       {
-        title: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+        title: "Al-Jāmiʿ al-Kāmil Hadith — Arabic & English Translation",
       },
       {
         name: "description",
         content:
-          "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh, by Ḍiyāʾ al-Raḥmān al-Aʿẓamī. Browse and search 66 Books and 16,546 numbered hadiths with complete Arabic text, English translation, references, grades and commentary.",
+          "Al-Jāmiʿ al-Kāmil by Ḍiyāʾ al-Raḥmān al-Aʿẓamī: all 16,546 authentic hadiths with Arabic text, full English translation, grades and references.",
       },
       {
         property: "og:title",
-        content: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+        content: "Al-Jāmiʿ al-Kāmil Hadith — Arabic & English Translation",
       },
       {
         property: "og:description",
@@ -186,7 +268,7 @@ function Index() {
         <div className="mt-1 flex items-center justify-center gap-3 px-4">
           <span aria-hidden className="h-px w-12 bg-linear-to-r from-transparent to-gold/60" />
           <span aria-hidden className="text-[10px] text-gold">◆</span>
-          <h1 className="font-serif text-2xl font-medium text-foreground">{t.library}</h1>
+          <h2 className="font-serif text-2xl font-medium text-foreground">{t.library}</h2>
           <span aria-hidden className="text-[10px] text-gold">◆</span>
           <span aria-hidden className="h-px w-12 bg-linear-to-l from-transparent to-gold/60" />
         </div>
@@ -199,6 +281,7 @@ function Index() {
           <ContinueCard bn={isBengali} />
           <BookGrid bn={isBengali} />
           <AboutSection bn={isBengali} />
+          <HomeFaq bn={isBengali} />
         </div>
 
         {/* app only: the website uses BookGrid above */}
@@ -374,5 +457,31 @@ function Index() {
         </div>
       ) : null}
     </div>
+  );
+}
+
+function HomeFaq({ bn }: { bn: boolean }) {
+  return (
+    <section
+      id="faq"
+      aria-labelledby="faq-heading"
+      className="scroll-mt-20 border-t border-border pt-14 font-sans"
+      lang={bn ? "bn" : "en"}
+    >
+      <h2
+        id="faq-heading"
+        className="text-xs font-semibold tracking-[0.18em] text-muted-foreground uppercase"
+      >
+        {bn ? "সচরাচর জিজ্ঞাসা" : "Frequently asked questions"}
+      </h2>
+      <div className="mt-6 grid max-w-4xl gap-8 md:grid-cols-2">
+        {(bn ? FAQ_BN : FAQ).map(([q, a]) => (
+          <div key={q}>
+            <h3 className="text-base font-semibold text-foreground">{q}</h3>
+            <p className="mt-2 text-[15px] leading-7 text-muted-foreground">{a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AcknowledgmentsRouteImport } from './routes/acknowledgments'
 import { Route as AnnouncementsRouteImport } from './routes/announcements'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BookmarksRouteImport } from './routes/bookmarks'
@@ -27,6 +28,11 @@ import { Route as HadithNumberRouteImport } from './routes/hadith.$number'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcknowledgmentsRoute = AcknowledgmentsRouteImport.update({
+  id: '/acknowledgments',
+  path: '/acknowledgments',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AnnouncementsRoute = AnnouncementsRouteImport.update({
@@ -97,6 +103,7 @@ const HadithNumberRoute = HadithNumberRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/acknowledgments': typeof AcknowledgmentsRoute
   '/announcements': typeof AnnouncementsRoute
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
@@ -113,6 +120,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/acknowledgments': typeof AcknowledgmentsRoute
   '/announcements': typeof AnnouncementsRoute
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
@@ -130,6 +138,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/acknowledgments': typeof AcknowledgmentsRoute
   '/announcements': typeof AnnouncementsRoute
   '/auth': typeof AuthRoute
   '/bookmarks': typeof BookmarksRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/acknowledgments'
     | '/announcements'
     | '/auth'
     | '/bookmarks'
@@ -164,6 +174,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/acknowledgments'
     | '/announcements'
     | '/auth'
     | '/bookmarks'
@@ -180,6 +191,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/acknowledgments'
     | '/announcements'
     | '/auth'
     | '/bookmarks'
@@ -197,6 +209,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcknowledgmentsRoute: typeof AcknowledgmentsRoute
   AnnouncementsRoute: typeof AnnouncementsRoute
   AuthRoute: typeof AuthRoute
   BookmarksRoute: typeof BookmarksRoute
@@ -219,6 +232,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/acknowledgments': {
+      id: '/acknowledgments'
+      path: '/acknowledgments'
+      fullPath: '/acknowledgments'
+      preLoaderRoute: typeof AcknowledgmentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/announcements': {
@@ -317,6 +337,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcknowledgmentsRoute: AcknowledgmentsRoute,
   AnnouncementsRoute: AnnouncementsRoute,
   AuthRoute: AuthRoute,
   BookmarksRoute: BookmarksRoute,

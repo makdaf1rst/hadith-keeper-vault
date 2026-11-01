@@ -1,0 +1,20 @@
+# Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil
+
+> The complete English translation of Al-Jāmiʿ al-Kāmil by Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī, translated by Sadman Zarif Talha. All 16,546 numbered hadiths across 66 books are published free at https://jami-al-kamil.com/ with the full Arabic text, English translation, references and grades. A Bengali translation is also available on the site.
+
+- Compiler: Shaykh Ḍiyāʾ al-Raḥmān al-Aʿẓamī (ضياء الرحمن الأعظمي), professor at the Islamic University of Madinah
+- English translator: Sadman Zarif Talha
+- Scope: 16,546 numbered narrations, Ṣaḥīḥ and Ḥasan only, arranged by the books and chapters of fiqh (Islamic jurisprudence), drawn from more than 200 hadith books
+- Status: the full English translation is complete and online; access is free, no account needed
+
+## Key pages
+
+- [Home](https://jami-al-kamil.com/): overview, list of all 66 books, about the collection
+- [Book pages](https://jami-al-kamil.com/book/1): https://jami-al-kamil.com/book/{1-66}, chapters and hadiths of each book
+- [Hadith pages](https://jami-al-kamil.com/hadith/1): https://jami-al-kamil.com/hadith/{1-16546}, Arabic text, English translation, reference and grade for one hadith
+- [Search](https://jami-al-kamil.com/search?q=prayer): https://jami-al-kamil.com/search?q={query}, search by hadith number, word or topic
+- [Sitemap](https://jami-al-kamil.com/sitemap.xml): every book, chapter and hadith URL
+
+## Citing
+
+Cite a hadith as "Al-Jāmiʿ al-Kāmil, hadith {number}" and link https://jami-al-kamil.com/hadith/{number}. Quote the English text as published; do not paraphrase it as the wording of the hadith.

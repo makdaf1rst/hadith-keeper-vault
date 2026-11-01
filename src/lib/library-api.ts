@@ -72,16 +72,26 @@ type StatsFile = {
   documents: number;
 };
 
+type AssetsBinding = {
+  fetch(input: Request): Promise<Response>;
+};
+
+function getWorkerAssetsBinding(): AssetsBinding | null {
+  const workerGlobal = globalThis as typeof globalThis & {
+    __env__?: { ASSETS?: AssetsBinding };
+  };
+  return workerGlobal.__env__?.ASSETS ?? null;
+}
+
 /**
  * Static content loading.
  *
  * In the browser, files under public/content/ are fetched as `/content/...`.
- * During SSR there is no base URL for a relative fetch, so the request origin
- * is taken from TanStack Start's request context; if no request is in scope
- * (e.g. a server function outside a handler) the file is read from disk.
- * createIsomorphicFn keeps the server branch (and its server-only imports)
- * out of the client bundle. Note: all current callers run through react-query
- * on the client, so the SSR path is a safety net, not the hot path.
+ * During Cloudflare SSR, Nitro exposes the Worker environment on __env__, so
+ * content goes straight through the ASSETS binding instead of fetching the
+ * site's custom-domain origin. Vite dev and node builds retain the origin and
+ * filesystem fallbacks. createIsomorphicFn keeps server-only imports out of
+ * the client bundle.
  */
 const fetchContent = createIsomorphicFn()
   .client(async (path: string): Promise<unknown> => {
@@ -90,6 +100,16 @@ const fetchContent = createIsomorphicFn()
     return response.json();
   })
   .server(async (path: string): Promise<unknown> => {
+    const assets = getWorkerAssetsBinding();
+    if (assets) {
+      const request = new Request(new URL(`/content/${path}`, "https://assets.local"));
+      const response = await assets.fetch(request);
+      if (!response.ok) {
+        throw new Error(`Failed to load /content/${path} from ASSETS: ${response.status}`);
+      }
+      return response.json();
+    }
+
     try {
       const { getRequestUrl } = await import("@tanstack/react-start/server");
       const url = new URL(`/content/${path}`, getRequestUrl().origin);
@@ -108,7 +128,13 @@ const booksCache = { current: null as Promise<Book[]> | null };
 const statsCache = { current: null as Promise<StatsFile> | null };
 const hadithIndexCache = { current: null as Promise<HadithIndexEntry[]> | null };
 const bookChaptersCache = new Map<number, Promise<BookChaptersFile>>();
-const bookHadithsCache = new Map<number, Promise<HadithFull[]>>();
+const browserBookHadithsCache = {
+  current: null as { bookNumber: number; promise: Promise<HadithFull[]> } | null,
+};
+
+const canFallbackToWholeBook = createIsomorphicFn()
+  .client(() => true)
+  .server(() => getWorkerAssetsBinding() === null);
 
 function loadBooks(): Promise<Book[]> {
   booksCache.current ??= fetchContent("books.json") as Promise<Book[]>;
@@ -140,9 +166,8 @@ function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
  * corrections can ship without rewriting the multi-megabyte base hadith files.
  */
 function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
-  let cached = bookHadithsCache.get(bookNumber);
-  if (!cached) {
-    cached = (async () => {
+  const load = () =>
+    (async () => {
       const hadiths = (await fetchContent(`book-${bookNumber}/hadiths.json`)) as HadithFull[];
 
       try {
@@ -160,9 +185,15 @@ function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
       }
     })();
 
-    bookHadithsCache.set(bookNumber, cached);
+  // Worker isolates never retain parsed whole-book files. Browser navigation
+  // keeps only the most recently used book so neighbour/search interactions
+  // stay responsive without an unbounded 99 MB cache.
+  if (typeof window === "undefined") return load();
+
+  if (browserBookHadithsCache.current?.bookNumber !== bookNumber) {
+    browserBookHadithsCache.current = { bookNumber, promise: load() };
   }
-  return cached;
+  return browserBookHadithsCache.current.promise;
 }
 
 async function bookNumberForId(bookId: string): Promise<number | null> {
@@ -209,23 +240,17 @@ export async function fetchBookByNumber(bookNumber: number): Promise<Book | null
   return books.find((b) => b.book_number === bookNumber) ?? null;
 }
 
-async function refreshBookChapters(bookNumber: number): Promise<BookChaptersFile> {
-  const fresh = fetchContent(`book-${bookNumber}/chapters.json`) as Promise<BookChaptersFile>;
-  bookChaptersCache.set(bookNumber, fresh);
-  return fresh;
-}
-
 export async function fetchCollections(bookId: string): Promise<Collection[]> {
   const bookNumber = await bookNumberForId(bookId);
   if (bookNumber === null) return [];
-  const file = await refreshBookChapters(bookNumber);
+  const file = await loadBookChapters(bookNumber);
   return file.collections;
 }
 
 export async function fetchChapters(bookId: string): Promise<Chapter[]> {
   const bookNumber = await bookNumberForId(bookId);
   if (bookNumber === null) return [];
-  const file = await refreshBookChapters(bookNumber);
+  const file = await loadBookChapters(bookNumber);
   return file.chapters;
 }
 
@@ -249,6 +274,18 @@ export async function fetchHadithByNumber(hadithNumber: number): Promise<HadithF
   const index = await loadHadithIndex();
   const entry = index.find((e) => e.n === hadithNumber);
   if (!entry) return null;
+
+  const chunkNumber = Math.floor((hadithNumber - 1) / 50);
+  try {
+    const chunk = (await fetchContent(`hadith-chunks/${chunkNumber}.json`)) as HadithFull[];
+    return chunk.find((h) => h.hadith_number === hadithNumber) ?? null;
+  } catch (error) {
+    // Generated chunks exist in deployed assets, but not in public/content.
+    // Only vite dev/node/browser may fall back to a full source book; a Worker
+    // must fail closed rather than parse a 14 MB file inside a 128 MB isolate.
+    if (!canFallbackToWholeBook()) throw error;
+  }
+
   const hadiths = await loadBookHadiths(entry.b);
   return hadiths.find((h) => h.hadith_number === hadithNumber) ?? null;
 }
@@ -651,7 +688,9 @@ async function legacySearchHadiths(filters: SearchFilters): Promise<SearchResult
     const bookNumber = await bookNumberForHeadingId((filters.chapterId ?? filters.collectionId)!);
     bookNumbers = bookNumber === null ? [] : [bookNumber];
   } else {
-    bookNumbers = [...bookHadithsCache.keys()];
+    bookNumbers = browserBookHadithsCache.current
+      ? [browserBookHadithsCache.current.bookNumber]
+      : [];
   }
 
   const language = filters.language ?? "all";

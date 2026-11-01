@@ -87,16 +87,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       {
-        title: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+        title: "Al-Jāmiʿ al-Kāmil Hadith — Arabic & English Translation",
       },
       {
         name: "description",
         content:
-          "The Complete Comprehensive Collection of Authentic Hadith, Arranged According to the Chapters of Fiqh, by Ḍiyāʾ al-Raḥmān al-Aʿẓamī — a bilingual Arabic–English digital hadith library of 66 Books and 16,546 numbered hadiths, fully searchable.",
+          "Al-Jāmiʿ al-Kāmil by Ḍiyāʾ al-Raḥmān al-Aʿẓamī: all 16,546 authentic hadiths with Arabic text, full English translation, grades and references.",
       },
       {
         property: "og:title",
-        content: "Al-Jāmiʿ al-Kāmil fī al-Ḥadīth al-Ṣaḥīḥ al-Shāmil — Ḍiyāʾ al-Raḥmān al-Aʿẓamī",
+        content: "Al-Jāmiʿ al-Kāmil Hadith — Arabic & English Translation",
       },
       {
         property: "og:description",
