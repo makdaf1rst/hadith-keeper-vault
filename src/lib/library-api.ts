@@ -220,8 +220,8 @@ async function bookNumberForHeadingId(id: string): Promise<number | null> {
 
   const books = await loadBooks();
   for (const book of books) {
-    if (bookChaptersCache.has(book.book_number)) continue;
     try {
+      // no "already cached" skip: a concurrent caller may have cached this book since the loop above
       if (matches(await loadBookChapters(book.book_number))) return book.book_number;
     } catch {
       // book has no chapters file yet, keep scanning
