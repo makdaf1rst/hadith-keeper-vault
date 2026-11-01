@@ -3,7 +3,7 @@ import { Download, Headphones, Loader2, Pause, Trash2, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
-import { playHadith, usePlayer } from "@/components/library/AudioDock";
+import { playChapter, playHadith, usePlayer } from "@/components/library/AudioDock";
 import { Button } from "@/components/ui/button";
 import { AUDIO_BASE, MB_PER_HADITH, isBookSaved, removeBook, saveBook } from "@/lib/audio";
 import { fetchBookHadiths } from "@/lib/library-api";
@@ -11,20 +11,66 @@ import { useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 
 /** Starts this hadith in the bottom player, or pauses/resumes it when it's the one playing. */
-export function ListenButton({ number, className }: { number: number; className?: string }) {
+export function ListenButton({
+  number,
+  className,
+  compact = false,
+}: {
+  number: number;
+  className?: string;
+  compact?: boolean;
+}) {
   const { contentLanguage } = useLanguage();
   const { track, paused } = usePlayer();
   if (!AUDIO_BASE) return null;
-  const playing = !paused && track?.n === number && track.lang === contentLanguage;
+  const playing =
+    !paused && !track?.chapter && track?.n === number && track.lang === contentLanguage;
+  const bn = contentLanguage === "bn";
+  const n = bn ? toBengaliDigits(number) : number;
+  return (
+    <Button
+      variant="outline"
+      size={compact ? "icon" : "sm"}
+      className={compact ? `size-8 ${className ?? ""}` : className}
+      aria-label={
+        playing
+          ? bn
+            ? `হাদিস ${n} থামান`
+            : `Pause hadith ${n}`
+          : bn
+            ? `হাদিস ${n} শুনুন`
+            : `Listen to hadith ${n}`
+      }
+      aria-pressed={playing}
+      onClick={() => playHadith(number, contentLanguage)}
+    >
+      {playing ? <Pause /> : <Headphones />}
+    </Button>
+  );
+}
+
+export function ChapterListenButton({
+  chapterId,
+  firstHadith,
+  className,
+}: {
+  chapterId: string;
+  firstHadith?: number | undefined;
+  className?: string;
+}) {
+  const { contentLanguage } = useLanguage();
+  const { track, paused } = usePlayer();
+  if (!AUDIO_BASE || !firstHadith) return null;
+  const playing = !paused && track?.chapter === chapterId && track.lang === contentLanguage;
   const bn = contentLanguage === "bn";
   return (
     <Button
       variant="outline"
-      size="sm"
-      className={className}
-      aria-label={playing ? (bn ? "থামান" : "Pause") : bn ? "শুনুন" : "Listen"}
+      size="icon"
+      className={`size-8 ${className ?? ""}`}
+      aria-label={bn ? "অধ্যায়ের ভূমিকা শুনুন" : "Listen to chapter introduction"}
       aria-pressed={playing}
-      onClick={() => playHadith(number, contentLanguage)}
+      onClick={() => playChapter(chapterId, firstHadith, contentLanguage)}
     >
       {playing ? <Pause /> : <Headphones />}
     </Button>

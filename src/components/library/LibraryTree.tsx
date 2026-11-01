@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
+import { ListenButton } from "@/components/library/HadithAudio";
 import {
   fetchBookHadiths,
   fetchBooks,
@@ -35,7 +36,15 @@ function formatArabicBookTitle(number: number, title: string | null) {
   return `${toArabicIndicDigits(number)}. ${clean}`;
 }
 
-function Title({ ar, en, className }: { ar: string | null; en: string | null; className?: string }) {
+function Title({
+  ar,
+  en,
+  className,
+}: {
+  ar: string | null;
+  en: string | null;
+  className?: string;
+}) {
   return (
     <span className={cn("flex min-w-0 flex-1 flex-col gap-0.5 text-left", className)}>
       {en ? <span className="text-sm leading-snug font-medium">{en}</span> : null}
@@ -84,7 +93,7 @@ function HadithChips({ hadiths }: { hadiths: HadithStub[] }) {
   return (
     <ul className="flex flex-wrap gap-1.5 px-2 py-2">
       {hadiths.map((h) => (
-        <li key={h.id}>
+        <li key={h.id} className="flex items-center gap-1">
           <Link
             to="/hadith/$number"
             params={{ number: String(h.hadith_number) }}
@@ -95,6 +104,7 @@ function HadithChips({ hadiths }: { hadiths: HadithStub[] }) {
               {toArabicIndicDigits(h.hadith_number)}
             </span>
           </Link>
+          <ListenButton number={h.hadith_number} compact />
         </li>
       ))}
     </ul>

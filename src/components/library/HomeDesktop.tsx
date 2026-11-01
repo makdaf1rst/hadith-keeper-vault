@@ -5,6 +5,7 @@ import { ArrowDownUp, Bookmark, ChevronRight, HelpCircle, List, Search } from "l
 import { useState } from "react";
 
 import { AboutLibrary } from "@/components/library/AboutLibrary";
+import { ListenButton } from "@/components/library/HadithAudio";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { cleanNumberedTitle } from "@/lib/display-titles";
 import { fetchBooks, fetchLibraryStats } from "@/lib/library-api";
@@ -107,38 +108,41 @@ export function ContinueCard({ bn }: { bn: boolean }) {
   const where = latest?.chapterTitle ?? latest?.bookTitle;
 
   return (
-    <Link
-      to="/hadith/$number"
-      params={{ number: String(number) }}
-      className="group flex items-center gap-5 rounded-2xl border border-border bg-card px-5 py-4 font-sans shadow-xs transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none sm:px-7 sm:py-5"
-    >
-      <span
-        lang="ar"
-        dir="rtl"
-        className="arabic-text hidden w-20 shrink-0 text-center text-3xl! leading-none! text-primary sm:block"
+    <div className="flex items-center gap-2">
+      <Link
+        to="/hadith/$number"
+        params={{ number: String(number) }}
+        className="group flex min-w-0 flex-1 items-center gap-5 rounded-2xl border border-border bg-card px-5 py-4 font-sans shadow-xs transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none sm:px-7 sm:py-5"
       >
-        {toArabicIndicDigits(number)}
-      </span>
-      <span className="min-w-0 flex-1">
-        <span className="block text-xs font-semibold tracking-wider text-muted-foreground uppercase">
-          {latest
-            ? bn
-              ? "পড়া চালিয়ে যান"
-              : "Continue reading"
-            : bn
-              ? "এখান থেকে শুরু করুন"
-              : "Start reading"}
+        <span
+          lang="ar"
+          dir="rtl"
+          className="arabic-text hidden w-20 shrink-0 text-center text-3xl! leading-none! text-primary sm:block"
+        >
+          {toArabicIndicDigits(number)}
         </span>
-        <span className="mt-1 block truncate text-lg font-semibold text-foreground">
-          {bn ? "হাদীস" : "Hadith"} {num}
-          {where ? <span className="font-normal text-muted-foreground"> · {where}</span> : null}
+        <span className="min-w-0 flex-1">
+          <span className="block text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+            {latest
+              ? bn
+                ? "পড়া চালিয়ে যান"
+                : "Continue reading"
+              : bn
+                ? "এখান থেকে শুরু করুন"
+                : "Start reading"}
+          </span>
+          <span className="mt-1 block truncate text-lg font-semibold text-foreground">
+            {bn ? "হাদীস" : "Hadith"} {num}
+            {where ? <span className="font-normal text-muted-foreground"> · {where}</span> : null}
+          </span>
         </span>
-      </span>
-      <span className="flex shrink-0 items-center gap-1 text-sm font-medium text-primary">
-        {latest ? (bn ? "চালিয়ে যান" : "Continue") : bn ? "শুরু করুন" : "Begin"}
-        <ChevronRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-      </span>
-    </Link>
+        <span className="flex shrink-0 items-center gap-1 text-sm font-medium text-primary">
+          {latest ? (bn ? "চালিয়ে যান" : "Continue") : bn ? "শুরু করুন" : "Begin"}
+          <ChevronRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+        </span>
+      </Link>
+      <ListenButton number={number} compact className="shrink-0" />
+    </div>
   );
 }
 

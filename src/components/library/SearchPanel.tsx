@@ -3,6 +3,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { ChevronDown, History, Search, SlidersHorizontal, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
+import { ListenButton } from "@/components/library/HadithAudio";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -172,10 +173,13 @@ export function SearchPanel({ initialQuery }: { initialQuery?: string | undefine
 
   const filtersActive =
     bookId !== ALL || collectionId !== ALL || chapterId !== ALL || language !== "all";
-  const activeFilterCount =
-    [bookId !== ALL, collectionId !== ALL, chapterId !== ALL, language !== "all", advancedOpen].filter(
-      Boolean,
-    ).length;
+  const activeFilterCount = [
+    bookId !== ALL,
+    collectionId !== ALL,
+    chapterId !== ALL,
+    language !== "all",
+    advancedOpen,
+  ].filter(Boolean).length;
 
   return (
     <section className="space-y-4 web:space-y-6 web:font-sans">
@@ -197,7 +201,10 @@ export function SearchPanel({ initialQuery }: { initialQuery?: string | undefine
             className="h-11 bg-card pl-9 text-base [.app_&]:rounded-full web:h-14 web:rounded-full web:pl-13 web:font-sans web:shadow-sm"
           />
         </div>
-        <Button type="submit" className="h-11 px-6 [.app_&]:hidden web:h-14 web:rounded-full web:px-7">
+        <Button
+          type="submit"
+          className="h-11 px-6 [.app_&]:hidden web:h-14 web:rounded-full web:px-7"
+        >
           {t.search}
         </Button>
         {query ? (
@@ -459,7 +466,7 @@ export function SearchPanel({ initialQuery }: { initialQuery?: string | undefine
       ) : null}
 
       {numeric ? (
-        <div className="rounded-md border border-gold/50 bg-accent/40 px-4 py-3 web:rounded-2xl">
+        <div className="flex items-center justify-between gap-3 rounded-md border border-gold/50 bg-accent/40 px-4 py-3 web:rounded-2xl">
           <button
             type="button"
             onClick={() => navigate({ to: "/hadith/$number", params: { number: String(numeric) } })}
@@ -467,6 +474,7 @@ export function SearchPanel({ initialQuery }: { initialQuery?: string | undefine
           >
             {t.goToHadith} {numeric} ({toArabicIndicDigits(numeric)})
           </button>
+          <ListenButton number={numeric} compact className="shrink-0" />
         </div>
       ) : null}
 
@@ -517,41 +525,50 @@ export function SearchPanel({ initialQuery }: { initialQuery?: string | undefine
           {results.data?.map((result) => {
             const book = result.book_id ? bookById.get(result.book_id) : undefined;
             return (
-              <Link
+              <div
                 key={result.id}
-                to="/hadith/$number"
-                params={{ number: String(result.hadith_number) }}
-                className="block rounded-md border border-border bg-card px-4 py-3 transition-colors hover:border-primary web:rounded-none web:border-0 web:bg-transparent web:px-2 web:py-5 web:hover:bg-accent/50"
+                className="flex items-start gap-2 rounded-md border border-border bg-card transition-colors hover:border-primary web:rounded-none web:border-0 web:bg-transparent web:hover:bg-accent/50"
               >
-                <div className="flex flex-wrap items-baseline gap-2">
-                  <span className="font-semibold text-primary">
-                    {t.hadith} {result.hadith_number}
-                  </span>
-                  {book ? (
-                    <span className="text-xs text-muted-foreground">
-                      {formatBookTitle(book.book_number, book.title_en ?? book.title_ar)}
+                <Link
+                  to="/hadith/$number"
+                  params={{ number: String(result.hadith_number) }}
+                  className="min-w-0 flex-1 px-4 py-3 web:px-2 web:py-5"
+                >
+                  <div className="flex flex-wrap items-baseline gap-2">
+                    <span className="font-semibold text-primary">
+                      {t.hadith} {result.hadith_number}
                     </span>
+                    {book ? (
+                      <span className="text-xs text-muted-foreground">
+                        {formatBookTitle(book.book_number, book.title_en ?? book.title_ar)}
+                      </span>
+                    ) : null}
+                  </div>
+                  {result.arabic_display ? (
+                    <p className="arabic-text mt-2 text-lg! leading-loose! text-foreground/90">
+                      {preview(result.arabic_display, query)}
+                    </p>
                   ) : null}
-                </div>
-                {result.arabic_display ? (
-                  <p className="arabic-text mt-2 text-lg! leading-loose! text-foreground/90">
-                    {preview(result.arabic_display, query)}
-                  </p>
-                ) : null}
-                {result.bengali_text ? (
-                  <p lang="bn" className="mt-1 text-sm text-muted-foreground">
-                    {preview(result.bengali_text, "")}
-                  </p>
-                ) : null}
-                {result.english_display && !result.bengali_text ? (
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {preview(result.english_display, query)}
-                  </p>
-                ) : null}
-                <span className="mt-2 inline-block text-xs text-muted-foreground italic">
-                  {t.previewOnly}
-                </span>
-              </Link>
+                  {result.bengali_text ? (
+                    <p lang="bn" className="mt-1 text-sm text-muted-foreground">
+                      {preview(result.bengali_text, "")}
+                    </p>
+                  ) : null}
+                  {result.english_display && !result.bengali_text ? (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {preview(result.english_display, query)}
+                    </p>
+                  ) : null}
+                  <span className="mt-2 inline-block text-xs text-muted-foreground italic">
+                    {t.previewOnly}
+                  </span>
+                </Link>
+                <ListenButton
+                  number={result.hadith_number}
+                  compact
+                  className="mt-3 mr-3 shrink-0 web:mt-5 web:mr-2"
+                />
+              </div>
             );
           })}
         </div>
