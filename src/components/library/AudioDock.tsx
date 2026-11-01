@@ -20,7 +20,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LAST_HADITH, playableSrc } from "@/lib/audio";
+import { chapterAudioUrl, nextTrack, playableSrc, type AudioTrack } from "@/lib/audio";
 import type { ContentLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 
@@ -29,7 +29,7 @@ import { toBengaliDigits } from "@/lib/normalize";
  * Playback survives navigation, and because it's the same element the browser keeps
  * allowing auto-advance after the first tap.
  */
-type Track = { n: number; lang: ContentLanguage; dir: 1 | -1 };
+type Track = AudioTrack;
 type State = { track: Track | null; paused: boolean };
 
 const GAP_MS = 1000; // silence between one hadith and the next
@@ -67,14 +67,21 @@ function toggle() {
 
 /** Starts this hadith in the dock, or pauses/resumes it if it's already the one loaded. */
 export function playHadith(n: number, lang: ContentLanguage) {
-  if (state.track?.n === n && state.track.lang === lang) toggle();
+  if (state.track?.n === n && state.track.lang === lang && !state.track.chapter) toggle();
   else set({ track: { n, lang, dir: 1 } });
+}
+
+/** Starts this chapter clip, or pauses/resumes it if it's already loaded. */
+export function playChapter(id: string, firstHadith: number, lang: ContentLanguage) {
+  if (state.track?.chapter === id && state.track.lang === lang) toggle();
+  else set({ track: { n: firstHadith, lang, dir: 1, chapter: id } });
 }
 
 function step(dir: 1 | -1) {
   const t = state.track;
-  if (!t || t.n + dir < 1 || t.n + dir > LAST_HADITH) return;
-  set({ track: { ...t, n: t.n + dir, dir } });
+  if (!t) return;
+  const track = nextTrack(t, dir);
+  if (track) set({ track });
 }
 
 function seek(by: number) {
@@ -147,7 +154,10 @@ export function AudioDock() {
     let blob = "";
     setTime(0);
     setDuration(0);
-    void playableSrc(track.n, track.lang).then((src) => {
+    const source = track.chapter
+      ? Promise.resolve(chapterAudioUrl(track.chapter, track.lang))
+      : playableSrc(track.n, track.lang);
+    void source.then((src) => {
       if (src.startsWith("blob:")) blob = src;
       if (!live) return void (blob && URL.revokeObjectURL(blob));
       audio.src = src;
@@ -156,7 +166,13 @@ export function AudioDock() {
     });
     if ("mediaSession" in navigator && typeof MediaMetadata !== "undefined") {
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: track.lang === "bn" ? `হাদিস ${toBengaliDigits(track.n)}` : `Hadith ${track.n}`,
+        title: track.chapter
+          ? track.lang === "bn"
+            ? "অধ্যায়ের ভূমিকা"
+            : "Chapter introduction"
+          : track.lang === "bn"
+            ? `হাদিস ${toBengaliDigits(track.n)}`
+            : `Hadith ${track.n}`,
         artist: "Al-Jāmiʿ al-Kāmil",
       });
     }
@@ -186,6 +202,10 @@ export function AudioDock() {
   function onError() {
     const t = state.track;
     if (!t) return;
+    if (t.chapter) {
+      set({ track: { n: t.n, lang: t.lang, dir: 1 } });
+      return;
+    }
     // ponytail: a media error can't tell "no narration" (404) from offline; both skip, then stop
     if (++skips.current > MAX_SKIPS) {
       skips.current = 0;
@@ -264,7 +284,7 @@ export function AudioDock() {
                 type="button"
                 className={iconButton}
                 aria-label={say("Previous hadith", "আগের হাদিস")}
-                disabled={track.n <= 1}
+                disabled={!nextTrack(track, -1)}
                 onClick={() => step(-1)}
               >
                 <SkipBack />
@@ -297,7 +317,7 @@ export function AudioDock() {
                 type="button"
                 className={iconButton}
                 aria-label={say("Next hadith", "পরের হাদিস")}
-                disabled={track.n >= LAST_HADITH}
+                disabled={!nextTrack(track, 1)}
                 onClick={() => step(1)}
               >
                 <SkipForward />

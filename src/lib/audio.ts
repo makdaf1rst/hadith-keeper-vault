@@ -1,20 +1,36 @@
 /**
  * Hadith narration: streamed per hadith on tap, or saved per book for offline listening.
- * Files live at `${AUDIO_BASE}/<en|bn>/<hadith_number>.mp3` (written by scripts/tts-generate.mjs).
+ * Hadith files live at `${AUDIO_BASE}/<en|bn>/<hadith_number>.mp3` (written by scripts/tts-generate.mjs).
+ * Chapter clips live at `${AUDIO_BASE}/chapters/<en|bn>/<chapter uuid>.mp3`.
  * The audio host must send CORS headers for this site, or saved copies can't be read back.
  */
 import type { ContentLanguage } from "@/lib/language";
 
 // Empty until the narration is uploaded; every audio control hides while it's unset.
 export const AUDIO_BASE = String(import.meta.env["VITE_AUDIO_BASE"] ?? "").replace(/\/$/, "");
-// ~700 characters per hadith ≈ 0.7 min of speech ≈ 0.35 MB at 64 kbps mono.
-export const MB_PER_HADITH = 0.35;
+// Measured narration files are about 0.40 to 0.42 MB per hadith.
+export const MB_PER_HADITH = 0.42;
 // ponytail: hadith numbers are 1..LAST_HADITH with no gaps; a hadith with no narration 404s and the player skips it.
 export const LAST_HADITH = 16546;
 const CACHE = "jk-audio";
 const PARALLEL = 4;
 
 export const audioUrl = (n: number, lang: ContentLanguage) => `${AUDIO_BASE}/${lang}/${n}.mp3`;
+export const chapterAudioUrl = (id: string, lang: ContentLanguage) =>
+  `${AUDIO_BASE}/chapters/${lang}/${id}.mp3`;
+
+export type AudioTrack = {
+  n: number;
+  lang: ContentLanguage;
+  dir: 1 | -1;
+  chapter?: string;
+};
+
+export function nextTrack(track: AudioTrack, dir: 1 | -1): AudioTrack | null {
+  const n = track.chapter ? (dir === 1 ? track.n : track.n - 1) : track.n + dir;
+  if (n < 1 || n > LAST_HADITH) return null;
+  return { n, lang: track.lang, dir };
+}
 const hasCache = () => typeof caches !== "undefined";
 const savedKey = (book: number, lang: ContentLanguage) => `jk-audio-book-${book}-${lang}`;
 

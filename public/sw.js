@@ -13,7 +13,9 @@ const PAGES = `jk-pages-${VERSION}`;
 const ASSETS = `jk-assets-${VERSION}`;
 const DATA = `jk-data-${VERSION}`;
 const FONTS = `jk-fonts-${VERSION}`;
-const KNOWN_CACHES = [PAGES, ASSETS, DATA, FONTS];
+// Saved narration, written by src/lib/audio.ts. Unversioned so a worker update never drops it.
+const AUDIO = "jk-audio";
+const KNOWN_CACHES = [PAGES, ASSETS, DATA, FONTS, AUDIO];
 
 const LIMITS = {
   [PAGES]: 150,

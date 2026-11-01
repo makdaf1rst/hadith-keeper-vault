@@ -3,9 +3,14 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
-import { BookAudioDownload } from "@/components/library/HadithAudio";
+import {
+  BookAudioDownload,
+  ChapterListenButton,
+  ListenButton,
+} from "@/components/library/HadithAudio";
 import { IntroText } from "@/components/library/IntroText";
 import { ReaderSubBar, subBarBack } from "@/components/library/ReaderSubBar";
+import { AUDIO_BASE } from "@/lib/audio";
 import { fetchBengaliStructure, type BengaliChapterTranslation } from "@/lib/bengali-translations";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
@@ -90,7 +95,7 @@ function ChapterHadiths({ chapter }: { chapter: Chapter }) {
   return (
     <ul className="mt-3 flex flex-wrap gap-2">
       {hadiths.data.map((hadith) => (
-        <li key={hadith.id}>
+        <li key={hadith.id} className="flex items-center gap-1">
           <Link
             to="/hadith/$number"
             params={{ number: String(hadith.hadith_number) }}
@@ -101,6 +106,7 @@ function ChapterHadiths({ chapter }: { chapter: Chapter }) {
               {toArabicIndicDigits(hadith.hadith_number)}
             </span>
           </Link>
+          <ListenButton number={hadith.hadith_number} compact />
         </li>
       ))}
     </ul>
@@ -110,22 +116,30 @@ function ChapterHadiths({ chapter }: { chapter: Chapter }) {
 // ponytail: native <details>; children mount only once opened so a closed baab never fetches its hadiths.
 function Fold({
   summary,
+  aside,
   className,
   children,
 }: {
   summary: React.ReactNode;
+  aside?: React.ReactNode;
   className?: string;
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
   return (
-    <details className={className} onToggle={(e) => setOpen(e.currentTarget.open)}>
-      <summary className="flex cursor-pointer list-none items-start gap-2 [&::-webkit-details-marker]:hidden">
+    <details
+      className={className ? `relative ${className}` : "relative"}
+      onToggle={(e) => setOpen(e.currentTarget.open)}
+    >
+      <summary
+        className={`flex cursor-pointer list-none items-start gap-2 [&::-webkit-details-marker]:hidden ${aside ? "pr-10" : ""}`}
+      >
         <ChevronRight
           className={`mt-1 size-4 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-90" : ""}`}
         />
         <div className="min-w-0 flex-1">{summary}</div>
       </summary>
+      {open && aside ? <div className="absolute top-0 right-0">{aside}</div> : null}
       {open ? children : null}
     </details>
   );
@@ -147,6 +161,7 @@ function ChapterBlock({
   return (
     <li className="border-l-2 border-border pl-3">
       <Fold
+        aside={AUDIO_BASE ? <ChapterListenButton chapterId={chapter.id} /> : undefined}
         summary={
           <>
             <p className="text-sm font-medium">{title}</p>
