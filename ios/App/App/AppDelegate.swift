@@ -1,3 +1,4 @@
+import AVFoundation
 import UIKit
 import Capacitor
 
@@ -7,7 +8,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Narration keeps playing on the lock screen and with the ringer off. Not activated here, so launching never stops the reader's music.
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio)
         return true
     }
 

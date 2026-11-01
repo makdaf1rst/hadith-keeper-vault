@@ -196,7 +196,9 @@ export function AudioDock() {
   }, [track]);
 
   function onEnded() {
-    gap.current = window.setTimeout(() => step(1), GAP_MS);
+    // A locked phone can suspend the page once audio stops, and the timer would never fire.
+    if (document.hidden) step(1);
+    else gap.current = window.setTimeout(() => step(1), GAP_MS);
   }
 
   function onError() {
