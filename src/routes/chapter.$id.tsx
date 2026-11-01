@@ -3,6 +3,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 
+import { ChapterListenButton } from "@/components/library/HadithAudio";
 import { IntroText } from "@/components/library/IntroText";
 import { buttonVariants } from "@/components/ui/button";
 import { ReaderSubBar, subBarBack, subBarPill } from "@/components/library/ReaderSubBar";
@@ -244,7 +245,10 @@ function ChapterReadingPage() {
                 <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
                   {t.chapter}
                 </p>
-                <h1 className="mt-1 text-xl font-semibold text-foreground">{chapterTitle}</h1>
+                <div className="mt-1 flex items-start justify-between gap-3">
+                  <h1 className="min-w-0 text-xl font-semibold text-foreground">{chapterTitle}</h1>
+                  <ChapterListenButton chapterId={context.data.chapter.id} className="shrink-0" />
+                </div>
                 {context.data.chapter.title_ar ? (
                   <p className="arabic-text mt-2 text-xl! text-foreground">
                     {context.data.chapter.chapter_number != null

@@ -3,6 +3,7 @@ import { ArrowLeft, BookmarkX, Download, Library, Upload } from "lucide-react";
 import { useRef } from "react";
 import { toast } from "sonner";
 
+import { ListenButton } from "@/components/library/HadithAudio";
 import { Button } from "@/components/ui/button";
 import { useBookmarks } from "@/lib/bookmarks";
 import { useLanguage } from "@/lib/language";
@@ -185,30 +186,35 @@ function BookmarksPage() {
                       </span>
                     ) : null}
                   </Link>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    onClick={() => {
-                      void remove(bookmark.number)
-                        .then(() =>
-                          toast.success(bn ? "বুকমার্ক সরানো হয়েছে।" : "Bookmark removed."),
-                        )
-                        .catch(() =>
-                          toast.error(
-                            bn ? "এই বুকমার্কটি সরানো যায়নি।" : "Could not remove this bookmark.",
-                          ),
-                        );
-                    }}
-                    aria-label={
-                      bn
-                        ? `বুকমার্ক থেকে হাদীস ${toBengaliDigits(bookmark.number)} সরান`
-                        : `Remove hadith ${bookmark.number} from bookmarks`
-                    }
-                  >
-                    <BookmarkX aria-hidden />
-                    {bn ? "সরান" : "Remove"}
-                  </Button>
+                  <div className="flex shrink-0 flex-wrap gap-2">
+                    <ListenButton number={bookmark.number} compact />
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        void remove(bookmark.number)
+                          .then(() =>
+                            toast.success(bn ? "বুকমার্ক সরানো হয়েছে।" : "Bookmark removed."),
+                          )
+                          .catch(() =>
+                            toast.error(
+                              bn
+                                ? "এই বুকমার্কটি সরানো যায়নি।"
+                                : "Could not remove this bookmark.",
+                            ),
+                          );
+                      }}
+                      aria-label={
+                        bn
+                          ? `বুকমার্ক থেকে হাদীস ${toBengaliDigits(bookmark.number)} সরান`
+                          : `Remove hadith ${bookmark.number} from bookmarks`
+                      }
+                    >
+                      <BookmarkX aria-hidden />
+                      {bn ? "সরান" : "Remove"}
+                    </Button>
+                  </div>
                 </div>
               </li>
             ))}

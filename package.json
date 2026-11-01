@@ -10,6 +10,7 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
+    "check:audio": "bun scripts/check-audio-steps.ts",
     "format": "prettier --write .",
     "cap:sync": "cap sync",
     "cap:ios": "cap open ios",

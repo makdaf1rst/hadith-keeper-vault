@@ -220,8 +220,8 @@ async function bookNumberForHeadingId(id: string): Promise<number | null> {
 
   const books = await loadBooks();
   for (const book of books) {
-    if (bookChaptersCache.has(book.book_number)) continue;
     try {
+      // no "already cached" skip: a concurrent caller may have cached this book since the loop above
       if (matches(await loadBookChapters(book.book_number))) return book.book_number;
     } catch {
       // book has no chapters file yet, keep scanning
@@ -563,6 +563,28 @@ export async function fetchChapterNeighbours(chapterId: string) {
   if (position < 0) return { previous: null, next: null };
 
   return adjacentAcrossBooks(bookNumber, sequence, position);
+}
+
+/** The hadith a chapter leads into: its own first, else the next in reading order, across books. */
+export async function fetchChapterFirstHadith(chapterId: string): Promise<number | null> {
+  const bookNumber = await bookNumberForHeadingId(chapterId);
+  if (bookNumber === null) return null;
+
+  const sequence = await readingSequenceForBook(bookNumber);
+  const position = sequence.findIndex((item) => item.kind === "chapter" && item.id === chapterId);
+  if (position < 0) return null;
+
+  const inBook = sequence.slice(position).find((item) => item.kind === "hadith");
+  if (inBook?.kind === "hadith") return inBook.number;
+
+  const books = [...(await loadBooks())].sort((a, b) => a.book_number - b.book_number);
+  for (const book of books.filter((item) => item.book_number > bookNumber)) {
+    const later = (await readingSequenceForBook(book.book_number)).find(
+      (item) => item.kind === "hadith",
+    );
+    if (later?.kind === "hadith") return later.number;
+  }
+  return null;
 }
 
 export type SearchFilters = {

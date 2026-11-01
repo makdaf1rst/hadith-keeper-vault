@@ -2,6 +2,7 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpenText, History } from "lucide-react";
 
+import { ListenButton } from "@/components/library/HadithAudio";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
@@ -47,7 +48,8 @@ export function ContinueReading() {
           </p>
         )}
       </div>
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
+        {latest ? <ListenButton number={latest.number} compact /> : null}
         {latest ? (
           <Link
             to="/hadith/$number"
@@ -73,11 +75,11 @@ export function ContinueReading() {
             {history.length ? (
               <ul className="space-y-2">
                 {history.map((entry) => (
-                  <li key={entry.number}>
+                  <li key={entry.number} className="flex items-center gap-2">
                     <Link
                       to="/hadith/$number"
                       params={{ number: String(entry.number) }}
-                      className="block rounded-md border border-border bg-card px-3 py-2 text-sm transition-colors hover:border-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                      className="block min-w-0 flex-1 rounded-md border border-border bg-card px-3 py-2 text-sm transition-colors hover:border-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                     >
                       <span className="font-semibold text-primary">
                         {bn ? "হাদিস" : "Hadith"} {num(entry.number)}
@@ -93,6 +95,7 @@ export function ContinueReading() {
                         </span>
                       ) : null}
                     </Link>
+                    <ListenButton number={entry.number} compact className="shrink-0" />
                   </li>
                 ))}
               </ul>
@@ -127,7 +130,7 @@ export function RecentChips() {
       </h2>
       <ul className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
         {history.slice(0, 5).map((entry) => (
-          <li key={entry.number} className="shrink-0">
+          <li key={entry.number} className="flex shrink-0 items-center gap-1">
             <Link
               to="/hadith/$number"
               params={{ number: String(entry.number) }}
@@ -140,6 +143,7 @@ export function RecentChips() {
                 {entry.chapterTitle ?? entry.bookTitle ?? entry.collectionTitle}
               </span>
             </Link>
+            <ListenButton number={entry.number} compact />
           </li>
         ))}
       </ul>
