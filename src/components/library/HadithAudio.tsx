@@ -5,8 +5,15 @@ import { toast } from "sonner";
 
 import { playChapter, playHadith, usePlayer } from "@/components/library/AudioDock";
 import { Button } from "@/components/ui/button";
-import { AUDIO_BASE, MB_PER_HADITH, isBookSaved, removeBook, saveBook } from "@/lib/audio";
-import { fetchBookHadiths, fetchChapterFirstHadith } from "@/lib/library-api";
+import {
+  AUDIO_BASE,
+  MB_PER_CHAPTER,
+  MB_PER_HADITH,
+  isBookSaved,
+  removeBook,
+  saveBook,
+} from "@/lib/audio";
+import { fetchBookHadiths, fetchChapterFirstHadith, fetchChapters } from "@/lib/library-api";
 import { useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 
@@ -93,7 +100,13 @@ export function BookAudioDownload({ bookId, bookNumber }: { bookId: string; book
     queryFn: () => fetchBookHadiths(bookId),
     enabled: !!AUDIO_BASE,
   });
+  const chapterList = useQuery({
+    queryKey: ["book-chapters", bookId],
+    queryFn: () => fetchChapters(bookId),
+    enabled: !!AUDIO_BASE,
+  });
   const numbers = (hadiths.data ?? []).map((h) => h.hadith_number);
+  const chapters = (chapterList.data ?? []).map((c) => c.id);
 
   useEffect(
     () => setPhase({ kind: isBookSaved(bookNumber, lang) ? "saved" : "idle" }),
@@ -101,16 +114,17 @@ export function BookAudioDownload({ bookId, bookNumber }: { bookId: string; book
   );
   useEffect(() => () => abort.current?.abort(), []);
 
-  if (!AUDIO_BASE || !numbers.length) return null;
-  const mb = Math.ceil(numbers.length * MB_PER_HADITH);
+  if (!AUDIO_BASE || !numbers.length || !chapterList.data) return null;
+  const mb = Math.ceil(numbers.length * MB_PER_HADITH + chapters.length * MB_PER_CHAPTER);
 
   async function start() {
     abort.current = new AbortController();
-    setPhase({ kind: "saving", done: 0, total: numbers.length });
+    setPhase({ kind: "saving", done: 0, total: numbers.length + chapters.length });
     try {
       await saveBook(
         bookNumber,
         numbers,
+        chapters,
         lang,
         (done, total) => setPhase({ kind: "saving", done, total }),
         abort.current.signal,
@@ -127,7 +141,7 @@ export function BookAudioDownload({ bookId, bookNumber }: { bookId: string; book
   }
 
   async function remove() {
-    await removeBook(bookNumber, numbers, lang);
+    await removeBook(bookNumber, numbers, chapters, lang);
     setPhase({ kind: "idle" });
     toast.success(bn ? "অডিও মুছে ফেলা হয়েছে।" : "Saved audio removed.");
   }

@@ -20,7 +20,14 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { chapterAudioUrl, nextTrack, playableSrc, type AudioTrack } from "@/lib/audio";
+import {
+  adjacentTrack,
+  audioUrl,
+  chapterAudioUrl,
+  nextTrack,
+  playableSrc,
+  type AudioTrack,
+} from "@/lib/audio";
 import type { ContentLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 
@@ -77,11 +84,19 @@ export function playChapter(id: string, firstHadith: number, lang: ContentLangua
   else set({ track: { n: firstHadith, lang, dir: 1, chapter: id } });
 }
 
-function step(dir: 1 | -1) {
+// Looked up as a clip starts: a locked phone can suspend the page, so nothing may need fetching once it ends.
+let ahead: { from: Track; next: Promise<Track | null> } | null = null;
+
+function lookAhead(from: Track) {
+  if (ahead?.from !== from) ahead = { from, next: adjacentTrack(from, 1) };
+  return ahead.next;
+}
+
+async function step(dir: 1 | -1) {
   const t = state.track;
   if (!t) return;
-  const track = nextTrack(t, dir);
-  if (track) set({ track });
+  const track = await (dir === 1 ? lookAhead(t) : adjacentTrack(t, dir));
+  if (track && state.track === t) set({ track }); // the reader may have moved on meanwhile
 }
 
 function seek(by: number) {
@@ -97,6 +112,8 @@ function readSpeed() {
   }
 }
 
+const pagePath = (t: Track) => (t.chapter ? `/chapter/${t.chapter}` : `/hadith/${t.n}`);
+
 const clock = (s: number, bn: boolean) => {
   const v = `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
   return bn ? toBengaliDigits(v) : v;
@@ -110,7 +127,7 @@ export function AudioDock() {
   const ref = useRef<HTMLAudioElement>(null);
   const gap = useRef<number | undefined>(undefined);
   const skips = useRef(0);
-  const followed = useRef<number | null>(null);
+  const followed = useRef<string | null>(null);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [speed, setSpeed] = useState(1);
@@ -126,8 +143,8 @@ export function AudioDock() {
       ["pause", toggle],
       ["seekbackward", () => seek(-SEEK_S)],
       ["seekforward", () => seek(SEEK_S)],
-      ["previoustrack", () => step(-1)],
-      ["nexttrack", () => step(1)],
+      ["previoustrack", () => void step(-1)],
+      ["nexttrack", () => void step(1)],
     ];
     for (const [action, handler] of actions) {
       try {
@@ -154,10 +171,11 @@ export function AudioDock() {
     let blob = "";
     setTime(0);
     setDuration(0);
-    const source = track.chapter
-      ? Promise.resolve(chapterAudioUrl(track.chapter, track.lang))
-      : playableSrc(track.n, track.lang);
-    void source.then((src) => {
+    void lookAhead(track);
+    const url = track.chapter
+      ? chapterAudioUrl(track.chapter, track.lang)
+      : audioUrl(track.n, track.lang);
+    void playableSrc(url).then((src) => {
       if (src.startsWith("blob:")) blob = src;
       if (!live) return void (blob && URL.revokeObjectURL(blob));
       audio.src = src;
@@ -184,38 +202,36 @@ export function AudioDock() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [track]);
 
-  // If the reader is on the page of the hadith that just finished, the page follows along.
+  // If the reader is on the page of the clip that just finished, the page follows along.
   useEffect(() => {
     const prev = followed.current;
-    followed.current = track?.n ?? null;
-    if (track && prev != null && prev !== track.n && pathname === `/hadith/${prev}`) {
-      void navigate({ to: "/hadith/$number", params: { number: String(track.n) } });
-    }
+    const path = track ? pagePath(track) : null;
+    followed.current = path;
+    if (!track || prev === null || prev === path || pathname !== prev) return;
+    if (track.chapter) void navigate({ to: "/chapter/$id", params: { id: track.chapter } });
+    else void navigate({ to: "/hadith/$number", params: { number: String(track.n) } });
     // pathname is read, not watched: moving to another page must not trigger a jump
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [track]);
 
   function onEnded() {
     // A locked phone can suspend the page once audio stops, and the timer would never fire.
-    if (document.hidden) step(1);
-    else gap.current = window.setTimeout(() => step(1), GAP_MS);
+    if (document.hidden) void step(1);
+    else gap.current = window.setTimeout(() => void step(1), GAP_MS);
   }
 
   function onError() {
     const t = state.track;
     if (!t) return;
-    if (t.chapter) {
-      set({ track: { n: t.n, lang: t.lang, dir: 1 } });
-      return;
-    }
-    // ponytail: a media error can't tell "no narration" (404) from offline; both skip, then stop
-    if (++skips.current > MAX_SKIPS) {
+    // ponytail: a media error can't tell "no narration" (404) from offline; both skip, then stop.
+    // Chapters don't count: up to 8 run together and 206 have no BN clip.
+    if (!t.chapter && ++skips.current > MAX_SKIPS) {
       skips.current = 0;
       el?.pause();
       toast.error(t.lang === "bn" ? "অডিও চালানো যাচ্ছে না।" : "Couldn't load the audio.");
       return;
     }
-    step(t.dir);
+    void step(t.dir);
   }
 
   function close() {
@@ -287,7 +303,7 @@ export function AudioDock() {
                 className={iconButton}
                 aria-label={say("Previous hadith", "আগের হাদিস")}
                 disabled={!nextTrack(track, -1)}
-                onClick={() => step(-1)}
+                onClick={() => void step(-1)}
               >
                 <SkipBack />
               </button>
@@ -320,7 +336,7 @@ export function AudioDock() {
                 className={iconButton}
                 aria-label={say("Next hadith", "পরের হাদিস")}
                 disabled={!nextTrack(track, 1)}
-                onClick={() => step(1)}
+                onClick={() => void step(1)}
               >
                 <SkipForward />
               </button>
