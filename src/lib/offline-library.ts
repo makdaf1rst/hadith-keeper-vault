@@ -17,6 +17,8 @@ const PLAN_KEY = "jk-offline-plan";
 const TEXT_KEY = "jk-offline-text"; // manifest version the saved text matches
 const PROMPTED_KEY = "jk-offline-prompted";
 const PAUSED_KEY = "jk-offline-paused";
+const COMPLETE_KEY = "jk-offline-complete"; // the plan that last finished in full
+const OFFLINE_MESSAGE = "No connection. The download continues when you're back online.";
 const PARALLEL = 8;
 const HASH_HEADER = "x-jk-hash";
 // file list of the last completed save, so a later save can delete what a new build dropped
@@ -205,12 +207,19 @@ export async function startOfflineDownload(plan: OfflinePlan) {
   let stage: "text" | "audio" = "text";
   try {
     await navigator.storage?.persist?.(); // ask the browser not to clear it under storage pressure
-    const manifest = await loadManifest();
+    let manifest: Manifest;
+    try {
+      manifest = await loadManifest();
+    } catch {
+      setOfflineState(plan); // offline launch: report what's already saved
+      return;
+    }
     if (read(TEXT_KEY) !== manifest.version) await saveText(manifest, signal);
     if (plan.audio && AUDIO_BASE) {
       stage = "audio";
       await saveAudio(manifest, plan.audio, signal);
     }
+    write(COMPLETE_KEY, JSON.stringify(plan));
     setState({ kind: "done" });
   } catch (error) {
     if (signal.aborted) setState(getPlan() ? { kind: "paused", stage } : { kind: "idle" });
@@ -235,14 +244,24 @@ export async function removeOfflineText() {
   write(PAUSED_KEY, null);
   controller?.abort();
   write(TEXT_KEY, null);
+  write(COMPLETE_KEY, null);
   if (supportsOffline()) await caches.delete(LIBRARY);
   setState({ kind: "idle" });
 }
 
 /** Called once per launch: picks an unfinished download back up when there's a connection. */
+function setOfflineState(plan: OfflinePlan) {
+  const complete = read(COMPLETE_KEY) === JSON.stringify(plan);
+  setState(complete ? { kind: "done" } : { kind: "error", message: OFFLINE_MESSAGE });
+}
+
 export function resumeOfflineDownload() {
   const plan = getPlan();
-  if (!plan || !supportsOffline() || !navigator.onLine) return;
+  if (!plan || !supportsOffline()) return;
+  if (!navigator.onLine) {
+    if (state.kind !== "running") setOfflineState(plan);
+    return;
+  }
   if (read(PAUSED_KEY) === "1") {
     if (state.kind === "idle")
       setState({ kind: "paused", stage: isTextSaved() ? "audio" : "text" });
