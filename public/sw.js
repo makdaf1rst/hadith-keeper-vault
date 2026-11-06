@@ -2,7 +2,7 @@
  *
  * Pages a user has already viewed (plus their data, assets, and fonts) are
  * served from cache so they load again with no network. Strategy per type:
- *   - navigations:            stale-while-revalidate (jk-pages)
+ *   - navigations:            network-first, cache fallback after 4s or offline (jk-pages)
  *   - Supabase REST GETs:     stale-while-revalidate (jk-data)
  *   - build assets and fonts: cache-first (jk-assets, jk-fonts)
  * Never cached: /auth and /admin routes, /api, anything non-GET, /auth/v1.
@@ -23,6 +23,9 @@ const LIMITS = {
   [DATA]: 300,
   [FONTS]: 60,
 };
+
+// Slow-network cap before a navigation falls back to its cached copy.
+const NAV_TIMEOUT_MS = 4000;
 
 const NEVER_CACHE_PATHS = [/^\/auth(?:\/|$)/, /^\/admin(?:\/|$)/, /^\/api(?:\/|$)/];
 
@@ -85,6 +88,24 @@ async function staleWhileRevalidate(request, cacheName) {
   return cached ?? network;
 }
 
+// Fresh page whenever the network answers, so a deploy reaches returning readers
+// (and the Android WebView) on their next open instead of the one after.
+async function networkFirst(request, cacheName) {
+  const cache = await caches.open(cacheName);
+  const network = fetch(request).then(async (response) => {
+    if (response.ok) {
+      await cache.put(request, response.clone());
+      await trimCache(cacheName);
+    }
+    return response;
+  });
+  const timeout = new Promise((resolve) => setTimeout(resolve, NAV_TIMEOUT_MS));
+  const first = await Promise.race([network.catch(() => undefined), timeout]);
+  if (first) return first;
+  // Offline or slow: cached copy if any, else keep waiting on the network.
+  return (await cache.match(request)) ?? network;
+}
+
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
@@ -95,7 +116,7 @@ self.addEventListener("fetch", (event) => {
   if (isSameOrigin && NEVER_CACHE_PATHS.some((pattern) => pattern.test(url.pathname))) return;
 
   if (request.mode === "navigate") {
-    event.respondWith(staleWhileRevalidate(request, PAGES));
+    event.respondWith(networkFirst(request, PAGES));
     return;
   }
   if (isSupabaseDataRequest(url)) {
