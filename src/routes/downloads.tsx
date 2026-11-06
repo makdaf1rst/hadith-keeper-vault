@@ -1,12 +1,13 @@
 // Deployment sync marker: bilingual download pledge gate
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ChevronDown, ChevronRight, FileText, Loader2, ShieldCheck } from "lucide-react";
+import { ChevronDown, ChevronRight, Download, FileText, Loader2, ShieldCheck } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { downloadCompleteLibrary } from "@/lib/full-library-export";
 import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
 import { getBengaliBookTitle } from "@/lib/bengali-book-titles";
 import { fetchBengaliBookTranslations, fetchBengaliStructure } from "@/lib/bengali-translations";
@@ -251,6 +252,10 @@ function DownloadsPage() {
       </p>
 
       <div className="mt-6">
+        <CompleteLibraryDownload bn={bn} />
+      </div>
+
+      <div className="mt-6">
         <DownloadList bn={bn} />
       </div>
 
@@ -260,6 +265,58 @@ function DownloadsPage() {
         </Link>
       </div>
     </main>
+  );
+}
+
+function CompleteLibraryDownload({ bn }: { bn: boolean }) {
+  const [busy, setBusy] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  async function run() {
+    if (busy) return;
+    setBusy(true);
+    setProgress(0);
+    const notification = toast.loading(bn ? "সম্পূর্ণ গ্রন্থাগার তৈরি হচ্ছে…" : "Preparing the complete offline library…");
+    try {
+      const outcome = await downloadCompleteLibrary((completed, total) => {
+        setProgress(Math.round((completed / total) * 100));
+      });
+      toast.success(
+        outcome === "shared"
+          ? (bn ? "ফাইল অ্যাপে সংরক্ষণ করুন।" : "Choose Save to Files.")
+          : outcome === "cancelled"
+            ? (bn ? "ডাউনলোড বাতিল করা হয়েছে।" : "Download cancelled.")
+            : (bn ? "সম্পূর্ণ লাইব্রেরির ZIP প্রস্তুত।" : "Complete library ZIP is ready."),
+        { id: notification },
+      );
+    } catch (error) {
+      toast.error(
+        error instanceof Error ? error.message : (bn ? "ডাউনলোড প্রস্তুত করা যায়নি।" : "Could not prepare the archive."),
+        { id: notification },
+      );
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <section className="rounded-xl border border-gold/40 bg-parchment p-5 shadow-sm">
+      <h2 className="text-lg font-semibold">{bn ? "সম্পূর্ণ গ্রন্থাগার অফলাইনে সংরক্ষণ" : "Save the Complete Library Offline"}</h2>
+      <p className="mt-2 text-sm text-muted-foreground">
+        {bn
+          ? "৬৬টি কিতাব ও ১৬,৫৪৬টি হাদীস একটি ZIP ফাইলে। আরবি, ইংরেজি ও বাংলা লেখা; কিতাব ও মাজমূ‘ অনুযায়ী সাজানো। অডিও অন্তর্ভুক্ত নয়। ZIP খুলে START-HERE.html থেকে পড়ুন।"
+          : "All 66 Kitābs and 16,546 hadith in one ZIP, with Arabic, English and Bengali text organized by Kitāb and collection. Audio is not included. Extract the ZIP and open START-HERE.html to read offline."}
+      </p>
+      <Button type="button" size="lg" className="mt-4 w-full sm:w-auto" disabled={busy} onClick={() => void run()}>
+        {busy ? <Loader2 className="size-4 animate-spin" /> : <Download className="size-4" />}
+        {busy
+          ? (bn ? `প্রস্তুত হচ্ছে… ${progress}%` : `Preparing… ${progress}%`)
+          : (bn ? "সম্পূর্ণ গ্রন্থাগার ডাউনলোড (ZIP)" : "Download Complete Library (ZIP)")}
+      </Button>
+      <p className="mt-2 text-xs text-muted-foreground">
+        {bn ? "মোবাইলে ZIP ফাইলটি Files বা ফাইল ম্যানেজারে সংরক্ষণ ও এক্সট্র্যাক্ট করুন।" : "On a phone, save the ZIP to Files or your file manager, then extract it."}
+      </p>
+    </section>
   );
 }
 
