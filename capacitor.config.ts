@@ -8,6 +8,11 @@ const config: CapacitorConfig = {
     url: "https://jami-al-kamil.com",
     cleartext: false,
   },
+  ios: {
+    // iOS only runs service workers (offline reading, saved audio) in an app's WebView for
+    // App-Bound Domains. The list lives in ios/App/App/Info.plist under WKAppBoundDomains.
+    limitsNavigationsToAppBoundDomains: true,
+  },
 };
 
 export default config;

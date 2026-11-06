@@ -6,6 +6,8 @@ import { useLanguage } from "@/lib/language";
 
 const SEEN_KEY = "jami-welcome-seen";
 export const SHOW_WELCOME_EVENT = "jami-show-welcome";
+// Fired when the tour closes, so the offline-library prompt can follow it.
+export const WELCOME_CLOSED_EVENT = "jami-welcome-closed";
 
 const STEPS = [
   {
@@ -42,9 +44,12 @@ const STEPS = [
     icon: Download,
     en: [
       "Read offline",
-      "Go to Settings → Downloads to save books and read without an internet connection.",
+      "Save the whole library, text and audio, so it works without internet. Go to Settings → Offline library any time.",
     ],
-    bn: ["অফলাইনে পড়ুন", "ইন্টারনেট ছাড়া পড়তে সেটিংস → ডাউনলোড থেকে কিতাব সংরক্ষণ করুন।"],
+    bn: [
+      "অফলাইনে পড়ুন",
+      "পুরো লাইব্রেরি, লেখা ও অডিও, সংরক্ষণ করুন যাতে ইন্টারনেট ছাড়াও কাজ করে। যেকোনো সময় সেটিংস → অফলাইন লাইব্রেরিতে যান।",
+    ],
   },
   {
     icon: Settings,
@@ -88,6 +93,7 @@ export function WelcomeTour() {
     } catch {
       // private mode: fine, tour just reappears next launch
     }
+    window.dispatchEvent(new Event(WELCOME_CLOSED_EVENT));
   };
 
   const current = STEPS[step]!;
