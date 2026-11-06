@@ -20,6 +20,7 @@ import { AUDIO_BASE } from "../lib/audio";
 import { LanguageProvider } from "../lib/language";
 import { OfflineBanner } from "../components/OfflineBanner";
 import { WelcomeTour } from "../components/WelcomeTour";
+import { OfflinePrompt } from "../components/OfflineLibrary";
 import { registerServiceWorker } from "../lib/register-sw";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -173,6 +174,7 @@ function RootComponent() {
         <Toaster />
         <OfflineBanner />
         <WelcomeTour />
+        <OfflinePrompt />
       </LanguageProvider>
     </QueryClientProvider>
   );

@@ -5,6 +5,9 @@
  *   - navigations:            network-first, cache fallback after 4s or offline (jk-pages)
  *   - Supabase REST GETs:     stale-while-revalidate (jk-data)
  *   - build assets and fonts: cache-first (jk-assets, jk-fonts)
+ *   - /content and /pagefind: network-first, cache fallback (jk-library)
+ * jk-library also holds the whole library when the reader saves it for offline
+ * use (src/lib/offline-library.ts), so every page and search works with no network.
  * Never cached: /auth and /admin routes, /api, anything non-GET, /auth/v1.
  */
 
@@ -15,7 +18,10 @@ const DATA = `jk-data-${VERSION}`;
 const FONTS = `jk-fonts-${VERSION}`;
 // Saved narration, written by src/lib/audio.ts. Unversioned so a worker update never drops it.
 const AUDIO = "jk-audio";
-const KNOWN_CACHES = [PAGES, ASSETS, DATA, FONTS, AUDIO];
+// Library text, search index, and app code. Unversioned and untrimmed for the same reason;
+// keys carry no query string, so cache-busted `?v=` requests still find their saved copy.
+const LIBRARY = "jk-library";
+const KNOWN_CACHES = [PAGES, ASSETS, DATA, FONTS, AUDIO, LIBRARY];
 
 const LIMITS = {
   [PAGES]: 150,
@@ -102,8 +108,28 @@ async function networkFirst(request, cacheName) {
   const timeout = new Promise((resolve) => setTimeout(resolve, NAV_TIMEOUT_MS));
   const first = await Promise.race([network.catch(() => undefined), timeout]);
   if (first) return first;
-  // Offline or slow: cached copy if any, else keep waiting on the network.
-  return (await cache.match(request)) ?? network;
+  // Offline or slow: cached copy if any (the saved library keeps the home page), else keep waiting.
+  const url = new URL(request.url);
+  const saved =
+    (await caches.match(request)) ??
+    (url.pathname === "/" ? await caches.match("/", { cacheName: LIBRARY }) : undefined);
+  return saved ?? network;
+}
+
+const libraryKey = (url) => url.origin + url.pathname;
+
+// Content JSON and the search index: fresh when the network answers, saved copy when it doesn't.
+async function libraryFirst(request, url) {
+  const cache = await caches.open(LIBRARY);
+  const key = libraryKey(url);
+  const network = fetch(request).then(async (response) => {
+    if (response.ok) await cache.put(key, response.clone());
+    return response;
+  });
+  const timeout = new Promise((resolve) => setTimeout(resolve, NAV_TIMEOUT_MS));
+  const first = await Promise.race([network.catch(() => undefined), timeout]);
+  if (first) return first;
+  return (await cache.match(key)) ?? network;
 }
 
 self.addEventListener("fetch", (event) => {
@@ -117,6 +143,13 @@ self.addEventListener("fetch", (event) => {
 
   if (request.mode === "navigate") {
     event.respondWith(networkFirst(request, PAGES));
+    return;
+  }
+  if (
+    isSameOrigin &&
+    (url.pathname.startsWith("/content/") || url.pathname.startsWith("/pagefind/"))
+  ) {
+    event.respondWith(libraryFirst(request, url));
     return;
   }
   if (isSupabaseDataRequest(url)) {
