@@ -1,4 +1,4 @@
-import { CloudOff, Download, Loader2, Pause, Trash2 } from "lucide-react";
+import { Download, Loader2, Pause, Trash2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -62,7 +62,7 @@ export function OfflinePrompt() {
     window.addEventListener("online", onOnline);
 
     const maybeShow = () => {
-      if (document.documentElement.classList.contains("app") && !wasPrompted() && !getPlan()) {
+      if (document.documentElement.classList.contains("app") && !wasPrompted() && !getPlan()?.audio) {
         setOpen(true);
       }
     };
@@ -116,15 +116,15 @@ export function OfflinePrompt() {
       <DialogContent className="max-w-sm rounded-2xl font-sans">
         <div className="flex flex-col items-center gap-3 pt-2 text-center">
           <span className="flex size-14 items-center justify-center rounded-full bg-accent text-primary">
-            <CloudOff className="size-7" aria-hidden />
+            <Download className="size-7" aria-hidden />
           </span>
           <DialogTitle className="text-xl">
-            {bn ? "ইন্টারনেট ছাড়া ব্যবহারের জন্য সংরক্ষণ করুন" : "Get ready for no internet"}
+            {bn ? "অফলাইনে পড়ুন ও শুনুন" : "Read and listen offline"}
           </DialogTitle>
           <DialogDescription className="text-base leading-relaxed">
             {bn
-              ? "পুরো লাইব্রেরি এখনই এই ডিভাইসে সংরক্ষণ করুন, যাতে সংযোগ চলে গেলেও পড়া, খোঁজা ও শোনা যায়। ডাউনলোডের সময় অ্যাপ খোলা রাখুন; থেমে গেলে পরের বার আবার চালু হবে।"
-              : "Save the whole library on this device now, so you can read, search, and listen if the connection goes. Keep the app open while it downloads. If it stops, it carries on next time."}
+              ? "পুরো লাইব্রেরি এই ডিভাইসে সংরক্ষণ করে রাখুন, যাতে ভ্রমণে বা দুর্বল নেটওয়ার্কেও পড়া, খোঁজা ও শোনা যায়। ডাউনলোডে কিছুটা সময় লাগে, তাই অ্যাপ খোলা রাখুন; থেমে গেলে পরের বার যেখানে থেমেছিল সেখান থেকে চলবে।"
+              : "Save the whole library to this device, so you can read, search, and listen on a flight, a trip, or anywhere the signal is weak. It takes a while, so keep the app open. If it stops, it picks up where it left off next time."}
           </DialogDescription>
         </div>
         <div className="flex flex-col gap-2">
