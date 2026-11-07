@@ -87,12 +87,9 @@ function SettingsPage() {
     <main className="mx-auto max-w-2xl px-4 pb-8 pt-6 font-sans sm:px-6">
       <h1 className="font-sans text-3xl font-bold text-foreground">{t.settings}</h1>
 
-      {/* iOS bundles the whole library already; per-book audio saves stay in Downloads */}
-      {!isNative() ? (
-        <Group title={bn ? "অফলাইন লাইব্রেরি" : "Offline library"}>
-          <OfflineLibrarySettings />
-        </Group>
-      ) : null}
+      <Group title={bn ? "অফলাইন লাইব্রেরি" : "Offline library"}>
+        <OfflineLibrarySettings />
+      </Group>
 
       <Group title={bn ? "চেহারা" : "Appearance"}>
         {THEMES.map((item) => (

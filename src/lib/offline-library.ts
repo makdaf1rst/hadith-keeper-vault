@@ -10,6 +10,7 @@
 import { useSyncExternalStore } from "react";
 
 import type { ContentLanguage } from "@/lib/language";
+import { isNative } from "@/lib/native";
 import { AUDIO_BASE, MB_PER_CHAPTER, MB_PER_HADITH, isBookSaved, saveBook } from "@/lib/audio";
 
 const LIBRARY = "jk-library"; // same name as public/sw.js
@@ -75,8 +76,9 @@ const write = (key: string, value: string | null) => {
   }
 };
 
+// iOS has no service worker but bundles the text, so it saves audio only
 export const supportsOffline = () =>
-  typeof window !== "undefined" && "caches" in window && "serviceWorker" in navigator;
+  typeof window !== "undefined" && "caches" in window && ("serviceWorker" in navigator || isNative());
 
 export function getPlan(): OfflinePlan | null {
   const raw = read(PLAN_KEY);
@@ -214,7 +216,7 @@ export async function startOfflineDownload(plan: OfflinePlan) {
       setOfflineState(plan); // offline launch: report what's already saved
       return;
     }
-    if (read(TEXT_KEY) !== manifest.version) await saveText(manifest, signal);
+    if (!isNative() && read(TEXT_KEY) !== manifest.version) await saveText(manifest, signal);
     if (plan.audio && AUDIO_BASE) {
       stage = "audio";
       await saveAudio(manifest, plan.audio, signal);
@@ -264,7 +266,7 @@ export function resumeOfflineDownload() {
   }
   if (read(PAUSED_KEY) === "1") {
     if (state.kind === "idle")
-      setState({ kind: "paused", stage: isTextSaved() ? "audio" : "text" });
+      setState({ kind: "paused", stage: isNative() || isTextSaved() ? "audio" : "text" });
     return;
   }
   void startOfflineDownload(plan);

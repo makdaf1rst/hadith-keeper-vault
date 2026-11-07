@@ -32,5 +32,7 @@ for (const name of ["favicon.ico", "favicon-96x96.png", "apple-touch-icon.png", 
   if (await stat(source).catch(() => null)) await cp(source, join(destination, name));
 }
 await cp(join(root, "ios", "App", "DailyHadithWidget", "daily-hadith.json"), join(destination, "daily-hadith.json"));
+// audio-only "save all" walks the per-book hadith and chapter lists in here
+await cp(join(publicRoot, "offline-manifest.json"), join(destination, "offline-manifest.json"));
 await run("bunx", ["cap", "sync", "ios"]);
 await run("node", ["scripts/check-ios-bundle.mjs"]);

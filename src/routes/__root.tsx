@@ -175,7 +175,7 @@ function RootComponent() {
         <Toaster />
         {!isNative() ? <OfflineBanner /> : null}
         <WelcomeTour />
-        {!isNative() ? <OfflinePrompt /> : null}
+        <OfflinePrompt />
       </LanguageProvider>
     </QueryClientProvider>
   );

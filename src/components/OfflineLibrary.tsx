@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { AUDIO_BASE } from "@/lib/audio";
 import { useLanguage, type ContentLanguage } from "@/lib/language";
+import { isNative } from "@/lib/native";
 import { toBengaliDigits } from "@/lib/normalize";
 import {
   estimateSizes,
@@ -28,6 +29,9 @@ function formatSize(mb: number, bn: boolean) {
   const text = mb >= 1000 ? `${(mb / 1000).toFixed(1)} GB` : `${mb} MB`;
   return bn ? toBengaliDigits(text) : text;
 }
+
+const otherFirst = (lang: ContentLanguage): ContentLanguage[] =>
+  lang === "bn" ? ["bn", "en"] : ["en", "bn"];
 
 const audioName = (lang: ContentLanguage, bn: boolean) =>
   lang === "bn" ? (bn ? "বাংলা অডিও" : "Bengali audio") : bn ? "ইংরেজি অডিও" : "English audio";
@@ -54,6 +58,8 @@ export function OfflinePrompt() {
   const sizes = useSizes(open);
   const state = useOfflineLibrary();
   const previous = useRef(state.kind);
+  // iOS bundles the text, so the app offers the narration only
+  const native = isNative();
 
   useEffect(() => {
     if (!supportsOffline()) return;
@@ -62,7 +68,12 @@ export function OfflinePrompt() {
     window.addEventListener("online", onOnline);
 
     const maybeShow = () => {
-      if (document.documentElement.classList.contains("app") && !wasPrompted() && !getPlan()) {
+      if (
+        document.documentElement.classList.contains("app") &&
+        !wasPrompted() &&
+        !getPlan() &&
+        (AUDIO_BASE || !isNative())
+      ) {
         setOpen(true);
       }
     };
@@ -122,13 +133,29 @@ export function OfflinePrompt() {
             {bn ? "ইন্টারনেট ছাড়া ব্যবহারের জন্য সংরক্ষণ করুন" : "Get ready for no internet"}
           </DialogTitle>
           <DialogDescription className="text-base leading-relaxed">
-            {bn
-              ? "পুরো লাইব্রেরি এখনই এই ডিভাইসে সংরক্ষণ করুন, যাতে সংযোগ চলে গেলেও পড়া, খোঁজা ও শোনা যায়। ডাউনলোডের সময় অ্যাপ খোলা রাখুন; থেমে গেলে পরের বার আবার চালু হবে।"
-              : "Save the whole library on this device now, so you can read, search, and listen if the connection goes. Keep the app open while it downloads. If it stops, it carries on next time."}
+            {native
+              ? bn
+                ? "লেখা ও খোঁজা আগে থেকেই অ্যাপে আছে। এখন অডিও সংরক্ষণ করুন, যাতে সংযোগ চলে গেলেও শোনা যায়। ডাউনলোডের সময় অ্যাপ খোলা রাখুন; থেমে গেলে পরের বার আবার চালু হবে।"
+                : "Reading and search already work offline in this app. Save the narration too, so you can listen if the connection goes. Keep the app open while it downloads. If it stops, it carries on next time."
+              : bn
+                ? "পুরো লাইব্রেরি এখনই এই ডিভাইসে সংরক্ষণ করুন, যাতে সংযোগ চলে গেলেও পড়া, খোঁজা ও শোনা যায়। ডাউনলোডের সময় অ্যাপ খোলা রাখুন; থেমে গেলে পরের বার আবার চালু হবে।"
+                : "Save the whole library on this device now, so you can read, search, and listen if the connection goes. Keep the app open while it downloads. If it stops, it carries on next time."}
           </DialogDescription>
         </div>
         <div className="flex flex-col gap-2">
-          {AUDIO_BASE ? (
+          {native ? (
+            otherFirst(contentLanguage).map((lang, i) => (
+              <Button
+                key={lang}
+                variant={i === 0 ? "default" : "outline"}
+                onClick={() => choose({ audio: lang })}
+              >
+                <Download />
+                {audioName(lang, bn)}
+                {sizes ? ` (${bn ? "প্রায় " : "about "}${formatSize(sizes.audioMb, bn)})` : ""}
+              </Button>
+            ))
+          ) : AUDIO_BASE ? (
             <Button onClick={() => choose({ audio: contentLanguage })}>
               <Download />
               {bn ? "লেখা ও " : "Text and "}
@@ -138,10 +165,12 @@ export function OfflinePrompt() {
                 : ""}
             </Button>
           ) : null}
-          <Button variant="outline" onClick={() => choose({ audio: null })}>
-            {bn ? "শুধু লেখা" : "Text only"}
-            {sizes ? ` (${bn ? "প্রায় " : "about "}${formatSize(sizes.textMb, bn)})` : ""}
-          </Button>
+          {!native ? (
+            <Button variant="outline" onClick={() => choose({ audio: null })}>
+              {bn ? "শুধু লেখা" : "Text only"}
+              {sizes ? ` (${bn ? "প্রায় " : "about "}${formatSize(sizes.textMb, bn)})` : ""}
+            </Button>
+          ) : null}
           <Button variant="ghost" onClick={() => choose(null)}>
             {bn ? "এখন নয় (পরে সেটিংস থেকে)" : "Not now (you can do it in Settings)"}
           </Button>
@@ -160,10 +189,14 @@ export function OfflineLibrarySettings() {
   const [plan, setPlan] = useState<OfflinePlan | null>(null);
   // browser-only checks run after mount so the server-rendered page hydrates cleanly
   const [supported, setSupported] = useState<boolean | null>(null);
-  useEffect(() => setSupported(supportsOffline()), []);
+  const [native, setNative] = useState(false);
+  useEffect(() => {
+    setSupported(supportsOffline());
+    setNative(isNative());
+  }, []);
   useEffect(() => setPlan(getPlan()), [state.kind]);
 
-  if (supported === null) return null;
+  if (supported === null || (native && !AUDIO_BASE)) return null;
   if (!supported) {
     return (
       <p className="px-4 py-3 text-sm text-muted-foreground">
@@ -177,29 +210,30 @@ export function OfflineLibrarySettings() {
   const n = (value: number) => (bn ? toBengaliDigits(String(value)) : String(value));
   const size = (mb: number) =>
     sizes ? ` (${bn ? "প্রায় " : "about "}${formatSize(mb, bn)})` : "";
-  const audioLangs: ContentLanguage[] = contentLanguage === "bn" ? ["bn", "en"] : ["en", "bn"];
 
   const startButtons = (
     <div className="flex flex-col gap-2">
       {AUDIO_BASE
-        ? audioLangs.map((lang) => (
+        ? otherFirst(contentLanguage).map((lang) => (
             <Button
               key={lang}
               variant="outline"
               onClick={() => void startOfflineDownload({ audio: lang })}
             >
               <Download />
-              {bn ? "লেখা ও " : "Text and "}
+              {native ? null : bn ? "লেখা ও " : "Text and "}
               {audioName(lang, bn)}
-              {size((sizes?.textMb ?? 0) + (sizes?.audioMb ?? 0))}
+              {size((native ? 0 : (sizes?.textMb ?? 0)) + (sizes?.audioMb ?? 0))}
             </Button>
           ))
         : null}
-      <Button variant="outline" onClick={() => void startOfflineDownload({ audio: null })}>
-        <Download />
-        {bn ? "শুধু লেখা" : "Text only"}
-        {size(sizes?.textMb ?? 0)}
-      </Button>
+      {!native ? (
+        <Button variant="outline" onClick={() => void startOfflineDownload({ audio: null })}>
+          <Download />
+          {bn ? "শুধু লেখা" : "Text only"}
+          {size(sizes?.textMb ?? 0)}
+        </Button>
+      ) : null}
     </div>
   );
 
@@ -233,7 +267,11 @@ export function OfflineLibrarySettings() {
     );
   } else if (plan) {
     const status =
-      state.kind === "done"
+      state.kind === "done" && native && plan.audio
+        ? bn
+          ? `সংরক্ষিত: ${audioName(plan.audio, true)}। ইন্টারনেট ছাড়াও শোনা যাবে।`
+          : `Saved: ${audioName(plan.audio, false)}. Plays without internet.`
+        : state.kind === "done"
         ? bn
           ? `সংরক্ষিত: লেখা${plan.audio ? ` ও ${audioName(plan.audio, true)}` : ""}। ইন্টারনেট ছাড়াও কাজ করবে।`
           : `Saved: text${plan.audio ? ` and ${audioName(plan.audio, false)}` : ""}. Works without internet.`
@@ -256,7 +294,13 @@ export function OfflineLibrarySettings() {
             </Button>
           ) : null}
           <Button variant="ghost" size="sm" onClick={() => void removeOfflineText()}>
-            <Trash2 /> {bn ? "সংরক্ষিত লেখা মুছুন" : "Remove saved text"}
+            {native ? (
+              <>{bn ? "অন্য অডিও বেছে নিন" : "Choose different audio"}</>
+            ) : (
+              <>
+                <Trash2 /> {bn ? "সংরক্ষিত লেখা মুছুন" : "Remove saved text"}
+              </>
+            )}
           </Button>
         </div>
         {plan.audio ? (
@@ -272,9 +316,13 @@ export function OfflineLibrarySettings() {
     body = (
       <div className="flex flex-col gap-3">
         <p className="text-sm text-muted-foreground">
-          {bn
-            ? "পুরো লাইব্রেরি এই ডিভাইসে সংরক্ষণ করুন, যাতে ইন্টারনেট ছাড়াও পড়া, খোঁজা ও শোনা যায়।"
-            : "Save the whole library on this device so you can read, search, and listen with no internet."}
+          {native
+            ? bn
+              ? "লেখা ও খোঁজা আগে থেকেই অ্যাপে আছে। ইন্টারনেট ছাড়া শোনার জন্য পুরো অডিও সংরক্ষণ করুন।"
+              : "Reading and search already work offline in this app. Save all the narration to listen with no internet."
+            : bn
+              ? "পুরো লাইব্রেরি এই ডিভাইসে সংরক্ষণ করুন, যাতে ইন্টারনেট ছাড়াও পড়া, খোঁজা ও শোনা যায়।"
+              : "Save the whole library on this device so you can read, search, and listen with no internet."}
         </p>
         {startButtons}
       </div>
