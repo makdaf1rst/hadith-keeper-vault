@@ -62,7 +62,7 @@ export function OfflinePrompt() {
     window.addEventListener("online", onOnline);
 
     const maybeShow = () => {
-      if (document.documentElement.classList.contains("app") && !wasPrompted() && !getPlan()) {
+      if (document.documentElement.classList.contains("app") && !wasPrompted() && !getPlan()?.audio) {
         setOpen(true);
       }
     };
