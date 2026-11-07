@@ -16,7 +16,7 @@ import { AUDIO_BASE, MB_PER_CHAPTER, MB_PER_HADITH, isBookSaved, saveBook } from
 const LIBRARY = "jk-library"; // same name as public/sw.js
 const PLAN_KEY = "jk-offline-plan";
 const TEXT_KEY = "jk-offline-text"; // manifest version the saved text matches
-const PROMPTED_KEY = "jk-offline-prompted";
+const PROMPTED_KEY = "jk-offline-prompted-2"; // -2 re-asks everyone once for the audio save
 const PAUSED_KEY = "jk-offline-paused";
 const COMPLETE_KEY = "jk-offline-complete"; // the plan that last finished in full
 const OFFLINE_MESSAGE = "No connection. The download continues when you're back online.";
