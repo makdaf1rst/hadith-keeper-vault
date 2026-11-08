@@ -5,6 +5,7 @@ import { ChevronDown, ChevronRight, Download, FileText, Loader2, ShieldCheck } f
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
+import { OfflineLibrarySettings } from "@/components/OfflineLibrary";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { downloadCompleteLibrary } from "@/lib/full-library-export";
@@ -251,6 +252,13 @@ function DownloadsPage() {
           : "Each document contains Arabic and English (your current language)."}
       </p>
 
+      <section className="mt-6 overflow-hidden rounded-xl border border-gold/40 bg-parchment shadow-sm">
+        <h2 className="px-5 pt-5 text-lg font-semibold">
+          {bn ? "অডিওসহ অফলাইনে পড়ুন ও শুনুন" : "Read and Listen Offline, With Audio"}
+        </h2>
+        <OfflineLibrarySettings />
+      </section>
+
       <div className="mt-6">
         <CompleteLibraryDownload bn={bn} />
       </div>
@@ -304,8 +312,8 @@ function CompleteLibraryDownload({ bn }: { bn: boolean }) {
       <h2 className="text-lg font-semibold">{bn ? "সম্পূর্ণ গ্রন্থাগার অফলাইনে সংরক্ষণ" : "Save the Complete Library Offline"}</h2>
       <p className="mt-2 text-sm text-muted-foreground">
         {bn
-          ? "৬৬টি কিতাব ও ১৬,৫৪৬টি হাদীস একটি ZIP ফাইলে। আরবি, ইংরেজি ও বাংলা লেখা; কিতাব ও মাজমূ‘ অনুযায়ী সাজানো। অডিও অন্তর্ভুক্ত নয়। ZIP খুলে START-HERE.html থেকে পড়ুন।"
-          : "All 66 Kitābs and 16,546 hadith in one ZIP, with Arabic, English and Bengali text organized by Kitāb and collection. Audio is not included. Extract the ZIP and open START-HERE.html to read offline."}
+          ? "৬৬টি কিতাব ও ১৬,৫৪৬টি হাদীস একটি ZIP ফাইলে। আরবি, ইংরেজি ও বাংলা লেখা; কিতাব ও মাজমূ‘ অনুযায়ী সাজানো। অডিওর জন্য উপরের অংশটি ব্যবহার করুন। ZIP খুলে START-HERE.html থেকে পড়ুন।"
+          : "All 66 Kitābs and 16,546 hadith in one ZIP, with Arabic, English and Bengali text organized by Kitāb and collection. For audio, use the section above. Extract the ZIP and open START-HERE.html to read offline."}
       </p>
       <Button type="button" size="lg" className="mt-4 w-full sm:w-auto" disabled={busy} onClick={() => void run()}>
         {busy ? <Loader2 className="size-4 animate-spin" /> : <Download className="size-4" />}
