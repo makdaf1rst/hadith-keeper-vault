@@ -29,14 +29,22 @@ function mobilePlatform(): Platform | null {
 function StoreButton({ platform, bn }: { platform: Platform; bn: boolean }) {
   const href = STORE_LINKS[platform];
   if (!href) return null;
-  const label =
-    platform === "android"
-      ? bn
-        ? "Google Play থেকে নিন"
-        : "Get it on Google Play"
-      : bn
-        ? "App Store থেকে নিন"
-        : "Download on the App Store";
+  if (platform === "android") {
+    // Google's official badge (play.google.com/intl/en_us/badges), transparent padding trimmed
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="self-center rounded-lg">
+        <img
+          src={`/google-play-badge-${bn ? "bn" : "en"}.png`}
+          alt={bn ? "Google Play থেকে নিন" : "Get it on Google Play"}
+          width={568}
+          height={172}
+          className="h-14 w-auto"
+        />
+      </a>
+    );
+  }
+  // ponytail: swap for Apple's official badge when STORE_LINKS.ios is set
+  const label = bn ? "App Store থেকে নিন" : "Download on the App Store";
   return (
     <Button asChild>
       <a href={href} target="_blank" rel="noopener noreferrer">
