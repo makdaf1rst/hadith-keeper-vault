@@ -5,6 +5,7 @@ import { ChevronDown, ChevronRight, Download, FileText, Loader2, ShieldCheck } f
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
+import { GetTheAppButtons } from "@/components/GetTheApp";
 import { OfflineLibrarySettings } from "@/components/OfflineLibrary";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -251,6 +252,8 @@ function DownloadsPage() {
           ? "প্রতিটি নথিতে আরবি ও বাংলা থাকবে (বর্তমান ভাষা)।"
           : "Each document contains Arabic and English (your current language)."}
       </p>
+
+      <GetTheAppButtons />
 
       <section className="mt-6 overflow-hidden rounded-xl border border-gold/40 bg-parchment shadow-sm">
         <h2 className="px-5 pt-5 text-lg font-semibold">
