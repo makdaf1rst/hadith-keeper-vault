@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 import { GetTheAppButtons } from "@/components/GetTheApp";
 import { OfflineLibrarySettings } from "@/components/OfflineLibrary";
+import { AudioDownloadMenu } from "@/components/AudioDownloadMenu";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { downloadCompleteLibrary } from "@/lib/full-library-export";
@@ -261,6 +262,10 @@ function DownloadsPage() {
         </h2>
         <OfflineLibrarySettings />
       </section>
+
+      <div className="mt-6">
+        <AudioDownloadMenu />
+      </div>
 
       <div className="mt-6">
         <CompleteLibraryDownload bn={bn} />
