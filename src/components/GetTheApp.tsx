@@ -43,15 +43,17 @@ function StoreButton({ platform, bn }: { platform: Platform; bn: boolean }) {
       </a>
     );
   }
-  // ponytail: swap for Apple's official badge when STORE_LINKS.ios is set
   const label = bn ? "App Store থেকে নিন" : "Download on the App Store";
   return (
-    <Button asChild>
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        <Smartphone />
-        {label}
-      </a>
-    </Button>
+    <a href={href} target="_blank" rel="noopener noreferrer" className="self-center rounded-lg" aria-label={label}>
+      <img
+        src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+        alt={label}
+        width={168}
+        height={56}
+        className="h-14 w-auto"
+      />
+    </a>
   );
 }
 
@@ -69,7 +71,7 @@ export function GetTheAppButtons() {
       <p className="mt-1 text-muted-foreground">
         {bn ? "ফোনে পড়ুন ও শুনুন, অফলাইনেও।" : "Read and listen on your phone, offline too."}
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap items-center gap-3">
         <StoreButton platform="android" bn={bn} />
         <StoreButton platform="ios" bn={bn} />
       </div>
