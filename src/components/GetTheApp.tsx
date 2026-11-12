@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/language";
 // Set IOS to the App Store link once the app is approved; the button and iPhone popup appear on their own.
 const STORE_LINKS = {
   android: "https://play.google.com/store/apps/details?id=com.jamialkamil.app",
-  ios: null as string | null,
+  ios: "https://apps.apple.com/us/app/jami-al-kamil-hadith-library/id6818915205",
 };
 
 const DISMISSED_KEY = "jami-get-app-dismissed";
