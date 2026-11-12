@@ -2,6 +2,7 @@ import { createIsomorphicFn } from "@tanstack/react-start";
 
 import { containsArabic, normalizeArabic, normalizeEnglish } from "@/lib/normalize";
 import { isNative } from "@/lib/native";
+import { getBengaliBookIntro } from "@/lib/bengali-book-intros";
 
 export type Intro = {
   intro_ar_source: string | null;
@@ -225,6 +226,8 @@ async function bookNumberForHeadingId(id: string): Promise<number | null> {
   }
 
   const books = await loadBooks();
+  const own = books.find((book) => book.id === id); // a book introduction clip
+  if (own) return own.book_number;
   for (const book of books) {
     try {
       // no "already cached" skip: a concurrent caller may have cached this book since the loop above
@@ -321,6 +324,8 @@ export type ReadingTarget =
       id: string;
       chapterNumber: number | null;
       isIntroduction: boolean;
+      /** Set on book/collection introductions, which only the audio sequence includes. */
+      bookNumber?: number;
     };
 
 function isIntroductionChapter(chapter: Chapter, collections: Collection[]): boolean {
@@ -330,7 +335,10 @@ function isIntroductionChapter(chapter: Chapter, collections: Collection[]): boo
   return /introduction/i.test(collection?.title_en ?? "");
 }
 
-async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget[]> {
+async function readingSequenceForBook(
+  bookNumber: number,
+  withIntros = false,
+): Promise<ReadingTarget[]> {
   const [file, hadiths] = await Promise.all([
     loadBookChapters(bookNumber),
     loadBookHadiths(bookNumber),
@@ -482,15 +490,52 @@ async function readingSequenceForBook(bookNumber: number): Promise<ReadingTarget
     }
   }
 
-  return sequence;
+  return withIntros ? withIntroStops(bookNumber, file, sortedHadiths, sequence) : sequence;
 }
 
-async function readingSequenceForHadith(hadithNumber: number) {
+const hasIntro = (item: Intro | undefined) => !!item?.intro_en_display?.trim();
+
+/** Book and collection introductions, read before the first step that belongs to them. */
+async function withIntroStops(
+  bookNumber: number,
+  file: BookChaptersFile,
+  hadiths: HadithFull[],
+  sequence: ReadingTarget[],
+): Promise<ReadingTarget[]> {
+  const book = (await loadBooks()).find((item) => item.book_number === bookNumber);
+  const stop = (id: string): ReadingTarget => ({
+    kind: "chapter",
+    id,
+    chapterNumber: null,
+    isIntroduction: true,
+    bookNumber,
+  });
+  const chapterCollection = new Map(file.chapters.map((c) => [c.id, c.collection_id]));
+  const hadithCollection = new Map(
+    hadiths.map((h) => [
+      h.hadith_number,
+      h.collection_id ?? (h.chapter_id ? chapterCollection.get(h.chapter_id) : null),
+    ]),
+  );
+  const pending = new Set(file.collections.filter(hasIntro).map((c) => c.id));
+  // 22 books have a Bangla intro only; the English player skips that missing clip
+  const bookIntro = book && (hasIntro(book) || getBengaliBookIntro(bookNumber));
+  const out: ReadingTarget[] = bookIntro ? [stop(book.id)] : [];
+  for (const item of sequence) {
+    const collection =
+      item.kind === "hadith" ? hadithCollection.get(item.number) : chapterCollection.get(item.id);
+    if (collection && pending.delete(collection)) out.push(stop(collection));
+    out.push(item);
+  }
+  return out;
+}
+
+async function readingSequenceForHadith(hadithNumber: number, withIntros = false) {
   const index = await loadHadithIndex();
   const entry = index.find((item) => item.n === hadithNumber);
   if (!entry) return null;
 
-  const sequence = await readingSequenceForBook(entry.b);
+  const sequence = await readingSequenceForBook(entry.b, withIntros);
   const position = sequence.findIndex(
     (item) => item.kind === "hadith" && item.number === hadithNumber,
   );
@@ -502,6 +547,7 @@ async function adjacentAcrossBooks(
   bookNumber: number,
   sequence: ReadingTarget[],
   position: number,
+  withIntros = false,
 ): Promise<{ previous: ReadingTarget | null; next: ReadingTarget | null }> {
   const books = [...(await loadBooks())].sort((a, b) => a.book_number - b.book_number);
   const bookIndex = books.findIndex((book) => book.book_number === bookNumber);
@@ -514,7 +560,7 @@ async function adjacentAcrossBooks(
     for (let i = bookIndex - 1; i >= 0; i -= 1) {
       const previousBook = books[i];
       if (!previousBook) continue;
-      const previousSequence = await readingSequenceForBook(previousBook.book_number);
+      const previousSequence = await readingSequenceForBook(previousBook.book_number, withIntros);
       if (previousSequence.length > 0) {
         previous = previousSequence[previousSequence.length - 1] ?? null;
         break;
@@ -526,7 +572,7 @@ async function adjacentAcrossBooks(
     for (let i = bookIndex + 1; i < books.length; i += 1) {
       const nextBook = books[i];
       if (!nextBook) continue;
-      const nextSequence = await readingSequenceForBook(nextBook.book_number);
+      const nextSequence = await readingSequenceForBook(nextBook.book_number, withIntros);
       if (nextSequence.length > 0) {
         next = nextSequence[0] ?? null;
         break;
@@ -537,11 +583,12 @@ async function adjacentAcrossBooks(
   return { previous, next };
 }
 
-export async function fetchNeighbours(hadithNumber: number) {
-  const result = await readingSequenceForHadith(hadithNumber);
+/** withIntros: include book/collection introductions (the audio player reads them; page links skip them). */
+export async function fetchNeighbours(hadithNumber: number, withIntros = false) {
+  const result = await readingSequenceForHadith(hadithNumber, withIntros);
   if (!result) return { previous: null, next: null };
 
-  return adjacentAcrossBooks(result.bookNumber, result.sequence, result.position);
+  return adjacentAcrossBooks(result.bookNumber, result.sequence, result.position, withIntros);
 }
 
 export async function fetchChapterContext(chapterId: string) {
@@ -560,23 +607,26 @@ export async function fetchChapterContext(chapterId: string) {
   return { book, collection, chapter };
 }
 
-export async function fetchChapterNeighbours(chapterId: string) {
+export async function fetchChapterNeighbours(chapterId: string, withIntros = false) {
   const bookNumber = await bookNumberForHeadingId(chapterId);
   if (bookNumber === null) return { previous: null, next: null };
 
-  const sequence = await readingSequenceForBook(bookNumber);
+  const sequence = await readingSequenceForBook(bookNumber, withIntros);
   const position = sequence.findIndex((item) => item.kind === "chapter" && item.id === chapterId);
   if (position < 0) return { previous: null, next: null };
 
-  return adjacentAcrossBooks(bookNumber, sequence, position);
+  return adjacentAcrossBooks(bookNumber, sequence, position, withIntros);
 }
 
 /** The hadith a chapter leads into: its own first, else the next in reading order, across books. */
-export async function fetchChapterFirstHadith(chapterId: string): Promise<number | null> {
+export async function fetchChapterFirstHadith(
+  chapterId: string,
+  withIntros = false,
+): Promise<number | null> {
   const bookNumber = await bookNumberForHeadingId(chapterId);
   if (bookNumber === null) return null;
 
-  const sequence = await readingSequenceForBook(bookNumber);
+  const sequence = await readingSequenceForBook(bookNumber, withIntros);
   const position = sequence.findIndex((item) => item.kind === "chapter" && item.id === chapterId);
   if (position < 0) return null;
 

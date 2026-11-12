@@ -112,7 +112,8 @@ function readSpeed() {
   }
 }
 
-const pagePath = (t: Track) => (t.chapter ? `/chapter/${t.chapter}` : `/hadith/${t.n}`);
+const pagePath = (t: Track) =>
+  t.book ? `/book/${t.book}` : t.chapter ? `/chapter/${t.chapter}` : `/hadith/${t.n}`;
 
 const clock = (s: number, bn: boolean) => {
   const v = `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
@@ -184,13 +185,17 @@ export function AudioDock() {
     });
     if ("mediaSession" in navigator && typeof MediaMetadata !== "undefined") {
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: track.chapter
+        title: track.book
           ? track.lang === "bn"
-            ? "অধ্যায়ের ভূমিকা"
-            : "Chapter introduction"
-          : track.lang === "bn"
-            ? `হাদিস ${toBengaliDigits(track.n)}`
-            : `Hadith ${track.n}`,
+            ? "ভূমিকা"
+            : "Introduction"
+          : track.chapter
+            ? track.lang === "bn"
+              ? "অধ্যায়ের ভূমিকা"
+              : "Chapter introduction"
+            : track.lang === "bn"
+              ? `হাদিস ${toBengaliDigits(track.n)}`
+              : `Hadith ${track.n}`,
         artist: "Al-Jāmiʿ al-Kāmil",
       });
     }
@@ -208,7 +213,8 @@ export function AudioDock() {
     const path = track ? pagePath(track) : null;
     followed.current = path;
     if (!track || prev === null || prev === path || pathname !== prev) return;
-    if (track.chapter) void navigate({ to: "/chapter/$id", params: { id: track.chapter } });
+    if (track.book) void navigate({ to: "/book/$number", params: { number: String(track.book) } });
+    else if (track.chapter) void navigate({ to: "/chapter/$id", params: { id: track.chapter } });
     else void navigate({ to: "/hadith/$number", params: { number: String(track.n) } });
     // pathname is read, not watched: moving to another page must not trigger a jump
     // eslint-disable-next-line react-hooks/exhaustive-deps
