@@ -30,6 +30,8 @@ export type AudioTrack = {
   lang: ContentLanguage;
   dir: 1 | -1;
   chapter?: string;
+  /** Book or collection introduction: `chapter` holds its id, this its book (for the page link). */
+  book?: number;
 };
 
 export function nextTrack(track: AudioTrack, dir: 1 | -1): AudioTrack | null {
@@ -46,13 +48,14 @@ export async function adjacentTrack(track: AudioTrack, dir: 1 | -1): Promise<Aud
   const { lang } = track;
   try {
     const { previous, next } = await (track.chapter
-      ? fetchChapterNeighbours(track.chapter)
-      : fetchNeighbours(track.n));
+      ? fetchChapterNeighbours(track.chapter, true)
+      : fetchNeighbours(track.n, true));
     const target = dir === 1 ? next : previous;
     if (!target) return null;
     if (target.kind === "hadith") return { n: target.number, lang, dir };
-    const first = await fetchChapterFirstHadith(target.id);
-    return { n: first ?? track.n, lang, dir, chapter: target.id };
+    const first = await fetchChapterFirstHadith(target.id, true);
+    const book = target.bookNumber;
+    return { n: first ?? track.n, lang, dir, chapter: target.id, ...(book ? { book } : {}) };
   } catch {
     return nextTrack(track, dir); // content unreachable (offline): carry on by number
   }

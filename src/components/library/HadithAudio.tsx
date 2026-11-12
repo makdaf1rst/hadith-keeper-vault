@@ -13,7 +13,12 @@ import {
   removeBook,
   saveBook,
 } from "@/lib/audio";
-import { fetchBookHadiths, fetchChapterFirstHadith, fetchChapters } from "@/lib/library-api";
+import {
+  fetchBookHadiths,
+  fetchChapterFirstHadith,
+  fetchChapters,
+  fetchCollections,
+} from "@/lib/library-api";
 import { useLanguage } from "@/lib/language";
 import { toBengaliDigits } from "@/lib/normalize";
 
@@ -105,8 +110,18 @@ export function BookAudioDownload({ bookId, bookNumber }: { bookId: string; book
     queryFn: () => fetchChapters(bookId),
     enabled: !!AUDIO_BASE,
   });
+  const collectionList = useQuery({
+    queryKey: ["book-collections", bookId],
+    queryFn: () => fetchCollections(bookId),
+    enabled: !!AUDIO_BASE,
+  });
   const numbers = (hadiths.data ?? []).map((h) => h.hadith_number);
-  const chapters = (chapterList.data ?? []).map((c) => c.id);
+  // book + collection introductions share the chapter clip path; a book without one just 404s
+  const chapters = [
+    bookId,
+    ...(collectionList.data ?? []).filter((c) => c.intro_en_display?.trim()).map((c) => c.id),
+    ...(chapterList.data ?? []).map((c) => c.id),
+  ];
 
   useEffect(
     () => setPhase({ kind: isBookSaved(bookNumber, lang) ? "saved" : "idle" }),
@@ -114,7 +129,7 @@ export function BookAudioDownload({ bookId, bookNumber }: { bookId: string; book
   );
   useEffect(() => () => abort.current?.abort(), []);
 
-  if (!AUDIO_BASE || !numbers.length || !chapterList.data) return null;
+  if (!AUDIO_BASE || !numbers.length || !chapterList.data || !collectionList.data) return null;
   const mb = Math.ceil(numbers.length * MB_PER_HADITH + chapters.length * MB_PER_CHAPTER);
 
   async function start() {
