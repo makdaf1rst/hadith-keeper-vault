@@ -69,9 +69,17 @@ const audioBooks = [];
 for (const book of [...books].sort((a, b) => a.book_number - b.book_number)) {
   const dir = path.join(contentDir, `book-${book.book_number}`);
   const hadiths = await readJson(path.join(dir, "hadiths.json"));
-  let chapters = [];
+  const hasIntro = (x) => !!x.intro_en_display?.trim();
+  // book + collection introductions are read aloud too and share the chapter clip path;
+  // the book id is always listed (some books have a Bangla intro only, a missing clip is skipped)
+  let chapters = [book.id];
   try {
-    chapters = (await readJson(path.join(dir, "chapters.json"))).chapters.map((c) => c.id);
+    const file = await readJson(path.join(dir, "chapters.json"));
+    chapters = [
+      ...chapters,
+      ...(file.collections ?? []).filter(hasIntro).map((c) => c.id),
+      ...file.chapters.map((c) => c.id),
+    ];
   } catch {
     // a book with no chapters file has no chapter clips
   }
