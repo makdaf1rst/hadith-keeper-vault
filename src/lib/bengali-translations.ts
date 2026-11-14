@@ -95,6 +95,18 @@ export async function fetchBengaliTranslation(
   const translations = await loadBookTranslations(bookNumber);
   const translation = translations[String(hadithNumber)] ?? null;
 
+  // Hadith 10081: append the approved parenthetical scholarly note in
+  // Bengali without modifying its archived translation or previous commentary.
+  if (hadithNumber === 10081 && translation) {
+    const clarificationBn = "(“কায়সারের নগরী” বলতে অধিকাংশ হাদীস ব্যাখ্যাকারীর মতে কনস্টান্টিনোপলকে বোঝানো হয়েছে। মু‘আবিয়াহ (রাঃ)-এর খিলাফতকালে তাঁর পুত্র ইয়াযীদ ইবনু মু‘আবিয়াহ উক্ত নগরীর বিরুদ্ধে অভিযানে নেতৃত্ব দেন। এ অভিযানের সাল সম্পর্কে ঐতিহাসিকদের মধ্যে মতভেদ রয়েছে। কেউ ৪৯ হিজরী, কেউ ৫০ হিজরী উল্লেখ করেছেন; আর ইবনু হাজার (রহঃ) ৫২ হিজরী উল্লেখ করেছেন। তবে হাদীসে বর্ণিত ক্ষমার প্রতিশ্রুতি থেকে সেনাবাহিনীর প্রত্যেক ব্যক্তির জন্য নিঃশর্ত ক্ষমা নিশ্চিত হয়েছে—এমন সিদ্ধান্ত অপরিহার্য নয়। তথ্যসূত্র: ইবনু হাজার, ফাতহুল বারী, সহীহ বুখারী ২৯২৪ নং হাদীসের ব্যাখ্যা; ইবনু কাসীর, আল-বিদায়াহ ওয়ান-নিহায়াহ, ৪৯ হিজরীর ঘটনাবলি।)";
+    return {
+      ...translation,
+      text: translation.text.includes(clarificationBn)
+        ? translation.text
+        : `${translation.text}\n${clarificationBn}`,
+    };
+  }
+
   // Hadith 653: preserve the archived text while correcting the displayed
   // rendering of محمد بن عبد الله ورسوله.
   if (hadithNumber === 653 && translation) {
