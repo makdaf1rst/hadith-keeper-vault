@@ -135,6 +135,38 @@ function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
 }
 
 function applyKnownHadithTextCorrections(hadith: HadithFull): HadithFull {
+  // Hadith 10081: keep the archived source untouched and append the
+  // approved historical clarification *after* the existing commentary.
+  // This display-only correction avoids rewriting the multi-megabyte book file.
+  if (hadith.hadith_number === 10081) {
+    const clarificationAr = "(المراد بـ«مدينة قيصر» القسطنطينية على قول جمهور الشراح، وقد قاد يزيد بن معاوية الجيش الذي غزاها في خلافة أبيه. واختلف المؤرخون في سنة هذه الغزوة؛ فقيل: سنة ٤٩ هـ، وقيل: ٥٠ هـ، وذكر ابن حجر أنها كانت سنة ٥٢ هـ. ولا يلزم من الوعد بالمغفرة في الحديث الحكم بالمغفرة لكل فرد من أفراد الجيش على الإطلاق. انظر: فتح الباري لابن حجر، شرح حديث البخاري رقم ٢٩٢٤؛ والبداية والنهاية لابن كثير، حوادث سنة ٤٩ هـ.)";
+    const clarificationEn = "(The phrase “the city of Caesar” is generally understood by hadith commentators to refer to Constantinople. Yazīd ibn Muʿāwiyah commanded the army that attacked it during his father's caliphate. Historians differed regarding the year of this expedition: 49 AH, 50 AH, and 52 AH have been reported, with Ibn Ḥajar mentioning 52 AH. The promise of forgiveness in this hadith does not necessarily establish unconditional forgiveness for every individual in the army. References: Ibn Ḥajar, Fatḥ al-Bārī, commentary on al-Bukhārī 2924; Ibn Kathīr, Al-Bidāyah wa al-Nihāyah, events of 49 AH.)";
+    const sourceAr = hadith.arabic_display ?? hadith.arabic_source;
+    const sourceEn = hadith.english_display ?? hadith.english_source;
+    const displayAr = sourceAr?.includes(clarificationAr)
+      ? sourceAr
+      : sourceAr ? `${sourceAr}\n${clarificationAr}` : null;
+    const displayEn = sourceEn?.includes(clarificationEn)
+      ? sourceEn
+      : sourceEn ? `${sourceEn}\n${clarificationEn}` : null;
+
+    // The combined text is used by downloads and copy actions. Preserve
+    // its original order: Arabic plus note, then English plus note.
+    let fullDisplay = hadith.full_display_content;
+    if (fullDisplay && sourceAr && sourceEn && displayAr && displayEn) {
+      fullDisplay = fullDisplay
+        .replace(sourceAr, displayAr)
+        .replace(sourceEn, displayEn);
+    }
+
+    return {
+      ...hadith,
+      arabic_display: displayAr,
+      english_display: displayEn,
+      full_display_content: fullDisplay,
+    };
+  }
+
   // Hadith 653: محمد بن عبد الله ورسوله means Muhammad, son of Abdullah,
   // the Messenger of Allah, not "the servant of Allah and His Messenger".
   if (hadith.hadith_number === 653) {
