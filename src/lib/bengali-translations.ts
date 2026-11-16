@@ -1,5 +1,7 @@
 "use client";
 
+import { isNative } from "@/lib/native";
+
 export type BengaliHadithTranslation = {
   hadith_number: number;
   text: string;
@@ -43,34 +45,33 @@ async function loadHadithIndex(): Promise<Map<number, number>> {
   return indexCache;
 }
 
+/** Bundled JSON, or on iOS the newer copy content-refresh downloaded. null = no such file. */
+async function loadContentJson(path: string): Promise<unknown | null> {
+  if (isNative()) {
+    const { readContentOverlay } = await import("@/lib/content-refresh");
+    const overlay = await readContentOverlay(path).catch(() => undefined);
+    if (overlay !== undefined) return overlay;
+  }
+  const response = await fetch(`/content/${path}?v=${Date.now()}`, { cache: "no-store" });
+  if (response.status === 404) return null;
+  if (!response.ok) throw new Error(`Failed to load /content/${path}: ${response.status}`);
+  return response.json();
+}
+
 async function loadBookTranslations(bookNumber: number): Promise<BengaliTranslationFile> {
   try {
-    const response = await fetch(
-      `/content/bengali/book-${bookNumber}/hadiths.json?v=${Date.now()}`,
-      {
-        cache: "no-store",
-      },
-    );
-    if (response.status === 404) return {};
-    if (!response.ok) {
-      throw new Error(
-        `Failed to load Bengali translations for book ${bookNumber}: ${response.status}`,
-      );
-    }
-
-    const translations = (await response.json()) as BengaliTranslationFile;
+    const translations = (await loadContentJson(`bengali/book-${bookNumber}/hadiths.json`)) as
+      | BengaliTranslationFile
+      | null;
+    if (!translations) return {};
 
     // Reviewed QC corrections are kept as small per-book overlays so fixes can
     // ship safely without rewriting the multi-megabyte source translation files.
     try {
-      const overridesResponse = await fetch(
-        `/content/bengali/book-${bookNumber}/qc-overrides.json?v=${Date.now()}`,
-        { cache: "no-store" },
-      );
-      if (overridesResponse.ok) {
-        const overrides = (await overridesResponse.json()) as BengaliTranslationFile;
-        return { ...translations, ...overrides };
-      }
+      const overrides = (await loadContentJson(`bengali/book-${bookNumber}/qc-overrides.json`)) as
+        | BengaliTranslationFile
+        | null;
+      if (overrides) return { ...translations, ...overrides };
     } catch {
       // Fall back to the base translation file if the optional overlay is unavailable.
     }
@@ -103,19 +104,10 @@ export async function fetchBengaliTranslation(
 
 async function loadChapterTranslations(bookNumber: number): Promise<BengaliStructureFile> {
   try {
-    const response = await fetch(
-      `/content/bengali/book-${bookNumber}/chapters.json?v=${Date.now()}`,
-      {
-        cache: "no-store",
-      },
-    );
-    if (response.status === 404) return { collections: [], chapters: [] };
-    if (!response.ok) {
-      throw new Error(
-        `Failed to load Bengali structural translations for book ${bookNumber}: ${response.status}`,
-      );
-    }
-    return (await response.json()) as BengaliStructureFile;
+    const file = (await loadContentJson(`bengali/book-${bookNumber}/chapters.json`)) as
+      | BengaliStructureFile
+      | null;
+    return file ?? { collections: [], chapters: [] };
   } catch {
     return { collections: [], chapters: [] };
   }
