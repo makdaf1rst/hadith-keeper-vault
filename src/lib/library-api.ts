@@ -167,6 +167,22 @@ function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
   return cached;
 }
 
+// Approved display-only explanation for Hadith 6380; archival source fields remain untouched.
+function appendHadith6380Clarification(hadith: HadithFull): HadithFull {
+  if (hadith.hadith_number !== 6380) return hadith;
+  const clarificationAr = "(توضيح: لا تعارض بين هذا الحديث وحديث أبي سعيد الخدري رقم (6372)، الذي قال فيه النبي ﷺ: «كَذَبَتْ يَهُودُ». والفرق بينهما يتضح من اختلاف التعبيرين: سمّت اليهود العزل «الْمَوْءُودَةَ الصُّغْرَى»، والمَوْءُودَة هي الطفلة التي دُفنت حيّة، فكأنهم جعلوا العزل نوعًا من قتل الولد حقيقةً، وإن كان أصغر من الوأد المعروف. أما النبي ﷺ فسمّاه «الْوَأْدَ الْخَفِيَّ»، أي شبّهه بالوأد من جهة قصد منع حصول الولد، لا من جهة قتل طفل موجود بالفعل. وقد بيّن ابن القيم أن النبي ﷺ كذّب اليهود في زعمهم أن العزل يمنع الحمل قطعًا، وأنه بمنزلة قتل الولد؛ لأن الله إذا أراد خلق ولد لم يستطع العزل منع ذلك. فالوأد الحقيقي يجتمع فيه قصد القتل وفعل القتل، أما العزل ففيه قصد منع الحمل دون قتل نفس موجودة. وهذا فرق في المراد من التعبيرين وسياقهما، لا أن لفظ «الوأد» في ذاته يعني النية دون الفعل. فلا يلزم من هذا التشبيه أن يكون العزل محرّمًا كتحريم قتل الأولاد. المرجع: ابن حجر، فتح الباري (9/271)، نقلًا عن ابن القيم؛ ابن القيم، زاد المعاد (5/131–132).)";
+  const clarificationEn = "(Clarification: There is no contradiction between this hadith and Hadith 6372, in which the Prophet ﷺ said, “The Jews have lied.” The difference lies in the two expressions and their intended meanings. The Jews called withdrawal “al-maw’ūdah al-ṣughrā” (الْمَوْءُودَة الصُّغْرَى), literally “the lesser buried-alive girl.” Maw’ūdah refers to a girl buried alive, so the expression presents withdrawal as a lesser form of actual child-killing. The Prophet ﷺ, however, called it “al-wa’d al-khafī” (الْوَأْد الْخَفِي), “hidden infanticide,” as a figurative comparison: the person intends to avoid pregnancy, but does not kill an existing child. Ibn al-Qayyim explained that the Prophet ﷺ rejected the claim that withdrawal necessarily prevents the creation of a child or is equivalent to killing one, for no one can prevent a child whom Allah has decreed to create. Actual infanticide involves killing an existing child, whereas withdrawal is an attempt to avoid conception. This distinction comes from the context and the complete Arabic expressions; it does not mean that the word wa’d by itself means only intention. Thus the comparison alone does not make withdrawal equivalent in ruling to killing children. References: Ibn Ḥajar, Fatḥ al-Bārī (9/271), citing Ibn al-Qayyim; Ibn al-Qayyim, Zād al-Maʿād (5/131–132).)";
+  const baseAr = hadith.arabic_display ?? hadith.arabic_source;
+  const baseEn = hadith.english_display ?? hadith.english_source;
+  const displayAr = baseAr && !baseAr.includes(clarificationAr) ? `${baseAr}\n${clarificationAr}` : baseAr;
+  const displayEn = baseEn && !baseEn.includes(clarificationEn) ? `${baseEn}\n${clarificationEn}` : baseEn;
+  let fullDisplay = hadith.full_display_content;
+  if (fullDisplay && baseAr && displayAr && baseEn && displayEn) {
+    fullDisplay = fullDisplay.replace(baseAr, displayAr).replace(baseEn, displayEn);
+  }
+  return { ...hadith, arabic_display: displayAr, english_display: displayEn, full_display_content: fullDisplay };
+}
+
 /** Every hadith of one book, from its static per-book file.
  *
  * Optional small qc-overrides.json files are merged at read time so reviewed
@@ -185,10 +201,10 @@ function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
 
         return hadiths.map((hadith) => {
           const override = overrides[String(hadith.hadith_number)];
-          return override ? { ...hadith, ...override } : hadith;
+          return appendHadith6380Clarification(override ? { ...hadith, ...override } : hadith);
         });
       } catch {
-        return hadiths;
+        return hadiths.map(appendHadith6380Clarification);
       }
     })();
 
