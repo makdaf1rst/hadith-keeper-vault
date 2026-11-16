@@ -161,6 +161,29 @@ function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
   return cached;
 }
 
+// Preserve every character of the original Hadith 6379 commentary; append only a separate explanation.
+function appendHadith6379Clarification(hadith: HadithFull): HadithFull {
+  if (hadith.hadith_number !== 6379) return hadith;
+  const clarificationAr = "(توضيح: هذا التقسيم متعلق بأحكام الرق في الفقه القديم. والضرر المذكور في الحالة الأولى هو ما كان يلحق المالك من فقدان حق بيع أم الولد عند جمهور الفقهاء، وليس أن صيرورة المرأة أم ولد ضرر عليها. وفي الحالة الثانية المقصود ما يلحق الزوج من أن ولده من أمة مملوكة لغيره يتبع أمه في الرق وفق الأحكام المذكورة آنذاك. وأما العزل عن الزوجة الحرة دون إذنها ففيه خلاف بين الفقهاء؛ فقد ذكر النووي في المذهب الشافعي وجهين، وأصحهما عنده أنه لا يحرم وإن كان مكروهًا، بينما اشترط آخرون إذنها مراعاةً لحقها. المرجع: النووي، المنهاج شرح صحيح مسلم، كتاب النكاح، باب حكم العزل (10/10–12).)";
+  const clarificationEn = "(Clarification: These three cases concern the historical laws of slavery. In the first case, the disadvantage refers to the owner's loss of the right to sell a woman who became an umm walad, according to the majority of jurists; it does not mean that becoming an umm walad harmed the woman. In the second, the disadvantage concerns the husband because a child born to his enslaved wife, owned by someone else, would ordinarily inherit her enslaved status under the rules then discussed. In the third case, scholars disagreed about withdrawal without a free wife's permission. Al-Nawawi recorded two Shafiʿi opinions, identifying the stronger one as non-prohibition, though he considered withdrawal disliked; other jurists required her permission in recognition of her rights. Reference: Al-Nawawi, Al-Minhaj Sharh Sahih Muslim, Book of Marriage, Chapter on Withdrawal (10/10–12).)";
+  const originalAr = hadith.arabic_display ?? hadith.arabic_source;
+  const originalEn = hadith.english_display ?? hadith.english_source;
+  const newAr = originalAr && !originalAr.includes(clarificationAr)
+    ? `${originalAr}\n${clarificationAr}` : originalAr;
+  const newEn = originalEn && !originalEn.includes(clarificationEn)
+    ? `${originalEn}\n${clarificationEn}` : originalEn;
+  let fullDisplay = hadith.full_display_content;
+  if (fullDisplay && originalAr && originalEn && newAr && newEn) {
+    fullDisplay = fullDisplay.replace(originalAr, newAr).replace(originalEn, newEn);
+  }
+  return {
+    ...hadith,
+    arabic_display: newAr,
+    english_display: newEn,
+    full_display_content: fullDisplay,
+  };
+}
+
 // Approved display-only explanation for Hadith 6380; archival source fields remain untouched.
 function appendHadith6380Clarification(hadith: HadithFull): HadithFull {
   if (hadith.hadith_number !== 6380) return hadith;
@@ -195,10 +218,10 @@ function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
 
         return hadiths.map((hadith) => {
           const override = overrides[String(hadith.hadith_number)];
-          return appendHadith6380Clarification(override ? { ...hadith, ...override } : hadith);
+          return appendHadith6379Clarification(appendHadith6380Clarification(override ? { ...hadith, ...override } : hadith));
         });
       } catch {
-        return hadiths.map(appendHadith6380Clarification);
+        return hadiths.map((hadith) => appendHadith6379Clarification(appendHadith6380Clarification(hadith)));
       }
     })();
 
@@ -298,7 +321,7 @@ export async function fetchHadithByNumber(hadithNumber: number): Promise<HadithF
   try {
     const chunk = (await fetchContent(`hadith-chunks/${chunkNumber}.json`)) as HadithFull[];
     const found = chunk.find((h) => h.hadith_number === hadithNumber) ?? null;
-    return found ? appendHadith6380Clarification(found) : null;
+    return found ? appendHadith6379Clarification(appendHadith6380Clarification(found)) : null;
   } catch (error) {
     // Generated chunks exist in deployed assets, but not in public/content.
     // Only vite dev/node/browser may fall back to a full source book; a Worker
