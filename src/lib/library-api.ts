@@ -303,7 +303,8 @@ export async function fetchHadithByNumber(hadithNumber: number): Promise<HadithF
   const chunkNumber = Math.floor((hadithNumber - 1) / 50);
   try {
     const chunk = (await fetchContent(`hadith-chunks/${chunkNumber}.json`)) as HadithFull[];
-    return chunk.find((h) => h.hadith_number === hadithNumber) ?? null;
+    const found = chunk.find((h) => h.hadith_number === hadithNumber) ?? null;
+    return found ? appendHadith6380Clarification(found) : null;
   } catch (error) {
     // Generated chunks exist in deployed assets, but not in public/content.
     // Only vite dev/node/browser may fall back to a full source book; a Worker
