@@ -11,7 +11,7 @@
  * Never cached: /auth and /admin routes, /api, anything non-GET, /auth/v1.
  */
 
-const VERSION = "v2";
+const VERSION = "v3";
 const PAGES = `jk-pages-${VERSION}`;
 const ASSETS = `jk-assets-${VERSION}`;
 const DATA = `jk-data-${VERSION}`;
@@ -118,18 +118,27 @@ async function networkFirst(request, cacheName) {
 
 const libraryKey = (url) => url.origin + url.pathname;
 
-// Content JSON and the search index: fresh when the network answers, saved copy when it doesn't.
+// Hadith corrections must win over locally saved text whenever the network answers.
+// The saved jk-library cache is only a fallback on a failed request; never return a
+// stale hadith after a short timeout while an online fetch is still in progress.
+// Keep jk-library and jk-audio intact to preserve offline reading and saved audio.
 async function libraryFirst(request, url) {
   const cache = await caches.open(LIBRARY);
   const key = libraryKey(url);
-  const network = fetch(request).then(async (response) => {
-    if (response.ok) await cache.put(key, response.clone());
+  try {
+    const response = await fetch(request, { cache: "no-store" });
+    if (response.ok) {
+      await cache.put(key, response.clone());
+      return response;
+    }
+    // When the server is temporarily unavailable, keep offline reading usable.
+    if (response.status >= 500) return (await cache.match(key)) ?? response;
     return response;
-  });
-  const timeout = new Promise((resolve) => setTimeout(resolve, NAV_TIMEOUT_MS));
-  const first = await Promise.race([network.catch(() => undefined), timeout]);
-  if (first) return first;
-  return (await cache.match(key)) ?? network;
+  } catch {
+    const saved = await cache.match(key);
+    if (saved) return saved;
+    return Response.error();
+  }
 }
 
 self.addEventListener("fetch", (event) => {
