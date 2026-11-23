@@ -1,6 +1,7 @@
 // Deployment sync marker: hadith share, error-report, and 16273 correction refresh
 import { splitCommentary } from "@/lib/commentary-split";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { CircleAlert, Copy, MoreHorizontal, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -138,7 +139,27 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
     queryKey: ["bengali-hadith", hadith.hadith_number],
     queryFn: () => fetchBengaliTranslation(hadith.hadith_number),
     enabled: contentLanguage === "bn",
+    staleTime: 0,
+    refetchOnMount: "always",
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
+  // Revalidate translated text on iOS foreground resume, without touching
+  // any downloaded narration or offline-library caches.
+  useEffect(() => {
+    const refresh = () => {
+      if (document.visibilityState === "visible" && navigator.onLine && contentLanguage === "bn") {
+        void bengali.refetch();
+      }
+    };
+    document.addEventListener("visibilitychange", refresh);
+    window.addEventListener("pageshow", refresh);
+    return () => {
+      document.removeEventListener("visibilitychange", refresh);
+      window.removeEventListener("pageshow", refresh);
+    };
+  }, [bengali.refetch, contentLanguage]);
+
   const bengaliStructure = useQuery({
     queryKey: ["bengali-structure", context?.book?.book_number],
     queryFn: () => fetchBengaliStructure(context!.book!.book_number),
