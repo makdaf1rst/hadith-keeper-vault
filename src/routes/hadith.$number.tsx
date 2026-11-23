@@ -174,7 +174,30 @@ function HadithPage() {
     queryFn: () => fetchHadithByNumber(hadithNumber),
     enabled: Number.isFinite(hadithNumber),
     initialData: loaderData.hadith,
+    // Server-preloaded content can be old in an iPhone WebView session.
+    // Always check the current chunk after mounting the hadith reader.
+    initialDataUpdatedAt: 0,
+    staleTime: 0,
+    refetchOnMount: "always",
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
+
+  // iOS can resume a WebView without firing a normal browser focus event.
+  // Re-check the hadith when the reader is brought back to the foreground.
+  useEffect(() => {
+    const refresh = () => {
+      if (document.visibilityState === "visible" && navigator.onLine) {
+        void hadith.refetch();
+      }
+    };
+    document.addEventListener("visibilitychange", refresh);
+    window.addEventListener("pageshow", refresh);
+    return () => {
+      document.removeEventListener("visibilitychange", refresh);
+      window.removeEventListener("pageshow", refresh);
+    };
+  }, [hadith.refetch]);
 
   const context = useQuery({
     queryKey: ["hadith-context", hadith.data?.id],
