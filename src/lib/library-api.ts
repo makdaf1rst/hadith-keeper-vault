@@ -96,7 +96,13 @@ function getWorkerAssetsBinding(): AssetsBinding | null {
  */
 const fetchContent = createIsomorphicFn()
   .client(async (path: string): Promise<unknown> => {
-    const response = await fetch(`/content/${path}`, { cache: "no-store" });
+    // A unique request URL prevents iOS WKWebView/CDN caches from serving an
+    // outdated hadith chunk after a content correction. The service worker still
+    // saves the same pathname for offline reading; audio caches are unaffected.
+    const url = path.startsWith("hadith-chunks/")
+      ? `/content/${path}?sync=${Date.now()}`
+      : `/content/${path}`;
+    const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) throw new Error(`Failed to load /content/${path}: ${response.status}`);
     return response.json();
   })
