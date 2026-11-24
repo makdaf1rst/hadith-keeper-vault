@@ -118,27 +118,21 @@ async function networkFirst(request, cacheName) {
 
 const libraryKey = (url) => url.origin + url.pathname;
 
-// Hadith corrections must win over locally saved text whenever the network answers.
-// The saved jk-library cache is only a fallback on a failed request; never return a
-// stale hadith after a short timeout while an online fetch is still in progress.
-// Keep jk-library and jk-audio intact to preserve offline reading and saved audio.
+// Content JSON and the search index: fresh when the network answers within
+// NAV_TIMEOUT_MS, saved copy when it doesn't, so a weak signal never hangs reading.
+// no-store skips the HTTP cache so an answering network always returns the latest
+// correction. jk-library and jk-audio are never cleared here.
 async function libraryFirst(request, url) {
   const cache = await caches.open(LIBRARY);
   const key = libraryKey(url);
-  try {
-    const response = await fetch(request, { cache: "no-store" });
-    if (response.ok) {
-      await cache.put(key, response.clone());
-      return response;
-    }
-    // When the server is temporarily unavailable, keep offline reading usable.
-    if (response.status >= 500) return (await cache.match(key)) ?? response;
+  const network = fetch(request, { cache: "no-store" }).then(async (response) => {
+    if (response.ok) await cache.put(key, response.clone());
     return response;
-  } catch {
-    const saved = await cache.match(key);
-    if (saved) return saved;
-    return Response.error();
-  }
+  });
+  const timeout = new Promise((resolve) => setTimeout(resolve, NAV_TIMEOUT_MS));
+  const first = await Promise.race([network.catch(() => undefined), timeout]);
+  if (first && first.status < 500) return first;
+  return (await cache.match(key)) ?? network;
 }
 
 self.addEventListener("fetch", (event) => {
