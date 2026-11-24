@@ -1,3 +1,4 @@
+import type { QueryClient } from "@tanstack/react-query";
 import type { AnyRouter } from "@tanstack/react-router";
 
 declare global {
@@ -86,10 +87,20 @@ export function startNativeApp(router: AnyRouter) {
     .then(({ initializeDailyNotifications }) => initializeDailyNotifications(router))
     .catch(() => undefined);
 
-  const idle = window.requestIdleCallback ?? ((callback: IdleRequestCallback) => window.setTimeout(callback, 1));
-  idle(() => {
+  // Content corrections: check on every open (launch and return from background).
+  // When files changed, refetch what is on screen; module-level caches refresh on next launch.
+  const refreshContent = () => {
     void import("./content-refresh")
       .then(({ refreshNativeContent }) => refreshNativeContent())
+      .then((updated) => {
+        const { queryClient } = router.options.context as { queryClient?: QueryClient };
+        if (updated) void queryClient?.invalidateQueries();
+      })
       .catch(() => undefined);
-  });
+  };
+  const idle = window.requestIdleCallback ?? ((callback: IdleRequestCallback) => window.setTimeout(callback, 1));
+  idle(refreshContent);
+  void import("@capacitor/app")
+    .then(({ App }) => App.addListener("resume", refreshContent))
+    .catch(() => undefined);
 }

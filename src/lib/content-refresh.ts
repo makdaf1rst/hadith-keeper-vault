@@ -3,9 +3,7 @@
 import { CONTENT_PATH_RE } from "./content-path.mjs";
 
 const CONTENT_ORIGIN = "https://jami-al-kamil.com";
-const LAST_CHECK_KEY = "jami-content-refresh-last-check";
 const MANIFEST_KEY = "jami-content-refresh-manifest";
-const DAY_MS = 24 * 60 * 60 * 1000;
 const DB_NAME = "jami-content-overlay";
 const STORE_NAME = "files";
 
@@ -55,45 +53,54 @@ function validManifest(value: unknown): value is Manifest {
     );
 }
 
-// ponytail: Pagefind is a bundled snapshot and does not refresh with corrected JSON.
-export async function refreshNativeContent() {
-  try {
-    const previousCheck = Number(localStorage.getItem(LAST_CHECK_KEY) || 0);
-    if (Date.now() - previousCheck < DAY_MS) return;
+let inFlight: Promise<boolean> | null = null;
 
+// Runs on every launch and resume; the manifest is one small request, so no throttle.
+// Resolves true only when new content was written. Concurrent calls share one run.
+export function refreshNativeContent(): Promise<boolean> {
+  inFlight ??= runRefresh().finally(() => {
+    inFlight = null;
+  });
+  return inFlight;
+}
+
+// ponytail: Pagefind is a bundled snapshot and does not refresh with corrected JSON.
+async function runRefresh(): Promise<boolean> {
+  try {
     const { CapacitorHttp } = await import("@capacitor/core");
     const response = await CapacitorHttp.get({ url: `${CONTENT_ORIGIN}/content/manifest.json` });
-    if (response.status !== 200 || !validManifest(response.data)) return;
-    localStorage.setItem(LAST_CHECK_KEY, String(Date.now()));
+    if (response.status !== 200 || !validManifest(response.data)) return false;
     const next = response.data;
 
     let current: Manifest;
     const stored = localStorage.getItem(MANIFEST_KEY);
     if (stored) {
       const parsed: unknown = JSON.parse(stored);
-      if (!validManifest(parsed)) return;
+      if (!validManifest(parsed)) return false;
       current = parsed;
     } else {
       const bundled = await fetch("/content/manifest.json").then((item) => item.json());
-      if (!validManifest(bundled)) return;
+      if (!validManifest(bundled)) return false;
       current = bundled;
     }
 
     const changed = Object.keys(next).filter((path) => next[path] !== current[path]);
     // ponytail: a corrections sweep over 500 files waits for the next App Store build
-    if (changed.length > 500) return;
+    if (changed.length === 0 || changed.length > 500) return false;
     const downloads: Array<[string, string]> = [];
     for (const path of changed) {
-      if (!CONTENT_PATH_RE.test(path)) return;
+      if (!CONTENT_PATH_RE.test(path)) return false;
       const item = await CapacitorHttp.get({ url: `${CONTENT_ORIGIN}/content/${path}` });
-      if (item.status !== 200) return;
+      if (item.status !== 200) return false;
       const text = typeof item.data === "string" ? item.data : JSON.stringify(item.data);
       JSON.parse(text);
       downloads.push([path, text]);
     }
     await writeOverlays(downloads);
     localStorage.setItem(MANIFEST_KEY, JSON.stringify(next));
+    return true;
   } catch {
     // Updates are best-effort; the immutable bundled snapshot remains authoritative on failure.
+    return false;
   }
 }
