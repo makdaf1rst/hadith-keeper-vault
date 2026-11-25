@@ -240,7 +240,7 @@ function BookPage() {
         {...(Number.isFinite(bookNumber) ? { progress: bookNumber / 66 } : {})}
       />
       <header className="hidden border-b border-border bg-parchment [.app_&]:block">
-        <div className="mx-auto max-w-4xl px-4 py-4 sm:px-6">
+        <div className="mx-auto max-w-4xl px-4 py-4 sm:px-6 [.app_&]:max-w-2xl">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
@@ -249,7 +249,7 @@ function BookPage() {
           </Link>
         </div>
       </header>
-      <main className="mx-auto max-w-4xl space-y-6 px-4 py-8 sm:px-6">
+      <main className="mx-auto max-w-4xl space-y-6 px-4 py-8 sm:px-6 [.app_&]:max-w-2xl">
         {book.isLoading ? <p className="text-muted-foreground">Loading book…</p> : null}
         {!book.isLoading && !book.data ? (
           <p className="text-muted-foreground">Book {number} has not been imported yet.</p>
