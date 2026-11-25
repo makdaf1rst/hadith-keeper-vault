@@ -315,7 +315,7 @@ function HadithPage() {
             {interfaceLanguage === "bn" ? "English" : "বাংলা"}
           </span>
         </Button>
-        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6 [.app_&]:max-w-2xl">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
@@ -354,7 +354,7 @@ function HadithPage() {
         className={
           readerSettings.readerMode
             ? "mx-auto max-w-3xl px-4 py-8 sm:px-6"
-            : "mx-auto max-w-4xl px-4 py-8 sm:px-6"
+            : "mx-auto max-w-4xl px-4 py-8 sm:px-6 [.app_&]:max-w-2xl"
         }
       >
         {hadith.isLoading ? <p className="text-muted-foreground">{t.loadingHadith}</p> : null}

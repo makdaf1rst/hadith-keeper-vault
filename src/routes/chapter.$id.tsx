@@ -202,7 +202,7 @@ function ChapterReadingPage() {
         }
       />
       <header className="hidden border-b border-border bg-parchment [.app_&]:block">
-        <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6 sm:pt-4">
+        <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6 sm:pt-4 [.app_&]:max-w-2xl">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
@@ -232,7 +232,7 @@ function ChapterReadingPage() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+      <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 [.app_&]:max-w-2xl">
         {context.isLoading ? <p className="text-muted-foreground">{t.loading}</p> : null}
         {!context.isLoading && !context.data ? (
           <p className="text-destructive">Chapter information could not be loaded.</p>
