@@ -5,6 +5,8 @@ import { ChevronDown, ChevronRight, Download, FileText, Loader2, ShieldCheck } f
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
+import { AudioDownloadMenu } from "@/components/AudioDownloadMenu";
+import { GetTheAppButtons } from "@/components/GetTheApp";
 import { OfflineLibrarySettings } from "@/components/OfflineLibrary";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -252,12 +254,18 @@ function DownloadsPage() {
           : "Each document contains Arabic and English (your current language)."}
       </p>
 
+      <GetTheAppButtons />
+
       <section className="mt-6 overflow-hidden rounded-xl border border-gold/40 bg-parchment shadow-sm">
         <h2 className="px-5 pt-5 text-lg font-semibold">
           {bn ? "অডিওসহ অফলাইনে পড়ুন ও শুনুন" : "Read and Listen Offline, With Audio"}
         </h2>
         <OfflineLibrarySettings />
       </section>
+
+      <div className="mt-6">
+        <AudioDownloadMenu />
+      </div>
 
       <div className="mt-6">
         <CompleteLibraryDownload bn={bn} />
@@ -284,22 +292,34 @@ function CompleteLibraryDownload({ bn }: { bn: boolean }) {
     if (busy) return;
     setBusy(true);
     setProgress(0);
-    const notification = toast.loading(bn ? "সম্পূর্ণ গ্রন্থাগার তৈরি হচ্ছে…" : "Preparing the complete offline library…");
+    const notification = toast.loading(
+      bn ? "সম্পূর্ণ গ্রন্থাগার তৈরি হচ্ছে…" : "Preparing the complete offline library…",
+    );
     try {
       const outcome = await downloadCompleteLibrary((completed, total) => {
         setProgress(Math.round((completed / total) * 100));
       });
       toast.success(
         outcome === "shared"
-          ? (bn ? "ফাইল অ্যাপে সংরক্ষণ করুন।" : "Choose Save to Files.")
+          ? bn
+            ? "ফাইল অ্যাপে সংরক্ষণ করুন।"
+            : "Choose Save to Files."
           : outcome === "cancelled"
-            ? (bn ? "ডাউনলোড বাতিল করা হয়েছে।" : "Download cancelled.")
-            : (bn ? "সম্পূর্ণ লাইব্রেরির ZIP প্রস্তুত।" : "Complete library ZIP is ready."),
+            ? bn
+              ? "ডাউনলোড বাতিল করা হয়েছে।"
+              : "Download cancelled."
+            : bn
+              ? "সম্পূর্ণ লাইব্রেরির ZIP প্রস্তুত।"
+              : "Complete library ZIP is ready.",
         { id: notification },
       );
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : (bn ? "ডাউনলোড প্রস্তুত করা যায়নি।" : "Could not prepare the archive."),
+        error instanceof Error
+          ? error.message
+          : bn
+            ? "ডাউনলোড প্রস্তুত করা যায়নি।"
+            : "Could not prepare the archive.",
         { id: notification },
       );
     } finally {
@@ -309,20 +329,34 @@ function CompleteLibraryDownload({ bn }: { bn: boolean }) {
 
   return (
     <section className="rounded-xl border border-gold/40 bg-parchment p-5 shadow-sm">
-      <h2 className="text-lg font-semibold">{bn ? "সম্পূর্ণ গ্রন্থাগার অফলাইনে সংরক্ষণ" : "Save the Complete Library Offline"}</h2>
+      <h2 className="text-lg font-semibold">
+        {bn ? "সম্পূর্ণ গ্রন্থাগার অফলাইনে সংরক্ষণ" : "Save the Complete Library Offline"}
+      </h2>
       <p className="mt-2 text-sm text-muted-foreground">
         {bn
           ? "৬৬টি কিতাব ও ১৬,৫৪৬টি হাদীস একটি ZIP ফাইলে। আরবি, ইংরেজি ও বাংলা লেখা; কিতাব ও মাজমূ‘ অনুযায়ী সাজানো। অডিওর জন্য উপরের অংশটি ব্যবহার করুন। ZIP খুলে START-HERE.html থেকে পড়ুন।"
           : "All 66 Kitābs and 16,546 hadith in one ZIP, with Arabic, English and Bengali text organized by Kitāb and collection. For audio, use the section above. Extract the ZIP and open START-HERE.html to read offline."}
       </p>
-      <Button type="button" size="lg" className="mt-4 w-full sm:w-auto" disabled={busy} onClick={() => void run()}>
+      <Button
+        type="button"
+        size="lg"
+        className="mt-4 w-full sm:w-auto"
+        disabled={busy}
+        onClick={() => void run()}
+      >
         {busy ? <Loader2 className="size-4 animate-spin" /> : <Download className="size-4" />}
         {busy
-          ? (bn ? `প্রস্তুত হচ্ছে… ${progress}%` : `Preparing… ${progress}%`)
-          : (bn ? "সম্পূর্ণ গ্রন্থাগার ডাউনলোড (ZIP)" : "Download Complete Library (ZIP)")}
+          ? bn
+            ? `প্রস্তুত হচ্ছে… ${progress}%`
+            : `Preparing… ${progress}%`
+          : bn
+            ? "সম্পূর্ণ গ্রন্থাগার ডাউনলোড (ZIP)"
+            : "Download Complete Library (ZIP)"}
       </Button>
       <p className="mt-2 text-xs text-muted-foreground">
-        {bn ? "মোবাইলে ZIP ফাইলটি Files বা ফাইল ম্যানেজারে সংরক্ষণ ও এক্সট্র্যাক্ট করুন।" : "On a phone, save the ZIP to Files or your file manager, then extract it."}
+        {bn
+          ? "মোবাইলে ZIP ফাইলটি Files বা ফাইল ম্যানেজারে সংরক্ষণ ও এক্সট্র্যাক্ট করুন।"
+          : "On a phone, save the ZIP to Files or your file manager, then extract it."}
       </p>
     </section>
   );
@@ -624,7 +658,10 @@ function DownloadActions({
                 : "Download started.";
         toast.success(msg, { id: notice });
       } else {
-        const outcome = await downloadKitabPdf(model, kitabFileName(book, "pdf", collection, chapter));
+        const outcome = await downloadKitabPdf(
+          model,
+          kitabFileName(book, "pdf", collection, chapter),
+        );
         const msg =
           outcome === "shared"
             ? "PDF ready — choose “Save to Files”."

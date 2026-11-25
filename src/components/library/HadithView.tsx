@@ -1,5 +1,7 @@
 // Deployment sync marker: hadith share, error-report, and 16273 correction refresh
+import { splitCommentary } from "@/lib/commentary-split";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { CircleAlert, Copy, MoreHorizontal, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -145,7 +147,27 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
     queryKey: ["bengali-hadith", hadith.hadith_number],
     queryFn: () => fetchBengaliTranslation(hadith.hadith_number),
     enabled: contentLanguage === "bn",
+    staleTime: 0,
+    refetchOnMount: "always",
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
+  // Revalidate translated text on iOS foreground resume, without touching
+  // any downloaded narration or offline-library caches.
+  useEffect(() => {
+    const refresh = () => {
+      if (document.visibilityState === "visible" && navigator.onLine && contentLanguage === "bn") {
+        void bengali.refetch();
+      }
+    };
+    document.addEventListener("visibilitychange", refresh);
+    window.addEventListener("pageshow", refresh);
+    return () => {
+      document.removeEventListener("visibilitychange", refresh);
+      window.removeEventListener("pageshow", refresh);
+    };
+  }, [bengali.refetch, contentLanguage]);
+
   const bengaliStructure = useQuery({
     queryKey: ["bengali-structure", context?.book?.book_number],
     queryFn: () => fetchBengaliStructure(context!.book!.book_number),
@@ -323,7 +345,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             className="arabic-text text-foreground"
             style={{ fontSize: `calc(1em * ${readerSettings.arabicScale})` }}
           >
-            {arabic}
+            <Spaced text={arabic} />
           </p>
         ) : null}
         {arabic && (selectedTranslation || contentLanguage === "bn") ? (
@@ -338,7 +360,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
               className="text-foreground leading-8"
               style={{ fontSize: `calc(1em * ${readerSettings.translationScale})` }}
             >
-              {displayedTranslation}
+              <Spaced text={displayedTranslation} />
             </div>
           ) : (
             <div className="rounded-md border border-dashed border-border bg-muted/30 px-4 py-3 text-sm text-muted-foreground">
@@ -350,7 +372,7 @@ export function HadithView({ hadith, context, showExactSource = false }: Props) 
             className="english-text text-foreground"
             style={{ fontSize: `calc(1em * ${readerSettings.translationScale})` }}
           >
-            {english}
+            <Spaced text={english} />
           </div>
         ) : null}
         {extra ? (
@@ -398,5 +420,17 @@ function BreadcrumbLine({
         <span className="arabic-text text-base! leading-normal! text-foreground">{ar}</span>
       ) : null}
     </div>
+  );
+}
+
+// Gap between the hadith (ending at its grading line) and any explanation after it.
+function Spaced({ text }: { text: string | null }) {
+  const [body, commentary] = splitCommentary(text);
+  if (!commentary) return <>{text}</>;
+  return (
+    <>
+      {body}
+      <span className="mt-6 block">{commentary}</span>
+    </>
   );
 }

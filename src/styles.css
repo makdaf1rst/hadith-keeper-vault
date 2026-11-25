@@ -394,7 +394,9 @@
 /* iOS/Android app webview: page draws edge-to-edge under the system bars. */
 body {
   padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
   padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
 }
 
 /* Themed strip behind the status bar. The iOS scroll edge effect it replaces follows the phone's
@@ -402,7 +404,7 @@ body {
 .app::before {
   content: "";
   position: fixed;
-  inset: 0 0 auto;
+  inset: 0 env(safe-area-inset-right) auto env(safe-area-inset-left);
   z-index: 60;
   height: env(safe-area-inset-top);
   background: var(--background);

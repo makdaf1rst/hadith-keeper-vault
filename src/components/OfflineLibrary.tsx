@@ -71,7 +71,7 @@ export function OfflinePrompt() {
       if (
         document.documentElement.classList.contains("app") &&
         !wasPrompted() &&
-        !getPlan() &&
+        !getPlan()?.audio &&
         (AUDIO_BASE || !isNative())
       ) {
         setOpen(true);
@@ -131,8 +131,12 @@ export function OfflinePrompt() {
           </span>
           <DialogTitle className="text-xl">
             {native
-              ? bn ? "অফলাইনে শুনুন" : "Listen offline"
-              : bn ? "অফলাইনে পড়ুন ও শুনুন" : "Read and listen offline"}
+              ? bn
+                ? "অফলাইনে শুনুন"
+                : "Listen offline"
+              : bn
+                ? "অফলাইনে পড়ুন ও শুনুন"
+                : "Read and listen offline"}
           </DialogTitle>
           <DialogDescription className="text-base leading-relaxed">
             {native
@@ -274,18 +278,18 @@ export function OfflineLibrarySettings() {
           ? `সংরক্ষিত: ${audioName(plan.audio, true)}। ইন্টারনেট ছাড়াও শোনা যাবে।`
           : `Saved: ${audioName(plan.audio, false)}. Plays without internet.`
         : state.kind === "done"
-        ? bn
-          ? `সংরক্ষিত: লেখা${plan.audio ? ` ও ${audioName(plan.audio, true)}` : ""}। ইন্টারনেট ছাড়াও কাজ করবে।`
-          : `Saved: text${plan.audio ? ` and ${audioName(plan.audio, false)}` : ""}. Works without internet.`
-        : state.kind === "error"
-          ? state.message
-          : state.kind === "paused"
-            ? bn
-              ? "ডাউনলোড বিরতিতে আছে।"
-              : "Download paused."
-            : bn
-              ? "সংরক্ষিত লাইব্রেরি পরীক্ষা করা হচ্ছে…"
-              : "Checking the saved library…";
+          ? bn
+            ? `সংরক্ষিত: লেখা${plan.audio ? ` ও ${audioName(plan.audio, true)}` : ""}। ইন্টারনেট ছাড়াও কাজ করবে।`
+            : `Saved: text${plan.audio ? ` and ${audioName(plan.audio, false)}` : ""}. Works without internet.`
+          : state.kind === "error"
+            ? state.message
+            : state.kind === "paused"
+              ? bn
+                ? "ডাউনলোড বিরতিতে আছে।"
+                : "Download paused."
+              : bn
+                ? "সংরক্ষিত লাইব্রেরি পরীক্ষা করা হচ্ছে…"
+                : "Checking the saved library…";
     body = (
       <div className="flex flex-col gap-3">
         <p className="text-sm">{status}</p>

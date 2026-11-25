@@ -174,7 +174,30 @@ function HadithPage() {
     queryFn: () => fetchHadithByNumber(hadithNumber),
     enabled: Number.isFinite(hadithNumber),
     initialData: loaderData.hadith,
+    // Server-preloaded content can be old in an iPhone WebView session.
+    // Always check the current chunk after mounting the hadith reader.
+    initialDataUpdatedAt: 0,
+    staleTime: 0,
+    refetchOnMount: "always",
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
+
+  // iOS can resume a WebView without firing a normal browser focus event.
+  // Re-check the hadith when the reader is brought back to the foreground.
+  useEffect(() => {
+    const refresh = () => {
+      if (document.visibilityState === "visible" && navigator.onLine) {
+        void hadith.refetch();
+      }
+    };
+    document.addEventListener("visibilitychange", refresh);
+    window.addEventListener("pageshow", refresh);
+    return () => {
+      document.removeEventListener("visibilitychange", refresh);
+      window.removeEventListener("pageshow", refresh);
+    };
+  }, [hadith.refetch]);
 
   const context = useQuery({
     queryKey: ["hadith-context", hadith.data?.id],
@@ -292,7 +315,7 @@ function HadithPage() {
             {interfaceLanguage === "bn" ? "English" : "বাংলা"}
           </span>
         </Button>
-        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 pt-16 pb-4 sm:px-6 [.app_&]:max-w-2xl">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
@@ -331,7 +354,7 @@ function HadithPage() {
         className={
           readerSettings.readerMode
             ? "mx-auto max-w-3xl px-4 py-8 sm:px-6"
-            : "mx-auto max-w-4xl px-4 py-8 sm:px-6"
+            : "mx-auto max-w-4xl px-4 py-8 sm:px-6 [.app_&]:max-w-2xl"
         }
       >
         {hadith.isLoading ? <p className="text-muted-foreground">{t.loadingHadith}</p> : null}

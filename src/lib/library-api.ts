@@ -102,7 +102,13 @@ const fetchContent = createIsomorphicFn()
       const overlay = await readContentOverlay(path);
       if (overlay !== undefined) return overlay;
     }
-    const response = await fetch(`/content/${path}`, { cache: "no-store" });
+    // A unique request URL prevents iOS WKWebView/CDN caches from serving an
+    // outdated hadith chunk after a content correction. The service worker still
+    // saves the same pathname for offline reading; audio caches are unaffected.
+    const url = path.startsWith("hadith-chunks/")
+      ? `/content/${path}?sync=${Date.now()}`
+      : `/content/${path}`;
+    const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) throw new Error(`Failed to load /content/${path}: ${response.status}`);
     return response.json();
   })
@@ -167,20 +173,58 @@ function loadBookChapters(bookNumber: number): Promise<BookChaptersFile> {
   return cached;
 }
 
+// Preserve every character of the original Hadith 6379 commentary; append only a separate explanation.
+function appendHadith6379Clarification(hadith: HadithFull): HadithFull {
+  if (hadith.hadith_number !== 6379) return hadith;
+  const clarificationAr =
+    "(توضيح: هذا التقسيم متعلق بأحكام الرق في الفقه القديم. والضرر المذكور في الحالة الأولى هو ما كان يلحق المالك من فقدان حق بيع أم الولد عند جمهور الفقهاء، وليس أن صيرورة المرأة أم ولد ضرر عليها. وفي الحالة الثانية المقصود ما يلحق الزوج من أن ولده من أمة مملوكة لغيره يتبع أمه في الرق وفق الأحكام المذكورة آنذاك. وأما العزل عن الزوجة الحرة دون إذنها ففيه خلاف بين الفقهاء؛ فقد ذكر النووي في المذهب الشافعي وجهين، وأصحهما عنده أنه لا يحرم وإن كان مكروهًا، بينما اشترط آخرون إذنها مراعاةً لحقها. المرجع: النووي، المنهاج شرح صحيح مسلم، كتاب النكاح، باب حكم العزل (10/10–12).)";
+  const clarificationEn =
+    "(Clarification: These three cases concern the historical laws of slavery. In the first case, the disadvantage refers to the owner's loss of the right to sell a woman who became an umm walad, according to the majority of jurists; it does not mean that becoming an umm walad harmed the woman. In the second, the disadvantage concerns the husband because a child born to his enslaved wife, owned by someone else, would ordinarily inherit her enslaved status under the rules then discussed. In the third case, scholars disagreed about withdrawal without a free wife's permission. Al-Nawawi recorded two Shafiʿi opinions, identifying the stronger one as non-prohibition, though he considered withdrawal disliked; other jurists required her permission in recognition of her rights. Reference: Al-Nawawi, Al-Minhaj Sharh Sahih Muslim, Book of Marriage, Chapter on Withdrawal (10/10–12).)";
+  const originalAr = hadith.arabic_display ?? hadith.arabic_source;
+  const originalEn = hadith.english_display ?? hadith.english_source;
+  const newAr =
+    originalAr && !originalAr.includes(clarificationAr)
+      ? `${originalAr}\n${clarificationAr}`
+      : originalAr;
+  const newEn =
+    originalEn && !originalEn.includes(clarificationEn)
+      ? `${originalEn}\n${clarificationEn}`
+      : originalEn;
+  let fullDisplay = hadith.full_display_content;
+  if (fullDisplay && originalAr && originalEn && newAr && newEn) {
+    fullDisplay = fullDisplay.replace(originalAr, newAr).replace(originalEn, newEn);
+  }
+  return {
+    ...hadith,
+    arabic_display: newAr,
+    english_display: newEn,
+    full_display_content: fullDisplay,
+  };
+}
+
 // Approved display-only explanation for Hadith 6380; archival source fields remain untouched.
 function appendHadith6380Clarification(hadith: HadithFull): HadithFull {
   if (hadith.hadith_number !== 6380) return hadith;
-  const clarificationAr = "(توضيح: لا تعارض بين هذا الحديث وحديث أبي سعيد الخدري رقم (6372)، الذي قال فيه النبي ﷺ: «كَذَبَتْ يَهُودُ». والفرق بينهما يتضح من اختلاف التعبيرين: سمّت اليهود العزل «الْمَوْءُودَةَ الصُّغْرَى»، والمَوْءُودَة هي الطفلة التي دُفنت حيّة، فكأنهم جعلوا العزل نوعًا من قتل الولد حقيقةً، وإن كان أصغر من الوأد المعروف. أما النبي ﷺ فسمّاه «الْوَأْدَ الْخَفِيَّ»، أي شبّهه بالوأد من جهة قصد منع حصول الولد، لا من جهة قتل طفل موجود بالفعل. وقد بيّن ابن القيم أن النبي ﷺ كذّب اليهود في زعمهم أن العزل يمنع الحمل قطعًا، وأنه بمنزلة قتل الولد؛ لأن الله إذا أراد خلق ولد لم يستطع العزل منع ذلك. فالوأد الحقيقي يجتمع فيه قصد القتل وفعل القتل، أما العزل ففيه قصد منع الحمل دون قتل نفس موجودة. وهذا فرق في المراد من التعبيرين وسياقهما، لا أن لفظ «الوأد» في ذاته يعني النية دون الفعل. فلا يلزم من هذا التشبيه أن يكون العزل محرّمًا كتحريم قتل الأولاد. المرجع: ابن حجر، فتح الباري (9/271)، نقلًا عن ابن القيم؛ ابن القيم، زاد المعاد (5/131–132).)";
-  const clarificationEn = "(Clarification: There is no contradiction between this hadith and Hadith 6372, in which the Prophet ﷺ said, “The Jews have lied.” The difference lies in the two expressions and their intended meanings. The Jews called withdrawal “al-maw’ūdah al-ṣughrā” (الْمَوْءُودَة الصُّغْرَى), literally “the lesser buried-alive girl.” Maw’ūdah refers to a girl buried alive, so the expression presents withdrawal as a lesser form of actual child-killing. The Prophet ﷺ, however, called it “al-wa’d al-khafī” (الْوَأْد الْخَفِي), “hidden infanticide,” as a figurative comparison: the person intends to avoid pregnancy, but does not kill an existing child. Ibn al-Qayyim explained that the Prophet ﷺ rejected the claim that withdrawal necessarily prevents the creation of a child or is equivalent to killing one, for no one can prevent a child whom Allah has decreed to create. Actual infanticide involves killing an existing child, whereas withdrawal is an attempt to avoid conception. This distinction comes from the context and the complete Arabic expressions; it does not mean that the word wa’d by itself means only intention. Thus the comparison alone does not make withdrawal equivalent in ruling to killing children. References: Ibn Ḥajar, Fatḥ al-Bārī (9/271), citing Ibn al-Qayyim; Ibn al-Qayyim, Zād al-Maʿād (5/131–132).)";
+  const clarificationAr =
+    "(توضيح: لا تعارض بين هذا الحديث وحديث أبي سعيد الخدري رقم (6372)، الذي قال فيه النبي ﷺ: «كَذَبَتْ يَهُودُ». والفرق بينهما يتضح من اختلاف التعبيرين: سمّت اليهود العزل «الْمَوْءُودَةَ الصُّغْرَى»، والمَوْءُودَة هي الطفلة التي دُفنت حيّة، فكأنهم جعلوا العزل نوعًا من قتل الولد حقيقةً، وإن كان أصغر من الوأد المعروف. أما النبي ﷺ فسمّاه «الْوَأْدَ الْخَفِيَّ»، أي شبّهه بالوأد من جهة قصد منع حصول الولد، لا من جهة قتل طفل موجود بالفعل. وقد بيّن ابن القيم أن النبي ﷺ كذّب اليهود في زعمهم أن العزل يمنع الحمل قطعًا، وأنه بمنزلة قتل الولد؛ لأن الله إذا أراد خلق ولد لم يستطع العزل منع ذلك. فالوأد الحقيقي يجتمع فيه قصد القتل وفعل القتل، أما العزل ففيه قصد منع الحمل دون قتل نفس موجودة. وهذا فرق في المراد من التعبيرين وسياقهما، لا أن لفظ «الوأد» في ذاته يعني النية دون الفعل. فلا يلزم من هذا التشبيه أن يكون العزل محرّمًا كتحريم قتل الأولاد. المرجع: ابن حجر، فتح الباري (9/271)، نقلًا عن ابن القيم؛ ابن القيم، زاد المعاد (5/131–132).)";
+  const clarificationEn =
+    "(Clarification: There is no contradiction between this hadith and Hadith 6372, in which the Prophet ﷺ said, “The Jews have lied.” The difference lies in the two expressions and their intended meanings. The Jews called withdrawal “al-maw’ūdah al-ṣughrā” (الْمَوْءُودَة الصُّغْرَى), literally “the lesser buried-alive girl.” Maw’ūdah refers to a girl buried alive, so the expression presents withdrawal as a lesser form of actual child-killing. The Prophet ﷺ, however, called it “al-wa’d al-khafī” (الْوَأْد الْخَفِي), “hidden infanticide,” as a figurative comparison: the person intends to avoid pregnancy, but does not kill an existing child. Ibn al-Qayyim explained that the Prophet ﷺ rejected the claim that withdrawal necessarily prevents the creation of a child or is equivalent to killing one, for no one can prevent a child whom Allah has decreed to create. Actual infanticide involves killing an existing child, whereas withdrawal is an attempt to avoid conception. This distinction comes from the context and the complete Arabic expressions; it does not mean that the word wa’d by itself means only intention. Thus the comparison alone does not make withdrawal equivalent in ruling to killing children. References: Ibn Ḥajar, Fatḥ al-Bārī (9/271), citing Ibn al-Qayyim; Ibn al-Qayyim, Zād al-Maʿād (5/131–132).)";
   const baseAr = hadith.arabic_display ?? hadith.arabic_source;
   const baseEn = hadith.english_display ?? hadith.english_source;
-  const displayAr = baseAr && !baseAr.includes(clarificationAr) ? `${baseAr}\n${clarificationAr}` : baseAr;
-  const displayEn = baseEn && !baseEn.includes(clarificationEn) ? `${baseEn}\n${clarificationEn}` : baseEn;
+  const displayAr =
+    baseAr && !baseAr.includes(clarificationAr) ? `${baseAr}\n${clarificationAr}` : baseAr;
+  const displayEn =
+    baseEn && !baseEn.includes(clarificationEn) ? `${baseEn}\n${clarificationEn}` : baseEn;
   let fullDisplay = hadith.full_display_content;
   if (fullDisplay && baseAr && displayAr && baseEn && displayEn) {
     fullDisplay = fullDisplay.replace(baseAr, displayAr).replace(baseEn, displayEn);
   }
-  return { ...hadith, arabic_display: displayAr, english_display: displayEn, full_display_content: fullDisplay };
+  return {
+    ...hadith,
+    arabic_display: displayAr,
+    english_display: displayEn,
+    full_display_content: fullDisplay,
+  };
 }
 
 /** Every hadith of one book, from its static per-book file.
@@ -201,10 +245,14 @@ function loadBookHadiths(bookNumber: number): Promise<HadithFull[]> {
 
         return hadiths.map((hadith) => {
           const override = overrides[String(hadith.hadith_number)];
-          return appendHadith6380Clarification(override ? { ...hadith, ...override } : hadith);
+          return appendHadith6379Clarification(
+            appendHadith6380Clarification(override ? { ...hadith, ...override } : hadith),
+          );
         });
       } catch {
-        return hadiths.map(appendHadith6380Clarification);
+        return hadiths.map((hadith) =>
+          appendHadith6379Clarification(appendHadith6380Clarification(hadith)),
+        );
       }
     })();
 
@@ -304,7 +352,7 @@ export async function fetchHadithByNumber(hadithNumber: number): Promise<HadithF
   try {
     const chunk = (await fetchContent(`hadith-chunks/${chunkNumber}.json`)) as HadithFull[];
     const found = chunk.find((h) => h.hadith_number === hadithNumber) ?? null;
-    return found ? appendHadith6380Clarification(found) : null;
+    return found ? appendHadith6379Clarification(appendHadith6380Clarification(found)) : null;
   } catch (error) {
     // Generated chunks exist in deployed assets, but not in public/content.
     // Only vite dev/node/browser may fall back to a full source book; a Worker

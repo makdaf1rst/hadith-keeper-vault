@@ -19,7 +19,7 @@ export function TabBar() {
   return (
     <nav
       aria-label="Main"
-      className="fixed inset-x-0 bottom-0 z-40 hidden justify-center [.app_&]:flex px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))]"
+      className="fixed right-[env(safe-area-inset-right)] bottom-0 left-[env(safe-area-inset-left)] z-40 hidden justify-center px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] [.app_&]:flex"
     >
       <ul className="glass flex w-full max-w-md items-center justify-around rounded-full p-1.5 font-sans">
         {TABS.map(({ to, icon: Icon, label }) => {
