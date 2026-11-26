@@ -409,3 +409,17 @@ body {
   height: env(safe-area-inset-top);
   background: var(--background);
 }
+
+/* Radix scroll lock (react-remove-scroll-bar) zeroes body padding while a dialog or sheet is open,
+   which slid the page under the Duo's side status column. */
+body[data-scroll-locked] {
+  padding-top: env(safe-area-inset-top) !important;
+  padding-right: env(safe-area-inset-right) !important;
+  padding-left: env(safe-area-inset-left) !important;
+}
+
+/* Center dialogs in the safe area, not the screen, so they clear the Duo's side status column. */
+.safe-center {
+  left: calc(50% + (env(safe-area-inset-left) - env(safe-area-inset-right)) / 2);
+  width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right) - 1rem);
+}
